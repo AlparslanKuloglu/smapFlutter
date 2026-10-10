@@ -1,0 +1,3 @@
+class CameraEntity {
+  const CameraEntity();
+}

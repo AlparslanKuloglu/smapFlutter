@@ -1,0 +1,3 @@
+class RootNavEntity {
+  const RootNavEntity();
+}

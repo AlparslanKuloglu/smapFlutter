@@ -1,0 +1,3 @@
+class AnalyticsEntity {
+  const AnalyticsEntity();
+}
