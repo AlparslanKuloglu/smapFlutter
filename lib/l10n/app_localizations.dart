@@ -922,6 +922,102 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'{topic}, programdan çıkar'**
   String schedule_removeA11y(String topic);
+
+  /// Screen reader name of the 96 pt app icon on the forced update screen (pano 2.7 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'SMAP uygulama ikonu'**
+  String get startup_appIconLabel;
+
+  /// Title of the screen shown when the app's start-up itself failed (service container, preferences); its sentence is errors_unknown and its button common_retry.
+  ///
+  /// In tr, this message translates to:
+  /// **'SMAP açılamadı'**
+  String get startup_bootFailedTitle;
+
+  /// Forced update screen primary button; opens the store page (pano 2.7 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Güncelle'**
+  String get startup_forceUpdateAction;
+
+  /// Forced update screen sentence (pano 2.7 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu sürüm artık desteklenmiyor. Devam etmek için SMAP\'i güncelle; verilerin hesabında duruyor.'**
+  String get startup_forceUpdateBody;
+
+  /// Forced update screen title (pano 2.7 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni sürüm gerekli'**
+  String get startup_forceUpdateTitle;
+
+  /// Screen reader name of the spinner under the logo on the launch screen when opening takes longer than a second (pano 2.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'SMAP açılıyor'**
+  String get startup_loadingLabel;
+
+  /// Maintenance screen sentence (pano 2.7 kare 3). No time promise.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kısa süre içinde geri döneceğiz. Verilerin güvende; bakım bitince kaldığın yerden devam edersin.'**
+  String get startup_maintenanceBody;
+
+  /// Maintenance screen title (pano 2.7 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'SMAP şu an bakımda'**
+  String get startup_maintenanceTitle;
+
+  /// Legacy registration bridge only: the account was created but the follow-up sign-in failed. Goes away with the new sign-up screen (E4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabın açıldı ama giriş yapılamadı. Giriş ekranından giriş yaparak devam et.'**
+  String get startup_registerSignInFailed;
+
+  /// Session expired sheet primary button; opens the sign-in screen and returns to the same screen afterwards (pano 2.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Giriş Yap'**
+  String get startup_sessionExpiredAction;
+
+  /// Session expired sheet sentence (pano 2.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Güvenliğin için yeniden giriş yapman gerekiyor. Okuttuğun denemeler hesabında duruyor.'**
+  String get startup_sessionExpiredBody;
+
+  /// Session expired sheet title (pano 2.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Oturumun sona erdi'**
+  String get startup_sessionExpiredTitle;
+
+  /// Unknown role screen sentence (pano 2.7 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesap türün tanınmadı. Çıkış yapıp yeniden giriş yapmayı dene; sorun sürerse bize yaz.'**
+  String get startup_unknownRoleBody;
+
+  /// Unknown role screen text button: opens a mail draft to support; hidden while no support address is configured (pano 2.7 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Destek\'e Yaz'**
+  String get startup_unknownRoleContact;
+
+  /// Unknown role screen primary button: signs out and goes to the welcome screen (pano 2.7 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeniden Giriş Yap'**
+  String get startup_unknownRoleReLogin;
+
+  /// Unknown role screen title (pano 2.7 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabın açılamadı'**
+  String get startup_unknownRoleTitle;
 }
 
 class _AppLocalizationsDelegate

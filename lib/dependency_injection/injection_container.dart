@@ -8,7 +8,14 @@ import 'package:smap/core/network/network_service.dart';
 import 'package:smap/core/services/app_logger.dart';
 import 'package:smap/core/services/connectivity_service.dart';
 import 'package:smap/core/services/device_preferences.dart';
+import 'package:smap/features/account/account_module.dart';
+import 'package:smap/features/analytics/analytics_module.dart';
 import 'package:smap/features/auth/auth_module.dart';
+import 'package:smap/features/cards/cards_module.dart';
+import 'package:smap/features/coach/coach_module.dart';
+import 'package:smap/features/exams/exams_module.dart';
+import 'package:smap/features/lessons/lessons_module.dart';
+import 'package:smap/features/schedule/schedule_module.dart';
 import 'package:smap/features/startup/startup_module.dart';
 
 /// Global service locator.
@@ -35,6 +42,13 @@ typedef ModuleRegistration = void Function(GetIt l);
 /// The coordinator adds `registerXxx` functions here as features land.
 const List<ModuleRegistration> kDataModules = <ModuleRegistration>[
   registerAuthData,
+  registerExamsData,
+  registerAnalyticsData,
+  registerLessonsData,
+  registerCardsData,
+  registerScheduleData,
+  registerAccountData,
+  registerCoachData,
 ];
 
 /// Phase 3: app-level services modules (stateful services that depend on the
@@ -51,6 +65,9 @@ const List<ModuleRegistration> kServiceModules = <ModuleRegistration>[
 /// Modules that register into the [kSessionScope] when it is pushed.
 const List<ModuleRegistration> kSessionModules = <ModuleRegistration>[
   registerAuthSession,
+  registerLessonsSession,
+  registerScheduleSession,
+  registerCoachSession,
 ];
 
 /// Registers the root scope in three phases, in this order:

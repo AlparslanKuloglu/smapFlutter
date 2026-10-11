@@ -177,8 +177,9 @@ void main() {
 
       final sent =
           ((adapter.last.data as Map)['dataObj'] as Map)['date'] as String;
-      expect(sent, endsWith('Z'));
-      expect(DateTime.parse(sent), local.toUtc());
+      // Legacy wire format: zoneless local time.
+      expect(sent, isNot(endsWith('Z')));
+      expect(sent, '2026-07-01T14:30:00.000');
       expect(((adapter.last.data as Map)['dataObj'] as Map)['type'], 2);
     });
 

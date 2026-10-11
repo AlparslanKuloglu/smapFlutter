@@ -944,5 +944,69 @@
         "type": "String"
       }
     }
+  },
+  "startup_appIconLabel": "SMAP uygulama ikonu",
+  "@startup_appIconLabel": {
+    "description": "Screen reader name of the 96 pt app icon on the forced update screen (pano 2.7 kare 1)."
+  },
+  "startup_bootFailedTitle": "SMAP açılamadı",
+  "@startup_bootFailedTitle": {
+    "description": "Title of the screen shown when the app's start-up itself failed (service container, preferences); its sentence is errors_unknown and its button common_retry."
+  },
+  "startup_forceUpdateAction": "Güncelle",
+  "@startup_forceUpdateAction": {
+    "description": "Forced update screen primary button; opens the store page (pano 2.7 kare 1)."
+  },
+  "startup_forceUpdateBody": "Bu sürüm artık desteklenmiyor. Devam etmek için SMAP'i güncelle; verilerin hesabında duruyor.",
+  "@startup_forceUpdateBody": {
+    "description": "Forced update screen sentence (pano 2.7 kare 1)."
+  },
+  "startup_forceUpdateTitle": "Yeni sürüm gerekli",
+  "@startup_forceUpdateTitle": {
+    "description": "Forced update screen title (pano 2.7 kare 1)."
+  },
+  "startup_loadingLabel": "SMAP açılıyor",
+  "@startup_loadingLabel": {
+    "description": "Screen reader name of the spinner under the logo on the launch screen when opening takes longer than a second (pano 2.1 kare 1)."
+  },
+  "startup_maintenanceBody": "Kısa süre içinde geri döneceğiz. Verilerin güvende; bakım bitince kaldığın yerden devam edersin.",
+  "@startup_maintenanceBody": {
+    "description": "Maintenance screen sentence (pano 2.7 kare 3). No time promise."
+  },
+  "startup_maintenanceTitle": "SMAP şu an bakımda",
+  "@startup_maintenanceTitle": {
+    "description": "Maintenance screen title (pano 2.7 kare 3)."
+  },
+  "startup_registerSignInFailed": "Hesabın açıldı ama giriş yapılamadı. Giriş ekranından giriş yaparak devam et.",
+  "@startup_registerSignInFailed": {
+    "description": "Legacy registration bridge only: the account was created but the follow-up sign-in failed. Goes away with the new sign-up screen (E4)."
+  },
+  "startup_sessionExpiredAction": "Giriş Yap",
+  "@startup_sessionExpiredAction": {
+    "description": "Session expired sheet primary button; opens the sign-in screen and returns to the same screen afterwards (pano 2.7 kare 2)."
+  },
+  "startup_sessionExpiredBody": "Güvenliğin için yeniden giriş yapman gerekiyor. Okuttuğun denemeler hesabında duruyor.",
+  "@startup_sessionExpiredBody": {
+    "description": "Session expired sheet sentence (pano 2.7 kare 2)."
+  },
+  "startup_sessionExpiredTitle": "Oturumun sona erdi",
+  "@startup_sessionExpiredTitle": {
+    "description": "Session expired sheet title (pano 2.7 kare 2)."
+  },
+  "startup_unknownRoleBody": "Hesap türün tanınmadı. Çıkış yapıp yeniden giriş yapmayı dene; sorun sürerse bize yaz.",
+  "@startup_unknownRoleBody": {
+    "description": "Unknown role screen sentence (pano 2.7 kare 4)."
+  },
+  "startup_unknownRoleContact": "Destek'e Yaz",
+  "@startup_unknownRoleContact": {
+    "description": "Unknown role screen text button: opens a mail draft to support; hidden while no support address is configured (pano 2.7 kare 4)."
+  },
+  "startup_unknownRoleReLogin": "Yeniden Giriş Yap",
+  "@startup_unknownRoleReLogin": {
+    "description": "Unknown role screen primary button: signs out and goes to the welcome screen (pano 2.7 kare 4)."
+  },
+  "startup_unknownRoleTitle": "Hesabın açılamadı",
+  "@startup_unknownRoleTitle": {
+    "description": "Unknown role screen title (pano 2.7 kare 4)."
   }
 }

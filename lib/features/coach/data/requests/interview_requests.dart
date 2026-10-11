@@ -31,7 +31,11 @@ abstract final class InterviewRequests {
     path: '/coach/addNewInterview',
     body: <String, Object>{
       'dataObj': <String, Object>{
-        'date': date.toUtc().toIso8601String(),
+        // Zoneless local time, exactly as the legacy screen sent it
+        // (`interviews_screen.dart:620`). Switching to UTC would shift every
+        // stored interview by the device offset; waits for the backend's
+        // answer (DATA2 open question 1).
+        'date': date.toLocal().toIso8601String(),
         'type': type.code,
         'student': studentId,
       },

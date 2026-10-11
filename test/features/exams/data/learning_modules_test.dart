@@ -46,6 +46,9 @@ void main() {
       registerLessonsData,
       registerCardsData,
     ],
+    // Only the data layer under test; the app's services (session manager,
+    // router) need modules this test does not register.
+    serviceModules: const [],
   );
 
   test('the data modules resolve to one repository each', () async {

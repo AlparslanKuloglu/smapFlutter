@@ -550,4 +550,57 @@ class AppLocalizationsTr extends AppLocalizations {
   String schedule_removeA11y(String topic) {
     return '$topic, programdan çıkar';
   }
+
+  @override
+  String get startup_appIconLabel => 'SMAP uygulama ikonu';
+
+  @override
+  String get startup_bootFailedTitle => 'SMAP açılamadı';
+
+  @override
+  String get startup_forceUpdateAction => 'Güncelle';
+
+  @override
+  String get startup_forceUpdateBody =>
+      'Bu sürüm artık desteklenmiyor. Devam etmek için SMAP\'i güncelle; verilerin hesabında duruyor.';
+
+  @override
+  String get startup_forceUpdateTitle => 'Yeni sürüm gerekli';
+
+  @override
+  String get startup_loadingLabel => 'SMAP açılıyor';
+
+  @override
+  String get startup_maintenanceBody =>
+      'Kısa süre içinde geri döneceğiz. Verilerin güvende; bakım bitince kaldığın yerden devam edersin.';
+
+  @override
+  String get startup_maintenanceTitle => 'SMAP şu an bakımda';
+
+  @override
+  String get startup_registerSignInFailed =>
+      'Hesabın açıldı ama giriş yapılamadı. Giriş ekranından giriş yaparak devam et.';
+
+  @override
+  String get startup_sessionExpiredAction => 'Giriş Yap';
+
+  @override
+  String get startup_sessionExpiredBody =>
+      'Güvenliğin için yeniden giriş yapman gerekiyor. Okuttuğun denemeler hesabında duruyor.';
+
+  @override
+  String get startup_sessionExpiredTitle => 'Oturumun sona erdi';
+
+  @override
+  String get startup_unknownRoleBody =>
+      'Hesap türün tanınmadı. Çıkış yapıp yeniden giriş yapmayı dene; sorun sürerse bize yaz.';
+
+  @override
+  String get startup_unknownRoleContact => 'Destek\'e Yaz';
+
+  @override
+  String get startup_unknownRoleReLogin => 'Yeniden Giriş Yap';
+
+  @override
+  String get startup_unknownRoleTitle => 'Hesabın açılamadı';
 }
