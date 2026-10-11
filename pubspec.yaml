@@ -147,6 +147,8 @@ flutter:
     - assets/authors/t/
     - assets/authors/t1/
     - assets/authors/t2/
+    - assets/brand/
+    - assets/illustrations/
 
   fonts:
     - family: PlusJakartaSans
