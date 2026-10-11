@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:smap/core/utils/turkish_text.dart';
 import 'package:smap/shared/ui/identity/avatar_initials.dart';
-import 'package:smap/shared/ui/text/delta_text.dart';
+import 'package:smap/shared/ui/text/delta_direction.dart';
 import 'package:smap/shared/ui/text/highlight_text.dart';
 
 void main() {

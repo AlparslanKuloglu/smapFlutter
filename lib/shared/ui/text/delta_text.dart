@@ -5,21 +5,9 @@ import 'package:smap/core/theme/smap_text.dart';
 import 'package:smap/core/theme/theme_context.dart';
 import 'package:smap/core/utils/tr_format.dart';
 import 'package:smap/l10n/app_localizations.dart';
+import 'package:smap/shared/ui/text/delta_direction.dart';
 
-/// The direction a [DeltaText] points.
-enum DeltaDirection {
-  up,
-  down,
-  flat;
-
-  /// The direction of [value] as it will be written: a value that rounds to
-  /// zero in `TrFormat.delta` is [flat], so "0" never carries an arrow and
-  /// "+0,001" cannot show an up arrow beside the text "0".
-  static DeltaDirection of(num value) {
-    if (TrFormat.delta(value) == '0') return flat;
-    return value > 0 ? up : down;
-  }
-}
+export 'package:smap/shared/ui/text/delta_direction.dart' show DeltaDirection;
 
 /// The three sizes of the change text (C49 "Metrik ve delta metni").
 enum DeltaTextSize {
