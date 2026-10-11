@@ -161,16 +161,21 @@ class ExamItemDetailResponse
   final List<LessonCardTallyDto>? lessons;
 }
 
-/// One card earned by an exam in `getTotalInfoCard`: only its lesson is read.
+/// One card earned by an exam in `getTotalInfoCard`: its lesson and, when the
+/// entry names it, the card's item (an id or a populated object; the card
+/// deck of an exam keeps those cards only).
 @MappableClass(ignoreNull: true)
 class EarnedCardDto with EarnedCardDtoMappable {
-  const EarnedCardDto({this.lesson});
+  const EarnedCardDto({this.lesson, this.item});
 
   factory EarnedCardDto.fromJson(Map<String, dynamic> json) =>
       EarnedCardDtoMapper.fromJson(json);
 
   @MappableField(hook: IdRefHook())
   final String? lesson;
+
+  @MappableField(hook: IdRefHook())
+  final String? item;
 }
 
 /// Answer of `GET /student/getTotalInfoCard?mexamId=`: one entry per card the
