@@ -1,0 +1,265 @@
+{
+  "@@locale": "tr",
+  "lessons_literatureName": "Türk Dili ve Edebiyatı",
+  "@lessons_literatureName": {
+    "description": "Name of the literature lesson in the Derslerim list, the detail title and the sheets (pano 7.1 kare 2, 7.4). The server calls it Edebiyat."
+  },
+  "lessons_sos2Name": "{name}-2",
+  "@lessons_sos2Name": {
+    "description": "Name of the SOS-2 row of a lesson (pano 7.1 kare 2): \"Tarih-2\", \"Coğrafya-2\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "lessons_testSocialSciences1": "Türk Dili ve Edebiyatı–Sosyal Bilimler 1 testi",
+  "@lessons_testSocialSciences1": {
+    "description": "Test line of the AYT row of Tarih and Coğrafya (pano 7.1 kare 2)."
+  },
+  "lessons_testSocialSciences2": "Sosyal Bilimler 2 testi",
+  "@lessons_testSocialSciences2": {
+    "description": "Test line of the SOS-2 row of Tarih and Coğrafya (pano 7.1 kare 2)."
+  },
+  "lessons_loadErrorTitle": "Dersler yüklenemedi",
+  "@lessons_loadErrorTitle": {
+    "description": "Title of the error state of the Derslerim list (pano 1.22 kare 4 wording)."
+  },
+  "lessons_loadErrorMessage": "Bağlantını kontrol edip tekrar dene.",
+  "@lessons_loadErrorMessage": {
+    "description": "Sentence of the error states of Derslerim, Ders Detayı and Konu Detayı (pano 7.5 kare 3)."
+  },
+  "lessons_sendFailed": "Gönderilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@lessons_sendFailed": {
+    "description": "Toast when \"Öğrendim\" could not be sent (pano 1.22 kare 1 error toast)."
+  },
+  "lessons_exampleLabel": "Örnek",
+  "@lessons_exampleLabel": {
+    "description": "Small heading of the example box (C51, pano 7.3)."
+  },
+  "lessons_webSheetTitle": "Kavram haritan web'de",
+  "@lessons_webSheetTitle": {
+    "description": "Title of the \"Web'de\" sheet (pano 7.1 kare 3)."
+  },
+  "lessons_webSheetBody": "Matematik ve Geometri kavram haritan şimdilik {host}'da.",
+  "@lessons_webSheetBody": {
+    "description": "Sentence of the \"Web'de\" sheet (pano 7.1 kare 3); the host is the site's address, \"smaptr.com\".",
+    "placeholders": {
+      "host": {
+        "type": "String"
+      }
+    }
+  },
+  "lessons_webSheetOpen": "Web'de Aç",
+  "@lessons_webSheetOpen": {
+    "description": "Primary button of the \"Web'de\" sheet: opens the browser (pano 7.1 kare 3)."
+  },
+  "lessonDetail_missingFilter": "Eksiklerim ({count})",
+  "@lessonDetail_missingFilter": {
+    "description": "Filter chip of Ders Detayı (pano 7.2 kare 1): the lesson's missing items, all tracks.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "lessonDetail_cards": "Kartlarım",
+  "@lessonDetail_cards": {
+    "description": "Text button of Ders Detayı that opens the lesson's card deck (pano 7.2)."
+  },
+  "lessonDetail_cardsProgress": "Kartlarım · {known}/{total}",
+  "@lessonDetail_cardsProgress": {
+    "description": "The same button with the deck's progress (pano 7.2 kare 3); only with real card counts.",
+    "placeholders": {
+      "known": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "lessonDetail_segmentAll": "Tümü",
+  "@lessonDetail_segmentAll": {
+    "description": "First option of the category segment of a lesson without tracks (pano 7.2 kare 1)."
+  },
+  "lessonDetail_filterNote": "Yalnız eksiği olan konular. Numaralar tam listedeki sırayı korur.",
+  "@lessonDetail_filterNote": {
+    "description": "Footnote under the topic card while the missing filter is on (pano 7.2 kare 2)."
+  },
+  "lessonDetail_filterEmptyTitle": "Bu süzgeçte gösterilecek konu yok",
+  "@lessonDetail_filterEmptyTitle": {
+    "description": "Title of the empty card when the missing filter hides every topic (pano 7.5 kare 2)."
+  },
+  "lessonDetail_filterEmptyBody": "{segment}'de eksik konun yok. Tüm {segment} konularını görmek için süzgeci kapat.",
+  "@lessonDetail_filterEmptyBody": {
+    "description": "Sentence of the empty filter card for a named segment (pano 7.5 kare 2): \"SOS-2'de eksik konun yok. …\".",
+    "placeholders": {
+      "segment": {
+        "type": "String"
+      }
+    }
+  },
+  "lessonDetail_filterEmptyBodyAll": "Eksik konun yok. Tüm konuları görmek için süzgeci kapat.",
+  "@lessonDetail_filterEmptyBodyAll": {
+    "description": "Sentence of the empty filter card on the \"Tümü\" segment."
+  },
+  "lessonDetail_filterEmptyAction": "Süzgeci Kapat",
+  "@lessonDetail_filterEmptyAction": {
+    "description": "Text button of the empty filter card (pano 7.5 kare 2)."
+  },
+  "lessonDetail_noTopics": "Bu dersin konuları hazırlanıyor.",
+  "@lessonDetail_noTopics": {
+    "description": "Empty state of a lesson the server lists no topic for (same wording as pano 7.5 \"Boş metinler\")."
+  },
+  "lessonDetail_errorTitle": "Konular yüklenemedi",
+  "@lessonDetail_errorTitle": {
+    "description": "Title of the error state of Ders Detayı (pano 7.5 kare 3 wording)."
+  },
+  "lessonDetail_sectionTopics": "Konular",
+  "@lessonDetail_sectionTopics": {
+    "description": "First option of the Edebiyat section segment (pano 7.4)."
+  },
+  "lessonDetail_sectionAuthors": "Yazar ve Eserler",
+  "@lessonDetail_sectionAuthors": {
+    "description": "Second option of the Edebiyat section segment (pano 7.4)."
+  },
+  "literature_empty": "Yazar listesi hazırlanıyor.",
+  "@literature_empty": {
+    "description": "Empty state of the Yazar ve Eserler list."
+  },
+  "literature_errorTitle": "Yazarlar yüklenemedi",
+  "@literature_errorTitle": {
+    "description": "Title of the error state of the Yazar ve Eserler list."
+  },
+  "literature_authorA11y": "{name}, {era}",
+  "@literature_authorA11y": {
+    "description": "Screen reader sentence of an author row (C28): \"Namık Kemal, Tanzimat\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "era": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_about": "Hakkında",
+  "@literature_about": {
+    "description": "Heading of the biography in the author sheet (pano 7.4 kare 2)."
+  },
+  "literature_works": "Eserleri",
+  "@literature_works": {
+    "description": "Heading of the works in the author sheet (pano 7.4 kare 2)."
+  },
+  "literature_otherType": "Diğer",
+  "@literature_otherType": {
+    "description": "Heading of the works whose type the app does not know."
+  },
+  "literature_workMissingA11y": "{title}, eksik",
+  "@literature_workMissingA11y": {
+    "description": "Screen reader reading of a work that is still missing.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_learned": "Öğrendim",
+  "@literature_learned": {
+    "description": "Primary button of the author sheet: marks the author's missing works learned (pano 7.4 kare 2)."
+  },
+  "topicDetail_contextTrack": "{lesson} · {track} · {number}. konu",
+  "@topicDetail_contextTrack": {
+    "description": "Line under the topic title (pano 7.3 kare 1): \"Türkçe · TYT · 1. konu\".",
+    "placeholders": {
+      "lesson": {
+        "type": "String"
+      },
+      "track": {
+        "type": "String"
+      },
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "topicDetail_context": "{lesson} · {number}. konu",
+  "@topicDetail_context": {
+    "description": "The same line for a lesson opened on \"Tümü\", which has no track name.",
+    "placeholders": {
+      "lesson": {
+        "type": "String"
+      },
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "topicDetail_counts": "{subTopics} alt başlık · {items} madde",
+  "@topicDetail_counts": {
+    "description": "Second line under the topic title (pano 7.3 kare 1): \"5 alt başlık · 25 madde\".",
+    "placeholders": {
+      "subTopics": {
+        "type": "String"
+      },
+      "items": {
+        "type": "String"
+      }
+    }
+  },
+  "topicDetail_itemCount": "{count} madde",
+  "@topicDetail_itemCount": {
+    "description": "Item count in the meta line of a sub-topic card (pano 7.3 kare 1): \"4 madde\".",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "topicDetail_openCard": "Kartı Aç",
+  "@topicDetail_openCard": {
+    "description": "Text button under an open item: opens its card in a sheet (pano 7.3 kare 1)."
+  },
+  "topicDetail_empty": "Bu konunun içeriği hazırlanıyor.",
+  "@topicDetail_empty": {
+    "description": "Empty state of a topic without sub-topics (pano 7.5 \"Boş metinler\")."
+  },
+  "topicDetail_errorTitle": "Konu yüklenemedi",
+  "@topicDetail_errorTitle": {
+    "description": "Title of the error state of Konu Detayı (pano 7.5 kare 3)."
+  },
+  "cardSheet_context": "{lesson} · {topic}",
+  "@cardSheet_context": {
+    "description": "Small line over the card title in the card sheet (pano 7.3 kare 3): \"Türkçe · Sözcükte Anlam\".",
+    "placeholders": {
+      "lesson": {
+        "type": "String"
+      },
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "cardSheet_learned": "Öğrendim",
+  "@cardSheet_learned": {
+    "description": "Primary button of the card sheet, only on a missing card (pano 7.3 kare 3)."
+  },
+  "cardSheet_confirmTitle": "Kartı Bildiklerim'e taşıyalım mı?",
+  "@cardSheet_confirmTitle": {
+    "description": "Question of the one-time confirmation of \"Öğrendim\" (pano 8.1 kare 2)."
+  },
+  "cardSheet_confirmBody": "\"{name}\" eksiklerinden çıkıp Bildiklerim'e geçecek.",
+  "@cardSheet_confirmBody": {
+    "description": "Sentence of the confirmation of \"Öğrendim\" (pano 8.1 kare 2).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "cardSheet_dontAsk": "Bir daha sorma",
+  "@cardSheet_dontAsk": {
+    "description": "Checkbox of the confirmation of \"Öğrendim\"; kept on the device (pano 8.1 kare 2)."
+  }
+}

@@ -46,6 +46,13 @@ final class DevicePreferences {
   /// Result ids of the exams the student starred in Denemelerim (`String`,
   /// a JSON list). The favorite lives on the device only (spec decision 4.8).
   static const favoriteExamsKey = 'analytics.favoriteExams';
+  /// Section chosen on the Edebiyat detail, `topics` or `authors` (`String`;
+  /// pano 7.4 "seçim cihazda hatırlanır").
+  static const lessonsLiteratureSectionKey = 'lessons.literatureSection';
+
+  /// Day or week view last used on a program, `day` / `week` (`String`;
+  /// pano 3.4).
+  static const scheduleProgramViewKey = 'schedule.programView';
 
   /// Every key the cache loads. Anything else is rejected.
   static const Set<String> allowedKeys = {
@@ -59,6 +66,8 @@ final class DevicePreferences {
     notificationPrimerAnsweredKey,
     lessonsExamTypeKey,
     favoriteExamsKey,
+    lessonsLiteratureSectionKey,
+    scheduleProgramViewKey,
   };
 
   final SharedPreferencesWithCache _prefs;

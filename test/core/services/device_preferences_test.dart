@@ -77,6 +77,8 @@ void main() {
         DevicePreferences.notificationPrimerAnsweredKey,
         DevicePreferences.lessonsExamTypeKey,
         DevicePreferences.favoriteExamsKey,
+        DevicePreferences.lessonsLiteratureSectionKey,
+        DevicePreferences.scheduleProgramViewKey,
       ];
 
       expect(DevicePreferences.allowedKeys, keys.toSet());
