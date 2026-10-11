@@ -1,0 +1,208 @@
+{
+  "@@locale": "tr",
+  "onboarding_skip": "Geç",
+  "@onboarding_skip": {
+    "description": "Text button at the top right of the first two intro pages; goes to the role question (pano 2.1 kare 2 and 3). The board says \"Geç\"."
+  },
+  "onboarding_intro1Title": "Optik formunu kamerayla okut",
+  "@onboarding_intro1Title": {
+    "description": "Intro page 1 title (pano 2.1 kare 2)."
+  },
+  "onboarding_intro1Body": "Deneme bitince formunun fotoğrafını çek; cevapların sayılır, netin hesaplanır.",
+  "@onboarding_intro1Body": {
+    "description": "Intro page 1 sentence (pano 2.1 kare 2)."
+  },
+  "onboarding_intro2Title": "Netini ve gelişimini gör",
+  "@onboarding_intro2Title": {
+    "description": "Intro page 2 title (pano 2.1 kare 3)."
+  },
+  "onboarding_intro2Body": "Her denemenin neti, doğru-yanlış dağılımı ve önceki denemene göre farkı tek ekranda.",
+  "@onboarding_intro2Body": {
+    "description": "Intro page 2 sentence (pano 2.1 kare 3)."
+  },
+  "onboarding_intro3Title": "Eksiklerini konu konu kapat",
+  "@onboarding_intro3Title": {
+    "description": "Intro page 3 title (pano 2.1 kare 4)."
+  },
+  "onboarding_intro3Body": "Kaçırdığın konular eksik listene girer; konu anlatımı ve bilgi kartlarıyla tamamlarsın.",
+  "@onboarding_intro3Body": {
+    "description": "Intro page 3 sentence (pano 2.1 kare 4)."
+  },
+  "onboarding_start": "Başla",
+  "@onboarding_start": {
+    "description": "Primary button of the last intro page; goes to the role question (pano 2.1 kare 4)."
+  },
+  "onboarding_scanVisualA11y": "Optik form fotoğrafı: form bulundu, köşeler turuncu tutamaçlarla işaretli, altta kamera düğmesi",
+  "@onboarding_scanVisualA11y": {
+    "description": "Screen reader description of the phone mock-up of intro page 1 (pano 2.1 kare 2)."
+  },
+  "onboarding_cameraButtonA11y": "Kamera düğmesi",
+  "@onboarding_cameraButtonA11y": {
+    "description": "Name of the camera button drawn inside the phone mock-up (decoration)."
+  },
+  "onboarding_sampleExamTitle": "AYT · Türkiye Geneli Deneme 6",
+  "@onboarding_sampleExamTitle": {
+    "description": "Example exam title above the net on intro page 2 (pano 2.1 kare 3)."
+  },
+  "onboarding_sampleChartA11y": "AYT net grafiği: 8 Mayıs 48,5 netten 5 Ekim 67,5 nete",
+  "@onboarding_sampleChartA11y": {
+    "description": "Screen reader name of the example net chart (pano 2.1 kare 3)."
+  },
+  "onboarding_sampleSubjectName": "Türkçe",
+  "@onboarding_sampleSubjectName": {
+    "description": "Subject name of the example topic rows on intro page 3 (pano 2.1 kare 4); decoration."
+  },
+  "onboarding_sampleTopic1": "Fiilde Çatı",
+  "@onboarding_sampleTopic1": {
+    "description": "First example topic of intro page 3 (pano 2.1 kare 4)."
+  },
+  "onboarding_sampleTopic2": "Noktalama İşaretleri",
+  "@onboarding_sampleTopic2": {
+    "description": "Second example topic of intro page 3 (pano 2.1 kare 4)."
+  },
+  "onboarding_sampleTopic3": "Cümlenin Öğeleri",
+  "@onboarding_sampleTopic3": {
+    "description": "Third example topic of intro page 3 (pano 2.1 kare 4)."
+  },
+  "onboarding_sampleCardKicker": "Tarih · bilgi kartı",
+  "@onboarding_sampleCardKicker": {
+    "description": "Small heading of the example info card on intro page 3 (pano 2.1 kare 4)."
+  },
+  "onboarding_sampleCardTitle": "Edirne-Segedin Antlaşması (1444)",
+  "@onboarding_sampleCardTitle": {
+    "description": "Title of the example info card on intro page 3 (pano 2.1 kare 4)."
+  },
+  "onboarding_sampleCardBody": "Haçlılarla Osmanlı Devleti'nin imzaladığı ilk antlaşma.",
+  "@onboarding_sampleCardBody": {
+    "description": "Body of the example info card on intro page 3 (pano 2.1 kare 4)."
+  },
+  "onboarding_sampleCardAction": "Öğrendim",
+  "@onboarding_sampleCardAction": {
+    "description": "Button of the example info card on intro page 3 (pano 2.1 kare 4); decoration."
+  },
+  "onboarding_roleTitle": "SMAP'i nasıl kullanacaksın?",
+  "@onboarding_roleTitle": {
+    "description": "Role screen title (pano 2.2 kare 1)."
+  },
+  "onboarding_roleSubtitle": "Ekranların buna göre hazırlanır.",
+  "@onboarding_roleSubtitle": {
+    "description": "Role screen sentence under the title (pano 2.2 kare 1)."
+  },
+  "onboarding_roleGroupA11y": "Rol",
+  "@onboarding_roleGroupA11y": {
+    "description": "Name of the radio group of the two role options (pano 2.2 kare 1)."
+  },
+  "onboarding_roleStudent": "Öğrenciyim",
+  "@onboarding_roleStudent": {
+    "description": "Role option title (pano 2.2 kare 1)."
+  },
+  "onboarding_roleStudentDesc": "Denemelerini okut, eksiklerini kapat.",
+  "@onboarding_roleStudentDesc": {
+    "description": "Role option sentence of the student (pano 2.2 kare 1)."
+  },
+  "onboarding_roleCoach": "Öğrenci Koçuyum",
+  "@onboarding_roleCoach": {
+    "description": "Role option title (pano 2.2 kare 1)."
+  },
+  "onboarding_roleCoachDesc": "Öğrencilerinin gelişimini izle, görüşmelerini planla.",
+  "@onboarding_roleCoachDesc": {
+    "description": "Role option sentence of the coach (pano 2.2 kare 1)."
+  },
+  "onboarding_gradeTitle": "Kaçıncı sınıftasın?",
+  "@onboarding_gradeTitle": {
+    "description": "Grade screen title (pano 2.2 kare 2 and 3)."
+  },
+  "onboarding_gradeGroupA11y": "Sınıf",
+  "@onboarding_gradeGroupA11y": {
+    "description": "Name of the radio group of the grade chips (pano 2.2 kare 2)."
+  },
+  "onboarding_gradeGraduate": "Mezun",
+  "@onboarding_gradeGraduate": {
+    "description": "Label of the \"graduate\" grade chip (pano 2.2 kare 2)."
+  },
+  "onboarding_gradeA11y": "{grade}. sınıf",
+  "@onboarding_gradeA11y": {
+    "description": "Screen reader name of a numbered grade chip, e.g. \"12. sınıf\" (pano 2.2 kare 2).",
+    "placeholders": {
+      "grade": {
+        "type": "String"
+      }
+    }
+  },
+  "onboarding_trackTitle": "Alanın",
+  "@onboarding_trackTitle": {
+    "description": "Heading of the study track choice (pano 2.2 kare 2 and 3)."
+  },
+  "onboarding_trackGroupA11y": "Alan",
+  "@onboarding_trackGroupA11y": {
+    "description": "Name of the radio group of the track chips (pano 2.2 kare 2)."
+  },
+  "onboarding_trackSayisal": "Sayısal",
+  "@onboarding_trackSayisal": {
+    "description": "Study track chip (pano 2.2 kare 2)."
+  },
+  "onboarding_trackEsitAgirlik": "Eşit Ağırlık",
+  "@onboarding_trackEsitAgirlik": {
+    "description": "Study track chip (pano 2.2 kare 2)."
+  },
+  "onboarding_trackSozel": "Sözel",
+  "@onboarding_trackSozel": {
+    "description": "Study track chip (pano 2.2 kare 2)."
+  },
+  "onboarding_trackDil": "Dil",
+  "@onboarding_trackDil": {
+    "description": "Study track chip (pano 2.2 kare 2); not selectable while the backend has no code for it."
+  },
+  "onboarding_gradeNoFieldInfo": "9. ve 10. sınıfta alan seçilmez; 11. sınıfa geçince Hesap'tan eklersin.",
+  "@onboarding_gradeNoFieldInfo": {
+    "description": "Info line shown instead of the track chips for grades 9 and 10 (pano 2.2 kare 3)."
+  },
+  "onboarding_trackRequired": "Alanını seç.",
+  "@onboarding_trackRequired": {
+    "description": "Error under the track chips when Devam Et is pressed for 11, 12 or Mezun without a track (spec 4.A 2.2-2 [Karar])."
+  },
+  "onboarding_cameraTitle": "Formunu okutmak için kamera gerekli",
+  "@onboarding_cameraTitle": {
+    "description": "Camera primer title (pano 2.2 kare 4)."
+  },
+  "onboarding_cameraBody": "SMAP kamerayı yalnız optik formunu çekerken kullanır. Bir sonraki adımda telefonun izin isteyecek.",
+  "@onboarding_cameraBody": {
+    "description": "Camera primer sentence (pano 2.2 kare 4)."
+  },
+  "onboarding_cameraAllow": "Kameraya İzin Ver",
+  "@onboarding_cameraAllow": {
+    "description": "Camera primer primary button; opens the system dialog (pano 2.2 kare 4)."
+  },
+  "onboarding_cameraLater": "Sonra",
+  "@onboarding_cameraLater": {
+    "description": "Camera primer text button; moves on without the permission (pano 2.2 kare 4)."
+  },
+  "onboarding_cameraDeniedTitle": "Kamera izni kapalı",
+  "@onboarding_cameraDeniedTitle": {
+    "description": "Camera primer title when the permission was refused (pano 4.1 kare 2)."
+  },
+  "onboarding_cameraDeniedBody": "Formunu okutabilmek için Ayarlar'da SMAP'e kamera izni ver. Sonra buraya dön; kaldığın yerden devam edersin.",
+  "@onboarding_cameraDeniedBody": {
+    "description": "Camera primer sentence when the permission was refused (pano 4.1 kare 2)."
+  },
+  "onboarding_openSettings": "Ayarları Aç",
+  "@onboarding_openSettings": {
+    "description": "Camera primer primary button when the permission was refused; opens the app's system settings (pano 4.1 kare 2)."
+  },
+  "onboarding_welcomeTitle": "SMAP'e hoş geldin",
+  "@onboarding_welcomeTitle": {
+    "description": "Welcome screen title (pano 2.2 kare 5)."
+  },
+  "onboarding_welcomeBody": "Hesabın varsa giriş yap; yoksa birkaç adımda kaydol. Seçtiklerin kayıt formuna gelir.",
+  "@onboarding_welcomeBody": {
+    "description": "Welcome screen sentence (pano 2.2 kare 5)."
+  },
+  "onboarding_welcomeRegister": "Kayıt Ol",
+  "@onboarding_welcomeRegister": {
+    "description": "Welcome screen primary button; opens the sign-up form with the picks (pano 2.2 kare 5)."
+  },
+  "onboarding_welcomeLogin": "Giriş Yap",
+  "@onboarding_welcomeLogin": {
+    "description": "Welcome screen secondary button; opens the sign-in screen (pano 2.2 kare 5)."
+  }
+}
