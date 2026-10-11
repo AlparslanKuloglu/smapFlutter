@@ -22,11 +22,11 @@ class _RegisterFormState extends State<RegisterForm> {
   static const Color _inputFill = Color(0xFFE8F1FA);
 
   final _formKey = GlobalKey<FormState>();
-  final _fullNameController = TextEditingController(text: "Ad Soyad");
-  final _usernameController = TextEditingController(text: "usernametest");
-  final _emailController = TextEditingController(text: "test@smap.tr");
-  final _passwordController = TextEditingController(text: "12101210");
-  final _confirmPasswordController = TextEditingController(text: "12101210");
+  final _fullNameController = TextEditingController();
+  final _usernameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
   final _coachCodeController = TextEditingController();
 
   RegisterRole _role = RegisterRole.student;
