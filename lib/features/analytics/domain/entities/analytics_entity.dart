@@ -1,3 +1,0 @@
-class AnalyticsEntity {
-  const AnalyticsEntity();
-}

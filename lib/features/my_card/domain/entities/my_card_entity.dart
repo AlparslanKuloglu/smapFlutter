@@ -1,3 +1,0 @@
-class MyCardEntity {
-  const MyCardEntity();
-}
