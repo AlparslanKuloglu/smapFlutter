@@ -1,5 +1,125 @@
 {
   "@@locale": "tr",
+  "analytics_netChartA11y": "{scope} net grafiği, {startDate} {startNet} netten {endDate} {endNet} nete, {count} deneme",
+  "@analytics_netChartA11y": {
+    "description": "Screen reader summary of the net chart (C48).",
+    "placeholders": {
+      "scope": {
+        "type": "String"
+      },
+      "startDate": {
+        "type": "String"
+      },
+      "startNet": {
+        "type": "String"
+      },
+      "endDate": {
+        "type": "String"
+      },
+      "endNet": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "analytics_netChartBalloonHead": "{name} · {date}",
+  "@analytics_netChartBalloonHead": {
+    "description": "Chart balloon first line (C48): \"TYT Genel Deneme 9 · 28 Eyl.\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_netChartBalloonNet": "{net} net",
+  "@analytics_netChartBalloonNet": {
+    "description": "Chart balloon second line (C48): \"74,75 net\".",
+    "placeholders": {
+      "net": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_netChartFootnote": "net · {scope} 0–{max} · son nokta vurgulu",
+  "@analytics_netChartFootnote": {
+    "description": "Net chart card footnote (C48): \"net · TYT 0–120 · son nokta vurgulu\".",
+    "placeholders": {
+      "scope": {
+        "type": "String"
+      },
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_netChartPointA11y": "{name}, {date}, {net} net",
+  "@analytics_netChartPointA11y": {
+    "description": "Screen reader name of one chart point (C48): \"TYT Genel Deneme 9, 28 Eylül, 74,75 net\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      },
+      "net": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_netChartPointNoNameA11y": "{date}, {net} net",
+  "@analytics_netChartPointNoNameA11y": {
+    "description": "Screen reader name of one chart point of an exam without a name (C48).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "net": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_netChartRange": "Son {count} deneme",
+  "@analytics_netChartRange": {
+    "description": "Net chart card: how many exams the chart shows (C48).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "analytics_netChartSingleA11y": "{scope} net grafiği, {date} {net} net, 1 deneme",
+  "@analytics_netChartSingleA11y": {
+    "description": "Screen reader summary of a net chart with one exam (C48).",
+    "placeholders": {
+      "scope": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      },
+      "net": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_netChartTitle": "Net gelişimi",
+  "@analytics_netChartTitle": {
+    "description": "Net chart card title (C48)."
+  },
+  "cards_favoriteAdd": "Favorilere ekle",
+  "@cards_favoriteAdd": {
+    "description": "Study card favorite star, not yet a favorite (C52)."
+  },
+  "cards_favoriteRemove": "Favorilerden çıkar",
+  "@cards_favoriteRemove": {
+    "description": "Study card favorite star, already a favorite (C52)."
+  },
   "common_cancel": "Vazgeç",
   "@common_cancel": {
     "description": "Dismiss button of dialogs and sheets. Never use 'İptal'."
@@ -75,6 +195,383 @@
   "errors_validation": "Bilgilerini kontrol edip tekrar dene.",
   "@errors_validation": {
     "description": "AppErrorCode.validation: the server rejected the input. A server-written message may replace this text."
+  },
+  "exams_correctAnswer": "Doğru {answer}",
+  "@exams_correctAnswer": {
+    "description": "Question cell (C43): the right option under a wrong or blank question, \"Doğru A\".",
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "exams_deltaVsPrevious": "önceki {type}'ye göre",
+  "@exams_deltaVsPrevious": {
+    "description": "Last-exam card: what the net change is measured against (C25). {type} is TYT or AYT, both take \"ye\".",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "exams_deltaVsPreviousMoment": "önceki {type} denemene göre",
+  "@exams_deltaVsPreviousMoment": {
+    "description": "Result moment: what the net change is measured against (C26, screen 5.1).",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "exams_dybA11y": "{correct} doğru, {wrong} yanlış, {blank} boş",
+  "@exams_dybA11y": {
+    "description": "Screen reader sentence of a D/Y/B counter (C41): \"86 doğru, 74 yanlış, 0 boş\".",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "wrong": {
+        "type": "int"
+      },
+      "blank": {
+        "type": "int"
+      }
+    }
+  },
+  "exams_dybBlank": "Boş",
+  "@exams_dybBlank": {
+    "description": "D/Y/B counter, large: the word beside the blank chip (C41)."
+  },
+  "exams_dybCorrect": "Doğru",
+  "@exams_dybCorrect": {
+    "description": "D/Y/B counter, large: the word under the correct chip (C41)."
+  },
+  "exams_dybLetterBlank": "B",
+  "@exams_dybLetterBlank": {
+    "description": "D/Y/B counter, small with letters: blank (C41)."
+  },
+  "exams_dybLetterCorrect": "D",
+  "@exams_dybLetterCorrect": {
+    "description": "D/Y/B counter, small with letters: correct (C41)."
+  },
+  "exams_dybLetterWrong": "Y",
+  "@exams_dybLetterWrong": {
+    "description": "D/Y/B counter, small with letters: wrong (C41)."
+  },
+  "exams_dybWordBlank": "boş",
+  "@exams_dybWordBlank": {
+    "description": "D/Y/B counter, small with words: blank (C41)."
+  },
+  "exams_dybWordCorrect": "doğru",
+  "@exams_dybWordCorrect": {
+    "description": "D/Y/B counter, small with words: correct (C41)."
+  },
+  "exams_dybWordWrong": "yanlış",
+  "@exams_dybWordWrong": {
+    "description": "D/Y/B counter, small with words: wrong (C41)."
+  },
+  "exams_dybWrong": "Yanlış",
+  "@exams_dybWrong": {
+    "description": "D/Y/B counter, large: the word beside the wrong chip (C41)."
+  },
+  "exams_examRowA11y": "{name}, {type}, {date}, {net} net",
+  "@exams_examRowA11y": {
+    "description": "Screen reader sentence of an exam row (C24).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "type": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      },
+      "net": {
+        "type": "String"
+      }
+    }
+  },
+  "exams_favoriteAdd": "Favorilere ekle",
+  "@exams_favoriteAdd": {
+    "description": "Exam favorite star, not yet a favorite: tooltip and screen reader name (C24)."
+  },
+  "exams_favoriteRemove": "Favorilerden çıkar",
+  "@exams_favoriteRemove": {
+    "description": "Exam favorite star, already a favorite: tooltip and screen reader name (C24)."
+  },
+  "exams_fewQuestions": "Az soru",
+  "@exams_fewQuestions": {
+    "description": "Tag on a topic with one or two questions (C23)."
+  },
+  "exams_formCheckBlankA11y": "{number}. soru, boş okundu, düzeltmek için dokun",
+  "@exams_formCheckBlankA11y": {
+    "description": "Form check cell reading, nothing read (C43, screen 4.7).",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "exams_formCheckCorrectedA11y": "{number}. soru, düzeltildi: {marked}",
+  "@exams_formCheckCorrectedA11y": {
+    "description": "Form check cell reading, corrected by the student (C43, screen 4.7).",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "marked": {
+        "type": "String"
+      }
+    }
+  },
+  "exams_formCheckReadA11y": "{number}. soru, okundu: {marked}",
+  "@exams_formCheckReadA11y": {
+    "description": "Form check cell reading, read mark (C43, screen 4.7).",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "marked": {
+        "type": "String"
+      }
+    }
+  },
+  "exams_momentA11y": "{name}, {net} net, {correct} doğru, {wrong} yanlış, {blank} boş",
+  "@exams_momentA11y": {
+    "description": "Screen reader sentence of the result moment without a change (C26, screen 5.1).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "net": {
+        "type": "String"
+      },
+      "correct": {
+        "type": "int"
+      },
+      "wrong": {
+        "type": "int"
+      },
+      "blank": {
+        "type": "int"
+      }
+    }
+  },
+  "exams_momentWithDeltaA11y": "{name}, {net} net, {correct} doğru, {wrong} yanlış, {blank} boş, önceki sınava göre {delta}",
+  "@exams_momentWithDeltaA11y": {
+    "description": "Screen reader sentence of the result moment with the net change (C26, screen 5.1).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "net": {
+        "type": "String"
+      },
+      "correct": {
+        "type": "int"
+      },
+      "wrong": {
+        "type": "int"
+      },
+      "blank": {
+        "type": "int"
+      },
+      "delta": {
+        "type": "String"
+      }
+    }
+  },
+  "exams_netUnit": "net",
+  "@exams_netUnit": {
+    "description": "The unit written after a net figure (\"67,5 net\")."
+  },
+  "exams_placementScore": "Yerleştirme puanı",
+  "@exams_placementScore": {
+    "description": "Exam header score card: label under the score (C26)."
+  },
+  "exams_questionBlankA11y": "Soru {number}, boş, doğru cevap {correctAnswer}",
+  "@exams_questionBlankA11y": {
+    "description": "Question cell reading, blank question (C43).",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "correctAnswer": {
+        "type": "String"
+      }
+    }
+  },
+  "exams_questionBlankNoKeyA11y": "Soru {number}, boş",
+  "@exams_questionBlankNoKeyA11y": {
+    "description": "Question cell reading, blank question when the data has no answer key (C43).",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "exams_questionCorrectA11y": "Soru {number}, doğru, işaretin {marked}",
+  "@exams_questionCorrectA11y": {
+    "description": "Question cell reading, right answer (C43).",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "marked": {
+        "type": "String"
+      }
+    }
+  },
+  "exams_questionCount": "{count} soru",
+  "@exams_questionCount": {
+    "description": "Question count of a test row (C42): \"40 soru\".",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "exams_questionWrongA11y": "Soru {number}, yanlış, işaretin {marked}, doğru cevap {correctAnswer}",
+  "@exams_questionWrongA11y": {
+    "description": "Question cell reading, wrong answer (C43): \"Soru 7, yanlış, işaretin C, doğru cevap A\".",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "marked": {
+        "type": "String"
+      },
+      "correctAnswer": {
+        "type": "String"
+      }
+    }
+  },
+  "exams_questionWrongNoKeyA11y": "Soru {number}, yanlış, işaretin {marked}",
+  "@exams_questionWrongNoKeyA11y": {
+    "description": "Question cell reading, wrong answer when the data has no answer key (C43).",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "marked": {
+        "type": "String"
+      }
+    }
+  },
+  "exams_rank": "Sıra",
+  "@exams_rank": {
+    "description": "Exam header score card: label under the rank (C26)."
+  },
+  "exams_scoreColumnA11y": "{label}, {value}",
+  "@exams_scoreColumnA11y": {
+    "description": "Screen reader sentence of one score card column (C26): \"Sıra, 48.215.\".",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "exams_stackedBarA11y": "{total} sorudan {correct} doğru, {wrong} yanlış, {blank} boş",
+  "@exams_stackedBarA11y": {
+    "description": "Screen reader sentence of a stacked D/Y/B bar (C42): \"40 sorudan 23 doğru, 17 yanlış, 0 boş\".",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "correct": {
+        "type": "int"
+      },
+      "wrong": {
+        "type": "int"
+      },
+      "blank": {
+        "type": "int"
+      }
+    }
+  },
+  "exams_summaryAnalyze": "Analizi Gör",
+  "@exams_summaryAnalyze": {
+    "description": "Last-exam card: the primary button (C25)."
+  },
+  "exams_summaryEmptyBody": "Optik formunu okuttuğunda netin, doğru-yanlış dağılımın ve en çok kaçırdığın konu burada görünür.",
+  "@exams_summaryEmptyBody": {
+    "description": "Last-exam card with no exam: explanation (C25, screen 3.1 kare 3)."
+  },
+  "exams_summaryEmptyTitle": "Henüz deneme okutmadın.",
+  "@exams_summaryEmptyTitle": {
+    "description": "Last-exam card with no exam: title (C25, screen 3.1 kare 3)."
+  },
+  "exams_summaryScan": "İlk Denemeni Okut",
+  "@exams_summaryScan": {
+    "description": "Last-exam card with no exam: the primary button (C25)."
+  },
+  "exams_summaryWeakestTopic": "En çok kaçırdığın konu",
+  "@exams_summaryWeakestTopic": {
+    "description": "Last-exam card: label above the weakest-topic sentence (C25)."
+  },
+  "exams_testRowA11y": "{name}, {net} net, {total} sorudan {correct} doğru, {wrong} yanlış, {blank} boş",
+  "@exams_testRowA11y": {
+    "description": "Screen reader sentence of a test row with its bar (C42).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "net": {
+        "type": "String"
+      },
+      "total": {
+        "type": "int"
+      },
+      "correct": {
+        "type": "int"
+      },
+      "wrong": {
+        "type": "int"
+      },
+      "blank": {
+        "type": "int"
+      }
+    }
+  },
+  "kit2_a11ySelectHint": "seçenekleri açar",
+  "@kit2_a11ySelectHint": {
+    "description": "Hint of a SelectField (C12)."
+  },
+  "kit2_a11yTimeWheelHour": "Saat",
+  "@kit2_a11yTimeWheelHour": {
+    "description": "Screen reader name of the hour wheel (C66)."
+  },
+  "kit2_a11yTimeWheelMinute": "Dakika",
+  "@kit2_a11yTimeWheelMinute": {
+    "description": "Screen reader name of the minute wheel (C66)."
+  },
+  "kit2_a11yToastClose": "Bildirimi kapat",
+  "@kit2_a11yToastClose": {
+    "description": "Accessible name of the toast close button, shown only while a screen reader is on (C74)."
+  },
+  "kit2_comingSoonBody": "Bu bölüm henüz hazır değil. Hazır olduğunda burada göreceksin.",
+  "@kit2_comingSoonBody": {
+    "description": "ComingSoonSheet sentence (C73)."
+  },
+  "kit2_comingSoonTitle": "Yakında",
+  "@kit2_comingSoonTitle": {
+    "description": "ComingSoonSheet title (C73). Kit and gallery only."
+  },
+  "kit2_connectedStrip": "Bağlandın",
+  "@kit2_connectedStrip": {
+    "description": "Offline strip message for 2 s after the connection returns (C75, handoff 11.15)."
+  },
+  "kit2_offlineStrip": "Çevrimdışısın. Son kaydedilen veriler gösteriliyor.",
+  "@kit2_offlineStrip": {
+    "description": "Offline strip message (C75, board 1.22 kare 6)."
+  },
+  "kit2_selectPlaceholder": "Seç",
+  "@kit2_selectPlaceholder": {
+    "description": "Value shown by an empty SelectField (C12)."
   },
   "kit_a11yAsksConfirmation": "onay ister",
   "@kit_a11yAsksConfirmation": {
@@ -221,5 +718,231 @@
   "kit_showPassword": "Şifreyi göster",
   "@kit_showPassword": {
     "description": "Accessible name of the show-password button (C02, C09)."
+  },
+  "lessons_cardsKnown": "{known} / {total} kart biliniyor",
+  "@lessons_cardsKnown": {
+    "description": "Card progress under a subject row (C20, C44).",
+    "placeholders": {
+      "known": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "lessons_missingCount": "{count} eksik",
+  "@lessons_missingCount": {
+    "description": "EksikTag and its reading (C08): \"31 eksik\".",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "lessons_missingItem": "Eksik",
+  "@lessons_missingItem": {
+    "description": "EksikTag at item level, no count (C08, card face)."
+  },
+  "lessons_noMissing": "eksik yok",
+  "@lessons_noMissing": {
+    "description": "Neutral tag of a subject with no missing item (C20, screen 7.1)."
+  },
+  "lessons_onWeb": "Web'de",
+  "@lessons_onWeb": {
+    "description": "Tag of a subject that opens on the web (C20, C21)."
+  },
+  "lessons_opensOnWeb": "web'de açılır",
+  "@lessons_opensOnWeb": {
+    "description": "Screen reader part of a web-only subject row (C20): \"Matematik, web'de açılır\"."
+  },
+  "lessons_tileMissingA11y": "{name}, {count} eksik",
+  "@lessons_tileMissingA11y": {
+    "description": "Screen reader sentence of a subject tile with missing items (C21): \"Tarih, 60 eksik\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "lessons_tileWebA11y": "{name}, web'de açılır",
+  "@lessons_tileWebA11y": {
+    "description": "Screen reader sentence of a web-only subject tile (C21).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "lessons_topicRowA11y": "{number}. {name}",
+  "@lessons_topicRowA11y": {
+    "description": "Screen reader start of a topic row (C22): \"9. Fiilde Çatı\".",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_a11yTabPosition": "sekme, 5'te {position}",
+  "@nav_a11yTabPosition": {
+    "description": "Screen reader position of a bottom bar tab (C84): 'Analizlerim, sekme, 5'te 2'. The bar has five slots (the camera button holds the third), so the total is always 5 and the suffix is fixed.",
+    "placeholders": {
+      "position": {
+        "type": "int"
+      }
+    }
+  },
+  "nav_back": "Geri",
+  "@nav_back": {
+    "description": "Accessible name and tooltip of the detail bar back button (C82; pano 1.18)."
+  },
+  "nav_barLabel": "Ana gezinme",
+  "@nav_barLabel": {
+    "description": "Screen reader name of the bottom bar (C84; pano 1.19)."
+  },
+  "nav_cameraA11y": "Okut: deneme formunu kamerayla okut",
+  "@nav_cameraA11y": {
+    "description": "Accessible name of the camera button (C84)."
+  },
+  "nav_cameraLabel": "Okut",
+  "@nav_cameraLabel": {
+    "description": "Visible label under the camera button (C84). Hidden from screen readers; the button has its own name."
+  },
+  "nav_contextStripA11y": "{title}, {detail}",
+  "@nav_contextStripA11y": {
+    "description": "Single screen reader reading of the context strip (C83): 'Alparslan Kuloğlu'nun verileri, 12. sınıf, Eşit Ağırlık'.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "detail": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_contextStripTitle": "{name} verileri",
+  "@nav_contextStripTitle": {
+    "description": "Context strip title (C83; pano 1.18 kare 6, 10.4). The name arrives with its genitive suffix from TurkishSuffix.genitive: 'Alparslan Kuloğlu'nun verileri'.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_homeCoachNoStudents": "Henüz öğrencin yok",
+  "@nav_homeCoachNoStudents": {
+    "description": "Sub line of the coach home band without students (C81; pano 10.1 kare 3)."
+  },
+  "nav_homeCoachStudents": "{students} öğrenci",
+  "@nav_homeCoachStudents": {
+    "description": "Sub line of the coach home band when no meeting count is known or it is zero (C81). The design gives no copy for zero meetings, so the meeting part is left out.",
+    "placeholders": {
+      "students": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_homeCoachSummary": "{students} öğrenci · önümüzdeki 7 günde {meetings} görüşme",
+  "@nav_homeCoachSummary": {
+    "description": "Sub line of the coach home band (C81; pano 10.1).",
+    "placeholders": {
+      "students": {
+        "type": "String"
+      },
+      "meetings": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_homeCounterA11y": "YKS'ye {days} gün kaldı. Sınav {date}.",
+  "@nav_homeCounterA11y": {
+    "description": "Single screen reader reading of the counter (C81): 'YKS'ye 252 gün kaldı. Sınav 19 Haziran 2027 Cumartesi.'",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_homeCounterCompact": "YKS'ye {days} gün",
+  "@nav_homeCounterCompact": {
+    "description": "One-line counter of the shrunken home band (C81).",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_homeCounterExam": "YKS · {date}",
+  "@nav_homeCounterExam": {
+    "description": "Exam line under the unit, the date from TrFormat.uzunTarihGun: 'YKS · 19 Haziran 2027 Cumartesi' (C81).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_homeCounterUnit": "gün kaldı",
+  "@nav_homeCounterUnit": {
+    "description": "Unit next to the big exam counter in the student home band (C81)."
+  },
+  "nav_homeGreeting": "Merhaba, {name}",
+  "@nav_homeGreeting": {
+    "description": "Greeting in the home band (C81; pano 3.1, 10.1).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_tabAccount": "Hesap",
+  "@nav_tabAccount": {
+    "description": "Bottom bar tab, student and coach (C84)."
+  },
+  "nav_tabAnalytics": "Analizlerim",
+  "@nav_tabAnalytics": {
+    "description": "Bottom bar tab, student only (C84)."
+  },
+  "nav_tabHome": "Anasayfa",
+  "@nav_tabHome": {
+    "description": "Bottom bar tab, student and coach (C84)."
+  },
+  "nav_tabLessons": "Derslerim",
+  "@nav_tabLessons": {
+    "description": "Bottom bar tab, student only (C84)."
+  },
+  "nav_tabMeetings": "Görüşmelerim",
+  "@nav_tabMeetings": {
+    "description": "Bottom bar tab, coach only (C84). The longest label; it must fit the 82,5 pt slot at text scale 1,3 (FittedBox)."
+  },
+  "nav_tabStudents": "Öğrencilerim",
+  "@nav_tabStudents": {
+    "description": "Bottom bar tab, coach only (C84)."
+  },
+  "schedule_changeTimeA11y": "Saat {time}, değiştir",
+  "@schedule_changeTimeA11y": {
+    "description": "Program item time button in edit mode (C30): \"Saat 10:00, değiştir\".",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_removeA11y": "{topic}, programdan çıkar",
+  "@schedule_removeA11y": {
+    "description": "Program item remove button in edit mode (C30): \"Fiilde Çatı, programdan çıkar\".",
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
   }
 }
