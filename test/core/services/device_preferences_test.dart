@@ -76,6 +76,7 @@ void main() {
         DevicePreferences.skipLearnedConfirmKey,
         DevicePreferences.notificationPrimerAnsweredKey,
         DevicePreferences.lessonsExamTypeKey,
+        DevicePreferences.favoriteExamsKey,
       ];
 
       expect(DevicePreferences.allowedKeys, keys.toSet());

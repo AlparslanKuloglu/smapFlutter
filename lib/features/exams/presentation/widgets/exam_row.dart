@@ -30,16 +30,20 @@ import 'package:smap/shared/ui/surfaces/app_row_shell.dart';
 ///   `borderControl`, Star Fill in `primary` when set. The favorite is kept on
 ///   the device only and is low emphasis; it plays a selection haptic.
 ///
+/// A field the server did not send ([net], [date], [counts], [publisher]) is
+/// not drawn: no made-up zero (the Denemelerim list of the Analizlerim
+/// screen, pano 6.2 "Ad yoksa ... yayınevi ve D/Y/B çizilmez").
+///
 /// The row opens the exam detail. It is read as "Türkiye Geneli Deneme 6,
 /// AYT, 5 Eki. 2026, 67,5 net"; the star is its own button ("Favorilere
 /// ekle" / "Favorilerden çıkar").
 class ExamRow extends StatelessWidget {
   const ExamRow({
     required this.name,
-    required this.net,
-    required this.counts,
-    required this.date,
     required this.typeLabel,
+    this.net,
+    this.counts,
+    this.date,
     this.publisher,
     this.coverUrl,
     this.isFavorite = false,
@@ -50,10 +54,14 @@ class ExamRow extends StatelessWidget {
 
   final String name;
 
-  /// The net from the server.
-  final double net;
-  final DybCounts counts;
-  final DateTime date;
+  /// The net from the server; null draws no net.
+  final double? net;
+
+  /// Doğru / Yanlış / Boş; null draws no counter.
+  final DybCounts? counts;
+
+  /// When the exam was solved; null draws no date.
+  final DateTime? date;
 
   /// "TYT" or "AYT".
   final String typeLabel;
@@ -79,8 +87,12 @@ class ExamRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.appColors;
     final l10n = AppLocalizations.of(context);
-    final dateText = TrFormat.kisaTarih(date, withYear: true);
-    final netText = TrFormat.net(net);
+    final day = date;
+    final value = net;
+    final dateText = day == null
+        ? null
+        : TrFormat.kisaTarih(day, withYear: true);
+    final netText = value == null ? null : TrFormat.net(value);
     final favoriteChanged = onFavoriteChanged;
 
     return Semantics(
@@ -88,7 +100,14 @@ class ExamRow extends StatelessWidget {
       explicitChildNodes: true,
       button: onTap != null,
       onTap: onTap,
-      label: l10n.exams_examRowA11y(name, typeLabel, dateText, netText),
+      label: dateText != null && netText != null
+          ? l10n.exams_examRowA11y(name, typeLabel, dateText, netText)
+          : [
+              name,
+              if (typeLabel.isNotEmpty) typeLabel,
+              ?dateText,
+              if (netText != null) '$netText ${l10n.exams_netUnit}',
+            ].join(', '),
       child: AppRowShell(
         onTap: onTap,
         padding: EdgeInsets.only(
@@ -116,8 +135,10 @@ class ExamRow extends StatelessWidget {
                         counts: counts,
                       ),
                     ),
-                    const SizedBox(width: AppSpacing.s8),
-                    _ExamNet(netText: netText),
+                    if (netText != null) ...[
+                      const SizedBox(width: AppSpacing.s8),
+                      _ExamNet(netText: netText),
+                    ],
                   ],
                 ),
               ),
@@ -156,9 +177,9 @@ class _ExamTexts extends StatelessWidget {
 
   final String name;
   final String typeLabel;
-  final String dateText;
+  final String? dateText;
   final String? publisher;
-  final DybCounts counts;
+  final DybCounts? counts;
 
   /// Gap above the counter.
   static const double _counterGap = 6;
@@ -180,16 +201,18 @@ class _ExamTexts extends StatelessWidget {
             runSpacing: AppSpacing.s4,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              AppTag(label: typeLabel),
-              Text(dateText, style: meta),
+              if (typeLabel.isNotEmpty) AppTag(label: typeLabel),
+              if (dateText != null) Text(dateText!, style: meta),
             ],
           ),
           if (publisherName != null) ...[
             const SizedBox(height: AppSpacing.s4),
             Text(publisherName, style: meta),
           ],
-          const SizedBox(height: _counterGap),
-          DybCounter(counts: counts),
+          if (counts case final tally?) ...[
+            const SizedBox(height: _counterGap),
+            DybCounter(counts: tally),
+          ],
         ],
       ),
     );
