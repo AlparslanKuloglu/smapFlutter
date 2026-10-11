@@ -1,0 +1,141 @@
+{
+  "@@locale": "tr",
+  "nav_back": "Geri",
+  "@nav_back": {
+    "description": "Accessible name and tooltip of the detail bar back button (C82; pano 1.18)."
+  },
+  "nav_barLabel": "Ana gezinme",
+  "@nav_barLabel": {
+    "description": "Screen reader name of the bottom bar (C84; pano 1.19)."
+  },
+  "nav_tabHome": "Anasayfa",
+  "@nav_tabHome": {
+    "description": "Bottom bar tab, student and coach (C84)."
+  },
+  "nav_tabAnalytics": "Analizlerim",
+  "@nav_tabAnalytics": {
+    "description": "Bottom bar tab, student only (C84)."
+  },
+  "nav_tabLessons": "Derslerim",
+  "@nav_tabLessons": {
+    "description": "Bottom bar tab, student only (C84)."
+  },
+  "nav_tabStudents": "Öğrencilerim",
+  "@nav_tabStudents": {
+    "description": "Bottom bar tab, coach only (C84)."
+  },
+  "nav_tabMeetings": "Görüşmelerim",
+  "@nav_tabMeetings": {
+    "description": "Bottom bar tab, coach only (C84). The longest label; it must fit the 82,5 pt slot at text scale 1,3 (FittedBox)."
+  },
+  "nav_tabAccount": "Hesap",
+  "@nav_tabAccount": {
+    "description": "Bottom bar tab, student and coach (C84)."
+  },
+  "nav_a11yTabPosition": "sekme, 5'te {position}",
+  "@nav_a11yTabPosition": {
+    "description": "Screen reader position of a bottom bar tab (C84): 'Analizlerim, sekme, 5'te 2'. The bar has five slots (the camera button holds the third), so the total is always 5 and the suffix is fixed.",
+    "placeholders": {
+      "position": {
+        "type": "int"
+      }
+    }
+  },
+  "nav_cameraLabel": "Okut",
+  "@nav_cameraLabel": {
+    "description": "Visible label under the camera button (C84). Hidden from screen readers; the button has its own name."
+  },
+  "nav_cameraA11y": "Okut: deneme formunu kamerayla okut",
+  "@nav_cameraA11y": {
+    "description": "Accessible name of the camera button (C84)."
+  },
+  "nav_homeGreeting": "Merhaba, {name}",
+  "@nav_homeGreeting": {
+    "description": "Greeting in the home band (C81; pano 3.1, 10.1).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_homeCounterUnit": "gün kaldı",
+  "@nav_homeCounterUnit": {
+    "description": "Unit next to the big exam counter in the student home band (C81)."
+  },
+  "nav_homeCounterExam": "YKS · {date}",
+  "@nav_homeCounterExam": {
+    "description": "Exam line under the unit, the date from TrFormat.uzunTarihGun: 'YKS · 19 Haziran 2027 Cumartesi' (C81).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_homeCounterCompact": "YKS'ye {days} gün",
+  "@nav_homeCounterCompact": {
+    "description": "One-line counter of the shrunken home band (C81).",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_homeCounterA11y": "YKS'ye {days} gün kaldı. Sınav {date}.",
+  "@nav_homeCounterA11y": {
+    "description": "Single screen reader reading of the counter (C81): 'YKS'ye 252 gün kaldı. Sınav 19 Haziran 2027 Cumartesi.'",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_homeCoachSummary": "{students} öğrenci · önümüzdeki 7 günde {meetings} görüşme",
+  "@nav_homeCoachSummary": {
+    "description": "Sub line of the coach home band (C81; pano 10.1).",
+    "placeholders": {
+      "students": {
+        "type": "String"
+      },
+      "meetings": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_homeCoachStudents": "{students} öğrenci",
+  "@nav_homeCoachStudents": {
+    "description": "Sub line of the coach home band when no meeting count is known or it is zero (C81). The design gives no copy for zero meetings, so the meeting part is left out.",
+    "placeholders": {
+      "students": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_homeCoachNoStudents": "Henüz öğrencin yok",
+  "@nav_homeCoachNoStudents": {
+    "description": "Sub line of the coach home band without students (C81; pano 10.1 kare 3)."
+  },
+  "nav_contextStripTitle": "{name} verileri",
+  "@nav_contextStripTitle": {
+    "description": "Context strip title (C83; pano 1.18 kare 6, 10.4). The name arrives with its genitive suffix from TurkishSuffix.genitive: 'Alparslan Kuloğlu'nun verileri'.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "nav_contextStripA11y": "{title}, {detail}",
+  "@nav_contextStripA11y": {
+    "description": "Single screen reader reading of the context strip (C83): 'Alparslan Kuloğlu'nun verileri, 12. sınıf, Eşit Ağırlık'.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "detail": {
+        "type": "String"
+      }
+    }
+  }
+}
