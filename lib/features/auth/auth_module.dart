@@ -16,7 +16,7 @@ import 'package:smap/services/session_manager.dart';
 /// account settings, analytics, home). Set to `true` when the router bridge
 /// goes live; set back to `false` when the last legacy reader is gone, which
 /// also lets the migration delete the plain copy.
-const bool kMirrorLegacyUserData = false;
+const bool kMirrorLegacyUserData = true;
 
 /// Phase 2 (`kDataModules`): the auth endpoints, the secure user cache and the
 /// one-time legacy migration.

@@ -75,5 +75,151 @@
   "errors_validation": "Bilgilerini kontrol edip tekrar dene.",
   "@errors_validation": {
     "description": "AppErrorCode.validation: the server rejected the input. A server-written message may replace this text."
+  },
+  "kit_a11yAsksConfirmation": "onay ister",
+  "@kit_a11yAsksConfirmation": {
+    "description": "Hint of a dangerous row that opens a confirmation (C17)."
+  },
+  "kit_a11yAvatarOption": "Avatar {index}",
+  "@kit_a11yAvatarOption": {
+    "description": "Screen reader name of an avatar choice (C57); 'Avatar 3, seçili'.",
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "kit_a11yCoachAvatar": "{name}, koç",
+  "@kit_a11yCoachAvatar": {
+    "description": "Screen reader name of a coach avatar (C55).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "kit_a11yDeltaDown": "düşüş",
+  "@kit_a11yDeltaDown": {
+    "description": "Screen reader word before a falling change (C49)."
+  },
+  "kit_a11yDeltaFlat": "değişim yok",
+  "@kit_a11yDeltaFlat": {
+    "description": "Screen reader word for an unchanged value (C49)."
+  },
+  "kit_a11yDeltaUp": "artış",
+  "@kit_a11yDeltaUp": {
+    "description": "Screen reader word before a rising change (C49)."
+  },
+  "kit_a11yMoreStudents": "ve {count} öğrenci daha",
+  "@kit_a11yMoreStudents": {
+    "description": "Tail of the avatar stack reading (C56): 'Elif Şahin, Kerem Aydın ve 2 öğrenci daha'.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "kit_a11yOptionOf": "{total} seçenekten {index}",
+  "@kit_a11yOptionOf": {
+    "description": "Screen reader position of a segment option (C04): '3 seçenekten 2'.",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "kit_a11ySelected": "seçili",
+  "@kit_a11ySelected": {
+    "description": "Screen reader word for a selected segment, tab or avatar."
+  },
+  "kit_a11yTabOf": "sekme, {total} sekmeden {index}",
+  "@kit_a11yTabOf": {
+    "description": "Screen reader position of a tab (C05): 'Genel, sekme, 4 sekmeden 1'.",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      },
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "kit_avatarCount": "{count} avatar",
+  "@kit_avatarCount": {
+    "description": "Count line under the avatar picker (C57): '7 avatar'.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "kit_checking": "Kontrol ediliyor",
+  "@kit_checking": {
+    "description": "Screen reader label of the live-check spinner in a field (C09)."
+  },
+  "kit_clearSearch": "Aramayı temizle",
+  "@kit_clearSearch": {
+    "description": "Accessible name of the search clear button (C10)."
+  },
+  "kit_coachBadge": "Koç",
+  "@kit_coachBadge": {
+    "description": "The word badge on a coach avatar (C55). A word, not an icon."
+  },
+  "kit_codeDigits": "{count} hane",
+  "@kit_codeDigits": {
+    "description": "Screen reader size of the code input (C11): 'Doğrulama kodu, 6 hane'.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "kit_hidePassword": "Şifreyi gizle",
+  "@kit_hidePassword": {
+    "description": "Accessible name of the hide-password button (C02, C09)."
+  },
+  "kit_loading": "Yükleniyor",
+  "@kit_loading": {
+    "description": "AppButton: accessible name while the button is loading (C01)."
+  },
+  "kit_logoLabel": "SMAP",
+  "@kit_logoLabel": {
+    "description": "Screen reader name of the logo mark and lockup (C59)."
+  },
+  "kit_noQuestions": "Soru yok",
+  "@kit_noQuestions": {
+    "description": "Success ring with no questions at all (C46): no ring, this text."
+  },
+  "kit_optionalSuffix": "(isteğe bağlı)",
+  "@kit_optionalSuffix": {
+    "description": "Tail of an optional field label (C09). No star on required fields."
+  },
+  "kit_pageDotsA11y": "{count} ekrandan {index}.",
+  "@kit_pageDotsA11y": {
+    "description": "Screen reader reading of the onboarding page dots (C60): '3 ekrandan 1.'",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "kit_percentA11y": "Yüzde {percent}",
+  "@kit_percentA11y": {
+    "description": "Screen reader reading of the success ring (C46).",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "kit_showPassword": "Şifreyi göster",
+  "@kit_showPassword": {
+    "description": "Accessible name of the show-password button (C02, C09)."
   }
 }

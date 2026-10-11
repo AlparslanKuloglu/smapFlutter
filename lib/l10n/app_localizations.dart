@@ -207,6 +207,144 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Bilgilerini kontrol edip tekrar dene.'**
   String get errors_validation;
+
+  /// Hint of a dangerous row that opens a confirmation (C17).
+  ///
+  /// In tr, this message translates to:
+  /// **'onay ister'**
+  String get kit_a11yAsksConfirmation;
+
+  /// Screen reader name of an avatar choice (C57); 'Avatar 3, seçili'.
+  ///
+  /// In tr, this message translates to:
+  /// **'Avatar {index}'**
+  String kit_a11yAvatarOption(int index);
+
+  /// Screen reader name of a coach avatar (C55).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name}, koç'**
+  String kit_a11yCoachAvatar(String name);
+
+  /// Screen reader word before a falling change (C49).
+  ///
+  /// In tr, this message translates to:
+  /// **'düşüş'**
+  String get kit_a11yDeltaDown;
+
+  /// Screen reader word for an unchanged value (C49).
+  ///
+  /// In tr, this message translates to:
+  /// **'değişim yok'**
+  String get kit_a11yDeltaFlat;
+
+  /// Screen reader word before a rising change (C49).
+  ///
+  /// In tr, this message translates to:
+  /// **'artış'**
+  String get kit_a11yDeltaUp;
+
+  /// Tail of the avatar stack reading (C56): 'Elif Şahin, Kerem Aydın ve 2 öğrenci daha'.
+  ///
+  /// In tr, this message translates to:
+  /// **'ve {count} öğrenci daha'**
+  String kit_a11yMoreStudents(int count);
+
+  /// Screen reader position of a segment option (C04): '3 seçenekten 2'.
+  ///
+  /// In tr, this message translates to:
+  /// **'{total} seçenekten {index}'**
+  String kit_a11yOptionOf(int total, int index);
+
+  /// Screen reader word for a selected segment, tab or avatar.
+  ///
+  /// In tr, this message translates to:
+  /// **'seçili'**
+  String get kit_a11ySelected;
+
+  /// Screen reader position of a tab (C05): 'Genel, sekme, 4 sekmeden 1'.
+  ///
+  /// In tr, this message translates to:
+  /// **'sekme, {total} sekmeden {index}'**
+  String kit_a11yTabOf(int total, int index);
+
+  /// Count line under the avatar picker (C57): '7 avatar'.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} avatar'**
+  String kit_avatarCount(int count);
+
+  /// Screen reader label of the live-check spinner in a field (C09).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kontrol ediliyor'**
+  String get kit_checking;
+
+  /// Accessible name of the search clear button (C10).
+  ///
+  /// In tr, this message translates to:
+  /// **'Aramayı temizle'**
+  String get kit_clearSearch;
+
+  /// The word badge on a coach avatar (C55). A word, not an icon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Koç'**
+  String get kit_coachBadge;
+
+  /// Screen reader size of the code input (C11): 'Doğrulama kodu, 6 hane'.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} hane'**
+  String kit_codeDigits(int count);
+
+  /// Accessible name of the hide-password button (C02, C09).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifreyi gizle'**
+  String get kit_hidePassword;
+
+  /// AppButton: accessible name while the button is loading (C01).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yükleniyor'**
+  String get kit_loading;
+
+  /// Screen reader name of the logo mark and lockup (C59).
+  ///
+  /// In tr, this message translates to:
+  /// **'SMAP'**
+  String get kit_logoLabel;
+
+  /// Success ring with no questions at all (C46): no ring, this text.
+  ///
+  /// In tr, this message translates to:
+  /// **'Soru yok'**
+  String get kit_noQuestions;
+
+  /// Tail of an optional field label (C09). No star on required fields.
+  ///
+  /// In tr, this message translates to:
+  /// **'(isteğe bağlı)'**
+  String get kit_optionalSuffix;
+
+  /// Screen reader reading of the onboarding page dots (C60): '3 ekrandan 1.'
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} ekrandan {index}.'**
+  String kit_pageDotsA11y(int count, int index);
+
+  /// Screen reader reading of the success ring (C46).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yüzde {percent}'**
+  String kit_percentA11y(int percent);
+
+  /// Accessible name of the show-password button (C02, C09).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifreyi göster'**
+  String get kit_showPassword;
 }
 
 class _AppLocalizationsDelegate
