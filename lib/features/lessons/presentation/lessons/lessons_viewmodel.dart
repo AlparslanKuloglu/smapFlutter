@@ -37,6 +37,13 @@ class LessonsListData {
 /// Opens a link outside the app (`url_launcher`); `false` when it could not.
 typedef UrlOpener = Future<bool> Function(Uri uri);
 
+/// Opens the "Web'de" sheet of [row] and answers whether "Web'de Aç" was
+/// pressed.
+typedef WebSheetOpener = Future<bool> Function(LessonRow row, String host);
+
+Future<bool> _showWebSheet(LessonRow row, String host) =>
+    WebOnlySheet.show(subject: row.subject, host: host);
+
 /// The logic of Derslerim (pano 7.1, 7.5 kare 1 and 4; spec §4.F 7.1).
 ///
 /// - The lessons and their counts come from the session's [LessonsService];
@@ -59,6 +66,7 @@ class LessonsViewModel extends ReactiveViewModel {
     required Uri webUri,
     required LessonsNavigator navigator,
     required UrlOpener openUrl,
+    WebSheetOpener webSheet = _showWebSheet,
     Duration timeout = SmapDurations.skeletonTimeout,
   }) : _lessons = lessons,
        _cards = cards,
@@ -67,6 +75,7 @@ class LessonsViewModel extends ReactiveViewModel {
        _webUri = webUri,
        _navigator = navigator,
        _openUrl = openUrl,
+       _webSheet = webSheet,
        _timeout = timeout,
        _examType = LessonsExamType.fromKey(
          preferences.getString(DevicePreferences.lessonsExamTypeKey),
@@ -79,6 +88,7 @@ class LessonsViewModel extends ReactiveViewModel {
   final Uri _webUri;
   final LessonsNavigator _navigator;
   final UrlOpener _openUrl;
+  final WebSheetOpener _webSheet;
   final Duration _timeout;
 
   LessonsExamType _examType;
@@ -185,7 +195,7 @@ class LessonsViewModel extends ReactiveViewModel {
   /// one.
   Future<void> openRow(LessonRow row) async {
     if (row.webOnly) {
-      final open = await WebOnlySheet.show(subject: row.subject, host: webHost);
+      final open = await _webSheet(row, webHost);
       if (open) await _openUrl(_webUri);
       return;
     }

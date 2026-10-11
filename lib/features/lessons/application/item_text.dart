@@ -88,8 +88,9 @@ abstract final class ItemTextParser {
   /// "Örnek:", "Örnek 2:", "Örnek -": the marker of an example paragraph.
   static final RegExp _marker = RegExp(r'^[ÖöOo]rnek\s*\d*\s*[:\-–]\s*');
 
-  /// A closing sentence in parentheses.
-  static final RegExp _explanation = RegExp(r'^(.*\S)\s*\(([^()]+)\)\s*$');
+  /// A closing sentence in parentheses; the closing parenthesis may be
+  /// missing (the server's text sometimes forgets it).
+  static final RegExp _explanation = RegExp(r'^(.*\S)\s*\(([^()]+)\)?\s*$');
 
   static ItemExample? _exampleOf(String paragraph) {
     final marker = _marker.firstMatch(paragraph);

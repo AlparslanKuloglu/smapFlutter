@@ -21,6 +21,21 @@ void main() {
       ]);
     });
 
+    test(
+      'an explanation whose closing parenthesis is missing still splits',
+      () {
+        final text = ItemTextParser.parse(const [
+          'Örnek: Bazı insanlar karanlıktan korkar. (Cümledeki karanlık, '
+              'ışıksız anlamında kullanılmıştır. \n',
+        ]);
+        expect(text.examples.single.text, 'Bazı insanlar karanlıktan korkar.');
+        expect(
+          text.examples.single.explanation,
+          'Cümledeki karanlık, ışıksız anlamında kullanılmıştır.',
+        );
+      },
+    );
+
     test('an example without a closing sentence has no explanation', () {
       final text = ItemTextParser.parse(const [
         'Örnek: Yorganın yüzü kirlenmiş.',

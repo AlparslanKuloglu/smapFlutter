@@ -74,10 +74,13 @@ class AuthorSheet extends StatelessWidget {
               ),
             ),
             const SizedBox(height: _headingGap),
-            Text(
-              author.biography.join('\n\n'),
-              style: text.bodyReading.copyWith(color: colors.textPrimary),
-            ),
+            for (final (index, paragraph) in author.biography.indexed) ...[
+              if (index > 0) const SizedBox(height: AppSpacing.s8),
+              Text(
+                paragraph,
+                style: text.bodyReading.copyWith(color: colors.textPrimary),
+              ),
+            ],
           ],
           if (author.hasWorks) ...[
             if (author.biography.isNotEmpty)

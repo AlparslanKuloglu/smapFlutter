@@ -16,7 +16,6 @@ import 'package:smap/features/lessons/application/lesson_category.dart';
 import 'package:smap/features/lessons/application/lessons_service.dart';
 import 'package:smap/features/lessons/application/topic_outline.dart';
 import 'package:smap/features/lessons/data/lesson_content_repository.dart';
-import 'package:smap/features/lessons/presentation/lessons_navigator.dart';
 import 'package:smap/features/lessons/presentation/topic_detail/topic_detail_state.dart';
 import 'package:smap/features/lessons/presentation/topic_detail/topic_detail_viewmodel.dart';
 import 'package:smap/features/lessons/presentation/widgets/eksik_tag.dart';
