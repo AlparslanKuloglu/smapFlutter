@@ -139,7 +139,7 @@ void main() {
   group('createInterview', () {
     final when = DateTime.utc(2026, 7, 1, 11, 30);
 
-    test('sends the date as a UTC instant and returns the interview', () async {
+    test('sends the date as zoneless local time and returns the interview', () async {
       backend(
         FakeAdapter.json({
           'success': true,
@@ -158,7 +158,7 @@ void main() {
       expect(adapter.last.path, '/coach/addNewInterview');
       expect(adapter.last.data, {
         'dataObj': {
-          'date': '2026-07-01T11:30:00.000Z',
+          'date': when.toLocal().toIso8601String(),
           'type': 1,
           'student': 'student-1',
         },
