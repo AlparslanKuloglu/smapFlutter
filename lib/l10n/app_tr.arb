@@ -1,5 +1,136 @@
 {
   "@@locale": "tr",
+  "analytics_boxAverageNet": "Ortalama net",
+  "@analytics_boxAverageNet": {
+    "description": "Stat box label (pano 6.1)."
+  },
+  "analytics_boxAveragePoint": "Ortalama puan",
+  "@analytics_boxAveragePoint": {
+    "description": "Stat box label; drawn only when the exams have points (pano 6.1)."
+  },
+  "analytics_boxAverageRank": "Ortalama sıralama",
+  "@analytics_boxAverageRank": {
+    "description": "Stat box label; drawn only when the exams have ranks (pano 6.1)."
+  },
+  "analytics_boxExams": "Çözülen deneme",
+  "@analytics_boxExams": {
+    "description": "Stat box label (pano 6.1)."
+  },
+  "analytics_dateAcademicYear": "Bu eğitim yılı",
+  "@analytics_dateAcademicYear": {
+    "description": "Date range: since 1 September (pano 6.2 kare 2)."
+  },
+  "analytics_dateAll": "Tüm tarihler",
+  "@analytics_dateAll": {
+    "description": "Date range: no limit (pano 6.2 kare 2)."
+  },
+  "analytics_dateLast30Days": "Son 30 gün",
+  "@analytics_dateLast30Days": {
+    "description": "Date range (pano 6.2 kare 2)."
+  },
+  "analytics_dateLast3Months": "Son 3 ay",
+  "@analytics_dateLast3Months": {
+    "description": "Date range (pano 6.2 kare 2)."
+  },
+  "analytics_deltaSuffix": "son denemede",
+  "@analytics_deltaSuffix": {
+    "description": "Tail of the change line of the average net box: '+3,25 son denemede' (pano 6.1)."
+  },
+  "analytics_emptyAction": "İlk Denemeni Okut",
+  "@analytics_emptyAction": {
+    "description": "Empty state action: opens the camera (pano 6.2 kare 3)."
+  },
+  "analytics_emptyMessage": "İlk denemeni okuttuğunda sonuçların, netin ve eksik konuların burada görünür.",
+  "@analytics_emptyMessage": {
+    "description": "Empty state message of both tabs (pano 6.2 kare 3)."
+  },
+  "analytics_emptyTitle": "Henüz deneme yok",
+  "@analytics_emptyTitle": {
+    "description": "Empty state title of both tabs (pano 6.2 kare 3)."
+  },
+  "analytics_errorMessage": "Bağlantını kontrol edip tekrar dene.",
+  "@analytics_errorMessage": {
+    "description": "Genel and Denemelerim error message (pano 6.3 kare 3)."
+  },
+  "analytics_errorTitle": "Analizlerin yüklenemedi",
+  "@analytics_errorTitle": {
+    "description": "Genel tab error title (pano 6.3 kare 3)."
+  },
+  "analytics_examCount": "{count} deneme",
+  "@analytics_examCount": {
+    "description": "How many exams: '6 deneme' (pano 6.1, 6.2 counters).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "analytics_examUntitled": "{type} denemesi",
+  "@analytics_examUntitled": {
+    "description": "Title of an exam the server did not name: 'TYT denemesi' (pano 6.2 'Ad yoksa başlık tür + denemesi olur').",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_examsErrorTitle": "Denemelerin yüklenemedi",
+  "@analytics_examsErrorTitle": {
+    "description": "Denemelerim error title (same pattern as pano 6.3 kare 3)."
+  },
+  "analytics_fieldEqualWeight": "Eşit Ağırlık",
+  "@analytics_fieldEqualWeight": {
+    "description": "AYT field: Eşit Ağırlık (pano 6.1 kare 3)."
+  },
+  "analytics_fieldNumeric": "Sayısal",
+  "@analytics_fieldNumeric": {
+    "description": "AYT field: Sayısal (pano 6.1 kare 3)."
+  },
+  "analytics_fieldVerbal": "Sözel",
+  "@analytics_fieldVerbal": {
+    "description": "AYT field: Sözel (pano 6.1 kare 3)."
+  },
+  "analytics_filterA11y": "Süzgeç: {label}",
+  "@analytics_filterA11y": {
+    "description": "Screen reader name of the filter pill (pano 6.1).",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_filterEmpty": "Bu süzgeçte gösterilecek deneme yok.",
+  "@analytics_filterEmpty": {
+    "description": "Section empty state when a filter leaves no exam (not in the boards; follows the 'Bu süzgeçte gösterilecek konu yok' pattern of 7.5)."
+  },
+  "analytics_filterGeneral": "Genel",
+  "@analytics_filterGeneral": {
+    "description": "Filter scope: the whole exam, not one lesson."
+  },
+  "analytics_filterLabel": "{exam} · {scope}",
+  "@analytics_filterLabel": {
+    "description": "Filter pill: 'TYT · Genel' (pano 6.1).",
+    "placeholders": {
+      "exam": {
+        "type": "String"
+      },
+      "scope": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_filterReset": "Süzgeci Sıfırla",
+  "@analytics_filterReset": {
+    "description": "Action of the filtered-empty state (not in the boards)."
+  },
+  "analytics_loadingMoreA11y": "Daha fazla deneme yükleniyor",
+  "@analytics_loadingMoreA11y": {
+    "description": "Screen reader name of the spinner under the list (pano 6.2)."
+  },
+  "analytics_moreError": "Denemeler yüklenemedi.",
+  "@analytics_moreError": {
+    "description": "Section error under the list when the next page failed (pano 1.22 section error)."
+  },
   "analytics_netChartA11y": "{scope} net grafiği, {startDate} {startNet} netten {endDate} {endNet} nete, {count} deneme",
   "@analytics_netChartA11y": {
     "description": "Screen reader summary of the net chart (C48).",
@@ -111,6 +242,136 @@
   "analytics_netChartTitle": "Net gelişimi",
   "@analytics_netChartTitle": {
     "description": "Net chart card title (C48)."
+  },
+  "analytics_sheetApply": "Uygula",
+  "@analytics_sheetApply": {
+    "description": "Primary button of both filter sheets (pano 6.1 kare 3, 6.2 kare 2)."
+  },
+  "analytics_sheetDate": "Tarih",
+  "@analytics_sheetDate": {
+    "description": "Field label of the date chips (pano 6.2 kare 2)."
+  },
+  "analytics_sheetExam": "Sınav",
+  "@analytics_sheetExam": {
+    "description": "Field label of the filter sheet: TYT or AYT (pano 6.1 kare 3)."
+  },
+  "analytics_sheetExamA11y": "Sınav türü",
+  "@analytics_sheetExamA11y": {
+    "description": "Screen reader name of the exam segment (pano 6.1 kare 3)."
+  },
+  "analytics_sheetField": "Alan",
+  "@analytics_sheetField": {
+    "description": "Field label of the filter sheet: the AYT field (pano 6.1 kare 3)."
+  },
+  "analytics_sheetFieldA11y": "Alan",
+  "@analytics_sheetFieldA11y": {
+    "description": "Screen reader name of the field segment."
+  },
+  "analytics_sheetFieldHelp": "Ders listesi alanına göre değişir. Profildeki alanın seçili gelir.",
+  "@analytics_sheetFieldHelp": {
+    "description": "Help under the field segment (pano 6.1 kare 3)."
+  },
+  "analytics_sheetFilterTitle": "Süzgeç",
+  "@analytics_sheetFilterTitle": {
+    "description": "Title of the Genel filter sheet (pano 6.1 kare 3)."
+  },
+  "analytics_sheetLesson": "Ders",
+  "@analytics_sheetLesson": {
+    "description": "Field label of the filter sheet: the lesson chips (pano 6.1 kare 3)."
+  },
+  "analytics_sheetSortTitle": "Süz ve Sırala",
+  "@analytics_sheetSortTitle": {
+    "description": "Title of the Denemelerim sheet (pano 6.2 kare 2)."
+  },
+  "analytics_singleNameDate": "{name} · {date}",
+  "@analytics_singleNameDate": {
+    "description": "One-exam card: exam name and long date (pano 6.3 kare 2).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_singleNote": "İkinci denemenden sonra gelişim grafiğin burada çizilir.",
+  "@analytics_singleNote": {
+    "description": "One-exam card note (pano 6.3 kare 2)."
+  },
+  "analytics_singleTitle": "İlk denemen",
+  "@analytics_singleTitle": {
+    "description": "One-exam card heading (pano 6.3 kare 2)."
+  },
+  "analytics_sortAction": "Süz ve Sırala",
+  "@analytics_sortAction": {
+    "description": "Text button that opens the sort and filter sheet (pano 6.2 kare 1)."
+  },
+  "analytics_summaryLine": "{date} · En yeni önce",
+  "@analytics_summaryLine": {
+    "description": "Summary line over the list: date range and order (pano 6.2 kare 1).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_tabExams": "Denemelerim",
+  "@analytics_tabExams": {
+    "description": "Root band tab: the list of exams (pano 6.2)."
+  },
+  "analytics_tabGeneral": "Genel",
+  "@analytics_tabGeneral": {
+    "description": "Root band tab: the net chart and four boxes (pano 6.1)."
+  },
+  "analytics_tabsA11y": "Analizlerim bölümleri",
+  "@analytics_tabsA11y": {
+    "description": "Screen reader name of the root band's tab row (pano 6.1)."
+  },
+  "analytics_title": "Analizlerim",
+  "@analytics_title": {
+    "description": "Root band title of the Analizlerim tab (pano 6.1)."
+  },
+  "analytics_typeA11y": "Sınav türü",
+  "@analytics_typeA11y": {
+    "description": "Screen reader name of the exam type segment (pano 6.2)."
+  },
+  "analytics_typeAll": "Tümü",
+  "@analytics_typeAll": {
+    "description": "Exam type segment: all exams (pano 6.2 kare 1)."
+  },
+  "cardSheet_confirmBody": "\"{name}\" eksiklerinden çıkıp Bildiklerim'e geçecek.",
+  "@cardSheet_confirmBody": {
+    "description": "Sentence of the confirmation of \"Öğrendim\" (pano 8.1 kare 2).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "cardSheet_confirmTitle": "Kartı Bildiklerim'e taşıyalım mı?",
+  "@cardSheet_confirmTitle": {
+    "description": "Question of the one-time confirmation of \"Öğrendim\" (pano 8.1 kare 2)."
+  },
+  "cardSheet_context": "{lesson} · {topic}",
+  "@cardSheet_context": {
+    "description": "Small line over the card title in the card sheet (pano 7.3 kare 3): \"Türkçe · Sözcükte Anlam\".",
+    "placeholders": {
+      "lesson": {
+        "type": "String"
+      },
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "cardSheet_dontAsk": "Bir daha sorma",
+  "@cardSheet_dontAsk": {
+    "description": "Checkbox of the confirmation of \"Öğrendim\"; kept on the device (pano 8.1 kare 2)."
+  },
+  "cardSheet_learned": "Öğrendim",
+  "@cardSheet_learned": {
+    "description": "Primary button of the card sheet, only on a missing card (pano 7.3 kare 3)."
   },
   "cards_favoriteAdd": "Favorilere ekle",
   "@cards_favoriteAdd": {
@@ -639,6 +900,101 @@
   "@forgotPassword_update": {
     "description": "Primary button of the third reset step (pano 2.4 kare 3)."
   },
+  "home_examNameFallback": "{type} denemesi",
+  "@home_examNameFallback": {
+    "description": "Name of a result the server sent without one (board 6.2): 'AYT denemesi'.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "home_lastExam": "Son denemen",
+  "@home_lastExam": {
+    "description": "Section title of the last exam (pano 3.1 kare 1)."
+  },
+  "home_lastExamError": "Son deneme yüklenemedi.",
+  "@home_lastExamError": {
+    "description": "Section error of \"Son denemen\" (not drawn in the boards; written like \"Dersler yüklenemedi.\", pano 3.2)."
+  },
+  "home_literatureName": "Türk Dili ve Edebiyatı",
+  "@home_literatureName": {
+    "description": "Name of the literature lesson on its tile (pano 3.1 kare 1)."
+  },
+  "home_mostMissedSentence": "{topic} {total} sorudan {wrong} kaçırdın.",
+  "@home_mostMissedSentence": {
+    "description": "The weakest-topic sentence (pano 3.1). {topic} arrives with its suffix from TurkishSuffix.locative ('Kurtuluş Savaşı Hazırlık Dönemi'nde'), {wrong} from TurkishSuffix.possessiveAccusative ('9'unu').",
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      },
+      "wrong": {
+        "type": "String"
+      }
+    }
+  },
+  "home_myProgram": "Programım",
+  "@home_myProgram": {
+    "description": "The one text button of \"Bugün\" (pano 3.1 kare 1)."
+  },
+  "home_noProgram": "Haftalık programın yok. Bir hafta kurduğunda günün konuları burada görünür.",
+  "@home_noProgram": {
+    "description": "\"Bugün\" card when the student has no program (pano 3.1 kare 3)."
+  },
+  "home_setupProgram": "Haftalık Programını Kur",
+  "@home_setupProgram": {
+    "description": "Text button under the no-program sentence (pano 3.1 kare 3)."
+  },
+  "home_subjects": "Derslerin",
+  "@home_subjects": {
+    "description": "Section title of the subject strip (pano 3.1 kare 1)."
+  },
+  "home_subjectsError": "Dersler yüklenemedi.",
+  "@home_subjectsError": {
+    "description": "Section error of \"Derslerin\" (pano 3.2, spec 1.22)."
+  },
+  "home_subjectsSub": "Eksiği en çok olandan başlar",
+  "@home_subjectsSub": {
+    "description": "Meta of the subject strip (pano 3.1 kare 1); not drawn without missing items (kare 3)."
+  },
+  "home_today": "Bugün",
+  "@home_today": {
+    "description": "Section title of the planned topics of the day (pano 3.1 kare 1, SectionHeader)."
+  },
+  "home_todayDate": "{weekday}, {day} {month}",
+  "@home_todayDate": {
+    "description": "The day line of \"Bugün\": 'Cumartesi, 10 Ekim' (pano 3.1 kare 3).",
+    "placeholders": {
+      "weekday": {
+        "type": "String"
+      },
+      "day": {
+        "type": "String"
+      },
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "home_todayError": "Bugünün programı yüklenemedi.",
+  "@home_todayError": {
+    "description": "Section error of \"Bugün\" (pano 3.2 kare 2)."
+  },
+  "home_todaySub": "{date} · {program}",
+  "@home_todaySub": {
+    "description": "The meta of \"Bugün\" with the program of the day: 'Cumartesi, 10 Ekim · Ekim 2. Hafta' (pano 3.1 kare 1).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "program": {
+        "type": "String"
+      }
+    }
+  },
   "kit2_a11ySelectHint": "seçenekleri açar",
   "@kit2_a11ySelectHint": {
     "description": "Hint of a SelectField (C12)."
@@ -821,6 +1177,76 @@
   "@kit_showPassword": {
     "description": "Accessible name of the show-password button (C02, C09)."
   },
+  "lessonDetail_cards": "Kartlarım",
+  "@lessonDetail_cards": {
+    "description": "Text button of Ders Detayı that opens the lesson's card deck (pano 7.2)."
+  },
+  "lessonDetail_cardsProgress": "Kartlarım · {known}/{total}",
+  "@lessonDetail_cardsProgress": {
+    "description": "The same button with the deck's progress (pano 7.2 kare 3); only with real card counts.",
+    "placeholders": {
+      "known": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "lessonDetail_errorTitle": "Konular yüklenemedi",
+  "@lessonDetail_errorTitle": {
+    "description": "Title of the error state of Ders Detayı (pano 7.5 kare 3 wording)."
+  },
+  "lessonDetail_filterEmptyAction": "Süzgeci Kapat",
+  "@lessonDetail_filterEmptyAction": {
+    "description": "Text button of the empty filter card (pano 7.5 kare 2)."
+  },
+  "lessonDetail_filterEmptyBody": "{segment}'de eksik konun yok. Tüm {segment} konularını görmek için süzgeci kapat.",
+  "@lessonDetail_filterEmptyBody": {
+    "description": "Sentence of the empty filter card for a named segment (pano 7.5 kare 2): \"SOS-2'de eksik konun yok. …\".",
+    "placeholders": {
+      "segment": {
+        "type": "String"
+      }
+    }
+  },
+  "lessonDetail_filterEmptyBodyAll": "Eksik konun yok. Tüm konuları görmek için süzgeci kapat.",
+  "@lessonDetail_filterEmptyBodyAll": {
+    "description": "Sentence of the empty filter card on the \"Tümü\" segment."
+  },
+  "lessonDetail_filterEmptyTitle": "Bu süzgeçte gösterilecek konu yok",
+  "@lessonDetail_filterEmptyTitle": {
+    "description": "Title of the empty card when the missing filter hides every topic (pano 7.5 kare 2)."
+  },
+  "lessonDetail_filterNote": "Yalnız eksiği olan konular. Numaralar tam listedeki sırayı korur.",
+  "@lessonDetail_filterNote": {
+    "description": "Footnote under the topic card while the missing filter is on (pano 7.2 kare 2)."
+  },
+  "lessonDetail_missingFilter": "Eksiklerim ({count})",
+  "@lessonDetail_missingFilter": {
+    "description": "Filter chip of Ders Detayı (pano 7.2 kare 1): the lesson's missing items, all tracks.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "lessonDetail_noTopics": "Bu dersin konuları hazırlanıyor.",
+  "@lessonDetail_noTopics": {
+    "description": "Empty state of a lesson the server lists no topic for (same wording as pano 7.5 \"Boş metinler\")."
+  },
+  "lessonDetail_sectionAuthors": "Yazar ve Eserler",
+  "@lessonDetail_sectionAuthors": {
+    "description": "Second option of the Edebiyat section segment (pano 7.4)."
+  },
+  "lessonDetail_sectionTopics": "Konular",
+  "@lessonDetail_sectionTopics": {
+    "description": "First option of the Edebiyat section segment (pano 7.4)."
+  },
+  "lessonDetail_segmentAll": "Tümü",
+  "@lessonDetail_segmentAll": {
+    "description": "First option of the category segment of a lesson without tracks (pano 7.2 kare 1)."
+  },
   "lessons_cardsKnown": "{known} / {total} kart biliniyor",
   "@lessons_cardsKnown": {
     "description": "Card progress under a subject row (C20, C44).",
@@ -832,6 +1258,22 @@
         "type": "int"
       }
     }
+  },
+  "lessons_exampleLabel": "Örnek",
+  "@lessons_exampleLabel": {
+    "description": "Small heading of the example box (C51, pano 7.3)."
+  },
+  "lessons_literatureName": "Türk Dili ve Edebiyatı",
+  "@lessons_literatureName": {
+    "description": "Name of the literature lesson in the Derslerim list, the detail title and the sheets (pano 7.1 kare 2, 7.4). The server calls it Edebiyat."
+  },
+  "lessons_loadErrorMessage": "Bağlantını kontrol edip tekrar dene.",
+  "@lessons_loadErrorMessage": {
+    "description": "Sentence of the error states of Derslerim, Ders Detayı and Konu Detayı (pano 7.5 kare 3)."
+  },
+  "lessons_loadErrorTitle": "Dersler yüklenemedi",
+  "@lessons_loadErrorTitle": {
+    "description": "Title of the error state of the Derslerim list (pano 1.22 kare 4 wording)."
   },
   "lessons_missingCount": "{count} eksik",
   "@lessons_missingCount": {
@@ -857,6 +1299,27 @@
   "lessons_opensOnWeb": "web'de açılır",
   "@lessons_opensOnWeb": {
     "description": "Screen reader part of a web-only subject row (C20): \"Matematik, web'de açılır\"."
+  },
+  "lessons_sendFailed": "Gönderilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@lessons_sendFailed": {
+    "description": "Toast when \"Öğrendim\" could not be sent (pano 1.22 kare 1 error toast)."
+  },
+  "lessons_sos2Name": "{name}-2",
+  "@lessons_sos2Name": {
+    "description": "Name of the SOS-2 row of a lesson (pano 7.1 kare 2): \"Tarih-2\", \"Coğrafya-2\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "lessons_testSocialSciences1": "Türk Dili ve Edebiyatı–Sosyal Bilimler 1 testi",
+  "@lessons_testSocialSciences1": {
+    "description": "Test line of the AYT row of Tarih and Coğrafya (pano 7.1 kare 2)."
+  },
+  "lessons_testSocialSciences2": "Sosyal Bilimler 2 testi",
+  "@lessons_testSocialSciences2": {
+    "description": "Test line of the SOS-2 row of Tarih and Coğrafya (pano 7.1 kare 2)."
   },
   "lessons_tileMissingA11y": "{name}, {count} eksik",
   "@lessons_tileMissingA11y": {
@@ -890,6 +1353,68 @@
         "type": "String"
       }
     }
+  },
+  "lessons_webSheetBody": "Matematik ve Geometri kavram haritan şimdilik {host}'da.",
+  "@lessons_webSheetBody": {
+    "description": "Sentence of the \"Web'de\" sheet (pano 7.1 kare 3); the host is the site's address, \"smaptr.com\".",
+    "placeholders": {
+      "host": {
+        "type": "String"
+      }
+    }
+  },
+  "lessons_webSheetOpen": "Web'de Aç",
+  "@lessons_webSheetOpen": {
+    "description": "Primary button of the \"Web'de\" sheet: opens the browser (pano 7.1 kare 3)."
+  },
+  "lessons_webSheetTitle": "Kavram haritan web'de",
+  "@lessons_webSheetTitle": {
+    "description": "Title of the \"Web'de\" sheet (pano 7.1 kare 3)."
+  },
+  "literature_about": "Hakkında",
+  "@literature_about": {
+    "description": "Heading of the biography in the author sheet (pano 7.4 kare 2)."
+  },
+  "literature_authorA11y": "{name}, {era}",
+  "@literature_authorA11y": {
+    "description": "Screen reader sentence of an author row (C28): \"Namık Kemal, Tanzimat\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "era": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_empty": "Yazar listesi hazırlanıyor.",
+  "@literature_empty": {
+    "description": "Empty state of the Yazar ve Eserler list."
+  },
+  "literature_errorTitle": "Yazarlar yüklenemedi",
+  "@literature_errorTitle": {
+    "description": "Title of the error state of the Yazar ve Eserler list."
+  },
+  "literature_learned": "Öğrendim",
+  "@literature_learned": {
+    "description": "Primary button of the author sheet: marks the author's missing works learned (pano 7.4 kare 2)."
+  },
+  "literature_otherType": "Diğer",
+  "@literature_otherType": {
+    "description": "Heading of the works whose type the app does not know."
+  },
+  "literature_workMissingA11y": "{title}, eksik",
+  "@literature_workMissingA11y": {
+    "description": "Screen reader reading of a work that is still missing.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_works": "Eserleri",
+  "@literature_works": {
+    "description": "Heading of the works in the author sheet (pano 7.4 kare 2)."
   },
   "login_apple": "Apple ile Devam Et",
   "@login_apple": {
@@ -1290,6 +1815,53 @@
   "@onboarding_welcomeTitle": {
     "description": "Welcome screen title (pano 2.2 kare 5)."
   },
+  "pickers_a11yDayChip": "{weekday} {day} {month}",
+  "@pickers_a11yDayChip": {
+    "description": "Day chip reading without the state words (C62): \"Cumartesi 10 Ekim\".",
+    "placeholders": {
+      "weekday": {
+        "type": "String"
+      },
+      "day": {
+        "type": "String"
+      },
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "pickers_a11ySelected": "seçili",
+  "@pickers_a11ySelected": {
+    "description": "Day chip reading: the day is selected (C62): \"Cumartesi 10 Ekim, bugün, seçili\"."
+  },
+  "pickers_a11yToday": "bugün",
+  "@pickers_a11yToday": {
+    "description": "Day chip and calendar cell reading: the day is today (C62, C65)."
+  },
+  "pickers_monthTitle": "{month} {year}",
+  "@pickers_monthTitle": {
+    "description": "Calendar month title (C65): \"Ekim 2026\".",
+    "placeholders": {
+      "month": {
+        "type": "String"
+      },
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "pickers_nextMonth": "Sonraki ay",
+  "@pickers_nextMonth": {
+    "description": "Calendar next month button, accessible name (C65, pano 3.5 kare 1)."
+  },
+  "pickers_prevMonth": "Önceki ay",
+  "@pickers_prevMonth": {
+    "description": "Calendar previous month button, accessible name (C65, pano 3.5 kare 1)."
+  },
+  "pickers_today": "Bugün",
+  "@pickers_today": {
+    "description": "Calendar legend of the orange ring (C65, pano 3.5 kare 1)."
+  },
   "register_avatarLabel": "Avatarın",
   "@register_avatarLabel": {
     "description": "Label above the seven avatars (pano 2.5 kare 1)."
@@ -1509,6 +2081,39 @@
   "@register_usernameTaken": {
     "description": "Live check or register call: the user name is in use (pano 2.6 kare 1)."
   },
+  "schedule_add": "Ekle",
+  "@schedule_add": {
+    "description": "Topic sheet primary button (pano 3.5 kare 3)."
+  },
+  "schedule_addTopic": "Konu Ekle",
+  "@schedule_addTopic": {
+    "description": "Outline button and empty-day action that opens the hour grid (pano 3.6 kare 1, 3); also the focused empty slot (pano 3.5 kare 2)."
+  },
+  "schedule_bagEmpty": "Çantanda henüz konu yok. Denemelerinden çıkan eksik konular burada görünür.",
+  "@schedule_bagEmpty": {
+    "description": "Topic sheet, empty bag (not in the board; written here)."
+  },
+  "schedule_bagHelp": "Çantam: denemelerinden çıkan eksik konuların.",
+  "@schedule_bagHelp": {
+    "description": "Topic sheet help under the segment (pano 3.5 kare 3)."
+  },
+  "schedule_cancelProgram": "Programı İptal Et",
+  "@schedule_cancelProgram": {
+    "description": "Danger text button of edit mode (pano 3.6 kare 1); only drawn while FeatureFlags.programDeleteEnabled."
+  },
+  "schedule_cancelProgramBody": "Program listeden kalkar ve Anasayfa'daki Bugün bölümü boşalır. Bu işlem geri alınamaz.",
+  "@schedule_cancelProgramBody": {
+    "description": "Cancel program confirmation text (pano 3.6 kare 4)."
+  },
+  "schedule_cancelProgramTitle": "{name} iptal edilsin mi?",
+  "@schedule_cancelProgramTitle": {
+    "description": "Cancel program confirmation title (pano 3.6 kare 4).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "schedule_changeTimeA11y": "Saat {time}, değiştir",
   "@schedule_changeTimeA11y": {
     "description": "Program item time button in edit mode (C30): \"Saat 10:00, değiştir\".",
@@ -1518,11 +2123,460 @@
       }
     }
   },
+  "schedule_changeTimeTitle": "Saati Değiştir",
+  "@schedule_changeTimeTitle": {
+    "description": "Title of the time wheel sheet opened from an item time (pano 3.6 kare 1)."
+  },
+  "schedule_clearSearch": "Aramayı Temizle",
+  "@schedule_clearSearch": {
+    "description": "Search with no result, text button (pano 3.4 kare 2)."
+  },
+  "schedule_closeA11y": "Vazgeç",
+  "@schedule_closeA11y": {
+    "description": "Accessible name of the X of the first step (pano 3.5 kare 1)."
+  },
+  "schedule_dayChipTopics": "{count} konu",
+  "@schedule_dayChipTopics": {
+    "description": "Count line under a day chip of the grid step (pano 3.5 kare 2).",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_dayTitle": "{weekday}, {day} {month}",
+  "@schedule_dayTitle": {
+    "description": "Heading of the selected day (pano 3.4 kare 3): \"Cumartesi, 10 Ekim\".",
+    "placeholders": {
+      "weekday": {
+        "type": "String"
+      },
+      "day": {
+        "type": "String"
+      },
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_daysBody": "Birden çok gün seçebilirsin; geçmiş günler seçilemez.",
+  "@schedule_daysBody": {
+    "description": "Step 1 sentence (pano 3.5 kare 1)."
+  },
+  "schedule_daysSelected": "{count} gün seçildi",
+  "@schedule_daysSelected": {
+    "description": "Step 1 summary above \"Devam Et\" (pano 3.5 kare 1).",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_daysTitle": "Hangi günler çalışacaksın?",
+  "@schedule_daysTitle": {
+    "description": "Step 1 title (pano 3.5 kare 1)."
+  },
+  "schedule_defaultName": "{month} {week}. Hafta",
+  "@schedule_defaultName": {
+    "description": "Suggested name of a new program (pano 3.5 kare 4): \"Ekim 3. Hafta\".",
+    "placeholders": {
+      "month": {
+        "type": "String"
+      },
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_discardBody": "Seçtiğin günler ve yerleştirdiğin konular kaybolur.",
+  "@schedule_discardBody": {
+    "description": "Text of the leave confirmation (not in the board; written here)."
+  },
+  "schedule_discardConfirm": "Kaydetmeden Çık",
+  "@schedule_discardConfirm": {
+    "description": "Primary button of the leave confirmation (not in the board; written here)."
+  },
+  "schedule_discardTitle": "Program kaydedilmesin mi?",
+  "@schedule_discardTitle": {
+    "description": "Confirmation when leaving the flow with changes (pano 3.5 \"Vazgeç (X)\")."
+  },
+  "schedule_done": "Bitti",
+  "@schedule_done": {
+    "description": "Bar action that turns edit mode off; changes are already saved (pano 3.6 kare 1)."
+  },
+  "schedule_edit": "Düzenle",
+  "@schedule_edit": {
+    "description": "Bar action that turns edit mode on (pano 3.4 kare 3, 4)."
+  },
+  "schedule_emptyAction": "Haftalık Programını Kur",
+  "@schedule_emptyAction": {
+    "description": "Empty program list, primary action (pano 3.7 kare 1)."
+  },
+  "schedule_emptyBody": "Haftalık programını kurduğunda günün konuları burada ve Anasayfa'da görünür.",
+  "@schedule_emptyBody": {
+    "description": "Empty program list, sentence (pano 3.7 kare 1)."
+  },
+  "schedule_emptyDay": "Bu gün için çalışma yok.",
+  "@schedule_emptyDay": {
+    "description": "Empty day (pano 3.6 kare 3)."
+  },
+  "schedule_emptySlotA11y": "{time}, boş, konu ekle",
+  "@schedule_emptySlotA11y": {
+    "description": "Empty hour slot reading (C64, pano 3.5 kare 2).",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_emptyTitle": "Henüz programın yok",
+  "@schedule_emptyTitle": {
+    "description": "Empty program list, title (pano 3.7 kare 1)."
+  },
+  "schedule_fieldMotto": "Motto",
+  "@schedule_fieldMotto": {
+    "description": "Step 3 motto field label; the field is marked optional by the field (pano 3.5 kare 4)."
+  },
+  "schedule_fieldName": "Program adı",
+  "@schedule_fieldName": {
+    "description": "Step 3 name field label (pano 3.5 kare 4)."
+  },
+  "schedule_filledSlotA11y": "{time}, {lesson}, {topic}",
+  "@schedule_filledSlotA11y": {
+    "description": "Filled hour slot reading (C64).",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      },
+      "lesson": {
+        "type": "String"
+      },
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_gridBody": "Boş bir saate dokun, konu seç. Izgara 06:00–23:00.",
+  "@schedule_gridBody": {
+    "description": "Step 2 sentence (pano 3.5 kare 2)."
+  },
+  "schedule_gridTitle": "Konuları yerleştir",
+  "@schedule_gridTitle": {
+    "description": "Step 2 title (pano 3.5 kare 2)."
+  },
+  "schedule_inProgramAt": "Programda: {day} {time}",
+  "@schedule_inProgramAt": {
+    "description": "Under a topic already in the program (pano 3.5 kare 3).",
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_loadError": "Programların yüklenemedi",
+  "@schedule_loadError": {
+    "description": "Program list failed to load, title (pano 3.7 kare 3)."
+  },
+  "schedule_loadErrorBody": "Bağlantını kontrol edip tekrar dene.",
+  "@schedule_loadErrorBody": {
+    "description": "Program list failed to load, sentence (pano 3.7 kare 3)."
+  },
+  "schedule_mottoHelp": "Program listesinde adın altında görünür.",
+  "@schedule_mottoHelp": {
+    "description": "Step 3 motto help (pano 3.5 kare 4)."
+  },
+  "schedule_nameRequired": "Programına bir ad ver.",
+  "@schedule_nameRequired": {
+    "description": "Step 3 error under an empty name."
+  },
+  "schedule_nameTitle": "Programına ad ver",
+  "@schedule_nameTitle": {
+    "description": "Step 3 title (pano 3.5 kare 4)."
+  },
+  "schedule_new": "Yeni Program",
+  "@schedule_new": {
+    "description": "Bar action that starts the new program flow (pano 3.4 kare 1, 3.7 kare 4)."
+  },
+  "schedule_offlineNote": "Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı programını görebilirsin.",
+  "@schedule_offlineNote": {
+    "description": "Note under the list while offline (pano 3.7 kare 4)."
+  },
+  "schedule_programRowA11y": "{name}, {motto}, {range}",
+  "@schedule_programRowA11y": {
+    "description": "Program row reading without the tag (C29).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "motto": {
+        "type": "String"
+      },
+      "range": {
+        "type": "String"
+      }
+    }
+  },
   "schedule_removeA11y": "{topic}, programdan çıkar",
   "@schedule_removeA11y": {
     "description": "Program item remove button in edit mode (C30): \"Fiilde Çatı, programdan çıkar\".",
     "placeholders": {
       "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_removeSlotA11y": "{topic}, çıkar",
+  "@schedule_removeSlotA11y": {
+    "description": "Remove button of a filled hour slot (C64, pano 3.5 kare 2).",
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_resetDay": "Günü Sıfırla",
+  "@schedule_resetDay": {
+    "description": "Danger text button under the day list (pano 3.4 kare 3, 3.6 kare 1)."
+  },
+  "schedule_resetDayBody": "{date} {count} çalışma programdan çıkar. Diğer günler değişmez.",
+  "@schedule_resetDayBody": {
+    "description": "Reset day confirmation text (pano 3.6 kare 2): \"10 Ekim'deki 3 çalışma ...\". The date arrives with its locative suffix and \"ki\".",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_resetDayTitle": "{weekday} sıfırlayalım mı?",
+  "@schedule_resetDayTitle": {
+    "description": "Reset day confirmation title (pano 3.6 kare 2): \"Cumartesi'yi sıfırlayalım mı?\". The weekday arrives with its accusative suffix.",
+    "placeholders": {
+      "weekday": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_saveFailed": "Kaydedilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@schedule_saveFailed": {
+    "description": "Toast when an instant save failed; the screen goes back to the saved state."
+  },
+  "schedule_saveProgram": "Programı Kaydet",
+  "@schedule_saveProgram": {
+    "description": "Step 3 primary button (pano 3.5 kare 4)."
+  },
+  "schedule_searchHelp": "Program adında ve mottosunda arar; büyük-küçük harf ve I/ı farkı gözetmez.",
+  "@schedule_searchHelp": {
+    "description": "Search with no result, explanation (pano 3.4 kare 2)."
+  },
+  "schedule_searchHint": "Program ara",
+  "@schedule_searchHint": {
+    "description": "Search field placeholder and accessible name (pano 3.4 kare 1)."
+  },
+  "schedule_searchNoMatch": "“{query}” ile eşleşen program yok",
+  "@schedule_searchNoMatch": {
+    "description": "Search with no result, title (pano 3.4 kare 2).",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_srcBag": "Çantam",
+  "@schedule_srcBag": {
+    "description": "Topic sheet segment (pano 3.5 kare 3)."
+  },
+  "schedule_srcLessons": "Dersler",
+  "@schedule_srcLessons": {
+    "description": "Topic sheet segment (pano 3.5 kare 3)."
+  },
+  "schedule_stepOf": "Adım {step}/3",
+  "@schedule_stepOf": {
+    "description": "Step counter of the new program flow (pano 3.5).",
+    "placeholders": {
+      "step": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_studyCount": "{count} çalışma",
+  "@schedule_studyCount": {
+    "description": "Number of topics planned on the day (pano 3.4 kare 3).",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_summaryDays": "Günler",
+  "@schedule_summaryDays": {
+    "description": "Step 3 summary label (pano 3.5 kare 4)."
+  },
+  "schedule_summaryDaysValue": "{range} · {count} gün",
+  "@schedule_summaryDaysValue": {
+    "description": "Step 3 summary: \"12–17 Ekim 2026 · 6 gün\".",
+    "placeholders": {
+      "range": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_summaryEmptyDays": "{days} henüz boş; kaydettikten sonra ekleyebilirsin.",
+  "@schedule_summaryEmptyDays": {
+    "description": "Step 3 note listing the days with no topic (pano 3.5 kare 4).",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_summaryStudies": "Çalışmalar",
+  "@schedule_summaryStudies": {
+    "description": "Step 3 summary label (pano 3.5 kare 4)."
+  },
+  "schedule_summaryStudiesOneDay": "{count} çalışma, hepsi {day}",
+  "@schedule_summaryStudiesOneDay": {
+    "description": "Step 3 summary when every topic is on one day (pano 3.5 kare 4).",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      },
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_summaryStudiesSpread": "{count} çalışma, {days} güne dağılmış",
+  "@schedule_summaryStudiesSpread": {
+    "description": "Step 3 summary when the topics are on several days.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      },
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_thisWeek": "Bu hafta",
+  "@schedule_thisWeek": {
+    "description": "Tag of the program of the current week (pano 3.4 kare 1)."
+  },
+  "schedule_title": "Programım",
+  "@schedule_title": {
+    "description": "Screen title of the program list (pano 3.4 kare 1, 3.7)."
+  },
+  "schedule_toastDayReset": "{weekday} sıfırlandı.",
+  "@schedule_toastDayReset": {
+    "description": "Toast after \"Günü Sıfırla\", with \"Geri Al\" (pano 3.6 kare 3).",
+    "placeholders": {
+      "weekday": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_toastProgramCancelled": "Program iptal edildi.",
+  "@schedule_toastProgramCancelled": {
+    "description": "Toast after the program was cancelled (pano 3.6 kare 4)."
+  },
+  "schedule_toastProgramSaved": "Program kaydedildi.",
+  "@schedule_toastProgramSaved": {
+    "description": "Toast after a new program was saved (pano 3.5 kare 4)."
+  },
+  "schedule_toastTopicRemoved": "Konu çıkarıldı.",
+  "@schedule_toastTopicRemoved": {
+    "description": "Toast after removing a topic, with \"Geri Al\" (pano 3.6)."
+  },
+  "schedule_topicRowA11y": "{topic}, {lesson}",
+  "@schedule_topicRowA11y": {
+    "description": "Reading of a topic row of the topic sheet.",
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      },
+      "lesson": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_topicSheetA11y": "Konu ekle",
+  "@schedule_topicSheetA11y": {
+    "description": "Accessible name of the topic sheet (pano 3.5 kare 3)."
+  },
+  "schedule_topicSheetTitle": "{weekday} {day} {month} · {time}",
+  "@schedule_topicSheetTitle": {
+    "description": "Topic sheet title (pano 3.5 kare 3): \"Pazartesi 12 Ekim · 16:00\".",
+    "placeholders": {
+      "weekday": {
+        "type": "String"
+      },
+      "day": {
+        "type": "String"
+      },
+      "month": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_topicsLoadError": "Konular yüklenemedi",
+  "@schedule_topicsLoadError": {
+    "description": "Topic sheet, the lessons failed to load (not in the board; written here)."
+  },
+  "schedule_viewDay": "Gün",
+  "@schedule_viewDay": {
+    "description": "Segment: day view (pano 3.4 kare 3)."
+  },
+  "schedule_viewLabel": "Görünüm",
+  "@schedule_viewLabel": {
+    "description": "Accessible name of the Gün / Hafta segment (pano 3.4 kare 3)."
+  },
+  "schedule_viewWeek": "Hafta",
+  "@schedule_viewWeek": {
+    "description": "Segment: week view (pano 3.4 kare 3)."
+  },
+  "schedule_weekBlockA11y": "{day} {time}, {lesson}, {topic}",
+  "@schedule_weekBlockA11y": {
+    "description": "Reading of a week grid block (C63): \"Cumartesi 10:00, Türkçe, Fiilde Çatı\".",
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      },
+      "lesson": {
+        "type": "String"
+      },
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_weekGridA11y": "Haftalık program, {range}",
+  "@schedule_weekGridA11y": {
+    "description": "Accessible name of the week grid (C63): \"Haftalık program, 06:00–23:00\".",
+    "placeholders": {
+      "range": {
+        "type": "String"
+      }
+    }
+  },
+  "schedule_weekGridHiddenLeft": "{days} solda",
+  "@schedule_weekGridHiddenLeft": {
+    "description": "Appended to the week grid reading: the columns scrolled out at the left (C63).",
+    "placeholders": {
+      "days": {
         "type": "String"
       }
     }
@@ -1590,5 +2644,65 @@
   "startup_unknownRoleTitle": "Hesabın açılamadı",
   "@startup_unknownRoleTitle": {
     "description": "Unknown role screen title (pano 2.7 kare 4)."
+  },
+  "topicDetail_context": "{lesson} · {number}. konu",
+  "@topicDetail_context": {
+    "description": "The same line for a lesson opened on \"Tümü\", which has no track name.",
+    "placeholders": {
+      "lesson": {
+        "type": "String"
+      },
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "topicDetail_contextTrack": "{lesson} · {track} · {number}. konu",
+  "@topicDetail_contextTrack": {
+    "description": "Line under the topic title (pano 7.3 kare 1): \"Türkçe · TYT · 1. konu\".",
+    "placeholders": {
+      "lesson": {
+        "type": "String"
+      },
+      "track": {
+        "type": "String"
+      },
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "topicDetail_counts": "{subTopics} alt başlık · {items} madde",
+  "@topicDetail_counts": {
+    "description": "Second line under the topic title (pano 7.3 kare 1): \"5 alt başlık · 25 madde\".",
+    "placeholders": {
+      "subTopics": {
+        "type": "String"
+      },
+      "items": {
+        "type": "String"
+      }
+    }
+  },
+  "topicDetail_empty": "Bu konunun içeriği hazırlanıyor.",
+  "@topicDetail_empty": {
+    "description": "Empty state of a topic without sub-topics (pano 7.5 \"Boş metinler\")."
+  },
+  "topicDetail_errorTitle": "Konu yüklenemedi",
+  "@topicDetail_errorTitle": {
+    "description": "Title of the error state of Konu Detayı (pano 7.5 kare 3)."
+  },
+  "topicDetail_itemCount": "{count} madde",
+  "@topicDetail_itemCount": {
+    "description": "Item count in the meta line of a sub-topic card (pano 7.3 kare 1): \"4 madde\".",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "topicDetail_openCard": "Kartı Aç",
+  "@topicDetail_openCard": {
+    "description": "Text button under an open item: opens its card in a sheet (pano 7.3 kare 1)."
   }
 }

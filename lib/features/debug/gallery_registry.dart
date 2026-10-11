@@ -8,6 +8,7 @@ import 'package:smap/features/debug/pages/identity_gallery.dart';
 import 'package:smap/features/debug/pages/indicators_gallery.dart';
 import 'package:smap/features/debug/pages/inputs_gallery.dart';
 import 'package:smap/features/debug/pages/navigation_gallery.dart';
+import 'package:smap/features/debug/pages/pickers_gallery.dart';
 import 'package:smap/features/debug/pages/sheets_gallery.dart';
 import 'package:smap/features/debug/pages/surfaces_gallery.dart';
 
@@ -48,4 +49,5 @@ final List<GalleryPage> galleryPages = [
   GalleryPage(title: 'Durum', builder: (_) => const FeedbackGallery()),
   GalleryPage(title: 'Kabuk', builder: (_) => const NavigationGallery()),
   GalleryPage(title: 'Alan', builder: (_) => const DomainGallery()),
+  GalleryPage(title: 'Program', builder: (_) => const PickersGallery()),
 ];

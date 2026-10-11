@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:stacked/stacked.dart' hide StackedRouterExtensions;
 
+import 'package:smap/app/router/app_router.dart';
 import 'package:smap/core/config/feature_flags.dart';
 import 'package:smap/core/services/connectivity_service.dart';
 import 'package:smap/core/services/device_preferences.dart';
@@ -12,7 +13,6 @@ import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/theme_context.dart';
 import 'package:smap/core/utils/tr_format.dart';
 import 'package:smap/dependency_injection/injection_container.dart';
-import 'package:smap/features/legacy/legacy_links_e7.dart';
 import 'package:smap/features/schedule/application/program_detail.dart';
 import 'package:smap/features/schedule/application/program_entry.dart';
 import 'package:smap/features/schedule/application/program_span.dart';
@@ -125,11 +125,14 @@ DateTime? _parseDay(String? text) {
 /// konu detayı", pano 7.3).
 void _openTopic(BuildContext context, ProgramEntry entry) {
   final subject = entry.mainSubjectId;
-  if (subject == null || subject.isEmpty) return;
-  LegacyLinksE7.openTopicDetail(
-    context,
-    mainSubjectId: subject,
-    topicName: entry.title,
+  if (subject == null || subject.isEmpty || entry.lessonId.isEmpty) return;
+  context.navigateTo(
+    LessonsTabRoute(
+      children: [
+        const LessonsRoute(),
+        TopicDetailRoute(lessonId: entry.lessonId, topicId: subject),
+      ],
+    ),
   );
 }
 

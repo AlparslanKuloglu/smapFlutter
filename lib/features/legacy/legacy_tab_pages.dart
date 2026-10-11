@@ -6,12 +6,9 @@ import 'package:provider/provider.dart';
 import 'package:smap/app/shell/shell_preview.dart';
 import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/theme_context.dart';
-import 'package:smap/features/analytics/presentation/screens/analytics_screen.dart';
 import 'package:smap/features/home/presentation/provider/home_nav_provider.dart';
 import 'package:smap/features/home/presentation/screens/home_flow_screen.dart';
 import 'package:smap/features/legacy/legacy_theme.dart';
-import 'package:smap/features/my_card/presentation/provider/my_card_nav_provider.dart';
-import 'package:smap/features/my_card/presentation/screens/my_card_screen.dart';
 import 'package:smap/features/my_interviews/interviews_screen.dart';
 import 'package:smap/features/my_students/my_students_screen.dart';
 import 'package:smap/features/profile/presentation/provider/account_nav_provider.dart';
@@ -39,47 +36,6 @@ import 'package:smap/shared/ui/navigation/app_system_overlay.dart';
 //
 // The pages sit in two themes: the band and the spinner under `SmapTheme`,
 // the screen under `LegacyTheme` (the look it was built for).
-
-/// Student Anasayfa tab (`/home`): the legacy home hub and "Programım".
-@RoutePage()
-class LegacyHomeTabPage extends StatelessWidget {
-  const LegacyHomeTabPage({super.key});
-
-  @override
-  Widget build(BuildContext context) => const _LegacyHomeTab();
-}
-
-/// Student Analizlerim tab (`/analytics`): the legacy analytics screen.
-///
-/// [initialTabIndex] is the legacy screen's own top tab (0 Genel, 1
-/// Denemelerim); the home menu opens it with `LegacyTabNavigation`.
-@RoutePage()
-class LegacyAnalyticsTabPage extends StatelessWidget {
-  const LegacyAnalyticsTabPage({super.key, this.initialTabIndex});
-
-  final int? initialTabIndex;
-
-  @override
-  Widget build(BuildContext context) => _LegacyTabFrame(
-    title: AppLocalizations.of(context).nav_tabAnalytics,
-    child: AnalyticsView(initialTabIndex: initialTabIndex),
-  );
-}
-
-/// Student Derslerim tab (`/lessons`): the legacy cards screen, which draws
-/// its own header.
-@RoutePage()
-class LegacyLessonsTabPage extends StatelessWidget {
-  const LegacyLessonsTabPage({super.key});
-
-  @override
-  Widget build(BuildContext context) => _LegacyGate(
-    child: ChangeNotifierProvider<MyCardNavNotifier>(
-      create: (_) => MyCardNavNotifier(),
-      child: const LegacyTheme(child: MyCardScreen()),
-    ),
-  );
-}
 
 /// Student Hesap tab (`/account`): the legacy account hub and its sub pages.
 @RoutePage()

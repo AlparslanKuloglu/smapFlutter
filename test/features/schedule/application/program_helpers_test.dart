@@ -134,7 +134,7 @@ void main() {
 
   group('ProgramViewPreference', () {
     test(
-      'keeps the choice for the session while the key is not allowed',
+      'keeps the choice for the session without a preference store',
       () async {
         final preference = ProgramViewPreference();
 
@@ -142,9 +142,11 @@ void main() {
         await preference.write(ProgramViewMode.week);
 
         expect(preference.read(), ProgramViewMode.week);
+        // No store injected: in memory only. The key itself is allowed.
+        expect(preference.persists, isFalse);
         expect(
-          preference.persists,
-          DevicePreferences.allowedKeys.contains(ProgramViewPreference.key),
+          DevicePreferences.allowedKeys,
+          contains(ProgramViewPreference.key),
         );
       },
     );

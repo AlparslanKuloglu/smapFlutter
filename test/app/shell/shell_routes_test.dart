@@ -46,17 +46,17 @@ void main() {
       expect(namesOf('/home'), [
         StudentShellRoute.name,
         HomeTabRoute.name,
-        LegacyHomeTabRoute.name,
+        HomeRoute.name,
       ]);
       expect(namesOf('/analytics'), [
         StudentShellRoute.name,
         AnalyticsTabRoute.name,
-        LegacyAnalyticsTabRoute.name,
+        AnalyticsRoute.name,
       ]);
       expect(namesOf('/lessons'), [
         StudentShellRoute.name,
         LessonsTabRoute.name,
-        LegacyLessonsTabRoute.name,
+        LessonsRoute.name,
       ]);
       expect(namesOf('/account'), [
         StudentShellRoute.name,

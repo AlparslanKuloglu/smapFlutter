@@ -26,9 +26,9 @@ class StudentShellView extends StackedView<ShellViewModel> {
 
   /// The four tabs, in bar order.
   static const List<ShellTabSpec> tabs = [
-    ShellTabSpec(route: HomeTabRoute()),
-    ShellTabSpec(route: AnalyticsTabRoute()),
-    ShellTabSpec(route: LessonsTabRoute()),
+    ShellTabSpec(route: HomeTabRoute(), content: ShellTabContent.screen),
+    ShellTabSpec(route: AnalyticsTabRoute(), content: ShellTabContent.screen),
+    ShellTabSpec(route: LessonsTabRoute(), content: ShellTabContent.screen),
     ShellTabSpec(route: AccountTabRoute()),
   ];
 

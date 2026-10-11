@@ -15,6 +15,15 @@ import 'package:smap/core/services/device_preferences.dart';
 import 'package:smap/core/theme/app_motion.dart';
 import 'package:smap/features/auth/domain/session_state.dart';
 import 'package:smap/app/shell/tab_stack_pages.dart';
+import 'package:smap/features/analytics/presentation/analytics/analytics_view.dart';
+import 'package:smap/features/home/presentation/home/home_view.dart';
+import 'package:smap/features/lessons/presentation/lesson_detail/lesson_detail_view.dart';
+import 'package:smap/features/lessons/presentation/lessons/lessons_view.dart';
+import 'package:smap/features/lessons/presentation/topic_detail/topic_detail_view.dart';
+import 'package:smap/features/schedule/presentation/new_program/new_program_view.dart';
+import 'package:smap/features/schedule/presentation/program_detail/program_detail_view.dart';
+import 'package:smap/features/schedule/presentation/program_list/program_list_view.dart';
+import 'package:smap/features/schedule/schedule_routes.dart';
 import 'package:smap/core/domain/user_role.dart';
 import 'package:smap/features/account/domain/school_grade.dart';
 import 'package:smap/features/account/domain/study_track.dart';
@@ -81,6 +90,7 @@ final class AppRouter extends RootStackRouter implements RouteCatalog {
     ...onboardingRoutes,
     ...authRoutes,
     ...registerRoutes,
+    ...scheduleRootRoutes,
     ...shellRoutes,
   ];
 

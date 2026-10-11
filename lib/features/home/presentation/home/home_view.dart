@@ -141,33 +141,49 @@ const EdgeInsets _gutter = EdgeInsets.symmetric(horizontal: AppSpacing.gutter);
 
 // ── Where the links go ────────────────────────────────────────────────────
 //
-// Every destination is opened from one function here. The screens they open
-// are the legacy ones until their tasks land (`LegacyLinksE6`); then each
-// body becomes `context.router.push(...)` / `navigateTo(...)` of the new
-// route (Deneme Detay E10, Ders and Konu Detayı E12, Programım E7).
+// Every destination is opened from one function here. Ders and Konu Detayı
+// live in the Derslerim tab's stack, Programım in this tab's stack and the
+// new-program flow on the root stack (spec §3.6). Deneme Detay is still the
+// legacy screen until E10 (`LegacyLinksE6`).
 
 /// "Analizi Gör": the result detail of the last exam (spec §3.6).
 void _openExam(BuildContext context, String examId) =>
     unawaited(LegacyLinksE6.openExamDetail(context, examId: examId));
 
-/// A lesson tile: the lesson detail with Derslerin's last TYT/AYT choice.
-void _openLesson(BuildContext context, String lessonId) =>
-    unawaited(LegacyLinksE6.openLessonDetail(context, lessonId: lessonId));
-
-/// A row of "Bugün": the topic of the planned task.
-void _openTopic(BuildContext context, TodayRow row) => unawaited(
-  LegacyLinksE6.openTopic(
-    context,
-    topicId: row.mainSubjectId,
-    topicName: row.topic,
-    lessonId: row.lessonId,
+/// A lesson tile: the lesson detail, in the Derslerim tab.
+void _openLesson(BuildContext context, String lessonId) => unawaited(
+  context.navigateTo(
+    LessonsTabRoute(
+      children: [
+        const LessonsRoute(),
+        LessonDetailRoute(lessonId: lessonId),
+      ],
+    ),
   ),
 );
 
-/// "Programım": the program list.
-void _openProgram(BuildContext context) =>
-    unawaited(LegacyLinksE6.openProgram(context));
+/// A row of "Bugün": the topic of the planned task, in the Derslerim tab.
+/// A task without a lesson or topic id (very old programs) has nowhere to go.
+void _openTopic(BuildContext context, TodayRow row) {
+  final lessonId = row.lessonId;
+  final topicId = row.mainSubjectId;
+  if (lessonId == null || topicId == null) return;
+  unawaited(
+    context.navigateTo(
+      LessonsTabRoute(
+        children: [
+          const LessonsRoute(),
+          TopicDetailRoute(lessonId: lessonId, topicId: topicId),
+        ],
+      ),
+    ),
+  );
+}
 
-/// "Haftalık Programını Kur": the new-program flow.
+/// "Programım": the program list, on this tab's stack.
+void _openProgram(BuildContext context) =>
+    unawaited(context.router.push(const ProgramListRoute()));
+
+/// "Haftalık Programını Kur": the new-program flow, full screen.
 void _openProgramSetup(BuildContext context) =>
-    unawaited(LegacyLinksE6.openProgramSetup(context));
+    unawaited(context.router.root.push(const NewProgramRoute()));

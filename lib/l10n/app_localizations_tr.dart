@@ -9,6 +9,96 @@ class AppLocalizationsTr extends AppLocalizations {
   AppLocalizationsTr([String locale = 'tr']) : super(locale);
 
   @override
+  String get analytics_boxAverageNet => 'Ortalama net';
+
+  @override
+  String get analytics_boxAveragePoint => 'Ortalama puan';
+
+  @override
+  String get analytics_boxAverageRank => 'Ortalama sıralama';
+
+  @override
+  String get analytics_boxExams => 'Çözülen deneme';
+
+  @override
+  String get analytics_dateAcademicYear => 'Bu eğitim yılı';
+
+  @override
+  String get analytics_dateAll => 'Tüm tarihler';
+
+  @override
+  String get analytics_dateLast30Days => 'Son 30 gün';
+
+  @override
+  String get analytics_dateLast3Months => 'Son 3 ay';
+
+  @override
+  String get analytics_deltaSuffix => 'son denemede';
+
+  @override
+  String get analytics_emptyAction => 'İlk Denemeni Okut';
+
+  @override
+  String get analytics_emptyMessage =>
+      'İlk denemeni okuttuğunda sonuçların, netin ve eksik konuların burada görünür.';
+
+  @override
+  String get analytics_emptyTitle => 'Henüz deneme yok';
+
+  @override
+  String get analytics_errorMessage => 'Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get analytics_errorTitle => 'Analizlerin yüklenemedi';
+
+  @override
+  String analytics_examCount(int count) {
+    return '$count deneme';
+  }
+
+  @override
+  String analytics_examUntitled(String type) {
+    return '$type denemesi';
+  }
+
+  @override
+  String get analytics_examsErrorTitle => 'Denemelerin yüklenemedi';
+
+  @override
+  String get analytics_fieldEqualWeight => 'Eşit Ağırlık';
+
+  @override
+  String get analytics_fieldNumeric => 'Sayısal';
+
+  @override
+  String get analytics_fieldVerbal => 'Sözel';
+
+  @override
+  String analytics_filterA11y(String label) {
+    return 'Süzgeç: $label';
+  }
+
+  @override
+  String get analytics_filterEmpty => 'Bu süzgeçte gösterilecek deneme yok.';
+
+  @override
+  String get analytics_filterGeneral => 'Genel';
+
+  @override
+  String analytics_filterLabel(String exam, String scope) {
+    return '$exam · $scope';
+  }
+
+  @override
+  String get analytics_filterReset => 'Süzgeci Sıfırla';
+
+  @override
+  String get analytics_loadingMoreA11y => 'Daha fazla deneme yükleniyor';
+
+  @override
+  String get analytics_moreError => 'Denemeler yüklenemedi.';
+
+  @override
   String analytics_netChartA11y(
     String scope,
     String startDate,
@@ -57,6 +147,94 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get analytics_netChartTitle => 'Net gelişimi';
+
+  @override
+  String get analytics_sheetApply => 'Uygula';
+
+  @override
+  String get analytics_sheetDate => 'Tarih';
+
+  @override
+  String get analytics_sheetExam => 'Sınav';
+
+  @override
+  String get analytics_sheetExamA11y => 'Sınav türü';
+
+  @override
+  String get analytics_sheetField => 'Alan';
+
+  @override
+  String get analytics_sheetFieldA11y => 'Alan';
+
+  @override
+  String get analytics_sheetFieldHelp =>
+      'Ders listesi alanına göre değişir. Profildeki alanın seçili gelir.';
+
+  @override
+  String get analytics_sheetFilterTitle => 'Süzgeç';
+
+  @override
+  String get analytics_sheetLesson => 'Ders';
+
+  @override
+  String get analytics_sheetSortTitle => 'Süz ve Sırala';
+
+  @override
+  String analytics_singleNameDate(String name, String date) {
+    return '$name · $date';
+  }
+
+  @override
+  String get analytics_singleNote =>
+      'İkinci denemenden sonra gelişim grafiğin burada çizilir.';
+
+  @override
+  String get analytics_singleTitle => 'İlk denemen';
+
+  @override
+  String get analytics_sortAction => 'Süz ve Sırala';
+
+  @override
+  String analytics_summaryLine(String date) {
+    return '$date · En yeni önce';
+  }
+
+  @override
+  String get analytics_tabExams => 'Denemelerim';
+
+  @override
+  String get analytics_tabGeneral => 'Genel';
+
+  @override
+  String get analytics_tabsA11y => 'Analizlerim bölümleri';
+
+  @override
+  String get analytics_title => 'Analizlerim';
+
+  @override
+  String get analytics_typeA11y => 'Sınav türü';
+
+  @override
+  String get analytics_typeAll => 'Tümü';
+
+  @override
+  String cardSheet_confirmBody(String name) {
+    return '\"$name\" eksiklerinden çıkıp Bildiklerim\'e geçecek.';
+  }
+
+  @override
+  String get cardSheet_confirmTitle => 'Kartı Bildiklerim\'e taşıyalım mı?';
+
+  @override
+  String cardSheet_context(String lesson, String topic) {
+    return '$lesson · $topic';
+  }
+
+  @override
+  String get cardSheet_dontAsk => 'Bir daha sorma';
+
+  @override
+  String get cardSheet_learned => 'Öğrendim';
 
   @override
   String get cards_favoriteAdd => 'Favorilere ekle';
@@ -386,6 +564,60 @@ class AppLocalizationsTr extends AppLocalizations {
   String get forgotPassword_update => 'Şifreyi Güncelle';
 
   @override
+  String home_examNameFallback(String type) {
+    return '$type denemesi';
+  }
+
+  @override
+  String get home_lastExam => 'Son denemen';
+
+  @override
+  String get home_lastExamError => 'Son deneme yüklenemedi.';
+
+  @override
+  String get home_literatureName => 'Türk Dili ve Edebiyatı';
+
+  @override
+  String home_mostMissedSentence(String topic, String total, String wrong) {
+    return '$topic $total sorudan $wrong kaçırdın.';
+  }
+
+  @override
+  String get home_myProgram => 'Programım';
+
+  @override
+  String get home_noProgram =>
+      'Haftalık programın yok. Bir hafta kurduğunda günün konuları burada görünür.';
+
+  @override
+  String get home_setupProgram => 'Haftalık Programını Kur';
+
+  @override
+  String get home_subjects => 'Derslerin';
+
+  @override
+  String get home_subjectsError => 'Dersler yüklenemedi.';
+
+  @override
+  String get home_subjectsSub => 'Eksiği en çok olandan başlar';
+
+  @override
+  String get home_today => 'Bugün';
+
+  @override
+  String home_todayDate(String weekday, String day, String month) {
+    return '$weekday, $day $month';
+  }
+
+  @override
+  String get home_todayError => 'Bugünün programı yüklenemedi.';
+
+  @override
+  String home_todaySub(String date, String program) {
+    return '$date · $program';
+  }
+
+  @override
   String get kit2_a11ySelectHint => 'seçenekleri açar';
 
   @override
@@ -502,9 +734,69 @@ class AppLocalizationsTr extends AppLocalizations {
   String get kit_showPassword => 'Şifreyi göster';
 
   @override
+  String get lessonDetail_cards => 'Kartlarım';
+
+  @override
+  String lessonDetail_cardsProgress(String known, String total) {
+    return 'Kartlarım · $known/$total';
+  }
+
+  @override
+  String get lessonDetail_errorTitle => 'Konular yüklenemedi';
+
+  @override
+  String get lessonDetail_filterEmptyAction => 'Süzgeci Kapat';
+
+  @override
+  String lessonDetail_filterEmptyBody(String segment) {
+    return '$segment\'de eksik konun yok. Tüm $segment konularını görmek için süzgeci kapat.';
+  }
+
+  @override
+  String get lessonDetail_filterEmptyBodyAll =>
+      'Eksik konun yok. Tüm konuları görmek için süzgeci kapat.';
+
+  @override
+  String get lessonDetail_filterEmptyTitle =>
+      'Bu süzgeçte gösterilecek konu yok';
+
+  @override
+  String get lessonDetail_filterNote =>
+      'Yalnız eksiği olan konular. Numaralar tam listedeki sırayı korur.';
+
+  @override
+  String lessonDetail_missingFilter(String count) {
+    return 'Eksiklerim ($count)';
+  }
+
+  @override
+  String get lessonDetail_noTopics => 'Bu dersin konuları hazırlanıyor.';
+
+  @override
+  String get lessonDetail_sectionAuthors => 'Yazar ve Eserler';
+
+  @override
+  String get lessonDetail_sectionTopics => 'Konular';
+
+  @override
+  String get lessonDetail_segmentAll => 'Tümü';
+
+  @override
   String lessons_cardsKnown(int known, int total) {
     return '$known / $total kart biliniyor';
   }
+
+  @override
+  String get lessons_exampleLabel => 'Örnek';
+
+  @override
+  String get lessons_literatureName => 'Türk Dili ve Edebiyatı';
+
+  @override
+  String get lessons_loadErrorMessage => 'Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get lessons_loadErrorTitle => 'Dersler yüklenemedi';
 
   @override
   String lessons_missingCount(String count) {
@@ -524,6 +816,22 @@ class AppLocalizationsTr extends AppLocalizations {
   String get lessons_opensOnWeb => 'web\'de açılır';
 
   @override
+  String get lessons_sendFailed =>
+      'Gönderilemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String lessons_sos2Name(String name) {
+    return '$name-2';
+  }
+
+  @override
+  String get lessons_testSocialSciences1 =>
+      'Türk Dili ve Edebiyatı–Sosyal Bilimler 1 testi';
+
+  @override
+  String get lessons_testSocialSciences2 => 'Sosyal Bilimler 2 testi';
+
+  @override
   String lessons_tileMissingA11y(String name, String count) {
     return '$name, $count eksik';
   }
@@ -537,6 +845,45 @@ class AppLocalizationsTr extends AppLocalizations {
   String lessons_topicRowA11y(int number, String name) {
     return '$number. $name';
   }
+
+  @override
+  String lessons_webSheetBody(String host) {
+    return 'Matematik ve Geometri kavram haritan şimdilik $host\'da.';
+  }
+
+  @override
+  String get lessons_webSheetOpen => 'Web\'de Aç';
+
+  @override
+  String get lessons_webSheetTitle => 'Kavram haritan web\'de';
+
+  @override
+  String get literature_about => 'Hakkında';
+
+  @override
+  String literature_authorA11y(String name, String era) {
+    return '$name, $era';
+  }
+
+  @override
+  String get literature_empty => 'Yazar listesi hazırlanıyor.';
+
+  @override
+  String get literature_errorTitle => 'Yazarlar yüklenemedi';
+
+  @override
+  String get literature_learned => 'Öğrendim';
+
+  @override
+  String get literature_otherType => 'Diğer';
+
+  @override
+  String literature_workMissingA11y(String title) {
+    return '$title, eksik';
+  }
+
+  @override
+  String get literature_works => 'Eserleri';
 
   @override
   String get login_apple => 'Apple ile Devam Et';
@@ -829,6 +1176,31 @@ class AppLocalizationsTr extends AppLocalizations {
   String get onboarding_welcomeTitle => 'SMAP\'e hoş geldin';
 
   @override
+  String pickers_a11yDayChip(String weekday, String day, String month) {
+    return '$weekday $day $month';
+  }
+
+  @override
+  String get pickers_a11ySelected => 'seçili';
+
+  @override
+  String get pickers_a11yToday => 'bugün';
+
+  @override
+  String pickers_monthTitle(String month, String year) {
+    return '$month $year';
+  }
+
+  @override
+  String get pickers_nextMonth => 'Sonraki ay';
+
+  @override
+  String get pickers_prevMonth => 'Önceki ay';
+
+  @override
+  String get pickers_today => 'Bugün';
+
+  @override
   String get register_avatarLabel => 'Avatarın';
 
   @override
@@ -993,13 +1365,308 @@ class AppLocalizationsTr extends AppLocalizations {
   String get register_usernameTaken => 'Bu kullanıcı adı alınmış.';
 
   @override
+  String get schedule_add => 'Ekle';
+
+  @override
+  String get schedule_addTopic => 'Konu Ekle';
+
+  @override
+  String get schedule_bagEmpty =>
+      'Çantanda henüz konu yok. Denemelerinden çıkan eksik konular burada görünür.';
+
+  @override
+  String get schedule_bagHelp =>
+      'Çantam: denemelerinden çıkan eksik konuların.';
+
+  @override
+  String get schedule_cancelProgram => 'Programı İptal Et';
+
+  @override
+  String get schedule_cancelProgramBody =>
+      'Program listeden kalkar ve Anasayfa\'daki Bugün bölümü boşalır. Bu işlem geri alınamaz.';
+
+  @override
+  String schedule_cancelProgramTitle(String name) {
+    return '$name iptal edilsin mi?';
+  }
+
+  @override
   String schedule_changeTimeA11y(String time) {
     return 'Saat $time, değiştir';
   }
 
   @override
+  String get schedule_changeTimeTitle => 'Saati Değiştir';
+
+  @override
+  String get schedule_clearSearch => 'Aramayı Temizle';
+
+  @override
+  String get schedule_closeA11y => 'Vazgeç';
+
+  @override
+  String schedule_dayChipTopics(String count) {
+    return '$count konu';
+  }
+
+  @override
+  String schedule_dayTitle(String weekday, String day, String month) {
+    return '$weekday, $day $month';
+  }
+
+  @override
+  String get schedule_daysBody =>
+      'Birden çok gün seçebilirsin; geçmiş günler seçilemez.';
+
+  @override
+  String schedule_daysSelected(String count) {
+    return '$count gün seçildi';
+  }
+
+  @override
+  String get schedule_daysTitle => 'Hangi günler çalışacaksın?';
+
+  @override
+  String schedule_defaultName(String month, String week) {
+    return '$month $week. Hafta';
+  }
+
+  @override
+  String get schedule_discardBody =>
+      'Seçtiğin günler ve yerleştirdiğin konular kaybolur.';
+
+  @override
+  String get schedule_discardConfirm => 'Kaydetmeden Çık';
+
+  @override
+  String get schedule_discardTitle => 'Program kaydedilmesin mi?';
+
+  @override
+  String get schedule_done => 'Bitti';
+
+  @override
+  String get schedule_edit => 'Düzenle';
+
+  @override
+  String get schedule_emptyAction => 'Haftalık Programını Kur';
+
+  @override
+  String get schedule_emptyBody =>
+      'Haftalık programını kurduğunda günün konuları burada ve Anasayfa\'da görünür.';
+
+  @override
+  String get schedule_emptyDay => 'Bu gün için çalışma yok.';
+
+  @override
+  String schedule_emptySlotA11y(String time) {
+    return '$time, boş, konu ekle';
+  }
+
+  @override
+  String get schedule_emptyTitle => 'Henüz programın yok';
+
+  @override
+  String get schedule_fieldMotto => 'Motto';
+
+  @override
+  String get schedule_fieldName => 'Program adı';
+
+  @override
+  String schedule_filledSlotA11y(String time, String lesson, String topic) {
+    return '$time, $lesson, $topic';
+  }
+
+  @override
+  String get schedule_gridBody =>
+      'Boş bir saate dokun, konu seç. Izgara 06:00–23:00.';
+
+  @override
+  String get schedule_gridTitle => 'Konuları yerleştir';
+
+  @override
+  String schedule_inProgramAt(String day, String time) {
+    return 'Programda: $day $time';
+  }
+
+  @override
+  String get schedule_loadError => 'Programların yüklenemedi';
+
+  @override
+  String get schedule_loadErrorBody => 'Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get schedule_mottoHelp => 'Program listesinde adın altında görünür.';
+
+  @override
+  String get schedule_nameRequired => 'Programına bir ad ver.';
+
+  @override
+  String get schedule_nameTitle => 'Programına ad ver';
+
+  @override
+  String get schedule_new => 'Yeni Program';
+
+  @override
+  String get schedule_offlineNote =>
+      'Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı programını görebilirsin.';
+
+  @override
+  String schedule_programRowA11y(String name, String motto, String range) {
+    return '$name, $motto, $range';
+  }
+
+  @override
   String schedule_removeA11y(String topic) {
     return '$topic, programdan çıkar';
+  }
+
+  @override
+  String schedule_removeSlotA11y(String topic) {
+    return '$topic, çıkar';
+  }
+
+  @override
+  String get schedule_resetDay => 'Günü Sıfırla';
+
+  @override
+  String schedule_resetDayBody(String date, String count) {
+    return '$date $count çalışma programdan çıkar. Diğer günler değişmez.';
+  }
+
+  @override
+  String schedule_resetDayTitle(String weekday) {
+    return '$weekday sıfırlayalım mı?';
+  }
+
+  @override
+  String get schedule_saveFailed =>
+      'Kaydedilemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get schedule_saveProgram => 'Programı Kaydet';
+
+  @override
+  String get schedule_searchHelp =>
+      'Program adında ve mottosunda arar; büyük-küçük harf ve I/ı farkı gözetmez.';
+
+  @override
+  String get schedule_searchHint => 'Program ara';
+
+  @override
+  String schedule_searchNoMatch(String query) {
+    return '“$query” ile eşleşen program yok';
+  }
+
+  @override
+  String get schedule_srcBag => 'Çantam';
+
+  @override
+  String get schedule_srcLessons => 'Dersler';
+
+  @override
+  String schedule_stepOf(String step) {
+    return 'Adım $step/3';
+  }
+
+  @override
+  String schedule_studyCount(String count) {
+    return '$count çalışma';
+  }
+
+  @override
+  String get schedule_summaryDays => 'Günler';
+
+  @override
+  String schedule_summaryDaysValue(String range, String count) {
+    return '$range · $count gün';
+  }
+
+  @override
+  String schedule_summaryEmptyDays(String days) {
+    return '$days henüz boş; kaydettikten sonra ekleyebilirsin.';
+  }
+
+  @override
+  String get schedule_summaryStudies => 'Çalışmalar';
+
+  @override
+  String schedule_summaryStudiesOneDay(String count, String day) {
+    return '$count çalışma, hepsi $day';
+  }
+
+  @override
+  String schedule_summaryStudiesSpread(String count, String days) {
+    return '$count çalışma, $days güne dağılmış';
+  }
+
+  @override
+  String get schedule_thisWeek => 'Bu hafta';
+
+  @override
+  String get schedule_title => 'Programım';
+
+  @override
+  String schedule_toastDayReset(String weekday) {
+    return '$weekday sıfırlandı.';
+  }
+
+  @override
+  String get schedule_toastProgramCancelled => 'Program iptal edildi.';
+
+  @override
+  String get schedule_toastProgramSaved => 'Program kaydedildi.';
+
+  @override
+  String get schedule_toastTopicRemoved => 'Konu çıkarıldı.';
+
+  @override
+  String schedule_topicRowA11y(String topic, String lesson) {
+    return '$topic, $lesson';
+  }
+
+  @override
+  String get schedule_topicSheetA11y => 'Konu ekle';
+
+  @override
+  String schedule_topicSheetTitle(
+    String weekday,
+    String day,
+    String month,
+    String time,
+  ) {
+    return '$weekday $day $month · $time';
+  }
+
+  @override
+  String get schedule_topicsLoadError => 'Konular yüklenemedi';
+
+  @override
+  String get schedule_viewDay => 'Gün';
+
+  @override
+  String get schedule_viewLabel => 'Görünüm';
+
+  @override
+  String get schedule_viewWeek => 'Hafta';
+
+  @override
+  String schedule_weekBlockA11y(
+    String day,
+    String time,
+    String lesson,
+    String topic,
+  ) {
+    return '$day $time, $lesson, $topic';
+  }
+
+  @override
+  String schedule_weekGridA11y(String range) {
+    return 'Haftalık program, $range';
+  }
+
+  @override
+  String schedule_weekGridHiddenLeft(String days) {
+    return '$days solda';
   }
 
   @override
@@ -1054,4 +1721,33 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get startup_unknownRoleTitle => 'Hesabın açılamadı';
+
+  @override
+  String topicDetail_context(String lesson, int number) {
+    return '$lesson · $number. konu';
+  }
+
+  @override
+  String topicDetail_contextTrack(String lesson, String track, int number) {
+    return '$lesson · $track · $number. konu';
+  }
+
+  @override
+  String topicDetail_counts(String subTopics, String items) {
+    return '$subTopics alt başlık · $items madde';
+  }
+
+  @override
+  String get topicDetail_empty => 'Bu konunun içeriği hazırlanıyor.';
+
+  @override
+  String get topicDetail_errorTitle => 'Konu yüklenemedi';
+
+  @override
+  String topicDetail_itemCount(String count) {
+    return '$count madde';
+  }
+
+  @override
+  String get topicDetail_openCard => 'Kartı Aç';
 }

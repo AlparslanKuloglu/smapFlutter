@@ -94,6 +94,168 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('tr')];
 
+  /// Stat box label (pano 6.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ortalama net'**
+  String get analytics_boxAverageNet;
+
+  /// Stat box label; drawn only when the exams have points (pano 6.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ortalama puan'**
+  String get analytics_boxAveragePoint;
+
+  /// Stat box label; drawn only when the exams have ranks (pano 6.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ortalama sıralama'**
+  String get analytics_boxAverageRank;
+
+  /// Stat box label (pano 6.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Çözülen deneme'**
+  String get analytics_boxExams;
+
+  /// Date range: since 1 September (pano 6.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu eğitim yılı'**
+  String get analytics_dateAcademicYear;
+
+  /// Date range: no limit (pano 6.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Tüm tarihler'**
+  String get analytics_dateAll;
+
+  /// Date range (pano 6.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Son 30 gün'**
+  String get analytics_dateLast30Days;
+
+  /// Date range (pano 6.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Son 3 ay'**
+  String get analytics_dateLast3Months;
+
+  /// Tail of the change line of the average net box: '+3,25 son denemede' (pano 6.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'son denemede'**
+  String get analytics_deltaSuffix;
+
+  /// Empty state action: opens the camera (pano 6.2 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'İlk Denemeni Okut'**
+  String get analytics_emptyAction;
+
+  /// Empty state message of both tabs (pano 6.2 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'İlk denemeni okuttuğunda sonuçların, netin ve eksik konuların burada görünür.'**
+  String get analytics_emptyMessage;
+
+  /// Empty state title of both tabs (pano 6.2 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Henüz deneme yok'**
+  String get analytics_emptyTitle;
+
+  /// Genel and Denemelerim error message (pano 6.3 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantını kontrol edip tekrar dene.'**
+  String get analytics_errorMessage;
+
+  /// Genel tab error title (pano 6.3 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Analizlerin yüklenemedi'**
+  String get analytics_errorTitle;
+
+  /// How many exams: '6 deneme' (pano 6.1, 6.2 counters).
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} deneme'**
+  String analytics_examCount(int count);
+
+  /// Title of an exam the server did not name: 'TYT denemesi' (pano 6.2 'Ad yoksa başlık tür + denemesi olur').
+  ///
+  /// In tr, this message translates to:
+  /// **'{type} denemesi'**
+  String analytics_examUntitled(String type);
+
+  /// Denemelerim error title (same pattern as pano 6.3 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Denemelerin yüklenemedi'**
+  String get analytics_examsErrorTitle;
+
+  /// AYT field: Eşit Ağırlık (pano 6.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Eşit Ağırlık'**
+  String get analytics_fieldEqualWeight;
+
+  /// AYT field: Sayısal (pano 6.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sayısal'**
+  String get analytics_fieldNumeric;
+
+  /// AYT field: Sözel (pano 6.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sözel'**
+  String get analytics_fieldVerbal;
+
+  /// Screen reader name of the filter pill (pano 6.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Süzgeç: {label}'**
+  String analytics_filterA11y(String label);
+
+  /// Section empty state when a filter leaves no exam (not in the boards; follows the 'Bu süzgeçte gösterilecek konu yok' pattern of 7.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu süzgeçte gösterilecek deneme yok.'**
+  String get analytics_filterEmpty;
+
+  /// Filter scope: the whole exam, not one lesson.
+  ///
+  /// In tr, this message translates to:
+  /// **'Genel'**
+  String get analytics_filterGeneral;
+
+  /// Filter pill: 'TYT · Genel' (pano 6.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'{exam} · {scope}'**
+  String analytics_filterLabel(String exam, String scope);
+
+  /// Action of the filtered-empty state (not in the boards).
+  ///
+  /// In tr, this message translates to:
+  /// **'Süzgeci Sıfırla'**
+  String get analytics_filterReset;
+
+  /// Screen reader name of the spinner under the list (pano 6.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Daha fazla deneme yükleniyor'**
+  String get analytics_loadingMoreA11y;
+
+  /// Section error under the list when the next page failed (pano 1.22 section error).
+  ///
+  /// In tr, this message translates to:
+  /// **'Denemeler yüklenemedi.'**
+  String get analytics_moreError;
+
   /// Screen reader summary of the net chart (C48).
   ///
   /// In tr, this message translates to:
@@ -154,6 +316,162 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Net gelişimi'**
   String get analytics_netChartTitle;
+
+  /// Primary button of both filter sheets (pano 6.1 kare 3, 6.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Uygula'**
+  String get analytics_sheetApply;
+
+  /// Field label of the date chips (pano 6.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Tarih'**
+  String get analytics_sheetDate;
+
+  /// Field label of the filter sheet: TYT or AYT (pano 6.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sınav'**
+  String get analytics_sheetExam;
+
+  /// Screen reader name of the exam segment (pano 6.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sınav türü'**
+  String get analytics_sheetExamA11y;
+
+  /// Field label of the filter sheet: the AYT field (pano 6.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Alan'**
+  String get analytics_sheetField;
+
+  /// Screen reader name of the field segment.
+  ///
+  /// In tr, this message translates to:
+  /// **'Alan'**
+  String get analytics_sheetFieldA11y;
+
+  /// Help under the field segment (pano 6.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ders listesi alanına göre değişir. Profildeki alanın seçili gelir.'**
+  String get analytics_sheetFieldHelp;
+
+  /// Title of the Genel filter sheet (pano 6.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Süzgeç'**
+  String get analytics_sheetFilterTitle;
+
+  /// Field label of the filter sheet: the lesson chips (pano 6.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ders'**
+  String get analytics_sheetLesson;
+
+  /// Title of the Denemelerim sheet (pano 6.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Süz ve Sırala'**
+  String get analytics_sheetSortTitle;
+
+  /// One-exam card: exam name and long date (pano 6.3 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} · {date}'**
+  String analytics_singleNameDate(String name, String date);
+
+  /// One-exam card note (pano 6.3 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'İkinci denemenden sonra gelişim grafiğin burada çizilir.'**
+  String get analytics_singleNote;
+
+  /// One-exam card heading (pano 6.3 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'İlk denemen'**
+  String get analytics_singleTitle;
+
+  /// Text button that opens the sort and filter sheet (pano 6.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Süz ve Sırala'**
+  String get analytics_sortAction;
+
+  /// Summary line over the list: date range and order (pano 6.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'{date} · En yeni önce'**
+  String analytics_summaryLine(String date);
+
+  /// Root band tab: the list of exams (pano 6.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Denemelerim'**
+  String get analytics_tabExams;
+
+  /// Root band tab: the net chart and four boxes (pano 6.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Genel'**
+  String get analytics_tabGeneral;
+
+  /// Screen reader name of the root band's tab row (pano 6.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Analizlerim bölümleri'**
+  String get analytics_tabsA11y;
+
+  /// Root band title of the Analizlerim tab (pano 6.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Analizlerim'**
+  String get analytics_title;
+
+  /// Screen reader name of the exam type segment (pano 6.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sınav türü'**
+  String get analytics_typeA11y;
+
+  /// Exam type segment: all exams (pano 6.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Tümü'**
+  String get analytics_typeAll;
+
+  /// Sentence of the confirmation of "Öğrendim" (pano 8.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'\"{name}\" eksiklerinden çıkıp Bildiklerim\'e geçecek.'**
+  String cardSheet_confirmBody(String name);
+
+  /// Question of the one-time confirmation of "Öğrendim" (pano 8.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kartı Bildiklerim\'e taşıyalım mı?'**
+  String get cardSheet_confirmTitle;
+
+  /// Small line over the card title in the card sheet (pano 7.3 kare 3): "Türkçe · Sözcükte Anlam".
+  ///
+  /// In tr, this message translates to:
+  /// **'{lesson} · {topic}'**
+  String cardSheet_context(String lesson, String topic);
+
+  /// Checkbox of the confirmation of "Öğrendim"; kept on the device (pano 8.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bir daha sorma'**
+  String get cardSheet_dontAsk;
+
+  /// Primary button of the card sheet, only on a missing card (pano 7.3 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrendim'**
+  String get cardSheet_learned;
 
   /// Study card favorite star, not yet a favorite (C52).
   ///
@@ -677,6 +995,96 @@ abstract class AppLocalizations {
   /// **'Şifreyi Güncelle'**
   String get forgotPassword_update;
 
+  /// Name of a result the server sent without one (board 6.2): 'AYT denemesi'.
+  ///
+  /// In tr, this message translates to:
+  /// **'{type} denemesi'**
+  String home_examNameFallback(String type);
+
+  /// Section title of the last exam (pano 3.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Son denemen'**
+  String get home_lastExam;
+
+  /// Section error of "Son denemen" (not drawn in the boards; written like "Dersler yüklenemedi.", pano 3.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Son deneme yüklenemedi.'**
+  String get home_lastExamError;
+
+  /// Name of the literature lesson on its tile (pano 3.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Türk Dili ve Edebiyatı'**
+  String get home_literatureName;
+
+  /// The weakest-topic sentence (pano 3.1). {topic} arrives with its suffix from TurkishSuffix.locative ('Kurtuluş Savaşı Hazırlık Dönemi'nde'), {wrong} from TurkishSuffix.possessiveAccusative ('9'unu').
+  ///
+  /// In tr, this message translates to:
+  /// **'{topic} {total} sorudan {wrong} kaçırdın.'**
+  String home_mostMissedSentence(String topic, String total, String wrong);
+
+  /// The one text button of "Bugün" (pano 3.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Programım'**
+  String get home_myProgram;
+
+  /// "Bugün" card when the student has no program (pano 3.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Haftalık programın yok. Bir hafta kurduğunda günün konuları burada görünür.'**
+  String get home_noProgram;
+
+  /// Text button under the no-program sentence (pano 3.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Haftalık Programını Kur'**
+  String get home_setupProgram;
+
+  /// Section title of the subject strip (pano 3.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Derslerin'**
+  String get home_subjects;
+
+  /// Section error of "Derslerin" (pano 3.2, spec 1.22).
+  ///
+  /// In tr, this message translates to:
+  /// **'Dersler yüklenemedi.'**
+  String get home_subjectsError;
+
+  /// Meta of the subject strip (pano 3.1 kare 1); not drawn without missing items (kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Eksiği en çok olandan başlar'**
+  String get home_subjectsSub;
+
+  /// Section title of the planned topics of the day (pano 3.1 kare 1, SectionHeader).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bugün'**
+  String get home_today;
+
+  /// The day line of "Bugün": 'Cumartesi, 10 Ekim' (pano 3.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'{weekday}, {day} {month}'**
+  String home_todayDate(String weekday, String day, String month);
+
+  /// Section error of "Bugün" (pano 3.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bugünün programı yüklenemedi.'**
+  String get home_todayError;
+
+  /// The meta of "Bugün" with the program of the day: 'Cumartesi, 10 Ekim · Ekim 2. Hafta' (pano 3.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'{date} · {program}'**
+  String home_todaySub(String date, String program);
+
   /// Hint of a SelectField (C12).
   ///
   /// In tr, this message translates to:
@@ -869,11 +1277,113 @@ abstract class AppLocalizations {
   /// **'Şifreyi göster'**
   String get kit_showPassword;
 
+  /// Text button of Ders Detayı that opens the lesson's card deck (pano 7.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kartlarım'**
+  String get lessonDetail_cards;
+
+  /// The same button with the deck's progress (pano 7.2 kare 3); only with real card counts.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kartlarım · {known}/{total}'**
+  String lessonDetail_cardsProgress(String known, String total);
+
+  /// Title of the error state of Ders Detayı (pano 7.5 kare 3 wording).
+  ///
+  /// In tr, this message translates to:
+  /// **'Konular yüklenemedi'**
+  String get lessonDetail_errorTitle;
+
+  /// Text button of the empty filter card (pano 7.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Süzgeci Kapat'**
+  String get lessonDetail_filterEmptyAction;
+
+  /// Sentence of the empty filter card for a named segment (pano 7.5 kare 2): "SOS-2'de eksik konun yok. …".
+  ///
+  /// In tr, this message translates to:
+  /// **'{segment}\'de eksik konun yok. Tüm {segment} konularını görmek için süzgeci kapat.'**
+  String lessonDetail_filterEmptyBody(String segment);
+
+  /// Sentence of the empty filter card on the "Tümü" segment.
+  ///
+  /// In tr, this message translates to:
+  /// **'Eksik konun yok. Tüm konuları görmek için süzgeci kapat.'**
+  String get lessonDetail_filterEmptyBodyAll;
+
+  /// Title of the empty card when the missing filter hides every topic (pano 7.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu süzgeçte gösterilecek konu yok'**
+  String get lessonDetail_filterEmptyTitle;
+
+  /// Footnote under the topic card while the missing filter is on (pano 7.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yalnız eksiği olan konular. Numaralar tam listedeki sırayı korur.'**
+  String get lessonDetail_filterNote;
+
+  /// Filter chip of Ders Detayı (pano 7.2 kare 1): the lesson's missing items, all tracks.
+  ///
+  /// In tr, this message translates to:
+  /// **'Eksiklerim ({count})'**
+  String lessonDetail_missingFilter(String count);
+
+  /// Empty state of a lesson the server lists no topic for (same wording as pano 7.5 "Boş metinler").
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu dersin konuları hazırlanıyor.'**
+  String get lessonDetail_noTopics;
+
+  /// Second option of the Edebiyat section segment (pano 7.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yazar ve Eserler'**
+  String get lessonDetail_sectionAuthors;
+
+  /// First option of the Edebiyat section segment (pano 7.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Konular'**
+  String get lessonDetail_sectionTopics;
+
+  /// First option of the category segment of a lesson without tracks (pano 7.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Tümü'**
+  String get lessonDetail_segmentAll;
+
   /// Card progress under a subject row (C20, C44).
   ///
   /// In tr, this message translates to:
   /// **'{known} / {total} kart biliniyor'**
   String lessons_cardsKnown(int known, int total);
+
+  /// Small heading of the example box (C51, pano 7.3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Örnek'**
+  String get lessons_exampleLabel;
+
+  /// Name of the literature lesson in the Derslerim list, the detail title and the sheets (pano 7.1 kare 2, 7.4). The server calls it Edebiyat.
+  ///
+  /// In tr, this message translates to:
+  /// **'Türk Dili ve Edebiyatı'**
+  String get lessons_literatureName;
+
+  /// Sentence of the error states of Derslerim, Ders Detayı and Konu Detayı (pano 7.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantını kontrol edip tekrar dene.'**
+  String get lessons_loadErrorMessage;
+
+  /// Title of the error state of the Derslerim list (pano 1.22 kare 4 wording).
+  ///
+  /// In tr, this message translates to:
+  /// **'Dersler yüklenemedi'**
+  String get lessons_loadErrorTitle;
 
   /// EksikTag and its reading (C08): "31 eksik".
   ///
@@ -905,6 +1415,30 @@ abstract class AppLocalizations {
   /// **'web\'de açılır'**
   String get lessons_opensOnWeb;
 
+  /// Toast when "Öğrendim" could not be sent (pano 1.22 kare 1 error toast).
+  ///
+  /// In tr, this message translates to:
+  /// **'Gönderilemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get lessons_sendFailed;
+
+  /// Name of the SOS-2 row of a lesson (pano 7.1 kare 2): "Tarih-2", "Coğrafya-2".
+  ///
+  /// In tr, this message translates to:
+  /// **'{name}-2'**
+  String lessons_sos2Name(String name);
+
+  /// Test line of the AYT row of Tarih and Coğrafya (pano 7.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Türk Dili ve Edebiyatı–Sosyal Bilimler 1 testi'**
+  String get lessons_testSocialSciences1;
+
+  /// Test line of the SOS-2 row of Tarih and Coğrafya (pano 7.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sosyal Bilimler 2 testi'**
+  String get lessons_testSocialSciences2;
+
   /// Screen reader sentence of a subject tile with missing items (C21): "Tarih, 60 eksik".
   ///
   /// In tr, this message translates to:
@@ -922,6 +1456,72 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'{number}. {name}'**
   String lessons_topicRowA11y(int number, String name);
+
+  /// Sentence of the "Web'de" sheet (pano 7.1 kare 3); the host is the site's address, "smaptr.com".
+  ///
+  /// In tr, this message translates to:
+  /// **'Matematik ve Geometri kavram haritan şimdilik {host}\'da.'**
+  String lessons_webSheetBody(String host);
+
+  /// Primary button of the "Web'de" sheet: opens the browser (pano 7.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Web\'de Aç'**
+  String get lessons_webSheetOpen;
+
+  /// Title of the "Web'de" sheet (pano 7.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kavram haritan web\'de'**
+  String get lessons_webSheetTitle;
+
+  /// Heading of the biography in the author sheet (pano 7.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hakkında'**
+  String get literature_about;
+
+  /// Screen reader sentence of an author row (C28): "Namık Kemal, Tanzimat".
+  ///
+  /// In tr, this message translates to:
+  /// **'{name}, {era}'**
+  String literature_authorA11y(String name, String era);
+
+  /// Empty state of the Yazar ve Eserler list.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yazar listesi hazırlanıyor.'**
+  String get literature_empty;
+
+  /// Title of the error state of the Yazar ve Eserler list.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yazarlar yüklenemedi'**
+  String get literature_errorTitle;
+
+  /// Primary button of the author sheet: marks the author's missing works learned (pano 7.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrendim'**
+  String get literature_learned;
+
+  /// Heading of the works whose type the app does not know.
+  ///
+  /// In tr, this message translates to:
+  /// **'Diğer'**
+  String get literature_otherType;
+
+  /// Screen reader reading of a work that is still missing.
+  ///
+  /// In tr, this message translates to:
+  /// **'{title}, eksik'**
+  String literature_workMissingA11y(String title);
+
+  /// Heading of the works in the author sheet (pano 7.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Eserleri'**
+  String get literature_works;
 
   /// Apple sign-in button, shown only while social sign-in is open (pano 2.3 kare 4).
   ///
@@ -1433,6 +2033,48 @@ abstract class AppLocalizations {
   /// **'SMAP\'e hoş geldin'**
   String get onboarding_welcomeTitle;
 
+  /// Day chip reading without the state words (C62): "Cumartesi 10 Ekim".
+  ///
+  /// In tr, this message translates to:
+  /// **'{weekday} {day} {month}'**
+  String pickers_a11yDayChip(String weekday, String day, String month);
+
+  /// Day chip reading: the day is selected (C62): "Cumartesi 10 Ekim, bugün, seçili".
+  ///
+  /// In tr, this message translates to:
+  /// **'seçili'**
+  String get pickers_a11ySelected;
+
+  /// Day chip and calendar cell reading: the day is today (C62, C65).
+  ///
+  /// In tr, this message translates to:
+  /// **'bugün'**
+  String get pickers_a11yToday;
+
+  /// Calendar month title (C65): "Ekim 2026".
+  ///
+  /// In tr, this message translates to:
+  /// **'{month} {year}'**
+  String pickers_monthTitle(String month, String year);
+
+  /// Calendar next month button, accessible name (C65, pano 3.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sonraki ay'**
+  String get pickers_nextMonth;
+
+  /// Calendar previous month button, accessible name (C65, pano 3.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Önceki ay'**
+  String get pickers_prevMonth;
+
+  /// Calendar legend of the orange ring (C65, pano 3.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bugün'**
+  String get pickers_today;
+
   /// Label above the seven avatars (pano 2.5 kare 1).
   ///
   /// In tr, this message translates to:
@@ -1727,17 +2369,477 @@ abstract class AppLocalizations {
   /// **'Bu kullanıcı adı alınmış.'**
   String get register_usernameTaken;
 
+  /// Topic sheet primary button (pano 3.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ekle'**
+  String get schedule_add;
+
+  /// Outline button and empty-day action that opens the hour grid (pano 3.6 kare 1, 3); also the focused empty slot (pano 3.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Konu Ekle'**
+  String get schedule_addTopic;
+
+  /// Topic sheet, empty bag (not in the board; written here).
+  ///
+  /// In tr, this message translates to:
+  /// **'Çantanda henüz konu yok. Denemelerinden çıkan eksik konular burada görünür.'**
+  String get schedule_bagEmpty;
+
+  /// Topic sheet help under the segment (pano 3.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Çantam: denemelerinden çıkan eksik konuların.'**
+  String get schedule_bagHelp;
+
+  /// Danger text button of edit mode (pano 3.6 kare 1); only drawn while FeatureFlags.programDeleteEnabled.
+  ///
+  /// In tr, this message translates to:
+  /// **'Programı İptal Et'**
+  String get schedule_cancelProgram;
+
+  /// Cancel program confirmation text (pano 3.6 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Program listeden kalkar ve Anasayfa\'daki Bugün bölümü boşalır. Bu işlem geri alınamaz.'**
+  String get schedule_cancelProgramBody;
+
+  /// Cancel program confirmation title (pano 3.6 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} iptal edilsin mi?'**
+  String schedule_cancelProgramTitle(String name);
+
   /// Program item time button in edit mode (C30): "Saat 10:00, değiştir".
   ///
   /// In tr, this message translates to:
   /// **'Saat {time}, değiştir'**
   String schedule_changeTimeA11y(String time);
 
+  /// Title of the time wheel sheet opened from an item time (pano 3.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Saati Değiştir'**
+  String get schedule_changeTimeTitle;
+
+  /// Search with no result, text button (pano 3.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Aramayı Temizle'**
+  String get schedule_clearSearch;
+
+  /// Accessible name of the X of the first step (pano 3.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Vazgeç'**
+  String get schedule_closeA11y;
+
+  /// Count line under a day chip of the grid step (pano 3.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} konu'**
+  String schedule_dayChipTopics(String count);
+
+  /// Heading of the selected day (pano 3.4 kare 3): "Cumartesi, 10 Ekim".
+  ///
+  /// In tr, this message translates to:
+  /// **'{weekday}, {day} {month}'**
+  String schedule_dayTitle(String weekday, String day, String month);
+
+  /// Step 1 sentence (pano 3.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Birden çok gün seçebilirsin; geçmiş günler seçilemez.'**
+  String get schedule_daysBody;
+
+  /// Step 1 summary above "Devam Et" (pano 3.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} gün seçildi'**
+  String schedule_daysSelected(String count);
+
+  /// Step 1 title (pano 3.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hangi günler çalışacaksın?'**
+  String get schedule_daysTitle;
+
+  /// Suggested name of a new program (pano 3.5 kare 4): "Ekim 3. Hafta".
+  ///
+  /// In tr, this message translates to:
+  /// **'{month} {week}. Hafta'**
+  String schedule_defaultName(String month, String week);
+
+  /// Text of the leave confirmation (not in the board; written here).
+  ///
+  /// In tr, this message translates to:
+  /// **'Seçtiğin günler ve yerleştirdiğin konular kaybolur.'**
+  String get schedule_discardBody;
+
+  /// Primary button of the leave confirmation (not in the board; written here).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kaydetmeden Çık'**
+  String get schedule_discardConfirm;
+
+  /// Confirmation when leaving the flow with changes (pano 3.5 "Vazgeç (X)").
+  ///
+  /// In tr, this message translates to:
+  /// **'Program kaydedilmesin mi?'**
+  String get schedule_discardTitle;
+
+  /// Bar action that turns edit mode off; changes are already saved (pano 3.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bitti'**
+  String get schedule_done;
+
+  /// Bar action that turns edit mode on (pano 3.4 kare 3, 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Düzenle'**
+  String get schedule_edit;
+
+  /// Empty program list, primary action (pano 3.7 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Haftalık Programını Kur'**
+  String get schedule_emptyAction;
+
+  /// Empty program list, sentence (pano 3.7 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Haftalık programını kurduğunda günün konuları burada ve Anasayfa\'da görünür.'**
+  String get schedule_emptyBody;
+
+  /// Empty day (pano 3.6 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu gün için çalışma yok.'**
+  String get schedule_emptyDay;
+
+  /// Empty hour slot reading (C64, pano 3.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'{time}, boş, konu ekle'**
+  String schedule_emptySlotA11y(String time);
+
+  /// Empty program list, title (pano 3.7 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Henüz programın yok'**
+  String get schedule_emptyTitle;
+
+  /// Step 3 motto field label; the field is marked optional by the field (pano 3.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Motto'**
+  String get schedule_fieldMotto;
+
+  /// Step 3 name field label (pano 3.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Program adı'**
+  String get schedule_fieldName;
+
+  /// Filled hour slot reading (C64).
+  ///
+  /// In tr, this message translates to:
+  /// **'{time}, {lesson}, {topic}'**
+  String schedule_filledSlotA11y(String time, String lesson, String topic);
+
+  /// Step 2 sentence (pano 3.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Boş bir saate dokun, konu seç. Izgara 06:00–23:00.'**
+  String get schedule_gridBody;
+
+  /// Step 2 title (pano 3.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Konuları yerleştir'**
+  String get schedule_gridTitle;
+
+  /// Under a topic already in the program (pano 3.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Programda: {day} {time}'**
+  String schedule_inProgramAt(String day, String time);
+
+  /// Program list failed to load, title (pano 3.7 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Programların yüklenemedi'**
+  String get schedule_loadError;
+
+  /// Program list failed to load, sentence (pano 3.7 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantını kontrol edip tekrar dene.'**
+  String get schedule_loadErrorBody;
+
+  /// Step 3 motto help (pano 3.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Program listesinde adın altında görünür.'**
+  String get schedule_mottoHelp;
+
+  /// Step 3 error under an empty name.
+  ///
+  /// In tr, this message translates to:
+  /// **'Programına bir ad ver.'**
+  String get schedule_nameRequired;
+
+  /// Step 3 title (pano 3.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Programına ad ver'**
+  String get schedule_nameTitle;
+
+  /// Bar action that starts the new program flow (pano 3.4 kare 1, 3.7 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni Program'**
+  String get schedule_new;
+
+  /// Note under the list while offline (pano 3.7 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı programını görebilirsin.'**
+  String get schedule_offlineNote;
+
+  /// Program row reading without the tag (C29).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name}, {motto}, {range}'**
+  String schedule_programRowA11y(String name, String motto, String range);
+
   /// Program item remove button in edit mode (C30): "Fiilde Çatı, programdan çıkar".
   ///
   /// In tr, this message translates to:
   /// **'{topic}, programdan çıkar'**
   String schedule_removeA11y(String topic);
+
+  /// Remove button of a filled hour slot (C64, pano 3.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'{topic}, çıkar'**
+  String schedule_removeSlotA11y(String topic);
+
+  /// Danger text button under the day list (pano 3.4 kare 3, 3.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Günü Sıfırla'**
+  String get schedule_resetDay;
+
+  /// Reset day confirmation text (pano 3.6 kare 2): "10 Ekim'deki 3 çalışma ...". The date arrives with its locative suffix and "ki".
+  ///
+  /// In tr, this message translates to:
+  /// **'{date} {count} çalışma programdan çıkar. Diğer günler değişmez.'**
+  String schedule_resetDayBody(String date, String count);
+
+  /// Reset day confirmation title (pano 3.6 kare 2): "Cumartesi'yi sıfırlayalım mı?". The weekday arrives with its accusative suffix.
+  ///
+  /// In tr, this message translates to:
+  /// **'{weekday} sıfırlayalım mı?'**
+  String schedule_resetDayTitle(String weekday);
+
+  /// Toast when an instant save failed; the screen goes back to the saved state.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kaydedilemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get schedule_saveFailed;
+
+  /// Step 3 primary button (pano 3.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Programı Kaydet'**
+  String get schedule_saveProgram;
+
+  /// Search with no result, explanation (pano 3.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Program adında ve mottosunda arar; büyük-küçük harf ve I/ı farkı gözetmez.'**
+  String get schedule_searchHelp;
+
+  /// Search field placeholder and accessible name (pano 3.4 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Program ara'**
+  String get schedule_searchHint;
+
+  /// Search with no result, title (pano 3.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'“{query}” ile eşleşen program yok'**
+  String schedule_searchNoMatch(String query);
+
+  /// Topic sheet segment (pano 3.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Çantam'**
+  String get schedule_srcBag;
+
+  /// Topic sheet segment (pano 3.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Dersler'**
+  String get schedule_srcLessons;
+
+  /// Step counter of the new program flow (pano 3.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Adım {step}/3'**
+  String schedule_stepOf(String step);
+
+  /// Number of topics planned on the day (pano 3.4 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} çalışma'**
+  String schedule_studyCount(String count);
+
+  /// Step 3 summary label (pano 3.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Günler'**
+  String get schedule_summaryDays;
+
+  /// Step 3 summary: "12–17 Ekim 2026 · 6 gün".
+  ///
+  /// In tr, this message translates to:
+  /// **'{range} · {count} gün'**
+  String schedule_summaryDaysValue(String range, String count);
+
+  /// Step 3 note listing the days with no topic (pano 3.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'{days} henüz boş; kaydettikten sonra ekleyebilirsin.'**
+  String schedule_summaryEmptyDays(String days);
+
+  /// Step 3 summary label (pano 3.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Çalışmalar'**
+  String get schedule_summaryStudies;
+
+  /// Step 3 summary when every topic is on one day (pano 3.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} çalışma, hepsi {day}'**
+  String schedule_summaryStudiesOneDay(String count, String day);
+
+  /// Step 3 summary when the topics are on several days.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} çalışma, {days} güne dağılmış'**
+  String schedule_summaryStudiesSpread(String count, String days);
+
+  /// Tag of the program of the current week (pano 3.4 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu hafta'**
+  String get schedule_thisWeek;
+
+  /// Screen title of the program list (pano 3.4 kare 1, 3.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'Programım'**
+  String get schedule_title;
+
+  /// Toast after "Günü Sıfırla", with "Geri Al" (pano 3.6 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'{weekday} sıfırlandı.'**
+  String schedule_toastDayReset(String weekday);
+
+  /// Toast after the program was cancelled (pano 3.6 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Program iptal edildi.'**
+  String get schedule_toastProgramCancelled;
+
+  /// Toast after a new program was saved (pano 3.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Program kaydedildi.'**
+  String get schedule_toastProgramSaved;
+
+  /// Toast after removing a topic, with "Geri Al" (pano 3.6).
+  ///
+  /// In tr, this message translates to:
+  /// **'Konu çıkarıldı.'**
+  String get schedule_toastTopicRemoved;
+
+  /// Reading of a topic row of the topic sheet.
+  ///
+  /// In tr, this message translates to:
+  /// **'{topic}, {lesson}'**
+  String schedule_topicRowA11y(String topic, String lesson);
+
+  /// Accessible name of the topic sheet (pano 3.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Konu ekle'**
+  String get schedule_topicSheetA11y;
+
+  /// Topic sheet title (pano 3.5 kare 3): "Pazartesi 12 Ekim · 16:00".
+  ///
+  /// In tr, this message translates to:
+  /// **'{weekday} {day} {month} · {time}'**
+  String schedule_topicSheetTitle(
+    String weekday,
+    String day,
+    String month,
+    String time,
+  );
+
+  /// Topic sheet, the lessons failed to load (not in the board; written here).
+  ///
+  /// In tr, this message translates to:
+  /// **'Konular yüklenemedi'**
+  String get schedule_topicsLoadError;
+
+  /// Segment: day view (pano 3.4 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Gün'**
+  String get schedule_viewDay;
+
+  /// Accessible name of the Gün / Hafta segment (pano 3.4 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Görünüm'**
+  String get schedule_viewLabel;
+
+  /// Segment: week view (pano 3.4 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hafta'**
+  String get schedule_viewWeek;
+
+  /// Reading of a week grid block (C63): "Cumartesi 10:00, Türkçe, Fiilde Çatı".
+  ///
+  /// In tr, this message translates to:
+  /// **'{day} {time}, {lesson}, {topic}'**
+  String schedule_weekBlockA11y(
+    String day,
+    String time,
+    String lesson,
+    String topic,
+  );
+
+  /// Accessible name of the week grid (C63): "Haftalık program, 06:00–23:00".
+  ///
+  /// In tr, this message translates to:
+  /// **'Haftalık program, {range}'**
+  String schedule_weekGridA11y(String range);
+
+  /// Appended to the week grid reading: the columns scrolled out at the left (C63).
+  ///
+  /// In tr, this message translates to:
+  /// **'{days} solda'**
+  String schedule_weekGridHiddenLeft(String days);
 
   /// Screen reader name of the 96 pt app icon on the forced update screen (pano 2.7 kare 1).
   ///
@@ -1834,6 +2936,48 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Hesabın açılamadı'**
   String get startup_unknownRoleTitle;
+
+  /// The same line for a lesson opened on "Tümü", which has no track name.
+  ///
+  /// In tr, this message translates to:
+  /// **'{lesson} · {number}. konu'**
+  String topicDetail_context(String lesson, int number);
+
+  /// Line under the topic title (pano 7.3 kare 1): "Türkçe · TYT · 1. konu".
+  ///
+  /// In tr, this message translates to:
+  /// **'{lesson} · {track} · {number}. konu'**
+  String topicDetail_contextTrack(String lesson, String track, int number);
+
+  /// Second line under the topic title (pano 7.3 kare 1): "5 alt başlık · 25 madde".
+  ///
+  /// In tr, this message translates to:
+  /// **'{subTopics} alt başlık · {items} madde'**
+  String topicDetail_counts(String subTopics, String items);
+
+  /// Empty state of a topic without sub-topics (pano 7.5 "Boş metinler").
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu konunun içeriği hazırlanıyor.'**
+  String get topicDetail_empty;
+
+  /// Title of the error state of Konu Detayı (pano 7.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Konu yüklenemedi'**
+  String get topicDetail_errorTitle;
+
+  /// Item count in the meta line of a sub-topic card (pano 7.3 kare 1): "4 madde".
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} madde'**
+  String topicDetail_itemCount(String count);
+
+  /// Text button under an open item: opens its card in a sheet (pano 7.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kartı Aç'**
+  String get topicDetail_openCard;
 }
 
 class _AppLocalizationsDelegate

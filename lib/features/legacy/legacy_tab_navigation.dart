@@ -12,12 +12,14 @@ abstract final class LegacyTabNavigation {
   static void openLessons(BuildContext context) =>
       context.navigateTo(const LessonsTabRoute());
 
-  /// Student: Analizlerim, on the legacy screen's top tab [initialTabIndex]
+  /// Student: Analizlerim, on its in-screen tab [initialTabIndex]
   /// (0 Genel, 1 Denemelerim).
   static void openAnalytics(BuildContext context, {int? initialTabIndex}) =>
       context.navigateTo(
         AnalyticsTabRoute(
-          children: [LegacyAnalyticsTabRoute(initialTabIndex: initialTabIndex)],
+          children: [
+            AnalyticsRoute(tab: initialTabIndex == 1 ? 'denemelerim' : null),
+          ],
         ),
       );
 

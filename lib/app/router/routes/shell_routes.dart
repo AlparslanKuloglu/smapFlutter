@@ -1,6 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 
 import 'package:smap/app/router/app_router.dart';
+import 'package:smap/features/analytics/analytics_routes.dart';
+import 'package:smap/features/home/home_routes.dart';
+import 'package:smap/features/lessons/lessons_routes.dart';
+import 'package:smap/features/schedule/schedule_routes.dart';
 
 /// The two shells with their tab stacks, and the full-screen scan page, merged
 /// into `AppRouter.routes`.
@@ -26,19 +30,17 @@ List<AutoRoute> get shellRoutes => [
       AutoRoute(
         page: HomeTabRoute.page,
         path: 'home',
-        children: [AutoRoute(page: LegacyHomeTabRoute.page, initial: true)],
+        children: [...homeTabRoutes, ...scheduleHomeTabRoutes],
       ),
       AutoRoute(
         page: AnalyticsTabRoute.page,
         path: 'analytics',
-        children: [
-          AutoRoute(page: LegacyAnalyticsTabRoute.page, initial: true),
-        ],
+        children: analyticsTabRoutes,
       ),
       AutoRoute(
         page: LessonsTabRoute.page,
         path: 'lessons',
-        children: [AutoRoute(page: LegacyLessonsTabRoute.page, initial: true)],
+        children: lessonsTabRoutes,
       ),
       AutoRoute(
         page: AccountTabRoute.page,

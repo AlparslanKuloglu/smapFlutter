@@ -435,12 +435,16 @@ class $AssetsIllustrationsGen {
   /// File path: assets/illustrations/.gitkeep
   String get aGitkeep => 'assets/illustrations/.gitkeep';
 
+  /// File path: assets/illustrations/clay_bulb.webp
+  AssetGenImage get clayBulb =>
+      const AssetGenImage('assets/illustrations/clay_bulb.webp');
+
   /// File path: assets/illustrations/clay_map.webp
   AssetGenImage get clayMap =>
       const AssetGenImage('assets/illustrations/clay_map.webp');
 
   /// List of all assets
-  List<dynamic> get values => [aGitkeep, clayMap];
+  List<dynamic> get values => [aGitkeep, clayBulb, clayMap];
 }
 
 class $AssetsMenuIconsGen {
