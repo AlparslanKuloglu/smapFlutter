@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 
 import 'package:smap/app/router/guards/route_access.dart';
 import 'package:smap/app/router/guards/route_catalog.dart';
+import 'package:smap/app/shell/shell_preview.dart';
 import 'package:smap/core/services/app_logger.dart';
 import 'package:smap/core/services/device_preferences.dart';
 import 'package:smap/features/auth/domain/session_state.dart';
@@ -43,6 +44,8 @@ abstract class AccessGuard extends AutoRouteGuard {
     NavigationResolver resolver,
     StackRouter router,
   ) async {
+    // Debug only: the shell preview has no session (see `ShellPreview`).
+    if (ShellPreview.active) return resolver.next();
     final root = router.root;
     final input = AccessInput(
       group: catalog.groupOf(resolver.route.name),

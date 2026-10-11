@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/root/presentation/widgets/custom_top_app_bar.dart';
 
 class DaySelectionTopAppBar extends StatelessWidget {
   const DaySelectionTopAppBar({super.key, required this.onBack, this.onNext});
@@ -8,14 +7,17 @@ class DaySelectionTopAppBar extends StatelessWidget {
   final VoidCallback onBack;
   final VoidCallback? onNext;
 
+  /// The corner radius of the legacy top bar this one was drawn after.
+  static const double _bottomCornerRadius = 32;
+
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
       decoration: const BoxDecoration(
         color: AppColors.appBarBackground,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(CustomTopAppBar.bottomCornerRadius),
-          bottomRight: Radius.circular(CustomTopAppBar.bottomCornerRadius),
+          bottomLeft: Radius.circular(_bottomCornerRadius),
+          bottomRight: Radius.circular(_bottomCornerRadius),
         ),
       ),
       child: SafeArea(
