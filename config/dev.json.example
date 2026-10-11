@@ -1,0 +1,9 @@
+{
+  "API_BASE_URL": "https://www.smaptr.com",
+  "OMR_BASE_URL": "https://www.smaptr.com",
+  "CDN_BASE_URL": "https://smaptr.com.tr",
+  "SUPPORT_EMAIL": "",
+  "YKS_DATE": "2027-06-19",
+  "APP_STORE_ID": "",
+  "PLAY_PACKAGE": "com.smap.smap"
+}
