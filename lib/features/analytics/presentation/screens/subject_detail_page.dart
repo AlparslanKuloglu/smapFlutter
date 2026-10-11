@@ -53,6 +53,10 @@ class _SubTopicDetailPageState extends State<SubTopicDetailPage> {
           final String subSubjectName =
               subSubjectItem['name']?.toString() ?? 'Alt Başlık';
 
+          final String image = subSubjectItem['image'];
+          final String imageColor = subSubjectItem['imageColor'];
+          final String barColor = subSubjectItem['barColor'];
+
           List<dynamic> correspondingItems = [];
           if (itemsArray.length > i && itemsArray[i] is List) {
             correspondingItems = itemsArray[i];
@@ -61,6 +65,9 @@ class _SubTopicDetailPageState extends State<SubTopicDetailPage> {
           mappedData.add({
             "_id": subSubjectId,
             "title": subSubjectName,
+            "image": image,
+            "imageColor": imageColor,
+            "barColor": barColor,
             "items": correspondingItems,
           });
         }
@@ -207,6 +214,14 @@ class _SubTopicDetailPageState extends State<SubTopicDetailPage> {
                                             parentCategory['barColor'],
                                           );
 
+                                      print(
+                                        "parentCategory: ${parentCategory}",
+                                      );
+
+                                      print(
+                                        "barColor: ${parentCategory['barColor']}",
+                                      );
+
                                       return _MainTopicExpansionCard(
                                         categoryTitle: categoryTitle,
                                         items: items,
@@ -240,8 +255,8 @@ class _SubTopicDetailPageState extends State<SubTopicDetailPage> {
       decoration: const BoxDecoration(
         color: AppColors.appBarBackground,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(32),
-          bottomRight: Radius.circular(32),
+          bottomLeft: Radius.circular(16),
+          bottomRight: Radius.circular(16),
         ),
       ),
       child: Row(
@@ -341,6 +356,12 @@ class _MainTopicExpansionCardState extends State<_MainTopicExpansionCard> {
         : '';
     const double dividerThickness = 1.2;
     const double dividerHeight = 16.0;
+
+    /*
+    print(widget.categoryTitle);
+    print(widget.image);
+    print(widget.items);
+    */
 
     int totalCards = 0;
     int goodCount = 0;

@@ -1323,7 +1323,7 @@ class _SubTopicDetailPageState extends State<SubTopicDetailPage> {
       decoration: const BoxDecoration(
         color: AppColors.appBarBackground,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(18),
+          bottomLeft: Radius.circular(1),
           bottomRight: Radius.circular(18),
         ),
       ),
