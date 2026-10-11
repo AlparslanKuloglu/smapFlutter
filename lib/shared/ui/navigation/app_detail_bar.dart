@@ -58,6 +58,7 @@ class AppDetailBar extends StatelessWidget {
     this.display = false,
     this.gutter = AppSpacing.gutter,
     this.safeTop,
+    this.compactAlways = false,
     super.key,
   });
 
@@ -82,6 +83,11 @@ class AppDetailBar extends StatelessWidget {
 
   /// Override for the top safe area (gallery frames).
   final double? safeTop;
+
+  /// The bar shows its compact title (and the divider) from the start, with
+  /// no large title under it: a screen that opens already "scrolled" (the
+  /// week grid of pano 3.4 kare 4, "Başlık bara inmiş").
+  final bool compactAlways;
 
   @override
   Widget build(BuildContext context) {
@@ -133,10 +139,12 @@ class _DetailBarDelegate extends SliverPersistentHeaderDelegate {
     double shrinkOffset,
     bool overlapsContent,
   ) {
-    final progress = DetailBarMetrics.revealProgress(
-      shrinkOffset,
-      titleBottom: titleBottom,
-    );
+    final progress = bar.compactAlways
+        ? 1.0
+        : DetailBarMetrics.revealProgress(
+            shrinkOffset,
+            titleBottom: titleBottom,
+          );
     return AppSystemOverlayRegion(
       kind: AppSystemOverlayKind.bar,
       child: _DetailBarSurface(bar: bar, metrics: metrics, progress: progress),
@@ -151,7 +159,8 @@ class _DetailBarDelegate extends SliverPersistentHeaderDelegate {
       bar.compactTitle != oldDelegate.bar.compactTitle ||
       bar.action != oldDelegate.bar.action ||
       bar.leading != oldDelegate.bar.leading ||
-      bar.onLeading != oldDelegate.bar.onLeading;
+      bar.onLeading != oldDelegate.bar.onLeading ||
+      bar.compactAlways != oldDelegate.bar.compactAlways;
 }
 
 class _DetailBarSurface extends StatelessWidget {

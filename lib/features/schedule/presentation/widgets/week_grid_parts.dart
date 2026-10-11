@@ -1,0 +1,210 @@
+part of 'week_grid.dart';
+
+// The pieces of the week grid (C63): a day header, the hour column, the line
+// painter and a block.
+
+class _DayHeader extends StatelessWidget {
+  const _DayHeader({required this.day, required this.today});
+
+  final DateTime day;
+  final bool today;
+
+  /// The bar under today's number (C63: 32 x 3).
+  static const double _barWidth = 32;
+  static const double _barHeight = 3;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = context.appColors;
+    final text = context.appText;
+    return SizedBox(
+      width: WeekGrid.dayColumn,
+      height: WeekGrid.headerRow,
+      child: Semantics(
+        header: true,
+        label: TrFormat.uzunTarihGun(day),
+        excludeSemantics: true,
+        child: Stack(
+          alignment: Alignment.topCenter,
+          children: [
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  TrFormat.gunKisa(day),
+                  maxLines: 1,
+                  style: text.caption.copyWith(
+                    color: colors.textSecondary,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Text(
+                  '${day.day}',
+                  maxLines: 1,
+                  style: text.labelMd.copyWith(
+                    color: colors.textPrimary,
+                    fontWeight: FontWeight.w700,
+                    height: 20 / 15,
+                  ),
+                ),
+              ],
+            ),
+            if (today)
+              Positioned(
+                bottom: 0,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: colors.accentLine,
+                    borderRadius: AppRadius.borderXs,
+                  ),
+                  child: const SizedBox(width: _barWidth, height: _barHeight),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _HourColumn extends StatelessWidget {
+  const _HourColumn({required this.range});
+
+  final HourRange range;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = context.appColors;
+    final text = context.appText;
+    return ExcludeSemantics(
+      child: ColoredBox(
+        color: colors.bgCanvas,
+        child: Column(
+          children: [
+            for (final hour in range.hours)
+              SizedBox(
+                height: WeekGrid.hourRow,
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: AppSpacing.s4),
+                    child: Text(
+                      TrFormat.saatParcali(hour),
+                      maxLines: 1,
+                      style: text.caption.copyWith(
+                        color: colors.textSecondary,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _GridLinePainter extends CustomPainter {
+  const _GridLinePainter({
+    required this.color,
+    required this.rows,
+    required this.columns,
+  });
+
+  final Color color;
+  final int rows;
+  final int columns;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = 1;
+    for (var row = 0; row <= rows; row++) {
+      final y = row * WeekGrid.hourRow;
+      canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);
+    }
+    for (var column = 0; column <= columns; column++) {
+      final x = column * WeekGrid.dayColumn;
+      canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(_GridLinePainter old) =>
+      old.color != color || old.rows != rows || old.columns != columns;
+}
+
+class _Block extends StatelessWidget {
+  const _Block({required this.entry, required this.onTap});
+
+  final ProgramEntry entry;
+  final VoidCallback? onTap;
+
+  static const double _glyph = 14;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = context.appColors;
+    final text = context.appText;
+    final l10n = AppLocalizations.of(context);
+    final subject = entry.subject;
+    final SubjectTone? tone = subject == null
+        ? null
+        : context.appSubject(subject);
+    final SmapColors c = colors;
+    final fill = tone?.bg ?? c.bgSunken;
+    final accent = tone?.fg ?? c.textSecondary;
+    final icon = subject == null ? subjectFallbackIcon : subjectIcons[subject]!;
+
+    return Semantics(
+      button: onTap != null,
+      onTap: onTap,
+      label: l10n.schedule_weekBlockA11y(
+        TrFormat.gunAdi(entry.day),
+        entry.timeLabel,
+        entry.shortLesson,
+        entry.title,
+      ),
+      excludeSemantics: true,
+      child: AppPressable(
+        onTap: onTap,
+        builder: (context, states) => AppFocusRing(
+          focused: states.contains(WidgetState.focused),
+          borderRadius: AppRadius.borderSm,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              color: fill,
+              borderRadius: AppRadius.borderSm,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(6, 2, 6, 2),
+              child: ClipRect(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    PhosphorIcon(icon, size: _glyph, color: accent),
+                    Text(
+                      entry.shortLesson,
+                      maxLines: 1,
+                      softWrap: false,
+                      overflow: TextOverflow.ellipsis,
+                      style: text.caption.copyWith(
+                        color: accent,
+                        fontWeight: FontWeight.w700,
+                        height: 16 / 13,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

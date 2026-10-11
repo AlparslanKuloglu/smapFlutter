@@ -21,4 +21,12 @@ abstract final class FeatureFlags {
   /// Closed because the official Apple and Google button assets, the Apple
   /// package and the server endpoint do not exist yet (spec §6.3 #17).
   static const bool socialLoginEnabled = false;
+
+  /// "Programı İptal Et" (pano 3.6 kare 1 and 4) and the screen's delete.
+  ///
+  /// Closed because the backend has no endpoint that deletes or cancels a
+  /// program (spec §6.3 #25). While it is `false` the danger button is not
+  /// drawn. Opening it also needs a delete call given to
+  /// `ProgramDetailViewModel.deleteProgram`.
+  static const bool programDeleteEnabled = false;
 }
