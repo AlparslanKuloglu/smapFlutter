@@ -10,33 +10,10 @@ import 'package:smap/features/auth/presentation/provider/login_provider.dart';
 import 'package:smap/features/auth/presentation/screens/login_screen.dart';
 import 'package:smap/features/legacy/legacy_theme.dart';
 import 'package:smap/features/legacy/session_login_notifier.dart';
-import 'package:smap/features/onboarding/onboarding_page.dart';
 import 'package:smap/features/root/presentation/screens/root_screen.dart';
 import 'package:smap/features/shared/presentation/provider/user_provider.dart';
 import 'package:smap/repository/profile_repository.dart';
 import 'package:smap/services/session_manager.dart';
-
-/// The legacy intro (`OnboardingScreen`) as `OnboardingRoute`, until E2
-/// replaces it.
-@RoutePage(name: 'OnboardingRoute')
-class LegacyOnboardingPage extends StatelessWidget {
-  const LegacyOnboardingPage({super.key});
-
-  @override
-  Widget build(BuildContext context) =>
-      const LegacyTheme(child: OnboardingScreen());
-}
-
-/// The welcome screen. There is none in the legacy app: the sign-in card is
-/// the first screen after the intro, so `WelcomeRoute` shows it until E2 and
-/// E3 draw the real ones.
-@RoutePage(name: 'WelcomeRoute')
-class LegacyWelcomePage extends StatelessWidget {
-  const LegacyWelcomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) => const _LegacyAuthScreen();
-}
 
 /// The legacy sign-in (`LoginView`, the card with the login form) as
 /// `LoginRoute`, until E3 replaces it.
