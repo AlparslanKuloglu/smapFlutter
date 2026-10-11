@@ -28,22 +28,19 @@ import 'package:smap/shared/ui/feedback/section_state.dart';
 
 /// The logic of Ders Detayı (pano 7.2, 7.4, 7.5 kare 2 and 3; spec §4.F 7.2).
 ///
-/// - **Lesson.** The general lesson comes from the session's
-///   [LessonsService] (missing counts per track) or, before it has answered,
-///   from the built-in catalog, so the screen never waits for the list to
-///   open: the ids of the catalog are the backend's own.
-/// - **Segment.** A lesson with tracks (Tarih, Coğrafya, Fizik, Kimya,
-///   Biyoloji) offers its tracks, and each is a backend lesson of its own: the
-///   topics of the chosen one are read (`mainSubjects`) and kept, so going
-///   back to a track is instant. A lesson without tracks (Türkçe, Edebiyat)
-///   offers "Tümü" and the server's filters over one topic list. It opens on
-///   the category of the link, else on the device's last exam type.
-/// - **Filter.** "Eksiklerim" keeps the topics with something missing under
-///   the chosen segment; the numbers stay those of the full list.
-/// - **Edebiyat.** A second segment picks Konular or Yazar ve Eserler (kept
-///   on the device); the author list loads the first time it is shown.
-/// - **Returning** from a topic reloads its counts without a skeleton.
-/// - Every first load is bounded by 15 s; then the error state shows.
+/// - The lesson comes from the session's [LessonsService] (counts per track)
+///   or, before it answers, from the built-in catalog: the screen never waits
+///   for the list to open.
+/// - A lesson with tracks reads the topics of the chosen track's backend
+///   lesson and keeps them (going back is instant); a lesson without tracks
+///   has one topic list and "Tümü" plus the server's filters. It opens on the
+///   category of the link, else the device's last exam type.
+/// - "Eksiklerim" keeps the topics with something missing under the segment,
+///   with their numbers of the full list.
+/// - Edebiyat has a second segment, Konular and Yazar ve Eserler (kept on the
+///   device); the authors load the first time they are shown.
+/// - Returning from a topic reloads the counts without a skeleton; every first
+///   load is bounded by 15 s, then the error state shows.
 class LessonDetailViewModel extends ReactiveViewModel {
   LessonDetailViewModel({
     required this.lessonId,
