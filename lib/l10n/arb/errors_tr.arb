@@ -1,0 +1,51 @@
+{
+  "@@locale": "tr",
+  "errors_network": "Bağlantıda bir sorun oluştu. Biraz sonra tekrar dene.",
+  "@errors_network": {
+    "description": "AppErrorCode.network: the connection broke or was refused."
+  },
+  "errors_timeout": "İstek çok uzun sürdü. Tekrar dene.",
+  "@errors_timeout": {
+    "description": "AppErrorCode.timeout: a connect, send or receive deadline passed."
+  },
+  "errors_offline": "Bağlantı yok. Bağlantını kontrol edip tekrar dene.",
+  "@errors_offline": {
+    "description": "AppErrorCode.offline: the device has no route to the server."
+  },
+  "errors_unauthorized": "Giriş bilgilerin doğru değil. Kontrol edip tekrar dene.",
+  "@errors_unauthorized": {
+    "description": "AppErrorCode.unauthorized: credentials rejected."
+  },
+  "errors_sessionExpired": "Oturumun sona erdi. Yeniden giriş yapman gerekiyor.",
+  "@errors_sessionExpired": {
+    "description": "AppErrorCode.sessionExpired: the session cookie is no longer valid."
+  },
+  "errors_forbidden": "Bu işlem için yetkin yok.",
+  "@errors_forbidden": {
+    "description": "AppErrorCode.forbidden."
+  },
+  "errors_notFound": "Aradığın içerik bulunamadı.",
+  "@errors_notFound": {
+    "description": "AppErrorCode.notFound."
+  },
+  "errors_validation": "Bilgilerini kontrol edip tekrar dene.",
+  "@errors_validation": {
+    "description": "AppErrorCode.validation: the server rejected the input. A server-written message may replace this text."
+  },
+  "errors_server": "Sunucuda bir sorun oluştu. Biraz sonra tekrar dene.",
+  "@errors_server": {
+    "description": "AppErrorCode.server: 5xx other than maintenance."
+  },
+  "errors_maintenance": "SMAP şu an bakımda. Biraz sonra tekrar dene.",
+  "@errors_maintenance": {
+    "description": "AppErrorCode.maintenance (503). No time promise."
+  },
+  "errors_cancelled": "İşlem durduruldu.",
+  "@errors_cancelled": {
+    "description": "AppErrorCode.cancelled. Normally not shown. Never say 'iptal'."
+  },
+  "errors_unknown": "Beklenmedik bir sorun oluştu. Tekrar dene.",
+  "@errors_unknown": {
+    "description": "AppErrorCode.unknown."
+  }
+}
