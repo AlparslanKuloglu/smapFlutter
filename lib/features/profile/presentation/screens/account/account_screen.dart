@@ -53,7 +53,9 @@ class AccountScreen extends StatelessWidget {
                 // 1. Önce Dialog'u kapat
                 Navigator.pop(dialogContext);
 
-                // 2. main.dart'ta AuthRepositoryImpl olarak sağlandığı için onu çağırıyoruz
+                // 2. LegacyScope'ta AuthRepositoryImpl olarak sağlanan oturum
+                //    destekli depo çıkışı SessionManager'a yaptırır: çerezler,
+                //    önbellek ve oturum kapsamı temizlenir.
                 await context.read<AuthRepositoryImpl>().logout();
 
                 if (!context.mounted) return;
@@ -61,12 +63,8 @@ class AccountScreen extends StatelessWidget {
                 // 3. UserProvider durumunu sıfırla
                 context.read<UserProvider>().clearUserData();
 
-                // 4. Login ekranına yönlendir
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/login',
-                  (route) => false,
-                );
+                // 4. Login ekranına yönlendirmeyi router yapar (oturum
+                //    kapandığı için guard zinciri girişe götürür).
               },
               child: const Text(
                 'Çıkış Yap',

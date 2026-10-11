@@ -61,7 +61,10 @@ dependencies:
   # State management (Stacked MVVM), DI, routing, serialization
   stacked: ^3.5.0
   get_it: ^8.0.3
-  auto_route: ^11.1.0
+  # Pinned to 11.1.0: 11.2.0 uses `Viewport.scrollCacheExtent` (Flutter 3.41+)
+  # and does not compile on the pinned Flutter 3.38.6 (K16). Same as Sepello
+  # and Memora.
+  auto_route: 11.1.0
   dart_mappable: ^4.7.0
 
   # Design system and UI
@@ -170,3 +173,19 @@ flutter_gen:
   line_length: 80
   integrations:
     flutter_svg: true
+
+# flutter_native_splash (RTR): the navy launch screen of board 2.1 kare 1,
+# same picture as `AppLockup(vertical, onNavy)` on `#0F294A`, in both themes.
+# The images are the 4x renders of `assets/brand/smap_lockup_vertical_on_navy.svg`
+# (461 x 616 px = 115,2 x 154 pt); the Android 12 icon is the same lockup
+# scaled into the 960 x 960 canvas (the system masks it to a circle).
+# Regenerate with `dart run flutter_native_splash:create`.
+flutter_native_splash:
+  color: "#0F294A"
+  image: assets/splash/smap_splash.png
+  android_12:
+    color: "#0F294A"
+    image: assets/splash/smap_splash_android12.png
+  ios_content_mode: center
+  android_gravity: center
+  fullscreen: false

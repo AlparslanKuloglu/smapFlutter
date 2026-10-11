@@ -1,7 +1,8 @@
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:smap/core/network/network_service.dart';
+import 'package:smap/dependency_injection/injection_container.dart';
 
 class DioClient {
   static final DioClient _instance = DioClient._internal();
@@ -23,21 +24,17 @@ class DioClient {
     );
   }
 
-  /// 🚀 ASENKRON BAŞLATICI: Uygulama açılırken main.dart içinden çağrılacak.
-  /// Çerezlerin telefona kalıcı olarak yazılacağı klasörü hazırlar ve interceptor'ı bağlar.
+  /// Başlatıcı: `configureDependencies()` bittikten sonra, uygulama açılırken
+  /// çağrılır (`MainInitializer`).
+  ///
+  /// Kendi çerez kavanozunu kurmaz: `NetworkService`'in kavanozunu paylaşır
+  /// (`<documents>/.cookies/`, `PersistCookieJar`). Böylece eski ve yeni ağ
+  /// yığını aynı oturum çerezini görür ve çıkışta (`SessionManager`) ikisi
+  /// birden temizlenir.
   Future<void> init() async {
     if (_isInitialized) return;
 
-    // Telefon hafızasında çerezler için güvenli bir klasör yolu alıyoruz
-    final appDocDir = await getApplicationDocumentsDirectory();
-    final String cookiePath = '${appDocDir.path}/.cookies/';
-
-    // Kapanıp açıldığında silinmeyen kalıcı çerez kavanozu oluşturuyoruz
-    cookieJar = PersistCookieJar(
-      storage: FileStorage(cookiePath),
-      ignoreExpires:
-          false, // Süresi dolan çerezleri backend kurallarına göre siler
-    );
+    cookieJar = locator<NetworkService>().cookieJar as PersistCookieJar;
 
     // Dio'ya otomatik çerez yöneticisini ekliyoruz
     dio.interceptors.add(CookieManager(cookieJar));
