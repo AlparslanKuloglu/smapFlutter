@@ -3,18 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:smap/core/domain/user_role.dart';
-import 'package:smap/dependency_injection/injection_container.dart';
-import 'package:smap/features/auth/data/repositories/auth_repository_impl.dart';
-import 'package:smap/features/auth/domain/usecases/login_usecase.dart';
-import 'package:smap/features/auth/presentation/provider/login_provider.dart';
-import 'package:smap/features/auth/presentation/screens/login_screen.dart';
+import 'package:smap/features/auth/domain/usecases/get_legal_documents_usecase.dart';
+import 'package:smap/features/auth/domain/usecases/register_usecase.dart';
+import 'package:smap/features/auth/presentation/login/login_view.dart';
+import 'package:smap/features/auth/presentation/provider/register_provider.dart';
+import 'package:smap/features/auth/presentation/widgets/register_form.dart';
 import 'package:smap/features/legacy/legacy_theme.dart';
-import 'package:smap/features/legacy/session_login_notifier.dart';
 import 'package:smap/features/onboarding/onboarding_page.dart';
 import 'package:smap/features/root/presentation/screens/root_screen.dart';
 import 'package:smap/features/shared/presentation/provider/user_provider.dart';
 import 'package:smap/repository/profile_repository.dart';
-import 'package:smap/services/session_manager.dart';
 
 /// The legacy intro (`OnboardingScreen`) as `OnboardingRoute`, until E2
 /// replaces it.
@@ -27,52 +25,51 @@ class LegacyOnboardingPage extends StatelessWidget {
       const LegacyTheme(child: OnboardingScreen());
 }
 
-/// The welcome screen. There is none in the legacy app: the sign-in card is
-/// the first screen after the intro, so `WelcomeRoute` shows it until E2 and
-/// E3 draw the real ones.
+/// The welcome screen. There is none in the legacy app: the sign-in card was
+/// the first screen after the intro, so `WelcomeRoute` shows the new sign-in
+/// screen (`LoginView`, E3) until E2 draws the real welcome screen. As the
+/// first screen of the stack it has no back button.
 @RoutePage(name: 'WelcomeRoute')
 class LegacyWelcomePage extends StatelessWidget {
   const LegacyWelcomePage({super.key});
 
   @override
-  Widget build(BuildContext context) => const _LegacyAuthScreen();
+  Widget build(BuildContext context) => const LoginView();
 }
 
-/// The legacy sign-in (`LoginView`, the card with the login form) as
-/// `LoginRoute`, until E3 replaces it.
-@RoutePage(name: 'LoginRoute')
-class LegacyLoginPage extends StatelessWidget {
-  const LegacyLoginPage({super.key});
-
-  @override
-  Widget build(BuildContext context) => const _LegacyAuthScreen();
-}
-
-/// Sign-up. The legacy sign-up form lives inside the sign-in card (the
-/// "Kayıt ol" switch), so `RegisterRoute` shows that card until E4 replaces
-/// it.
+/// Sign-up. The legacy sign-up form lived inside the sign-in card (the "Kayıt
+/// ol" switch); the sign-in is the new `LoginView` now, so `RegisterRoute`
+/// shows the form on its own (`_LegacyRegisterHost`) until E4 replaces it.
 @RoutePage(name: 'RegisterRoute')
 class LegacyRegisterPage extends StatelessWidget {
   const LegacyRegisterPage({super.key});
 
   @override
-  Widget build(BuildContext context) => const _LegacyAuthScreen();
+  Widget build(BuildContext context) =>
+      const LegacyTheme(child: _LegacyRegisterHost());
 }
 
-/// `LoginView` with a `LoginNotifier` that signs in through the session
-/// manager (see `SessionLoginNotifier`).
-class _LegacyAuthScreen extends StatelessWidget {
-  const _LegacyAuthScreen();
+/// The legacy `RegisterForm` with the `RegisterNotifier` the sign-in card used
+/// to create for it (the legal documents load when the screen opens). The
+/// form's back button closes the page. A finished sign-up signs in through
+/// `SessionAuthRepository` and the router's guards open the shell.
+class _LegacyRegisterHost extends StatelessWidget {
+  const _LegacyRegisterHost();
 
   @override
   Widget build(BuildContext context) {
-    return LegacyTheme(
-      child: ChangeNotifierProvider<LoginNotifier>(
-        create: (context) => SessionLoginNotifier(
-          session: locator<SessionManager>(),
-          loginUseCase: LoginUseCase(context.read<AuthRepositoryImpl>()),
+    return ChangeNotifierProvider<RegisterNotifier>(
+      create: (context) => RegisterNotifier(
+        registerUseCase: context.read<RegisterUseCase>(),
+        getLegalDocumentsUseCase: context.read<GetLegalDocumentsUseCase>(),
+      )..fetchLegalDocuments(),
+      child: Scaffold(
+        body: SafeArea(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(16),
+            child: RegisterForm(onBackPressed: () => context.router.maybePop()),
+          ),
         ),
-        child: const LoginView(),
       ),
     );
   }
