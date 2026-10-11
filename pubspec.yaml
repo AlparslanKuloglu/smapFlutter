@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.8.1
+  sdk: ^3.10.7
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -28,18 +28,15 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-
   image_picker: ^1.2.1
   intl: ^0.20.2
   camera: ^0.10.0
-  camerawesome: ^2.0.1
-  cupertino_icons: ^1.0.6
   appinio_swiper: ^2.0.0
   dartz: ^0.10.1
   dio: ^5.4.3+1
   flutter:
     sdk: flutter
-  flutter_localizations: # <-- Bu satırı ekleyin
+  flutter_localizations:
     sdk: flutter
   flutter_document_scanner:
     path: ./lib/vendor/flutter_document_scanner/flutter_document_scanner
@@ -48,12 +45,10 @@ dependencies:
   flutter_native_splash: ^2.4.4
   http: ^0.13.3
   image: ^4.1.7
-  jpeg_encode: ^1.0.1
   path_provider: ^2.1.3
   provider: ^6.1.2
   rest_api_package: ^1.0.0+2
   shared_preferences: ^2.2.2
-  web_socket_channel: ^2.1.0
   flutter_inappwebview: ^6.1.5
   fl_chart: ^1.2.0
   flutter_card_swiper: ^7.2.0
@@ -62,6 +57,29 @@ dependencies:
   cookie_jar: ^4.0.0
   google_sign_in: ^7.2.0
   flutter_html: ^3.0.0
+
+  # State management (Stacked MVVM), DI, routing, serialization
+  stacked: ^3.5.0
+  get_it: ^8.0.3
+  auto_route: ^11.1.0
+  dart_mappable: ^4.7.0
+
+  # Design system and UI
+  mihr_ui: ^0.1.0-dev.3
+  smooth_sheets: ^1.0.2
+  toastification: ^3.2.0
+  phosphor_flutter: ^2.1.0
+
+  # Platform services
+  permission_handler: ^12.0.1
+  connectivity_plus: ^7.3.1
+  package_info_plus: ^9.0.1
+  url_launcher: ^6.3.2
+  share_plus: ^12.0.1
+  flutter_secure_storage: ^9.2.4
+
+  # Logging
+  logger: ^2.6.1
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +91,14 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
+
+  # Code generation
+  # Pinned: build_runner 2.15 AOT-compiles the build script, which fails while a
+  # dependency (objective_c) has build hooks. 2.13.x uses the JIT path.
+  build_runner: 2.13.1
+  auto_route_generator: ^10.5.0
+  dart_mappable_builder: ^4.7.0
+  flutter_gen_runner: ^5.12.0
 
 
 flutter_launcher_icons:
@@ -88,6 +114,7 @@ flutter_launcher_icons:
 
 # The following section is specific to Flutter packages.
 flutter:
+  generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -120,6 +147,24 @@ flutter:
     - assets/authors/t/
     - assets/authors/t1/
     - assets/authors/t2/
-    
-    
 
+  fonts:
+    - family: PlusJakartaSans
+      fonts:
+        - asset: assets/fonts/plus_jakarta_sans/PlusJakartaSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/plus_jakarta_sans/PlusJakartaSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/plus_jakarta_sans/PlusJakartaSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/plus_jakarta_sans/PlusJakartaSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/plus_jakarta_sans/PlusJakartaSans-ExtraBold.ttf
+          weight: 800
+
+# flutter_gen_runner: typed asset/font accessors (lib/gen/).
+flutter_gen:
+  output: lib/gen/
+  line_length: 80
+  integrations:
+    flutter_svg: true

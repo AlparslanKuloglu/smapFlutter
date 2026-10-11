@@ -1,0 +1,31 @@
+{
+  "@@locale": "tr",
+  "common_cancel": "Vazgeç",
+  "@common_cancel": {
+    "description": "Dismiss button of dialogs and sheets. Never use 'İptal'."
+  },
+  "common_ok": "Tamam",
+  "@common_ok": {
+    "description": "Acknowledge button."
+  },
+  "common_close": "Kapat",
+  "@common_close": {
+    "description": "Close action. Accessibility labels only."
+  },
+  "common_undo": "Geri Al",
+  "@common_undo": {
+    "description": "Undo action. Toast action only."
+  },
+  "common_retry": "Tekrar Dene",
+  "@common_retry": {
+    "description": "Retry action of error states."
+  },
+  "common_continue": "Devam Et",
+  "@common_continue": {
+    "description": "Generic continue button."
+  },
+  "common_save": "Kaydet",
+  "@common_save": {
+    "description": "Generic save button."
+  }
+}
