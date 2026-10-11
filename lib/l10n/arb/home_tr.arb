@@ -1,0 +1,98 @@
+{
+  "@@locale": "tr",
+  "home_today": "Bugün",
+  "@home_today": {
+    "description": "Section title of the planned topics of the day (pano 3.1 kare 1, SectionHeader)."
+  },
+  "home_todayDate": "{weekday}, {day} {month}",
+  "@home_todayDate": {
+    "description": "The day line of \"Bugün\": 'Cumartesi, 10 Ekim' (pano 3.1 kare 3).",
+    "placeholders": {
+      "weekday": {
+        "type": "String"
+      },
+      "day": {
+        "type": "String"
+      },
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "home_todaySub": "{date} · {program}",
+  "@home_todaySub": {
+    "description": "The meta of \"Bugün\" with the program of the day: 'Cumartesi, 10 Ekim · Ekim 2. Hafta' (pano 3.1 kare 1).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "program": {
+        "type": "String"
+      }
+    }
+  },
+  "home_myProgram": "Programım",
+  "@home_myProgram": {
+    "description": "The one text button of \"Bugün\" (pano 3.1 kare 1)."
+  },
+  "home_noProgram": "Haftalık programın yok. Bir hafta kurduğunda günün konuları burada görünür.",
+  "@home_noProgram": {
+    "description": "\"Bugün\" card when the student has no program (pano 3.1 kare 3)."
+  },
+  "home_setupProgram": "Haftalık Programını Kur",
+  "@home_setupProgram": {
+    "description": "Text button under the no-program sentence (pano 3.1 kare 3)."
+  },
+  "home_todayError": "Bugünün programı yüklenemedi.",
+  "@home_todayError": {
+    "description": "Section error of \"Bugün\" (pano 3.2 kare 2)."
+  },
+  "home_lastExam": "Son denemen",
+  "@home_lastExam": {
+    "description": "Section title of the last exam (pano 3.1 kare 1)."
+  },
+  "home_lastExamError": "Son deneme yüklenemedi.",
+  "@home_lastExamError": {
+    "description": "Section error of \"Son denemen\" (not drawn in the boards; written like \"Dersler yüklenemedi.\", pano 3.2)."
+  },
+  "home_examNameFallback": "{type} denemesi",
+  "@home_examNameFallback": {
+    "description": "Name of a result the server sent without one (board 6.2): 'AYT denemesi'.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "home_mostMissedSentence": "{topic} {total} sorudan {wrong} kaçırdın.",
+  "@home_mostMissedSentence": {
+    "description": "The weakest-topic sentence (pano 3.1). {topic} arrives with its suffix from TurkishSuffix.locative ('Kurtuluş Savaşı Hazırlık Dönemi'nde'), {wrong} from TurkishSuffix.possessiveAccusative ('9'unu').",
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      },
+      "wrong": {
+        "type": "String"
+      }
+    }
+  },
+  "home_subjects": "Derslerin",
+  "@home_subjects": {
+    "description": "Section title of the subject strip (pano 3.1 kare 1)."
+  },
+  "home_subjectsSub": "Eksiği en çok olandan başlar",
+  "@home_subjectsSub": {
+    "description": "Meta of the subject strip (pano 3.1 kare 1); not drawn without missing items (kare 3)."
+  },
+  "home_subjectsError": "Dersler yüklenemedi.",
+  "@home_subjectsError": {
+    "description": "Section error of \"Derslerin\" (pano 3.2, spec 1.22)."
+  },
+  "home_literatureName": "Türk Dili ve Edebiyatı",
+  "@home_literatureName": {
+    "description": "Name of the literature lesson on its tile (pano 3.1 kare 1)."
+  }
+}

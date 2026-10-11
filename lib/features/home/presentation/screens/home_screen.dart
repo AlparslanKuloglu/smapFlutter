@@ -7,7 +7,6 @@ import 'package:smap/features/shared/presentation/provider/user_provider.dart'; 
 import 'package:smap/features/home/presentation/widgets/home_menu_grid.dart';
 import 'package:smap/features/home/presentation/widgets/home_month_calendar.dart';
 import 'package:smap/features/home/presentation/widgets/home_person_card.dart';
-import 'package:smap/features/home/presentation/widgets/home_lessons_cards.dart';
 import 'package:smap/features/home/presentation/widgets/home_students_cards.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -40,9 +39,9 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          if (userRole == 'student')
-            HomeLessonsCards(lessons: homeProvider.lessons)
-          else if (userRole == 'coach')
+          // The student's home is the new `HomeView` (E6); this hub is the
+          // coach's until E15 replaces it.
+          if (userRole == 'coach')
             HomeStudentsCards(students: homeProvider.coachStudents)
           else
             const SizedBox.shrink(), // Beklenmedik bir rol durumu için koruma
