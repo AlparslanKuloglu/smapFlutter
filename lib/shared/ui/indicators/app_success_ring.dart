@@ -47,6 +47,9 @@ class AppSuccessRing extends StatelessWidget {
   /// Radius of the ring centerline.
   static const double radius = 21;
 
+  /// Air between the arc and the percent label.
+  static const double _labelGap = 2;
+
   @override
   Widget build(BuildContext context) {
     final colors = context.appColors;
@@ -97,14 +100,19 @@ class AppSuccessRing extends StatelessWidget {
             ),
             child: child,
           ),
-          child: Center(
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                TrFormat.yuzde(correct, total),
-                style: text.caption.copyWith(
-                  color: colors.textPrimary,
-                  fontWeight: FontWeight.w700,
+          // The label is fitted inside the ring's inner circle so "%100"
+          // never touches the arc.
+          child: Padding(
+            padding: const EdgeInsets.all(line + _labelGap),
+            child: Center(
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  TrFormat.yuzde(correct, total),
+                  style: text.caption.copyWith(
+                    color: colors.textPrimary,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
               ),
             ),
