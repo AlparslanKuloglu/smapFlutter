@@ -100,14 +100,26 @@ class _AppButtonState extends State<AppButton> {
   void initState() {
     super.initState();
     _states.addListener(_onStates);
+    FocusManager.instance.addHighlightModeListener(_onHighlightMode);
   }
 
   @override
   void dispose() {
+    FocusManager.instance.removeHighlightModeListener(_onHighlightMode);
     _states
       ..removeListener(_onStates)
       ..dispose();
     super.dispose();
+  }
+
+  /// The ring is for keyboard focus only (spec §1.4): on touch the focus
+  /// highlight mode is `touch` and a focused button (autofocus, a sheet's
+  /// first action) must not draw it.
+  static bool get _keyboardFocusVisible =>
+      FocusManager.instance.highlightMode == FocusHighlightMode.traditional;
+
+  void _onHighlightMode(FocusHighlightMode _) {
+    if (mounted && _focused) setState(() {});
   }
 
   void _onStates() {
@@ -151,7 +163,7 @@ class _AppButtonState extends State<AppButton> {
     Widget button = _mihrButton(onPressed, style, content);
     if (widget.expand) button = SizedBox(width: double.infinity, child: button);
     button = AppFocusRing(
-      focused: _focused,
+      focused: _focused && _keyboardFocusVisible,
       style: widget._isText
           ? AppFocusRingStyle.flush
           : AppFocusRingStyle.gapped,
