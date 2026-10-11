@@ -1,0 +1,161 @@
+{
+  "@@locale": "tr",
+  "login_title": "Giriş yap",
+  "@login_title": {
+    "description": "Sign-in screen title, the large title under the logo (pano 2.3)."
+  },
+  "login_usernameLabel": "Kullanıcı adı",
+  "@login_usernameLabel": {
+    "description": "Label of the user name field (pano 2.3)."
+  },
+  "login_passwordLabel": "Şifre",
+  "@login_passwordLabel": {
+    "description": "Label of the password field (pano 2.3)."
+  },
+  "login_forgot": "Şifremi Unuttum",
+  "@login_forgot": {
+    "description": "Text button under the password field; shown only while the reset flow is open (pano 2.3 kare 1)."
+  },
+  "login_submit": "Giriş Yap",
+  "@login_submit": {
+    "description": "Primary button of the sign-in screen (pano 2.3 kare 1)."
+  },
+  "login_submitting": "Giriş yapılıyor",
+  "@login_submitting": {
+    "description": "Label of the primary button while the sign-in runs (pano 2.3 kare 2)."
+  },
+  "login_noAccount": "Hesabın yok mu?",
+  "@login_noAccount": {
+    "description": "Line above the sign-up link at the bottom (pano 2.3 kare 1)."
+  },
+  "login_register": "Kayıt Ol",
+  "@login_register": {
+    "description": "Text button at the bottom that opens the sign-up screen (pano 2.3 kare 1)."
+  },
+  "login_errorInvalid": "Kullanıcı adı ya da şifre hatalı. Tekrar dene ya da şifreni sıfırla.",
+  "@login_errorInvalid": {
+    "description": "Error box for wrong credentials; it never says which field is wrong (pano 2.3 kare 3). Used while the reset flow is open."
+  },
+  "login_errorInvalidNoReset": "Kullanıcı adı ya da şifre hatalı. Tekrar dene.",
+  "@login_errorInvalidNoReset": {
+    "description": "Same error box without the pointer to the reset link, used while the reset flow is closed and the link is not drawn. Not on the board; derived from pano 2.3 kare 3."
+  },
+  "login_errorNetwork": "Bağlanamadık. Bağlantını kontrol edip tekrar dene.",
+  "@login_errorNetwork": {
+    "description": "Error box when the sign-in got no answer in time or the connection broke (spec §4.A 2.3, errNetwork)."
+  },
+  "login_orUsername": "ya da kullanıcı adınla",
+  "@login_orUsername": {
+    "description": "Divider text under the Apple and Google buttons (pano 2.3 kare 4)."
+  },
+  "login_apple": "Apple ile Devam Et",
+  "@login_apple": {
+    "description": "Apple sign-in button, shown only while social sign-in is open (pano 2.3 kare 4)."
+  },
+  "login_google": "Google ile Devam Et",
+  "@login_google": {
+    "description": "Google sign-in button, shown only while social sign-in is open (pano 2.3 kare 4)."
+  },
+  "forgotPassword_emailTitle": "Şifreni sıfırla",
+  "@forgotPassword_emailTitle": {
+    "description": "Title of the first reset step (pano 2.4 kare 1)."
+  },
+  "forgotPassword_emailBody": "Hesabındaki e-posta adresini yaz; 6 haneli bir kod gönderelim.",
+  "@forgotPassword_emailBody": {
+    "description": "Sentence under the title of the first reset step (pano 2.4 kare 1)."
+  },
+  "forgotPassword_emailLabel": "E-posta",
+  "@forgotPassword_emailLabel": {
+    "description": "Label of the e-mail field (pano 2.4 kare 1)."
+  },
+  "forgotPassword_sendCode": "Kod Gönder",
+  "@forgotPassword_sendCode": {
+    "description": "Primary button of the first reset step (pano 2.4 kare 1)."
+  },
+  "forgotPassword_codeTitle": "Kodu gir",
+  "@forgotPassword_codeTitle": {
+    "description": "Title of the second reset step (pano 2.4 kare 2)."
+  },
+  "forgotPassword_codeBody": "Kodu {email} adresine gönderdik. Gelen kutunda yoksa istenmeyen klasörüne bak.",
+  "@forgotPassword_codeBody": {
+    "description": "Sentence under the title of the code step (pano 2.4 kare 2).",
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "forgotPassword_codeLabel": "Doğrulama kodu",
+  "@forgotPassword_codeLabel": {
+    "description": "Label of the six boxes (pano 2.4 kare 2)."
+  },
+  "forgotPassword_resendIn": "Kodu Tekrar Gönder ({time})",
+  "@forgotPassword_resendIn": {
+    "description": "Closed resend button with the time left, 'Kodu Tekrar Gönder (0:24)' (pano 2.4 kare 2).",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "forgotPassword_resend": "Kodu Tekrar Gönder",
+  "@forgotPassword_resend": {
+    "description": "Resend button once the wait is over (spec §4.A 2.4 fpResend). Not drawn on the board."
+  },
+  "forgotPassword_changeEmail": "E-postayı Değiştir",
+  "@forgotPassword_changeEmail": {
+    "description": "Text button of the code step that goes back to the e-mail step (pano 2.4 kare 2)."
+  },
+  "forgotPassword_newTitle": "Yeni şifreni belirle",
+  "@forgotPassword_newTitle": {
+    "description": "Title of the third reset step (pano 2.4 kare 3)."
+  },
+  "forgotPassword_newPasswordLabel": "Yeni şifre",
+  "@forgotPassword_newPasswordLabel": {
+    "description": "Label of the first new password field (pano 2.4 kare 3)."
+  },
+  "forgotPassword_newPasswordRepeatLabel": "Yeni şifre (tekrar)",
+  "@forgotPassword_newPasswordRepeatLabel": {
+    "description": "Label of the second new password field (pano 2.4 kare 3)."
+  },
+  "forgotPassword_passwordRule": "En az 8 karakter.",
+  "@forgotPassword_passwordRule": {
+    "description": "Help line under the first new password field; also its error when the password is too short (pano 2.4 kare 3)."
+  },
+  "forgotPassword_update": "Şifreyi Güncelle",
+  "@forgotPassword_update": {
+    "description": "Primary button of the third reset step (pano 2.4 kare 3)."
+  },
+  "forgotPassword_doneTitle": "Şifren güncellendi",
+  "@forgotPassword_doneTitle": {
+    "description": "Title of the last reset screen (pano 2.4 kare 4)."
+  },
+  "forgotPassword_doneBody": "Yeni şifrenle giriş yapabilirsin.",
+  "@forgotPassword_doneBody": {
+    "description": "Sentence of the last reset screen (pano 2.4 kare 4)."
+  },
+  "forgotPassword_doneAction": "Giriş Yap",
+  "@forgotPassword_doneAction": {
+    "description": "Primary button of the last reset screen; goes back to the sign-in screen (pano 2.4 kare 4)."
+  },
+  "forgotPassword_errCode": "Kod hatalı ya da süresi dolmuş. Yeni kod iste.",
+  "@forgotPassword_errCode": {
+    "description": "Error under the code boxes for a wrong or expired code (pano 2.4 'Hata metinleri')."
+  },
+  "forgotPassword_errTooMany": "Çok fazla deneme yaptın. 10 dakika sonra tekrar dene.",
+  "@forgotPassword_errTooMany": {
+    "description": "Error under the code boxes when the server says too many tries (pano 2.4 'Hata metinleri')."
+  },
+  "forgotPassword_errEmailFormat": "E-posta adresi eksik görünüyor. Örn: ad@alan.com",
+  "@forgotPassword_errEmailFormat": {
+    "description": "Error under the e-mail field for an address that does not look like one (pano 2.4 'Hata metinleri', board 1.12)."
+  },
+  "forgotPassword_errMismatch": "Şifreler aynı değil.",
+  "@forgotPassword_errMismatch": {
+    "description": "Error under the repeat field when the two passwords differ (pano 2.4 kare 3)."
+  },
+  "forgotPassword_errSendFailed": "Gönderilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@forgotPassword_errSendFailed": {
+    "description": "Toast when a reset call could not reach the server (pano 2.4 'Hata metinleri')."
+  }
+}
