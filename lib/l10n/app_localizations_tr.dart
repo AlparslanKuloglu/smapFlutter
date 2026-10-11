@@ -308,6 +308,84 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String get forgotPassword_changeEmail => 'E-postayı Değiştir';
+
+  @override
+  String forgotPassword_codeBody(String email) {
+    return 'Kodu $email adresine gönderdik. Gelen kutunda yoksa istenmeyen klasörüne bak.';
+  }
+
+  @override
+  String get forgotPassword_codeLabel => 'Doğrulama kodu';
+
+  @override
+  String get forgotPassword_codeTitle => 'Kodu gir';
+
+  @override
+  String get forgotPassword_doneAction => 'Giriş Yap';
+
+  @override
+  String get forgotPassword_doneBody => 'Yeni şifrenle giriş yapabilirsin.';
+
+  @override
+  String get forgotPassword_doneTitle => 'Şifren güncellendi';
+
+  @override
+  String get forgotPassword_emailBody =>
+      'Hesabındaki e-posta adresini yaz; 6 haneli bir kod gönderelim.';
+
+  @override
+  String get forgotPassword_emailLabel => 'E-posta';
+
+  @override
+  String get forgotPassword_emailTitle => 'Şifreni sıfırla';
+
+  @override
+  String get forgotPassword_errCode =>
+      'Kod hatalı ya da süresi dolmuş. Yeni kod iste.';
+
+  @override
+  String get forgotPassword_errEmailFormat =>
+      'E-posta adresi eksik görünüyor. Örn: ad@alan.com';
+
+  @override
+  String get forgotPassword_errMismatch => 'Şifreler aynı değil.';
+
+  @override
+  String get forgotPassword_errSendFailed =>
+      'Gönderilemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get forgotPassword_errTooMany =>
+      'Çok fazla deneme yaptın. 10 dakika sonra tekrar dene.';
+
+  @override
+  String get forgotPassword_newPasswordLabel => 'Yeni şifre';
+
+  @override
+  String get forgotPassword_newPasswordRepeatLabel => 'Yeni şifre (tekrar)';
+
+  @override
+  String get forgotPassword_newTitle => 'Yeni şifreni belirle';
+
+  @override
+  String get forgotPassword_passwordRule => 'En az 8 karakter.';
+
+  @override
+  String get forgotPassword_resend => 'Kodu Tekrar Gönder';
+
+  @override
+  String forgotPassword_resendIn(String time) {
+    return 'Kodu Tekrar Gönder ($time)';
+  }
+
+  @override
+  String get forgotPassword_sendCode => 'Kod Gönder';
+
+  @override
+  String get forgotPassword_update => 'Şifreyi Güncelle';
+
+  @override
   String get kit2_a11ySelectHint => 'seçenekleri açar';
 
   @override
@@ -461,6 +539,51 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String get login_apple => 'Apple ile Devam Et';
+
+  @override
+  String get login_errorInvalid =>
+      'Kullanıcı adı ya da şifre hatalı. Tekrar dene ya da şifreni sıfırla.';
+
+  @override
+  String get login_errorInvalidNoReset =>
+      'Kullanıcı adı ya da şifre hatalı. Tekrar dene.';
+
+  @override
+  String get login_errorNetwork =>
+      'Bağlanamadık. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get login_forgot => 'Şifremi Unuttum';
+
+  @override
+  String get login_google => 'Google ile Devam Et';
+
+  @override
+  String get login_noAccount => 'Hesabın yok mu?';
+
+  @override
+  String get login_orUsername => 'ya da kullanıcı adınla';
+
+  @override
+  String get login_passwordLabel => 'Şifre';
+
+  @override
+  String get login_register => 'Kayıt Ol';
+
+  @override
+  String get login_submit => 'Giriş Yap';
+
+  @override
+  String get login_submitting => 'Giriş yapılıyor';
+
+  @override
+  String get login_title => 'Giriş yap';
+
+  @override
+  String get login_usernameLabel => 'Kullanıcı adı';
+
+  @override
   String nav_a11yTabPosition(int position) {
     return 'sekme, 5\'te $position';
   }
@@ -540,6 +663,334 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get nav_tabStudents => 'Öğrencilerim';
+
+  @override
+  String get onboarding_cameraAllow => 'Kameraya İzin Ver';
+
+  @override
+  String get onboarding_cameraBody =>
+      'SMAP kamerayı yalnız optik formunu çekerken kullanır. Bir sonraki adımda telefonun izin isteyecek.';
+
+  @override
+  String get onboarding_cameraButtonA11y => 'Kamera düğmesi';
+
+  @override
+  String get onboarding_cameraDeniedBody =>
+      'Formunu okutabilmek için Ayarlar\'da SMAP\'e kamera izni ver. Sonra buraya dön; kaldığın yerden devam edersin.';
+
+  @override
+  String get onboarding_cameraDeniedTitle => 'Kamera izni kapalı';
+
+  @override
+  String get onboarding_cameraLater => 'Sonra';
+
+  @override
+  String get onboarding_cameraTitle => 'Formunu okutmak için kamera gerekli';
+
+  @override
+  String onboarding_gradeA11y(String grade) {
+    return '$grade. sınıf';
+  }
+
+  @override
+  String get onboarding_gradeGraduate => 'Mezun';
+
+  @override
+  String get onboarding_gradeGroupA11y => 'Sınıf';
+
+  @override
+  String get onboarding_gradeNoFieldInfo =>
+      '9. ve 10. sınıfta alan seçilmez; 11. sınıfa geçince Hesap\'tan eklersin.';
+
+  @override
+  String get onboarding_gradeTitle => 'Kaçıncı sınıftasın?';
+
+  @override
+  String get onboarding_intro1Body =>
+      'Deneme bitince formunun fotoğrafını çek; cevapların sayılır, netin hesaplanır.';
+
+  @override
+  String get onboarding_intro1Title => 'Optik formunu kamerayla okut';
+
+  @override
+  String get onboarding_intro2Body =>
+      'Her denemenin neti, doğru-yanlış dağılımı ve önceki denemene göre farkı tek ekranda.';
+
+  @override
+  String get onboarding_intro2Title => 'Netini ve gelişimini gör';
+
+  @override
+  String get onboarding_intro3Body =>
+      'Kaçırdığın konular eksik listene girer; konu anlatımı ve bilgi kartlarıyla tamamlarsın.';
+
+  @override
+  String get onboarding_intro3Title => 'Eksiklerini konu konu kapat';
+
+  @override
+  String get onboarding_openSettings => 'Ayarları Aç';
+
+  @override
+  String get onboarding_roleCoach => 'Öğrenci Koçuyum';
+
+  @override
+  String get onboarding_roleCoachDesc =>
+      'Öğrencilerinin gelişimini izle, görüşmelerini planla.';
+
+  @override
+  String get onboarding_roleGroupA11y => 'Rol';
+
+  @override
+  String get onboarding_roleStudent => 'Öğrenciyim';
+
+  @override
+  String get onboarding_roleStudentDesc =>
+      'Denemelerini okut, eksiklerini kapat.';
+
+  @override
+  String get onboarding_roleSubtitle => 'Ekranların buna göre hazırlanır.';
+
+  @override
+  String get onboarding_roleTitle => 'SMAP\'i nasıl kullanacaksın?';
+
+  @override
+  String get onboarding_sampleCardAction => 'Öğrendim';
+
+  @override
+  String get onboarding_sampleCardBody =>
+      'Haçlılarla Osmanlı Devleti\'nin imzaladığı ilk antlaşma.';
+
+  @override
+  String get onboarding_sampleCardKicker => 'Tarih · bilgi kartı';
+
+  @override
+  String get onboarding_sampleCardTitle => 'Edirne-Segedin Antlaşması (1444)';
+
+  @override
+  String get onboarding_sampleChartA11y =>
+      'AYT net grafiği: 8 Mayıs 48,5 netten 5 Ekim 67,5 nete';
+
+  @override
+  String get onboarding_sampleExamTitle => 'AYT · Türkiye Geneli Deneme 6';
+
+  @override
+  String get onboarding_sampleSubjectName => 'Türkçe';
+
+  @override
+  String get onboarding_sampleTopic1 => 'Fiilde Çatı';
+
+  @override
+  String get onboarding_sampleTopic2 => 'Noktalama İşaretleri';
+
+  @override
+  String get onboarding_sampleTopic3 => 'Cümlenin Öğeleri';
+
+  @override
+  String get onboarding_scanVisualA11y =>
+      'Optik form fotoğrafı: form bulundu, köşeler turuncu tutamaçlarla işaretli, altta kamera düğmesi';
+
+  @override
+  String get onboarding_skip => 'Geç';
+
+  @override
+  String get onboarding_start => 'Başla';
+
+  @override
+  String get onboarding_trackDil => 'Dil';
+
+  @override
+  String get onboarding_trackEsitAgirlik => 'Eşit Ağırlık';
+
+  @override
+  String get onboarding_trackGroupA11y => 'Alan';
+
+  @override
+  String get onboarding_trackRequired => 'Alanını seç.';
+
+  @override
+  String get onboarding_trackSayisal => 'Sayısal';
+
+  @override
+  String get onboarding_trackSozel => 'Sözel';
+
+  @override
+  String get onboarding_trackTitle => 'Alanın';
+
+  @override
+  String get onboarding_welcomeBody =>
+      'Hesabın varsa giriş yap; yoksa birkaç adımda kaydol. Seçtiklerin kayıt formuna gelir.';
+
+  @override
+  String get onboarding_welcomeLogin => 'Giriş Yap';
+
+  @override
+  String get onboarding_welcomeRegister => 'Kayıt Ol';
+
+  @override
+  String get onboarding_welcomeTitle => 'SMAP\'e hoş geldin';
+
+  @override
+  String get register_avatarLabel => 'Avatarın';
+
+  @override
+  String get register_avatarPickerA11y => 'Avatar seçimi';
+
+  @override
+  String get register_coachCodeInfo =>
+      'Kaydın tamamlanınca koçluk kodun oluşur. Öğrencilerin bu kodla sana bağlanır; kodun Hesap › Koçluk\'ta durur.';
+
+  @override
+  String get register_consentKvkk => 'KVKK Aydınlatma Metni';
+
+  @override
+  String get register_consentRequired =>
+      'Kaydolmak için metinleri onaylaman gerekiyor.';
+
+  @override
+  String get register_consentTerms => 'Kullanım Koşulları';
+
+  @override
+  String register_consentText(String terms, String kvkk) {
+    return '$terms\'nı ve $kvkk\'ni okudum, kabul ediyorum.';
+  }
+
+  @override
+  String get register_fieldEmail => 'E-posta';
+
+  @override
+  String get register_fieldFullName => 'Ad Soyad';
+
+  @override
+  String get register_fieldGrade => 'Sınıf';
+
+  @override
+  String get register_fieldPassword => 'Şifre';
+
+  @override
+  String get register_fieldPasswordRepeat => 'Şifre (tekrar)';
+
+  @override
+  String get register_fieldTrack => 'Alan';
+
+  @override
+  String get register_fieldUsername => 'Kullanıcı adı';
+
+  @override
+  String get register_gradeGraduate => 'Mezun';
+
+  @override
+  String register_gradeValue(int grade) {
+    return '$grade. Sınıf';
+  }
+
+  @override
+  String get register_hasAccount => 'Hesabın var mı?';
+
+  @override
+  String get register_issueEmailInvalid =>
+      'E-posta adresi eksik görünüyor. Örn: ad@alan.com';
+
+  @override
+  String get register_issueFullNameMissing => 'Adını ve soyadını yaz.';
+
+  @override
+  String get register_issueGradeMissing => 'Sınıfını seç.';
+
+  @override
+  String get register_issuePasswordMismatch => 'Şifreler aynı değil.';
+
+  @override
+  String get register_issuePasswordTooShort =>
+      'Şifren en az 8 karakter olmalı.';
+
+  @override
+  String get register_issueTrackMissing => 'Alanını seç.';
+
+  @override
+  String get register_issueUsernameMissing => 'Bir kullanıcı adı yaz.';
+
+  @override
+  String get register_legalEmpty => 'Bu metin şu an gösterilemiyor.';
+
+  @override
+  String get register_legalLoadFailed =>
+      'Sözleşme metinleri yüklenemedi. Kaydolmak için metinleri görebilmen gerekiyor.';
+
+  @override
+  String get register_legalLoading => 'Sözleşme metinleri yükleniyor';
+
+  @override
+  String get register_legalRegisterLocked =>
+      'Metinler yüklenince kayıt açılır.';
+
+  @override
+  String register_legalVersion(String version) {
+    return 'Sürüm $version';
+  }
+
+  @override
+  String get register_loginLink => 'Giriş Yap';
+
+  @override
+  String get register_passwordHint => 'En az 8 karakter.';
+
+  @override
+  String get register_roleCoach => 'Öğrenci Koçu';
+
+  @override
+  String get register_roleStudent => 'Öğrenci';
+
+  @override
+  String get register_signInFailed =>
+      'Hesabın oluşturuldu ama giriş yapılamadı. Kullanıcı adın ve şifrenle giriş yapabilirsin.';
+
+  @override
+  String get register_signInFailedAction => 'Giriş Yap';
+
+  @override
+  String get register_submit => 'Kayıt Ol';
+
+  @override
+  String get register_submitFailed =>
+      'Kaydın tamamlanamadı. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get register_title => 'Kayıt ol';
+
+  @override
+  String get register_trackDil => 'Dil';
+
+  @override
+  String get register_trackEsitAgirlik => 'Eşit Ağırlık';
+
+  @override
+  String get register_trackNotSelectable => 'Seçilmez';
+
+  @override
+  String get register_trackNotSelectableReason =>
+      '9. ve 10. sınıfta alan seçilmez.';
+
+  @override
+  String get register_trackSayisal => 'Sayısal';
+
+  @override
+  String get register_trackSozel => 'Sözel';
+
+  @override
+  String get register_usernameFree => 'Bu kullanıcı adı boşta.';
+
+  @override
+  String get register_usernameOffline => 'Bağlanınca kontrol edilecek.';
+
+  @override
+  String get register_usernameSuggest => 'Boşta olan:';
+
+  @override
+  String register_usernameSuggestA11y(String name) {
+    return 'Boşta olan kullanıcı adı: $name. Yazmak için dokun.';
+  }
+
+  @override
+  String get register_usernameTaken => 'Bu kullanıcı adı alınmış.';
 
   @override
   String schedule_changeTimeA11y(String time) {

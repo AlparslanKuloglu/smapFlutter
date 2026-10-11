@@ -537,6 +537,108 @@
       }
     }
   },
+  "forgotPassword_changeEmail": "E-postayı Değiştir",
+  "@forgotPassword_changeEmail": {
+    "description": "Text button of the code step that goes back to the e-mail step (pano 2.4 kare 2)."
+  },
+  "forgotPassword_codeBody": "Kodu {email} adresine gönderdik. Gelen kutunda yoksa istenmeyen klasörüne bak.",
+  "@forgotPassword_codeBody": {
+    "description": "Sentence under the title of the code step (pano 2.4 kare 2).",
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "forgotPassword_codeLabel": "Doğrulama kodu",
+  "@forgotPassword_codeLabel": {
+    "description": "Label of the six boxes (pano 2.4 kare 2)."
+  },
+  "forgotPassword_codeTitle": "Kodu gir",
+  "@forgotPassword_codeTitle": {
+    "description": "Title of the second reset step (pano 2.4 kare 2)."
+  },
+  "forgotPassword_doneAction": "Giriş Yap",
+  "@forgotPassword_doneAction": {
+    "description": "Primary button of the last reset screen; goes back to the sign-in screen (pano 2.4 kare 4)."
+  },
+  "forgotPassword_doneBody": "Yeni şifrenle giriş yapabilirsin.",
+  "@forgotPassword_doneBody": {
+    "description": "Sentence of the last reset screen (pano 2.4 kare 4)."
+  },
+  "forgotPassword_doneTitle": "Şifren güncellendi",
+  "@forgotPassword_doneTitle": {
+    "description": "Title of the last reset screen (pano 2.4 kare 4)."
+  },
+  "forgotPassword_emailBody": "Hesabındaki e-posta adresini yaz; 6 haneli bir kod gönderelim.",
+  "@forgotPassword_emailBody": {
+    "description": "Sentence under the title of the first reset step (pano 2.4 kare 1)."
+  },
+  "forgotPassword_emailLabel": "E-posta",
+  "@forgotPassword_emailLabel": {
+    "description": "Label of the e-mail field (pano 2.4 kare 1)."
+  },
+  "forgotPassword_emailTitle": "Şifreni sıfırla",
+  "@forgotPassword_emailTitle": {
+    "description": "Title of the first reset step (pano 2.4 kare 1)."
+  },
+  "forgotPassword_errCode": "Kod hatalı ya da süresi dolmuş. Yeni kod iste.",
+  "@forgotPassword_errCode": {
+    "description": "Error under the code boxes for a wrong or expired code (pano 2.4 'Hata metinleri')."
+  },
+  "forgotPassword_errEmailFormat": "E-posta adresi eksik görünüyor. Örn: ad@alan.com",
+  "@forgotPassword_errEmailFormat": {
+    "description": "Error under the e-mail field for an address that does not look like one (pano 2.4 'Hata metinleri', board 1.12)."
+  },
+  "forgotPassword_errMismatch": "Şifreler aynı değil.",
+  "@forgotPassword_errMismatch": {
+    "description": "Error under the repeat field when the two passwords differ (pano 2.4 kare 3)."
+  },
+  "forgotPassword_errSendFailed": "Gönderilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@forgotPassword_errSendFailed": {
+    "description": "Toast when a reset call could not reach the server (pano 2.4 'Hata metinleri')."
+  },
+  "forgotPassword_errTooMany": "Çok fazla deneme yaptın. 10 dakika sonra tekrar dene.",
+  "@forgotPassword_errTooMany": {
+    "description": "Error under the code boxes when the server says too many tries (pano 2.4 'Hata metinleri')."
+  },
+  "forgotPassword_newPasswordLabel": "Yeni şifre",
+  "@forgotPassword_newPasswordLabel": {
+    "description": "Label of the first new password field (pano 2.4 kare 3)."
+  },
+  "forgotPassword_newPasswordRepeatLabel": "Yeni şifre (tekrar)",
+  "@forgotPassword_newPasswordRepeatLabel": {
+    "description": "Label of the second new password field (pano 2.4 kare 3)."
+  },
+  "forgotPassword_newTitle": "Yeni şifreni belirle",
+  "@forgotPassword_newTitle": {
+    "description": "Title of the third reset step (pano 2.4 kare 3)."
+  },
+  "forgotPassword_passwordRule": "En az 8 karakter.",
+  "@forgotPassword_passwordRule": {
+    "description": "Help line under the first new password field; also its error when the password is too short (pano 2.4 kare 3)."
+  },
+  "forgotPassword_resend": "Kodu Tekrar Gönder",
+  "@forgotPassword_resend": {
+    "description": "Resend button once the wait is over (spec §4.A 2.4 fpResend). Not drawn on the board."
+  },
+  "forgotPassword_resendIn": "Kodu Tekrar Gönder ({time})",
+  "@forgotPassword_resendIn": {
+    "description": "Closed resend button with the time left, 'Kodu Tekrar Gönder (0:24)' (pano 2.4 kare 2).",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "forgotPassword_sendCode": "Kod Gönder",
+  "@forgotPassword_sendCode": {
+    "description": "Primary button of the first reset step (pano 2.4 kare 1)."
+  },
+  "forgotPassword_update": "Şifreyi Güncelle",
+  "@forgotPassword_update": {
+    "description": "Primary button of the third reset step (pano 2.4 kare 3)."
+  },
   "kit2_a11ySelectHint": "seçenekleri açar",
   "@kit2_a11ySelectHint": {
     "description": "Hint of a SelectField (C12)."
@@ -789,6 +891,62 @@
       }
     }
   },
+  "login_apple": "Apple ile Devam Et",
+  "@login_apple": {
+    "description": "Apple sign-in button, shown only while social sign-in is open (pano 2.3 kare 4)."
+  },
+  "login_errorInvalid": "Kullanıcı adı ya da şifre hatalı. Tekrar dene ya da şifreni sıfırla.",
+  "@login_errorInvalid": {
+    "description": "Error box for wrong credentials; it never says which field is wrong (pano 2.3 kare 3). Used while the reset flow is open."
+  },
+  "login_errorInvalidNoReset": "Kullanıcı adı ya da şifre hatalı. Tekrar dene.",
+  "@login_errorInvalidNoReset": {
+    "description": "Same error box without the pointer to the reset link, used while the reset flow is closed and the link is not drawn. Not on the board; derived from pano 2.3 kare 3."
+  },
+  "login_errorNetwork": "Bağlanamadık. Bağlantını kontrol edip tekrar dene.",
+  "@login_errorNetwork": {
+    "description": "Error box when the sign-in got no answer in time or the connection broke (spec §4.A 2.3, errNetwork)."
+  },
+  "login_forgot": "Şifremi Unuttum",
+  "@login_forgot": {
+    "description": "Text button under the password field; shown only while the reset flow is open (pano 2.3 kare 1)."
+  },
+  "login_google": "Google ile Devam Et",
+  "@login_google": {
+    "description": "Google sign-in button, shown only while social sign-in is open (pano 2.3 kare 4)."
+  },
+  "login_noAccount": "Hesabın yok mu?",
+  "@login_noAccount": {
+    "description": "Line above the sign-up link at the bottom (pano 2.3 kare 1)."
+  },
+  "login_orUsername": "ya da kullanıcı adınla",
+  "@login_orUsername": {
+    "description": "Divider text under the Apple and Google buttons (pano 2.3 kare 4)."
+  },
+  "login_passwordLabel": "Şifre",
+  "@login_passwordLabel": {
+    "description": "Label of the password field (pano 2.3)."
+  },
+  "login_register": "Kayıt Ol",
+  "@login_register": {
+    "description": "Text button at the bottom that opens the sign-up screen (pano 2.3 kare 1)."
+  },
+  "login_submit": "Giriş Yap",
+  "@login_submit": {
+    "description": "Primary button of the sign-in screen (pano 2.3 kare 1)."
+  },
+  "login_submitting": "Giriş yapılıyor",
+  "@login_submitting": {
+    "description": "Label of the primary button while the sign-in runs (pano 2.3 kare 2)."
+  },
+  "login_title": "Giriş yap",
+  "@login_title": {
+    "description": "Sign-in screen title, the large title under the logo (pano 2.3)."
+  },
+  "login_usernameLabel": "Kullanıcı adı",
+  "@login_usernameLabel": {
+    "description": "Label of the user name field (pano 2.3)."
+  },
   "nav_a11yTabPosition": "sekme, 5'te {position}",
   "@nav_a11yTabPosition": {
     "description": "Screen reader position of a bottom bar tab (C84): 'Analizlerim, sekme, 5'te 2'. The bar has five slots (the camera button holds the third), so the total is always 5 and the suffix is fixed.",
@@ -926,6 +1084,430 @@
   "nav_tabStudents": "Öğrencilerim",
   "@nav_tabStudents": {
     "description": "Bottom bar tab, coach only (C84)."
+  },
+  "onboarding_cameraAllow": "Kameraya İzin Ver",
+  "@onboarding_cameraAllow": {
+    "description": "Camera primer primary button; opens the system dialog (pano 2.2 kare 4)."
+  },
+  "onboarding_cameraBody": "SMAP kamerayı yalnız optik formunu çekerken kullanır. Bir sonraki adımda telefonun izin isteyecek.",
+  "@onboarding_cameraBody": {
+    "description": "Camera primer sentence (pano 2.2 kare 4)."
+  },
+  "onboarding_cameraButtonA11y": "Kamera düğmesi",
+  "@onboarding_cameraButtonA11y": {
+    "description": "Name of the camera button drawn inside the phone mock-up (decoration)."
+  },
+  "onboarding_cameraDeniedBody": "Formunu okutabilmek için Ayarlar'da SMAP'e kamera izni ver. Sonra buraya dön; kaldığın yerden devam edersin.",
+  "@onboarding_cameraDeniedBody": {
+    "description": "Camera primer sentence when the permission was refused (pano 4.1 kare 2)."
+  },
+  "onboarding_cameraDeniedTitle": "Kamera izni kapalı",
+  "@onboarding_cameraDeniedTitle": {
+    "description": "Camera primer title when the permission was refused (pano 4.1 kare 2)."
+  },
+  "onboarding_cameraLater": "Sonra",
+  "@onboarding_cameraLater": {
+    "description": "Camera primer text button; moves on without the permission (pano 2.2 kare 4)."
+  },
+  "onboarding_cameraTitle": "Formunu okutmak için kamera gerekli",
+  "@onboarding_cameraTitle": {
+    "description": "Camera primer title (pano 2.2 kare 4)."
+  },
+  "onboarding_gradeA11y": "{grade}. sınıf",
+  "@onboarding_gradeA11y": {
+    "description": "Screen reader name of a numbered grade chip, e.g. \"12. sınıf\" (pano 2.2 kare 2).",
+    "placeholders": {
+      "grade": {
+        "type": "String"
+      }
+    }
+  },
+  "onboarding_gradeGraduate": "Mezun",
+  "@onboarding_gradeGraduate": {
+    "description": "Label of the \"graduate\" grade chip (pano 2.2 kare 2)."
+  },
+  "onboarding_gradeGroupA11y": "Sınıf",
+  "@onboarding_gradeGroupA11y": {
+    "description": "Name of the radio group of the grade chips (pano 2.2 kare 2)."
+  },
+  "onboarding_gradeNoFieldInfo": "9. ve 10. sınıfta alan seçilmez; 11. sınıfa geçince Hesap'tan eklersin.",
+  "@onboarding_gradeNoFieldInfo": {
+    "description": "Info line shown instead of the track chips for grades 9 and 10 (pano 2.2 kare 3)."
+  },
+  "onboarding_gradeTitle": "Kaçıncı sınıftasın?",
+  "@onboarding_gradeTitle": {
+    "description": "Grade screen title (pano 2.2 kare 2 and 3)."
+  },
+  "onboarding_intro1Body": "Deneme bitince formunun fotoğrafını çek; cevapların sayılır, netin hesaplanır.",
+  "@onboarding_intro1Body": {
+    "description": "Intro page 1 sentence (pano 2.1 kare 2)."
+  },
+  "onboarding_intro1Title": "Optik formunu kamerayla okut",
+  "@onboarding_intro1Title": {
+    "description": "Intro page 1 title (pano 2.1 kare 2)."
+  },
+  "onboarding_intro2Body": "Her denemenin neti, doğru-yanlış dağılımı ve önceki denemene göre farkı tek ekranda.",
+  "@onboarding_intro2Body": {
+    "description": "Intro page 2 sentence (pano 2.1 kare 3)."
+  },
+  "onboarding_intro2Title": "Netini ve gelişimini gör",
+  "@onboarding_intro2Title": {
+    "description": "Intro page 2 title (pano 2.1 kare 3)."
+  },
+  "onboarding_intro3Body": "Kaçırdığın konular eksik listene girer; konu anlatımı ve bilgi kartlarıyla tamamlarsın.",
+  "@onboarding_intro3Body": {
+    "description": "Intro page 3 sentence (pano 2.1 kare 4)."
+  },
+  "onboarding_intro3Title": "Eksiklerini konu konu kapat",
+  "@onboarding_intro3Title": {
+    "description": "Intro page 3 title (pano 2.1 kare 4)."
+  },
+  "onboarding_openSettings": "Ayarları Aç",
+  "@onboarding_openSettings": {
+    "description": "Camera primer primary button when the permission was refused; opens the app's system settings (pano 4.1 kare 2)."
+  },
+  "onboarding_roleCoach": "Öğrenci Koçuyum",
+  "@onboarding_roleCoach": {
+    "description": "Role option title (pano 2.2 kare 1)."
+  },
+  "onboarding_roleCoachDesc": "Öğrencilerinin gelişimini izle, görüşmelerini planla.",
+  "@onboarding_roleCoachDesc": {
+    "description": "Role option sentence of the coach (pano 2.2 kare 1)."
+  },
+  "onboarding_roleGroupA11y": "Rol",
+  "@onboarding_roleGroupA11y": {
+    "description": "Name of the radio group of the two role options (pano 2.2 kare 1)."
+  },
+  "onboarding_roleStudent": "Öğrenciyim",
+  "@onboarding_roleStudent": {
+    "description": "Role option title (pano 2.2 kare 1)."
+  },
+  "onboarding_roleStudentDesc": "Denemelerini okut, eksiklerini kapat.",
+  "@onboarding_roleStudentDesc": {
+    "description": "Role option sentence of the student (pano 2.2 kare 1)."
+  },
+  "onboarding_roleSubtitle": "Ekranların buna göre hazırlanır.",
+  "@onboarding_roleSubtitle": {
+    "description": "Role screen sentence under the title (pano 2.2 kare 1)."
+  },
+  "onboarding_roleTitle": "SMAP'i nasıl kullanacaksın?",
+  "@onboarding_roleTitle": {
+    "description": "Role screen title (pano 2.2 kare 1)."
+  },
+  "onboarding_sampleCardAction": "Öğrendim",
+  "@onboarding_sampleCardAction": {
+    "description": "Button of the example info card on intro page 3 (pano 2.1 kare 4); decoration."
+  },
+  "onboarding_sampleCardBody": "Haçlılarla Osmanlı Devleti'nin imzaladığı ilk antlaşma.",
+  "@onboarding_sampleCardBody": {
+    "description": "Body of the example info card on intro page 3 (pano 2.1 kare 4)."
+  },
+  "onboarding_sampleCardKicker": "Tarih · bilgi kartı",
+  "@onboarding_sampleCardKicker": {
+    "description": "Small heading of the example info card on intro page 3 (pano 2.1 kare 4)."
+  },
+  "onboarding_sampleCardTitle": "Edirne-Segedin Antlaşması (1444)",
+  "@onboarding_sampleCardTitle": {
+    "description": "Title of the example info card on intro page 3 (pano 2.1 kare 4)."
+  },
+  "onboarding_sampleChartA11y": "AYT net grafiği: 8 Mayıs 48,5 netten 5 Ekim 67,5 nete",
+  "@onboarding_sampleChartA11y": {
+    "description": "Screen reader name of the example net chart (pano 2.1 kare 3)."
+  },
+  "onboarding_sampleExamTitle": "AYT · Türkiye Geneli Deneme 6",
+  "@onboarding_sampleExamTitle": {
+    "description": "Example exam title above the net on intro page 2 (pano 2.1 kare 3)."
+  },
+  "onboarding_sampleSubjectName": "Türkçe",
+  "@onboarding_sampleSubjectName": {
+    "description": "Subject name of the example topic rows on intro page 3 (pano 2.1 kare 4); decoration."
+  },
+  "onboarding_sampleTopic1": "Fiilde Çatı",
+  "@onboarding_sampleTopic1": {
+    "description": "First example topic of intro page 3 (pano 2.1 kare 4)."
+  },
+  "onboarding_sampleTopic2": "Noktalama İşaretleri",
+  "@onboarding_sampleTopic2": {
+    "description": "Second example topic of intro page 3 (pano 2.1 kare 4)."
+  },
+  "onboarding_sampleTopic3": "Cümlenin Öğeleri",
+  "@onboarding_sampleTopic3": {
+    "description": "Third example topic of intro page 3 (pano 2.1 kare 4)."
+  },
+  "onboarding_scanVisualA11y": "Optik form fotoğrafı: form bulundu, köşeler turuncu tutamaçlarla işaretli, altta kamera düğmesi",
+  "@onboarding_scanVisualA11y": {
+    "description": "Screen reader description of the phone mock-up of intro page 1 (pano 2.1 kare 2)."
+  },
+  "onboarding_skip": "Geç",
+  "@onboarding_skip": {
+    "description": "Text button at the top right of the first two intro pages; goes to the role question (pano 2.1 kare 2 and 3). The board says \"Geç\"."
+  },
+  "onboarding_start": "Başla",
+  "@onboarding_start": {
+    "description": "Primary button of the last intro page; goes to the role question (pano 2.1 kare 4)."
+  },
+  "onboarding_trackDil": "Dil",
+  "@onboarding_trackDil": {
+    "description": "Study track chip (pano 2.2 kare 2); not selectable while the backend has no code for it."
+  },
+  "onboarding_trackEsitAgirlik": "Eşit Ağırlık",
+  "@onboarding_trackEsitAgirlik": {
+    "description": "Study track chip (pano 2.2 kare 2)."
+  },
+  "onboarding_trackGroupA11y": "Alan",
+  "@onboarding_trackGroupA11y": {
+    "description": "Name of the radio group of the track chips (pano 2.2 kare 2)."
+  },
+  "onboarding_trackRequired": "Alanını seç.",
+  "@onboarding_trackRequired": {
+    "description": "Error under the track chips when Devam Et is pressed for 11, 12 or Mezun without a track (spec 4.A 2.2-2 [Karar])."
+  },
+  "onboarding_trackSayisal": "Sayısal",
+  "@onboarding_trackSayisal": {
+    "description": "Study track chip (pano 2.2 kare 2)."
+  },
+  "onboarding_trackSozel": "Sözel",
+  "@onboarding_trackSozel": {
+    "description": "Study track chip (pano 2.2 kare 2)."
+  },
+  "onboarding_trackTitle": "Alanın",
+  "@onboarding_trackTitle": {
+    "description": "Heading of the study track choice (pano 2.2 kare 2 and 3)."
+  },
+  "onboarding_welcomeBody": "Hesabın varsa giriş yap; yoksa birkaç adımda kaydol. Seçtiklerin kayıt formuna gelir.",
+  "@onboarding_welcomeBody": {
+    "description": "Welcome screen sentence (pano 2.2 kare 5)."
+  },
+  "onboarding_welcomeLogin": "Giriş Yap",
+  "@onboarding_welcomeLogin": {
+    "description": "Welcome screen secondary button; opens the sign-in screen (pano 2.2 kare 5)."
+  },
+  "onboarding_welcomeRegister": "Kayıt Ol",
+  "@onboarding_welcomeRegister": {
+    "description": "Welcome screen primary button; opens the sign-up form with the picks (pano 2.2 kare 5)."
+  },
+  "onboarding_welcomeTitle": "SMAP'e hoş geldin",
+  "@onboarding_welcomeTitle": {
+    "description": "Welcome screen title (pano 2.2 kare 5)."
+  },
+  "register_avatarLabel": "Avatarın",
+  "@register_avatarLabel": {
+    "description": "Label above the seven avatars (pano 2.5 kare 1)."
+  },
+  "register_avatarPickerA11y": "Avatar seçimi",
+  "@register_avatarPickerA11y": {
+    "description": "Screen reader name of the avatar group."
+  },
+  "register_coachCodeInfo": "Kaydın tamamlanınca koçluk kodun oluşur. Öğrencilerin bu kodla sana bağlanır; kodun Hesap › Koçluk'ta durur.",
+  "@register_coachCodeInfo": {
+    "description": "Info box of a coach sign-up, in place of the grade and track fields (pano 2.5 kare 3)."
+  },
+  "register_consentKvkk": "KVKK Aydınlatma Metni",
+  "@register_consentKvkk": {
+    "description": "Link text of the KVKK notice; fallback title of its reading sheet (pano 2.5 kare 2)."
+  },
+  "register_consentRequired": "Kaydolmak için metinleri onaylaman gerekiyor.",
+  "@register_consentRequired": {
+    "description": "Error line under the consent row when Kayıt Ol is pressed unchecked (pano 2.6 kare 2)."
+  },
+  "register_consentTerms": "Kullanım Koşulları",
+  "@register_consentTerms": {
+    "description": "Link text of the terms of use; fallback title of its reading sheet (pano 2.5 kare 2)."
+  },
+  "register_consentText": "{terms}'nı ve {kvkk}'ni okudum, kabul ediyorum.",
+  "@register_consentText": {
+    "description": "The one consent sentence; the two placeholders become links that open the texts (pano 2.5 kare 2).",
+    "placeholders": {
+      "terms": {
+        "type": "String"
+      },
+      "kvkk": {
+        "type": "String"
+      }
+    }
+  },
+  "register_fieldEmail": "E-posta",
+  "@register_fieldEmail": {
+    "description": "E-mail field label (pano 2.5 kare 1)."
+  },
+  "register_fieldFullName": "Ad Soyad",
+  "@register_fieldFullName": {
+    "description": "Full name field label (pano 2.5 kare 1)."
+  },
+  "register_fieldGrade": "Sınıf",
+  "@register_fieldGrade": {
+    "description": "Grade select field label and its sheet title (pano 2.5 kare 2)."
+  },
+  "register_fieldPassword": "Şifre",
+  "@register_fieldPassword": {
+    "description": "Password field label (pano 2.5 kare 2)."
+  },
+  "register_fieldPasswordRepeat": "Şifre (tekrar)",
+  "@register_fieldPasswordRepeat": {
+    "description": "Repeat password field label (pano 2.5 kare 2)."
+  },
+  "register_fieldTrack": "Alan",
+  "@register_fieldTrack": {
+    "description": "Study track select field label and its sheet title (pano 2.5 kare 2)."
+  },
+  "register_fieldUsername": "Kullanıcı adı",
+  "@register_fieldUsername": {
+    "description": "User name field label (pano 2.5 kare 1)."
+  },
+  "register_gradeGraduate": "Mezun",
+  "@register_gradeGraduate": {
+    "description": "The graduate option of the grade select."
+  },
+  "register_gradeValue": "{grade}. Sınıf",
+  "@register_gradeValue": {
+    "description": "A school year as the select shows it: \"12. Sınıf\" (pano 2.5 kare 2).",
+    "placeholders": {
+      "grade": {
+        "type": "int"
+      }
+    }
+  },
+  "register_hasAccount": "Hesabın var mı?",
+  "@register_hasAccount": {
+    "description": "Sentence before the sign-in link under the button (pano 2.5)."
+  },
+  "register_issueEmailInvalid": "E-posta adresi eksik görünüyor. Örn: ad@alan.com",
+  "@register_issueEmailInvalid": {
+    "description": "Field error: e-mail empty or malformed (pano 2.6 kare 1)."
+  },
+  "register_issueFullNameMissing": "Adını ve soyadını yaz.",
+  "@register_issueFullNameMissing": {
+    "description": "Field error: full name empty. Not drawn in the boards."
+  },
+  "register_issueGradeMissing": "Sınıfını seç.",
+  "@register_issueGradeMissing": {
+    "description": "Field error: no grade chosen. Not drawn in the boards."
+  },
+  "register_issuePasswordMismatch": "Şifreler aynı değil.",
+  "@register_issuePasswordMismatch": {
+    "description": "Field error under the repeat password (pano 2.6 kare 2)."
+  },
+  "register_issuePasswordTooShort": "Şifren en az 8 karakter olmalı.",
+  "@register_issuePasswordTooShort": {
+    "description": "Field error: password shorter than 8. Not drawn in the boards."
+  },
+  "register_issueTrackMissing": "Alanını seç.",
+  "@register_issueTrackMissing": {
+    "description": "Field error: no track chosen for grade 11 and up. Not drawn in the boards."
+  },
+  "register_issueUsernameMissing": "Bir kullanıcı adı yaz.",
+  "@register_issueUsernameMissing": {
+    "description": "Field error: user name empty. Not drawn in the boards."
+  },
+  "register_legalEmpty": "Bu metin şu an gösterilemiyor.",
+  "@register_legalEmpty": {
+    "description": "Sheet body when a legal text arrived without content (not expected: such a text is not offered)."
+  },
+  "register_legalLoadFailed": "Sözleşme metinleri yüklenemedi. Kaydolmak için metinleri görebilmen gerekiyor.",
+  "@register_legalLoadFailed": {
+    "description": "Error box in place of the consent row when the legal texts did not load (pano 2.6 kare 3)."
+  },
+  "register_legalLoading": "Sözleşme metinleri yükleniyor",
+  "@register_legalLoading": {
+    "description": "Screen reader name of the consent row skeleton while the legal texts load."
+  },
+  "register_legalRegisterLocked": "Metinler yüklenince kayıt açılır.",
+  "@register_legalRegisterLocked": {
+    "description": "Reason under the disabled Kayıt Ol button while the legal texts are missing (pano 2.6 kare 3)."
+  },
+  "register_legalVersion": "Sürüm {version}",
+  "@register_legalVersion": {
+    "description": "Version line at the top of a legal text sheet.",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "register_loginLink": "Giriş Yap",
+  "@register_loginLink": {
+    "description": "Text button under Kayıt Ol; goes to the sign-in screen (pano 2.5)."
+  },
+  "register_passwordHint": "En az 8 karakter.",
+  "@register_passwordHint": {
+    "description": "Help line under the password field (pano 2.5 kare 2)."
+  },
+  "register_roleCoach": "Öğrenci Koçu",
+  "@register_roleCoach": {
+    "description": "Role segment, second option (pano 2.5)."
+  },
+  "register_roleStudent": "Öğrenci",
+  "@register_roleStudent": {
+    "description": "Role segment, first option (pano 2.5)."
+  },
+  "register_signInFailed": "Hesabın oluşturuldu ama giriş yapılamadı. Kullanıcı adın ve şifrenle giriş yapabilirsin.",
+  "@register_signInFailed": {
+    "description": "Notice above Kayıt Ol when the account was created but the automatic sign-in failed. Not drawn in the boards."
+  },
+  "register_signInFailedAction": "Giriş Yap",
+  "@register_signInFailedAction": {
+    "description": "Inline button of the signInFailed notice; goes to the sign-in screen."
+  },
+  "register_submit": "Kayıt Ol",
+  "@register_submit": {
+    "description": "Primary button of the sign-up screen (pano 2.5)."
+  },
+  "register_submitFailed": "Kaydın tamamlanamadı. Bağlantını kontrol edip tekrar dene.",
+  "@register_submitFailed": {
+    "description": "Notice above Kayıt Ol when the register call failed for a reason without a better sentence (spec 4.A errRegisterFailed)."
+  },
+  "register_title": "Kayıt ol",
+  "@register_title": {
+    "description": "Sign-up screen title, large and in the bar (pano 2.5)."
+  },
+  "register_trackDil": "Dil",
+  "@register_trackDil": {
+    "description": "Study track option. The design offers it; it is not selectable until the backend names a code."
+  },
+  "register_trackEsitAgirlik": "Eşit Ağırlık",
+  "@register_trackEsitAgirlik": {
+    "description": "Study track option (pano 2.5 kare 2)."
+  },
+  "register_trackNotSelectable": "Seçilmez",
+  "@register_trackNotSelectable": {
+    "description": "Value of the disabled track field for grade 9 and 10 (pano 2.6 kare 4)."
+  },
+  "register_trackNotSelectableReason": "9. ve 10. sınıfta alan seçilmez.",
+  "@register_trackNotSelectableReason": {
+    "description": "Help line under the disabled track field (pano 2.6 kare 4)."
+  },
+  "register_trackSayisal": "Sayısal",
+  "@register_trackSayisal": {
+    "description": "Study track option."
+  },
+  "register_trackSozel": "Sözel",
+  "@register_trackSozel": {
+    "description": "Study track option."
+  },
+  "register_usernameFree": "Bu kullanıcı adı boşta.",
+  "@register_usernameFree": {
+    "description": "Live check passed: the user name is free (pano 2.5 kare 1)."
+  },
+  "register_usernameOffline": "Bağlanınca kontrol edilecek.",
+  "@register_usernameOffline": {
+    "description": "Help line under the user name while the device is offline (spec 4.A 2.5-2.6 Davranış)."
+  },
+  "register_usernameSuggest": "Boşta olan:",
+  "@register_usernameSuggest": {
+    "description": "Label before the free-name chip under a taken user name (pano 2.6 kare 1)."
+  },
+  "register_usernameSuggestA11y": "Boşta olan kullanıcı adı: {name}. Yazmak için dokun.",
+  "@register_usernameSuggestA11y": {
+    "description": "Screen reader reading of the free-name chip.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "register_usernameTaken": "Bu kullanıcı adı alınmış.",
+  "@register_usernameTaken": {
+    "description": "Live check or register call: the user name is in use (pano 2.6 kare 1)."
   },
   "schedule_changeTimeA11y": "Saat {time}, değiştir",
   "@schedule_changeTimeA11y": {

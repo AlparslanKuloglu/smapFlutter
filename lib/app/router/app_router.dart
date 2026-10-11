@@ -14,8 +14,20 @@ import 'package:smap/core/services/app_logger.dart';
 import 'package:smap/core/services/device_preferences.dart';
 import 'package:smap/core/theme/app_motion.dart';
 import 'package:smap/features/auth/domain/session_state.dart';
-import 'package:smap/features/legacy/legacy_pages.dart';
-import 'package:smap/features/legacy/legacy_routes.dart';
+import 'package:smap/app/shell/tab_stack_pages.dart';
+import 'package:smap/core/domain/user_role.dart';
+import 'package:smap/features/account/domain/school_grade.dart';
+import 'package:smap/features/account/domain/study_track.dart';
+import 'package:smap/features/auth/auth_routes.dart';
+import 'package:smap/features/auth/presentation/forgot_password/forgot_password_view.dart';
+import 'package:smap/features/auth/presentation/login/login_view.dart';
+import 'package:smap/features/auth/presentation/register/register_view.dart';
+import 'package:smap/features/auth/register_routes.dart';
+import 'package:smap/features/legacy/legacy_scan_page.dart';
+import 'package:smap/features/legacy/legacy_tab_pages.dart';
+import 'package:smap/features/onboarding/onboarding_routes.dart';
+import 'package:smap/features/onboarding/presentation/onboarding/onboarding_view.dart';
+import 'package:smap/features/onboarding/presentation/welcome/welcome_view.dart';
 import 'package:smap/features/startup/presentation/force_update/force_update_view.dart';
 import 'package:smap/features/startup/presentation/maintenance/maintenance_view.dart';
 import 'package:smap/features/startup/presentation/startup/startup_view.dart';
@@ -38,9 +50,7 @@ final RouteType fadeRouteType = RouteType.custom(
 /// **Routes.** Each feature lists its own routes in
 /// `features/<f>/<f>_routes.dart` (`List<AutoRoute> get xxxRoutes`) and this
 /// class merges the lists in [routes]; the screen tasks only write their own
-/// list, the coordinator adds it here. Today: the launch and general screens
-/// ([startupRoutes]), the legacy doors ([legacyAuthRoutes]) and the two shells
-/// ([shellRoutes]).
+/// list, the coordinator adds it here.
 ///
 /// **Guards.** Onboarding > Auth > Role, run for every navigation against the
 /// target route's [RouteGroup]; the decisions are the pure functions of
@@ -68,7 +78,9 @@ final class AppRouter extends RootStackRouter implements RouteCatalog {
   @override
   List<AutoRoute> get routes => [
     ...startupRoutes,
-    ...legacyAuthRoutes,
+    ...onboardingRoutes,
+    ...authRoutes,
+    ...registerRoutes,
     ...shellRoutes,
   ];
 

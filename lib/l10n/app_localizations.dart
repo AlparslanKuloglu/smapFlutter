@@ -539,6 +539,144 @@ abstract class AppLocalizations {
     int blank,
   );
 
+  /// Text button of the code step that goes back to the e-mail step (pano 2.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'E-postayı Değiştir'**
+  String get forgotPassword_changeEmail;
+
+  /// Sentence under the title of the code step (pano 2.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kodu {email} adresine gönderdik. Gelen kutunda yoksa istenmeyen klasörüne bak.'**
+  String forgotPassword_codeBody(String email);
+
+  /// Label of the six boxes (pano 2.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Doğrulama kodu'**
+  String get forgotPassword_codeLabel;
+
+  /// Title of the second reset step (pano 2.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kodu gir'**
+  String get forgotPassword_codeTitle;
+
+  /// Primary button of the last reset screen; goes back to the sign-in screen (pano 2.4 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Giriş Yap'**
+  String get forgotPassword_doneAction;
+
+  /// Sentence of the last reset screen (pano 2.4 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni şifrenle giriş yapabilirsin.'**
+  String get forgotPassword_doneBody;
+
+  /// Title of the last reset screen (pano 2.4 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifren güncellendi'**
+  String get forgotPassword_doneTitle;
+
+  /// Sentence under the title of the first reset step (pano 2.4 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabındaki e-posta adresini yaz; 6 haneli bir kod gönderelim.'**
+  String get forgotPassword_emailBody;
+
+  /// Label of the e-mail field (pano 2.4 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'E-posta'**
+  String get forgotPassword_emailLabel;
+
+  /// Title of the first reset step (pano 2.4 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifreni sıfırla'**
+  String get forgotPassword_emailTitle;
+
+  /// Error under the code boxes for a wrong or expired code (pano 2.4 'Hata metinleri').
+  ///
+  /// In tr, this message translates to:
+  /// **'Kod hatalı ya da süresi dolmuş. Yeni kod iste.'**
+  String get forgotPassword_errCode;
+
+  /// Error under the e-mail field for an address that does not look like one (pano 2.4 'Hata metinleri', board 1.12).
+  ///
+  /// In tr, this message translates to:
+  /// **'E-posta adresi eksik görünüyor. Örn: ad@alan.com'**
+  String get forgotPassword_errEmailFormat;
+
+  /// Error under the repeat field when the two passwords differ (pano 2.4 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifreler aynı değil.'**
+  String get forgotPassword_errMismatch;
+
+  /// Toast when a reset call could not reach the server (pano 2.4 'Hata metinleri').
+  ///
+  /// In tr, this message translates to:
+  /// **'Gönderilemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get forgotPassword_errSendFailed;
+
+  /// Error under the code boxes when the server says too many tries (pano 2.4 'Hata metinleri').
+  ///
+  /// In tr, this message translates to:
+  /// **'Çok fazla deneme yaptın. 10 dakika sonra tekrar dene.'**
+  String get forgotPassword_errTooMany;
+
+  /// Label of the first new password field (pano 2.4 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni şifre'**
+  String get forgotPassword_newPasswordLabel;
+
+  /// Label of the second new password field (pano 2.4 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni şifre (tekrar)'**
+  String get forgotPassword_newPasswordRepeatLabel;
+
+  /// Title of the third reset step (pano 2.4 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni şifreni belirle'**
+  String get forgotPassword_newTitle;
+
+  /// Help line under the first new password field; also its error when the password is too short (pano 2.4 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'En az 8 karakter.'**
+  String get forgotPassword_passwordRule;
+
+  /// Resend button once the wait is over (spec §4.A 2.4 fpResend). Not drawn on the board.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kodu Tekrar Gönder'**
+  String get forgotPassword_resend;
+
+  /// Closed resend button with the time left, 'Kodu Tekrar Gönder (0:24)' (pano 2.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kodu Tekrar Gönder ({time})'**
+  String forgotPassword_resendIn(String time);
+
+  /// Primary button of the first reset step (pano 2.4 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kod Gönder'**
+  String get forgotPassword_sendCode;
+
+  /// Primary button of the third reset step (pano 2.4 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifreyi Güncelle'**
+  String get forgotPassword_update;
+
   /// Hint of a SelectField (C12).
   ///
   /// In tr, this message translates to:
@@ -785,6 +923,90 @@ abstract class AppLocalizations {
   /// **'{number}. {name}'**
   String lessons_topicRowA11y(int number, String name);
 
+  /// Apple sign-in button, shown only while social sign-in is open (pano 2.3 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Apple ile Devam Et'**
+  String get login_apple;
+
+  /// Error box for wrong credentials; it never says which field is wrong (pano 2.3 kare 3). Used while the reset flow is open.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kullanıcı adı ya da şifre hatalı. Tekrar dene ya da şifreni sıfırla.'**
+  String get login_errorInvalid;
+
+  /// Same error box without the pointer to the reset link, used while the reset flow is closed and the link is not drawn. Not on the board; derived from pano 2.3 kare 3.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kullanıcı adı ya da şifre hatalı. Tekrar dene.'**
+  String get login_errorInvalidNoReset;
+
+  /// Error box when the sign-in got no answer in time or the connection broke (spec §4.A 2.3, errNetwork).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlanamadık. Bağlantını kontrol edip tekrar dene.'**
+  String get login_errorNetwork;
+
+  /// Text button under the password field; shown only while the reset flow is open (pano 2.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifremi Unuttum'**
+  String get login_forgot;
+
+  /// Google sign-in button, shown only while social sign-in is open (pano 2.3 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Google ile Devam Et'**
+  String get login_google;
+
+  /// Line above the sign-up link at the bottom (pano 2.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabın yok mu?'**
+  String get login_noAccount;
+
+  /// Divider text under the Apple and Google buttons (pano 2.3 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'ya da kullanıcı adınla'**
+  String get login_orUsername;
+
+  /// Label of the password field (pano 2.3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifre'**
+  String get login_passwordLabel;
+
+  /// Text button at the bottom that opens the sign-up screen (pano 2.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kayıt Ol'**
+  String get login_register;
+
+  /// Primary button of the sign-in screen (pano 2.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Giriş Yap'**
+  String get login_submit;
+
+  /// Label of the primary button while the sign-in runs (pano 2.3 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Giriş yapılıyor'**
+  String get login_submitting;
+
+  /// Sign-in screen title, the large title under the logo (pano 2.3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Giriş yap'**
+  String get login_title;
+
+  /// Label of the user name field (pano 2.3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kullanıcı adı'**
+  String get login_usernameLabel;
+
   /// Screen reader position of a bottom bar tab (C84): 'Analizlerim, sekme, 5'te 2'. The bar has five slots (the camera button holds the third), so the total is always 5 and the suffix is fixed.
   ///
   /// In tr, this message translates to:
@@ -910,6 +1132,600 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Öğrencilerim'**
   String get nav_tabStudents;
+
+  /// Camera primer primary button; opens the system dialog (pano 2.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kameraya İzin Ver'**
+  String get onboarding_cameraAllow;
+
+  /// Camera primer sentence (pano 2.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'SMAP kamerayı yalnız optik formunu çekerken kullanır. Bir sonraki adımda telefonun izin isteyecek.'**
+  String get onboarding_cameraBody;
+
+  /// Name of the camera button drawn inside the phone mock-up (decoration).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kamera düğmesi'**
+  String get onboarding_cameraButtonA11y;
+
+  /// Camera primer sentence when the permission was refused (pano 4.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Formunu okutabilmek için Ayarlar\'da SMAP\'e kamera izni ver. Sonra buraya dön; kaldığın yerden devam edersin.'**
+  String get onboarding_cameraDeniedBody;
+
+  /// Camera primer title when the permission was refused (pano 4.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kamera izni kapalı'**
+  String get onboarding_cameraDeniedTitle;
+
+  /// Camera primer text button; moves on without the permission (pano 2.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sonra'**
+  String get onboarding_cameraLater;
+
+  /// Camera primer title (pano 2.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Formunu okutmak için kamera gerekli'**
+  String get onboarding_cameraTitle;
+
+  /// Screen reader name of a numbered grade chip, e.g. "12. sınıf" (pano 2.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'{grade}. sınıf'**
+  String onboarding_gradeA11y(String grade);
+
+  /// Label of the "graduate" grade chip (pano 2.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Mezun'**
+  String get onboarding_gradeGraduate;
+
+  /// Name of the radio group of the grade chips (pano 2.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sınıf'**
+  String get onboarding_gradeGroupA11y;
+
+  /// Info line shown instead of the track chips for grades 9 and 10 (pano 2.2 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'9. ve 10. sınıfta alan seçilmez; 11. sınıfa geçince Hesap\'tan eklersin.'**
+  String get onboarding_gradeNoFieldInfo;
+
+  /// Grade screen title (pano 2.2 kare 2 and 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kaçıncı sınıftasın?'**
+  String get onboarding_gradeTitle;
+
+  /// Intro page 1 sentence (pano 2.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Deneme bitince formunun fotoğrafını çek; cevapların sayılır, netin hesaplanır.'**
+  String get onboarding_intro1Body;
+
+  /// Intro page 1 title (pano 2.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Optik formunu kamerayla okut'**
+  String get onboarding_intro1Title;
+
+  /// Intro page 2 sentence (pano 2.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Her denemenin neti, doğru-yanlış dağılımı ve önceki denemene göre farkı tek ekranda.'**
+  String get onboarding_intro2Body;
+
+  /// Intro page 2 title (pano 2.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Netini ve gelişimini gör'**
+  String get onboarding_intro2Title;
+
+  /// Intro page 3 sentence (pano 2.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kaçırdığın konular eksik listene girer; konu anlatımı ve bilgi kartlarıyla tamamlarsın.'**
+  String get onboarding_intro3Body;
+
+  /// Intro page 3 title (pano 2.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Eksiklerini konu konu kapat'**
+  String get onboarding_intro3Title;
+
+  /// Camera primer primary button when the permission was refused; opens the app's system settings (pano 4.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ayarları Aç'**
+  String get onboarding_openSettings;
+
+  /// Role option title (pano 2.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci Koçuyum'**
+  String get onboarding_roleCoach;
+
+  /// Role option sentence of the coach (pano 2.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrencilerinin gelişimini izle, görüşmelerini planla.'**
+  String get onboarding_roleCoachDesc;
+
+  /// Name of the radio group of the two role options (pano 2.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Rol'**
+  String get onboarding_roleGroupA11y;
+
+  /// Role option title (pano 2.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenciyim'**
+  String get onboarding_roleStudent;
+
+  /// Role option sentence of the student (pano 2.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Denemelerini okut, eksiklerini kapat.'**
+  String get onboarding_roleStudentDesc;
+
+  /// Role screen sentence under the title (pano 2.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ekranların buna göre hazırlanır.'**
+  String get onboarding_roleSubtitle;
+
+  /// Role screen title (pano 2.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'SMAP\'i nasıl kullanacaksın?'**
+  String get onboarding_roleTitle;
+
+  /// Button of the example info card on intro page 3 (pano 2.1 kare 4); decoration.
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrendim'**
+  String get onboarding_sampleCardAction;
+
+  /// Body of the example info card on intro page 3 (pano 2.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Haçlılarla Osmanlı Devleti\'nin imzaladığı ilk antlaşma.'**
+  String get onboarding_sampleCardBody;
+
+  /// Small heading of the example info card on intro page 3 (pano 2.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Tarih · bilgi kartı'**
+  String get onboarding_sampleCardKicker;
+
+  /// Title of the example info card on intro page 3 (pano 2.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Edirne-Segedin Antlaşması (1444)'**
+  String get onboarding_sampleCardTitle;
+
+  /// Screen reader name of the example net chart (pano 2.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'AYT net grafiği: 8 Mayıs 48,5 netten 5 Ekim 67,5 nete'**
+  String get onboarding_sampleChartA11y;
+
+  /// Example exam title above the net on intro page 2 (pano 2.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'AYT · Türkiye Geneli Deneme 6'**
+  String get onboarding_sampleExamTitle;
+
+  /// Subject name of the example topic rows on intro page 3 (pano 2.1 kare 4); decoration.
+  ///
+  /// In tr, this message translates to:
+  /// **'Türkçe'**
+  String get onboarding_sampleSubjectName;
+
+  /// First example topic of intro page 3 (pano 2.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Fiilde Çatı'**
+  String get onboarding_sampleTopic1;
+
+  /// Second example topic of intro page 3 (pano 2.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Noktalama İşaretleri'**
+  String get onboarding_sampleTopic2;
+
+  /// Third example topic of intro page 3 (pano 2.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Cümlenin Öğeleri'**
+  String get onboarding_sampleTopic3;
+
+  /// Screen reader description of the phone mock-up of intro page 1 (pano 2.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Optik form fotoğrafı: form bulundu, köşeler turuncu tutamaçlarla işaretli, altta kamera düğmesi'**
+  String get onboarding_scanVisualA11y;
+
+  /// Text button at the top right of the first two intro pages; goes to the role question (pano 2.1 kare 2 and 3). The board says "Geç".
+  ///
+  /// In tr, this message translates to:
+  /// **'Geç'**
+  String get onboarding_skip;
+
+  /// Primary button of the last intro page; goes to the role question (pano 2.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Başla'**
+  String get onboarding_start;
+
+  /// Study track chip (pano 2.2 kare 2); not selectable while the backend has no code for it.
+  ///
+  /// In tr, this message translates to:
+  /// **'Dil'**
+  String get onboarding_trackDil;
+
+  /// Study track chip (pano 2.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Eşit Ağırlık'**
+  String get onboarding_trackEsitAgirlik;
+
+  /// Name of the radio group of the track chips (pano 2.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Alan'**
+  String get onboarding_trackGroupA11y;
+
+  /// Error under the track chips when Devam Et is pressed for 11, 12 or Mezun without a track (spec 4.A 2.2-2 [Karar]).
+  ///
+  /// In tr, this message translates to:
+  /// **'Alanını seç.'**
+  String get onboarding_trackRequired;
+
+  /// Study track chip (pano 2.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sayısal'**
+  String get onboarding_trackSayisal;
+
+  /// Study track chip (pano 2.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sözel'**
+  String get onboarding_trackSozel;
+
+  /// Heading of the study track choice (pano 2.2 kare 2 and 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Alanın'**
+  String get onboarding_trackTitle;
+
+  /// Welcome screen sentence (pano 2.2 kare 5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabın varsa giriş yap; yoksa birkaç adımda kaydol. Seçtiklerin kayıt formuna gelir.'**
+  String get onboarding_welcomeBody;
+
+  /// Welcome screen secondary button; opens the sign-in screen (pano 2.2 kare 5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Giriş Yap'**
+  String get onboarding_welcomeLogin;
+
+  /// Welcome screen primary button; opens the sign-up form with the picks (pano 2.2 kare 5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kayıt Ol'**
+  String get onboarding_welcomeRegister;
+
+  /// Welcome screen title (pano 2.2 kare 5).
+  ///
+  /// In tr, this message translates to:
+  /// **'SMAP\'e hoş geldin'**
+  String get onboarding_welcomeTitle;
+
+  /// Label above the seven avatars (pano 2.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Avatarın'**
+  String get register_avatarLabel;
+
+  /// Screen reader name of the avatar group.
+  ///
+  /// In tr, this message translates to:
+  /// **'Avatar seçimi'**
+  String get register_avatarPickerA11y;
+
+  /// Info box of a coach sign-up, in place of the grade and track fields (pano 2.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kaydın tamamlanınca koçluk kodun oluşur. Öğrencilerin bu kodla sana bağlanır; kodun Hesap › Koçluk\'ta durur.'**
+  String get register_coachCodeInfo;
+
+  /// Link text of the KVKK notice; fallback title of its reading sheet (pano 2.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'KVKK Aydınlatma Metni'**
+  String get register_consentKvkk;
+
+  /// Error line under the consent row when Kayıt Ol is pressed unchecked (pano 2.6 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kaydolmak için metinleri onaylaman gerekiyor.'**
+  String get register_consentRequired;
+
+  /// Link text of the terms of use; fallback title of its reading sheet (pano 2.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kullanım Koşulları'**
+  String get register_consentTerms;
+
+  /// The one consent sentence; the two placeholders become links that open the texts (pano 2.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'{terms}\'nı ve {kvkk}\'ni okudum, kabul ediyorum.'**
+  String register_consentText(String terms, String kvkk);
+
+  /// E-mail field label (pano 2.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'E-posta'**
+  String get register_fieldEmail;
+
+  /// Full name field label (pano 2.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ad Soyad'**
+  String get register_fieldFullName;
+
+  /// Grade select field label and its sheet title (pano 2.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sınıf'**
+  String get register_fieldGrade;
+
+  /// Password field label (pano 2.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifre'**
+  String get register_fieldPassword;
+
+  /// Repeat password field label (pano 2.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifre (tekrar)'**
+  String get register_fieldPasswordRepeat;
+
+  /// Study track select field label and its sheet title (pano 2.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Alan'**
+  String get register_fieldTrack;
+
+  /// User name field label (pano 2.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kullanıcı adı'**
+  String get register_fieldUsername;
+
+  /// The graduate option of the grade select.
+  ///
+  /// In tr, this message translates to:
+  /// **'Mezun'**
+  String get register_gradeGraduate;
+
+  /// A school year as the select shows it: "12. Sınıf" (pano 2.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'{grade}. Sınıf'**
+  String register_gradeValue(int grade);
+
+  /// Sentence before the sign-in link under the button (pano 2.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabın var mı?'**
+  String get register_hasAccount;
+
+  /// Field error: e-mail empty or malformed (pano 2.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'E-posta adresi eksik görünüyor. Örn: ad@alan.com'**
+  String get register_issueEmailInvalid;
+
+  /// Field error: full name empty. Not drawn in the boards.
+  ///
+  /// In tr, this message translates to:
+  /// **'Adını ve soyadını yaz.'**
+  String get register_issueFullNameMissing;
+
+  /// Field error: no grade chosen. Not drawn in the boards.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sınıfını seç.'**
+  String get register_issueGradeMissing;
+
+  /// Field error under the repeat password (pano 2.6 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifreler aynı değil.'**
+  String get register_issuePasswordMismatch;
+
+  /// Field error: password shorter than 8. Not drawn in the boards.
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifren en az 8 karakter olmalı.'**
+  String get register_issuePasswordTooShort;
+
+  /// Field error: no track chosen for grade 11 and up. Not drawn in the boards.
+  ///
+  /// In tr, this message translates to:
+  /// **'Alanını seç.'**
+  String get register_issueTrackMissing;
+
+  /// Field error: user name empty. Not drawn in the boards.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bir kullanıcı adı yaz.'**
+  String get register_issueUsernameMissing;
+
+  /// Sheet body when a legal text arrived without content (not expected: such a text is not offered).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu metin şu an gösterilemiyor.'**
+  String get register_legalEmpty;
+
+  /// Error box in place of the consent row when the legal texts did not load (pano 2.6 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sözleşme metinleri yüklenemedi. Kaydolmak için metinleri görebilmen gerekiyor.'**
+  String get register_legalLoadFailed;
+
+  /// Screen reader name of the consent row skeleton while the legal texts load.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sözleşme metinleri yükleniyor'**
+  String get register_legalLoading;
+
+  /// Reason under the disabled Kayıt Ol button while the legal texts are missing (pano 2.6 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Metinler yüklenince kayıt açılır.'**
+  String get register_legalRegisterLocked;
+
+  /// Version line at the top of a legal text sheet.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sürüm {version}'**
+  String register_legalVersion(String version);
+
+  /// Text button under Kayıt Ol; goes to the sign-in screen (pano 2.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Giriş Yap'**
+  String get register_loginLink;
+
+  /// Help line under the password field (pano 2.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'En az 8 karakter.'**
+  String get register_passwordHint;
+
+  /// Role segment, second option (pano 2.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci Koçu'**
+  String get register_roleCoach;
+
+  /// Role segment, first option (pano 2.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci'**
+  String get register_roleStudent;
+
+  /// Notice above Kayıt Ol when the account was created but the automatic sign-in failed. Not drawn in the boards.
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabın oluşturuldu ama giriş yapılamadı. Kullanıcı adın ve şifrenle giriş yapabilirsin.'**
+  String get register_signInFailed;
+
+  /// Inline button of the signInFailed notice; goes to the sign-in screen.
+  ///
+  /// In tr, this message translates to:
+  /// **'Giriş Yap'**
+  String get register_signInFailedAction;
+
+  /// Primary button of the sign-up screen (pano 2.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kayıt Ol'**
+  String get register_submit;
+
+  /// Notice above Kayıt Ol when the register call failed for a reason without a better sentence (spec 4.A errRegisterFailed).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kaydın tamamlanamadı. Bağlantını kontrol edip tekrar dene.'**
+  String get register_submitFailed;
+
+  /// Sign-up screen title, large and in the bar (pano 2.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kayıt ol'**
+  String get register_title;
+
+  /// Study track option. The design offers it; it is not selectable until the backend names a code.
+  ///
+  /// In tr, this message translates to:
+  /// **'Dil'**
+  String get register_trackDil;
+
+  /// Study track option (pano 2.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Eşit Ağırlık'**
+  String get register_trackEsitAgirlik;
+
+  /// Value of the disabled track field for grade 9 and 10 (pano 2.6 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Seçilmez'**
+  String get register_trackNotSelectable;
+
+  /// Help line under the disabled track field (pano 2.6 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'9. ve 10. sınıfta alan seçilmez.'**
+  String get register_trackNotSelectableReason;
+
+  /// Study track option.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sayısal'**
+  String get register_trackSayisal;
+
+  /// Study track option.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sözel'**
+  String get register_trackSozel;
+
+  /// Live check passed: the user name is free (pano 2.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu kullanıcı adı boşta.'**
+  String get register_usernameFree;
+
+  /// Help line under the user name while the device is offline (spec 4.A 2.5-2.6 Davranış).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlanınca kontrol edilecek.'**
+  String get register_usernameOffline;
+
+  /// Label before the free-name chip under a taken user name (pano 2.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Boşta olan:'**
+  String get register_usernameSuggest;
+
+  /// Screen reader reading of the free-name chip.
+  ///
+  /// In tr, this message translates to:
+  /// **'Boşta olan kullanıcı adı: {name}. Yazmak için dokun.'**
+  String register_usernameSuggestA11y(String name);
+
+  /// Live check or register call: the user name is in use (pano 2.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu kullanıcı adı alınmış.'**
+  String get register_usernameTaken;
 
   /// Program item time button in edit mode (C30): "Saat 10:00, değiştir".
   ///

@@ -105,7 +105,7 @@ class LoginViewModel extends BaseViewModel {
   /// "Kayıt Ol": the sign-up screen.
   Future<void> openRegister() async {
     if (_isSubmitting) return;
-    await _router.push(const RegisterRoute());
+    await _router.push(RegisterRoute());
   }
 
   /// Whether [code] means the pair did not match (the password is then

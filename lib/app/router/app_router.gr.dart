@@ -11,6 +11,86 @@
 part of 'app_router.dart';
 
 /// generated route for
+/// [AccountTabPage]
+class AccountTabRoute extends PageRouteInfo<void> {
+  const AccountTabRoute({List<PageRouteInfo>? children})
+    : super(AccountTabRoute.name, initialChildren: children);
+
+  static const String name = 'AccountTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const AccountTabPage();
+    },
+  );
+}
+
+/// generated route for
+/// [AnalyticsTabPage]
+class AnalyticsTabRoute extends PageRouteInfo<void> {
+  const AnalyticsTabRoute({List<PageRouteInfo>? children})
+    : super(AnalyticsTabRoute.name, initialChildren: children);
+
+  static const String name = 'AnalyticsTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const AnalyticsTabPage();
+    },
+  );
+}
+
+/// generated route for
+/// [CoachAccountTabPage]
+class CoachAccountTabRoute extends PageRouteInfo<void> {
+  const CoachAccountTabRoute({List<PageRouteInfo>? children})
+    : super(CoachAccountTabRoute.name, initialChildren: children);
+
+  static const String name = 'CoachAccountTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const CoachAccountTabPage();
+    },
+  );
+}
+
+/// generated route for
+/// [CoachHomeTabPage]
+class CoachHomeTabRoute extends PageRouteInfo<void> {
+  const CoachHomeTabRoute({List<PageRouteInfo>? children})
+    : super(CoachHomeTabRoute.name, initialChildren: children);
+
+  static const String name = 'CoachHomeTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const CoachHomeTabPage();
+    },
+  );
+}
+
+/// generated route for
+/// [CoachMeetingsTabPage]
+class CoachMeetingsTabRoute extends PageRouteInfo<void> {
+  const CoachMeetingsTabRoute({List<PageRouteInfo>? children})
+    : super(CoachMeetingsTabRoute.name, initialChildren: children);
+
+  static const String name = 'CoachMeetingsTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const CoachMeetingsTabPage();
+    },
+  );
+}
+
+/// generated route for
 /// [CoachShellView]
 class CoachShellRoute extends PageRouteInfo<void> {
   const CoachShellRoute({List<PageRouteInfo>? children})
@@ -22,6 +102,22 @@ class CoachShellRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const CoachShellView();
+    },
+  );
+}
+
+/// generated route for
+/// [CoachStudentsTabPage]
+class CoachStudentsTabRoute extends PageRouteInfo<void> {
+  const CoachStudentsTabRoute({List<PageRouteInfo>? children})
+    : super(CoachStudentsTabRoute.name, initialChildren: children);
+
+  static const String name = 'CoachStudentsTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const CoachStudentsTabPage();
     },
   );
 }
@@ -43,23 +139,239 @@ class ForceUpdateRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [LegacyCoachRootPage]
-class LegacyCoachRootRoute extends PageRouteInfo<void> {
-  const LegacyCoachRootRoute({List<PageRouteInfo>? children})
-    : super(LegacyCoachRootRoute.name, initialChildren: children);
+/// [ForgotPasswordView]
+class ForgotPasswordRoute extends PageRouteInfo<void> {
+  const ForgotPasswordRoute({List<PageRouteInfo>? children})
+    : super(ForgotPasswordRoute.name, initialChildren: children);
 
-  static const String name = 'LegacyCoachRootRoute';
+  static const String name = 'ForgotPasswordRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const LegacyCoachRootPage();
+      return const ForgotPasswordView();
     },
   );
 }
 
 /// generated route for
-/// [LegacyLoginPage]
+/// [HomeTabPage]
+class HomeTabRoute extends PageRouteInfo<void> {
+  const HomeTabRoute({List<PageRouteInfo>? children})
+    : super(HomeTabRoute.name, initialChildren: children);
+
+  static const String name = 'HomeTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const HomeTabPage();
+    },
+  );
+}
+
+/// generated route for
+/// [LegacyAccountTabPage]
+class LegacyAccountTabRoute extends PageRouteInfo<void> {
+  const LegacyAccountTabRoute({List<PageRouteInfo>? children})
+    : super(LegacyAccountTabRoute.name, initialChildren: children);
+
+  static const String name = 'LegacyAccountTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LegacyAccountTabPage();
+    },
+  );
+}
+
+/// generated route for
+/// [LegacyAnalyticsTabPage]
+class LegacyAnalyticsTabRoute
+    extends PageRouteInfo<LegacyAnalyticsTabRouteArgs> {
+  LegacyAnalyticsTabRoute({
+    Key? key,
+    int? initialTabIndex,
+    List<PageRouteInfo>? children,
+  }) : super(
+         LegacyAnalyticsTabRoute.name,
+         args: LegacyAnalyticsTabRouteArgs(
+           key: key,
+           initialTabIndex: initialTabIndex,
+         ),
+         initialChildren: children,
+       );
+
+  static const String name = 'LegacyAnalyticsTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<LegacyAnalyticsTabRouteArgs>(
+        orElse: () => const LegacyAnalyticsTabRouteArgs(),
+      );
+      return LegacyAnalyticsTabPage(
+        key: args.key,
+        initialTabIndex: args.initialTabIndex,
+      );
+    },
+  );
+}
+
+class LegacyAnalyticsTabRouteArgs {
+  const LegacyAnalyticsTabRouteArgs({this.key, this.initialTabIndex});
+
+  final Key? key;
+
+  final int? initialTabIndex;
+
+  @override
+  String toString() {
+    return 'LegacyAnalyticsTabRouteArgs{key: $key, initialTabIndex: $initialTabIndex}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! LegacyAnalyticsTabRouteArgs) return false;
+    return key == other.key && initialTabIndex == other.initialTabIndex;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ initialTabIndex.hashCode;
+}
+
+/// generated route for
+/// [LegacyCoachAccountTabPage]
+class LegacyCoachAccountTabRoute extends PageRouteInfo<void> {
+  const LegacyCoachAccountTabRoute({List<PageRouteInfo>? children})
+    : super(LegacyCoachAccountTabRoute.name, initialChildren: children);
+
+  static const String name = 'LegacyCoachAccountTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LegacyCoachAccountTabPage();
+    },
+  );
+}
+
+/// generated route for
+/// [LegacyCoachHomeTabPage]
+class LegacyCoachHomeTabRoute extends PageRouteInfo<void> {
+  const LegacyCoachHomeTabRoute({List<PageRouteInfo>? children})
+    : super(LegacyCoachHomeTabRoute.name, initialChildren: children);
+
+  static const String name = 'LegacyCoachHomeTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LegacyCoachHomeTabPage();
+    },
+  );
+}
+
+/// generated route for
+/// [LegacyHomeTabPage]
+class LegacyHomeTabRoute extends PageRouteInfo<void> {
+  const LegacyHomeTabRoute({List<PageRouteInfo>? children})
+    : super(LegacyHomeTabRoute.name, initialChildren: children);
+
+  static const String name = 'LegacyHomeTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LegacyHomeTabPage();
+    },
+  );
+}
+
+/// generated route for
+/// [LegacyLessonsTabPage]
+class LegacyLessonsTabRoute extends PageRouteInfo<void> {
+  const LegacyLessonsTabRoute({List<PageRouteInfo>? children})
+    : super(LegacyLessonsTabRoute.name, initialChildren: children);
+
+  static const String name = 'LegacyLessonsTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LegacyLessonsTabPage();
+    },
+  );
+}
+
+/// generated route for
+/// [LegacyMeetingsTabPage]
+class LegacyMeetingsTabRoute extends PageRouteInfo<void> {
+  const LegacyMeetingsTabRoute({List<PageRouteInfo>? children})
+    : super(LegacyMeetingsTabRoute.name, initialChildren: children);
+
+  static const String name = 'LegacyMeetingsTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LegacyMeetingsTabPage();
+    },
+  );
+}
+
+/// generated route for
+/// [LegacyScanPage]
+class LegacyScanRoute extends PageRouteInfo<void> {
+  const LegacyScanRoute({List<PageRouteInfo>? children})
+    : super(LegacyScanRoute.name, initialChildren: children);
+
+  static const String name = 'LegacyScanRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LegacyScanPage();
+    },
+  );
+}
+
+/// generated route for
+/// [LegacyStudentsTabPage]
+class LegacyStudentsTabRoute extends PageRouteInfo<void> {
+  const LegacyStudentsTabRoute({List<PageRouteInfo>? children})
+    : super(LegacyStudentsTabRoute.name, initialChildren: children);
+
+  static const String name = 'LegacyStudentsTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LegacyStudentsTabPage();
+    },
+  );
+}
+
+/// generated route for
+/// [LessonsTabPage]
+class LessonsTabRoute extends PageRouteInfo<void> {
+  const LessonsTabRoute({List<PageRouteInfo>? children})
+    : super(LessonsTabRoute.name, initialChildren: children);
+
+  static const String name = 'LessonsTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LessonsTabPage();
+    },
+  );
+}
+
+/// generated route for
+/// [LoginView]
 class LoginRoute extends PageRouteInfo<void> {
   const LoginRoute({List<PageRouteInfo>? children})
     : super(LoginRoute.name, initialChildren: children);
@@ -69,71 +381,7 @@ class LoginRoute extends PageRouteInfo<void> {
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const LegacyLoginPage();
-    },
-  );
-}
-
-/// generated route for
-/// [LegacyOnboardingPage]
-class OnboardingRoute extends PageRouteInfo<void> {
-  const OnboardingRoute({List<PageRouteInfo>? children})
-    : super(OnboardingRoute.name, initialChildren: children);
-
-  static const String name = 'OnboardingRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const LegacyOnboardingPage();
-    },
-  );
-}
-
-/// generated route for
-/// [LegacyRegisterPage]
-class RegisterRoute extends PageRouteInfo<void> {
-  const RegisterRoute({List<PageRouteInfo>? children})
-    : super(RegisterRoute.name, initialChildren: children);
-
-  static const String name = 'RegisterRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const LegacyRegisterPage();
-    },
-  );
-}
-
-/// generated route for
-/// [LegacyStudentRootPage]
-class LegacyStudentRootRoute extends PageRouteInfo<void> {
-  const LegacyStudentRootRoute({List<PageRouteInfo>? children})
-    : super(LegacyStudentRootRoute.name, initialChildren: children);
-
-  static const String name = 'LegacyStudentRootRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const LegacyStudentRootPage();
-    },
-  );
-}
-
-/// generated route for
-/// [LegacyWelcomePage]
-class WelcomeRoute extends PageRouteInfo<void> {
-  const WelcomeRoute({List<PageRouteInfo>? children})
-    : super(WelcomeRoute.name, initialChildren: children);
-
-  static const String name = 'WelcomeRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const LegacyWelcomePage();
+      return const LoginView();
     },
   );
 }
@@ -152,6 +400,91 @@ class MaintenanceRoute extends PageRouteInfo<void> {
       return const MaintenanceView();
     },
   );
+}
+
+/// generated route for
+/// [OnboardingView]
+class OnboardingRoute extends PageRouteInfo<void> {
+  const OnboardingRoute({List<PageRouteInfo>? children})
+    : super(OnboardingRoute.name, initialChildren: children);
+
+  static const String name = 'OnboardingRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const OnboardingView();
+    },
+  );
+}
+
+/// generated route for
+/// [RegisterView]
+class RegisterRoute extends PageRouteInfo<RegisterRouteArgs> {
+  RegisterRoute({
+    UserRole? role,
+    SchoolGrade? grade,
+    StudyTrack? track,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         RegisterRoute.name,
+         args: RegisterRouteArgs(
+           role: role,
+           grade: grade,
+           track: track,
+           key: key,
+         ),
+         initialChildren: children,
+       );
+
+  static const String name = 'RegisterRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<RegisterRouteArgs>(
+        orElse: () => const RegisterRouteArgs(),
+      );
+      return RegisterView(
+        role: args.role,
+        grade: args.grade,
+        track: args.track,
+        key: args.key,
+      );
+    },
+  );
+}
+
+class RegisterRouteArgs {
+  const RegisterRouteArgs({this.role, this.grade, this.track, this.key});
+
+  final UserRole? role;
+
+  final SchoolGrade? grade;
+
+  final StudyTrack? track;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'RegisterRouteArgs{role: $role, grade: $grade, track: $track, key: $key}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! RegisterRouteArgs) return false;
+    return role == other.role &&
+        grade == other.grade &&
+        track == other.track &&
+        key == other.key;
+  }
+
+  @override
+  int get hashCode =>
+      role.hashCode ^ grade.hashCode ^ track.hashCode ^ key.hashCode;
 }
 
 /// generated route for
@@ -198,6 +531,22 @@ class UnknownRoleRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const UnknownRoleView();
+    },
+  );
+}
+
+/// generated route for
+/// [WelcomeView]
+class WelcomeRoute extends PageRouteInfo<void> {
+  const WelcomeRoute({List<PageRouteInfo>? children})
+    : super(WelcomeRoute.name, initialChildren: children);
+
+  static const String name = 'WelcomeRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const WelcomeView();
     },
   );
 }

@@ -40,11 +40,11 @@ final class RouterOnboardingNavigator implements OnboardingNavigator {
 /// The one place the picks of the flow become route parameters of the sign-up
 /// form (spec 2.2-5 "Kayıt Ol → /auth/register, role seçimi parametre"; the E4 task's
 /// `RegisterView({UserRole? role, SchoolGrade? grade, StudyTrack? track})`).
-///
-/// E4's route has no parameters yet. When it is merged, this becomes
-/// `RegisterRoute(role: picks.role, grade: picks.grade, track: picks.track)`
-/// for a non-null `selections` (already passed through
-/// [OnboardingSelections.forRegistration]) and a plain `RegisterRoute()`
-/// otherwise.
 PageRouteInfo registerRoute(OnboardingSelections? selections) =>
-    const RegisterRoute();
+    selections == null
+    ? RegisterRoute()
+    : RegisterRoute(
+        role: selections.role,
+        grade: selections.grade,
+        track: selections.track,
+      );
