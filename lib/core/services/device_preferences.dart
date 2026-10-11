@@ -43,6 +43,10 @@ final class DevicePreferences {
   /// Exam type chosen in the lessons list, e.g. `tyt` / `ayt` (`String`).
   static const lessonsExamTypeKey = 'lessons.examType';
 
+  /// Section chosen on the Edebiyat detail, `topics` or `authors` (`String`;
+  /// pano 7.4 "seçim cihazda hatırlanır").
+  static const lessonsLiteratureSectionKey = 'lessons.literatureSection';
+
   /// Every key the cache loads. Anything else is rejected.
   static const Set<String> allowedKeys = {
     themeModeKey,
@@ -54,6 +58,7 @@ final class DevicePreferences {
     skipLearnedConfirmKey,
     notificationPrimerAnsweredKey,
     lessonsExamTypeKey,
+    lessonsLiteratureSectionKey,
   };
 
   final SharedPreferencesWithCache _prefs;
