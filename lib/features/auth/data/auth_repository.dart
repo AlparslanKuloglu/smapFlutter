@@ -5,8 +5,11 @@ import 'package:smap/core/errors/app_exception.dart';
 import 'package:smap/core/errors/app_result.dart';
 import 'package:smap/core/network/network_service.dart';
 import 'package:smap/features/auth/data/dtos/login_response.dart';
+import 'package:smap/features/auth/data/dtos/new_registration.dart';
+import 'package:smap/features/auth/data/dtos/register_outcome.dart';
 import 'package:smap/features/auth/data/dtos/user_dto.dart';
 import 'package:smap/features/auth/data/requests/auth_requests.dart';
+import 'package:smap/features/auth/data/requests/register_requests.dart';
 
 /// Talks to the auth endpoints and answers `Either<AppException, T>`.
 ///
@@ -72,6 +75,40 @@ class AuthRepository {
   /// `GET /ajax/logout`: ends the server session. The cookie jar is not
   /// touched; the caller clears it.
   Future<AppResult<Unit>> logout() => _network.send(AuthRequests.logout());
+
+  /// `POST /student/register`: creates the account (student or coach).
+  ///
+  /// Succeeds with [RegisterOutcome.registered] when the answer's body says
+  /// `success: true` (the legacy rule: a 2xx or 302 whose body proves it), and
+  /// with [RegisterOutcome.userNameTaken] when the server says the user name
+  /// is in use, whether as `userNameUsing: true` or as a refusal text that
+  /// reads so (`RegisterOutcome.readsAsUserNameTaken`), with a 200 or with a
+  /// 4xx. Any other refusal is `AppErrorCode.validation` with the server's text
+  /// in `serverMessage`; an answer that is not the backend's frame is a
+  /// `server` failure.
+  ///
+  /// The call does not sign anybody in: the caller does, with the same user
+  /// name and password (`SessionManager.signIn`).
+  Future<AppResult<RegisterOutcome>> register(
+    NewRegistration registration,
+  ) async {
+    const path = '/student/register';
+    final result = await _network.send(RegisterRequests.register(registration));
+    return result.fold(
+      (failure) => RegisterOutcome.readsAsUserNameTaken(failure.serverMessage)
+          ? const Right(RegisterOutcome.userNameTaken)
+          : Left(failure),
+      (envelope) {
+        if (envelope.isSuccess) return const Right(RegisterOutcome.registered);
+        if (envelope['userNameUsing'] == true ||
+            RegisterOutcome.readsAsUserNameTaken(envelope.message)) {
+          return const Right(RegisterOutcome.userNameTaken);
+        }
+        if (envelope.isRejected) return Left(envelope.rejection(path));
+        return Left(envelope.unusable(path, 'no success flag'));
+      },
+    );
+  }
 
   AppException _loginFailure(AppException failure) {
     final status = failure.statusCode;
