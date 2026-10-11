@@ -5,6 +5,7 @@ import 'package:stacked/stacked.dart';
 
 import 'package:smap/app/router/app_router.dart';
 import 'package:smap/app/router/guards/route_access.dart';
+import 'package:smap/app/shell/shell_preview.dart';
 import 'package:smap/core/services/device_preferences.dart';
 import 'package:smap/features/auth/domain/session_state.dart';
 import 'package:smap/features/startup/application/launch_handover.dart';
@@ -55,6 +56,13 @@ class StartupViewModel extends BaseViewModel {
       if (!_disposed) _showSpinner.value = true;
     });
     try {
+      // Debug only: `--dart-define=SHELL_PREVIEW=student|coach` opens a shell
+      // without an account (see `ShellPreview`).
+      final preview = ShellPreview.role;
+      if (preview != null) {
+        await _router.replaceAll([_router.pageFor(targetForRole(preview))]);
+        return;
+      }
       await _session.restore();
       final block = await _gate.check();
       if (_disposed) return;

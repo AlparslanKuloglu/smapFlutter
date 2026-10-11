@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smap/core/theme/app_colors.dart';
 import 'package:provider/provider.dart';
 import 'package:smap/features/home/presentation/provider/home_nav_provider.dart';
-import 'package:smap/features/root/presentation/provider/root_nav_provider.dart';
+import 'package:smap/features/legacy/legacy_tab_navigation.dart';
 import 'package:smap/features/shared/presentation/provider/user_provider.dart';
 import 'package:smap/features/home/presentation/widgets/app_dialog.dart';
 
@@ -142,17 +142,17 @@ class _MenuTile extends StatelessWidget {
           }
           if (data.title == 'Derslerim') {
             context.read<HomeNavNotifier>().resetToHub();
-            context.read<RootNavNotifier>().changeTab(2);
+            LegacyTabNavigation.openLessons(context);
             return;
           }
           if (data.title == 'Analiz') {
             context.read<HomeNavNotifier>().resetToHub();
-            context.read<RootNavNotifier>().changeTab(1, initialTabIndex: 0);
+            LegacyTabNavigation.openAnalytics(context, initialTabIndex: 0);
             return;
           }
           if (data.title == 'Denemelerim') {
             context.read<HomeNavNotifier>().resetToHub();
-            context.read<RootNavNotifier>().changeTab(1, initialTabIndex: 1);
+            LegacyTabNavigation.openAnalytics(context, initialTabIndex: 1);
             return;
           }
           if (data.title == 'SmapLab') {
@@ -190,7 +190,7 @@ class _MenuTile extends StatelessWidget {
           }
           if (data.title == 'Öğrencilerim') {
             context.read<HomeNavNotifier>().resetToHub();
-            context.read<RootNavNotifier>().changeTab(1);
+            LegacyTabNavigation.openStudents(context);
             return;
           }
           if (data.title == 'Analizler') {
@@ -240,7 +240,7 @@ class _MenuTile extends StatelessWidget {
           }
           if (data.title == 'Görüşmelerim') {
             context.read<HomeNavNotifier>().resetToHub();
-            context.read<RootNavNotifier>().changeTab(2);
+            LegacyTabNavigation.openMeetings(context);
             return;
           }
         },

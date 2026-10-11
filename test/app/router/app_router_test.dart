@@ -57,7 +57,7 @@ void main() {
     expect(router.groupOf(StartupRoute.name), RouteGroup.startup);
     expect(router.groupOf(LoginRoute.name), RouteGroup.signedOutEntry);
     expect(router.groupOf(RegisterRoute.name), RouteGroup.signedOutEntry);
-    expect(router.groupOf(LegacyStudentRootRoute.name), RouteGroup.other);
+    expect(router.groupOf(LegacyHomeTabRoute.name), RouteGroup.other);
   });
 
   test('guards run in the order onboarding, auth, role', () {
