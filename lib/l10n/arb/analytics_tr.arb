@@ -1,0 +1,231 @@
+{
+  "@@locale": "tr",
+  "analytics_title": "Analizlerim",
+  "@analytics_title": {
+    "description": "Root band title of the Analizlerim tab (pano 6.1)."
+  },
+  "analytics_tabsA11y": "Analizlerim bölümleri",
+  "@analytics_tabsA11y": {
+    "description": "Screen reader name of the root band's tab row (pano 6.1)."
+  },
+  "analytics_tabGeneral": "Genel",
+  "@analytics_tabGeneral": {
+    "description": "Root band tab: the net chart and four boxes (pano 6.1)."
+  },
+  "analytics_tabExams": "Denemelerim",
+  "@analytics_tabExams": {
+    "description": "Root band tab: the list of exams (pano 6.2)."
+  },
+  "analytics_filterGeneral": "Genel",
+  "@analytics_filterGeneral": {
+    "description": "Filter scope: the whole exam, not one lesson."
+  },
+  "analytics_filterLabel": "{exam} · {scope}",
+  "@analytics_filterLabel": {
+    "description": "Filter pill: 'TYT · Genel' (pano 6.1).",
+    "placeholders": {
+      "exam": {
+        "type": "String"
+      },
+      "scope": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_filterA11y": "Süzgeç: {label}",
+  "@analytics_filterA11y": {
+    "description": "Screen reader name of the filter pill (pano 6.1).",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_examCount": "{count} deneme",
+  "@analytics_examCount": {
+    "description": "How many exams: '6 deneme' (pano 6.1, 6.2 counters).",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "analytics_boxExams": "Çözülen deneme",
+  "@analytics_boxExams": {
+    "description": "Stat box label (pano 6.1)."
+  },
+  "analytics_boxAverageNet": "Ortalama net",
+  "@analytics_boxAverageNet": {
+    "description": "Stat box label (pano 6.1)."
+  },
+  "analytics_boxAveragePoint": "Ortalama puan",
+  "@analytics_boxAveragePoint": {
+    "description": "Stat box label; drawn only when the exams have points (pano 6.1)."
+  },
+  "analytics_boxAverageRank": "Ortalama sıralama",
+  "@analytics_boxAverageRank": {
+    "description": "Stat box label; drawn only when the exams have ranks (pano 6.1)."
+  },
+  "analytics_deltaSuffix": "son denemede",
+  "@analytics_deltaSuffix": {
+    "description": "Tail of the change line of the average net box: '+3,25 son denemede' (pano 6.1)."
+  },
+  "analytics_singleTitle": "İlk denemen",
+  "@analytics_singleTitle": {
+    "description": "One-exam card heading (pano 6.3 kare 2)."
+  },
+  "analytics_singleNameDate": "{name} · {date}",
+  "@analytics_singleNameDate": {
+    "description": "One-exam card: exam name and long date (pano 6.3 kare 2).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_singleNote": "İkinci denemenden sonra gelişim grafiğin burada çizilir.",
+  "@analytics_singleNote": {
+    "description": "One-exam card note (pano 6.3 kare 2)."
+  },
+  "analytics_errorTitle": "Analizlerin yüklenemedi",
+  "@analytics_errorTitle": {
+    "description": "Genel tab error title (pano 6.3 kare 3)."
+  },
+  "analytics_errorMessage": "Bağlantını kontrol edip tekrar dene.",
+  "@analytics_errorMessage": {
+    "description": "Genel and Denemelerim error message (pano 6.3 kare 3)."
+  },
+  "analytics_examsErrorTitle": "Denemelerin yüklenemedi",
+  "@analytics_examsErrorTitle": {
+    "description": "Denemelerim error title (same pattern as pano 6.3 kare 3)."
+  },
+  "analytics_moreError": "Denemeler yüklenemedi.",
+  "@analytics_moreError": {
+    "description": "Section error under the list when the next page failed (pano 1.22 section error)."
+  },
+  "analytics_emptyTitle": "Henüz deneme yok",
+  "@analytics_emptyTitle": {
+    "description": "Empty state title of both tabs (pano 6.2 kare 3)."
+  },
+  "analytics_emptyMessage": "İlk denemeni okuttuğunda sonuçların, netin ve eksik konuların burada görünür.",
+  "@analytics_emptyMessage": {
+    "description": "Empty state message of both tabs (pano 6.2 kare 3)."
+  },
+  "analytics_emptyAction": "İlk Denemeni Okut",
+  "@analytics_emptyAction": {
+    "description": "Empty state action: opens the camera (pano 6.2 kare 3)."
+  },
+  "analytics_filterEmpty": "Bu süzgeçte gösterilecek deneme yok.",
+  "@analytics_filterEmpty": {
+    "description": "Section empty state when a filter leaves no exam (not in the boards; follows the 'Bu süzgeçte gösterilecek konu yok' pattern of 7.5)."
+  },
+  "analytics_filterReset": "Süzgeci Sıfırla",
+  "@analytics_filterReset": {
+    "description": "Action of the filtered-empty state (not in the boards)."
+  },
+  "analytics_sheetFilterTitle": "Süzgeç",
+  "@analytics_sheetFilterTitle": {
+    "description": "Title of the Genel filter sheet (pano 6.1 kare 3)."
+  },
+  "analytics_sheetExam": "Sınav",
+  "@analytics_sheetExam": {
+    "description": "Field label of the filter sheet: TYT or AYT (pano 6.1 kare 3)."
+  },
+  "analytics_sheetExamA11y": "Sınav türü",
+  "@analytics_sheetExamA11y": {
+    "description": "Screen reader name of the exam segment (pano 6.1 kare 3)."
+  },
+  "analytics_sheetField": "Alan",
+  "@analytics_sheetField": {
+    "description": "Field label of the filter sheet: the AYT field (pano 6.1 kare 3)."
+  },
+  "analytics_sheetFieldA11y": "Alan",
+  "@analytics_sheetFieldA11y": {
+    "description": "Screen reader name of the field segment."
+  },
+  "analytics_sheetFieldHelp": "Ders listesi alanına göre değişir. Profildeki alanın seçili gelir.",
+  "@analytics_sheetFieldHelp": {
+    "description": "Help under the field segment (pano 6.1 kare 3)."
+  },
+  "analytics_sheetLesson": "Ders",
+  "@analytics_sheetLesson": {
+    "description": "Field label of the filter sheet: the lesson chips (pano 6.1 kare 3)."
+  },
+  "analytics_sheetApply": "Uygula",
+  "@analytics_sheetApply": {
+    "description": "Primary button of both filter sheets (pano 6.1 kare 3, 6.2 kare 2)."
+  },
+  "analytics_fieldEqualWeight": "Eşit Ağırlık",
+  "@analytics_fieldEqualWeight": {
+    "description": "AYT field: Eşit Ağırlık (pano 6.1 kare 3)."
+  },
+  "analytics_fieldNumeric": "Sayısal",
+  "@analytics_fieldNumeric": {
+    "description": "AYT field: Sayısal (pano 6.1 kare 3)."
+  },
+  "analytics_fieldVerbal": "Sözel",
+  "@analytics_fieldVerbal": {
+    "description": "AYT field: Sözel (pano 6.1 kare 3)."
+  },
+  "analytics_typeAll": "Tümü",
+  "@analytics_typeAll": {
+    "description": "Exam type segment: all exams (pano 6.2 kare 1)."
+  },
+  "analytics_typeA11y": "Sınav türü",
+  "@analytics_typeA11y": {
+    "description": "Screen reader name of the exam type segment (pano 6.2)."
+  },
+  "analytics_summaryLine": "{date} · En yeni önce",
+  "@analytics_summaryLine": {
+    "description": "Summary line over the list: date range and order (pano 6.2 kare 1).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_sortAction": "Süz ve Sırala",
+  "@analytics_sortAction": {
+    "description": "Text button that opens the sort and filter sheet (pano 6.2 kare 1)."
+  },
+  "analytics_sheetSortTitle": "Süz ve Sırala",
+  "@analytics_sheetSortTitle": {
+    "description": "Title of the Denemelerim sheet (pano 6.2 kare 2)."
+  },
+  "analytics_sheetDate": "Tarih",
+  "@analytics_sheetDate": {
+    "description": "Field label of the date chips (pano 6.2 kare 2)."
+  },
+  "analytics_dateAll": "Tüm tarihler",
+  "@analytics_dateAll": {
+    "description": "Date range: no limit (pano 6.2 kare 2)."
+  },
+  "analytics_dateLast30Days": "Son 30 gün",
+  "@analytics_dateLast30Days": {
+    "description": "Date range (pano 6.2 kare 2)."
+  },
+  "analytics_dateLast3Months": "Son 3 ay",
+  "@analytics_dateLast3Months": {
+    "description": "Date range (pano 6.2 kare 2)."
+  },
+  "analytics_dateAcademicYear": "Bu eğitim yılı",
+  "@analytics_dateAcademicYear": {
+    "description": "Date range: since 1 September (pano 6.2 kare 2)."
+  },
+  "analytics_examUntitled": "{type} denemesi",
+  "@analytics_examUntitled": {
+    "description": "Title of an exam the server did not name: 'TYT denemesi' (pano 6.2 'Ad yoksa başlık tür + denemesi olur').",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "analytics_loadingMoreA11y": "Daha fazla deneme yükleniyor",
+  "@analytics_loadingMoreA11y": {
+    "description": "Screen reader name of the spinner under the list (pano 6.2)."
+  }
+}

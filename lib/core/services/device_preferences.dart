@@ -43,6 +43,10 @@ final class DevicePreferences {
   /// Exam type chosen in the lessons list, e.g. `tyt` / `ayt` (`String`).
   static const lessonsExamTypeKey = 'lessons.examType';
 
+  /// Result ids of the exams the student starred in Denemelerim (`String`,
+  /// a JSON list). The favorite lives on the device only (spec decision 4.8).
+  static const favoriteExamsKey = 'analytics.favoriteExams';
+
   /// Every key the cache loads. Anything else is rejected.
   static const Set<String> allowedKeys = {
     themeModeKey,
@@ -54,6 +58,7 @@ final class DevicePreferences {
     skipLearnedConfirmKey,
     notificationPrimerAnsweredKey,
     lessonsExamTypeKey,
+    favoriteExamsKey,
   };
 
   final SharedPreferencesWithCache _prefs;
