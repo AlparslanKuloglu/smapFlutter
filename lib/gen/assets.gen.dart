@@ -230,6 +230,57 @@ class $AssetsAvatarsGen {
   ];
 }
 
+class $AssetsBrandGen {
+  const $AssetsBrandGen();
+
+  /// File path: assets/brand/.gitkeep
+  String get aGitkeep => 'assets/brand/.gitkeep';
+
+  /// File path: assets/brand/smap_lockup_horizontal.svg
+  SvgGenImage get smapLockupHorizontal =>
+      const SvgGenImage('assets/brand/smap_lockup_horizontal.svg');
+
+  /// File path: assets/brand/smap_lockup_horizontal_on_navy.svg
+  SvgGenImage get smapLockupHorizontalOnNavy =>
+      const SvgGenImage('assets/brand/smap_lockup_horizontal_on_navy.svg');
+
+  /// File path: assets/brand/smap_lockup_vertical.svg
+  SvgGenImage get smapLockupVertical =>
+      const SvgGenImage('assets/brand/smap_lockup_vertical.svg');
+
+  /// File path: assets/brand/smap_lockup_vertical_on_navy.svg
+  SvgGenImage get smapLockupVerticalOnNavy =>
+      const SvgGenImage('assets/brand/smap_lockup_vertical_on_navy.svg');
+
+  /// File path: assets/brand/smap_mark.svg
+  SvgGenImage get smapMark => const SvgGenImage('assets/brand/smap_mark.svg');
+
+  /// File path: assets/brand/smap_mark_mono_navy.svg
+  SvgGenImage get smapMarkMonoNavy =>
+      const SvgGenImage('assets/brand/smap_mark_mono_navy.svg');
+
+  /// File path: assets/brand/smap_mark_mono_white.svg
+  SvgGenImage get smapMarkMonoWhite =>
+      const SvgGenImage('assets/brand/smap_mark_mono_white.svg');
+
+  /// File path: assets/brand/smap_mark_on_navy.svg
+  SvgGenImage get smapMarkOnNavy =>
+      const SvgGenImage('assets/brand/smap_mark_on_navy.svg');
+
+  /// List of all assets
+  List<dynamic> get values => [
+    aGitkeep,
+    smapLockupHorizontal,
+    smapLockupHorizontalOnNavy,
+    smapLockupVertical,
+    smapLockupVerticalOnNavy,
+    smapMark,
+    smapMarkMonoNavy,
+    smapMarkMonoWhite,
+    smapMarkOnNavy,
+  ];
+}
+
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
@@ -376,6 +427,16 @@ class $AssetsIconsGen {
     subheadingCard,
     subjecticon,
   ];
+}
+
+class $AssetsIllustrationsGen {
+  const $AssetsIllustrationsGen();
+
+  /// File path: assets/illustrations/.gitkeep
+  String get aGitkeep => 'assets/illustrations/.gitkeep';
+
+  /// List of all assets
+  List<String> get values => [aGitkeep];
 }
 
 class $AssetsMenuIconsGen {
@@ -2955,6 +3016,7 @@ abstract final class Assets {
   static const AssetGenImage biological = AssetGenImage(
     'assets/biological.png',
   );
+  static const $AssetsBrandGen brand = $AssetsBrandGen();
   static const SvgGenImage cards = SvgGenImage('assets/cards.svg');
   static const SvgGenImage chart = SvgGenImage('assets/chart.svg');
   static const AssetGenImage cografya = AssetGenImage('assets/cografya.png');
@@ -2967,6 +3029,8 @@ abstract final class Assets {
   static const SvgGenImage home = SvgGenImage('assets/home.svg');
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const String ikonlar = 'assets/ikonlar.zip';
+  static const $AssetsIllustrationsGen illustrations =
+      $AssetsIllustrationsGen();
   static const AssetGenImage llg1 = AssetGenImage('assets/llg1.png');
   static const AssetGenImage llg5 = AssetGenImage('assets/llg5.png');
   static const AssetGenImage llg6 = AssetGenImage('assets/llg6.png');
