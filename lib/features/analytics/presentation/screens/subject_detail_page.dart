@@ -247,8 +247,8 @@ class _SubTopicDetailPageState extends State<SubTopicDetailPage> {
   Widget _buildCustomHeader(BuildContext context, String lessonName) {
     return Container(
       padding: EdgeInsets.only(
-        top: MediaQuery.of(context).padding.top + 10,
-        bottom: 24,
+        top: MediaQuery.of(context).padding.top,
+        bottom: 12,
         left: 16,
         right: 16,
       ),
@@ -510,21 +510,6 @@ class _MainTopicExpansionCardState extends State<_MainTopicExpansionCard> {
                     const SizedBox(height: 8),
                     Row(
                       children: [
-                        SvgPicture.asset(
-                          'assets/icons/matter_card.svg',
-                          width: 14,
-                          height: 14,
-                        ),
-                        const SizedBox(width: 4),
-                        Text(
-                          '${widget.items.length} Madde',
-                          style: const TextStyle(
-                            fontSize: 11,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.textSecondary,
-                          ),
-                        ),
-                        Spacer(),
                         _buildStatChip(
                           iconAsset: 'assets/icons/information_card_gray.svg',
                           value: '$totalCards',
@@ -826,6 +811,8 @@ class _SubTopicItemTileState extends State<_SubTopicItemTile> {
         ? Colors.red
         : AppColors.textPrimary;
 
+    print("itemName: ${widget.itemName}");
+
     return Theme(
       data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
       child: ExpansionTile(
@@ -855,22 +842,11 @@ class _SubTopicItemTileState extends State<_SubTopicItemTile> {
         ),
         title: Row(
           children: [
-            Container(
+            Image.asset(
+              'assets/icons/q2.png',
               width: 22,
               height: 22,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: AppColors.menuCardBackground,
-                borderRadius: BorderRadius.circular(6),
-              ),
-              child: Text(
-                '${widget.itemIndex + 1}',
-                style: TextStyle(
-                  fontSize: 11,
-                  fontWeight: FontWeight.w700,
-                  color: titleColor,
-                ),
-              ),
+              fit: BoxFit.contain, // Görselin oranını korumak için
             ),
             const SizedBox(width: 10),
             Expanded(
