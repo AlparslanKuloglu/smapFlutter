@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="240 143 600 794" width="600" height="794">
+<defs>
+<clipPath id="ml"><rect x="0" y="0" width="540" height="1080"/></clipPath>
+<clipPath id="mr"><rect x="540" y="0" width="540" height="1080"/></clipPath>
+<mask id="ma" maskUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1080"><rect width="1080" height="1080" fill="#fff"/><g clip-path="url(#ml)"><path d="M 775 655 V 248 A 40 40 0 0 0 735 208 H 530 A 225 225 0 0 0 305 433 V 520 A 135 135 0 0 0 440 655 H 560" fill="none" stroke="#000" stroke-width="180" stroke-linecap="round" stroke-linejoin="round"/></g></mask>
+<mask id="mb" maskUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1080"><rect width="1080" height="1080" fill="#fff"/><g clip-path="url(#mr)"><path d="M 305 425 V 832 A 40 40 0 0 0 345 872 H 550 A 225 225 0 0 0 775 647 V 560 A 135 135 0 0 0 640 425 H 520" fill="none" stroke="#000" stroke-width="180" stroke-linecap="round" stroke-linejoin="round"/></g></mask>
+</defs>
+<path d="M 305 425 V 832 A 40 40 0 0 0 345 872 H 550 A 225 225 0 0 0 775 647 V 560 A 135 135 0 0 0 640 425 H 520" fill="none" stroke="#FFFFFF" stroke-width="120" stroke-linecap="round" stroke-linejoin="round" mask="url(#ma)"/>
+<path d="M 775 655 V 248 A 40 40 0 0 0 735 208 H 530 A 225 225 0 0 0 305 433 V 520 A 135 135 0 0 0 440 655 H 560" fill="none" stroke="#FFFFFF" stroke-width="120" stroke-linecap="round" stroke-linejoin="round" mask="url(#mb)"/>
+</svg>
