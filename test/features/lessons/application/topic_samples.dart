@@ -2,12 +2,12 @@ import 'package:smap/features/lessons/domain/lesson_content.dart';
 
 /// "Sözcükte Anlam" as pano 7.3 draws it: the first sub-topic has four items
 /// and the first one is missing (Ek C).
-List<SubSubject> sozcukteAnlam() => [
+List<SubSubject> sozcukteAnlam() => const [
   SubSubject(
     id: 'ss-1',
     name: 'Anlamı Yönünden Sözcükler',
     items: [
-      const LessonItem(
+      LessonItem(
         id: 'i-1',
         name: 'Temel Anlam',
         descriptions: [
@@ -17,7 +17,7 @@ List<SubSubject> sozcukteAnlam() => [
         ],
         progress: ItemProgress(id: 'p-1', status: 0, statusArray: [0]),
       ),
-      const LessonItem(
+      LessonItem(
         id: 'i-2',
         name: 'Yan Anlam',
         descriptions: [
@@ -27,8 +27,8 @@ List<SubSubject> sozcukteAnlam() => [
         ],
         progress: ItemProgress(id: 'p-2', status: 1, statusArray: [1]),
       ),
-      const LessonItem(id: 'i-3', name: 'Mecaz Anlam'),
-      const LessonItem(
+      LessonItem(id: 'i-3', name: 'Mecaz Anlam'),
+      LessonItem(
         id: 'i-4',
         name: 'Terim Anlam',
         isFavorite: true,
@@ -36,7 +36,7 @@ List<SubSubject> sozcukteAnlam() => [
       ),
     ],
   ),
-  const SubSubject(
+  SubSubject(
     id: 'ss-2',
     name: 'Sözcükler Arası Anlam İlişkileri',
     items: [
@@ -47,5 +47,5 @@ List<SubSubject> sozcukteAnlam() => [
       ),
     ],
   ),
-  const SubSubject(id: 'ss-3', name: 'Mecaz Oluşturma Yolları'),
+  SubSubject(id: 'ss-3', name: 'Mecaz Oluşturma Yolları'),
 ];

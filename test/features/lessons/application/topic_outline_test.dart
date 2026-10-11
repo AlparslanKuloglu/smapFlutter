@@ -73,8 +73,8 @@ void main() {
     });
 
     test('skips sub-topics where everything is learned', () {
-      final outline = TopicOutline.of([
-        const SubSubject(
+      final outline = TopicOutline.of(const [
+        SubSubject(
           id: 'a',
           name: 'A',
           items: [
@@ -84,7 +84,7 @@ void main() {
             ),
           ],
         ),
-        const SubSubject(
+        SubSubject(
           id: 'b',
           name: 'B',
           items: [
@@ -102,8 +102,8 @@ void main() {
     test(
       'with nothing missing the first sub-topic opens and nothing scrolls',
       () {
-        final outline = TopicOutline.of([
-          const SubSubject(
+        final outline = TopicOutline.of(const [
+          SubSubject(
             id: 'a',
             name: 'A',
             items: [LessonItem(name: 'x')],

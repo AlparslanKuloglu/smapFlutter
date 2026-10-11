@@ -3,7 +3,6 @@ import 'package:smap/core/theme/subject_tone.dart';
 import 'package:smap/features/cards/domain/card_totals.dart';
 import 'package:smap/features/lessons/application/lesson_category.dart';
 import 'package:smap/features/lessons/application/lesson_rows.dart';
-import 'package:smap/features/lessons/application/lessons_service.dart';
 import 'package:smap/features/lessons/domain/general_lesson.dart';
 
 import 'lesson_samples.dart';

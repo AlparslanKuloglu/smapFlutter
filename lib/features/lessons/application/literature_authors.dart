@@ -179,6 +179,12 @@ class LiteratureAuthors {
     return null;
   }
 
+  /// A copy where [author] replaces the author with the same key.
+  LiteratureAuthors withAuthor(AuthorView author) => LiteratureAuthors([
+    for (final existing in authors)
+      existing.key == author.key ? author : existing,
+  ]);
+
   /// A copy where the works of [authorKey] with [progressIds] are learned.
   LiteratureAuthors withLearned(String authorKey, Set<String> progressIds) =>
       LiteratureAuthors([

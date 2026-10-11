@@ -1,5 +1,3 @@
-import 'package:dio/dio.dart';
-
 import '../../../core/network/fake_adapter.dart';
 
 /// Namık Kemal with the works of pano 7.4 kare 2; the first Tiyatro work is
