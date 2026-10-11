@@ -10,7 +10,17 @@ import 'package:smap/core/network/network_service.dart';
 import 'package:smap/core/services/app_logger.dart';
 import 'package:smap/core/services/connectivity_service.dart';
 import 'package:smap/core/services/device_preferences.dart';
+import 'package:smap/app/router/app_router.dart';
+import 'package:smap/core/services/toast_service.dart';
 import 'package:smap/dependency_injection/injection_container.dart';
+import 'package:smap/features/auth/data/auth_repository.dart';
+import 'package:smap/features/auth/data/session/session_store.dart';
+import 'package:smap/features/startup/application/launch_handover.dart';
+import 'package:smap/features/startup/application/startup_gate.dart';
+import 'package:smap/features/startup/application/store_launcher.dart';
+import 'package:smap/services/current_user_service.dart';
+import 'package:smap/services/session_manager.dart';
+import 'package:smap/shared/ui/sheets/app_sheet.dart';
 // ignore: depend_on_referenced_packages
 import 'package:shared_preferences_platform_interface/in_memory_shared_preferences_async.dart';
 // ignore: depend_on_referenced_packages
@@ -136,6 +146,69 @@ void main() {
     });
   });
 
+  group('the shipped modules', () {
+    Future<void> configureShipped() => configureDependencies(
+      config: AppConfig.resolve(),
+      logger: AppLogger.silent(),
+      cookieJar: CookieJar(),
+      connectivity: plugin,
+    );
+
+    test('every registration of the real module lists resolves', () async {
+      await configureShipped();
+
+      expect(locator<AuthRepository>(), isA<AuthRepository>());
+      expect(locator<SessionStore>(), isA<SessionStore>());
+      expect(locator<SessionManager>(), isA<SessionManager>());
+      expect(locator<AppRouter>(), isA<AppRouter>());
+      expect(locator<ToastService>(), isA<ToastService>());
+      expect(locator<StartupGate>(), isA<StartupGate>());
+      expect(locator<StoreLauncher>(), isA<StoreLauncher>());
+      expect(locator<LaunchHandover>(), isA<LaunchHandover>());
+    });
+
+    test(
+      'the session manager is a singleton listening from the start',
+      () async {
+        await configureShipped();
+
+        expect(locator<SessionManager>(), same(locator<SessionManager>()));
+        expect(locator<SessionManager>().state.isSignedIn, isFalse);
+      },
+    );
+
+    test(
+      'the router, the toasts and the sheets share one navigator key',
+      () async {
+        await configureShipped();
+
+        final router = locator<AppRouter>();
+        expect(router, same(locator<AppRouter>()));
+        expect(AppSheet.navigatorKey, same(router.navigatorKey));
+      },
+    );
+
+    test('the router reads the live session state', () async {
+      await configureShipped();
+
+      // Signed out, intro not seen: a shell is not reachable.
+      expect(locator<SessionManager>().state.isSignedIn, isFalse);
+      expect(locator<AppRouter>().guards, hasLength(3));
+    });
+
+    test('the session scope brings the current-user service', () async {
+      await configureShipped();
+      expect(locator.isRegistered<CurrentUserService>(), isFalse);
+
+      pushSessionScope();
+
+      expect(locator.isRegistered<CurrentUserService>(), isTrue);
+      expect(locator<CurrentUserService>().user, isNull);
+      await popSessionScope();
+      expect(locator.isRegistered<CurrentUserService>(), isFalse);
+    });
+  });
+
   group('phases and modules', () {
     test('core, then data modules, then service modules', () async {
       final order = <String>[];
@@ -180,9 +253,9 @@ void main() {
     });
 
     test('the shipped module lists are well formed', () {
-      expect(kDataModules, isA<List<ModuleRegistration>>());
-      expect(kServiceModules, isA<List<ModuleRegistration>>());
-      expect(kSessionModules, isA<List<ModuleRegistration>>());
+      expect(kDataModules, isNotEmpty);
+      expect(kServiceModules, isNotEmpty);
+      expect(kSessionModules, isNotEmpty);
     });
   });
 

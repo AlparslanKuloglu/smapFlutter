@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import 'package:smap/repository/profile_repository.dart';
 import 'package:smap/features/auth/data/datasources/auth_remote_data_source.dart';
+import 'package:smap/features/legacy/legacy_navigation.dart';
 
 class AccountSettingsScreen extends StatefulWidget {
   final ProfileRepository profileRepository;
@@ -228,11 +229,9 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
           ),
         );
 
-        // 4. Kullanıcıyı Giriş (Login) Ekranına Yönlendir ve Tüm Sayfa Geçmişini Temizle
-        Navigator.of(context).pushNamedAndRemoveUntil(
-          '/login', // Kendi Login rota/path adınız
-          (route) => false,
-        );
+        // 4. Oturumu temizle; MaterialApp.router'da adlı route yok, kullanıcıyı
+        //    girişe router'ın guard zinciri götürür.
+        LegacyNavigation.afterAccountDeleted();
       } else {
         if (!context.mounted) return;
 

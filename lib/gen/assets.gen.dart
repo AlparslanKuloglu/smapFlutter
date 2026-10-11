@@ -1069,16 +1069,16 @@ class $AssetsMenuIconsGen {
 class $AssetsSplashGen {
   const $AssetsSplashGen();
 
-  /// File path: assets/splash/android_12_splash.png
-  AssetGenImage get android12Splash =>
-      const AssetGenImage('assets/splash/android_12_splash.png');
+  /// File path: assets/splash/smap_splash.png
+  AssetGenImage get smapSplash =>
+      const AssetGenImage('assets/splash/smap_splash.png');
 
-  /// File path: assets/splash/splash_logo.png
-  AssetGenImage get splashLogo =>
-      const AssetGenImage('assets/splash/splash_logo.png');
+  /// File path: assets/splash/smap_splash_android12.png
+  AssetGenImage get smapSplashAndroid12 =>
+      const AssetGenImage('assets/splash/smap_splash_android12.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [android12Splash, splashLogo];
+  List<AssetGenImage> get values => [smapSplash, smapSplashAndroid12];
 }
 
 class $AssetsSvgsGen {

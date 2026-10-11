@@ -3,9 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:smap/features/auth/presentation/provider/login_provider.dart';
 import 'package:smap/features/auth/presentation/widgets/auth_enums.dart';
 import 'package:smap/features/auth/presentation/widgets/login_card.dart';
-import 'package:smap/features/root/presentation/screens/root_screen.dart';
-import 'package:smap/features/shared/presentation/provider/user_provider.dart';
-import 'package:smap/repository/profile_repository.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -33,58 +30,16 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 
-  // 1. async kelimesini ekledik
-  Future<void> _onLoginSuccess() async {
-    if (!mounted) return;
-    final userProvider = context.read<UserProvider>();
+  // Giriş başarılı: ekranı değiştiren artık bu ekran değil. Oturum
+  // `SessionManager`'da açıldı; router'ın guard zinciri (`lib/app/router`)
+  // rol kabuğunu kendisi açar, `UserProvider` da oturumdan beslenir
+  // (`lib/features/legacy/legacy_user_bridge.dart`).
+  Future<void> _onLoginSuccess() async {}
 
-    // 🔥 VERİNİN YÜKLENDİĞİNDEN KESİN EMİN OLMAK İÇİN BURADA TEKRAR TETİKLİYORUZ VE BEKLİYORUZ
-    await userProvider.loadUserData();
-
-    final String activeRole = userProvider.userRole ?? 'student';
-    final dynamic user = userProvider.user;
-
-    if (!mounted) return; // async sonrasında mounted kontrolü şarttır
-
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute<void>(
-        builder: (context) => RootScreen(
-          profileRepository: context.read<ProfileRepository>(),
-          userRole: activeRole,
-        ),
-      ),
-    );
-    /*
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Giriş başarılı, yönlendiriliyor.')),
-    );
-    */
-  }
-
-  // 2. async kelimesini ekledik
+  // Kayıt başarılı: oturum kayıttan hemen sonra `SessionManager`'da açıldı;
+  // yönlendirmeyi router yapar. Burada yalnız bilgi mesajı kalır.
   Future<void> _onRegisterSuccess() async {
     if (!mounted) return;
-
-    final userProvider = context.read<UserProvider>();
-
-    // 🔥 AYNI ŞEKİLDE KAYIT SONRASI DA GARANTİYE ALIYORUZ
-    await userProvider.loadUserData();
-
-    final String activeRole = userProvider.userRole ?? 'student';
-    final dynamic user = userProvider.user;
-
-    if (!mounted) return;
-
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute<void>(
-        builder: (context) => RootScreen(
-          profileRepository: context.read<ProfileRepository>(),
-          userRole: activeRole,
-        ),
-      ),
-    );
 
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Kayıt başarılı! Giriş yapıldı.')),

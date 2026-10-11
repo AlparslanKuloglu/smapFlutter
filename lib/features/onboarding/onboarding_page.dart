@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smap/features/auth/domain/usecases/complete_onboarding_usecase.dart';
+import 'package:smap/features/legacy/legacy_navigation.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -51,7 +52,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     await context.read<CompleteOnboardingUseCase>()();
 
     if (mounted) {
-      Navigator.pushReplacementNamed(context, '/login');
+      // Eski `pushReplacementNamed('/login')`: MaterialApp.router'da adlı route
+      // yok; yönlendirmeyi router yapar.
+      await LegacyNavigation.afterOnboarding(context);
     }
   }
 

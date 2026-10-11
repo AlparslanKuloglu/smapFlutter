@@ -2,11 +2,14 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:get_it/get_it.dart';
 
+import 'package:smap/app/app_module.dart';
 import 'package:smap/core/config/app_config.dart';
 import 'package:smap/core/network/network_service.dart';
 import 'package:smap/core/services/app_logger.dart';
 import 'package:smap/core/services/connectivity_service.dart';
 import 'package:smap/core/services/device_preferences.dart';
+import 'package:smap/features/auth/auth_module.dart';
+import 'package:smap/features/startup/startup_module.dart';
 
 /// Global service locator.
 ///
@@ -30,14 +33,25 @@ typedef ModuleRegistration = void Function(GetIt l);
 /// Phase 2: data layer modules (datasources, repositories).
 ///
 /// The coordinator adds `registerXxx` functions here as features land.
-const List<ModuleRegistration> kDataModules = <ModuleRegistration>[];
+const List<ModuleRegistration> kDataModules = <ModuleRegistration>[
+  registerAuthData,
+];
 
 /// Phase 3: app-level services modules (stateful services that depend on the
 /// repositories of phase 2).
-const List<ModuleRegistration> kServiceModules = <ModuleRegistration>[];
+///
+/// `registerAuthServices` (the session manager) comes first; the router and
+/// the toast service (`registerAppServices`) read it lazily.
+const List<ModuleRegistration> kServiceModules = <ModuleRegistration>[
+  registerAuthServices,
+  registerStartupServices,
+  registerAppServices,
+];
 
 /// Modules that register into the [kSessionScope] when it is pushed.
-const List<ModuleRegistration> kSessionModules = <ModuleRegistration>[];
+const List<ModuleRegistration> kSessionModules = <ModuleRegistration>[
+  registerAuthSession,
+];
 
 /// Registers the root scope in three phases, in this order:
 ///

@@ -26,6 +26,10 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Deneme optiğini okutmak için kameranı kullanıyoruz.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Optik form fotoğrafını galeriden seçebilmen için.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
