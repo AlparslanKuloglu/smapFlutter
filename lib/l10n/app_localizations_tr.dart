@@ -28,4 +28,46 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get common_undo => 'Geri Al';
+
+  @override
+  String get errors_cancelled => 'İşlem durduruldu.';
+
+  @override
+  String get errors_forbidden => 'Bu işlem için yetkin yok.';
+
+  @override
+  String get errors_maintenance =>
+      'SMAP şu an bakımda. Biraz sonra tekrar dene.';
+
+  @override
+  String get errors_network =>
+      'Bağlantıda bir sorun oluştu. Biraz sonra tekrar dene.';
+
+  @override
+  String get errors_notFound => 'Aradığın içerik bulunamadı.';
+
+  @override
+  String get errors_offline =>
+      'Bağlantı yok. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get errors_server =>
+      'Sunucuda bir sorun oluştu. Biraz sonra tekrar dene.';
+
+  @override
+  String get errors_sessionExpired =>
+      'Oturumun sona erdi. Yeniden giriş yapman gerekiyor.';
+
+  @override
+  String get errors_timeout => 'İstek çok uzun sürdü. Tekrar dene.';
+
+  @override
+  String get errors_unauthorized =>
+      'Giriş bilgilerin doğru değil. Kontrol edip tekrar dene.';
+
+  @override
+  String get errors_unknown => 'Beklenmedik bir sorun oluştu. Tekrar dene.';
+
+  @override
+  String get errors_validation => 'Bilgilerini kontrol edip tekrar dene.';
 }

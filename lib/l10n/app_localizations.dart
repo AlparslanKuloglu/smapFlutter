@@ -135,6 +135,78 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Geri Al'**
   String get common_undo;
+
+  /// AppErrorCode.cancelled. Normally not shown. Never say 'iptal'.
+  ///
+  /// In tr, this message translates to:
+  /// **'İşlem durduruldu.'**
+  String get errors_cancelled;
+
+  /// AppErrorCode.forbidden.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu işlem için yetkin yok.'**
+  String get errors_forbidden;
+
+  /// AppErrorCode.maintenance (503). No time promise.
+  ///
+  /// In tr, this message translates to:
+  /// **'SMAP şu an bakımda. Biraz sonra tekrar dene.'**
+  String get errors_maintenance;
+
+  /// AppErrorCode.network: the connection broke or was refused.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantıda bir sorun oluştu. Biraz sonra tekrar dene.'**
+  String get errors_network;
+
+  /// AppErrorCode.notFound.
+  ///
+  /// In tr, this message translates to:
+  /// **'Aradığın içerik bulunamadı.'**
+  String get errors_notFound;
+
+  /// AppErrorCode.offline: the device has no route to the server.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantı yok. Bağlantını kontrol edip tekrar dene.'**
+  String get errors_offline;
+
+  /// AppErrorCode.server: 5xx other than maintenance.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sunucuda bir sorun oluştu. Biraz sonra tekrar dene.'**
+  String get errors_server;
+
+  /// AppErrorCode.sessionExpired: the session cookie is no longer valid.
+  ///
+  /// In tr, this message translates to:
+  /// **'Oturumun sona erdi. Yeniden giriş yapman gerekiyor.'**
+  String get errors_sessionExpired;
+
+  /// AppErrorCode.timeout: a connect, send or receive deadline passed.
+  ///
+  /// In tr, this message translates to:
+  /// **'İstek çok uzun sürdü. Tekrar dene.'**
+  String get errors_timeout;
+
+  /// AppErrorCode.unauthorized: credentials rejected.
+  ///
+  /// In tr, this message translates to:
+  /// **'Giriş bilgilerin doğru değil. Kontrol edip tekrar dene.'**
+  String get errors_unauthorized;
+
+  /// AppErrorCode.unknown.
+  ///
+  /// In tr, this message translates to:
+  /// **'Beklenmedik bir sorun oluştu. Tekrar dene.'**
+  String get errors_unknown;
+
+  /// AppErrorCode.validation: the server rejected the input. A server-written message may replace this text.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bilgilerini kontrol edip tekrar dene.'**
+  String get errors_validation;
 }
 
 class _AppLocalizationsDelegate
