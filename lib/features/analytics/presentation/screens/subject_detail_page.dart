@@ -812,6 +812,7 @@ class _SubTopicItemTileState extends State<_SubTopicItemTile> {
         : AppColors.textPrimary;
 
     print("itemName: ${widget.itemName}");
+    print(widget.descList);
 
     return Theme(
       data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
@@ -871,12 +872,12 @@ class _SubTopicItemTileState extends State<_SubTopicItemTile> {
               children: [
                 ...widget.descList.map((desc) {
                   return Padding(
-                    padding: const EdgeInsets.only(bottom: 6.0, left: 32),
+                    padding: const EdgeInsets.only(bottom: 2.8, left: 12),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          "• ",
+                          "- ",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: AppColors.textSecondary,
@@ -886,7 +887,7 @@ class _SubTopicItemTileState extends State<_SubTopicItemTile> {
                           child: Text(
                             desc.toString(),
                             style: const TextStyle(
-                              fontSize: 10,
+                              fontSize: 12,
                               color: AppColors.textSecondary,
                               height: 1.4,
                             ),
@@ -900,7 +901,7 @@ class _SubTopicItemTileState extends State<_SubTopicItemTile> {
                     widget.prompts.isNotEmpty) ...[
                   const SizedBox(height: 12),
                   Padding(
-                    padding: const EdgeInsets.only(left: 32),
+                    padding: const EdgeInsets.only(left: 8),
                     child: Wrap(
                       spacing: 8,
                       runSpacing: 8,
