@@ -1,0 +1,39 @@
+{
+  "@@locale": "tr",
+  "kit2_comingSoonTitle": "Yakında",
+  "@kit2_comingSoonTitle": {
+    "description": "ComingSoonSheet title (C73). Kit and gallery only."
+  },
+  "kit2_comingSoonBody": "Bu bölüm henüz hazır değil. Hazır olduğunda burada göreceksin.",
+  "@kit2_comingSoonBody": {
+    "description": "ComingSoonSheet sentence (C73)."
+  },
+  "kit2_offlineStrip": "Çevrimdışısın. Son kaydedilen veriler gösteriliyor.",
+  "@kit2_offlineStrip": {
+    "description": "Offline strip message (C75, board 1.22 kare 6)."
+  },
+  "kit2_connectedStrip": "Bağlandın",
+  "@kit2_connectedStrip": {
+    "description": "Offline strip message for 2 s after the connection returns (C75, handoff 11.15)."
+  },
+  "kit2_a11yToastClose": "Bildirimi kapat",
+  "@kit2_a11yToastClose": {
+    "description": "Accessible name of the toast close button, shown only while a screen reader is on (C74)."
+  },
+  "kit2_a11yTimeWheelHour": "Saat",
+  "@kit2_a11yTimeWheelHour": {
+    "description": "Screen reader name of the hour wheel (C66)."
+  },
+  "kit2_a11yTimeWheelMinute": "Dakika",
+  "@kit2_a11yTimeWheelMinute": {
+    "description": "Screen reader name of the minute wheel (C66)."
+  },
+  "kit2_selectPlaceholder": "Seç",
+  "@kit2_selectPlaceholder": {
+    "description": "Value shown by an empty SelectField (C12)."
+  },
+  "kit2_a11ySelectHint": "seçenekleri açar",
+  "@kit2_a11ySelectHint": {
+    "description": "Hint of a SelectField (C12)."
+  }
+}
