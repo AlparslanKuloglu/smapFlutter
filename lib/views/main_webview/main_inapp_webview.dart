@@ -2,7 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:smapwebflutter/views/optic_mark_detection_view/optic_mark_detection_view.dart';
+import 'package:smap/views/optic_mark_detection_view/optic_mark_detection_view.dart';
+
 
 @immutable
 final class MainInappWebView extends StatefulWidget {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:smapwebflutter/views/main_webview/main_webview.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -20,30 +19,30 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     {
       "images": [
         "assets/ob1.png", // Buraya sol taraftaki mockup gelecek
-        "assets/ob2.png" // Buraya sağ taraftaki mockup gelecek
+        "assets/ob2.png", // Buraya sağ taraftaki mockup gelecek
       ],
       "title": "Sana Dair En Detaylı Analiz: Tüm Denemeler! \n Yayınevi farketmeksizin!",
-      "desc": "Optik formunu okuttuğunda denemen otomatik saptanır ve 5 saniyede analizin hazırlanır!"
+      "desc": "Optik formunu okuttuğunda denemen otomatik saptanır ve 5 saniyede analizin hazırlanır!",
     },
     {
       "images": ["assets/ob5.png"],
       "title": "Smap Neyi Bilmediğini Belirler ve Eksiklerini Gidermeni Sağlar",
-      "desc": "Yapay zeka destekli analizlerimizle hangi konuya ne kadar çalışman gerektiğini sana söyleyelim."
+      "desc": "Yapay zeka destekli analizlerimizle hangi konuya ne kadar çalışman gerektiğini sana söyleyelim.",
     },
     {
       "images": ["assets/ob3.png"], // Diğerleri tek elemanlı liste
       "title": "Denemelerini Okut ve Sana Ait Kümülatif Birikimle İlerlemeni Adım Adım Takip Et!",
-      "desc": "Sınav maratonunda kendine hedefler koy ve bu hedeflere ne kadar yaklaştığını anlık olarak izle."
+      "desc": "Sınav maratonunda kendine hedefler koy ve bu hedeflere ne kadar yaklaştığını anlık olarak izle.",
     },
     {
       "images": ["assets/ob4.png"],
       "title": "Güçlü ve Zayıf Yanların: Konularla Karşılaşma Sayıların ve Başarı Yüzdelerin",
-      "desc": "Anlamadığın soruların çözümlerine tek tıkla ulaş, eksik konu bırakmadan ilerle."
+      "desc": "Anlamadığın soruların çözümlerine tek tıkla ulaş, eksik konu bırakmadan ilerle.",
     },
     {
       "images": ["assets/ob6.png"],
       "title": "YKS'ye Son Teknoloji ile Hazırlan",
-      "desc": "Şimdi SMAP dünyasına katıl ve hayalindeki üniversite için en büyük adımı at!"
+      "desc": "Şimdi SMAP dünyasına katıl ve hayalindeki üniversite için en büyük adımı at!",
     },
   ];
 
@@ -88,10 +87,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             // Sayfa Göstergesi (Indicator)
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                onboardingData.length,
-                (index) => _buildIndicator(index),
-              ),
+              children: List.generate(onboardingData.length, (index) => _buildIndicator(index)),
             ),
 
             const SizedBox(height: 40),
@@ -119,9 +115,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         backgroundColor: const Color(0xFFE9ECF2),
                         foregroundColor: const Color(0xFF1A365D),
                         elevation: 0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                       ),
                       child: Text(
                         _currentPage == onboardingData.length - 1 ? "Hemen Başla" : "Devam Et",
@@ -134,10 +128,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     onPressed: _completeOnboarding,
                     child: const Text(
                       "Tanıtımı atla",
-                      style: TextStyle(
-                        color: Colors.black54,
-                        decoration: TextDecoration.underline,
-                      ),
+                      style: TextStyle(color: Colors.black54, decoration: TextDecoration.underline),
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -202,11 +193,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Text(
             desc,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 15,
-              color: Colors.grey,
-              height: 1.5,
-            ),
+            style: const TextStyle(fontSize: 15, color: Colors.grey, height: 1.5),
           ),
         ],
       ),

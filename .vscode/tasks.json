@@ -1,0 +1,115 @@
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Runner",
+            "type": "shell",
+            "command": "flutter pub run build_runner build --delete-conflicting-outputs",
+            "group": "build",
+            "problemMatcher": [],
+            "icon": {
+                "id": "tools"
+            }
+        },
+        {
+            "label": "Watch Runner",
+            "type": "shell",
+            "command": "dart run build_runner watch --delete-conflicting-outputs",
+            "group": "build",
+            "problemMatcher": [],
+            "isBackground": true,
+            "icon": {
+                "id": "eye"
+            }
+        },
+        {
+            "label": "iOS: Refresh Pod",
+            "type": "shell",
+            "command": "source ~/.zshrc && chruby ruby-3.3.3 && cd ios && rm -rf Pods && rm -rf Podfile.lock && pod deintegrate && pod setup && pod install && cd ..",
+            "group": "build",
+            "problemMatcher": [],
+            "options": {
+                "env": {
+                    "LANG": "en_US.UTF-8",
+                    "LC_ALL": "en_US.UTF-8"
+                }
+            },
+            "icon": {
+                "id": "refresh"
+            }
+        },
+        {
+            "label": "iOS: Pod Install",
+            "type": "shell",
+            "command": "source ~/.zshrc && chruby ruby-3.3.3 && cd ios && pod install && cd ..",
+            "group": "build",
+            "problemMatcher": [],
+            "options": {
+                "env": {
+                    "LANG": "en_US.UTF-8",
+                    "LC_ALL": "en_US.UTF-8"
+                }
+            },
+            "icon": {
+                "id": "package"
+            }
+        },
+        {
+            "label": "iOS: Pod Update",
+            "type": "shell",
+            "command": "source ~/.zshrc && chruby ruby-3.3.3 && cd ios && pod install --repo-update && cd ..",
+            "group": "build",
+            "problemMatcher": [],
+            "options": {
+                "env": {
+                    "LANG": "en_US.UTF-8",
+                    "LC_ALL": "en_US.UTF-8"
+                }
+            },
+            "icon": {
+                "id": "arrow-up"
+            }
+        },
+        {
+            "label": "iOS: Build IPA (Production)",
+            "type": "shell",
+            "command": "flutter build ipa --release --flavor=Production",
+            "group": "build",
+            "problemMatcher": [],
+            "icon": {
+                "id": "rocket"
+            }
+        },
+        {
+            "label": "iOS: Build IPA (Development)",
+            "type": "shell",
+            "command": "flutter build ipa --release --flavor=Development",
+            "group": "build",
+            "problemMatcher": [],
+            "icon": {
+                "id": "beaker"
+            }
+        },
+        {
+            "label": "Flutter Clean",
+            "type": "shell",
+            "command": "flutter clean && flutter pub get",
+            "group": "build",
+            "problemMatcher": [],
+            "icon": {
+                "id": "trash"
+            }
+        },
+        {
+            "label": "Generate Locales",
+            "type": "shell",
+            "command": "dart run easy_localization:generate -O lib/shared/translations -f keys -o translations_keys.g.dart -S assets/translations",
+            "group": "build",
+            "problemMatcher": [],
+            "icon": {
+                "id": "globe"
+            }
+        }
+    ]
+}

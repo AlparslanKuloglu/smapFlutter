@@ -1,0 +1,106 @@
+{
+                // Use IntelliSense to learn about possible attributes.
+                // Hover to view descriptions of existing attributes.
+                // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+                "version": "0.2.0",
+                "configurations": [
+                  
+                                {
+                                                "name": "smapFlutter",
+                                                "request": "launch",
+                                                "type": "dart"
+                                },
+                                {
+                                                "name": "smapFlutter (profile mode)",
+                                                "request": "launch",
+                                                "type": "dart",
+                                                "flutterMode": "profile"
+                                },
+                                {
+                                                "name": "smapFlutter (release mode)",
+                                                "request": "launch",
+                                                "type": "dart",
+                                                "flutterMode": "release"
+                                },
+                                {
+                                                "name": "flutter_document_scanner",
+                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner",
+                                                "request": "launch",
+                                                "type": "dart"
+                                },
+                                {
+                                                "name": "flutter_document_scanner (profile mode)",
+                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner",
+                                                "request": "launch",
+                                                "type": "dart",
+                                                "flutterMode": "profile"
+                                },
+                                {
+                                                "name": "flutter_document_scanner (release mode)",
+                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner",
+                                                "request": "launch",
+                                                "type": "dart",
+                                                "flutterMode": "release"
+                                },
+                                {
+                                                "name": "flutter_document_scanner_android",
+                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_android",
+                                                "request": "launch",
+                                                "type": "dart"
+                                },
+                                {
+                                                "name": "flutter_document_scanner_android (profile mode)",
+                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_android",
+                                                "request": "launch",
+                                                "type": "dart",
+                                                "flutterMode": "profile"
+                                },
+                                {
+                                                "name": "flutter_document_scanner_android (release mode)",
+                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_android",
+                                                "request": "launch",
+                                                "type": "dart",
+                                                "flutterMode": "release"
+                                },
+                                {
+                                                "name": "flutter_document_scanner_ios",
+                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_ios",
+                                                "request": "launch",
+                                                "type": "dart"
+                                },
+                                {
+                                                "name": "flutter_document_scanner_ios (profile mode)",
+                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_ios",
+                                                "request": "launch",
+                                                "type": "dart",
+                                                "flutterMode": "profile"
+                                },
+                                {
+                                                "name": "flutter_document_scanner_ios (release mode)",
+                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_ios",
+                                                "request": "launch",
+                                                "type": "dart",
+                                                "flutterMode": "release"
+                                },
+                                {
+                                                "name": "flutter_document_scanner_platform_interface",
+                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_platform_interface",
+                                                "request": "launch",
+                                                "type": "dart"
+                                },
+                                {
+                                                "name": "flutter_document_scanner_platform_interface (profile mode)",
+                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_platform_interface",
+                                                "request": "launch",
+                                                "type": "dart",
+                                                "flutterMode": "profile"
+                                },
+                                {
+                                                "name": "flutter_document_scanner_platform_interface (release mode)",
+                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_platform_interface",
+                                                "request": "launch",
+                                                "type": "dart",
+                                                "flutterMode": "release"
+                                }
+                ]
+}
