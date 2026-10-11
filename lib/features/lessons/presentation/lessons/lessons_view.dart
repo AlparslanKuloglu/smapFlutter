@@ -16,7 +16,7 @@ import 'package:smap/features/lessons/application/lesson_rows.dart';
 import 'package:smap/features/lessons/application/lesson_segments.dart';
 import 'package:smap/features/lessons/application/lessons_service.dart';
 import 'package:smap/features/lessons/presentation/lessons/lessons_viewmodel.dart';
-import 'package:smap/features/lessons/presentation/lessons_navigator.dart';
+import 'package:smap/features/lessons/presentation/stack_lessons_navigator.dart';
 import 'package:smap/features/lessons/presentation/widgets/subject_row.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/shared/ui/controls/app_segmented.dart';

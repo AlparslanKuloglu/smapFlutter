@@ -124,8 +124,6 @@ class LessonDetailViewModel extends ReactiveViewModel {
   /// The category of the chosen segment (what a topic opens on).
   LessonCat get selectedCat => _selectedSegment?.cat ?? LessonCat.all;
 
-  // ── Derivations ──
-
   List<LessonSegment> get _segments {
     final current = lesson;
     if (current == null) return const [];
@@ -147,7 +145,6 @@ class LessonDetailViewModel extends ReactiveViewModel {
     return null;
   }
 
-  /// The backend lesson of the lesson without tracks.
   String? get _singleBackendId => lesson?.ids.single;
 
   /// The backend lesson whose topics the chosen segment shows.
@@ -174,9 +171,6 @@ class LessonDetailViewModel extends ReactiveViewModel {
   AsyncSection<MainSubjects>? _subjectsOf(String? backendId) =>
       backendId == null ? null : _subjects[backendId];
 
-  // ── Section values (what the view's selectors read) ──
-
-  /// The title block.
   LessonHeaderData get header => _header ??= LessonHeaderData(
     name: lesson?.name ?? '',
     nameKind: isLiterature ? LessonRowName.literature : LessonRowName.server,
@@ -191,19 +185,15 @@ class LessonDetailViewModel extends ReactiveViewModel {
   LessonSectionData get sectionData =>
       LessonSectionData(isLiterature ? _section : null);
 
-  /// The chip and button row.
   LessonFilterBarData get filterBar => _filterBar ??= _buildFilterBar();
 
-  /// The category segment.
   LessonSegmentBarData get segmentBar =>
       _segmentBar ??= _section == LiteratureSection.authors && isLiterature
       ? const LessonSegmentBarData()
       : LessonSegmentBarData(segments: _segments, selected: _selectedValue);
 
-  /// The topic list.
   LessonTopicsData get topics => _topicsData ??= _buildTopics();
 
-  /// The author list.
   LessonAuthorsData get authors => _authorsData ??= LessonAuthorsData(
     state: _authors.state,
     authors: _authors.data ?? const LiteratureAuthors([]),
@@ -267,8 +257,6 @@ class LessonDetailViewModel extends ReactiveViewModel {
       isAllSegment: segment.cat == LessonCat.all,
     );
   }
-
-  // ── Loading ──
 
   /// Starts loading; the view calls it once.
   Future<void> init() async {
@@ -387,8 +375,6 @@ class LessonDetailViewModel extends ReactiveViewModel {
     );
   }
 
-  // ── Actions ──
-
   /// A segment option was chosen.
   Future<void> selectSegment(int value) async {
     if (value == _selectedValue) return;
@@ -426,7 +412,6 @@ class LessonDetailViewModel extends ReactiveViewModel {
     }
   }
 
-  /// "Tekrar Dene" of the topic list.
   Future<void> retryTopics() async {
     final id = _activeBackendId;
     if (id != null) _subjects.remove(id);
@@ -434,7 +419,6 @@ class LessonDetailViewModel extends ReactiveViewModel {
     await _loadTopics();
   }
 
-  /// "Tekrar Dene" of the author list.
   Future<void> retryAuthors() => _loadAuthors();
 
   /// A topic row was pressed: Konu Detayı opens on the chosen category; the

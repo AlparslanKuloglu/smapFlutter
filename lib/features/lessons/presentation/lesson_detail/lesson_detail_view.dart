@@ -17,7 +17,7 @@ import 'package:smap/features/lessons/application/lessons_service.dart';
 import 'package:smap/features/lessons/data/lesson_content_repository.dart';
 import 'package:smap/features/lessons/presentation/lesson_detail/lesson_detail_state.dart';
 import 'package:smap/features/lessons/presentation/lesson_detail/lesson_detail_viewmodel.dart';
-import 'package:smap/features/lessons/presentation/lessons_navigator.dart';
+import 'package:smap/features/lessons/presentation/stack_lessons_navigator.dart';
 import 'package:smap/features/lessons/presentation/widgets/author_row.dart';
 import 'package:smap/features/lessons/presentation/widgets/subject_glyph.dart';
 import 'package:smap/features/lessons/presentation/widgets/topic_row.dart';
