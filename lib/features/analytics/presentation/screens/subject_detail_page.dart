@@ -815,9 +815,6 @@ class _SubTopicItemTileState extends State<_SubTopicItemTile> {
         ? 'assets/icons/w.png'
         : 'assets/icons/q2.png';
 
-    print("itemName: ${widget.itemName}");
-    print(widget.descList);
-
     return Theme(
       data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
       child: ExpansionTile(

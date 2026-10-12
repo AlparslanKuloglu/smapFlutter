@@ -539,8 +539,6 @@ class _LessonsTopicCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final int progressPercent = (_placeholderProgress * 100).round();
-
     return Container(
       height: 100,
       margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 0),
@@ -565,43 +563,292 @@ class _LessonsTopicCard extends StatelessWidget {
             onTap: onTap,
             borderRadius: BorderRadius.circular(16),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(8, 10, 10, 10),
-              child: IntrinsicHeight(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Expanded(
-                      child: IntrinsicHeight(
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Align(
-                              alignment: Alignment.center,
-                              child: _buildThumbnail(subjectImage, imageColor),
-                            ),
-                            const SizedBox(width: 8),
-                            Expanded(child: _buildMainInfo(progressPercent)),
-                            const SizedBox(width: 6),
-                            Align(
-                              alignment: Alignment.center,
-                              child: _buildStatsColumn(),
-                            ),
-                          ],
-                        ),
-                      ),
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // 1. SOL: Thumbnail
+                  Align(
+                    alignment: Alignment.center,
+                    child: _buildThumbnail(subjectImage, imageColor),
+                  ),
+                  const SizedBox(width: 10),
+
+                  // 2. ORTA: Üstte Tam Genişlikte Başlık, Altta (İlerleme + İstatistikler)
+                  // 2. ORTA: Üstte Başlık, Ortada İlerleme, En Altta Yan Yana İstatistikler
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // ÜST: Başlık (En fazla 2 satır)
+                        _buildTopicHeader(),
+                        // ORTA: İlerleme Çubuğu ve Tamamlanan Konu
+                        _buildProgressSection(),
+                        // ALT: 3 İstatistik Yan Yana
+                        _buildHorizontalStatsRow(),
+                      ],
                     ),
-                    const SizedBox(width: 4),
-                    Align(
-                      alignment: Alignment.center,
-                      child: _buildArrowButton(),
-                    ),
-                  ],
-                ),
+                  ),
+                  const SizedBox(width: 2),
+                  Align(
+                    alignment: Alignment.center,
+                    child: _buildArrowButton(),
+                  ),
+                  const SizedBox(width: 12),
+                ],
               ),
             ),
           ),
         ),
       ),
+    );
+  }
+
+  // Başlık alanı (2 satıra inebilir)
+  Widget _buildTopicHeader() {
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 4,
+      ), // İhtiyacınıza göre 4, 6 veya istediğiniz değeri verebilirsiniz
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: 16,
+            height: 16,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: AppColors.navSelectedBg,
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: Text(
+              '$order',
+              style: const TextStyle(
+                fontSize: 9,
+                fontWeight: FontWeight.w700,
+                color: AppColors.textPrimary,
+              ),
+            ),
+          ),
+          const SizedBox(width: 5),
+          Expanded(
+            child: Text(
+              topicName,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w800,
+                color: Color(0xFF10284A),
+                height: 1.1,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // En altta yan yana duran 3 istatistik öğesi
+  Widget _buildHorizontalStatsRow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start, // Sola yasla
+      children: [
+        _buildStatItem(
+          iconWidget: SvgPicture.asset(
+            'assets/icons/subheading_card.svg',
+            width: 10,
+            height: 10,
+          ),
+          text: '$_placeholderSubTopics Alt Başlık',
+          textColor: AppColors.textSecondary,
+        ),
+        const SizedBox(width: 12), // Öğeler arası kontrollü boşluk
+        _buildStatItem(
+          iconWidget: SvgPicture.asset(
+            'assets/icons/matter_card.svg',
+            width: 10,
+            height: 10,
+          ),
+          text: '$_placeholderItems Madde',
+          textColor: AppColors.textSecondary,
+        ),
+        const SizedBox(width: 12), // Öğeler arası kontrollü boşluk
+        _buildStatItem(
+          iconWidget: SvgPicture.asset(
+            'assets/icons/information_card.svg',
+            width: 10,
+            height: 10,
+          ),
+          text: '$_placeholderCards Bilgi Kartı',
+          textColor: AppColors.textPrimary,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildStatItem({
+    required Widget iconWidget,
+    required String text,
+    required Color textColor,
+  }) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        iconWidget,
+        const SizedBox(width: 3),
+        Text(
+          text,
+          style: TextStyle(
+            fontSize: 9,
+            fontWeight: FontWeight.w500,
+            color: textColor,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildProgressSection() {
+    final int progressPercent = (_placeholderProgress * 100).round();
+
+    return Row(
+      children: [
+        // Progress bar'ın kaplayacağı alanı SizedBox veya FractionallySizedBox ile daraltıyoruz
+        SizedBox(
+          width:
+              140, // Dilediğiniz gibi küçültebilir veya büyütebilirsiniz (Örn: 120, 140 vb.)
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(99),
+            child: SizedBox(
+              height: 7,
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  const ColoredBox(color: AppColors.unselectedGrey),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: FractionallySizedBox(
+                      widthFactor: _placeholderProgress,
+                      heightFactor: 1,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                            colors: [
+                              barColor,
+                              barColor.withValues(alpha: 0.45),
+                            ],
+                            stops: const [0.1, 1.0],
+                          ),
+                          borderRadius: const BorderRadius.only(
+                            topRight: Radius.circular(24),
+                            bottomRight: Radius.circular(24),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(width: 6),
+        Text(
+          '%$progressPercent',
+          style: const TextStyle(
+            fontSize: 9,
+            fontWeight: FontWeight.w700,
+            color: AppColors.textPrimary,
+          ),
+        ),
+        const SizedBox(width: 6),
+        Text(
+          '($_placeholderCompleted/$_placeholderTotal)',
+          style: const TextStyle(
+            fontSize: 8,
+            fontWeight: FontWeight.w500,
+            color: AppColors.textSecondary,
+          ),
+        ),
+      ],
+    );
+  }
+
+  // İlerleme çubuğu ve tamamlanan konu metni alt alta yer alır
+  Widget _buildProgressAndStatsInfo() {
+    final int progressPercent = (_placeholderProgress * 100).round();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // Progress bar
+        Row(
+          children: [
+            Expanded(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(99),
+                child: SizedBox(
+                  height: 6,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      const ColoredBox(color: AppColors.unselectedGrey),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: FractionallySizedBox(
+                          widthFactor: _placeholderProgress,
+                          heightFactor: 1,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                                colors: [
+                                  barColor,
+                                  barColor.withValues(alpha: 0.45),
+                                ],
+                                stops: const [0.1, 1.0],
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topRight: Radius.circular(24),
+                                bottomRight: Radius.circular(24),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(width: 5),
+            Text(
+              '%$progressPercent',
+              style: const TextStyle(
+                fontSize: 10,
+                fontWeight: FontWeight.w700,
+                color: AppColors.textPrimary,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 3),
+        // Konu tamamlandı metni
+        Text(
+          '$_placeholderCompleted/$_placeholderTotal Konu tamamlandı',
+          style: const TextStyle(
+            fontSize: 9,
+            fontWeight: FontWeight.w500,
+            color: AppColors.textSecondary,
+          ),
+        ),
+      ],
     );
   }
 
@@ -651,6 +898,7 @@ class _LessonsTopicCard extends StatelessWidget {
           MainAxisAlignment.center, // 3 elemanı grup olarak dikeyde ortalar
       children: [
         // 1. ELEMAN: Konu başlığı
+        // 1. ELEMAN: Konu başlığı
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -673,15 +921,17 @@ class _LessonsTopicCard extends StatelessWidget {
             ),
             const SizedBox(width: 5),
             Expanded(
-              child: Text(
-                topicName,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w800,
-                  color: const Color(0xFF10284A),
-                  height: 1.2,
+              child: FittedBox(
+                alignment: Alignment.centerLeft,
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  topicName,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w800,
+                    color: Color(0xFF10284A),
+                    height: 1.2,
+                  ),
                 ),
               ),
             ),
