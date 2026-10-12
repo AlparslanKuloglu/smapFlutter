@@ -25,19 +25,10 @@ class CoachShellView extends StackedView<ShellViewModel> {
 
   /// The four tabs, in bar order.
   static const List<ShellTabSpec> tabs = [
-    ShellTabSpec(route: CoachHomeTabRoute(), content: ShellTabContent.screen),
-    ShellTabSpec(
-      route: CoachStudentsTabRoute(),
-      content: ShellTabContent.screen,
-    ),
-    ShellTabSpec(
-      route: CoachMeetingsTabRoute(),
-      content: ShellTabContent.screen,
-    ),
-    ShellTabSpec(
-      route: CoachAccountTabRoute(),
-      content: ShellTabContent.screen,
-    ),
+    ShellTabSpec(route: CoachHomeTabRoute()),
+    ShellTabSpec(route: CoachStudentsTabRoute()),
+    ShellTabSpec(route: CoachMeetingsTabRoute()),
+    ShellTabSpec(route: CoachAccountTabRoute()),
   ];
 
   @override

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 // ignore: depend_on_referenced_packages
-import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -9,8 +8,6 @@ import 'package:intl/date_symbol_data_local.dart';
 
 import 'package:smap/app/app.dart';
 import 'package:smap/app/boot_failure_app.dart';
-import 'package:smap/core/bloc/app_bloc_observer.dart';
-import 'package:smap/core/network/dio_client.dart';
 import 'package:smap/core/services/app_logger.dart';
 import 'package:smap/core/services/device_preferences.dart';
 import 'package:smap/dependency_injection/injection_container.dart';
@@ -63,7 +60,7 @@ abstract final class MainInitializer {
         error: error,
         stackTrace: stackTrace,
       );
-      runApp(BootFailureApp(onRetry: _retry));
+      runApp(const BootFailureApp(onRetry: _retry));
       FlutterNativeSplash.remove();
       return;
     }
@@ -86,11 +83,8 @@ abstract final class MainInitializer {
 
   static Future<void> _initialize() async {
     await configureDependencies();
-    // The legacy Dio shares NetworkService's cookie jar: after the container.
-    await DioClient().init();
     await initializeDateFormatting('tr_TR');
     await initializeDateFormatting('tr');
-    Bloc.observer = AppBlocObserver();
     await LegacyOnboardingMigration(
       preferences: locator<DevicePreferences>(),
       logger: locator<AppLogger>(),

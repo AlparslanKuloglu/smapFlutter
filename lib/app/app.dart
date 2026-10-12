@@ -6,7 +6,6 @@ import 'package:smap/app/router/app_router.dart';
 import 'package:smap/app/router/route_refresh.dart';
 import 'package:smap/core/theme/smap_theme.dart';
 import 'package:smap/dependency_injection/injection_container.dart';
-import 'package:smap/features/legacy/legacy_scope.dart';
 import 'package:smap/features/startup/application/session_expired_coordinator.dart';
 import 'package:smap/features/startup/presentation/session_expired/session_expired_sheet.dart';
 import 'package:smap/l10n/app_localizations.dart';
@@ -21,8 +20,6 @@ import 'package:smap/services/session_manager.dart';
 ///   and widgets delegates of Flutter.
 /// - Router: the one `AppRouter`, re-running its guards when the session
 ///   changes (`RouteRefresh`).
-/// - Above the router, the legacy providers (`LegacyScope`) stay, so the
-///   legacy screens keep working until they are migrated.
 /// - Toasts draw in the root navigator's overlay (`ToastService.navigator`),
 ///   so no host widget is needed here; the offline strip is the shell's (E5).
 /// - The "oturum bitti" sheet is opened by the [SessionExpiredCoordinator]
@@ -61,18 +58,16 @@ class _SmapAppState extends State<SmapApp> {
 
   @override
   Widget build(BuildContext context) {
-    return LegacyScope(
-      child: MaterialApp.router(
-        title: 'SMAP',
-        debugShowCheckedModeBanner: false,
-        theme: SmapTheme.light(),
-        darkTheme: SmapTheme.dark(),
-        themeMode: AppThemeMode.current,
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: const [Locale('tr')],
-        locale: const Locale('tr'),
-        routerConfig: _config,
-      ),
+    return MaterialApp.router(
+      title: 'SMAP',
+      debugShowCheckedModeBanner: false,
+      theme: SmapTheme.light(),
+      darkTheme: SmapTheme.dark(),
+      themeMode: AppThemeMode.current,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: const [Locale('tr')],
+      locale: const Locale('tr'),
+      routerConfig: _config,
     );
   }
 }

@@ -62,7 +62,7 @@ final class AppConfig {
     );
   }
 
-  /// Host the app uses today (`DioClient`), session cookie included.
+  /// The API host, session cookie included.
   static const String defaultApiBaseUrl = 'https://www.smaptr.com';
 
   /// Host of `/uploads/<file>` exam images in the legacy screens. The subject

@@ -72,9 +72,9 @@ final class NetworkService {
     }
   }
 
-  /// Cookie jar at the location and format the legacy `DioClient` uses
-  /// (`<documents>/.cookies/`, expired cookies dropped), so a signed-in user
-  /// stays signed in when screens move to this service.
+  /// Cookie jar at the location and format the legacy `DioClient` used
+  /// (`<documents>/.cookies/`, expired cookies dropped), so a user signed in
+  /// on an older version stays signed in after the update.
   static Future<CookieJar> createPersistentCookieJar() async {
     final documents = await getApplicationDocumentsDirectory();
     return PersistCookieJar(

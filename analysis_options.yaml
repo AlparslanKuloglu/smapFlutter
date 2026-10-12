@@ -22,6 +22,8 @@ analyzer:
     - "**/generated/**"
     - lib/gen/**
     - lib/l10n/app_localizations*.dart
+    # Vendored third-party code (flutter_document_scanner), kept as is.
+    - lib/vendor/**
 
 linter:
   # The lint rules applied to this project can be customized in the
@@ -35,17 +37,13 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-    # UI guide A4 lints. prefer_const_literals_to_create_immutables and
-    # avoid_print (already in flutter_lints) stay on here. The three below hit
-    # 51 places in legacy code, so they are enabled only in the strict profile
-    # (analysis_options_strict.yaml), which new code folders include via a
-    # nested analysis_options.yaml. Turn them on globally after the legacy
-    # screens are migrated.
+    # UI guide A4 lints, on for all code since the legacy screens are gone
+    # (FIN2; the folder-level strict profile is retired).
     prefer_const_literals_to_create_immutables: true
     avoid_print: true
-    # prefer_const_constructors: true     # strict profile
-    # prefer_const_declarations: true     # strict profile
-    # use_decorated_box: true             # strict profile
+    prefer_const_constructors: true
+    prefer_const_declarations: true
+    use_decorated_box: true
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

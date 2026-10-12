@@ -51,8 +51,10 @@ jobs:
             git status --short
             exit 1
           fi
-      - name: Analyze (errors and warnings fail; infos are reported)
-        run: flutter analyze --no-pub --no-fatal-infos
+      - name: Analyze (any issue fails; the legacy code is gone)
+        run: flutter analyze --no-pub
+      - name: UI rules (no raw colors, text styles, Material icons, dialogs)
+        run: tool/ui_rules.sh
       - name: Test
         run: |
           if [ -d test ]; then

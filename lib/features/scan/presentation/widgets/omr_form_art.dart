@@ -61,7 +61,7 @@ abstract final class OmrFormArt {
     bool frame = true,
     double handleRadius = 10,
   }) {
-    final paper = SmapColors.light;
+    const paper = SmapColors.light;
     final line = paper.borderStrong;
     final faint = paper.textDisabled;
     final ink = paper.textSecondary;

@@ -24,8 +24,8 @@ part 'widgets/shell_tab_stack.dart';
 /// An `AutoTabsRouter` keeps the four stacks alive side by side (each in its
 /// own `AutoRouter`, so Back walks the stack of the tab that is showing and
 /// the bar stays on every page of it). Under it a [Scaffold] with
-/// `extendBody` puts the [AppBottomBar] at the bottom: a screen of kind
-/// [ShellTabContent.screen] scrolls behind its blur.
+/// `extendBody` puts the [AppBottomBar] at the bottom: every screen scrolls
+/// behind its blur.
 ///
 /// - Tapping another tab shows it; tapping the selected one pops its stack to
 ///   the root page and scrolls it to the top ([ShellBarPolicy.onTap]).

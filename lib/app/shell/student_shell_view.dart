@@ -16,20 +16,17 @@ import 'package:smap/shared/ui/navigation/bottom_bar_tabs.dart';
 /// each tab with its own stack (`/home`, `/analytics`, `/lessons`,
 /// `/account`).
 ///
-/// The tabs show the legacy screens for now (`Legacy…TabRoute`); the screen
-/// tasks (E6 and on) replace them one by one and set the tab's
-/// `ShellTabContent.screen` here. The guards put only a signed-in student
-/// here (`RoleGuard`).
+/// The guards put only a signed-in student here (`RoleGuard`).
 @RoutePage()
 class StudentShellView extends StackedView<ShellViewModel> {
   const StudentShellView({super.key});
 
   /// The four tabs, in bar order.
   static const List<ShellTabSpec> tabs = [
-    ShellTabSpec(route: HomeTabRoute(), content: ShellTabContent.screen),
-    ShellTabSpec(route: AnalyticsTabRoute(), content: ShellTabContent.screen),
-    ShellTabSpec(route: LessonsTabRoute(), content: ShellTabContent.screen),
-    ShellTabSpec(route: AccountTabRoute(), content: ShellTabContent.screen),
+    ShellTabSpec(route: HomeTabRoute()),
+    ShellTabSpec(route: AnalyticsTabRoute()),
+    ShellTabSpec(route: LessonsTabRoute()),
+    ShellTabSpec(route: AccountTabRoute()),
   ];
 
   @override
