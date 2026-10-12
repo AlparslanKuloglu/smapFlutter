@@ -92,41 +92,6 @@ class WeekGrid extends StatefulWidget {
   State<WeekGrid> createState() => _WeekGridState();
 }
 
-/// The grid's measures at the user's text scale: the board's sizes (hour
-/// column 44, day column 84, hour row 40, header 44, block 36) times the text
-/// scale, so a topic block, a header and an hour label keep the room their
-/// text needs and are never cut (text scale 1,3 rule). The scale stops at
-/// [maxScale]; the grid's own text is held to the same limit, the blocks stay
-/// readable as buttons through their semantics label.
-class WeekGridMetrics {
-  const WeekGridMetrics(this.scale);
-
-  /// The scale the grid grows to at most.
-  static const double maxScale = 1.5;
-
-  /// The metrics for the text scale of [context].
-  factory WeekGridMetrics.of(BuildContext context) =>
-      WeekGridMetrics.forTextScale(
-        MediaQuery.textScalerOf(context).scale(16) / 16,
-      );
-
-  /// The metrics for a text scale factor: never below the board's sizes (1)
-  /// and never above [maxScale].
-  factory WeekGridMetrics.forTextScale(double factor) =>
-      WeekGridMetrics(factor.clamp(1.0, maxScale));
-
-  final double scale;
-
-  double get hourColumn => WeekGrid.hourColumn * scale;
-  double get dayColumn => WeekGrid.dayColumn * scale;
-  double get hourRow => WeekGrid.hourRow * scale;
-  double get headerRow => WeekGrid.headerRow * scale;
-  double get blockHeight => WeekGrid.blockHeight * scale;
-  double get blockInsetX => WeekGrid._blockInsetX * scale;
-  double get blockInsetY => WeekGrid._blockInsetY * scale;
-  double get glyph => 14 * scale;
-}
-
 class _WeekGridState extends State<WeekGrid> {
   final ScrollController _days = ScrollController();
   final ScrollController _header = ScrollController();
