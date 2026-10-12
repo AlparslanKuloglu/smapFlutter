@@ -100,9 +100,11 @@ class ExamDetailView extends StackedView<ExamDetailViewModel> {
         toast: locator<ToastService>(),
         cdnBaseUrl: locator<AppConfig>().cdnBaseUrl,
         student: student,
-        // A coach's student has no field here (E17 brings it).
-        userField:
-            student != null || !locator.isRegistered<CurrentUserService>()
+        // A coach's student brings the field in the ref; the signed-in
+        // student's is on the account (none in the shell preview).
+        userField: student != null
+            ? AytField.fromWire(student?.aimType)
+            : !locator.isRegistered<CurrentUserService>()
             ? null
             : AytField.fromWire(locator<CurrentUserService>().user?.aimType),
         initial: exam,

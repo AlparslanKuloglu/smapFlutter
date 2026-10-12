@@ -24,11 +24,17 @@ class SheetProgramDialogs implements ProgramDialogs {
     required this.l10n,
     required this.schedule,
     this.studentId,
+    this.studentFirstName,
   });
 
   final AppLocalizations l10n;
   final ScheduleService schedule;
+
+  /// The student a coach writes the program for; `null` for the user's own.
   final String? studentId;
+
+  /// The student's first name, for the topic sheet's words in a coach's view.
+  final String? studentFirstName;
 
   @override
   Future<bool> confirmResetDay({
@@ -93,6 +99,7 @@ class SheetProgramDialogs implements ProgramDialogs {
     schedule: schedule,
     placements: placements,
     studentId: studentId,
+    studentFirstName: studentFirstName,
   );
 
   @override

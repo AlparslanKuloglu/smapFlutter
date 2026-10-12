@@ -29,7 +29,7 @@ String _examTitle(BuildContext context, String? name, NetExamType? kind) {
 }
 
 /// The strip of a coach's student screen (C83; Tur 12 "Koç bağlamı"): pinned
-/// right under the bar. The student's class and field are E17's.
+/// right under the bar; the class and field come with the student.
 class _ExamContextStrip extends StatelessWidget {
   const _ExamContextStrip({required this.student});
 

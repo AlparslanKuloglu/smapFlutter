@@ -1,0 +1,205 @@
+{
+  "@@locale": "tr",
+  "coachStudentProfile_planMeeting": "Görüşme Planla",
+  "@coachStudentProfile_planMeeting": {
+    "description": "Bar action of Öğrenci Profili; opens the new meeting sheet with the student chosen (pano 10.4 kare 1 to 3)."
+  },
+  "coachStudentProfile_tabsA11y": "Öğrenci verileri sekmeleri",
+  "@coachStudentProfile_tabsA11y": {
+    "description": "Accessible name of the Analiz, Denemeler and Program tabs (pano 10.4, \"tablist\")."
+  },
+  "coachStudentProfile_tabAnalysis": "Analiz",
+  "@coachStudentProfile_tabAnalysis": {
+    "description": "First in-screen tab of Öğrenci Profili (pano 10.4)."
+  },
+  "coachStudentProfile_tabExams": "Denemeler",
+  "@coachStudentProfile_tabExams": {
+    "description": "Second in-screen tab of Öğrenci Profili (pano 10.4)."
+  },
+  "coachStudentProfile_tabProgram": "Program",
+  "@coachStudentProfile_tabProgram": {
+    "description": "Third in-screen tab of Öğrenci Profili (pano 10.4)."
+  },
+  "coachStudentProfile_errorTitle": "Öğrenci yüklenemedi",
+  "@coachStudentProfile_errorTitle": {
+    "description": "Title of the screen error when the student could not be read (pano 1.22 kare 4 pattern; brief 14.3)."
+  },
+  "coachStudentProfile_errorMessage": "Bağlantını kontrol edip tekrar dene.",
+  "@coachStudentProfile_errorMessage": {
+    "description": "Sentence under the screen error title; no inner code."
+  },
+  "coachStudentProfile_notFoundTitle": "Öğrenci bulunamadı",
+  "@coachStudentProfile_notFoundTitle": {
+    "description": "Title shown when the student id is not in the coach's list (a stale link)."
+  },
+  "coachStudentProfile_notFoundMessage": "Bu öğrenci listende görünmüyor. Öğrencilerim'e dönüp yeniden seçebilirsin.",
+  "@coachStudentProfile_notFoundMessage": {
+    "description": "Sentence under the not-found title."
+  },
+  "coachStudentProfile_examsSummary": "{count} deneme · en yeni önce",
+  "@coachStudentProfile_examsSummary": {
+    "description": "Summary line of the Denemeler tab (pano 10.4 kare 2): \"10 deneme · en yeni önce\".",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "coachStudentProfile_examsOrder": "En yeni önce",
+  "@coachStudentProfile_examsOrder": {
+    "description": "Summary line of the Denemeler tab when the exam count is not known."
+  },
+  "coachStudentProfile_examsEmptyMessage": "{name} bir deneme okuttuğunda sonuçları burada görünür.",
+  "@coachStudentProfile_examsEmptyMessage": {
+    "description": "Sentence of the empty Analiz and Denemeler tabs of a coach's view; {name} is the student's first name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachStudentProfile_programsTitle": "Programlar",
+  "@coachStudentProfile_programsTitle": {
+    "description": "Title of the program list in a coach's view (brief 14.1 kare 2)."
+  },
+  "coachStudentProfile_programEmptyTitle": "{name} programı yok",
+  "@coachStudentProfile_programEmptyTitle": {
+    "description": "Title of the empty Program tab / list (brief 14.1 kare 4); {name} carries its genitive suffix: \"Alparslan'ın programı yok\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachStudentProfile_programEmptyBody": "Onun için bir hafta kurabilirsin; {name} programı kendi Anasayfa'sında görür.",
+  "@coachStudentProfile_programEmptyBody": {
+    "description": "Sentence of the empty Program tab / list (brief 14.1 kare 4); {name} is the first name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachStudentProfile_programSetUp": "Program Kur",
+  "@coachStudentProfile_programSetUp": {
+    "description": "Primary action of the empty Program tab / list (brief 14.1 kare 4)."
+  },
+  "coachStudentProfile_programLoadError": "Programlar yüklenemedi. Bağlantını kontrol edip tekrar dene.",
+  "@coachStudentProfile_programLoadError": {
+    "description": "Section error of the Program tab (brief 14.3 kare 2)."
+  },
+  "coachStudentProfile_programOfflineNote": "Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı programı görebilirsin.",
+  "@coachStudentProfile_programOfflineNote": {
+    "description": "Note while offline in a coach's program screens (brief 14.3 kare 3)."
+  },
+  "coachStudentProfile_programEditA11y": "{name} programını düzenle",
+  "@coachStudentProfile_programEditA11y": {
+    "description": "Reading of the inline \"Düzenle\" of the Program tab (brief 14.1 \"Okunuş\"); {name} carries its genitive suffix.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachStudentProfile_programInfo": "Bu programı {name} da görür ve düzenleyebilir. Yaptığın değişiklik onun programına hemen yansır.",
+  "@coachStudentProfile_programInfo": {
+    "description": "InfoBox under the Program tab (brief 14.1 kare 1); {name} is the first name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachStudentProfile_programsRow": "Programlar",
+  "@coachStudentProfile_programsRow": {
+    "description": "Settings row that opens the student's program list (brief 14.1 kare 1)."
+  },
+  "coachStudentProfile_programsCount": "{count} program",
+  "@coachStudentProfile_programsCount": {
+    "description": "Value line of the \"Programlar\" row: \"3 program\".",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "coachStudentProfile_programSaved": "Program {name} hesabına kaydedildi.",
+  "@coachStudentProfile_programSaved": {
+    "description": "Toast after a coach saved a new program; {name} carries its genitive suffix: \"Program Alparslan'ın hesabına kaydedildi.\" (brief 14.2 kare 4).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachStudentProfile_newDaysTitle": "Hangi günler çalışacak?",
+  "@coachStudentProfile_newDaysTitle": {
+    "description": "Step 1 title of a coach's new program flow (brief 14.2 kare 1)."
+  },
+  "coachStudentProfile_newDaysBody": "{name} için birden çok gün seçebilirsin; geçmiş günler seçilemez.",
+  "@coachStudentProfile_newDaysBody": {
+    "description": "Step 1 sentence of a coach's new program flow (brief 14.2 kare 1); {name} is the first name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachStudentProfile_newNameTitle": "Programa ad ver",
+  "@coachStudentProfile_newNameTitle": {
+    "description": "Step 3 title of a coach's new program flow (brief 14.2 kare 4)."
+  },
+  "coachStudentProfile_bagSegment": "Çanta",
+  "@coachStudentProfile_bagSegment": {
+    "description": "Topic sheet segment in a coach's view (brief 14.2 kare 3)."
+  },
+  "coachStudentProfile_bagHelp": "Çanta: {name} denemelerinden çıkan eksik konular.",
+  "@coachStudentProfile_bagHelp": {
+    "description": "Help under the topic sheet segment in a coach's view; {name} carries its genitive suffix: \"Çanta: Alparslan'ın denemelerinden çıkan eksik konular.\" (brief 14.2 kare 3).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachStudentProfile_trackShortSayisal": "SAY",
+  "@coachStudentProfile_trackShortSayisal": {
+    "description": "Short form of the Sayısal field in the context strip's \"12. Sınıf · SAY\" (pano 10.4)."
+  },
+  "coachStudentProfile_trackShortEsitAgirlik": "EA",
+  "@coachStudentProfile_trackShortEsitAgirlik": {
+    "description": "Short form of the Eşit Ağırlık field in the context strip: \"12. Sınıf · EA\" (pano 10.4)."
+  },
+  "coachStudentProfile_trackShortSozel": "SÖZ",
+  "@coachStudentProfile_trackShortSozel": {
+    "description": "Short form of the Sözel field in the context strip (pano 10.4)."
+  },
+  "coachStudentProfile_trackShortDil": "DİL",
+  "@coachStudentProfile_trackShortDil": {
+    "description": "Short form of the Dil field in the context strip (pano 10.4)."
+  },
+  "coachStudentProfile_stripDetail": "{grade} · {track}",
+  "@coachStudentProfile_stripDetail": {
+    "description": "Right side of the context strip: the class and the field short form, \"12. Sınıf · EA\" (pano 10.4).",
+    "placeholders": {
+      "grade": {
+        "type": "String"
+      },
+      "track": {
+        "type": "String"
+      }
+    }
+  },
+  "coachStudentProfile_stripDetailA11y": "{grade}, {track}",
+  "@coachStudentProfile_stripDetailA11y": {
+    "description": "Spoken form of the context strip's class and field: \"12. Sınıf, Eşit Ağırlık\".",
+    "placeholders": {
+      "grade": {
+        "type": "String"
+      },
+      "track": {
+        "type": "String"
+      }
+    }
+  }
+}

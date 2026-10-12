@@ -15,6 +15,37 @@ void main() {
       expect(a == other, isFalse);
     });
 
+    test('the strip texts and the field are part of the value', () {
+      const a = StudentRef(
+        id: '1',
+        name: 'Alparslan Kuloğlu',
+        detail: '12. Sınıf · EA',
+        detailSemantics: '12. Sınıf, Eşit Ağırlık',
+        aimType: 2,
+      );
+      const same = StudentRef(
+        id: '1',
+        name: 'Alparslan Kuloğlu',
+        detail: '12. Sınıf · EA',
+        detailSemantics: '12. Sınıf, Eşit Ağırlık',
+        aimType: 2,
+      );
+      const otherField = StudentRef(
+        id: '1',
+        name: 'Alparslan Kuloğlu',
+        detail: '12. Sınıf · EA',
+        detailSemantics: '12. Sınıf, Eşit Ağırlık',
+        aimType: 3,
+      );
+      expect(a, same);
+      expect(a.hashCode, same.hashCode);
+      expect(a == otherField, isFalse);
+      expect(
+        a == const StudentRef(id: '1', name: 'Alparslan Kuloğlu'),
+        isFalse,
+      );
+    });
+
     test('a different picture is a different student ref', () {
       const picture = AssetImage('a.png');
       const a = StudentRef(id: '1', name: 'Elif Şahin', avatar: picture);

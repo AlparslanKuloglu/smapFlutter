@@ -115,7 +115,9 @@ class _GeneralError extends StatelessWidget {
 
 /// The student has no exam at all (pano 6.2 kare 3; "Genel sekmesi de aynı
 /// boş durumu gösterir"): the clay map, "Henüz deneme yok", one sentence and
-/// "İlk Denemeni Okut", which opens the camera.
+/// "İlk Denemeni Okut", which opens the camera. A coach's view has the same
+/// picture and title, a sentence about the student and no action (the camera
+/// reads the coach's own forms, not the student's).
 class _NoExamsEmpty extends StatelessWidget {
   const _NoExamsEmpty();
 
@@ -129,13 +131,18 @@ class _NoExamsEmpty extends StatelessWidget {
       context,
       listen: false,
     );
+    final coach = viewModel.isCoachView;
     return SliverToBoxAdapter(
       child: AppEmptyState.screen(
         title: l10n.analytics_emptyTitle,
-        message: l10n.analytics_emptyMessage,
-        actionLabel: l10n.analytics_emptyAction,
-        actionIcon: PhosphorIconsRegular.camera,
-        onAction: viewModel.openCamera,
+        message: coach
+            ? l10n.coachStudentProfile_examsEmptyMessage(
+                viewModel.student?.firstName ?? '',
+              )
+            : l10n.analytics_emptyMessage,
+        actionLabel: coach ? null : l10n.analytics_emptyAction,
+        actionIcon: coach ? null : PhosphorIconsRegular.camera,
+        onAction: coach ? null : viewModel.openCamera,
         illustration: Assets.illustrations.clayMap.image(
           width: _picture,
           height: _picture,

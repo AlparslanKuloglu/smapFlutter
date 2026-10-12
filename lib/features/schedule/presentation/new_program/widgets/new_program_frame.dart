@@ -45,8 +45,9 @@ class _StepBar
       listen: false,
     );
     final first = step == NewProgramStep.days;
+    final student = StudentScope.studentOf(context);
     return AppDetailBar(
-      title: _titleOf(l10n, step),
+      title: _titleOf(l10n, step, coach: student != null),
       leading: first ? AppDetailBarLeading.close : AppDetailBarLeading.back,
       onLeading: first ? viewModel.requestClose : viewModel.back,
       action: Padding(
@@ -63,10 +64,32 @@ class _StepBar
   }
 }
 
-String _titleOf(AppLocalizations l10n, NewProgramStep step) => switch (step) {
-  NewProgramStep.days => l10n.schedule_daysTitle,
+/// A coach's flow keeps the context strip under the bar on every step (brief
+/// 14.2 "tam ekran akışta başlığın altında ContextStrip").
+class _StepStrip extends StatelessWidget {
+  const _StepStrip();
+
+  @override
+  Widget build(BuildContext context) {
+    final student = StudentScope.studentOf(context);
+    return student == null
+        ? const SliverToBoxAdapter(child: SizedBox.shrink())
+        : PinnedHeaderSliver(child: AppContextStrip(student: student));
+  }
+}
+
+/// The step's title; a coach's flow says "çalışacak" and "Programa ad ver"
+/// (brief 14.2).
+String _titleOf(
+  AppLocalizations l10n,
+  NewProgramStep step, {
+  bool coach = false,
+}) => switch (step) {
+  NewProgramStep.days =>
+    coach ? l10n.coachStudentProfile_newDaysTitle : l10n.schedule_daysTitle,
   NewProgramStep.grid => l10n.schedule_gridTitle,
-  NewProgramStep.name => l10n.schedule_nameTitle,
+  NewProgramStep.name =>
+    coach ? l10n.coachStudentProfile_newNameTitle : l10n.schedule_nameTitle,
 };
 
 /// The title, the sentence under it and the step's body.
@@ -80,14 +103,18 @@ class _StepContent
   @override
   Widget build(BuildContext context, NewProgramStep step) {
     final l10n = AppLocalizations.of(context);
+    final student = StudentScope.studentOf(context);
     final body = switch (step) {
-      NewProgramStep.days => l10n.schedule_daysBody,
+      NewProgramStep.days =>
+        student == null
+            ? l10n.schedule_daysBody
+            : l10n.coachStudentProfile_newDaysBody(student.firstName),
       NewProgramStep.grid => l10n.schedule_gridBody,
       NewProgramStep.name => null,
     };
     return SliverMainAxisGroup(
       slivers: [
-        LargeTitleSliver(title: _titleOf(l10n, step)),
+        LargeTitleSliver(title: _titleOf(l10n, step, coach: student != null)),
         if (body != null) _StepSentence(text: body),
         switch (step) {
           NewProgramStep.days => const _DaysStep(),

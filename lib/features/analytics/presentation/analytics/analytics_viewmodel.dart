@@ -21,6 +21,7 @@ import 'package:smap/features/exams/domain/ayt_field.dart';
 import 'package:smap/features/exams/domain/exam_detail.dart';
 import 'package:smap/features/exams/domain/exam_summary.dart';
 import 'package:smap/shared/ui/feedback/section_state.dart';
+import 'package:smap/shared/ui/navigation/student_scope.dart';
 import 'package:smap/features/scan/presentation/scan_entry.dart';
 
 /// The two tabs of the root band (pano 6.1 "Genel", 6.2 "Denemelerim").
@@ -80,8 +81,12 @@ class ExamListData {
 /// - Both sections have their own [SectionState] and a 15 s limit on the
 ///   first load.
 ///
-/// [studentId] is for a coach reading a student (E17); the student's own
-/// screen leaves it `null`.
+/// A coach reading a student passes [student] (E17; pano 10.4): every request
+/// carries the student's id, the AYT field is the student's ([userField]), a
+/// row opens the exam detail in the coach's view and the list has no
+/// favorite star (the star is kept on the student's own device, Ek D-25).
+/// [studentId] alone is the same without the ref. The student's own screen
+/// leaves both `null`.
 class AnalyticsViewModel extends BaseViewModel {
   AnalyticsViewModel({
     required AnalyticsRepository analytics,
@@ -90,7 +95,8 @@ class AnalyticsViewModel extends BaseViewModel {
     required ExamFavorites favorites,
     required AppRouter router,
     this.userField,
-    this.studentId,
+    String? studentId,
+    this.student,
     AnalyticsTab initialTab = AnalyticsTab.general,
     DateTime Function()? clock,
     Duration timeout = const Duration(seconds: 15),
@@ -101,6 +107,7 @@ class AnalyticsViewModel extends BaseViewModel {
        _router = router,
        _clock = clock ?? DateTime.now,
        _timeout = timeout,
+       studentId = student?.id ?? studentId,
        _tab = initialTab,
        _filter = AnalyticsFilter.tyt,
        _favoriteIds = favorites.ids;
@@ -118,6 +125,12 @@ class AnalyticsViewModel extends BaseViewModel {
 
   /// Whose numbers these are; `null` for the signed-in student.
   final String? studentId;
+
+  /// The student a coach is looking at; `null` for the user's own numbers.
+  final StudentRef? student;
+
+  /// A coach reads a student's numbers.
+  bool get isCoachView => studentId != null;
 
   // ── Tab ──────────────────────────────────────────────────────────────
 
@@ -316,6 +329,10 @@ class AnalyticsViewModel extends BaseViewModel {
     });
     _publishExams();
   }
+
+  /// Loads the list the first time (a coach's profile shows it as a tab of
+  /// its own, there is no tab switch to wait for).
+  Future<void> loadExams() => _ensureExams();
 
   Future<void> _ensureExams() async {
     if (_examsStarted) return;

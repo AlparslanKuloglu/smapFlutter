@@ -39,6 +39,20 @@ class _ExamsControls
     if (!data.visible) {
       return const SliverToBoxAdapter(child: SizedBox.shrink());
     }
+    if (getParentViewModel<AnalyticsViewModel>(
+      context,
+      listen: false,
+    ).isCoachView) {
+      return SliverPadding(
+        padding: const EdgeInsets.fromLTRB(
+          AppSpacing.gutter,
+          _sectionGap,
+          AppSpacing.gutter,
+          0,
+        ),
+        sliver: SliverToBoxAdapter(child: _CoachExamsSummary(data.counts.all)),
+      );
+    }
     return SliverPadding(
       padding: const EdgeInsets.fromLTRB(
         AppSpacing.gutter,
@@ -152,5 +166,29 @@ class _ExamSummaryRow extends StatelessWidget {
     if (chosen == null || chosen == viewModel.query.date) return;
     AppHaptics.selection();
     viewModel.applyDate(chosen);
+  }
+}
+
+/// "10 deneme · en yeni önce" (pano 10.4 kare 2): a coach's list has no type
+/// segment and no filter, only the count of the student's exams (when the
+/// server gave it) and the order.
+class _CoachExamsSummary extends StatelessWidget {
+  const _CoachExamsSummary(this.count);
+
+  final int? count;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final total = count;
+    return Text(
+      total == null || total <= 0
+          ? l10n.coachStudentProfile_examsOrder
+          : l10n.coachStudentProfile_examsSummary(TrFormat.sira(total)),
+      style: context.appText.caption.copyWith(
+        color: context.appColors.textSecondary,
+        fontWeight: FontWeight.w600,
+      ),
+    );
   }
 }

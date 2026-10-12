@@ -11,16 +11,15 @@ import 'package:smap/app/router/app_router.dart';
 /// |---|---|
 /// | `` (initial) | `StudentsView` (Öğrencilerim) |
 ///
-/// "Öğrenci Ekle" (pano 10.3) is a sheet, not a route. E17 adds
-/// `:studentId` (Öğrenci Profili) and its children as siblings of this one;
-/// until then a student opens the legacy analysis screen
-/// (`legacy_links_e16.dart`).
+/// "Öğrenci Ekle" (pano 10.3) is a sheet, not a route. A student opens Öğrenci
+/// Profili, whose routes (`:studentId` and the screens under it) are
+/// `coachStudentProfileRoutes`, siblings of this one.
 ///
 /// ```dart
 /// AutoRoute(
 ///   page: CoachStudentsTabRoute.page,
 ///   path: 'students',
-///   children: coachStudentsTabRoutes,
+///   children: [...coachStudentsTabRoutes, ...coachStudentProfileRoutes],
 /// ),
 /// ```
 ///

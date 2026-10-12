@@ -38,7 +38,13 @@ class _WeekSection
           entries: detail.entries,
           today: data.today,
           bottomPadding: AppBottomBar.heightOf(context),
-          onOpenEntry: (entry) => _openTopic(context, entry),
+          onOpenEntry:
+              getParentViewModel<ProgramDetailViewModel>(
+                context,
+                listen: false,
+              ).isCoachView
+              ? null
+              : (entry) => _openTopic(context, entry),
         ),
       ),
     );

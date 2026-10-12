@@ -118,7 +118,11 @@ class _DayList
               _EntryRows(
                 entries: day.entries,
                 editing: data.editing,
-                onOpen: (entry) => _openTopic(context, entry),
+                // A coach's topics do not open: there are no lessons for a
+                // coach to go to.
+                onOpen: viewModel.isCoachView
+                    ? null
+                    : (entry) => _openTopic(context, entry),
                 onTime: viewModel.changeTime,
                 onRemove: viewModel.removeEntry,
               ),
@@ -151,7 +155,7 @@ class _EntryRows extends StatelessWidget {
 
   final List<ProgramEntry> entries;
   final bool editing;
-  final ValueChanged<ProgramEntry> onOpen;
+  final ValueChanged<ProgramEntry>? onOpen;
   final ValueChanged<ProgramEntry> onTime;
   final ValueChanged<ProgramEntry> onRemove;
 
@@ -177,7 +181,9 @@ class _EntryRows extends StatelessWidget {
               topic: entry.title,
               subject: entry.subject,
               mode: editing ? ProgramItemMode.edit : ProgramItemMode.view,
-              onTap: entry.canOpenTopic ? () => onOpen(entry) : null,
+              onTap: entry.canOpenTopic && onOpen != null
+                  ? () => onOpen!(entry)
+                  : null,
               onTimeTap: () => onTime(entry),
               onRemove: () => onRemove(entry),
             ),

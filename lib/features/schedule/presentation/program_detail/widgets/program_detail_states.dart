@@ -89,3 +89,22 @@ class _DetailError
     );
   }
 }
+
+/// Room under the day view for the bottom bar.
+class _BottomSpace
+    extends SelectorViewModelWidget<ProgramDetailViewModel, ProgramViewMode> {
+  const _BottomSpace();
+
+  @override
+  ProgramViewMode selector(ProgramDetailViewModel viewModel) => viewModel.mode;
+
+  @override
+  Widget build(BuildContext context, ProgramViewMode mode) {
+    if (mode == ProgramViewMode.week) {
+      return const SliverToBoxAdapter(child: SizedBox.shrink());
+    }
+    return SliverToBoxAdapter(
+      child: SizedBox(height: AppBottomBar.heightOf(context) + AppSpacing.s24),
+    );
+  }
+}

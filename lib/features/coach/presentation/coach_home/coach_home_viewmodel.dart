@@ -10,6 +10,7 @@ import 'package:smap/features/account/application/account_header.dart';
 import 'package:smap/features/coach/application/coach_code_actions.dart';
 import 'package:smap/features/coach/application/coach_home_models.dart';
 import 'package:smap/features/coach/application/coach_students_service.dart';
+import 'package:smap/features/coach/application/new_meeting_flow.dart';
 import 'package:smap/features/coach/data/dtos/coach_student_dto.dart';
 import 'package:smap/features/coach/data/dtos/interview_dtos.dart';
 import 'package:smap/features/coach/data/interview_repository.dart';
@@ -53,6 +54,7 @@ class CoachHomeViewModel extends ReactiveViewModel {
     required CurrentUserService currentUser,
     required CoachCodeActions codeActions,
     AttentionRepository? attention,
+    NewMeetingFlow? newMeeting,
     DateTime Function()? clock,
     Duration timeout = SmapDurations.skeletonTimeout,
   }) : _students = students,
@@ -60,6 +62,7 @@ class CoachHomeViewModel extends ReactiveViewModel {
        _currentUser = currentUser,
        _codeActions = codeActions,
        _attention = attention,
+       _newMeeting = newMeeting,
        _clock = clock ?? DateTime.now,
        _timeout = timeout {
     _derive();
@@ -70,6 +73,7 @@ class CoachHomeViewModel extends ReactiveViewModel {
   final CurrentUserService _currentUser;
   final CoachCodeActions _codeActions;
   final AttentionRepository? _attention;
+  final NewMeetingFlow? _newMeeting;
   final DateTime Function() _clock;
   final Duration _timeout;
 
@@ -180,6 +184,15 @@ class CoachHomeViewModel extends ReactiveViewModel {
   /// student joins the strip and the band's count); the sections stay on
   /// screen while it runs.
   Future<void> reloadStudents() => _loadStudents(force: true);
+
+  /// "Yeni Görüşme" of "Yaklaşan görüşmeler": the new meeting flow (pano 10.5
+  /// kare 2); a saved meeting reads the upcoming list again. Does nothing
+  /// without a flow.
+  Future<void> newMeeting() async {
+    final flow = _newMeeting;
+    if (flow == null || !await flow.run()) return;
+    await _loadMeetings();
+  }
 
   /// "Tekrar Dene" of "Yaklaşan görüşmeler".
   Future<void> retryMeetings() {

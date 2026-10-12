@@ -42,8 +42,11 @@ import 'package:smap/shared/ui/pickers/calendar_math.dart';
 /// **Offline.** The saved program can be read; "Düzenle", the edit actions and
 /// "Günü Sıfırla" need a connection and are off without one.
 ///
-/// **Coach.** [readOnly] hides the edit actions (pano 3.4: "Koçta salt
-/// okunur"); [studentId] reads that student's program.
+/// **Coach.** [studentId] reads and writes that student's program (every
+/// request carries it): Tur 12 A lets the coach set up and edit the student's
+/// program, so the coach's view is not [readOnly]. [readOnly] hides the edit
+/// actions for a screen that only reads. A coach's view has no way to the
+/// lessons (the topics do not open).
 class ProgramDetailViewModel extends BaseViewModel {
   ProgramDetailViewModel({
     required this.programId,
@@ -76,8 +79,11 @@ class ProgramDetailViewModel extends BaseViewModel {
   /// The student whose program this is; `null` for the signed-in user's own.
   final String? studentId;
 
-  /// No edit actions (a coach reads a student's program).
+  /// No edit actions.
   final bool readOnly;
+
+  /// A coach looks at a student's program.
+  bool get isCoachView => studentId != null;
 
   /// The day the route asked to open on.
   final DateTime? requestedDay;

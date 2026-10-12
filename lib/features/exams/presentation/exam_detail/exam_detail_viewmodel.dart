@@ -41,7 +41,8 @@ import 'package:smap/shared/ui/navigation/student_scope.dart';
 ///   Çalış" (Tur 12, "Koç bağlamında … yine yok").
 ///
 /// [userField] is the signed-in student's AYT field: it decides which score
-/// of an AYT result the header shows. A coach's student has none here (E17).
+/// of an AYT result the header shows. A coach's student brings it in the
+/// `StudentRef`.
 class ExamDetailViewModel extends BaseViewModel {
   ExamDetailViewModel({
     required this.examId,

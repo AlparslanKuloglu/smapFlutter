@@ -7,6 +7,7 @@ import 'package:smap/core/services/toast_service.dart';
 import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/theme_context.dart';
 import 'package:smap/core/utils/tr_format.dart';
+import 'package:smap/core/utils/turkish_text.dart';
 import 'package:smap/dependency_injection/injection_container.dart';
 import 'package:smap/features/schedule/application/hour_range.dart';
 import 'package:smap/features/schedule/application/new_program_summary.dart';
@@ -19,8 +20,10 @@ import 'package:smap/features/schedule/presentation/widgets/hour_slot.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/shared/ui/buttons/app_button.dart';
 import 'package:smap/shared/ui/inputs/app_text_field.dart';
+import 'package:smap/shared/ui/navigation/app_context_strip.dart';
 import 'package:smap/shared/ui/navigation/app_detail_bar.dart';
 import 'package:smap/shared/ui/navigation/large_title_sliver.dart';
+import 'package:smap/shared/ui/navigation/student_scope.dart';
 import 'package:smap/shared/ui/pickers/app_calendar.dart';
 import 'package:smap/shared/ui/pickers/app_day_chip.dart';
 import 'package:smap/shared/ui/pickers/calendar_math.dart';
@@ -44,9 +47,17 @@ part 'widgets/new_program_name.dart';
 /// The strings: step 1 "Hangi günler çalışacaksın?" with the calendar; step 2
 /// "Konuları yerleştir" with the day chips and the hour slots; step 3
 /// "Programına ad ver" with the name, the motto and the summary.
+///
+/// A coach sets up a student's program with [student] (Tur 12 A, brief 14.2):
+/// the context strip sits under the bar, the first step says "Hangi günler
+/// çalışacak?" and names the student, the topic sheet reads the student's bag
+/// and lessons, and the program is saved to the student's account.
 @RoutePage()
 class NewProgramView extends StackedView<NewProgramViewModel> {
-  const NewProgramView({super.key});
+  const NewProgramView({this.student, super.key});
+
+  /// The student a coach is looking at; `null` for the user's own program.
+  final StudentRef? student;
 
   @override
   bool get reactive => false;
@@ -55,14 +66,26 @@ class NewProgramView extends StackedView<NewProgramViewModel> {
   NewProgramViewModel viewModelBuilder(BuildContext context) {
     final schedule = locator<ScheduleService>();
     final l10n = AppLocalizations.of(context);
+    final owner = student;
     return NewProgramViewModel(
       schedule: schedule,
       toast: locator<ToastService>(),
-      dialogs: SheetProgramDialogs(l10n: l10n, schedule: schedule),
-      navigator: RouterProgramNavigator(context.router),
+      dialogs: SheetProgramDialogs(
+        l10n: l10n,
+        schedule: schedule,
+        studentId: owner?.id,
+        studentFirstName: owner?.firstName,
+      ),
+      navigator: RouterProgramNavigator(context.router, student: owner),
       online: locator<ConnectivityService>().online,
       defaultName: (month, week) =>
           l10n.schedule_defaultName(month, TrFormat.sira(week)),
+      studentId: owner?.id,
+      savedText: owner == null
+          ? null
+          : (l) => l.coachStudentProfile_programSaved(
+              TurkishSuffix.genitive(owner.firstName),
+            ),
     );
   }
 
@@ -71,7 +94,7 @@ class NewProgramView extends StackedView<NewProgramViewModel> {
     BuildContext context,
     NewProgramViewModel viewModel,
     Widget? child,
-  ) => const _NewProgramPage();
+  ) => StudentScope(student: student, child: const _NewProgramPage());
 }
 
 /// The page: the scroll view of the step and the band under it.
@@ -88,7 +111,7 @@ class _NewProgramPage extends StatelessWidget {
               child: CustomScrollView(
                 keyboardDismissBehavior:
                     ScrollViewKeyboardDismissBehavior.onDrag,
-                slivers: [_StepBar(), _StepContent()],
+                slivers: [_StepBar(), _StepStrip(), _StepContent()],
               ),
             ),
             _BottomBand(),
