@@ -60,7 +60,7 @@ class _ControlsGalleryState extends State<ControlsGallery> {
               ),
             ),
             GalleryState(
-              label: '4 seçenek (metin 1,3 ile sarılır)',
+              label: '4 seçenek (metin 1,35 ile sarılır)',
               child: AppSegmented<String>(
                 segments: const [
                   AppSegment(value: 'Sayısal', label: 'Sayısal'),

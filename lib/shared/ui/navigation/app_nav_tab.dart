@@ -22,11 +22,16 @@ import 'package:smap/shared/ui/buttons/app_pressable.dart';
 /// indicator is not drawn here: the bar draws one indicator that slides
 /// between the tabs.
 ///
-/// The label is the one text that does not grow with the text scale: it is
-/// 12 pt and stays inside the slot with `FittedBox(scaleDown)`, so
-/// "Görüşmelerim" never wraps or clips (C84; pano 1.19 "Etiket 12 pt: ikincil
-/// metin kuralının tek istisnası"). A long press shows a balloon with a large
-/// icon and the full name above the tab, for as long as the finger is down.
+/// The label is 12/16 · 600 and grows with the text scale, but it never wraps
+/// or leaves its slot (C84; pano 1.19 "Etiket 12 pt: ikincil metin kuralının
+/// tek istisnası": a label that does not fit shrinks). The bar measures all
+/// five labels and passes one shared [labelScale] (0..1), so at large text
+/// "Anasayfa", "Analizlerim" and "Okut" are the same size on the same
+/// baseline instead of each shrinking by itself; the heaviest label just
+/// fits its slot. Without a [labelScale] (a tab on its own) the label
+/// shrinks to its own slot with `FittedBox(scaleDown)`. A long press shows a
+/// balloon with a large icon and the full name above the tab, for as long as
+/// the finger is down.
 ///
 /// Read as [semanticLabel] ("Analizlerim, sekme, 5'te 2"), a selected tab
 /// says so. A tap plays `AppHaptics.selection()` in the bar when the choice
@@ -39,6 +44,7 @@ class AppNavTab extends StatefulWidget {
     required this.semanticLabel,
     required this.selected,
     required this.onTap,
+    this.labelScale,
     super.key,
   });
 
@@ -56,6 +62,11 @@ class AppNavTab extends StatefulWidget {
   final bool selected;
   final VoidCallback onTap;
 
+  /// The shared shrink factor of the bar's labels (0..1, see
+  /// `AppBottomBarTabs.labelScale`); null shrinks this label to its slot
+  /// alone.
+  final double? labelScale;
+
   /// Space above the icon.
   static const double topPadding = 14;
 
@@ -64,6 +75,17 @@ class AppNavTab extends StatefulWidget {
 
   /// Icon edge.
   static const double iconSize = AppSize.icon;
+
+  /// [style] at the platform [textScaler] times the shared [factor]; the
+  /// label then carries its own scale and ignores `MediaQuery`'s.
+  static TextStyle sharedStyle(
+    TextStyle style,
+    TextScaler textScaler,
+    double factor,
+  ) {
+    final base = style.fontSize ?? 12;
+    return style.apply(fontSizeFactor: textScaler.scale(base) / base * factor);
+  }
 
   @override
   State<AppNavTab> createState() => _AppNavTabState();
@@ -148,20 +170,16 @@ class _AppNavTabState extends State<AppNavTab> {
                     padding: const EdgeInsets.symmetric(
                       horizontal: AppSpacing.s4,
                     ),
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: AnimatedDefaultTextStyle(
-                        duration: fade,
-                        style: text.labelSm.copyWith(
-                          color: ink,
-                          fontWeight: selected
-                              ? FontWeight.w700
-                              : FontWeight.w600,
-                        ),
-                        maxLines: 1,
-                        softWrap: false,
-                        child: Text(widget.label),
+                    child: _TabLabel(
+                      label: widget.label,
+                      style: text.labelSm.copyWith(
+                        color: ink,
+                        fontWeight: selected
+                            ? FontWeight.w700
+                            : FontWeight.w600,
                       ),
+                      scale: widget.labelScale,
+                      duration: fade,
                     ),
                   ),
                 ],
@@ -260,4 +278,49 @@ class _BalloonLayout extends SingleChildLayoutDelegate {
   @override
   bool shouldRelayout(_BalloonLayout oldDelegate) =>
       anchor != oldDelegate.anchor;
+}
+
+/// The label of a tab. With a shared [scale] it is drawn at the platform text
+/// scale times that factor, one line, so all labels of the bar match; without
+/// it, `FittedBox(scaleDown)` fits it to its own slot.
+class _TabLabel extends StatelessWidget {
+  const _TabLabel({
+    required this.label,
+    required this.style,
+    required this.scale,
+    required this.duration,
+  });
+
+  final String label;
+  final TextStyle style;
+  final double? scale;
+  final Duration duration;
+
+  @override
+  Widget build(BuildContext context) {
+    final shared = scale;
+    if (shared == null) {
+      return FittedBox(
+        fit: BoxFit.scaleDown,
+        child: AnimatedDefaultTextStyle(
+          duration: duration,
+          style: style,
+          maxLines: 1,
+          softWrap: false,
+          child: Text(label),
+        ),
+      );
+    }
+    return AnimatedDefaultTextStyle(
+      duration: duration,
+      style: AppNavTab.sharedStyle(
+        style,
+        MediaQuery.textScalerOf(context),
+        shared,
+      ),
+      maxLines: 1,
+      softWrap: false,
+      child: Text(label, textScaler: TextScaler.noScaling),
+    );
+  }
 }

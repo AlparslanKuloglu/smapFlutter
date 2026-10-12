@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/widgets.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -104,6 +106,33 @@ abstract final class AppBottomBarTabs {
   /// is the localized "sekme, 5'te 2" (`nav_a11yTabPosition`).
   static String semanticLabel(String label, String positionPhrase) =>
       '$label, $positionPhrase';
+
+  /// Space kept free on each side of a tab label inside its slot.
+  static const double labelSidePadding = 4;
+
+  /// The one scale all five labels (four tabs and "Okut") share, 0..1 (pano
+  /// 1.19 "etiketler sığmazsa küçülür"; C77 to C79).
+  ///
+  /// [textWidths] are the labels laid out at the current text scale (in the
+  /// heaviest weight, so selecting a tab never changes the answer),
+  /// [slotWidths] the room each of them has. The result is the smallest
+  /// ratio that makes the tightest label fit; 1 when every label fits. All
+  /// labels use it, so they stay the same size and sit on one baseline
+  /// instead of each shrinking by itself.
+  static double labelScale({
+    required List<double> textWidths,
+    required List<double> slotWidths,
+  }) {
+    assert(textWidths.length == slotWidths.length);
+    var scale = 1.0;
+    for (var i = 0; i < textWidths.length; i++) {
+      final text = textWidths[i];
+      if (text <= 0) continue;
+      final room = math.max(1.0, slotWidths[i] - 2 * labelSidePadding);
+      scale = math.min(scale, room / text);
+    }
+    return scale;
+  }
 
   /// Left edge of slot [slot] and the slot's width in a bar of [width] whose
   /// camera slot is [cameraWidth] wide: the four tab slots share the rest

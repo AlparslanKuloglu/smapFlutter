@@ -7,6 +7,7 @@ import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/shared/ui/identity/app_avatar.dart';
 import 'package:smap/shared/ui/navigation/app_system_overlay.dart';
 import 'package:smap/shared/ui/navigation/band_math.dart';
+import 'package:smap/shared/ui/navigation/home_band_measure.dart';
 import 'package:smap/shared/ui/text/metric_text.dart';
 
 /// The YKS countdown of the student home band: days left and the exam date.
@@ -48,6 +49,8 @@ class AppHomeCounter {
 ///   "5 öğrenci · önümüzdeki 7 günde 2 görüşme" ("Henüz öğrencin yok" without
 ///   students). No counter. 138 high.
 ///
+/// At large text the open greeting wraps to two lines and the band grows
+/// with it (and with the wrapped exam date of the counter); nothing is cut.
 /// While the page scrolls the band shrinks to 110: the avatar to 32, the
 /// greeting to 17/24, the counter row fades out and the student gets the
 /// one-line "YKS'ye 252 gün" (13 · 600) on the right. The corners go flat.
@@ -117,48 +120,28 @@ class AppHomeBand extends StatelessWidget {
     return l10n.nav_homeCoachSummary(count, TrFormat.sira(meetings));
   }
 
+  /// "Merhaba, Alparslan"; the no-name line when [name] is blank.
+  static String greetingText(AppLocalizations l10n, String name) =>
+      name.trim().isEmpty
+      ? l10n.nav_homeGreetingNoName
+      : l10n.nav_homeGreeting(name);
+
   @override
   Widget build(BuildContext context) {
-    final scaler = MediaQuery.textScalerOf(context);
+    final measures = measure(context);
     final metrics = HomeBandMetrics(
       role: role,
       safeTop: safeTop ?? MediaQuery.paddingOf(context).top,
       hasCounter: counter != null,
-      subtitleHeight: _measureSubtitle(context, scaler),
-      textScaler: scaler,
+      greetingHeight: measures.greeting,
+      subtitleHeight: measures.subtitle,
+      counterHeight: measures.counter,
+      textScaler: MediaQuery.textScalerOf(context),
     );
     return SliverPersistentHeader(
       pinned: true,
       delegate: _HomeBandDelegate(band: this, metrics: metrics),
     );
-  }
-}
-
-extension on AppHomeBand {
-  /// Height of the coach sub line at the width it gets (up to two lines);
-  /// null for a student and when there is no sub line.
-  double? _measureSubtitle(BuildContext context, TextScaler scaler) {
-    if (role != AppHomeBandRole.coach) return null;
-    final line = AppHomeBand.coachLine(
-      AppLocalizations.of(context),
-      studentCount,
-      upcomingMeetings,
-    );
-    if (line == null) return null;
-    final width =
-        MediaQuery.sizeOf(context).width -
-        2 * AppSpacing.gutter -
-        HomeBandMetrics.avatarOpen -
-        AppSpacing.s12;
-    final painter = TextPainter(
-      text: TextSpan(text: line, style: context.appText.caption),
-      textDirection: Directionality.of(context),
-      textScaler: scaler,
-      maxLines: 2,
-    )..layout(maxWidth: width);
-    final height = painter.height;
-    painter.dispose();
-    return height;
   }
 }
 
@@ -281,10 +264,8 @@ class _GreetingRow extends StatelessWidget {
     final greeting = Semantics(
       header: true,
       child: Text(
-        band.name.trim().isEmpty
-            ? l10n.nav_homeGreetingNoName
-            : l10n.nav_homeGreeting(band.name),
-        maxLines: 1,
+        AppHomeBand.greetingText(l10n, band.name),
+        maxLines: HomeBandMetrics.greetingMaxLines(progress),
         overflow: TextOverflow.ellipsis,
         style: TextStyle.lerp(
           text.titleMd,
@@ -308,43 +289,62 @@ class _GreetingRow extends StatelessWidget {
         ),
         const SizedBox(width: AppSpacing.s12),
         Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              greeting,
-              if (band.role == AppHomeBandRole.coach)
-                ClipRect(
-                  child: Align(
-                    alignment: Alignment.topLeft,
-                    heightFactor: HomeBandMetrics.openContentOpacity(progress),
-                    child: Opacity(
-                      opacity: HomeBandMetrics.openContentOpacity(progress),
-                      child: _CoachSummary(
-                        line: AppHomeBand.coachLine(
-                          l10n,
-                          band.studentCount,
-                          band.upcomingMeetings,
+          // The text block is laid out at its own height and centered in the
+          // row; the band clips it, so a shrinking row never shows an
+          // overflow while the greeting goes from two lines to one.
+          child: OverflowBox(
+            alignment: Alignment.centerLeft,
+            minHeight: 0,
+            maxHeight: double.infinity,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                greeting,
+                if (band.role == AppHomeBandRole.coach)
+                  ClipRect(
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      heightFactor: HomeBandMetrics.openContentOpacity(
+                        progress,
+                      ),
+                      child: Opacity(
+                        opacity: HomeBandMetrics.openContentOpacity(progress),
+                        child: _CoachSummary(
+                          line: AppHomeBand.coachLine(
+                            l10n,
+                            band.studentCount,
+                            band.upcomingMeetings,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-            ],
+              ],
+            ),
           ),
         ),
         if (compact != null)
-          Padding(
-            padding: const EdgeInsets.only(left: AppSpacing.s8),
-            child: ExcludeSemantics(
-              child: Opacity(
-                opacity: HomeBandMetrics.collapsedContentOpacity(progress),
-                child: Text(
-                  compact,
-                  maxLines: 1,
-                  style: text.caption
-                      .copyWith(fontWeight: FontWeight.w600)
-                      .copyWith(color: colors.textOnNavy2),
+          ClipRect(
+            child: Align(
+              alignment: Alignment.centerRight,
+              widthFactor: HomeBandMetrics.collapsedCounterWidthFactor(
+                progress,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: AppSpacing.s8),
+                child: ExcludeSemantics(
+                  child: Opacity(
+                    opacity: HomeBandMetrics.collapsedContentOpacity(progress),
+                    child: Text(
+                      compact,
+                      maxLines: 1,
+                      softWrap: false,
+                      style: text.caption
+                          .copyWith(fontWeight: FontWeight.w600)
+                          .copyWith(color: colors.textOnNavy2),
+                    ),
+                  ),
                 ),
               ),
             ),

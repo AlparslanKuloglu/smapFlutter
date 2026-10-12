@@ -7,6 +7,7 @@ import 'package:smap/core/theme/app_motion.dart';
 import 'package:smap/core/theme/app_radius.dart';
 import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/theme_context.dart';
+import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/shared/ui/buttons/app_focus_ring.dart';
 import 'package:smap/shared/ui/buttons/app_pressable.dart';
 
@@ -37,13 +38,19 @@ enum AppAccordionIndicator {
 /// guide reserves them for outcomes); pass [haptic] when a screen wants one.
 ///
 /// Controlled with [expanded] and [onChanged], or uncontrolled with
-/// [initiallyExpanded]. Read with the "expanded" semantics; a closed body is
-/// not in the semantics tree.
+/// [initiallyExpanded].
+///
+/// Screen reader: the header is one node that reads "title, summary,
+/// daraltılmış" or "genişletilmiş" (button, with the expanded state). The summary
+/// part is [summaryLabel] when given; otherwise the summary widget's own
+/// semantics are merged in after the title. The body is its own container
+/// node, and a closed body is not in the semantics tree.
 class AppAccordion extends StatefulWidget {
   const AppAccordion({
     required this.title,
     required this.child,
     this.summary,
+    this.summaryLabel,
     this.expanded,
     this.initiallyExpanded = false,
     this.onChanged,
@@ -76,6 +83,12 @@ class AppAccordion extends StatefulWidget {
 
   /// A line under the title in the header (the small D/Y/B counters).
   final Widget? summary;
+
+  /// What a screen reader says for [summary] ("4 madde, 1 eksik"). Give it
+  /// when the summary is drawn from small parts that would read badly one by
+  /// one; null leaves the summary widget's own semantics in the header
+  /// reading.
+  final String? summaryLabel;
 
   /// Non-null makes the accordion controlled.
   final bool? expanded;
@@ -169,11 +182,26 @@ class _AppAccordionState extends State<AppAccordion>
     final text = context.appText;
     final expanded = _expanded;
 
+    final l10n = AppLocalizations.of(context);
+    final explicitSummary = widget.summaryLabel;
+    final summary = widget.summary;
+    final title = Text(
+      widget.title,
+      style: (widget.titleStyle ?? text.titleSm).copyWith(
+        color: colors.textPrimary,
+      ),
+    );
+
     final header = Semantics(
+      container: true,
       button: true,
       expanded: expanded,
-      label: widget.title,
-      onTap: _toggle,
+      label: explicitSummary == null
+          ? widget.title
+          : '${widget.title}, $explicitSummary',
+      value: expanded
+          ? l10n.kit_a11yAccordionExpanded
+          : l10n.kit_a11yAccordionCollapsed,
       child: AppPressable(
         onTap: _toggle,
         scale: 1,
@@ -187,29 +215,30 @@ class _AppAccordionState extends State<AppAccordion>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
-                  child: ExcludeSemantics(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.title,
-                          style: (widget.titleStyle ?? text.titleSm).copyWith(
-                            color: colors.textPrimary,
-                          ),
-                        ),
-                        if (widget.summary case final summary?) ...[
-                          const SizedBox(height: 6),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // The title is in the node's label already.
+                      ExcludeSemantics(child: title),
+                      if (summary != null) ...[
+                        const SizedBox(height: 6),
+                        // Read from the label when there is one; else the
+                        // widget's own semantics join the header node.
+                        if (explicitSummary != null)
+                          ExcludeSemantics(child: summary)
+                        else
                           summary,
-                        ],
                       ],
-                    ),
+                    ],
                   ),
                 ),
                 const SizedBox(width: AppSpacing.s12),
-                _Indicator(
-                  kind: widget.indicator,
-                  turns: _open,
-                  open: expanded,
+                ExcludeSemantics(
+                  child: _Indicator(
+                    kind: widget.indicator,
+                    turns: _open,
+                    open: expanded,
+                  ),
                 ),
               ],
             ),
@@ -230,7 +259,10 @@ class _AppAccordionState extends State<AppAccordion>
           ),
         );
       },
-      child: Padding(padding: widget.bodyPadding, child: widget.child),
+      child: Semantics(
+        container: true,
+        child: Padding(padding: widget.bodyPadding, child: widget.child),
+      ),
     );
 
     final content = Column(

@@ -5,6 +5,7 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:smap/core/theme/app_radius.dart';
 import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/theme_context.dart';
+import 'package:smap/features/debug/gallery_settings.dart';
 import 'package:smap/features/debug/gallery_widgets.dart';
 import 'package:smap/shared/ui/buttons/app_bar_action.dart';
 import 'package:smap/shared/ui/buttons/app_icon_button.dart';
@@ -31,7 +32,7 @@ void _noop() {}
 /// Every demo is a 402-wide phone frame with the reference safe areas (62
 /// top, 34 bottom) and its own `CustomScrollView`: scroll inside a frame to
 /// see the bands shrink and the detail titles move into the bar. Use the
-/// "Metin 1,3" and "Koyu tema" chips above for the other board states.
+/// "Metin 1,35" and "Koyu tema" chips above for the other board states.
 class NavigationGallery extends StatefulWidget {
   const NavigationGallery({super.key});
 
@@ -166,6 +167,37 @@ class _NavigationGalleryState extends State<NavigationGallery> {
                 ],
               ),
             ),
+            GalleryLargeText(
+              label: 'Metin 1,35 · selam iki satıra iner, sayaç sığar',
+              child: _Phone(
+                child: CustomScrollView(
+                  primary: false,
+                  slivers: [
+                    AppHomeBand.student(
+                      name: 'Alparslan Mehmet',
+                      counter: AppHomeCounter(daysLeft: 252, examDate: exam),
+                    ),
+                    const _FakeItems(),
+                  ],
+                ),
+              ),
+            ),
+            const GalleryLargeText(
+              label: 'Metin 1,35 · koç',
+              child: _Phone(
+                child: CustomScrollView(
+                  primary: false,
+                  slivers: [
+                    AppHomeBand.coach(
+                      name: 'Alparslan',
+                      studentCount: 5,
+                      upcomingMeetings: 2,
+                    ),
+                    _FakeItems(),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
         const GallerySection(
@@ -260,13 +292,15 @@ class _NavigationGalleryState extends State<NavigationGallery> {
         const GallerySection(
           title: 'AppBottomBar · AppNavTab · AppCameraButton · C84 · pano 1.19',
           note:
-              '68 + 34. Tek turuncu gösterge sekmeler arasında kayar (250 ms); '
+              'Beş etiket (dört sekme ve Okut) büyük metinde tek ortak ölçekle '
+              'küçülür: aynı boy, aynı taban çizgisi. 68 + 34. Tek turuncu gösterge sekmeler arasında kayar (250 ms); '
               'seçili Fill + 700; Okut sekme değil: 0,92 + orta haptik. Uzun '
               'bas: büyük ikon ve ad balonu. Çubuğun arkasından liste bulanık '
               'geçer.',
           children: [
             _BarDemo(role: AppBottomBarRole.student),
             _BarDemo(role: AppBottomBarRole.coach, initial: 3),
+            _BarDemo(role: AppBottomBarRole.student, largeText: true),
             _BarDemo(role: AppBottomBarRole.coach, initial: 2, largeText: true),
           ],
         ),
@@ -379,7 +413,9 @@ class _BarDemoState extends State<_BarDemo> {
 
   @override
   Widget build(BuildContext context) {
-    final scale = widget.largeText ? const TextScaler.linear(1.3) : null;
+    final scale = widget.largeText
+        ? const TextScaler.linear(GallerySettings.largeTextScale)
+        : null;
     Widget frame = _Phone(
       height: 420,
       child: Stack(
@@ -408,7 +444,7 @@ class _BarDemoState extends State<_BarDemo> {
     return GalleryState(
       label:
           '${widget.role == AppBottomBarRole.student ? 'Öğrenci' : 'Koç'}'
-          '${widget.largeText ? ' · metin 1,3' : ''}',
+          '${widget.largeText ? ' · metin 1,35' : ''}',
       child: SizedBox(width: double.infinity, child: frame),
     );
   }

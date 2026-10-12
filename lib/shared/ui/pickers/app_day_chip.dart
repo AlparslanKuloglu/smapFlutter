@@ -33,8 +33,12 @@ enum AppDayChipSize {
 /// `accent` on the selected tile). The [large] size adds one [caption] line
 /// ("2 konu", 13/16 · 600) under the number.
 ///
-/// The tile grows with the text scale instead of cutting its text; 7 of them
-/// sit apart edge to edge in the strip. Plays `AppHaptics.selection()` on
+/// The tile grows with the text scale instead of cutting its text: taller,
+/// and wider when the [caption] needs it (the grid scrolls sideways); a
+/// parent that fixes the width scales the caption down instead. The dot keeps
+/// a gap under the number that grows with the text scale ([dotClearance]), and
+/// every chip of a strip reserves it so their heights match. 7 of them sit
+/// apart edge to edge in the strip. Plays `AppHaptics.selection()` on
 /// tap. Read as "Cumartesi 10 Ekim, bugün, seçili" and, with a [caption],
 /// "… , 2 konu".
 class AppDayChip extends StatelessWidget {
@@ -68,6 +72,18 @@ class AppDayChip extends StatelessWidget {
   static const double _dot = 6;
   static const double _dotBottom = 5;
 
+  /// Padding under the content at text scale 1 (the tile's own 8).
+  static const double _basePad = AppSpacing.s8;
+
+  /// Extra padding under the content per unit of text scale above 1, so the
+  /// dot (5 + 6 from the bottom edge) stays clear of the number's line.
+  static const double _padPerScale = 8;
+
+  /// Padding under the content at [textScale] (1 or more): 8, growing with
+  /// the scale so the number never touches the dot.
+  static double dotClearance(double textScale) =>
+      _basePad + _padPerScale * (textScale < 1 ? 0 : textScale - 1);
+
   @override
   Widget build(BuildContext context) {
     final colors = context.appColors;
@@ -75,6 +91,7 @@ class AppDayChip extends StatelessWidget {
     final l10n = AppLocalizations.of(context);
     final dark = Theme.brightnessOf(context) == Brightness.dark;
     final enabled = onTap != null;
+    final bottomPad = dotClearance(MediaQuery.textScalerOf(context).scale(1));
 
     final weekdayInk = selected
         ? (dark ? colors.onPrimary : colors.textOnNavy2)
@@ -121,8 +138,10 @@ class AppDayChip extends StatelessWidget {
                 reduced: Duration.zero,
               ),
               curve: AppMotion.standard,
-              width: size.width,
-              constraints: BoxConstraints(minHeight: size.height),
+              constraints: BoxConstraints(
+                minWidth: size.width,
+                minHeight: size.height,
+              ),
               decoration: BoxDecoration(
                 color: fill,
                 borderRadius: AppRadius.borderMd,
@@ -131,8 +150,11 @@ class AppDayChip extends StatelessWidget {
                 alignment: Alignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: AppSpacing.s8,
+                    padding: EdgeInsets.fromLTRB(
+                      AppSpacing.s4,
+                      AppSpacing.s8,
+                      AppSpacing.s4,
+                      bottomPad,
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -151,15 +173,17 @@ class AppDayChip extends StatelessWidget {
                           style: text.headline.copyWith(color: numberInk),
                         ),
                         if (caption case final line?)
-                          Text(
-                            line,
-                            maxLines: 1,
-                            overflow: TextOverflow.fade,
-                            softWrap: false,
-                            style: text.caption.copyWith(
-                              color: weekdayInk,
-                              fontWeight: FontWeight.w600,
-                              height: 16 / 13,
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              line,
+                              maxLines: 1,
+                              softWrap: false,
+                              style: text.caption.copyWith(
+                                color: weekdayInk,
+                                fontWeight: FontWeight.w600,
+                                height: 16 / 13,
+                              ),
                             ),
                           ),
                       ],
