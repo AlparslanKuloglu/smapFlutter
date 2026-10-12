@@ -36,6 +36,9 @@ class AppSelectOption<T> {
 /// ("Seçilmez"). An empty enabled field reads [hintText] ("Seç") in
 /// `textPlaceholder`.
 ///
+/// [sheetNote] is a line under the rows of the sheet (13/20 `textSecondary`,
+/// "9. ya da 10. sınıfı seçersen alan kaldırılır."; pano 9.2 kare 4).
+///
 /// Read as one button: "Sınıf, 10. Sınıf, düğme, seçenekleri açar".
 class AppSelectField<T extends Object> extends StatelessWidget {
   const AppSelectField({
@@ -44,6 +47,7 @@ class AppSelectField<T extends Object> extends StatelessWidget {
     required this.value,
     required this.onChanged,
     this.sheetTitle,
+    this.sheetNote,
     this.hintText,
     this.helperText,
     this.errorText,
@@ -64,6 +68,9 @@ class AppSelectField<T extends Object> extends StatelessWidget {
 
   /// The sheet's title; [label] when null.
   final String? sheetTitle;
+
+  /// A note under the option rows of the sheet; none when null.
+  final String? sheetNote;
 
   /// Shown while nothing is chosen; "Seç" when null.
   final String? hintText;
@@ -94,6 +101,7 @@ class AppSelectField<T extends Object> extends StatelessWidget {
           : AppSheetSize.small,
       builder: (_) => _SelectSheet<T>(
         title: sheetTitle ?? label,
+        note: sheetNote,
         options: options,
         value: value,
       ),
@@ -175,9 +183,11 @@ class _SelectSheet<T extends Object> extends StatelessWidget {
     required this.title,
     required this.options,
     required this.value,
+    this.note,
   });
 
   final String title;
+  final String? note;
   final List<AppSelectOption<T>> options;
   final T? value;
 
@@ -197,6 +207,21 @@ class _SelectSheet<T extends Object> extends StatelessWidget {
               horizontalPadding: AppSpacing.s24,
               focusGapColor: context.appColors.bgRaised,
               onChanged: (chosen) => Navigator.of(context).pop(chosen),
+            ),
+          if (note case final text?)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.s24,
+                AppSpacing.s8,
+                AppSpacing.s24,
+                0,
+              ),
+              child: Text(
+                text,
+                style: context.appText.caption.copyWith(
+                  color: context.appColors.textSecondary,
+                ),
+              ),
             ),
         ],
       ),

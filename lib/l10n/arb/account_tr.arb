@@ -1,0 +1,435 @@
+{
+  "@@locale": "tr",
+  "account_title": "Hesap",
+  "@account_title": {
+    "description": "Title of the Hesap tab root band (pano 9.1 kare 1)."
+  },
+  "account_a11yProfile": "Profil: {details}",
+  "@account_a11yProfile": {
+    "description": "Reading of the profile summary (C37, pano 9.1): \"Profil: Alparslan Kuloğlu, 12. Sınıf, Eşit Ağırlık, koçun Mehmet Özkan\".",
+    "placeholders": {
+      "details": {
+        "type": "String"
+      }
+    }
+  },
+  "account_a11yCoachOf": "koçun {name}",
+  "@account_a11yCoachOf": {
+    "description": "Part of the profile summary reading: the student's coach (pano 9.1 kare 1).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "account_a11yCoachRole": "öğrenci koçu",
+  "@account_a11yCoachRole": {
+    "description": "Part of the profile summary reading of a coach (pano 9.1 kare 4)."
+  },
+  "account_a11yCoachCode": "koçluk kodu {code}",
+  "@account_a11yCoachCode": {
+    "description": "Part of the profile summary reading of a coach (pano 9.1 kare 4).",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "account_a11yOpensProfile": "Profili açar",
+  "@account_a11yOpensProfile": {
+    "description": "Hint of the profile summary button (pano 9.1: \"tek dokunma alanı, Profil'i açar\")."
+  },
+  "account_summaryGradeTrack": "{grade} · {track}",
+  "@account_summaryGradeTrack": {
+    "description": "Second line of the profile summary of a student with both: \"12. Sınıf · Eşit Ağırlık\" (pano 9.1 kare 1).",
+    "placeholders": {
+      "grade": {
+        "type": "String"
+      },
+      "track": {
+        "type": "String"
+      }
+    }
+  },
+  "account_summaryCoach": "Koçun: {name}",
+  "@account_summaryCoach": {
+    "description": "Third line of the profile summary of a student with a coach (pano 9.1 kare 1).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "account_summaryCoachRole": "Öğrenci koçu",
+  "@account_summaryCoachRole": {
+    "description": "Second line of the profile summary of a coach (pano 9.1 kare 4)."
+  },
+  "account_summaryCoachCode": "Koçluk kodun: {code}",
+  "@account_summaryCoachCode": {
+    "description": "Third line of the profile summary of a coach (pano 9.1 kare 4).",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "account_groupAccount": "Hesap",
+  "@account_groupAccount": {
+    "description": "Group heading: profile and password (pano 9.1)."
+  },
+  "account_groupCoaching": "Koçluk",
+  "@account_groupCoaching": {
+    "description": "Group heading: the coaching row (pano 9.1)."
+  },
+  "account_groupNotifications": "Bildirimler",
+  "@account_groupNotifications": {
+    "description": "Group heading of the notifications row (pano 9.1)."
+  },
+  "account_groupLegal": "Yasal",
+  "@account_groupLegal": {
+    "description": "Group heading of the contracts row (pano 9.1)."
+  },
+  "account_groupSupport": "Destek",
+  "@account_groupSupport": {
+    "description": "Group heading of the \"Bize Yaz\" row (pano 9.1 kare 2)."
+  },
+  "account_rowProfile": "Profil",
+  "@account_rowProfile": {
+    "description": "Row title (pano 9.1)."
+  },
+  "account_rowProfileStudentSub": "Ad, e-posta, telefon, sınıf ve alan",
+  "@account_rowProfileStudentSub": {
+    "description": "Sub text of the Profil row of a student (pano 9.1 kare 1)."
+  },
+  "account_rowProfileCoachSub": "Ad, e-posta ve telefon",
+  "@account_rowProfileCoachSub": {
+    "description": "Sub text of the Profil row of a coach, who has no grade or track (spec 9.1 Ç-46)."
+  },
+  "account_rowPassword": "Şifre",
+  "@account_rowPassword": {
+    "description": "Row title (pano 9.1)."
+  },
+  "account_rowCoaching": "Koçluk",
+  "@account_rowCoaching": {
+    "description": "Row title of the student's coaching row (pano 9.1 kare 1)."
+  },
+  "account_rowCoachingNone": "Koçunla bağlan",
+  "@account_rowCoachingNone": {
+    "description": "Sub text of the Koçluk row of a student without a coach (spec 9.1, a decision: the design draws none)."
+  },
+  "account_rowNotifications": "Bildirimler",
+  "@account_rowNotifications": {
+    "description": "Row title (pano 9.1)."
+  },
+  "account_rowNotificationsSub": "Deneme sonucu, koç, görüşme, hatırlatıcı",
+  "@account_rowNotificationsSub": {
+    "description": "Sub text of the Bildirimler row (pano 9.1)."
+  },
+  "account_rowContracts": "Sözleşmeler",
+  "@account_rowContracts": {
+    "description": "Row title (pano 9.1)."
+  },
+  "account_rowContractsSub": "Kullanım Koşulları, KVKK, Gizlilik",
+  "@account_rowContractsSub": {
+    "description": "Sub text of the Sözleşmeler row (pano 9.1)."
+  },
+  "account_rowSupport": "Bize Yaz",
+  "@account_rowSupport": {
+    "description": "Row title that opens a mail draft (pano 9.1 kare 2)."
+  },
+  "account_rowSupportSub": "E-posta uygulaman açılır",
+  "@account_rowSupportSub": {
+    "description": "Sub text of the \"Bize Yaz\" row (pano 9.1 kare 2)."
+  },
+  "account_rowLogout": "Çıkış Yap",
+  "@account_rowLogout": {
+    "description": "The sign-out row, in its own red group (pano 9.1 kare 2)."
+  },
+  "account_coachCodeTitle": "Koçluk kodun",
+  "@account_coachCodeTitle": {
+    "description": "Title of the coach's code row (pano 9.1 kare 4)."
+  },
+  "account_coachCodeCopy": "Kodu kopyala",
+  "@account_coachCodeCopy": {
+    "description": "Accessible name and tooltip of the copy button (pano 9.1 kare 4)."
+  },
+  "account_coachCodeShare": "Kodu paylaş",
+  "@account_coachCodeShare": {
+    "description": "Accessible name and tooltip of the share button (pano 9.1 kare 4)."
+  },
+  "account_coachCodeCopied": "Kod kopyalandı.",
+  "@account_coachCodeCopied": {
+    "description": "Toast after the code was copied (pano 9.1 Davranış)."
+  },
+  "account_coachCodeShareText": "SMAP'te koçluk kodum: {code}",
+  "@account_coachCodeShareText": {
+    "description": "Text the system share sheet carries (a decision: the design gives none).",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "account_version": "Sürüm {version} ({build})",
+  "@account_version": {
+    "description": "The version line at the bottom of Hesap (pano 9.1 kare 2): \"Sürüm 3.0.0 (300)\".",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "build": {
+        "type": "String"
+      }
+    }
+  },
+  "account_versionNoBuild": "Sürüm {version}",
+  "@account_versionNoBuild": {
+    "description": "The version line when the platform gives no build number.",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "account_versionCopied": "Sürüm kopyalandı.",
+  "@account_versionCopied": {
+    "description": "Toast after a long press on the version line copied it (pano 9.1 Davranış, a decision for the wording)."
+  },
+  "account_versionCopyHint": "Uzun basınca kopyalar",
+  "@account_versionCopyHint": {
+    "description": "Hint of the version line."
+  },
+  "account_logoutTitle": "Çıkış yapılsın mı?",
+  "@account_logoutTitle": {
+    "description": "Title of the sign-out confirmation (pano 9.1 kare 3)."
+  },
+  "account_logoutMessage": "Tekrar girmek için kullanıcı adın ve şifren gerekecek. Okuttuğun denemeler hesabında kalır.",
+  "@account_logoutMessage": {
+    "description": "Body of the sign-out confirmation (pano 9.1 kare 3)."
+  },
+  "account_logoutMessagePending": "Gönderilmeyi bekleyen {count} form var; çıkarsan silinir.",
+  "@account_logoutMessagePending": {
+    "description": "Body of the sign-out confirmation while forms wait to be sent (pano 9.1 kare 3).",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "account_logoutConfirm": "Çıkış Yap",
+  "@account_logoutConfirm": {
+    "description": "Primary button of the sign-out confirmation (pano 9.1 kare 3)."
+  },
+  "account_supportMailSubject": "SMAP · Destek",
+  "@account_supportMailSubject": {
+    "description": "Subject of the support mail draft (pano 9.1: the design gives none)."
+  },
+  "account_supportMailVersion": "Uygulama sürümü: {version}",
+  "@account_supportMailVersion": {
+    "description": "Line of the support mail draft with the app version.",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "account_supportMailSystem": "Sistem: {system}",
+  "@account_supportMailSystem": {
+    "description": "Line of the support mail draft with the operating system.",
+    "placeholders": {
+      "system": {
+        "type": "String"
+      }
+    }
+  },
+  "account_supportMailFailed": "E-posta uygulaması açılamadı.",
+  "@account_supportMailFailed": {
+    "description": "Toast when the mail app could not be opened."
+  },
+  "account_profileTitle": "Profil",
+  "@account_profileTitle": {
+    "description": "Title of the profile screen (pano 9.2)."
+  },
+  "account_profileEdit": "Düzenle",
+  "@account_profileEdit": {
+    "description": "Bar action that starts editing (pano 9.2 kare 1)."
+  },
+  "account_profileChangeAvatar": "Avatarı Değiştir",
+  "@account_profileChangeAvatar": {
+    "description": "Text button next to the avatar (pano 9.2 kare 1)."
+  },
+  "account_profileDelete": "Hesabı Sil",
+  "@account_profileDelete": {
+    "description": "Danger link at the bottom of the profile (pano 9.2, 9.4 kare 1)."
+  },
+  "account_fieldName": "Ad Soyad",
+  "@account_fieldName": {
+    "description": "Field label (pano 9.2)."
+  },
+  "account_fieldUserName": "Kullanıcı adı",
+  "@account_fieldUserName": {
+    "description": "Field label (pano 9.2)."
+  },
+  "account_fieldEmail": "E-posta",
+  "@account_fieldEmail": {
+    "description": "Field label (pano 9.2)."
+  },
+  "account_fieldPhone": "Telefon",
+  "@account_fieldPhone": {
+    "description": "Field label (pano 9.2)."
+  },
+  "account_fieldGrade": "Sınıf",
+  "@account_fieldGrade": {
+    "description": "Field label and sheet title (pano 9.2 kare 4)."
+  },
+  "account_fieldTrack": "Alan",
+  "@account_fieldTrack": {
+    "description": "Field label and sheet title (pano 9.2)."
+  },
+  "account_userNameLocked": "Kullanıcı adı değiştirilemez.",
+  "@account_userNameLocked": {
+    "description": "Help line under the user name in edit mode (pano 9.2 kare 2)."
+  },
+  "account_phoneHint": "5XX XXX XX XX",
+  "@account_phoneHint": {
+    "description": "Example in the empty phone field after the +90 prefix (pano 9.2 kare 2)."
+  },
+  "account_gradeValue": "{grade}. Sınıf",
+  "@account_gradeValue": {
+    "description": "A school year: \"12. Sınıf\" (pano 9.2 kare 4).",
+    "placeholders": {
+      "grade": {
+        "type": "int"
+      }
+    }
+  },
+  "account_gradeGraduate": "Mezun",
+  "@account_gradeGraduate": {
+    "description": "The graduate option of the grade (pano 9.2 kare 4)."
+  },
+  "account_gradeNote": "9. ya da 10. sınıfı seçersen alan kaldırılır.",
+  "@account_gradeNote": {
+    "description": "Note under the grade options (pano 9.2 kare 4)."
+  },
+  "account_trackSayisal": "Sayısal",
+  "@account_trackSayisal": {
+    "description": "Study track."
+  },
+  "account_trackEsitAgirlik": "Eşit Ağırlık",
+  "@account_trackEsitAgirlik": {
+    "description": "Study track."
+  },
+  "account_trackSozel": "Sözel",
+  "@account_trackSozel": {
+    "description": "Study track."
+  },
+  "account_trackDil": "Dil",
+  "@account_trackDil": {
+    "description": "Study track."
+  },
+  "account_trackDisabledValue": "Seçilmez",
+  "@account_trackDisabledValue": {
+    "description": "What the disabled track field reads in the 9th and 10th grade (pano 9.2, spec 9.2)."
+  },
+  "account_trackDisabledHelper": "9. ve 10. sınıfta alan seçilmez.",
+  "@account_trackDisabledHelper": {
+    "description": "Help line of the disabled track field."
+  },
+  "account_issueNameMissing": "Ad soyadını yaz.",
+  "@account_issueNameMissing": {
+    "description": "Field error of the name (a decision: pano 9.2 draws none)."
+  },
+  "account_issueEmailInvalid": "E-posta adresi eksik görünüyor. Örn: ad@alan.com",
+  "@account_issueEmailInvalid": {
+    "description": "Field error of the e-mail (same wording as the sign-up form)."
+  },
+  "account_issuePhoneInvalid": "Telefon numaranı 5XX XXX XX XX biçiminde yaz.",
+  "@account_issuePhoneInvalid": {
+    "description": "Field error of the phone number (a decision: pano 9.2 draws none)."
+  },
+  "account_profileSaved": "Profilin güncellendi.",
+  "@account_profileSaved": {
+    "description": "Success toast after saving (pano 9.2 Davranış)."
+  },
+  "account_profileSaveFailed": "Kaydedilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@account_profileSaveFailed": {
+    "description": "Error toast when saving failed (pano 9.2 Davranış)."
+  },
+  "account_discardTitle": "Değişiklikler kaydedilmesin mi?",
+  "@account_discardTitle": {
+    "description": "Title of the confirmation when leaving edit mode with changes (pano 9.2)."
+  },
+  "account_discardBody": "Yaptığın değişiklikler silinecek.",
+  "@account_discardBody": {
+    "description": "Body of that confirmation (spec 9.2, a decision)."
+  },
+  "account_discardConfirm": "Kaydetmeden Çık",
+  "@account_discardConfirm": {
+    "description": "Primary button of that confirmation (spec 9.2, a decision)."
+  },
+  "account_avatarTitle": "Avatarını seç",
+  "@account_avatarTitle": {
+    "description": "Title of the avatar sheet (pano 9.2 kare 3)."
+  },
+  "account_avatarUse": "Bu Avatarı Kullan",
+  "@account_avatarUse": {
+    "description": "Primary button of the avatar sheet (pano 9.2 kare 3)."
+  },
+  "account_avatarSelected": "seçili",
+  "@account_avatarSelected": {
+    "description": "Reading of the chosen avatar of the sheet."
+  },
+  "account_profileErrorTitle": "Profil açılamadı",
+  "@account_profileErrorTitle": {
+    "description": "Title of the profile screen when the account is not available."
+  },
+  "account_loadErrorMessage": "Bağlantını kontrol edip tekrar dene.",
+  "@account_loadErrorMessage": {
+    "description": "Sentence of the error states of the account screens."
+  },
+  "account_contractsTitle": "Sözleşmeler",
+  "@account_contractsTitle": {
+    "description": "Title of the contracts screen (pano 9.7 kare 1)."
+  },
+  "account_contractsFooter": "Kayıt olurken bu sürümleri onayladın. Bir metin değişirse uygulama açılışında yeni sürümü onaylaman istenir.",
+  "@account_contractsFooter": {
+    "description": "Note under the list of contracts (pano 9.7 kare 1)."
+  },
+  "account_contractVersion": "Sürüm {version}",
+  "@account_contractVersion": {
+    "description": "Sub text of a contract: its version (pano 9.7 kare 1; the date of the design is not sent).",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "account_contractTerms": "Kullanım Koşulları",
+  "@account_contractTerms": {
+    "description": "Title of the terms of use when the server sent none."
+  },
+  "account_contractKvkk": "KVKK Aydınlatma Metni",
+  "@account_contractKvkk": {
+    "description": "Title of the KVKK notice when the server sent none."
+  },
+  "account_contractPrivacy": "Gizlilik Politikası",
+  "@account_contractPrivacy": {
+    "description": "Title of the privacy policy when the server sent none."
+  },
+  "account_contractsErrorTitle": "Sözleşmeler yüklenemedi",
+  "@account_contractsErrorTitle": {
+    "description": "Title of the error state of the contracts list (pano 1.22 wording)."
+  },
+  "account_contractsEmptyTitle": "Sözleşme yok",
+  "@account_contractsEmptyTitle": {
+    "description": "Title of the empty contracts list (a decision: pano 9.7 draws none)."
+  },
+  "account_contractsEmptyMessage": "Gösterilecek bir sözleşme metni bulunamadı.",
+  "@account_contractsEmptyMessage": {
+    "description": "Sentence of the empty contracts list."
+  },
+  "account_readerEmpty": "Bu metin şu an gösterilemiyor.",
+  "@account_readerEmpty": {
+    "description": "Reading screen when the document has no text."
+  }
+}
