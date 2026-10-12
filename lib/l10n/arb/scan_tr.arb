@@ -1,0 +1,516 @@
+{
+  "@@locale": "tr",
+  "scan_primerTitle": "Formunu okutmak için kamera gerekli",
+  "@scan_primerTitle": {
+    "description": "Camera permission sheet before the system dialog, title (pano 4.1 kare 1)."
+  },
+  "scan_primerBody": "SMAP kamerayı yalnız optik formunu çekerken kullanır. Bir sonraki adımda telefonun izin isteyecek.",
+  "@scan_primerBody": {
+    "description": "Camera permission sheet, body (pano 4.1 kare 1)."
+  },
+  "scan_primerAllow": "Kameraya İzin Ver",
+  "@scan_primerAllow": {
+    "description": "Primary button of the permission sheet (pano 4.1 kare 1)."
+  },
+  "scan_primerLater": "Sonra",
+  "@scan_primerLater": {
+    "description": "Quiet button of the permission sheet; closes it and stays where you were (pano 4.1 kare 1)."
+  },
+  "scan_deniedTitle": "Kamera izni kapalı",
+  "@scan_deniedTitle": {
+    "description": "Title of the sheet shown when the camera permission was refused (pano 4.1 kare 2)."
+  },
+  "scan_deniedBody": "Formunu okutabilmek için Ayarlar'da SMAP'e kamera izni ver. Sonra buraya dön; kaldığın yerden devam edersin.",
+  "@scan_deniedBody": {
+    "description": "Body of the refused-permission sheet (pano 4.1 kare 2)."
+  },
+  "scan_openSettings": "Ayarları Aç",
+  "@scan_openSettings": {
+    "description": "Primary button of the refused-permission sheet; opens the app's system settings (pano 4.1 kare 2)."
+  },
+  "scan_tutorialTitle": "Formu böyle çek",
+  "@scan_tutorialTitle": {
+    "description": "Title of the how-to-shoot sheet (pano 4.2)."
+  },
+  "scan_tutorialStep1": "Cevap alanını çerçeveye al.",
+  "@scan_tutorialStep1": {
+    "description": "Step 1 of the how-to-shoot sheet (pano 4.2)."
+  },
+  "scan_tutorialStep2": "Ders adlarının yazdığı yatay şeridi dışarıda bırak.",
+  "@scan_tutorialStep2": {
+    "description": "Step 2 of the how-to-shoot sheet (pano 4.2)."
+  },
+  "scan_tutorialStep3": "Turuncu noktaları cevap alanının dört köşesine getir.",
+  "@scan_tutorialStep3": {
+    "description": "Step 3 of the how-to-shoot sheet (pano 4.2)."
+  },
+  "scan_dontShowAgain": "Bir daha gösterme",
+  "@scan_dontShowAgain": {
+    "description": "Checkbox of the how-to-shoot sheet and text button of the corner hint (pano 4.2, 4.4 kare 1)."
+  },
+  "scan_gotIt": "Anladım",
+  "@scan_gotIt": {
+    "description": "Primary button of the how-to-shoot sheet (pano 4.2)."
+  },
+  "scan_topTitle": "Optik Form",
+  "@scan_topTitle": {
+    "description": "Title in the top bar of the camera (pano 4.2, 4.3)."
+  },
+  "scan_howToShootA11y": "Nasıl çekilir?",
+  "@scan_howToShootA11y": {
+    "description": "Accessible name of the question-mark button in the camera top bar (pano 4.2, 4.3)."
+  },
+  "scan_hintSearching": "Cevap alanını çerçeveye al.\nDers adları şeridi dışarıda kalsın.",
+  "@scan_hintSearching": {
+    "description": "Hint pill while the form is being looked for (pano 4.3 kare 1)."
+  },
+  "scan_hintReady": "Hazır. Telefonu sabit tut ve çek.",
+  "@scan_hintReady": {
+    "description": "Hint pill once the form is found (pano 4.3 kare 2)."
+  },
+  "scan_shutterA11y": "Fotoğraf çek",
+  "@scan_shutterA11y": {
+    "description": "Accessible name of the shutter button (pano 4.3)."
+  },
+  "scan_cameraLoadingA11y": "Kamera açılıyor",
+  "@scan_cameraLoadingA11y": {
+    "description": "Screen-reader name of the spinner shown while the camera starts (not drawn in the boards)."
+  },
+  "scan_cornersTitle": "Köşeleri Ayarla",
+  "@scan_cornersTitle": {
+    "description": "Title of the corner screen (pano 4.4)."
+  },
+  "scan_cornersHint": "Noktaları cevap alanının köşelerine getir.",
+  "@scan_cornersHint": {
+    "description": "Corner hint card, first line (pano 4.4 kare 1)."
+  },
+  "scan_cornersHintSub": "Ders adları şeridi dışarıda kalsın.",
+  "@scan_cornersHintSub": {
+    "description": "Corner hint card, second line (pano 4.4 kare 1)."
+  },
+  "scan_retake": "Tekrar Çek",
+  "@scan_retake": {
+    "description": "Outline button of the corner screen; back to the camera (pano 4.4)."
+  },
+  "scan_next": "Devam",
+  "@scan_next": {
+    "description": "Primary button of the corner screen (pano 4.4)."
+  },
+  "scan_cornerTopLeftA11y": "Sol üst köşe",
+  "@scan_cornerTopLeftA11y": {
+    "description": "Accessible name of the top left handle (spec C68)."
+  },
+  "scan_cornerTopRightA11y": "Sağ üst köşe",
+  "@scan_cornerTopRightA11y": {
+    "description": "Accessible name of the top right handle (spec C68)."
+  },
+  "scan_cornerBottomRightA11y": "Sağ alt köşe",
+  "@scan_cornerBottomRightA11y": {
+    "description": "Accessible name of the bottom right handle (spec C68)."
+  },
+  "scan_cornerBottomLeftA11y": "Sol alt köşe",
+  "@scan_cornerBottomLeftA11y": {
+    "description": "Accessible name of the bottom left handle (spec C68)."
+  },
+  "scan_cornerMoveUpA11y": "Yukarı taşı",
+  "@scan_cornerMoveUpA11y": {
+    "description": "Screen-reader action that moves a handle up (spec C68)."
+  },
+  "scan_cornerMoveDownA11y": "Aşağı taşı",
+  "@scan_cornerMoveDownA11y": {
+    "description": "Screen-reader action that moves a handle down (spec C68)."
+  },
+  "scan_cornerMoveLeftA11y": "Sola taşı",
+  "@scan_cornerMoveLeftA11y": {
+    "description": "Screen-reader action that moves a handle left (spec C68)."
+  },
+  "scan_cornerMoveRightA11y": "Sağa taşı",
+  "@scan_cornerMoveRightA11y": {
+    "description": "Screen-reader action that moves a handle right (spec C68)."
+  },
+  "scan_uploadTitle": "Formun okunuyor",
+  "@scan_uploadTitle": {
+    "description": "Title of the upload screen (pano 4.5)."
+  },
+  "scan_uploadSub": "Birkaç saniye sürebilir.",
+  "@scan_uploadSub": {
+    "description": "Sub-line of the upload screen (pano 4.5)."
+  },
+  "scan_stepPreparing": "Fotoğraf hazırlanıyor",
+  "@scan_stepPreparing": {
+    "description": "Step 1 while it runs (pano 4.5 kare 1)."
+  },
+  "scan_stepPrepared": "Fotoğraf hazırlandı",
+  "@scan_stepPrepared": {
+    "description": "Step 1 when done (pano 4.5 kare 2)."
+  },
+  "scan_stepToSend": "Gönderilecek",
+  "@scan_stepToSend": {
+    "description": "Step 2 while waiting (pano 4.5 kare 1)."
+  },
+  "scan_stepSending": "Gönderiliyor",
+  "@scan_stepSending": {
+    "description": "Step 2 while it runs, with the percentage (pano 4.5 kare 2)."
+  },
+  "scan_stepSent": "Gönderildi",
+  "@scan_stepSent": {
+    "description": "Step 2 when done (pano 4.5 kare 3)."
+  },
+  "scan_stepSendFailed": "Gönderilemedi",
+  "@scan_stepSendFailed": {
+    "description": "Step 2 after a failure (pano 4.5 kare 4)."
+  },
+  "scan_stepToRead": "Cevaplar okunacak",
+  "@scan_stepToRead": {
+    "description": "Step 3 while waiting (pano 4.5 kare 1)."
+  },
+  "scan_stepReading": "Cevapların okunuyor",
+  "@scan_stepReading": {
+    "description": "Step 3 while it runs (pano 4.5 kare 3)."
+  },
+  "scan_percent": "%{n}",
+  "@scan_percent": {
+    "description": "Upload percentage next to \"Gönderiliyor\" (pano 4.5 kare 2).",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_uploadFailTitle": "Formun gönderilemedi",
+  "@scan_uploadFailTitle": {
+    "description": "Title after the upload failed (pano 4.5 kare 4)."
+  },
+  "scan_uploadFailBody": "Bağlantı koptu. Fotoğrafın duruyor; tekrar gönderebilir ya da yeniden çekebilirsin.",
+  "@scan_uploadFailBody": {
+    "description": "Sub-line after the upload failed (pano 4.5 kare 4)."
+  },
+  "scan_uploadTimeoutBody": "Sunucu yanıt vermedi.",
+  "@scan_uploadTimeoutBody": {
+    "description": "Sub-line after a timeout (pano 4.5 kare 4)."
+  },
+  "scan_newPhoto": "Yeni Fotoğraf",
+  "@scan_newPhoto": {
+    "description": "Quiet button after a failure; back to the camera (pano 4.5 kare 4, 4.10 kare 1)."
+  },
+  "scan_inProgressA11y": "Sürüyor",
+  "@scan_inProgressA11y": {
+    "description": "Screen-reader state of the running step (pano 4.5)."
+  },
+  "scan_uploadProgressA11y": "Gönderim",
+  "@scan_uploadProgressA11y": {
+    "description": "Screen-reader name of the upload progress bar (pano 4.5)."
+  },
+  "scan_uploadPhotoA11y": "Okunan form görüntüsü: dört kolon, kırk satır",
+  "@scan_uploadPhotoA11y": {
+    "description": "Screen-reader name of the photo card (pano 4.5)."
+  },
+  "scan_reviewTitle": "Form Kontrol",
+  "@scan_reviewTitle": {
+    "description": "Title of the answer check (pano 4.7)."
+  },
+  "scan_reviewSub": "Okunan cevapları formunla karşılaştır.",
+  "@scan_reviewSub": {
+    "description": "Sub-line of the answer check (pano 4.7)."
+  },
+  "scan_zoomFormA11y": "Formu büyüt",
+  "@scan_zoomFormA11y": {
+    "description": "Accessible name of the magnify button on the form image (pano 4.7)."
+  },
+  "scan_pinchHint": "İki parmakla yakınlaştırabilirsin.",
+  "@scan_pinchHint": {
+    "description": "Hint under the form image (pano 4.7)."
+  },
+  "scan_answersRead": "{n} cevap okundu",
+  "@scan_answersRead": {
+    "description": "Summary line (pano 4.7): '160 cevap okundu'.",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_blankCount": "{n} boş",
+  "@scan_blankCount": {
+    "description": "Blank count in the summary and in the column segment (pano 4.7): '2 boş'.",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_correctionCount": "{n} düzeltme",
+  "@scan_correctionCount": {
+    "description": "Correction count in the summary and the fix sheet (pano 4.7): '2 düzeltme'.",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_noCorrection": "Düzeltme yok",
+  "@scan_noCorrection": {
+    "description": "Correction counter of the fix sheet while there is none (pano 4.7 kare 2)."
+  },
+  "scan_columnN": "{n}. kolon",
+  "@scan_columnN": {
+    "description": "Column name by its number (pano 4.7): '3. kolon'.",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_noBlank": "boş yok",
+  "@scan_noBlank": {
+    "description": "Counter line of a column with no blank answer (pano 4.7)."
+  },
+  "scan_columnCaption": "{n}. kolon · {q} soru · düzeltmek için soruya dokun",
+  "@scan_columnCaption": {
+    "description": "Caption over the answer grid (pano 4.7).",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      },
+      "q": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_fix": "Düzelt",
+  "@scan_fix": {
+    "description": "Outline button that opens the fix sheet (pano 4.7)."
+  },
+  "scan_confirmAnswers": "Cevapları Onayla",
+  "@scan_confirmAnswers": {
+    "description": "Primary button of the answer check (pano 4.7)."
+  },
+  "scan_sending": "Gönderiliyor",
+  "@scan_sending": {
+    "description": "Label of the busy primary button (pano 4.7 kare 4)."
+  },
+  "scan_fixSheetTitle": "Cevap Düzelt",
+  "@scan_fixSheetTitle": {
+    "description": "Title of the fix sheet (pano 4.7 kare 2)."
+  },
+  "scan_fieldColumn": "Kolon",
+  "@scan_fieldColumn": {
+    "description": "Label of the column segment in the fix sheet (pano 4.7 kare 2)."
+  },
+  "scan_fieldQuestion": "Soru",
+  "@scan_fieldQuestion": {
+    "description": "Label of the question stepper in the fix sheet (pano 4.7 kare 2)."
+  },
+  "scan_readValue": "Okunan",
+  "@scan_readValue": {
+    "description": "Label of the read value next to the stepper (pano 4.7 kare 2)."
+  },
+  "scan_blank": "Boş",
+  "@scan_blank": {
+    "description": "Name of a blank answer: the chip and the read value (pano 4.7 kare 2)."
+  },
+  "scan_yourMark": "Formdaki işaretin",
+  "@scan_yourMark": {
+    "description": "Label of the option chips in the fix sheet (pano 4.7 kare 2)."
+  },
+  "scan_addCorrection": "Düzeltmeyi Ekle",
+  "@scan_addCorrection": {
+    "description": "Primary button of the fix sheet (pano 4.7 kare 2)."
+  },
+  "scan_corrections": "Düzeltmeler",
+  "@scan_corrections": {
+    "description": "Heading of the corrections list (pano 4.7 kare 2)."
+  },
+  "scan_correctionsEmpty": "Henüz düzeltme yok. Okunan cevap formundakinden farklıysa yukarıdan ekle.",
+  "@scan_correctionsEmpty": {
+    "description": "Empty corrections list (pano 4.7 kare 2)."
+  },
+  "scan_correctionRow": "{col}. kolon · {q}. soru",
+  "@scan_correctionRow": {
+    "description": "One correction row (pano 4.7 kare 3).",
+    "placeholders": {
+      "col": {
+        "type": "String"
+      },
+      "q": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_correctionChange": "{from} → {to}",
+  "@scan_correctionChange": {
+    "description": "What a correction changed (pano 4.7 kare 3): 'Boş → C'.",
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_imageLoading": "Form görüntüsü yükleniyor",
+  "@scan_imageLoading": {
+    "description": "Caption of the image skeleton (pano 4.8 kare 1)."
+  },
+  "scan_imageLoadFailed": "Görüntü yüklenemedi",
+  "@scan_imageLoadFailed": {
+    "description": "Message of the image card after it failed to load (pano 4.8 kare 1 note)."
+  },
+  "scan_answersSendFailed": "Cevaplar gönderilemedi. Düzeltmelerin duruyor; tekrar dene.",
+  "@scan_answersSendFailed": {
+    "description": "Inline alert after the answers could not be sent (pano 4.8 kare 2)."
+  },
+  "scan_answersOffline": "Bağlantı yok. Bağlantı gelince tekrar dene.",
+  "@scan_answersOffline": {
+    "description": "Inline alert when the device is offline (pano 4.8 kare 2)."
+  },
+  "scan_previousQuestionA11y": "Önceki soru",
+  "@scan_previousQuestionA11y": {
+    "description": "Accessible name of the minus button of the question stepper (pano 4.7)."
+  },
+  "scan_nextQuestionA11y": "Sonraki soru",
+  "@scan_nextQuestionA11y": {
+    "description": "Accessible name of the plus button of the question stepper (pano 4.7)."
+  },
+  "scan_questionNumberA11y": "Soru numarası",
+  "@scan_questionNumberA11y": {
+    "description": "Accessible name of the question number (pano 4.7)."
+  },
+  "scan_removeCorrectionA11y": "Düzeltmeyi kaldır: {col}. kolon, {q}. soru",
+  "@scan_removeCorrectionA11y": {
+    "description": "Accessible name of the remove button of a correction (pano 4.7 kare 3).",
+    "placeholders": {
+      "col": {
+        "type": "String"
+      },
+      "q": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_exitTitle": "Okutmadan çıkılsın mı?",
+  "@scan_exitTitle": {
+    "description": "Confirmation when closing the answer check with corrections (pano 4.7; spec exitScanConfirm)."
+  },
+  "scan_exitBody": "Düzelttiğin cevaplar kaydedilmeyecek.",
+  "@scan_exitBody": {
+    "description": "Body of the exit confirmation (spec decision, board draws no body)."
+  },
+  "scan_exitConfirm": "Çık",
+  "@scan_exitConfirm": {
+    "description": "Confirm button of the exit confirmation (spec decision)."
+  },
+  "scan_enfTitle": "Bu deneme henüz sistemde yok",
+  "@scan_enfTitle": {
+    "description": "Title of the exam request screen (pano 4.9)."
+  },
+  "scan_enfBody": "Yayınevini ve deneme adını yaz; analizini en geç 72 saat içinde hazırlayalım.",
+  "@scan_enfBody": {
+    "description": "Sub-line of the exam request screen (pano 4.9)."
+  },
+  "scan_enfSaved": "Cevapların kaydedildi. Yeniden okutman gerekmez.",
+  "@scan_enfSaved": {
+    "description": "Info card of the exam request screen (pano 4.9)."
+  },
+  "scan_fieldPublisher": "Yayınevi",
+  "@scan_fieldPublisher": {
+    "description": "Label of the publisher field (pano 4.9)."
+  },
+  "scan_fieldPublisherHint": "Örn: Örnek Yayınları",
+  "@scan_fieldPublisherHint": {
+    "description": "Example in the publisher field (pano 4.9)."
+  },
+  "scan_fieldExamName": "Deneme adı",
+  "@scan_fieldExamName": {
+    "description": "Label of the exam name field (pano 4.9)."
+  },
+  "scan_fieldExamNameHint": "Örn: Türkiye Geneli Deneme 7",
+  "@scan_fieldExamNameHint": {
+    "description": "Example in the exam name field (pano 4.9)."
+  },
+  "scan_enfSubmit": "Analizimi Hazırlayın",
+  "@scan_enfSubmit": {
+    "description": "Primary button of the exam request screen (pano 4.9)."
+  },
+  "scan_errPublisherRequired": "Yayınevini yaz.",
+  "@scan_errPublisherRequired": {
+    "description": "Error of the empty publisher field (pano 4.9 kare 2)."
+  },
+  "scan_errExamNameRequired": "Deneme adını yaz.",
+  "@scan_errExamNameRequired": {
+    "description": "Error of the empty exam name field (pano 4.9 kare 2)."
+  },
+  "scan_enfConfirmTitle": "Talep oluşturulsun mu?",
+  "@scan_enfConfirmTitle": {
+    "description": "Title of the request confirmation sheet (pano 4.9 kare 3)."
+  },
+  "scan_enfConfirmNote": "Analizin hazır olunca Analizlerim › Denemelerim'de görünür.",
+  "@scan_enfConfirmNote": {
+    "description": "Note of the request confirmation sheet (pano 4.9 kare 3)."
+  },
+  "scan_sendRequest": "Talebi Gönder",
+  "@scan_sendRequest": {
+    "description": "Primary button of the request confirmation sheet (pano 4.9 kare 3)."
+  },
+  "scan_enfDoneTitle": "Talebin alındı",
+  "@scan_enfDoneTitle": {
+    "description": "Title after the request was sent (pano 4.9 kare 4)."
+  },
+  "scan_enfDoneBody": "En geç 72 saat içinde hazır. Hazır olunca Analizlerim › Denemelerim'de görünecek.",
+  "@scan_enfDoneBody": {
+    "description": "Body after the request was sent (pano 4.9 kare 4)."
+  },
+  "scan_goHome": "Anasayfa",
+  "@scan_goHome": {
+    "description": "Primary button after the request was sent (pano 4.9 kare 4)."
+  },
+  "scan_formNotFoundTitle": "Formu bulamadık",
+  "@scan_formNotFoundTitle": {
+    "description": "Title of the form-not-found screen (pano 4.10 kare 1)."
+  },
+  "scan_formNotFoundBody": "Fotoğrafta cevap alanı seçilemedi. Formun tamamı görünsün, ışık yansımasın, ders adları şeridi dışarıda kalsın.",
+  "@scan_formNotFoundBody": {
+    "description": "Body of the form-not-found screen (pano 4.10 kare 1)."
+  },
+  "scan_howToShoot": "Nasıl Çekilir?",
+  "@scan_howToShoot": {
+    "description": "Quiet button of the form-not-found screen; opens the how-to-shoot sheet (pano 4.10 kare 1)."
+  },
+  "scan_omrClosedTitle": "Optik okuma şu an kapalı",
+  "@scan_omrClosedTitle": {
+    "description": "Title of the maintenance sheet (pano 4.10 kare 2)."
+  },
+  "scan_omrClosedBody": "Kısa bir bakım yapıyoruz. Birazdan tekrar dene.",
+  "@scan_omrClosedBody": {
+    "description": "Body of the maintenance sheet (pano 4.10 kare 2)."
+  },
+  "scan_ok": "Tamam",
+  "@scan_ok": {
+    "description": "Button of the maintenance sheet and the offline screen (pano 4.10 kare 2, 3)."
+  },
+  "scan_offlineTitle": "Bağlantı yok",
+  "@scan_offlineTitle": {
+    "description": "Title of the planned offline screen (pano 4.10 kare 3)."
+  },
+  "scan_offlineQueuedBody": "Fotoğrafın telefonunda saklandı. Bağlantı gelince gönderilecek.",
+  "@scan_offlineQueuedBody": {
+    "description": "Body of the planned offline screen; used only when the offline queue exists (pano 4.10 kare 3)."
+  },
+  "scan_retryNow": "Şimdi Tekrar Dene",
+  "@scan_retryNow": {
+    "description": "Quiet button of the planned offline screen (pano 4.10 kare 3)."
+  },
+  "scan_cameraFailTitle": "Kamera açılamadı",
+  "@scan_cameraFailTitle": {
+    "description": "Title of the camera failure screen (pano 4.10 kare 4)."
+  },
+  "scan_cameraFailBody": "Başka bir uygulama kamerayı kullanıyor olabilir. Onu kapatıp tekrar dene.",
+  "@scan_cameraFailBody": {
+    "description": "Body of the camera failure screen (pano 4.10 kare 4)."
+  },
+  "scan_debugGalleryPick": "Galeriden seç",
+  "@scan_debugGalleryPick": {
+    "description": "Debug-only button of the camera failure screen (SCAN_GALLERY define; never in release)."
+  }
+}
