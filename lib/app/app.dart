@@ -13,9 +13,8 @@ import 'package:smap/services/session_manager.dart';
 
 /// The root widget (`MaterialApp.router`).
 ///
-/// - Theme: `SmapTheme.light()` for both slots and `ThemeMode.light` until the
-///   legacy screens are migrated (K9); the dark theme is built and ready for
-///   the day `ThemeMode.system` goes on.
+/// - Theme: `SmapTheme.light()` / `SmapTheme.dark()`, following the system
+///   (`AppThemeMode`, K9); a debug build can force one with `THEME_MODE`.
 /// - Language: only Turkish; `AppLocalizations` plus the Material, Cupertino
 ///   and widgets delegates of Flutter.
 /// - Router: the one `AppRouter`, re-running its guards when the session

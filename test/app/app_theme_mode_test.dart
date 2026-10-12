@@ -11,7 +11,7 @@ void main() {
     expect(AppThemeMode.of('Dark'), isNull);
   });
 
-  test('without the define the app stays light (K9)', () {
-    expect(AppThemeMode.current, ThemeMode.light);
+  test('without the define the app follows the system (K9)', () {
+    expect(AppThemeMode.current, ThemeMode.system);
   });
 }

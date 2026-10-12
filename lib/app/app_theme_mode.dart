@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-/// The app's theme mode (plan K9: light only while the screens migrate;
-/// `ThemeMode.system` once the dark audit, task FIN1, is done).
+/// The app's theme mode: the system's (plan K9; the dark audit, tasks FIN1
+/// and FIN4, is done).
 ///
 /// A debug build can force a mode for the audit:
 /// `flutter run --dart-define=THEME_MODE=dark` (or `light`, `system`).
@@ -16,7 +16,7 @@ abstract final class AppThemeMode {
       final forced = of(_define);
       if (forced != null) return forced;
     }
-    return ThemeMode.light;
+    return ThemeMode.system;
   }
 
   /// The mode a `THEME_MODE` value names; `null` for anything else.
