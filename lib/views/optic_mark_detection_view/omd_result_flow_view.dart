@@ -4,6 +4,7 @@ import 'dart:convert'; // 1. Mutlaka bu kütüphaneyi ekle
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:smap/core/theme/app_colors.dart';
 
 final Map<String, Map<String, String>> lessonNameAndPhoto = {
   "66214a6982ff212039ea3294": {
@@ -160,21 +161,26 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
 
   /// Sekme değişiminde çağıracağınız metod
   void _onTabChanged(int newTypeIndex, int tabType) {
-    print("on tab changeced calisti");
     setState(() {
       if (tabType == 1) {
-        _currentType = newTypeIndex;
-
-        // Sekme indeksi (0, 1, 2) -> aytNets Key (2, 3, 4)
-        final int netKey = newTypeIndex;
-        final selectedNetObj =
-            _aytNets?[netKey] ?? _aytNets?[netKey.toString()];
-
-        if (selectedNetObj != null) {
-          _totalNet = selectedNetObj['net']?.toString() ?? "0";
-          _totalTrue = selectedNetObj['true']?.toString() ?? "0";
-          _totalWrong = selectedNetObj['wrong']?.toString() ?? "0";
-          _totalPass = selectedNetObj['pass']?.toString() ?? "0";
+        if (newTypeIndex == 0) {
+          // tyt ise
+          _totalNet = _mexamFound?['net']?.toString() ?? "0";
+          _totalTrue = _mexamFound?['true']?.toString() ?? "0";
+          _totalWrong = _mexamFound?['wrong']?.toString() ?? "0";
+          _totalPass = _mexamFound?['pass']?.toString() ?? "0";
+        } else {
+          _currentType = newTypeIndex;
+          // Sekme indeksi (0, 1, 2) -> aytNets Key (2, 3, 4)
+          final int netKey = newTypeIndex;
+          final selectedNetObj =
+              _aytNets?[netKey] ?? _aytNets?[netKey.toString()];
+          if (selectedNetObj != null) {
+            _totalNet = selectedNetObj['net']?.toString() ?? "0";
+            _totalTrue = selectedNetObj['true']?.toString() ?? "0";
+            _totalWrong = selectedNetObj['wrong']?.toString() ?? "0";
+            _totalPass = selectedNetObj['pass']?.toString() ?? "0";
+          }
         }
       } else if (tabType == 2) {
         _currentTypeRanks = newTypeIndex;
@@ -284,15 +290,8 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
   List<Map<String, dynamic>> mockLessons = [];
 
   void _nextPage() {
-    if (_currentStep < 2) {
-      _pageController.nextPage(
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
-    } else {
-      _showSuccessSnackBar(context);
-      Navigator.of(context).popUntil((route) => route.isFirst);
-    }
+    _showSuccessSnackBar(context);
+    Navigator.of(context).popUntil((route) => route.isFirst);
   }
 
   void _prevPage() {
@@ -308,7 +307,7 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('Denemeniz Başarıyla Kaydedildi!'),
-        backgroundColor: Colors.green,
+        backgroundColor: AppColors.appBarBlueGrey,
         behavior: SnackBarBehavior.floating,
       ),
     );
@@ -360,15 +359,15 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
           Container(
             padding: EdgeInsets.only(
               top: MediaQuery.of(context).padding.top,
-              bottom: 10,
+              bottom: 8,
               left: 16,
               right: 16,
             ),
             decoration: const BoxDecoration(
               color: kDarkNavy,
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(32),
-                bottomRight: Radius.circular(32),
+                bottomLeft: Radius.circular(16),
+                bottomRight: Radius.circular(16),
               ),
             ),
             child: Column(
@@ -377,6 +376,7 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    // Geri Butonu
                     IconButton(
                       icon: const Icon(
                         Icons.arrow_back_ios,
@@ -391,28 +391,43 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
                         }
                       },
                     ),
-                    const Text(
-                      'Deneme Analizi',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                      ),
+
+                    // Logo ve Başlık Yan Yana
+                    Row(
+                      children: [
+                        Image.asset(
+                          'assets/smaplogo.png',
+                          width: 28, // Logonun genişliği
+                          height: 28, // Logonun yüksekliği
+                          fit: BoxFit.contain,
+                        ),
+                        const SizedBox(
+                          width: 8,
+                        ), // Logo ile yazı arasındaki boşluk
+                        const Text(
+                          'Deneme Analizi',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
                     ),
+
                     // Koşullu Avatar Yapısı
                     CircleAvatar(
                       radius: 16,
-                      backgroundColor: Colors
-                          .transparent, // Arka planı şeffaf yaparsan ikon temiz durur
+                      backgroundColor: Colors.transparent,
                       backgroundImage:
                           (userData != null && userData!['photo'] != null)
-                          ? NetworkImage(userData!['photo'].toString())
-                          : null, // Fotoğraf yoksa null döner ve child gözükür
+                          ? AssetImage('assets/avatars/${userData!['photo']}')
+                          : null,
                       child: (userData == null || userData!['photo'] == null)
                           ? const Icon(
                               Icons.account_circle,
                               color: Colors.white70,
-                              size: 32, // Avatar radius 16 ise 32 tam kaplar
+                              size: 32,
                             )
                           : null,
                     ),
@@ -439,9 +454,7 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            // Üst İstatistikler (Her zaman görünür)
-            // Kitap Görseli
-            const SizedBox(height: 10),
+            // Deneme Görseli
             Container(
               height: 200,
               width: 150,
@@ -456,38 +469,44 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
                   ),
                 ],
               ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: _fullUrl.isNotEmpty
-                    ? Image.network(
-                        _fullUrl,
-                        fit: BoxFit.cover,
-                        loadingBuilder: (context, child, loadingProgress) {
-                          if (loadingProgress == null) return child;
-                          return Center(
-                            child: CircularProgressIndicator(
-                              value: loadingProgress.expectedTotalBytes != null
-                                  ? loadingProgress.cumulativeBytesLoaded /
-                                        loadingProgress.expectedTotalBytes!
-                                  : null,
-                            ),
-                          );
-                        },
-                        errorBuilder: (context, error, stackTrace) {
-                          return ColoredBox(
-                            color: Colors.grey.shade200,
-                            child: const Icon(
-                              Icons.broken_image,
-                              color: Colors.grey,
-                              size: 50,
-                            ),
-                          );
-                        },
-                      )
-                    : const Icon(Icons.book, color: Colors.grey, size: 50),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: _fullUrl.isNotEmpty
+                      ? Image.network(
+                          _fullUrl,
+                          fit: BoxFit.contain,
+                          loadingBuilder: (context, child, loadingProgress) {
+                            if (loadingProgress == null) return child;
+                            return Center(
+                              child: CircularProgressIndicator(
+                                value:
+                                    loadingProgress.expectedTotalBytes != null
+                                    ? loadingProgress.cumulativeBytesLoaded /
+                                          loadingProgress.expectedTotalBytes!
+                                    : null,
+                              ),
+                            );
+                          },
+                          errorBuilder: (context, error, stackTrace) {
+                            return ColoredBox(
+                              color: Colors.grey.shade200,
+                              child: const Icon(
+                                Icons.broken_image,
+                                color: Colors.grey,
+                                size: 50,
+                              ),
+                            );
+                          },
+                        )
+                      : const Icon(Icons.book, color: Colors.grey, size: 50),
+                ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
 
             Text(
               _publisherName,
@@ -502,13 +521,14 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
               _itemName,
               style: TextStyle(
                 color: Color(0xFF111827),
-                fontSize: 22,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 24),
-            _buildAytNetsTabs(
+            const SizedBox(height: 18),
+
+            _buildNets(
               totalNet: _totalNet,
               totalTrue: _totalTrue,
               totalWrong: _totalWrong,
@@ -544,6 +564,28 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
                 children: [
                   Expanded(
                     child: GestureDetector(
+                      onTap: () => setState(() => _isRanking = true),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        decoration: BoxDecoration(
+                          color: _isRanking ? kDarkBlue : Colors.transparent,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Text(
+                          'Puan ve Sıralama',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: _isRanking
+                                ? Colors.white
+                                : const Color(0xFF64748B),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: GestureDetector(
                       onTap: () => setState(() => _isRanking = false),
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 12),
@@ -556,28 +598,6 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: !_isRanking
-                                ? Colors.white
-                                : const Color(0xFF64748B),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () => setState(() => _isRanking = true),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(vertical: 12),
-                        decoration: BoxDecoration(
-                          color: _isRanking ? kDarkBlue : Colors.transparent,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Text(
-                          'Sıralama',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: _isRanking
                                 ? Colors.white
                                 : const Color(0xFF64748B),
                             fontWeight: FontWeight.bold,
@@ -611,7 +631,7 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
                 ),
                 onPressed: _nextPage,
                 child: const Text(
-                  'Devam Et',
+                  'Ana Sayfaya Dön',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -626,7 +646,7 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
     );
   }
 
-  Widget _buildAytNetsTabs({
+  Widget _buildNets({
     required dynamic totalNet,
     required dynamic totalTrue,
     required dynamic totalWrong,
@@ -634,32 +654,33 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
     return Column(
       children: [
         // Puan Türü Sekmeleri (Eşit Ağırlık, Sayısal, Sözel)
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(12),
+        if (!_isTypeOne)
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _buildSubTab(
+                  title: "Eşit Ağırlık",
+                  isActive: _currentType == 2, // Seçili sekme kontrolü
+                  onTap: () => _onTabChanged(2, 1), // Indeks: 0
+                ),
+                _buildSubTab(
+                  title: "Sayısal",
+                  isActive: _currentType == 3,
+                  onTap: () => _onTabChanged(3, 1), // Indeks: 1
+                ),
+                _buildSubTab(
+                  title: "Sözel",
+                  isActive: _currentType == 4,
+                  onTap: () => _onTabChanged(4, 1), // Indeks: 2
+                ),
+              ],
+            ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildSubTab(
-                title: "Eşit Ağırlık",
-                isActive: _currentType == 2, // Seçili sekme kontrolü
-                onTap: () => _onTabChanged(2, 1), // Indeks: 0
-              ),
-              _buildSubTab(
-                title: "Sayısal",
-                isActive: _currentType == 3,
-                onTap: () => _onTabChanged(3, 1), // Indeks: 1
-              ),
-              _buildSubTab(
-                title: "Sözel",
-                isActive: _currentType == 4,
-                onTap: () => _onTabChanged(4, 1), // Indeks: 2
-              ),
-            ],
-          ),
-        ),
         const SizedBox(
           height: 12,
         ), // Sekmeler ile istatistik kutuları arasına boşluk
@@ -972,7 +993,6 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
       decoration: BoxDecoration(
         color: kLightBg,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white, width: 2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -982,13 +1002,17 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
               Image.asset(img, width: 26, height: 26, fit: BoxFit.contain),
               const SizedBox(width: 6),
               Expanded(
-                child: Text(
-                  title,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown, // Sadece sığmadığı durumda küçültür
+                  alignment:
+                      Alignment.centerLeft, // Sola dayalı kalmasını sağlar
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14, // İdeal boyut (sığmazsa otomatik küçülür)
+                    ),
                   ),
-                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],
@@ -997,7 +1021,7 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _subStat('Doğru', d.toString(), kGreen),
+              _subStat('Doğru', d.toString(), Color(0xFF3D526D)),
               _subStat('Yanlış', y.toString(), kRed),
               _subStat('Boş', b.toString(), Colors.black),
             ],
@@ -1049,191 +1073,6 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  // İstatistik Sütun Yardımcısı
-  Widget _buildStatColumn(String label, String value, Color color) {
-    return Column(
-      children: [
-        Text(label, style: const TextStyle(fontSize: 10, color: Colors.grey)),
-        const SizedBox(height: 4),
-        Text(
-          value,
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-            color: color,
-          ),
-        ),
-      ],
-    );
-  }
-
-  // Swiper İçindeki Tekil Kart Tasarımı
-  Widget _buildSwiperCard(Map<String, dynamic> data) {
-    return Container(
-      // Boyutu buradan sabitleyebilirsin (Opsiyonel)
-      decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(
-          color: Colors.grey.shade300, // Daha belirgin bir gri
-          width: 2, // Kalınlığı biraz artırdık
-        ),
-        borderRadius: BorderRadius.circular(24),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(
-              0.01,
-            ), // Opacity'yi 0.06'dan 0.15'e çıkardık (daha koyu)
-            blurRadius:
-                12, // Yayılma yumuşaklığı (azaltırsan daha sert görünür)
-            spreadRadius: 3, // Gölgenin alanını genişlettik
-            offset: const Offset(0, 6), // Aşağı yönlü kayma
-          ),
-        ],
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Üst Başlık ve İkon Alanı
-            Row(
-              children: [
-                Image.asset(
-                  'assets/smaplogo.png',
-                  height: 32,
-                ), // Görseldeki ikon seti
-                const SizedBox(width: 12),
-                const Expanded(
-                  child: Text(
-                    'Canlıların Yapısındaki Temel Bileşikler',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w800,
-                      color: Color(0xFF1A1C1E),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 12),
-            const Divider(color: Color(0xFFEEEEEE), thickness: 1),
-            const SizedBox(height: 16),
-
-            // İçerik Başlığı ve Yıldız
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Text(
-                    'Monosakkarit Yapı',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF2D313A),
-                    ),
-                  ),
-                ),
-                Icon(
-                  Icons.star_outline_rounded,
-                  color: Colors.orangeAccent,
-                  size: 28,
-                ),
-              ],
-            ),
-            const SizedBox(height: 12),
-
-            // Açıklama Metni
-            Expanded(
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: Text(
-                  'Monosakkaritler, karbonhidratların en basit yapı taşlarıdır ve daha küçük birimlere hidroliz edilemezler. Genel formülleri (CH2O)n şeklindedir...',
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.grey.shade600,
-                    height: 1.5,
-                  ),
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 16),
-            const Divider(color: Color(0xFFEEEEEE), thickness: 1),
-            const SizedBox(height: 16),
-
-            // Alt Butonlar (Sil ve Detay)
-            Row(
-              children: [
-                Expanded(
-                  child: OutlinedButton(
-                    onPressed: () {},
-                    style: OutlinedButton.styleFrom(
-                      side: BorderSide(color: Colors.grey.shade300),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                    ),
-                    child: Text(
-                      'Sil',
-                      style: TextStyle(color: Colors.grey.shade700),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(
-                        0xFF0D2344,
-                      ), // Görseldeki koyu lacivert
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                    ),
-                    child: const Text(
-                      'Detay',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCircleButton(
-    IconData icon,
-    Color iconColor,
-    Color bgColor,
-    VoidCallback onTap,
-  ) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: 65,
-        height: 65,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          shape: BoxShape.circle,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: Center(child: Icon(icon, color: bgColor, size: 30)),
       ),
     );
   }

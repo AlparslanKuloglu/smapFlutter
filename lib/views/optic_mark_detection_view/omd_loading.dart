@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart'; // Eklendi
 import 'package:smap/core/extensions/dartz_extension.dart';
+import 'package:smap/core/theme/app_colors.dart';
 import 'package:smap/repository/omd_repository/omd_repository.dart';
 import 'package:smap/views/optic_mark_detection_view/omd_result_flow_view.dart';
 
@@ -385,6 +386,7 @@ class _OmdVerificationViewState extends State<OmdVerificationView> {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      backgroundColor: Colors.white, // <-- Arka planı tamamen beyaz yapar
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
@@ -406,10 +408,12 @@ class _OmdVerificationViewState extends State<OmdVerificationView> {
                     width: 40,
                     height: 4,
                     decoration: BoxDecoration(
-                      color: Colors.grey[300],
+                      color: const Color.fromARGB(255, 133, 140, 148),
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
+                  const SizedBox(height: 10),
+
                   const Text(
                     "Soru Düzenle",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
