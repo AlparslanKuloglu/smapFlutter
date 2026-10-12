@@ -56,13 +56,9 @@ void main() {
       expect(edirne.title, 'Edirne-Segedin Antlaşması (1444)');
       expect(edirne.body, startsWith("Haçlılarla Osmanlı Devleti'nin"));
       expect(edirne.lessonId, tarihLesson);
-      final two = DeckCard(
+      const two = DeckCard(
         key: 'x',
-        card: const InfoCard(
-          itemId: 'x',
-          name: 'A',
-          descriptions: ['b', ' ', 'c '],
-        ),
+        card: InfoCard(itemId: 'x', name: 'A', descriptions: ['b', ' ', 'c ']),
       );
       expect(two.body, 'b\nc');
     });
@@ -148,8 +144,8 @@ void main() {
     );
 
     test('leaves out a card with nothing to read', () {
-      final library = DeckLibrary.fromSources([
-        const DeckSource(
+      final library = DeckLibrary.fromSources(const [
+        DeckSource(
           decks: LessonCardDecks(
             missing: [
               InfoCard(itemId: 'e'),
@@ -162,8 +158,8 @@ void main() {
     });
 
     test('a card without an id gets a made-up key and cannot be learned', () {
-      final library = DeckLibrary.fromSources([
-        const DeckSource(
+      final library = DeckLibrary.fromSources(const [
+        DeckSource(
           decks: LessonCardDecks(missing: [InfoCard(name: 'Kimliksiz')]),
         ),
       ]);
