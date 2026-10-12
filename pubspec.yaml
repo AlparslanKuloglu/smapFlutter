@@ -85,7 +85,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: "^0.13.1" # En güncel sürümü kullanabilirsiniz
+  flutter_launcher_icons: ^0.14.4 # iOS dark/tinted variants
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -102,13 +102,23 @@ dev_dependencies:
   flutter_gen_runner: ^5.12.0
 
 
+# App icon (board 1.26 "Öneri · A, Lacivert Pafta Zemin"). Sources and SVGs live in
+# assets/brand/icon/ (not bundled: assets/brand/ is not recursive). iOS gets the
+# light, dark and tinted variants; Android the adaptive layers (the foreground is
+# already laid out in the 108 dp grid, mark inside the 66 dp safe area, so the
+# default 16 % inset is turned off). Regenerate with
+# `dart run flutter_launcher_icons`.
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/logotext.png"
-  # Android 8.0+ için adaptive icon kullanmak isterseniz:
-  # adaptive_icon_background: "#FFFFFF" # veya renk kodu/arka plan görseli
-  # adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"
+  image_path: "assets/brand/icon/app_icon.png"
+  remove_alpha_ios: true
+  image_path_ios_dark_transparent: "assets/brand/icon/app_icon_dark.png"
+  image_path_ios_tinted_grayscale: "assets/brand/icon/app_icon_tinted.png"
+  adaptive_icon_background: "assets/brand/icon/adaptive_background.png"
+  adaptive_icon_foreground: "assets/brand/icon/adaptive_foreground.png"
+  adaptive_icon_foreground_inset: 0
+  min_sdk_android: 24
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -124,7 +134,6 @@ flutter:
 
   assets:
     - assets/
-    - assets/splash/
     - assets/icons/    # Alt klasördeki resimler için bunu EKLEMENİZ gerekir
     - assets/svgs/
     - assets/menuIcons/
@@ -176,13 +185,16 @@ flutter_gen:
 # same picture as `AppLockup(vertical, onNavy)` on `#0F294A`, in both themes.
 # The images are the 4x renders of `assets/brand/smap_lockup_vertical_on_navy.svg`
 # (461 x 616 px = 115,2 x 154 pt); the Android 12 icon is the same lockup
-# scaled into the 960 x 960 canvas (the system masks it to a circle).
+# drawn 1 pt = 1 dp into the 960 x 960 canvas (288 dp; the system masks it to a
+# 192 dp circle, the lockup's farthest point is 91 dp from the center), so the
+# hand-over to StartupView keeps the same size on Android 12 too.
 # Regenerate with `dart run flutter_native_splash:create`.
 flutter_native_splash:
   color: "#0F294A"
   image: assets/splash/smap_splash.png
   android_12:
     color: "#0F294A"
+    icon_background_color: "#0F294A"
     image: assets/splash/smap_splash_android12.png
   ios_content_mode: center
   android_gravity: center
