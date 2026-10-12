@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 import 'package:smap/core/domain/user_role.dart';
+import 'package:smap/features/debug/launch_env.dart';
 
 /// A debug-only way to look at a shell without an account:
 /// `flutter run --dart-define=SHELL_PREVIEW=student` (or `coach`) opens the
@@ -14,6 +15,13 @@ abstract final class ShellPreview {
 
   /// The role to preview; `null` when the preview is off.
   static UserRole? get role => kDebugMode ? parse(_define) : null;
+
+  /// The tab the preview opens on (0 to 3, bar order): the process
+  /// environment `SHELL_PREVIEW_TAB` (`SIMCTL_CHILD_SHELL_PREVIEW_TAB=2
+  /// xcrun simctl launch …`), so a screenshot run can visit every tab
+  /// without taps. 0 when unset or when the preview is off.
+  static int get initialTab =>
+      active ? int.tryParse(debugLaunchEnv('SHELL_PREVIEW_TAB') ?? '') ?? 0 : 0;
 
   /// Whether the preview is on.
   static bool get active => role != null;

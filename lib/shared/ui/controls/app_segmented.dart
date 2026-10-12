@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:smap/core/services/app_haptics.dart';
 import 'package:smap/core/theme/app_motion.dart';
@@ -128,31 +130,49 @@ class AppSegmented<T> extends StatelessWidget {
         final minHeight = anyCounter && !inline ? _thumbTwoLine : _thumb;
         final slide = context.motion(AppMotion.base, reduced: Duration.zero);
 
-        final track = DecoratedBox(
-          decoration: BoxDecoration(
-            color: onNavy ? colors.bgNavyRaised : colors.bgSunken,
-            borderRadius: AppRadius.borderMd,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(_pad),
-            child: Stack(
-              children: [
-                if (selected >= 0)
-                  AnimatedPositioned(
-                    duration: slide,
-                    curve: AppMotion.standard,
-                    left: slots[selected].left,
-                    width: slots[selected].width,
-                    top: 0,
-                    bottom: 0,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: onNavy ? colors.textOnNavy : colors.primary,
-                        borderRadius: AppRadius.borderSm,
-                      ),
+        // The track is 44 (or more) high and the touch target 48: the extra
+        // [edge] pt above and below the track are part of every option's hit
+        // area (the options span the whole 48), only the track is drawn
+        // shorter.
+        // (A tight parent, the navy band's 44, leaves no extra: the track
+        // fills it and the hit area is the 44.)
+        final boxHeight = constraints.hasTightHeight
+            ? constraints.maxHeight
+            : AppSize.touch;
+        final edge = math.max(0.0, (boxHeight - (minHeight + 2 * _pad)) / 2);
+        final outset = edge + _pad;
+        final track = ConstrainedBox(
+          constraints: const BoxConstraints(minHeight: AppSize.touch),
+          child: Stack(
+            children: [
+              Positioned.fill(
+                top: edge,
+                bottom: edge,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: onNavy ? colors.bgNavyRaised : colors.bgSunken,
+                    borderRadius: AppRadius.borderMd,
+                  ),
+                ),
+              ),
+              if (selected >= 0)
+                AnimatedPositioned(
+                  duration: slide,
+                  curve: AppMotion.standard,
+                  left: _pad + slots[selected].left,
+                  width: slots[selected].width,
+                  top: outset,
+                  bottom: outset,
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: onNavy ? colors.textOnNavy : colors.primary,
+                      borderRadius: AppRadius.borderSm,
                     ),
                   ),
-                IntrinsicHeight(
+                ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: _pad),
+                child: IntrinsicHeight(
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -167,6 +187,7 @@ class AppSegmented<T> extends StatelessWidget {
                             selected: i == selected,
                             inline: inline,
                             minHeight: minHeight,
+                            outset: outset,
                             onNavy: onNavy,
                             colors: colors,
                             onTap: onChanged == null
@@ -182,16 +203,11 @@ class AppSegmented<T> extends StatelessWidget {
                     ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         );
-        // The track is 44 (or more) high; the 48 touch target is the extra
-        // 2 pt above and below, kept as invisible padding.
-        return ConstrainedBox(
-          constraints: const BoxConstraints(minHeight: AppSize.touch),
-          child: Center(child: track),
-        );
+        return track;
       },
     );
   }
@@ -220,6 +236,7 @@ class _SegmentOption<T> extends StatelessWidget {
     required this.selected,
     required this.inline,
     required this.minHeight,
+    required this.outset,
     required this.onNavy,
     required this.colors,
     required this.onTap,
@@ -231,6 +248,9 @@ class _SegmentOption<T> extends StatelessWidget {
   final bool selected;
   final bool inline;
   final double minHeight;
+
+  /// Hit area above and below the thumb (track padding plus the 48 target).
+  final double outset;
   final bool onNavy;
   final SmapColors colors;
   final VoidCallback? onTap;
@@ -281,35 +301,38 @@ class _SegmentOption<T> extends StatelessWidget {
       child: AppPressable(
         onTap: onTap,
         scale: 1,
-        builder: (context, states) => AppFocusRing(
-          focused: states.contains(WidgetState.focused),
-          style: AppFocusRingStyle.inset,
-          borderRadius: AppRadius.borderSm,
-          child: ConstrainedBox(
-            constraints: BoxConstraints(minHeight: minHeight),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: AppSpacing.s4,
-                vertical: AppSpacing.s4 / 2,
-              ),
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    _FadingText(
-                      text: title,
-                      style: base,
-                      color: titleColor,
-                      duration: fade,
-                    ),
-                    if (stacked)
+        builder: (context, states) => Padding(
+          padding: EdgeInsets.symmetric(vertical: outset),
+          child: AppFocusRing(
+            focused: states.contains(WidgetState.focused),
+            style: AppFocusRingStyle.inset,
+            borderRadius: AppRadius.borderSm,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: minHeight),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.s4,
+                  vertical: AppSpacing.s4 / 2,
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
                       _FadingText(
-                        text: segment.counter!,
-                        style: text.caption,
-                        color: counterColor,
+                        text: title,
+                        style: base,
+                        color: titleColor,
                         duration: fade,
                       ),
-                  ],
+                      if (stacked)
+                        _FadingText(
+                          text: segment.counter!,
+                          style: text.caption,
+                          color: counterColor,
+                          duration: fade,
+                        ),
+                    ],
+                  ),
                 ),
               ),
             ),

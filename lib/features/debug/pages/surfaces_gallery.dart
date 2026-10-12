@@ -94,7 +94,6 @@ class _SurfacesGalleryState extends State<SurfacesGallery> {
                   trailing: AppSwitch(
                     value: _ready,
                     onChanged: (v) => setState(() => _ready = v),
-                    semanticLabel: 'Deneme sonucun hazır',
                   ),
                   onTap: () => setState(() => _ready = !_ready),
                 ),
@@ -104,7 +103,6 @@ class _SurfacesGalleryState extends State<SurfacesGallery> {
                   trailing: AppSwitch(
                     value: _reminder,
                     onChanged: (v) => setState(() => _reminder = v),
-                    semanticLabel: 'Çalışma hatırlatıcısı',
                   ),
                   onTap: () => setState(() => _reminder = !_reminder),
                 ),

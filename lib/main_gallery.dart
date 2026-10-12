@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smap/core/theme/smap_theme.dart';
 import 'package:smap/features/debug/component_gallery_view.dart';
 import 'package:smap/features/debug/gallery_settings.dart';
+import 'package:smap/features/debug/launch_env.dart';
 import 'package:smap/l10n/app_localizations.dart';
 
 /// Entry point of the component gallery:
@@ -45,6 +46,8 @@ class _GalleryAppState extends State<GalleryApp> {
       builder: (context, _) => MaterialApp(
         title: 'SMAP',
         debugShowCheckedModeBanner: false,
+        // `GALLERY_SEMANTICS=true` draws the semantics tree over the page.
+        showSemanticsDebugger: debugLaunchEnv('GALLERY_SEMANTICS') == 'true',
         theme: SmapTheme.light(),
         darkTheme: SmapTheme.dark(),
         themeMode: _settings.dark ? ThemeMode.dark : ThemeMode.light,

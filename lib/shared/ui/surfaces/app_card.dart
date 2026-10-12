@@ -35,7 +35,9 @@ class AppCard extends StatelessWidget {
   /// Makes the card tappable.
   final VoidCallback? onTap;
 
-  /// The accessible name of a tappable card whose text is not enough.
+  /// The accessible name of a tappable card whose text is not enough. When
+  /// given, it is the card's whole reading: the texts inside are not read
+  /// again (single reading).
   final String? semanticLabel;
   final BorderRadius radius;
 
@@ -69,10 +71,15 @@ class AppCard extends StatelessWidget {
     }
 
     if (onTap == null) return surface(pressed: false, focused: false);
+    // A card with a [semanticLabel] reads as that one sentence: its inner
+    // texts and the tap node of the gesture detector are left out. Without
+    // `excludeSemantics` the two `onTap` actions cannot merge, and the screen
+    // reader met the label on one node and an unnamed "button" on another.
     return Semantics(
       button: true,
       label: semanticLabel,
       onTap: onTap,
+      excludeSemantics: semanticLabel != null,
       child: AppPressable(
         onTap: onTap,
         builder: (context, states) => surface(

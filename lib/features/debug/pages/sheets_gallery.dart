@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:smap/core/theme/app_motion.dart';
@@ -5,6 +7,7 @@ import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/subject_tone.dart';
 import 'package:smap/core/theme/theme_context.dart';
 import 'package:smap/features/debug/gallery_widgets.dart';
+import 'package:smap/features/debug/launch_env.dart';
 import 'package:smap/shared/ui/buttons/app_button.dart';
 import 'package:smap/shared/ui/controls/app_chip_group.dart';
 import 'package:smap/shared/ui/controls/app_segmented.dart';
@@ -41,6 +44,33 @@ class _SheetsGalleryState extends State<SheetsGallery> {
     AppSelectOption(value: '12', label: '12. Sınıf'),
     AppSelectOption(value: 'mezun', label: 'Mezun'),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    // `GALLERY_ACTION` opens one sheet at start, for a screenshot run.
+    final action = debugLaunchEnv('GALLERY_ACTION');
+    if (action == null) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      switch (action) {
+        case 'small':
+          unawaited(_small());
+        case 'medium':
+          unawaited(_medium());
+        case 'full':
+          unawaited(_full(failFirst: false));
+        case 'confirm':
+          unawaited(_confirm(danger: false));
+        case 'confirmDanger':
+          unawaited(_confirm(danger: true));
+        case 'time':
+          unawaited(_quietHours());
+        case 'soon':
+          unawaited(ComingSoonSheet.show(context: context));
+      }
+    });
+  }
 
   void _say(String text) {
     if (mounted) setState(() => _result = text);

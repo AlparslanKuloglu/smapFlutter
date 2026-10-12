@@ -38,14 +38,19 @@ enum AppLogoTone {
 class AppLogoMark extends StatelessWidget {
   const AppLogoMark({
     required this.height,
-    this.tone = AppLogoTone.onLight,
+    this.tone,
     this.decorative = false,
     super.key,
   }) : assert(height >= minHeight, 'The mark is never smaller than 20 pt');
 
   /// The height; the width follows.
   final double height;
-  final AppLogoTone tone;
+
+  /// The colors; null follows the theme: [AppLogoTone.onLight] in the light
+  /// theme and [AppLogoTone.onNavy] in the dark one, where a navy hook would
+  /// vanish on the navy-tinted canvas (board 1.26 "iOS Koyu": the top hook
+  /// must not disappear on a dark ground).
+  final AppLogoTone? tone;
   final bool decorative;
 
   /// Smallest size in the app.
@@ -57,7 +62,9 @@ class AppLogoMark extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    final svg = switch (tone) {
+    final dark = Theme.brightnessOf(context) == Brightness.dark;
+    final svg = switch (tone ??
+        (dark ? AppLogoTone.onNavy : AppLogoTone.onLight)) {
       AppLogoTone.onLight => Assets.brand.smapMark,
       AppLogoTone.onNavy => Assets.brand.smapMarkOnNavy,
       AppLogoTone.monoNavy => Assets.brand.smapMarkMonoNavy,
@@ -101,7 +108,7 @@ enum AppLockupLayout {
 class AppLockup extends StatelessWidget {
   const AppLockup({
     this.layout = AppLockupLayout.horizontal,
-    this.onNavy = false,
+    this.onNavy,
     this.height,
     this.decorative = false,
     super.key,
@@ -109,8 +116,10 @@ class AppLockup extends StatelessWidget {
 
   final AppLockupLayout layout;
 
-  /// White top hook and wordmark, for the navy surface.
-  final bool onNavy;
+  /// White top hook and wordmark, for the navy surface. Null follows the
+  /// theme: white in the dark theme, navy in the light one (a navy wordmark
+  /// would vanish on the dark canvas).
+  final bool? onNavy;
 
   /// Overall height; the design size when null (36 or 154).
   final double? height;
@@ -124,7 +133,8 @@ class AppLockup extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final vertical = layout == AppLockupLayout.vertical;
-    final svg = switch ((vertical, onNavy)) {
+    final white = onNavy ?? Theme.brightnessOf(context) == Brightness.dark;
+    final svg = switch ((vertical, white)) {
       (false, false) => Assets.brand.smapLockupHorizontal,
       (false, true) => Assets.brand.smapLockupHorizontalOnNavy,
       (true, false) => Assets.brand.smapLockupVertical,

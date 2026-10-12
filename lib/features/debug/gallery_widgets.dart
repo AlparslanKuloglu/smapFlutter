@@ -2,23 +2,43 @@ import 'package:flutter/material.dart';
 import 'package:smap/core/theme/app_radius.dart';
 import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/theme_context.dart';
+import 'package:smap/features/debug/launch_env.dart';
 
 /// Scroll area of one gallery page: 16 pt page edge, a column of sections.
-class GalleryPageFrame extends StatelessWidget {
+/// `GALLERY_SCROLL` (process environment, pixels) starts it scrolled, so a
+/// screenshot run can walk a long page without taps.
+class GalleryPageFrame extends StatefulWidget {
   const GalleryPageFrame({required this.child, super.key});
 
   final Widget child;
 
   @override
+  State<GalleryPageFrame> createState() => _GalleryPageFrameState();
+}
+
+class _GalleryPageFrameState extends State<GalleryPageFrame> {
+  final ScrollController _scroll = ScrollController(
+    initialScrollOffset:
+        double.tryParse(debugLaunchEnv('GALLERY_SCROLL') ?? '') ?? 0,
+  );
+
+  @override
+  void dispose() {
+    _scroll.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      controller: _scroll,
       padding: const EdgeInsets.fromLTRB(
         AppSpacing.gutter,
         AppSpacing.s16,
         AppSpacing.gutter,
         AppSpacing.s64,
       ),
-      child: child,
+      child: widget.child,
     );
   }
 }

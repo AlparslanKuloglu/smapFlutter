@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:smap/features/debug/launch_env.dart';
 
 /// The three switches at the top of the component gallery: light or dark
 /// theme, text scale 1,0 or 1,3, reduce motion. The gallery app applies them
@@ -9,9 +10,26 @@ import 'package:flutter/widgets.dart';
 /// `GALLERY_REDUCE_MOTION=true` (and `GALLERY_PAGE=2` for the first tab, see
 /// `ComponentGalleryView`).
 class GallerySettings extends ChangeNotifier {
-  bool _dark = const bool.fromEnvironment('GALLERY_DARK');
-  bool _largeText = const bool.fromEnvironment('GALLERY_LARGE_TEXT');
-  bool _reduceMotion = const bool.fromEnvironment('GALLERY_REDUCE_MOTION');
+  bool _dark = _flag(
+    'GALLERY_DARK',
+    const bool.fromEnvironment('GALLERY_DARK'),
+  );
+  bool _largeText = _flag(
+    'GALLERY_LARGE_TEXT',
+    const bool.fromEnvironment('GALLERY_LARGE_TEXT'),
+  );
+  bool _reduceMotion = _flag(
+    'GALLERY_REDUCE_MOTION',
+    const bool.fromEnvironment('GALLERY_REDUCE_MOTION'),
+  );
+
+  /// A start value: the `--dart-define` one, or the process environment
+  /// (`SIMCTL_CHILD_GALLERY_DARK=true xcrun simctl launch …` reaches the app
+  /// as `GALLERY_DARK`), so a screenshot run needs no rebuild.
+  static bool _flag(String name, bool defined) {
+    final env = debugLaunchEnv(name);
+    return env == null ? defined : env == 'true';
+  }
 
   /// Dark theme on.
   bool get dark => _dark;
