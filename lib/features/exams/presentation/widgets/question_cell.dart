@@ -138,13 +138,17 @@ class QuestionCell extends StatelessWidget {
     final letter = marked?.trim() ?? '';
     final key = correctAnswer?.trim() ?? '';
     if (_outcome case final outcome?) {
+      // The data may not say which option was marked: the reading then names
+      // the outcome only, never "işaretin" with nothing after it.
       return switch (outcome) {
-        QuestionOutcome.correct => l10n.exams_questionCorrectA11y(
-          number,
-          letter,
-        ),
+        QuestionOutcome.correct =>
+          letter.isEmpty
+              ? l10n.examDetail_questionCorrectNoMarkA11y(number)
+              : l10n.exams_questionCorrectA11y(number, letter),
         QuestionOutcome.wrong =>
-          key.isEmpty
+          letter.isEmpty
+              ? l10n.examDetail_questionWrongNoMarkA11y(number)
+              : key.isEmpty
               ? l10n.exams_questionWrongNoKeyA11y(number, letter)
               : l10n.exams_questionWrongA11y(number, letter, key),
         QuestionOutcome.blank =>

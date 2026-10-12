@@ -58,44 +58,64 @@ class _HintCard extends StatelessWidget {
         color: colors.bgRaised,
         borderRadius: AppRadius.borderLg,
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.s12),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const _MiniForm(),
-            const SizedBox(width: AppSpacing.s12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    l10n.scan_cornersHint,
-                    style: text.bodyStrong.copyWith(color: colors.textPrimary),
-                  ),
-                  Text(
-                    l10n.scan_cornersHintSub,
-                    style: text.caption.copyWith(color: colors.textSecondary),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    // The text button pads its label by 12; the board sets the
-                    // label flush with the text above it.
-                    child: Transform.translate(
-                      offset: const Offset(-_HintCard._textButtonInset, 0),
-                      child: AppButton(
-                        label: l10n.scan_dontShowAgain,
-                        variant: AppButtonVariant.text,
-                        size: AppButtonSize.md40,
-                        focusGapColor: colors.bgRaised,
-                        onPressed: vm.hideHint,
+      // One node for the card, its parts read in order: the button's label is
+      // pulled 12 pt left of the texts, and the screen reader's geometric
+      // sort would put it before them.
+      child: Semantics(
+        container: true,
+        explicitChildNodes: true,
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.s12),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const _MiniForm(),
+              const SizedBox(width: AppSpacing.s12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Semantics(
+                      sortKey: const OrdinalSortKey(0),
+                      child: Text(
+                        l10n.scan_cornersHint,
+                        style: text.bodyStrong.copyWith(
+                          color: colors.textPrimary,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                    Semantics(
+                      sortKey: const OrdinalSortKey(1),
+                      child: Text(
+                        l10n.scan_cornersHintSub,
+                        style: text.caption.copyWith(
+                          color: colors.textSecondary,
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional.centerStart,
+                      // The text button pads its label by 12; the board sets the
+                      // label flush with the text above it.
+                      child: Transform.translate(
+                        offset: const Offset(-_HintCard._textButtonInset, 0),
+                        child: Semantics(
+                          sortKey: const OrdinalSortKey(2),
+                          child: AppButton(
+                            label: l10n.scan_dontShowAgain,
+                            variant: AppButtonVariant.text,
+                            size: AppButtonSize.md40,
+                            focusGapColor: colors.bgRaised,
+                            onPressed: vm.hideHint,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -63,19 +63,19 @@ abstract final class ChartAxis {
   }
 
   /// Which x labels are written, as point indices: all of them when they
-  /// fit, otherwise the first, the last and evenly spaced ones between, at
-  /// most [maxLabels] (the old chart's rule). With [maxLabels] below 2 only
-  /// the last point is labelled.
+  /// fit, otherwise the last point and every `k`-th one before it (`k` =
+  /// `ceil((count - 1) / (maxLabels - 1))`), so at most [maxLabels] labels
+  /// and no two closer than `k` points; the first point is written when the
+  /// stride lands on it. (Rounding evenly spaced positions could put two
+  /// labels side by side: 6 points, 4 labels gave 0, 2, 3, 5 and the two
+  /// middle ones overlapped at a large text scale.) With [maxLabels] below 2
+  /// only the last point is labelled.
   static Set<int> visibleLabelIndices(int count, int maxLabels) {
     if (count <= 0) return const {};
     if (count <= maxLabels) return {for (var i = 0; i < count; i++) i};
     if (maxLabels < 2) return {count - 1};
-    final out = <int>{0, count - 1};
-    final step = (count - 1) / (maxLabels - 1);
-    for (var i = 1; i < maxLabels - 1; i++) {
-      out.add((i * step).round());
-    }
-    return out;
+    final stride = ((count - 1) / (maxLabels - 1)).ceil();
+    return {for (var i = count - 1; i >= 0; i -= stride) i};
   }
 
   /// How many x labels fit in [plotWidth] when one label is about
