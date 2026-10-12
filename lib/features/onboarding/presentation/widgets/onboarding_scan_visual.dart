@@ -28,6 +28,11 @@ class OnboardingScanVisual extends StatelessWidget {
   /// is not a radius token).
   static const BorderRadius _corner = BorderRadius.all(Radius.circular(28));
 
+  /// The picture inside the phone is a photograph, so it keeps the light
+  /// theme's colors in the dark theme too (a dark room, a light sheet); only
+  /// the phone's own shadow and the camera button follow the theme.
+  static const SmapColors photo = SmapColors.light;
+
   /// The camera button: edge and distance from the bottom.
   static const double _button = 56;
   static const double _buttonBottom = 14;
@@ -52,8 +57,8 @@ class OnboardingScanVisual extends StatelessWidget {
             borderRadius: _corner,
             child: Stack(
               children: [
-                Positioned.fill(
-                  child: CustomPaint(painter: _ScanPhotoPainter(colors)),
+                const Positioned.fill(
+                  child: CustomPaint(painter: _ScanPhotoPainter(photo)),
                 ),
                 Positioned(
                   bottom: _buttonBottom,
@@ -86,7 +91,8 @@ class OnboardingScanVisual extends StatelessWidget {
 
 /// The camera view: background, the askew form, the dashed quadrilateral and
 /// its four handles. Coordinates are the board's (250 x 330 frame; the form
-/// is 300 x 470 scaled 0,53, turned -4 degrees).
+/// is 300 x 470 scaled 0,53, turned -4 degrees). Always painted with the light
+/// theme's colors: a photograph does not invert in the dark theme.
 class _ScanPhotoPainter extends CustomPainter {
   const _ScanPhotoPainter(this.colors);
 

@@ -19,7 +19,7 @@ class _DeletionActions extends StatelessWidget {
         AppSpacing.gutter,
         AppSpacing.s16,
         AppSpacing.gutter,
-        AppBottomBar.heightOf(context) + AppSpacing.s16,
+        accountBarClearance(context) + AppSpacing.s16,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,

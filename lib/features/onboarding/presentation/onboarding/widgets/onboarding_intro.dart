@@ -43,7 +43,10 @@ class _IntroStep extends StatelessWidget {
 /// One intro page (pano 2.1 kare 2-4): the picture in a 380 pt area, then the
 /// `display` title (two lines at most on the board) and the 16/26 sentence in
 /// `textSecondary` 12 below. The picture appears 250 ms late. A large text
-/// size scales the picture down, then scrolls.
+/// size scales the picture down, then scrolls. The picture keeps its own text
+/// size (it is an illustration with example data, drawn for the board's size):
+/// if its texts grew with the system size the cards would outgrow the area
+/// and cover the title (checked at 1,35).
 class _IntroPage extends StatelessWidget {
   const _IntroPage({required this.pageIndex, required this.visual});
 
@@ -84,7 +87,11 @@ class _IntroPage extends StatelessWidget {
                       fit: BoxFit.scaleDown,
                       child: SizedBox(
                         height: _visualHeight,
-                        child: Align(child: OnboardingReveal(child: visual)),
+                        child: Align(
+                          child: OnboardingReveal(
+                            child: MediaQuery.withNoTextScaling(child: visual),
+                          ),
+                        ),
                       ),
                     ),
                   ),

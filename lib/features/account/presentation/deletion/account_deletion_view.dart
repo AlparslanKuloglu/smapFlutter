@@ -15,7 +15,7 @@ import 'package:smap/features/account/presentation/deletion/deletion_navigator.d
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/services/current_user_service.dart';
 import 'package:smap/shared/ui/buttons/app_button.dart';
-import 'package:smap/shared/ui/navigation/app_bottom_bar.dart';
+import 'package:smap/features/account/presentation/account_bar_clearance.dart';
 import 'package:smap/shared/ui/navigation/app_detail_bar.dart';
 import 'package:smap/shared/ui/navigation/large_title_sliver.dart';
 import 'package:smap/shared/ui/surfaces/app_notice_box.dart';
