@@ -1674,6 +1674,11 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String examDetail_questionCorrectNoMarkA11y(int number) {
+    return 'Soru $number, doğru';
+  }
+
+  @override
   String get examDetail_questionErrorTitle => 'Soru yüklenemedi';
 
   @override
@@ -1682,6 +1687,11 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String examDetail_questionTitle(String number) {
     return '$number. soru';
+  }
+
+  @override
+  String examDetail_questionWrongNoMarkA11y(int number) {
+    return 'Soru $number, yanlış';
   }
 
   @override

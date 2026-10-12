@@ -2900,6 +2900,12 @@ abstract class AppLocalizations {
   /// **'{test} · {lesson}'**
   String examDetail_questionContext(String test, String lesson);
 
+  /// Question cell reading, right answer when the data does not say which option was marked (the backend sends the outcome only, spec 6.3 #9): the reading never ends in an empty "işaretin".
+  ///
+  /// In tr, this message translates to:
+  /// **'Soru {number}, doğru'**
+  String examDetail_questionCorrectNoMarkA11y(int number);
+
   /// Screen error title of Soru Detay.
   ///
   /// In tr, this message translates to:
@@ -2917,6 +2923,12 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'{number}. soru'**
   String examDetail_questionTitle(String number);
+
+  /// Question cell reading, wrong answer when the data does not say which option was marked.
+  ///
+  /// In tr, this message translates to:
+  /// **'Soru {number}, yanlış'**
+  String examDetail_questionWrongNoMarkA11y(int number);
 
   /// Section empty text of the Sorular tab (pano 5.8 'Boş metinleri').
   ///
