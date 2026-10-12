@@ -13,6 +13,10 @@ class _LessonFilterBar
   /// label ends at the page edge (pano 7.2: margin-right −12).
   static const double _buttonPull = 12;
 
+  /// Text scale from which the chip and "Kartlarım" stand on two lines: side
+  /// by side the chip would lose its count ("Eksiklerim …").
+  static const double _stackScale = 1.2;
+
   @override
   LessonFilterBarData selector(LessonDetailViewModel viewModel) =>
       viewModel.filterBar;
@@ -28,6 +32,28 @@ class _LessonFilterBar
     final known = data.cardsKnown;
     final total = data.cardsTotal;
     final missing = data.missingTotal;
+    final stacked = MediaQuery.textScalerOf(context).scale(1) >= _stackScale;
+    final Widget? chip = missing == null
+        ? null
+        : AppChip(
+            label: l10n.lessonDetail_missingFilter(TrFormat.sira(missing)),
+            size: AppChipSize.md40,
+            icon: PhosphorIconsRegular.flag,
+            selected: data.onlyMissing,
+            onTap: viewModel.toggleOnlyMissing,
+          );
+    final cards = AppButton(
+      label: known != null && total != null
+          ? l10n.lessonDetail_cardsProgress(
+              TrFormat.sira(known),
+              TrFormat.sira(total),
+            )
+          : l10n.lessonDetail_cards,
+      icon: PhosphorIconsRegular.cards,
+      variant: AppButtonVariant.text,
+      size: AppButtonSize.md40,
+      onPressed: viewModel.openCards,
+    );
     return SliverToBoxAdapter(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(
@@ -36,40 +62,30 @@ class _LessonFilterBar
           AppSpacing.gutter,
           0,
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            if (missing != null)
-              Flexible(
-                child: AppChip(
-                  label: l10n.lessonDetail_missingFilter(
-                    TrFormat.sira(missing),
+        child: stacked
+            ? Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ?chip,
+                  Transform.translate(
+                    offset: const Offset(-_buttonPull, 0),
+                    child: cards,
                   ),
-                  size: AppChipSize.md40,
-                  icon: PhosphorIconsRegular.flag,
-                  selected: data.onlyMissing,
-                  onTap: viewModel.toggleOnlyMissing,
-                ),
+                ],
               )
-            else
-              const SizedBox.shrink(),
-            Transform.translate(
-              offset: const Offset(_buttonPull, 0),
-              child: AppButton(
-                label: known != null && total != null
-                    ? l10n.lessonDetail_cardsProgress(
-                        TrFormat.sira(known),
-                        TrFormat.sira(total),
-                      )
-                    : l10n.lessonDetail_cards,
-                icon: PhosphorIconsRegular.cards,
-                variant: AppButtonVariant.text,
-                size: AppButtonSize.md40,
-                onPressed: viewModel.openCards,
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  if (chip != null)
+                    Flexible(child: chip)
+                  else
+                    const SizedBox.shrink(),
+                  Transform.translate(
+                    offset: const Offset(_buttonPull, 0),
+                    child: cards,
+                  ),
+                ],
               ),
-            ),
-          ],
-        ),
       ),
     );
   }

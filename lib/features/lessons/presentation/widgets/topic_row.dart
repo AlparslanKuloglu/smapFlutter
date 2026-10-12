@@ -16,7 +16,8 @@ import 'package:smap/shared/ui/surfaces/app_row_shell.dart';
 /// name 16/24 · 600, wrapping to two lines or more, never cut ("İkinci Dünya
 /// Savaşı Sürecinde Türkiye ve Dünya"). Right: the [EksikTag] when [missing] is
 /// above zero (nothing is written for none, "0 eksik" never) and CaretRight
-/// 20.
+/// 20. From text scale 1,25 the tag sits under the name instead, and the
+/// number circle grows with the text.
 ///
 /// [number] is made on the device, 1 to n without a gap, and a filtered list
 /// keeps the numbers of the full list (`TopicNumbering`). Read as "9. Fiilde
@@ -44,12 +45,20 @@ class TopicRow extends StatelessWidget {
   /// Minimum height of the row.
   static const double minHeight = 64;
 
+  /// Text scale from which the tag drops under the name (as in `SubjectRow`),
+  /// so a long name keeps the row's width.
+  static const double _stackScale = 1.25;
+
   @override
   Widget build(BuildContext context) {
     final colors = context.appColors;
     final text = context.appText;
     final l10n = AppLocalizations.of(context);
     final count = missing;
+    final tagged = count != null && count > 0;
+    final stacked =
+        tagged && MediaQuery.textScalerOf(context).scale(1) >= _stackScale;
+    final badge = MediaQuery.textScalerOf(context).scale(_badge);
     return MergeSemantics(
       child: Semantics(
         button: onTap != null,
@@ -71,7 +80,7 @@ class TopicRow extends StatelessWidget {
                     borderRadius: AppRadius.borderFull,
                   ),
                   child: SizedBox.square(
-                    dimension: _badge,
+                    dimension: badge,
                     child: Center(
                       child: Text(
                         '$number',
@@ -86,12 +95,21 @@ class TopicRow extends StatelessWidget {
                 ),
                 const SizedBox(width: AppSpacing.s12),
                 Expanded(
-                  child: Text(
-                    name,
-                    style: text.titleSm.copyWith(color: colors.textPrimary),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        name,
+                        style: text.titleSm.copyWith(color: colors.textPrimary),
+                      ),
+                      if (stacked) ...[
+                        const SizedBox(height: AppSpacing.s4),
+                        EksikTag(count: count),
+                      ],
+                    ],
                   ),
                 ),
-                if (count != null && count > 0) ...[
+                if (tagged && !stacked) ...[
                   const SizedBox(width: AppSpacing.s12),
                   EksikTag(count: count),
                 ],

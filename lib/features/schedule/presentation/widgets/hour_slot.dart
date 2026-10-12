@@ -16,11 +16,12 @@ import 'package:smap/shared/ui/buttons/app_pressable.dart';
 /// One hour row of the grid step of a new program (C64 "HourSlot"; Tur 6;
 /// pano 3.5 kare 2 "09:00 · 10:00 Türkçe Fiilde Çatı · 16:00 Konu Ekle").
 ///
-/// A row at least 52 high, padding 4 / 12 / 4 / 16, 8 between its parts, with
+/// A row at least 52 high, padding 2 / 12 / 2 / 16 (4 in the board; the empty
+/// slot is 48 high instead of 44, a 48 pt target), 8 between its parts, with
 /// a 1 pt rule under it. At the left the hour label (44 wide, 13/20 · 600
 /// `textSecondary`, 12 from the top); next to it the slot:
 ///
-/// - **empty** ([entries] empty): a transparent button, at least 44 high,
+/// - **empty** ([entries] empty): a transparent button, at least 48 high,
 ///   read as "09:00, boş, konu ekle". Tapping calls [onAdd]. With keyboard
 ///   focus it draws the "Konu Ekle" look: `infoBg` fill, a Plus 20 and the
 ///   label in `primary` (15/24 · 600) with the focus ring;
@@ -58,8 +59,12 @@ class HourSlot extends StatelessWidget {
 
   static const double _minHeight = 52;
   static const double _labelWidth = 44;
-  static const double _labelTop = 12;
-  static const double _emptyHeight = 44;
+  static const double _labelTop = 14;
+
+  /// The empty slot is a 48 pt target (the row keeps its 52: the padding
+  /// above and below it is 2).
+  static const double _emptyHeight = AppSize.touch;
+  static const double _rowPadY = 2;
   static const double _glyph = 20;
   static const double _removeGlyph = 18;
 
@@ -70,9 +75,9 @@ class HourSlot extends StatelessWidget {
 
   static const EdgeInsets _rowPadding = EdgeInsets.fromLTRB(
     AppSpacing.s16,
-    AppSpacing.s4,
+    _rowPadY,
     AppSpacing.s12,
-    AppSpacing.s4,
+    _rowPadY,
   );
 
   @override
@@ -95,12 +100,16 @@ class HourSlot extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                width: _labelWidth,
+                // The label column grows with the text, so "06:00" stays on
+                // one line at large text sizes.
+                width: MediaQuery.textScalerOf(context).scale(_labelWidth),
                 child: Padding(
                   padding: const EdgeInsets.only(top: _labelTop),
                   child: ExcludeSemantics(
                     child: Text(
                       time,
+                      maxLines: 1,
+                      softWrap: false,
                       style: text.caption.copyWith(
                         color: colors.textSecondary,
                         fontWeight: FontWeight.w600,

@@ -160,9 +160,9 @@ class _SkeletonTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      width: SubjectTile.width,
-      child: AppCard(
+    return SizedBox(
+      width: SubjectTile.widthOf(context),
+      child: const AppCard(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

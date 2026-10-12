@@ -140,13 +140,16 @@ class _NumberBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = context.appColors;
+    // The circle grows with the text (the line is 28 high at scale 1), so the
+    // number stays inside it and centered at large text sizes.
+    final size = MediaQuery.textScalerOf(context).scale(_size);
     return DecoratedBox(
       decoration: BoxDecoration(
         color: colors.bgSunken,
         borderRadius: AppRadius.borderFull,
       ),
       child: SizedBox.square(
-        dimension: _size,
+        dimension: size,
         child: Center(
           child: Text(
             '$number',
@@ -179,13 +182,25 @@ class _ItemBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        for (final (index, paragraph) in item.text.definition.indexed) ...[
-          if (index > 0) const SizedBox(height: AppSpacing.s8),
-          Text(
-            paragraph,
-            style: text.bodyReading.copyWith(color: colors.textPrimary),
+        // Its own node: without it the paragraphs merge into the sub-topic
+        // card and a screen reader reads them before the item's title.
+        if (item.text.definition.isNotEmpty)
+          Semantics(
+            container: true,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                for (final (index, paragraph)
+                    in item.text.definition.indexed) ...[
+                  if (index > 0) const SizedBox(height: AppSpacing.s8),
+                  Text(
+                    paragraph,
+                    style: text.bodyReading.copyWith(color: colors.textPrimary),
+                  ),
+                ],
+              ],
+            ),
           ),
-        ],
         for (final example in item.text.examples) ...[
           const SizedBox(height: AppSpacing.s12),
           ExampleBox(example: example.text, explanation: example.explanation),

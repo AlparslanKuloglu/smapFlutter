@@ -129,6 +129,8 @@ class _TopicRow extends SelectorViewModelWidget<TopicPickerViewModel, bool> {
     final reading = [
       l10n.schedule_topicRowA11y(choice.title, choice.lessonName),
       ?placedLine,
+      // The tag is part of this reading (the row hides its own nodes).
+      if (showEksik) l10n.lessons_missingItem,
     ].join(', ');
 
     return Semantics(

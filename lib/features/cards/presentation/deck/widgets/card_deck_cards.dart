@@ -69,6 +69,7 @@ class _DeckCards extends StatelessWidget {
                 card: front,
                 lessonId: viewModel.lessonId,
                 dragging: dragging,
+                announce: true,
                 onFavoriteTap: front.canFavorite
                     ? viewModel.toggleFavorite
                     : null,
@@ -98,12 +99,14 @@ class _StudyFace extends StatelessWidget {
     required this.card,
     required this.lessonId,
     this.dragging = false,
+    this.announce = false,
     this.onFavoriteTap,
   });
 
   final DeckCard card;
   final String? lessonId;
   final bool dragging;
+  final bool announce;
   final VoidCallback? onFavoriteTap;
 
   @override
@@ -120,6 +123,7 @@ class _StudyFace extends StatelessWidget {
       isFavorite: card.isFavorite,
       onFavoriteTap: onFavoriteTap,
       dragging: dragging,
+      announce: announce,
     );
   }
 }
