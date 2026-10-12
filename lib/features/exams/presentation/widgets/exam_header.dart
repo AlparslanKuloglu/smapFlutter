@@ -45,15 +45,17 @@ enum ExamHeaderVariant {
 class ExamHeader extends StatelessWidget {
   const ExamHeader.detail({
     required this.name,
-    required this.net,
-    required this.counts,
-    required this.date,
     required this.typeLabel,
+    this.net,
+    this.counts,
+    this.date,
     this.publisher,
     this.coverUrl,
     this.scoreFieldName,
     this.score,
     this.rank,
+    this.scoreHam,
+    this.rankHam,
     super.key,
   }) : variant = ExamHeaderVariant.detail,
        delta = null,
@@ -61,9 +63,9 @@ class ExamHeader extends StatelessWidget {
 
   const ExamHeader.moment({
     required this.name,
-    required this.net,
-    required this.counts,
-    required this.date,
+    required double this.net,
+    required DybCounts this.counts,
+    required DateTime this.date,
     required this.typeLabel,
     this.publisher,
     this.coverUrl,
@@ -73,15 +75,21 @@ class ExamHeader extends StatelessWidget {
   }) : variant = ExamHeaderVariant.moment,
        scoreFieldName = null,
        score = null,
-       rank = null;
+       rank = null,
+       scoreHam = null,
+       rankHam = null;
 
   final ExamHeaderVariant variant;
   final String name;
 
-  /// The net from the server.
-  final double net;
-  final DybCounts counts;
-  final DateTime date;
+  /// The net from the server; null (detail only) draws no net.
+  final double? net;
+
+  /// Null (detail only) draws no counter.
+  final DybCounts? counts;
+
+  /// Null (detail only) draws no date.
+  final DateTime? date;
 
   /// "TYT" or "AYT".
   final String typeLabel;
@@ -97,6 +105,12 @@ class ExamHeader extends StatelessWidget {
   /// Detail: the rank; null draws no rank column.
   final int? rank;
 
+  /// Detail: the raw points ("Ham puan", Tur 12 B); null draws no raw row.
+  final double? scoreHam;
+
+  /// Detail: the rank of the raw points.
+  final int? rankHam;
+
   /// Moment: the net change against the previous exam of the type.
   final double? delta;
 
@@ -110,7 +124,10 @@ class ExamHeader extends StatelessWidget {
     final colors = context.appColors;
     final text = context.appText;
     final l10n = AppLocalizations.of(context);
-    final netText = TrFormat.net(net);
+    final netValue = net;
+    final netText = netValue == null ? null : TrFormat.net(netValue);
+    final countValues = counts;
+    final day = date;
     final publisherName = publisher;
     final fieldName = scoreFieldName;
 
@@ -148,13 +165,14 @@ class ExamHeader extends StatelessWidget {
                     runSpacing: AppSpacing.s4,
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
-                      AppTag(label: typeLabel),
-                      Text(
-                        TrFormat.uzunTarih(date),
-                        style: text.caption.copyWith(
-                          color: colors.textSecondary,
+                      if (typeLabel.isNotEmpty) AppTag(label: typeLabel),
+                      if (day != null)
+                        Text(
+                          TrFormat.uzunTarih(day),
+                          style: text.caption.copyWith(
+                            color: colors.textSecondary,
+                          ),
                         ),
-                      ),
                     ],
                   ),
                 ],
@@ -162,27 +180,29 @@ class ExamHeader extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: _isMoment ? AppSpacing.s24 : AppSpacing.s12),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.baseline,
-          textBaseline: TextBaseline.alphabetic,
-          children: [
-            Text(
-              netText,
-              style: (_isMoment ? text.metricXl : text.metricLg).copyWith(
-                color: colors.textPrimary,
+        if (netText != null) ...[
+          SizedBox(height: _isMoment ? AppSpacing.s24 : AppSpacing.s12),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.baseline,
+            textBaseline: TextBaseline.alphabetic,
+            children: [
+              Text(
+                netText,
+                style: (_isMoment ? text.metricXl : text.metricLg).copyWith(
+                  color: colors.textPrimary,
+                ),
               ),
-            ),
-            const SizedBox(width: AppSpacing.s8),
-            Text(
-              l10n.exams_netUnit,
-              style: text.metricSm.copyWith(
-                color: colors.textSecondary,
-                fontWeight: FontWeight.w600,
+              const SizedBox(width: AppSpacing.s8),
+              Text(
+                l10n.exams_netUnit,
+                style: text.metricSm.copyWith(
+                  color: colors.textSecondary,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-            ),
-          ],
-        ),
+            ],
+          ),
+        ],
         if (_isMoment && delta != null) ...[
           const SizedBox(height: AppSpacing.s4),
           DeltaText(
@@ -191,15 +211,24 @@ class ExamHeader extends StatelessWidget {
             suffix: l10n.exams_deltaVsPreviousMoment(typeLabel),
           ),
         ],
-        SizedBox(height: _isMoment ? AppSpacing.s24 : AppSpacing.s16),
-        DybCounter(counts: counts, size: DybCounterSize.large),
-        if (!_isMoment && fieldName != null && (score != null || rank != null))
+        if (countValues != null) ...[
+          SizedBox(height: _isMoment ? AppSpacing.s24 : AppSpacing.s16),
+          DybCounter(counts: countValues, size: DybCounterSize.large),
+        ],
+        if (!_isMoment &&
+            fieldName != null &&
+            (score != null ||
+                rank != null ||
+                scoreHam != null ||
+                rankHam != null))
           Padding(
             padding: const EdgeInsets.only(top: AppSpacing.s16),
             child: ExamScoreCard(
               fieldName: fieldName,
               score: score,
               rank: rank,
+              scoreHam: scoreHam,
+              rankHam: rankHam,
             ),
           ),
       ],
@@ -207,22 +236,23 @@ class ExamHeader extends StatelessWidget {
 
     if (!_isMoment) return body;
     final change = delta;
+    final summary = countValues!;
     return Semantics(
       container: true,
       label: change == null
           ? l10n.exams_momentA11y(
               name,
-              netText,
-              counts.correct,
-              counts.wrong,
-              counts.blank,
+              netText!,
+              summary.correct,
+              summary.wrong,
+              summary.blank,
             )
           : l10n.exams_momentWithDeltaA11y(
               name,
-              netText,
-              counts.correct,
-              counts.wrong,
-              counts.blank,
+              netText!,
+              summary.correct,
+              summary.wrong,
+              summary.blank,
               TrFormat.delta(change),
             ),
       excludeSemantics: true,

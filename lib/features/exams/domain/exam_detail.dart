@@ -129,6 +129,7 @@ class TestResult {
     required this.index,
     this.kind,
     this.counts,
+    this.net,
     this.questions = const [],
   });
 
@@ -140,6 +141,10 @@ class TestResult {
   /// D/Y/B of the test: the server's per-test figures (`lessonInfo`); when it
   /// sent none, counted from [questions]; `null` when neither exists.
   final DybCounts? counts;
+
+  /// The net the server calculated for the test (`lessonInfo[].net`); `null`
+  /// when it sent none. Screens fall back to the D/Y/B arithmetic.
+  final double? net;
 
   /// The questions in order; empty when the server sent none for this test.
   final List<QuestionResult> questions;
@@ -169,11 +174,12 @@ class TestResult {
       other.index == index &&
       other.kind == kind &&
       other.counts == counts &&
+      other.net == net &&
       listEquals(other.questions, questions);
 
   @override
   int get hashCode =>
-      Object.hash(index, kind, counts, Object.hashAll(questions));
+      Object.hash(index, kind, counts, net, Object.hashAll(questions));
 }
 
 /// A whole exam result (Deneme Detay, Sonuç Anı; boards 5.1 to 5.3).

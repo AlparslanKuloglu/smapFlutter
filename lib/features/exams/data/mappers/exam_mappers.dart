@@ -100,6 +100,7 @@ extension MockExamDtoMapping on MockExamDto {
           i,
           kind: kind == null ? null : ExamTestKind.at(kind, i),
           reported: i < info.length ? info[i].counts : null,
+          net: i < info.length ? info[i].net : null,
           cells: i < groups.length ? groups[i].cells : null,
         ),
     ];
@@ -109,6 +110,7 @@ extension MockExamDtoMapping on MockExamDto {
     int index, {
     required ExamTestKind? kind,
     required DybCounts? reported,
+    required double? net,
     required List<QuestionCellDto>? cells,
   }) {
     final questions = [
@@ -128,6 +130,7 @@ extension MockExamDtoMapping on MockExamDto {
       index: index,
       kind: kind,
       counts: reported ?? draft.questionCounts,
+      net: net,
       questions: questions,
     );
   }

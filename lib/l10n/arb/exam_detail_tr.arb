@@ -1,0 +1,353 @@
+{
+  "@@locale": "tr",
+  "examDetail_tabsA11y": "Deneme bölümleri",
+  "@examDetail_tabsA11y": {
+    "description": "Screen reader name of the in-screen tab row (pano 5.3 'aria: Deneme bölümleri')."
+  },
+  "examDetail_tabGeneral": "Genel",
+  "@examDetail_tabGeneral": {
+    "description": "In-screen tab (pano 5.3)."
+  },
+  "examDetail_tabQuestions": "Sorular",
+  "@examDetail_tabQuestions": {
+    "description": "In-screen tab (pano 5.4)."
+  },
+  "examDetail_tabTopics": "Konular",
+  "@examDetail_tabTopics": {
+    "description": "In-screen tab (pano 5.5)."
+  },
+  "examDetail_tabCards": "Kartlar",
+  "@examDetail_tabCards": {
+    "description": "In-screen tab (pano 5.6)."
+  },
+  "examDetail_testTurkish": "Türkçe",
+  "@examDetail_testTurkish": {
+    "description": "Test name, TYT first test (pano 5.3 kare 3)."
+  },
+  "examDetail_testSocial": "Sosyal Bilimler",
+  "@examDetail_testSocial": {
+    "description": "Test name, TYT second test (pano 5.3 kare 3)."
+  },
+  "examDetail_testSocialLiterature": "Türk Dili ve Edebiyatı–Sosyal Bilimler 1",
+  "@examDetail_testSocialLiterature": {
+    "description": "Test name, AYT first test (pano 5.3 kare 1). The dash is an en dash."
+  },
+  "examDetail_testSocial2": "Sosyal Bilimler 2",
+  "@examDetail_testSocial2": {
+    "description": "Test name, AYT second test (pano 5.3 kare 1)."
+  },
+  "examDetail_testBasicMath": "Temel Matematik",
+  "@examDetail_testBasicMath": {
+    "description": "Test name, TYT mathematics (pano 5.3 kare 3)."
+  },
+  "examDetail_testMath": "Matematik",
+  "@examDetail_testMath": {
+    "description": "Test name, AYT mathematics (pano 5.3 kare 1)."
+  },
+  "examDetail_testSciences": "Fen Bilimleri",
+  "@examDetail_testSciences": {
+    "description": "Test name, fourth test of both exams (pano 5.3)."
+  },
+  "examDetail_testNumbered": "{number}. Test",
+  "@examDetail_testNumbered": {
+    "description": "Name of a test the app has no name for.",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_netRule": "Net = doğru − yanlış ÷ 4; boş neti etkilemez.",
+  "@examDetail_netRule": {
+    "description": "Footnote of the Genel tab (pano 5.3 kare 2)."
+  },
+  "examDetail_netsByScoreType": "Puan türüne göre net: {list}.",
+  "@examDetail_netsByScoreType": {
+    "description": "Footnote of the Genel tab (pano 5.3 kare 2); {list} is the 'Eşit Ağırlık 40 · Sayısal 37,5 · Sözel 30' text.",
+    "placeholders": {
+      "list": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_scoreTypeNet": "{field} {net}",
+  "@examDetail_scoreTypeNet": {
+    "description": "One score type of the footnote: 'Eşit Ağırlık 40'.",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "net": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_rawScore": "Ham puan",
+  "@examDetail_rawScore": {
+    "description": "Label under the raw points of the score card (Tur 12 B, 14.4)."
+  },
+  "examDetail_noBreakdownTitle": "Ders kırılımı yok",
+  "@examDetail_noBreakdownTitle": {
+    "description": "Title of the section empty card of the Genel tab (pano 5.8 kare 2)."
+  },
+  "examDetail_noBreakdownBody": "Netin ve doğru, yanlış, boş sayıların hesaplandı; bu deneme için ders bazında sonuç gelmedi.",
+  "@examDetail_noBreakdownBody": {
+    "description": "Body of the section empty card of the Genel tab (pano 5.8 kare 2)."
+  },
+  "examDetail_filterA11y": "Soru süzgeci",
+  "@examDetail_filterA11y": {
+    "description": "Screen reader name of the question filter segment (pano 5.4)."
+  },
+  "examDetail_filterAll": "Tümü",
+  "@examDetail_filterAll": {
+    "description": "Question filter option (pano 5.4)."
+  },
+  "examDetail_filterWrong": "Yanlışlar",
+  "@examDetail_filterWrong": {
+    "description": "Question filter option (pano 5.4)."
+  },
+  "examDetail_filterBlank": "Boşlar",
+  "@examDetail_filterBlank": {
+    "description": "Question filter option (pano 5.4)."
+  },
+  "examDetail_counterWrong": "{count} yanlış",
+  "@examDetail_counterWrong": {
+    "description": "Counter of the 'Yanlışlar' option (pano 5.4: '74 yanlış').",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_counterNoWrong": "yanlış yok",
+  "@examDetail_counterNoWrong": {
+    "description": "Counter of the 'Yanlışlar' option when there is no wrong question."
+  },
+  "examDetail_counterNoBlank": "boş yok",
+  "@examDetail_counterNoBlank": {
+    "description": "Counter of the 'Boşlar' option when there is no blank question (pano 5.4)."
+  },
+  "examDetail_counterBlank": "{count} boş",
+  "@examDetail_counterBlank": {
+    "description": "Counter of the 'Boşlar' option (pano 5.4).",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_noBlankTitle": "Boş bıraktığın soru yok",
+  "@examDetail_noBlankTitle": {
+    "description": "Title of the empty card of the 'Boşlar' filter (pano 5.4 kare 3)."
+  },
+  "examDetail_noBlankBody": "Bu denemedeki {count} sorunun hepsini işaretledin.",
+  "@examDetail_noBlankBody": {
+    "description": "Body of the empty card of the 'Boşlar' filter (pano 5.4 kare 3).",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_noWrongTitle": "Yanlış yaptığın soru yok",
+  "@examDetail_noWrongTitle": {
+    "description": "Title of the empty card of the 'Yanlışlar' filter (same pattern as pano 5.4 kare 3; the board draws only the blank one)."
+  },
+  "examDetail_noWrongBody": "Bu denemedeki {count} sorunun hiçbirini yanlış yapmadın.",
+  "@examDetail_noWrongBody": {
+    "description": "Body of the empty card of the 'Yanlışlar' filter.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_showAllQuestions": "Tüm Soruları Göster",
+  "@examDetail_showAllQuestions": {
+    "description": "Text button of the filter empty card (pano 5.4 kare 3)."
+  },
+  "examDetail_questionsEmpty": "Bu deneme için soru ayrıntısı yok.",
+  "@examDetail_questionsEmpty": {
+    "description": "Section empty text of the Sorular tab (pano 5.8 'Boş metinleri')."
+  },
+  "examDetail_questionsError": "Sorular yüklenemedi.",
+  "@examDetail_questionsError": {
+    "description": "Section error text of the Sorular tab."
+  },
+  "examDetail_mostMissedLabel": "En çok kaçırdığın konu",
+  "@examDetail_mostMissedLabel": {
+    "description": "Caption of the most missed topic card (pano 5.5)."
+  },
+  "examDetail_mostMissedSentence": "{total} sorudan {wrong} kaçırdın.",
+  "@examDetail_mostMissedSentence": {
+    "description": "Sentence of the most missed topic card (pano 5.5). {wrong} arrives with its suffix from TurkishSuffix.possessiveAccusative ('7'sini').",
+    "placeholders": {
+      "total": {
+        "type": "String"
+      },
+      "wrong": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_studyTopic": "Bu Konuyu Çalış",
+  "@examDetail_studyTopic": {
+    "description": "Primary button of the most missed topic card (pano 5.5)."
+  },
+  "examDetail_weakToStrong": "zayıftan güçlüye",
+  "@examDetail_weakToStrong": {
+    "description": "Sort note at the right of a lesson heading (pano 5.5)."
+  },
+  "examDetail_lessonGroupA11y": "{lesson}, zayıftan güçlüye, {total} soru",
+  "@examDetail_lessonGroupA11y": {
+    "description": "Screen reader reading of a lesson heading of the Konular tab.",
+    "placeholders": {
+      "lesson": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_topicsEmpty": "Konu analizi henüz hazır değil.",
+  "@examDetail_topicsEmpty": {
+    "description": "Section empty text of the Konular tab (pano 5.8 'Boş metinleri')."
+  },
+  "examDetail_topicsError": "Konu analizi yüklenemedi.",
+  "@examDetail_topicsError": {
+    "description": "Section error text of the Konular tab."
+  },
+  "examDetail_topicNotFound": "Bu konu Derslerim'de bulunamadı.",
+  "@examDetail_topicNotFound": {
+    "description": "Toast when a topic of the analysis is not among the lesson's topics; the lesson opens instead."
+  },
+  "examDetail_cardsAdded": "{count} bilgi kartı eklendi",
+  "@examDetail_cardsAdded": {
+    "description": "Title of the info card of the Kartlar tab (pano 5.6).",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_cardsAddedBody": "Bu denemede yanlış ve boş bıraktığın sorulardan.",
+  "@examDetail_cardsAddedBody": {
+    "description": "Body of the info card of the Kartlar tab (pano 5.6)."
+  },
+  "examDetail_studyCards": "Kartları Çalış",
+  "@examDetail_studyCards": {
+    "description": "Primary button of the Kartlar tab and of Soru Detay (pano 5.6, 5.7)."
+  },
+  "examDetail_cardsEmpty": "Bu denemeden kart eklenmedi.",
+  "@examDetail_cardsEmpty": {
+    "description": "Section empty text of the Kartlar tab (pano 5.8 'Boş metinleri')."
+  },
+  "examDetail_cardsError": "Kartlar yüklenemedi.",
+  "@examDetail_cardsError": {
+    "description": "Section error text of the Kartlar tab."
+  },
+  "examDetail_cardGroupCount": "{count} kart",
+  "@examDetail_cardGroupCount": {
+    "description": "Count at the right of a lesson group of the Kartlar tab.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_cardGroupA11y": "{lesson}, {count} kart",
+  "@examDetail_cardGroupA11y": {
+    "description": "Screen reader reading of a lesson row of the Kartlar tab; it opens the lesson's deck.",
+    "placeholders": {
+      "lesson": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_errorTitle": "Deneme yüklenemedi",
+  "@examDetail_errorTitle": {
+    "description": "Screen error title (pano 5.8 kare 3)."
+  },
+  "examDetail_errorMessage": "Bağlantını kontrol edip tekrar dene.",
+  "@examDetail_errorMessage": {
+    "description": "Screen error message (pano 5.8 kare 3)."
+  },
+  "examDetail_questionTitle": "{number}. soru",
+  "@examDetail_questionTitle": {
+    "description": "Title of Soru Detay (pano 5.7: '31. soru').",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_questionContext": "{test} · {lesson}",
+  "@examDetail_questionContext": {
+    "description": "Line under the Soru Detay title (pano 5.7).",
+    "placeholders": {
+      "test": {
+        "type": "String"
+      },
+      "lesson": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_answerMarked": "İşaretin",
+  "@examDetail_answerMarked": {
+    "description": "Label of the answer card (pano 5.7)."
+  },
+  "examDetail_answerCorrect": "Doğru cevap",
+  "@examDetail_answerCorrect": {
+    "description": "Label of the answer card (pano 5.7)."
+  },
+  "examDetail_answerCorrectSentence": "İşaretin doğru cevap.",
+  "@examDetail_answerCorrectSentence": {
+    "description": "Answer card sentence of a right question (pano 5.7 kare 2)."
+  },
+  "examDetail_answerWrongSentence": "Bu soruyu yanlış işaretledin.",
+  "@examDetail_answerWrongSentence": {
+    "description": "Answer card sentence of a wrong question when the letters are not in the data (no pano text: the board always shows the letters)."
+  },
+  "examDetail_answerBlankSentence": "Bu soruyu boş bıraktın.",
+  "@examDetail_answerBlankSentence": {
+    "description": "Answer card sentence of a blank question when the letters are not in the data (no pano text)."
+  },
+  "examDetail_analysisTitle": "Soru Analizi",
+  "@examDetail_analysisTitle": {
+    "description": "Section title of Soru Detay (pano 5.7)."
+  },
+  "examDetail_analysisEmpty": "Bu soru için çözüm açıklaması yok.",
+  "@examDetail_analysisEmpty": {
+    "description": "Text when the question has no explanation (pano 5.7 kare 2)."
+  },
+  "examDetail_relatedCards": "İlgili kartlar",
+  "@examDetail_relatedCards": {
+    "description": "Section title of Soru Detay (pano 5.7)."
+  },
+  "examDetail_relatedCount": "{count} kart",
+  "@examDetail_relatedCount": {
+    "description": "Count next to the section title (pano 5.7: '2 kart').",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_copyrightNote": "Sorunun fotoğrafı telif hakları nedeniyle paylaşılamıyor.",
+  "@examDetail_copyrightNote": {
+    "description": "Note at the end of Soru Detay (pano 5.7)."
+  },
+  "examDetail_questionErrorTitle": "Soru yüklenemedi",
+  "@examDetail_questionErrorTitle": {
+    "description": "Screen error title of Soru Detay."
+  },
+  "examDetail_questionLoadError": "Soru açıklaması yüklenemedi.",
+  "@examDetail_questionLoadError": {
+    "description": "Section error text of Soru Detay (the explanation and cards did not load; the answer card stays)."
+  }
+}
