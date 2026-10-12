@@ -9,6 +9,318 @@ class AppLocalizationsTr extends AppLocalizations {
   AppLocalizationsTr([String locale = 'tr']) : super(locale);
 
   @override
+  String get accountSettings_loadErrorMessage =>
+      'Bağlantını kontrol edip tekrar dene. Sorun sürerse biraz sonra yeniden açabilirsin.';
+
+  @override
+  String get accountSettings_sendFailed =>
+      'Gönderilemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String account_a11yCoachCode(String code) {
+    return 'koçluk kodu $code';
+  }
+
+  @override
+  String account_a11yCoachOf(String name) {
+    return 'koçun $name';
+  }
+
+  @override
+  String get account_a11yCoachRole => 'öğrenci koçu';
+
+  @override
+  String get account_a11yOpensProfile => 'Profili açar';
+
+  @override
+  String account_a11yProfile(String details) {
+    return 'Profil: $details';
+  }
+
+  @override
+  String get account_avatarSelected => 'seçili';
+
+  @override
+  String get account_avatarTitle => 'Avatarını seç';
+
+  @override
+  String get account_avatarUse => 'Bu Avatarı Kullan';
+
+  @override
+  String get account_coachCodeCopied => 'Kod kopyalandı.';
+
+  @override
+  String get account_coachCodeCopy => 'Kodu kopyala';
+
+  @override
+  String get account_coachCodeShare => 'Kodu paylaş';
+
+  @override
+  String account_coachCodeShareText(String code) {
+    return 'SMAP\'te koçluk kodum: $code';
+  }
+
+  @override
+  String get account_coachCodeTitle => 'Koçluk kodun';
+
+  @override
+  String get account_contractKvkk => 'KVKK Aydınlatma Metni';
+
+  @override
+  String get account_contractPrivacy => 'Gizlilik Politikası';
+
+  @override
+  String get account_contractTerms => 'Kullanım Koşulları';
+
+  @override
+  String account_contractVersion(String version) {
+    return 'Sürüm $version';
+  }
+
+  @override
+  String get account_contractsEmptyMessage =>
+      'Gösterilecek bir sözleşme metni bulunamadı.';
+
+  @override
+  String get account_contractsEmptyTitle => 'Sözleşme yok';
+
+  @override
+  String get account_contractsErrorTitle => 'Sözleşmeler yüklenemedi';
+
+  @override
+  String get account_contractsFooter =>
+      'Kayıt olurken bu sürümleri onayladın. Bir metin değişirse uygulama açılışında yeni sürümü onaylaman istenir.';
+
+  @override
+  String get account_contractsTitle => 'Sözleşmeler';
+
+  @override
+  String get account_discardBody => 'Yaptığın değişiklikler silinecek.';
+
+  @override
+  String get account_discardConfirm => 'Kaydetmeden Çık';
+
+  @override
+  String get account_discardTitle => 'Değişiklikler kaydedilmesin mi?';
+
+  @override
+  String get account_fieldEmail => 'E-posta';
+
+  @override
+  String get account_fieldGrade => 'Sınıf';
+
+  @override
+  String get account_fieldName => 'Ad Soyad';
+
+  @override
+  String get account_fieldPhone => 'Telefon';
+
+  @override
+  String get account_fieldTrack => 'Alan';
+
+  @override
+  String get account_fieldUserName => 'Kullanıcı adı';
+
+  @override
+  String get account_gradeGraduate => 'Mezun';
+
+  @override
+  String get account_gradeNote =>
+      '9. ya da 10. sınıfı seçersen alan kaldırılır.';
+
+  @override
+  String account_gradeValue(int grade) {
+    return '$grade. Sınıf';
+  }
+
+  @override
+  String get account_groupAccount => 'Hesap';
+
+  @override
+  String get account_groupCoaching => 'Koçluk';
+
+  @override
+  String get account_groupLegal => 'Yasal';
+
+  @override
+  String get account_groupNotifications => 'Bildirimler';
+
+  @override
+  String get account_groupSupport => 'Destek';
+
+  @override
+  String get account_issueEmailInvalid =>
+      'E-posta adresi eksik görünüyor. Örn: ad@alan.com';
+
+  @override
+  String get account_issueNameMissing => 'Ad soyadını yaz.';
+
+  @override
+  String get account_issuePhoneInvalid =>
+      'Telefon numaranı 5XX XXX XX XX biçiminde yaz.';
+
+  @override
+  String get account_loadErrorMessage => 'Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get account_logoutConfirm => 'Çıkış Yap';
+
+  @override
+  String get account_logoutMessage =>
+      'Tekrar girmek için kullanıcı adın ve şifren gerekecek. Okuttuğun denemeler hesabında kalır.';
+
+  @override
+  String account_logoutMessagePending(String count) {
+    return 'Gönderilmeyi bekleyen $count form var; çıkarsan silinir.';
+  }
+
+  @override
+  String get account_logoutTitle => 'Çıkış yapılsın mı?';
+
+  @override
+  String get account_phoneHint => '5XX XXX XX XX';
+
+  @override
+  String get account_profileChangeAvatar => 'Avatarı Değiştir';
+
+  @override
+  String get account_profileDelete => 'Hesabı Sil';
+
+  @override
+  String get account_profileEdit => 'Düzenle';
+
+  @override
+  String get account_profileErrorTitle => 'Profil açılamadı';
+
+  @override
+  String get account_profileSaveFailed =>
+      'Kaydedilemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get account_profileSaved => 'Profilin güncellendi.';
+
+  @override
+  String get account_profileTitle => 'Profil';
+
+  @override
+  String get account_readerEmpty => 'Bu metin şu an gösterilemiyor.';
+
+  @override
+  String get account_rowCoaching => 'Koçluk';
+
+  @override
+  String get account_rowCoachingNone => 'Koçunla bağlan';
+
+  @override
+  String get account_rowContracts => 'Sözleşmeler';
+
+  @override
+  String get account_rowContractsSub => 'Kullanım Koşulları, KVKK, Gizlilik';
+
+  @override
+  String get account_rowLogout => 'Çıkış Yap';
+
+  @override
+  String get account_rowNotifications => 'Bildirimler';
+
+  @override
+  String get account_rowNotificationsSub =>
+      'Deneme sonucu, koç, görüşme, hatırlatıcı';
+
+  @override
+  String get account_rowPassword => 'Şifre';
+
+  @override
+  String get account_rowProfile => 'Profil';
+
+  @override
+  String get account_rowProfileCoachSub => 'Ad, e-posta ve telefon';
+
+  @override
+  String get account_rowProfileStudentSub =>
+      'Ad, e-posta, telefon, sınıf ve alan';
+
+  @override
+  String get account_rowSupport => 'Bize Yaz';
+
+  @override
+  String get account_rowSupportSub => 'E-posta uygulaman açılır';
+
+  @override
+  String account_summaryCoach(String name) {
+    return 'Koçun: $name';
+  }
+
+  @override
+  String account_summaryCoachCode(String code) {
+    return 'Koçluk kodun: $code';
+  }
+
+  @override
+  String get account_summaryCoachRole => 'Öğrenci koçu';
+
+  @override
+  String account_summaryGradeTrack(String grade, String track) {
+    return '$grade · $track';
+  }
+
+  @override
+  String get account_supportMailFailed => 'E-posta uygulaması açılamadı.';
+
+  @override
+  String get account_supportMailSubject => 'SMAP · Destek';
+
+  @override
+  String account_supportMailSystem(String system) {
+    return 'Sistem: $system';
+  }
+
+  @override
+  String account_supportMailVersion(String version) {
+    return 'Uygulama sürümü: $version';
+  }
+
+  @override
+  String get account_title => 'Hesap';
+
+  @override
+  String get account_trackDil => 'Dil';
+
+  @override
+  String get account_trackDisabledHelper => '9. ve 10. sınıfta alan seçilmez.';
+
+  @override
+  String get account_trackDisabledValue => 'Seçilmez';
+
+  @override
+  String get account_trackEsitAgirlik => 'Eşit Ağırlık';
+
+  @override
+  String get account_trackSayisal => 'Sayısal';
+
+  @override
+  String get account_trackSozel => 'Sözel';
+
+  @override
+  String get account_userNameLocked => 'Kullanıcı adı değiştirilemez.';
+
+  @override
+  String account_version(String version, String build) {
+    return 'Sürüm $version ($build)';
+  }
+
+  @override
+  String get account_versionCopied => 'Sürüm kopyalandı.';
+
+  @override
+  String get account_versionCopyHint => 'Uzun basınca kopyalar';
+
+  @override
+  String account_versionNoBuild(String version) {
+    return 'Sürüm $version';
+  }
+
+  @override
   String get analytics_boxAverageNet => 'Ortalama net';
 
   @override
@@ -218,6 +530,100 @@ class AppLocalizationsTr extends AppLocalizations {
   String get analytics_typeAll => 'Tümü';
 
   @override
+  String cardDeck_count(String count) {
+    return '$count kart';
+  }
+
+  @override
+  String get cardDeck_countNone => 'kart yok';
+
+  @override
+  String get cardDeck_detail => 'Detay';
+
+  @override
+  String get cardDeck_errorMessage => 'Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get cardDeck_errorTitle => 'Kartlar yüklenemedi';
+
+  @override
+  String get cardDeck_favoriteEmpty => 'Favoriye eklediğin kart yok.';
+
+  @override
+  String get cardDeck_goKnown => 'Bildiklerime Geç';
+
+  @override
+  String get cardDeck_groupFavorite => 'Favorilerim';
+
+  @override
+  String get cardDeck_groupKnown => 'Bildiklerim';
+
+  @override
+  String get cardDeck_groupMissing => 'Eksiklerim';
+
+  @override
+  String get cardDeck_knownEmpty => 'Henüz öğrendiğin kart yok.';
+
+  @override
+  String get cardDeck_learned => 'Öğrendim';
+
+  @override
+  String cardDeck_missingDoneMessage(String count) {
+    return 'Bildiklerim\'deki $count kartı tekrar etmek istersen oradan devam edebilirsin.';
+  }
+
+  @override
+  String get cardDeck_missingDoneTitle => 'Bu derste eksik kartın kalmadı.';
+
+  @override
+  String get cardDeck_missingDoneTitleExam =>
+      'Bu denemede eksik kartın kalmadı.';
+
+  @override
+  String get cardDeck_moved => 'Kart Bildiklerim\'e taşındı.';
+
+  @override
+  String get cardDeck_nextA11y => 'Sonraki kart';
+
+  @override
+  String get cardDeck_noCardsMessage =>
+      'Kartlar, denemelerde yanlış ve boş bıraktığın sorulardan eklenir.';
+
+  @override
+  String get cardDeck_noCardsTitle => 'Bu derste henüz kartın yok.';
+
+  @override
+  String get cardDeck_noCardsTitleExam => 'Bu denemeden kart eklenmedi.';
+
+  @override
+  String get cardDeck_previousA11y => 'Önceki kart';
+
+  @override
+  String cardDeck_progress(String current, String total) {
+    return '$current/$total';
+  }
+
+  @override
+  String cardDeck_progressA11y(String current, String total) {
+    return 'Oturum, $total karttan $current. kart';
+  }
+
+  @override
+  String get cardDeck_sendFailed =>
+      'Gönderilemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String cardDeck_title(String lesson) {
+    return '$lesson Kartları';
+  }
+
+  @override
+  String get cardDeck_titleExam => 'Deneme Kartları';
+
+  @override
+  String get cardDeck_titleFallback => 'Bilgi Kartları';
+
+  @override
   String cardSheet_confirmBody(String name) {
     return '\"$name\" eksiklerinden çıkıp Bildiklerim\'e geçecek.';
   }
@@ -243,6 +649,111 @@ class AppLocalizationsTr extends AppLocalizations {
   String get cards_favoriteRemove => 'Favorilerden çıkar';
 
   @override
+  String get coachingChange_action => 'Koçu Değiştir';
+
+  @override
+  String get coachingChange_codeLabel => 'Yeni koçunun kodu';
+
+  @override
+  String coachingChange_errSameCoach(String name) {
+    return 'Bu kod zaten koçun $name ait.';
+  }
+
+  @override
+  String get coachingChange_offlineNote =>
+      'Koçunu değiştirmek için bağlantı gerekiyor.';
+
+  @override
+  String get coachingChange_open => 'Koçunu Değiştir';
+
+  @override
+  String get coachingChange_title => 'Koçunu değiştir';
+
+  @override
+  String coachingChange_warning(String name) {
+    return '$name ile bağlantın kalkacak. Yeni koçun denemelerini, analizlerini ve programını görebilecek.';
+  }
+
+  @override
+  String get coachingInfo_body1 =>
+      'Koçluk kodu, koçunun SMAP hesabına özel koddur; dört harf ve dört rakamdan oluşur.';
+
+  @override
+  String get coachingInfo_body2 =>
+      'Kodu koçundan iste. Girdiğinde koçun denemelerini, analizlerini ve programını görebilir. Bağlantıyı istediğin an buradan kaldırabilirsin.';
+
+  @override
+  String get coachingInfo_coachBody1 =>
+      'Öğrencin bu kodu kendi hesabında Hesap › Koçluk bölümüne girer; böylece hesabı seninkine bağlanır.';
+
+  @override
+  String get coachingInfo_coachBody2 =>
+      'Bağlanan öğrenciler Öğrencilerim\'de listelenir; denemelerini, analizlerini ve programını görürsün. Hesabını senin açtığın öğrenciler zaten bağlı gelir.';
+
+  @override
+  String get coachingInfo_coachTitle => 'Koçluk kodu ne işe yarar?';
+
+  @override
+  String get coachingInfo_title => 'Koçluk kodu nedir?';
+
+  @override
+  String get coaching_coachLabel => 'Koçun';
+
+  @override
+  String get coaching_codeHelp =>
+      '4 harf ve 4 rakam; tire kendiliğinden gelir.';
+
+  @override
+  String get coaching_codeHint => 'Örn: MOZK-4821';
+
+  @override
+  String get coaching_codeLabel => 'Koçluk kodu';
+
+  @override
+  String get coaching_connect => 'Koça Bağlan';
+
+  @override
+  String get coaching_errNotFound =>
+      'Bu kodla bir koç bulunamadı. Kodu koçundan yeniden iste.';
+
+  @override
+  String get coaching_errorTitle => 'Koçluk yüklenemedi';
+
+  @override
+  String coaching_infoBox(String name) {
+    return '$name denemelerini, analizlerini ve programını görebilir.';
+  }
+
+  @override
+  String coaching_linked(String name) {
+    return '$name bağlandın.';
+  }
+
+  @override
+  String get coaching_title => 'Koçluk';
+
+  @override
+  String get coaching_unlinkAction => 'Bağlantıyı Kaldır';
+
+  @override
+  String coaching_unlinkBody(String name) {
+    return '$name gelişimini artık göremeyecek. Yeniden bağlanmak için koçluk kodunu tekrar girmen gerekir.';
+  }
+
+  @override
+  String get coaching_unlinkTitle => 'Koç bağlantısı kaldırılsın mı?';
+
+  @override
+  String get coaching_unlinked => 'Koç bağlantın kaldırıldı.';
+
+  @override
+  String get coaching_unlinkedIntro =>
+      'Koçunun verdiği kodu gir; koçun denemelerini, analizlerini ve programını görebilsin.';
+
+  @override
+  String get coaching_whatIsCode => 'Koçluk Kodu Nedir?';
+
+  @override
   String get common_cancel => 'Vazgeç';
 
   @override
@@ -262,6 +773,72 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get common_undo => 'Geri Al';
+
+  @override
+  String get deletion_confirmAction => 'Hesabımı Sil';
+
+  @override
+  String deletion_confirmBody(String name) {
+    return '$name hesabı ve bütün verilerin kalıcı olarak silinecek. Bu işlem geri alınamaz.';
+  }
+
+  @override
+  String get deletion_confirmBodyAnonymous =>
+      'Hesabın ve bütün verilerin kalıcı olarak silinecek. Bu işlem geri alınamaz.';
+
+  @override
+  String get deletion_confirmTitle => 'Hesabın silinsin mi?';
+
+  @override
+  String get deletion_doneBody =>
+      'Verilerin silindi. İstersen yeni bir hesapla yeniden başlayabilirsin.';
+
+  @override
+  String get deletion_doneTitle => 'Hesabın silindi';
+
+  @override
+  String get deletion_failed =>
+      'Hesabın silinemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String deletion_lineCoach(String name) {
+    return 'Koçun $name ile bağlantın kalkar.';
+  }
+
+  @override
+  String get deletion_lineCoachAnonymous => 'Koçunla bağlantın kalkar.';
+
+  @override
+  String deletion_lineExams(String count) {
+    return 'Okuttuğun $count deneme ve analizleri silinir.';
+  }
+
+  @override
+  String get deletion_lineExamsAnonymous =>
+      'Okuttuğun denemeler ve analizleri silinir.';
+
+  @override
+  String get deletion_lineIrreversible => 'Bu işlem geri alınamaz.';
+
+  @override
+  String get deletion_lineProgress =>
+      'Eksik konuların, programların ve bilgi kartı ilerlemen silinir.';
+
+  @override
+  String get deletion_listHeading => 'Hesabını silersen:';
+
+  @override
+  String get deletion_pauseHint =>
+      'Yalnız bir süre ara vermek istiyorsan çıkış yapman yeterli; verilerin hesabında kalır.';
+
+  @override
+  String get deletion_progressBody => 'Uygulamayı kapatma.';
+
+  @override
+  String get deletion_progressTitle => 'Hesabın siliniyor';
+
+  @override
+  String get deletion_title => 'Hesabını sil';
 
   @override
   String get errors_cancelled => 'İşlem durduruldu.';
@@ -304,6 +881,236 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get errors_validation => 'Bilgilerini kontrol edip tekrar dene.';
+
+  @override
+  String get examDetail_analysisEmpty => 'Bu soru için çözüm açıklaması yok.';
+
+  @override
+  String get examDetail_analysisTitle => 'Soru Analizi';
+
+  @override
+  String get examDetail_answerBlankSentence => 'Bu soruyu boş bıraktın.';
+
+  @override
+  String get examDetail_answerCorrect => 'Doğru cevap';
+
+  @override
+  String get examDetail_answerCorrectSentence => 'İşaretin doğru cevap.';
+
+  @override
+  String get examDetail_answerMarked => 'İşaretin';
+
+  @override
+  String get examDetail_answerWrongSentence => 'Bu soruyu yanlış işaretledin.';
+
+  @override
+  String examDetail_cardGroupA11y(String lesson, String count) {
+    return '$lesson, $count kart';
+  }
+
+  @override
+  String examDetail_cardGroupCount(String count) {
+    return '$count kart';
+  }
+
+  @override
+  String examDetail_cardsAdded(String count) {
+    return '$count bilgi kartı eklendi';
+  }
+
+  @override
+  String get examDetail_cardsAddedBody =>
+      'Bu denemede yanlış ve boş bıraktığın sorulardan.';
+
+  @override
+  String get examDetail_cardsEmpty => 'Bu denemeden kart eklenmedi.';
+
+  @override
+  String get examDetail_cardsError => 'Kartlar yüklenemedi.';
+
+  @override
+  String get examDetail_copyrightNote =>
+      'Sorunun fotoğrafı telif hakları nedeniyle paylaşılamıyor.';
+
+  @override
+  String examDetail_counterBlank(String count) {
+    return '$count boş';
+  }
+
+  @override
+  String get examDetail_counterNoBlank => 'boş yok';
+
+  @override
+  String get examDetail_counterNoWrong => 'yanlış yok';
+
+  @override
+  String examDetail_counterWrong(String count) {
+    return '$count yanlış';
+  }
+
+  @override
+  String get examDetail_errorMessage => 'Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get examDetail_errorTitle => 'Deneme yüklenemedi';
+
+  @override
+  String get examDetail_filterA11y => 'Soru süzgeci';
+
+  @override
+  String get examDetail_filterAll => 'Tümü';
+
+  @override
+  String get examDetail_filterBlank => 'Boşlar';
+
+  @override
+  String get examDetail_filterWrong => 'Yanlışlar';
+
+  @override
+  String examDetail_lessonGroupA11y(String lesson, String total) {
+    return '$lesson, zayıftan güçlüye, $total soru';
+  }
+
+  @override
+  String get examDetail_mostMissedLabel => 'En çok kaçırdığın konu';
+
+  @override
+  String examDetail_mostMissedSentence(String total, String wrong) {
+    return '$total sorudan $wrong kaçırdın.';
+  }
+
+  @override
+  String get examDetail_netRule =>
+      'Net = doğru − yanlış ÷ 4; boş neti etkilemez.';
+
+  @override
+  String examDetail_netsByScoreType(String list) {
+    return 'Puan türüne göre net: $list.';
+  }
+
+  @override
+  String examDetail_noBlankBody(String count) {
+    return 'Bu denemedeki $count sorunun hepsini işaretledin.';
+  }
+
+  @override
+  String get examDetail_noBlankTitle => 'Boş bıraktığın soru yok';
+
+  @override
+  String get examDetail_noBreakdownBody =>
+      'Netin ve doğru, yanlış, boş sayıların hesaplandı; bu deneme için ders bazında sonuç gelmedi.';
+
+  @override
+  String get examDetail_noBreakdownTitle => 'Ders kırılımı yok';
+
+  @override
+  String examDetail_noWrongBody(String count) {
+    return 'Bu denemedeki $count sorunun hiçbirini yanlış yapmadın.';
+  }
+
+  @override
+  String get examDetail_noWrongTitle => 'Yanlış yaptığın soru yok';
+
+  @override
+  String examDetail_questionContext(String test, String lesson) {
+    return '$test · $lesson';
+  }
+
+  @override
+  String get examDetail_questionErrorTitle => 'Soru yüklenemedi';
+
+  @override
+  String get examDetail_questionLoadError => 'Soru açıklaması yüklenemedi.';
+
+  @override
+  String examDetail_questionTitle(String number) {
+    return '$number. soru';
+  }
+
+  @override
+  String get examDetail_questionsEmpty => 'Bu deneme için soru ayrıntısı yok.';
+
+  @override
+  String get examDetail_questionsError => 'Sorular yüklenemedi.';
+
+  @override
+  String get examDetail_rawScore => 'Ham puan';
+
+  @override
+  String get examDetail_relatedCards => 'İlgili kartlar';
+
+  @override
+  String examDetail_relatedCount(String count) {
+    return '$count kart';
+  }
+
+  @override
+  String examDetail_scoreTypeNet(String field, String net) {
+    return '$field $net';
+  }
+
+  @override
+  String get examDetail_showAllQuestions => 'Tüm Soruları Göster';
+
+  @override
+  String get examDetail_studyCards => 'Kartları Çalış';
+
+  @override
+  String get examDetail_studyTopic => 'Bu Konuyu Çalış';
+
+  @override
+  String get examDetail_tabCards => 'Kartlar';
+
+  @override
+  String get examDetail_tabGeneral => 'Genel';
+
+  @override
+  String get examDetail_tabQuestions => 'Sorular';
+
+  @override
+  String get examDetail_tabTopics => 'Konular';
+
+  @override
+  String get examDetail_tabsA11y => 'Deneme bölümleri';
+
+  @override
+  String get examDetail_testBasicMath => 'Temel Matematik';
+
+  @override
+  String get examDetail_testMath => 'Matematik';
+
+  @override
+  String examDetail_testNumbered(String number) {
+    return '$number. Test';
+  }
+
+  @override
+  String get examDetail_testSciences => 'Fen Bilimleri';
+
+  @override
+  String get examDetail_testSocial => 'Sosyal Bilimler';
+
+  @override
+  String get examDetail_testSocial2 => 'Sosyal Bilimler 2';
+
+  @override
+  String get examDetail_testSocialLiterature =>
+      'Türk Dili ve Edebiyatı–Sosyal Bilimler 1';
+
+  @override
+  String get examDetail_testTurkish => 'Türkçe';
+
+  @override
+  String get examDetail_topicNotFound => 'Bu konu Derslerim\'de bulunamadı.';
+
+  @override
+  String get examDetail_topicsEmpty => 'Konu analizi henüz hazır değil.';
+
+  @override
+  String get examDetail_topicsError => 'Konu analizi yüklenemedi.';
+
+  @override
+  String get examDetail_weakToStrong => 'zayıftan güçlüye';
 
   @override
   String exams_correctAnswer(String answer) {
@@ -1012,6 +1819,81 @@ class AppLocalizationsTr extends AppLocalizations {
   String get nav_tabStudents => 'Öğrencilerim';
 
   @override
+  String get notifications_categoriesHeading => 'Kategoriler';
+
+  @override
+  String notifications_coachAssignedBody(String name) {
+    return '$name yeni bir şey atadığında';
+  }
+
+  @override
+  String get notifications_coachAssignedBodyAnonymous =>
+      'Koçun yeni bir şey atadığında';
+
+  @override
+  String get notifications_coachAssignedTitle =>
+      'Koçun deneme ya da ödev atadı';
+
+  @override
+  String get notifications_examReadyBody =>
+      'Okuttuğun denemenin analizi bitince';
+
+  @override
+  String get notifications_examReadyTitle => 'Deneme sonucun hazır';
+
+  @override
+  String get notifications_meetingPlannedBody =>
+      'Koçun bir görüşme planladığında';
+
+  @override
+  String get notifications_meetingPlannedTitle => 'Görüşme planlandı';
+
+  @override
+  String get notifications_openSettings => 'Ayarları Aç';
+
+  @override
+  String get notifications_permissionOff =>
+      'Bildirim izni kapalı. Telefonunun ayarlarından SMAP\'e izin verirsen bu tercihler geçerli olur.';
+
+  @override
+  String get notifications_plannedNotice =>
+      'Bildirimler planlı: tercihlerin şimdiden kaydedilir, bildirimler açıldığında bunlara göre gelir.';
+
+  @override
+  String get notifications_quietBody => 'Bu saatlerde bildirim gelmez';
+
+  @override
+  String get notifications_quietEnd => 'Bitiş';
+
+  @override
+  String get notifications_quietEndTitle => 'Sessiz saat bitişi';
+
+  @override
+  String get notifications_quietHeading => 'Sessiz saatler';
+
+  @override
+  String get notifications_quietStart => 'Başlangıç';
+
+  @override
+  String get notifications_quietStartTitle => 'Sessiz saat başlangıcı';
+
+  @override
+  String get notifications_quietTitle => 'Sessiz saatler';
+
+  @override
+  String get notifications_savedNote => 'Değişiklikler anında kaydedilir.';
+
+  @override
+  String get notifications_studyReminderBody =>
+      'Programındaki çalışmanın saatinde';
+
+  @override
+  String get notifications_studyReminderTitle => 'Çalışma hatırlatıcısı';
+
+  @override
+  String get notifications_title => 'Bildirimler';
+
+  @override
   String get onboarding_cameraAllow => 'Kameraya İzin Ver';
 
   @override
@@ -1174,6 +2056,36 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get onboarding_welcomeTitle => 'SMAP\'e hoş geldin';
+
+  @override
+  String get password_currentLabel => 'Mevcut şifre';
+
+  @override
+  String get password_errMismatch => 'Şifreler aynı değil.';
+
+  @override
+  String get password_errSame => 'Yeni şifre eskisiyle aynı olamaz.';
+
+  @override
+  String get password_errWrongCurrent => 'Mevcut şifren doğru değil.';
+
+  @override
+  String get password_newLabel => 'Yeni şifre';
+
+  @override
+  String get password_newRule => 'En az 8 karakter.';
+
+  @override
+  String get password_repeatLabel => 'Yeni şifre (tekrar)';
+
+  @override
+  String get password_submit => 'Şifreyi Güncelle';
+
+  @override
+  String get password_title => 'Şifre';
+
+  @override
+  String get password_updated => 'Şifren güncellendi.';
 
   @override
   String pickers_a11yDayChip(String weekday, String day, String month) {

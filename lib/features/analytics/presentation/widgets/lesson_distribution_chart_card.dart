@@ -23,7 +23,9 @@ class LessonDistributionChartCard extends StatelessWidget {
     final titleFontSize = (screenWidth * 0.046).clamp(16.0, 18.0);
     final axisHeight = (axisFontSize + 6).clamp(14.0, 18.0);
 
-    final maxValue = items.isEmpty ? 1.0 : items.map((e) => e.value).reduce(math.max);
+    final maxValue = items.isEmpty
+        ? 1.0
+        : items.map((e) => e.value).reduce(math.max);
     final maxValueInt = maxValue.ceil();
     final axisLabels = _buildAxisLabels(maxValueInt);
 
@@ -56,7 +58,8 @@ class LessonDistributionChartCard extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             SizedBox(
-              height: (items.length * barHeight) + ((items.length - 1) * barGap),
+              height:
+                  (items.length * barHeight) + ((items.length - 1) * barGap),
               child: Stack(
                 children: [
                   Column(
@@ -93,27 +96,27 @@ class LessonDistributionChartCard extends StatelessWidget {
                   .take(items.length)
                   .map(
                     (e) => Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Container(
-                      width: 8,
-                      height: 8,
-                      decoration: BoxDecoration(
-                        color: e.color,
-                        shape: BoxShape.circle,
-                      ),
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Container(
+                          width: 8,
+                          height: 8,
+                          decoration: BoxDecoration(
+                            color: e.color,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        const SizedBox(width: 4),
+                        Text(
+                          '${e.lesson} ${e.value.toInt()}',
+                          style: TextStyle(
+                            fontSize: legendFontSize,
+                            color: AppColors.textPrimary,
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 4),
-                    Text(
-                      '${e.lesson} ${e.value.toInt()}',
-                      style: TextStyle(
-                        fontSize: legendFontSize,
-                        color: AppColors.textPrimary,
-                      ),
-                    ),
-                  ],
-                ),
-              )
+                  )
                   .toList(),
             ),
           ],
@@ -154,25 +157,36 @@ class _AxisLabelsRow extends StatelessWidget {
         return Stack(
           clipBehavior: Clip.none,
           children: axisLabels.map((label) {
-            final ratio = maxValue == 0 ? 0.0 : (label / maxValue).clamp(0.0, 1.0);
+            final ratio = maxValue == 0
+                ? 0.0
+                : (label / maxValue).clamp(0.0, 1.0);
             final x = ratio * constraints.maxWidth;
             final text = '$label';
             final painter = TextPainter(
               text: TextSpan(
                 text: text,
-                style: TextStyle(fontSize: fontSize, color: AppColors.textSecondary),
+                style: TextStyle(
+                  fontSize: fontSize,
+                  color: AppColors.textSecondary,
+                ),
               ),
               textDirection: TextDirection.ltr,
             )..layout();
             final left = (x - (painter.width / 2)).clamp(
               0.0,
-              (constraints.maxWidth - painter.width).clamp(0.0, constraints.maxWidth),
+              (constraints.maxWidth - painter.width).clamp(
+                0.0,
+                constraints.maxWidth,
+              ),
             );
             return Positioned(
               left: left,
               child: Text(
                 text,
-                style: TextStyle(fontSize: fontSize, color: AppColors.textSecondary),
+                style: TextStyle(
+                  fontSize: fontSize,
+                  color: AppColors.textSecondary,
+                ),
               ),
             );
           }).toList(),
@@ -209,10 +223,7 @@ class _HorizontalBar extends StatelessWidget {
           final textPainter = TextPainter(
             text: TextSpan(
               text: item.lesson,
-              style: const TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w600,
-              ),
+              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
             ),
             maxLines: 1,
             textDirection: TextDirection.ltr,
@@ -240,7 +251,7 @@ class _HorizontalBar extends StatelessWidget {
               ),
 
               if (canFitInside)
-              // İçeri
+                // İçeri
                 Positioned(
                   left: 10,
                   top: 0,
@@ -257,7 +268,7 @@ class _HorizontalBar extends StatelessWidget {
                   ),
                 )
               else
-              // Dışarı
+                // Dışarı
                 Positioned(
                   left: barWidth + 8,
                   top: 0,

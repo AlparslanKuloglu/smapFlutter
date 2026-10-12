@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:stacked/stacked.dart';
 
+import 'package:smap/dependency_injection/injection_container.dart';
 import 'package:smap/app/router/app_router.dart';
 import 'package:smap/app/router/guards/route_access.dart';
 import 'package:smap/app/shell/shell_preview.dart';
@@ -60,6 +61,10 @@ class StartupViewModel extends BaseViewModel {
       // without an account (see `ShellPreview`).
       final preview = ShellPreview.role;
       if (preview != null) {
+        // The tab screens read session services (lessons, schedule ...); the
+        // preview opens the scope without a user so they reach their error or
+        // empty states instead of failing to resolve.
+        pushSessionScope();
         await _router.replaceAll([_router.pageFor(targetForRole(preview))]);
         return;
       }

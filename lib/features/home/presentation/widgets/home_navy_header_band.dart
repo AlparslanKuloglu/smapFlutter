@@ -20,9 +20,6 @@ class HomeNavyHeaderBand extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return NavyHeaderBand(
-      height: bandHeight,
-      bottomRadius: bottomRadius,
-    );
+    return NavyHeaderBand(height: bandHeight, bottomRadius: bottomRadius);
   }
 }

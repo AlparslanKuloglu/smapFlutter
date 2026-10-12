@@ -61,7 +61,7 @@ void main() {
       expect(namesOf('/account'), [
         StudentShellRoute.name,
         AccountTabRoute.name,
-        LegacyAccountTabRoute.name,
+        AccountRoute.name,
       ]);
     });
 
@@ -95,7 +95,7 @@ void main() {
       expect(namesOf('/coach/account'), [
         CoachShellRoute.name,
         CoachAccountTabRoute.name,
-        LegacyCoachAccountTabRoute.name,
+        AccountRoute.name,
       ]);
     });
 

@@ -1,6 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 
 import 'package:smap/app/router/app_router.dart';
+import 'package:smap/features/account/account_routes.dart';
+import 'package:smap/features/account/account_settings_routes.dart';
+import 'package:smap/features/cards/cards_routes.dart';
+import 'package:smap/features/exams/exams_routes.dart';
 import 'package:smap/features/analytics/analytics_routes.dart';
 import 'package:smap/features/home/home_routes.dart';
 import 'package:smap/features/lessons/lessons_routes.dart';
@@ -35,17 +39,18 @@ List<AutoRoute> get shellRoutes => [
       AutoRoute(
         page: AnalyticsTabRoute.page,
         path: 'analytics',
-        children: analyticsTabRoutes,
+        children: [...analyticsTabRoutes, ...examsAnalyticsTabRoutes],
       ),
       AutoRoute(
         page: LessonsTabRoute.page,
         path: 'lessons',
-        children: lessonsTabRoutes,
+        // The deck's fixed path comes before `:lessonId` (E13).
+        children: [...cardsTabRoutes, ...lessonsTabRoutes],
       ),
       AutoRoute(
         page: AccountTabRoute.page,
         path: 'account',
-        children: [AutoRoute(page: LegacyAccountTabRoute.page, initial: true)],
+        children: [...accountTabRoutes, ...accountSettingsTabRoutes],
       ),
     ],
   ),
@@ -74,8 +79,10 @@ List<AutoRoute> get shellRoutes => [
       AutoRoute(
         page: CoachAccountTabRoute.page,
         path: 'account',
+        // A coach has no Koçluk, Şifre or Hesabı Sil rows yet (spec §6.5 #6).
         children: [
-          AutoRoute(page: LegacyCoachAccountTabRoute.page, initial: true),
+          ...accountTabRoutes,
+          AutoRoute(page: NotificationsRoute.page, path: 'notifications'),
         ],
       ),
     ],

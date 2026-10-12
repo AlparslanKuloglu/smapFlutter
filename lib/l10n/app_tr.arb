@@ -1,5 +1,445 @@
 {
   "@@locale": "tr",
+  "accountSettings_loadErrorMessage": "Bağlantını kontrol edip tekrar dene. Sorun sürerse biraz sonra yeniden açabilirsin.",
+  "@accountSettings_loadErrorMessage": {
+    "description": "Sentence of the screen-level error state of Koçluk (pano 2.18 'Ekran hatası metni')."
+  },
+  "accountSettings_sendFailed": "Gönderilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@accountSettings_sendFailed": {
+    "description": "Toast and inline text when a change of the account settings (password, coach link, unlink) could not be sent (pano 1.22 kare 1 error toast wording)."
+  },
+  "account_a11yCoachCode": "koçluk kodu {code}",
+  "@account_a11yCoachCode": {
+    "description": "Part of the profile summary reading of a coach (pano 9.1 kare 4).",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "account_a11yCoachOf": "koçun {name}",
+  "@account_a11yCoachOf": {
+    "description": "Part of the profile summary reading: the student's coach (pano 9.1 kare 1).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "account_a11yCoachRole": "öğrenci koçu",
+  "@account_a11yCoachRole": {
+    "description": "Part of the profile summary reading of a coach (pano 9.1 kare 4)."
+  },
+  "account_a11yOpensProfile": "Profili açar",
+  "@account_a11yOpensProfile": {
+    "description": "Hint of the profile summary button (pano 9.1: \"tek dokunma alanı, Profil'i açar\")."
+  },
+  "account_a11yProfile": "Profil: {details}",
+  "@account_a11yProfile": {
+    "description": "Reading of the profile summary (C37, pano 9.1): \"Profil: Alparslan Kuloğlu, 12. Sınıf, Eşit Ağırlık, koçun Mehmet Özkan\".",
+    "placeholders": {
+      "details": {
+        "type": "String"
+      }
+    }
+  },
+  "account_avatarSelected": "seçili",
+  "@account_avatarSelected": {
+    "description": "Reading of the chosen avatar of the sheet."
+  },
+  "account_avatarTitle": "Avatarını seç",
+  "@account_avatarTitle": {
+    "description": "Title of the avatar sheet (pano 9.2 kare 3)."
+  },
+  "account_avatarUse": "Bu Avatarı Kullan",
+  "@account_avatarUse": {
+    "description": "Primary button of the avatar sheet (pano 9.2 kare 3)."
+  },
+  "account_coachCodeCopied": "Kod kopyalandı.",
+  "@account_coachCodeCopied": {
+    "description": "Toast after the code was copied (pano 9.1 Davranış)."
+  },
+  "account_coachCodeCopy": "Kodu kopyala",
+  "@account_coachCodeCopy": {
+    "description": "Accessible name and tooltip of the copy button (pano 9.1 kare 4)."
+  },
+  "account_coachCodeShare": "Kodu paylaş",
+  "@account_coachCodeShare": {
+    "description": "Accessible name and tooltip of the share button (pano 9.1 kare 4)."
+  },
+  "account_coachCodeShareText": "SMAP'te koçluk kodum: {code}",
+  "@account_coachCodeShareText": {
+    "description": "Text the system share sheet carries (a decision: the design gives none).",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "account_coachCodeTitle": "Koçluk kodun",
+  "@account_coachCodeTitle": {
+    "description": "Title of the coach's code row (pano 9.1 kare 4)."
+  },
+  "account_contractKvkk": "KVKK Aydınlatma Metni",
+  "@account_contractKvkk": {
+    "description": "Title of the KVKK notice when the server sent none."
+  },
+  "account_contractPrivacy": "Gizlilik Politikası",
+  "@account_contractPrivacy": {
+    "description": "Title of the privacy policy when the server sent none."
+  },
+  "account_contractTerms": "Kullanım Koşulları",
+  "@account_contractTerms": {
+    "description": "Title of the terms of use when the server sent none."
+  },
+  "account_contractVersion": "Sürüm {version}",
+  "@account_contractVersion": {
+    "description": "Sub text of a contract: its version (pano 9.7 kare 1; the date of the design is not sent).",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "account_contractsEmptyMessage": "Gösterilecek bir sözleşme metni bulunamadı.",
+  "@account_contractsEmptyMessage": {
+    "description": "Sentence of the empty contracts list."
+  },
+  "account_contractsEmptyTitle": "Sözleşme yok",
+  "@account_contractsEmptyTitle": {
+    "description": "Title of the empty contracts list (a decision: pano 9.7 draws none)."
+  },
+  "account_contractsErrorTitle": "Sözleşmeler yüklenemedi",
+  "@account_contractsErrorTitle": {
+    "description": "Title of the error state of the contracts list (pano 1.22 wording)."
+  },
+  "account_contractsFooter": "Kayıt olurken bu sürümleri onayladın. Bir metin değişirse uygulama açılışında yeni sürümü onaylaman istenir.",
+  "@account_contractsFooter": {
+    "description": "Note under the list of contracts (pano 9.7 kare 1)."
+  },
+  "account_contractsTitle": "Sözleşmeler",
+  "@account_contractsTitle": {
+    "description": "Title of the contracts screen (pano 9.7 kare 1)."
+  },
+  "account_discardBody": "Yaptığın değişiklikler silinecek.",
+  "@account_discardBody": {
+    "description": "Body of that confirmation (spec 9.2, a decision)."
+  },
+  "account_discardConfirm": "Kaydetmeden Çık",
+  "@account_discardConfirm": {
+    "description": "Primary button of that confirmation (spec 9.2, a decision)."
+  },
+  "account_discardTitle": "Değişiklikler kaydedilmesin mi?",
+  "@account_discardTitle": {
+    "description": "Title of the confirmation when leaving edit mode with changes (pano 9.2)."
+  },
+  "account_fieldEmail": "E-posta",
+  "@account_fieldEmail": {
+    "description": "Field label (pano 9.2)."
+  },
+  "account_fieldGrade": "Sınıf",
+  "@account_fieldGrade": {
+    "description": "Field label and sheet title (pano 9.2 kare 4)."
+  },
+  "account_fieldName": "Ad Soyad",
+  "@account_fieldName": {
+    "description": "Field label (pano 9.2)."
+  },
+  "account_fieldPhone": "Telefon",
+  "@account_fieldPhone": {
+    "description": "Field label (pano 9.2)."
+  },
+  "account_fieldTrack": "Alan",
+  "@account_fieldTrack": {
+    "description": "Field label and sheet title (pano 9.2)."
+  },
+  "account_fieldUserName": "Kullanıcı adı",
+  "@account_fieldUserName": {
+    "description": "Field label (pano 9.2)."
+  },
+  "account_gradeGraduate": "Mezun",
+  "@account_gradeGraduate": {
+    "description": "The graduate option of the grade (pano 9.2 kare 4)."
+  },
+  "account_gradeNote": "9. ya da 10. sınıfı seçersen alan kaldırılır.",
+  "@account_gradeNote": {
+    "description": "Note under the grade options (pano 9.2 kare 4)."
+  },
+  "account_gradeValue": "{grade}. Sınıf",
+  "@account_gradeValue": {
+    "description": "A school year: \"12. Sınıf\" (pano 9.2 kare 4).",
+    "placeholders": {
+      "grade": {
+        "type": "int"
+      }
+    }
+  },
+  "account_groupAccount": "Hesap",
+  "@account_groupAccount": {
+    "description": "Group heading: profile and password (pano 9.1)."
+  },
+  "account_groupCoaching": "Koçluk",
+  "@account_groupCoaching": {
+    "description": "Group heading: the coaching row (pano 9.1)."
+  },
+  "account_groupLegal": "Yasal",
+  "@account_groupLegal": {
+    "description": "Group heading of the contracts row (pano 9.1)."
+  },
+  "account_groupNotifications": "Bildirimler",
+  "@account_groupNotifications": {
+    "description": "Group heading of the notifications row (pano 9.1)."
+  },
+  "account_groupSupport": "Destek",
+  "@account_groupSupport": {
+    "description": "Group heading of the \"Bize Yaz\" row (pano 9.1 kare 2)."
+  },
+  "account_issueEmailInvalid": "E-posta adresi eksik görünüyor. Örn: ad@alan.com",
+  "@account_issueEmailInvalid": {
+    "description": "Field error of the e-mail (same wording as the sign-up form)."
+  },
+  "account_issueNameMissing": "Ad soyadını yaz.",
+  "@account_issueNameMissing": {
+    "description": "Field error of the name (a decision: pano 9.2 draws none)."
+  },
+  "account_issuePhoneInvalid": "Telefon numaranı 5XX XXX XX XX biçiminde yaz.",
+  "@account_issuePhoneInvalid": {
+    "description": "Field error of the phone number (a decision: pano 9.2 draws none)."
+  },
+  "account_loadErrorMessage": "Bağlantını kontrol edip tekrar dene.",
+  "@account_loadErrorMessage": {
+    "description": "Sentence of the error states of the account screens."
+  },
+  "account_logoutConfirm": "Çıkış Yap",
+  "@account_logoutConfirm": {
+    "description": "Primary button of the sign-out confirmation (pano 9.1 kare 3)."
+  },
+  "account_logoutMessage": "Tekrar girmek için kullanıcı adın ve şifren gerekecek. Okuttuğun denemeler hesabında kalır.",
+  "@account_logoutMessage": {
+    "description": "Body of the sign-out confirmation (pano 9.1 kare 3)."
+  },
+  "account_logoutMessagePending": "Gönderilmeyi bekleyen {count} form var; çıkarsan silinir.",
+  "@account_logoutMessagePending": {
+    "description": "Body of the sign-out confirmation while forms wait to be sent (pano 9.1 kare 3).",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "account_logoutTitle": "Çıkış yapılsın mı?",
+  "@account_logoutTitle": {
+    "description": "Title of the sign-out confirmation (pano 9.1 kare 3)."
+  },
+  "account_phoneHint": "5XX XXX XX XX",
+  "@account_phoneHint": {
+    "description": "Example in the empty phone field after the +90 prefix (pano 9.2 kare 2)."
+  },
+  "account_profileChangeAvatar": "Avatarı Değiştir",
+  "@account_profileChangeAvatar": {
+    "description": "Text button next to the avatar (pano 9.2 kare 1)."
+  },
+  "account_profileDelete": "Hesabı Sil",
+  "@account_profileDelete": {
+    "description": "Danger link at the bottom of the profile (pano 9.2, 9.4 kare 1)."
+  },
+  "account_profileEdit": "Düzenle",
+  "@account_profileEdit": {
+    "description": "Bar action that starts editing (pano 9.2 kare 1)."
+  },
+  "account_profileErrorTitle": "Profil açılamadı",
+  "@account_profileErrorTitle": {
+    "description": "Title of the profile screen when the account is not available."
+  },
+  "account_profileSaveFailed": "Kaydedilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@account_profileSaveFailed": {
+    "description": "Error toast when saving failed (pano 9.2 Davranış)."
+  },
+  "account_profileSaved": "Profilin güncellendi.",
+  "@account_profileSaved": {
+    "description": "Success toast after saving (pano 9.2 Davranış)."
+  },
+  "account_profileTitle": "Profil",
+  "@account_profileTitle": {
+    "description": "Title of the profile screen (pano 9.2)."
+  },
+  "account_readerEmpty": "Bu metin şu an gösterilemiyor.",
+  "@account_readerEmpty": {
+    "description": "Reading screen when the document has no text."
+  },
+  "account_rowCoaching": "Koçluk",
+  "@account_rowCoaching": {
+    "description": "Row title of the student's coaching row (pano 9.1 kare 1)."
+  },
+  "account_rowCoachingNone": "Koçunla bağlan",
+  "@account_rowCoachingNone": {
+    "description": "Sub text of the Koçluk row of a student without a coach (spec 9.1, a decision: the design draws none)."
+  },
+  "account_rowContracts": "Sözleşmeler",
+  "@account_rowContracts": {
+    "description": "Row title (pano 9.1)."
+  },
+  "account_rowContractsSub": "Kullanım Koşulları, KVKK, Gizlilik",
+  "@account_rowContractsSub": {
+    "description": "Sub text of the Sözleşmeler row (pano 9.1)."
+  },
+  "account_rowLogout": "Çıkış Yap",
+  "@account_rowLogout": {
+    "description": "The sign-out row, in its own red group (pano 9.1 kare 2)."
+  },
+  "account_rowNotifications": "Bildirimler",
+  "@account_rowNotifications": {
+    "description": "Row title (pano 9.1)."
+  },
+  "account_rowNotificationsSub": "Deneme sonucu, koç, görüşme, hatırlatıcı",
+  "@account_rowNotificationsSub": {
+    "description": "Sub text of the Bildirimler row (pano 9.1)."
+  },
+  "account_rowPassword": "Şifre",
+  "@account_rowPassword": {
+    "description": "Row title (pano 9.1)."
+  },
+  "account_rowProfile": "Profil",
+  "@account_rowProfile": {
+    "description": "Row title (pano 9.1)."
+  },
+  "account_rowProfileCoachSub": "Ad, e-posta ve telefon",
+  "@account_rowProfileCoachSub": {
+    "description": "Sub text of the Profil row of a coach, who has no grade or track (spec 9.1 Ç-46)."
+  },
+  "account_rowProfileStudentSub": "Ad, e-posta, telefon, sınıf ve alan",
+  "@account_rowProfileStudentSub": {
+    "description": "Sub text of the Profil row of a student (pano 9.1 kare 1)."
+  },
+  "account_rowSupport": "Bize Yaz",
+  "@account_rowSupport": {
+    "description": "Row title that opens a mail draft (pano 9.1 kare 2)."
+  },
+  "account_rowSupportSub": "E-posta uygulaman açılır",
+  "@account_rowSupportSub": {
+    "description": "Sub text of the \"Bize Yaz\" row (pano 9.1 kare 2)."
+  },
+  "account_summaryCoach": "Koçun: {name}",
+  "@account_summaryCoach": {
+    "description": "Third line of the profile summary of a student with a coach (pano 9.1 kare 1).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "account_summaryCoachCode": "Koçluk kodun: {code}",
+  "@account_summaryCoachCode": {
+    "description": "Third line of the profile summary of a coach (pano 9.1 kare 4).",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "account_summaryCoachRole": "Öğrenci koçu",
+  "@account_summaryCoachRole": {
+    "description": "Second line of the profile summary of a coach (pano 9.1 kare 4)."
+  },
+  "account_summaryGradeTrack": "{grade} · {track}",
+  "@account_summaryGradeTrack": {
+    "description": "Second line of the profile summary of a student with both: \"12. Sınıf · Eşit Ağırlık\" (pano 9.1 kare 1).",
+    "placeholders": {
+      "grade": {
+        "type": "String"
+      },
+      "track": {
+        "type": "String"
+      }
+    }
+  },
+  "account_supportMailFailed": "E-posta uygulaması açılamadı.",
+  "@account_supportMailFailed": {
+    "description": "Toast when the mail app could not be opened."
+  },
+  "account_supportMailSubject": "SMAP · Destek",
+  "@account_supportMailSubject": {
+    "description": "Subject of the support mail draft (pano 9.1: the design gives none)."
+  },
+  "account_supportMailSystem": "Sistem: {system}",
+  "@account_supportMailSystem": {
+    "description": "Line of the support mail draft with the operating system.",
+    "placeholders": {
+      "system": {
+        "type": "String"
+      }
+    }
+  },
+  "account_supportMailVersion": "Uygulama sürümü: {version}",
+  "@account_supportMailVersion": {
+    "description": "Line of the support mail draft with the app version.",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "account_title": "Hesap",
+  "@account_title": {
+    "description": "Title of the Hesap tab root band (pano 9.1 kare 1)."
+  },
+  "account_trackDil": "Dil",
+  "@account_trackDil": {
+    "description": "Study track."
+  },
+  "account_trackDisabledHelper": "9. ve 10. sınıfta alan seçilmez.",
+  "@account_trackDisabledHelper": {
+    "description": "Help line of the disabled track field."
+  },
+  "account_trackDisabledValue": "Seçilmez",
+  "@account_trackDisabledValue": {
+    "description": "What the disabled track field reads in the 9th and 10th grade (pano 9.2, spec 9.2)."
+  },
+  "account_trackEsitAgirlik": "Eşit Ağırlık",
+  "@account_trackEsitAgirlik": {
+    "description": "Study track."
+  },
+  "account_trackSayisal": "Sayısal",
+  "@account_trackSayisal": {
+    "description": "Study track."
+  },
+  "account_trackSozel": "Sözel",
+  "@account_trackSozel": {
+    "description": "Study track."
+  },
+  "account_userNameLocked": "Kullanıcı adı değiştirilemez.",
+  "@account_userNameLocked": {
+    "description": "Help line under the user name in edit mode (pano 9.2 kare 2)."
+  },
+  "account_version": "Sürüm {version} ({build})",
+  "@account_version": {
+    "description": "The version line at the bottom of Hesap (pano 9.1 kare 2): \"Sürüm 3.0.0 (300)\".",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "build": {
+        "type": "String"
+      }
+    }
+  },
+  "account_versionCopied": "Sürüm kopyalandı.",
+  "@account_versionCopied": {
+    "description": "Toast after a long press on the version line copied it (pano 9.1 Davranış, a decision for the wording)."
+  },
+  "account_versionCopyHint": "Uzun basınca kopyalar",
+  "@account_versionCopyHint": {
+    "description": "Hint of the version line."
+  },
+  "account_versionNoBuild": "Sürüm {version}",
+  "@account_versionNoBuild": {
+    "description": "The version line when the platform gives no build number.",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
   "analytics_boxAverageNet": "Ortalama net",
   "@analytics_boxAverageNet": {
     "description": "Stat box label (pano 6.1)."
@@ -340,6 +780,145 @@
   "@analytics_typeAll": {
     "description": "Exam type segment: all exams (pano 6.2 kare 1)."
   },
+  "cardDeck_count": "{count} kart",
+  "@cardDeck_count": {
+    "description": "Counter line of a segment option (pano 8.1): \"23 kart\".",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "cardDeck_countNone": "kart yok",
+  "@cardDeck_countNone": {
+    "description": "Counter line of an empty segment option (pano 8.1 kare 4)."
+  },
+  "cardDeck_detail": "Detay",
+  "@cardDeck_detail": {
+    "description": "Secondary button under the deck; opens the card sheet (pano 8.1)."
+  },
+  "cardDeck_errorMessage": "Bağlantını kontrol edip tekrar dene.",
+  "@cardDeck_errorMessage": {
+    "description": "Sentence of the error state of the card deck."
+  },
+  "cardDeck_errorTitle": "Kartlar yüklenemedi",
+  "@cardDeck_errorTitle": {
+    "description": "Title of the screen-level error state of the card deck."
+  },
+  "cardDeck_favoriteEmpty": "Favoriye eklediğin kart yok.",
+  "@cardDeck_favoriteEmpty": {
+    "description": "Empty state of Favorilerim (pano 8.1 \"Boş metinler\", Ek C)."
+  },
+  "cardDeck_goKnown": "Bildiklerime Geç",
+  "@cardDeck_goKnown": {
+    "description": "Text button of the empty Eksiklerim; opens Bildiklerim (pano 8.1 kare 4)."
+  },
+  "cardDeck_groupFavorite": "Favorilerim",
+  "@cardDeck_groupFavorite": {
+    "description": "Third option of the deck's segment (pano 8.1)."
+  },
+  "cardDeck_groupKnown": "Bildiklerim",
+  "@cardDeck_groupKnown": {
+    "description": "Second option of the deck's segment (pano 8.1)."
+  },
+  "cardDeck_groupMissing": "Eksiklerim",
+  "@cardDeck_groupMissing": {
+    "description": "First option of the deck's segment (pano 8.1)."
+  },
+  "cardDeck_knownEmpty": "Henüz öğrendiğin kart yok.",
+  "@cardDeck_knownEmpty": {
+    "description": "Empty state of Bildiklerim (pano 8.1 \"Boş metinler\", Ek C)."
+  },
+  "cardDeck_learned": "Öğrendim",
+  "@cardDeck_learned": {
+    "description": "Primary button under the deck, only on a missing card (pano 8.1)."
+  },
+  "cardDeck_missingDoneMessage": "Bildiklerim'deki {count} kartı tekrar etmek istersen oradan devam edebilirsin.",
+  "@cardDeck_missingDoneMessage": {
+    "description": "Sentence under the title of the empty Eksiklerim (pano 8.1 kare 4).",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "cardDeck_missingDoneTitle": "Bu derste eksik kartın kalmadı.",
+  "@cardDeck_missingDoneTitle": {
+    "description": "Empty state of Eksiklerim once every card is learned (pano 8.1 kare 4; Ek C)."
+  },
+  "cardDeck_missingDoneTitleExam": "Bu denemede eksik kartın kalmadı.",
+  "@cardDeck_missingDoneTitleExam": {
+    "description": "Same, in the deck opened from an exam (assumption: the pano has the lesson wording only)."
+  },
+  "cardDeck_moved": "Kart Bildiklerim'e taşındı.",
+  "@cardDeck_moved": {
+    "description": "Toast after \"Öğrendim\", with \"Geri Al\" for 6 s (pano 8.1 kare 3)."
+  },
+  "cardDeck_nextA11y": "Sonraki kart",
+  "@cardDeck_nextA11y": {
+    "description": "Screen reader action of the top card (spec C52 customActions)."
+  },
+  "cardDeck_noCardsMessage": "Kartlar, denemelerde yanlış ve boş bıraktığın sorulardan eklenir.",
+  "@cardDeck_noCardsMessage": {
+    "description": "Sentence under the no-cards title (assumption; wording of pano 5.6: \"yanlış ve boş bıraktığın sorulardan\")."
+  },
+  "cardDeck_noCardsTitle": "Bu derste henüz kartın yok.",
+  "@cardDeck_noCardsTitle": {
+    "description": "Empty state of a lesson with no card in any group (assumption: the pano does not draw this case)."
+  },
+  "cardDeck_noCardsTitleExam": "Bu denemeden kart eklenmedi.",
+  "@cardDeck_noCardsTitleExam": {
+    "description": "Empty state of an exam that earned no cards (assumption)."
+  },
+  "cardDeck_previousA11y": "Önceki kart",
+  "@cardDeck_previousA11y": {
+    "description": "Screen reader action of the top card (spec C52 customActions)."
+  },
+  "cardDeck_progress": "{current}/{total}",
+  "@cardDeck_progress": {
+    "description": "Session progress next to the bar (pano 8.1): \"12/23\".",
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "cardDeck_progressA11y": "Oturum, {total} karttan {current}. kart",
+  "@cardDeck_progressA11y": {
+    "description": "Screen reader sentence of the session progress (pano 8.1: aria \"Oturum\").",
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "cardDeck_sendFailed": "Gönderilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@cardDeck_sendFailed": {
+    "description": "Toast when \"Öğrendim\" or the star could not be sent; the card goes back (spec C52: hata olursa geri alınır)."
+  },
+  "cardDeck_title": "{lesson} Kartları",
+  "@cardDeck_title": {
+    "description": "Large title of the card deck of a lesson (pano 8.1): \"Tarih Kartları\".",
+    "placeholders": {
+      "lesson": {
+        "type": "String"
+      }
+    }
+  },
+  "cardDeck_titleExam": "Deneme Kartları",
+  "@cardDeck_titleExam": {
+    "description": "Large title of the card deck opened from an exam (\"Kartları Çalış\"; spec 8.1 [Karar])."
+  },
+  "cardDeck_titleFallback": "Bilgi Kartları",
+  "@cardDeck_titleFallback": {
+    "description": "Large title of the card deck of a lesson that is not in the catalog."
+  },
   "cardSheet_confirmBody": "\"{name}\" eksiklerinden çıkıp Bildiklerim'e geçecek.",
   "@cardSheet_confirmBody": {
     "description": "Sentence of the confirmation of \"Öğrendim\" (pano 8.1 kare 2).",
@@ -381,6 +960,147 @@
   "@cards_favoriteRemove": {
     "description": "Study card favorite star, already a favorite (C52)."
   },
+  "coachingChange_action": "Koçu Değiştir",
+  "@coachingChange_action": {
+    "description": "Primary button of the change sheet (Tur 12 F)."
+  },
+  "coachingChange_codeLabel": "Yeni koçunun kodu",
+  "@coachingChange_codeLabel": {
+    "description": "Label of the code field of the change sheet (Tur 12 F)."
+  },
+  "coachingChange_errSameCoach": "Bu kod zaten koçun {name} ait.",
+  "@coachingChange_errSameCoach": {
+    "description": "Error under the code field when the code is the current coach's (Tur 12 F, 14.10 kare 3); the name arrives with its dative suffix: \"Mehmet Özkan'a\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachingChange_offlineNote": "Koçunu değiştirmek için bağlantı gerekiyor.",
+  "@coachingChange_offlineNote": {
+    "description": "Note under the disabled \"Koçunu Değiştir\" when the device is offline (Tur 12 F)."
+  },
+  "coachingChange_open": "Koçunu Değiştir",
+  "@coachingChange_open": {
+    "description": "Text button above \"Bağlantıyı Kaldır\" that opens the change sheet (Tur 12 F, 14.10 kare 1)."
+  },
+  "coachingChange_title": "Koçunu değiştir",
+  "@coachingChange_title": {
+    "description": "Title of the change sheet (Tur 12 F, 14.10 kare 2)."
+  },
+  "coachingChange_warning": "{name} ile bağlantın kalkacak. Yeni koçun denemelerini, analizlerini ve programını görebilecek.",
+  "@coachingChange_warning": {
+    "description": "Warning box of the change sheet (Tur 12 F).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachingInfo_body1": "Koçluk kodu, koçunun SMAP hesabına özel koddur; dört harf ve dört rakamdan oluşur.",
+  "@coachingInfo_body1": {
+    "description": "First paragraph of the explanation sheet (pano 9.5 kare 4)."
+  },
+  "coachingInfo_body2": "Kodu koçundan iste. Girdiğinde koçun denemelerini, analizlerini ve programını görebilir. Bağlantıyı istediğin an buradan kaldırabilirsin.",
+  "@coachingInfo_body2": {
+    "description": "Second paragraph of the explanation sheet (pano 9.5 kare 4)."
+  },
+  "coachingInfo_coachBody1": "Öğrencin bu kodu kendi hesabında Hesap › Koçluk bölümüne girer; böylece hesabı seninkine bağlanır.",
+  "@coachingInfo_coachBody1": {
+    "description": "First paragraph of the coach's explanation sheet (Tur 12 G)."
+  },
+  "coachingInfo_coachBody2": "Bağlanan öğrenciler Öğrencilerim'de listelenir; denemelerini, analizlerini ve programını görürsün. Hesabını senin açtığın öğrenciler zaten bağlı gelir.",
+  "@coachingInfo_coachBody2": {
+    "description": "Second paragraph of the coach's explanation sheet (Tur 12 G)."
+  },
+  "coachingInfo_coachTitle": "Koçluk kodu ne işe yarar?",
+  "@coachingInfo_coachTitle": {
+    "description": "Title of the coach's explanation sheet on the coach's Hesap (Tur 12 G, 14.11 kare 2)."
+  },
+  "coachingInfo_title": "Koçluk kodu nedir?",
+  "@coachingInfo_title": {
+    "description": "Title of the explanation sheet (pano 9.5 kare 4)."
+  },
+  "coaching_coachLabel": "Koçun",
+  "@coaching_coachLabel": {
+    "description": "Small line under the coach's name on the coach card (pano 9.5 kare 1)."
+  },
+  "coaching_codeHelp": "4 harf ve 4 rakam; tire kendiliğinden gelir.",
+  "@coaching_codeHelp": {
+    "description": "Help line under the coaching code field (pano 9.5 kare 3)."
+  },
+  "coaching_codeHint": "Örn: MOZK-4821",
+  "@coaching_codeHint": {
+    "description": "Example in the empty coaching code field (pano 9.5 kare 3)."
+  },
+  "coaching_codeLabel": "Koçluk kodu",
+  "@coaching_codeLabel": {
+    "description": "Label of the coaching code field (pano 9.5 kare 3)."
+  },
+  "coaching_connect": "Koça Bağlan",
+  "@coaching_connect": {
+    "description": "Primary button of the unlinked state (pano 9.5 kare 3)."
+  },
+  "coaching_errNotFound": "Bu kodla bir koç bulunamadı. Kodu koçundan yeniden iste.",
+  "@coaching_errNotFound": {
+    "description": "Error under the code field when no coach has the code (pano 9.5 kare 3)."
+  },
+  "coaching_errorTitle": "Koçluk yüklenemedi",
+  "@coaching_errorTitle": {
+    "description": "Title of the screen-level error state of Koçluk (pano 1.22 kare 4 wording)."
+  },
+  "coaching_infoBox": "{name} denemelerini, analizlerini ve programını görebilir.",
+  "@coaching_infoBox": {
+    "description": "Info box under the coach card (pano 9.5 kare 1).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coaching_linked": "{name} bağlandın.",
+  "@coaching_linked": {
+    "description": "Toast after linking to a coach (pano 9.5 kare 3); the name arrives with its dative suffix: \"Mehmet Özkan'a\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coaching_title": "Koçluk",
+  "@coaching_title": {
+    "description": "Title of the coaching screen (pano 9.5)."
+  },
+  "coaching_unlinkAction": "Bağlantıyı Kaldır",
+  "@coaching_unlinkAction": {
+    "description": "Red text button and the danger button of its confirm sheet (pano 9.5 kare 1 and 2)."
+  },
+  "coaching_unlinkBody": "{name} gelişimini artık göremeyecek. Yeniden bağlanmak için koçluk kodunu tekrar girmen gerekir.",
+  "@coaching_unlinkBody": {
+    "description": "Body of the unlink confirm sheet (pano 9.5 kare 2).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coaching_unlinkTitle": "Koç bağlantısı kaldırılsın mı?",
+  "@coaching_unlinkTitle": {
+    "description": "Title of the unlink confirm sheet (pano 9.5 kare 2)."
+  },
+  "coaching_unlinked": "Koç bağlantın kaldırıldı.",
+  "@coaching_unlinked": {
+    "description": "Toast after the coach was unlinked (pano 9.5 kare 2)."
+  },
+  "coaching_unlinkedIntro": "Koçunun verdiği kodu gir; koçun denemelerini, analizlerini ve programını görebilsin.",
+  "@coaching_unlinkedIntro": {
+    "description": "Sentence above the code field when the student has no coach (pano 9.5 kare 3)."
+  },
+  "coaching_whatIsCode": "Koçluk Kodu Nedir?",
+  "@coaching_whatIsCode": {
+    "description": "Text button that opens the explanation sheet (pano 9.5 kare 3)."
+  },
   "common_cancel": "Vazgeç",
   "@common_cancel": {
     "description": "Dismiss button of dialogs and sheets. Never use 'İptal'."
@@ -408,6 +1128,93 @@
   "common_undo": "Geri Al",
   "@common_undo": {
     "description": "Undo action. Toast action only."
+  },
+  "deletion_confirmAction": "Hesabımı Sil",
+  "@deletion_confirmAction": {
+    "description": "The danger button of the explanation and of the confirm sheet (pano 9.4 kare 2 and 3)."
+  },
+  "deletion_confirmBody": "{name} hesabı ve bütün verilerin kalıcı olarak silinecek. Bu işlem geri alınamaz.",
+  "@deletion_confirmBody": {
+    "description": "Body of the dangerous confirm sheet (pano 9.4 kare 3); the name is the user's full name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deletion_confirmBodyAnonymous": "Hesabın ve bütün verilerin kalıcı olarak silinecek. Bu işlem geri alınamaz.",
+  "@deletion_confirmBodyAnonymous": {
+    "description": "Body of the confirm sheet when the account has no name to show."
+  },
+  "deletion_confirmTitle": "Hesabın silinsin mi?",
+  "@deletion_confirmTitle": {
+    "description": "Title of the dangerous confirm sheet (pano 9.4 kare 3)."
+  },
+  "deletion_doneBody": "Verilerin silindi. İstersen yeni bir hesapla yeniden başlayabilirsin.",
+  "@deletion_doneBody": {
+    "description": "Sentence under the end title (pano 9.4 kare 5)."
+  },
+  "deletion_doneTitle": "Hesabın silindi",
+  "@deletion_doneTitle": {
+    "description": "Title of the end screen (pano 9.4 kare 5)."
+  },
+  "deletion_failed": "Hesabın silinemedi. Bağlantını kontrol edip tekrar dene.",
+  "@deletion_failed": {
+    "description": "Error box on the explanation after the deletion failed (pano 9.4 kare 4 note)."
+  },
+  "deletion_lineCoach": "Koçun {name} ile bağlantın kalkar.",
+  "@deletion_lineCoach": {
+    "description": "Third line of the list, for a student who has a coach (pano 9.4 kare 2).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deletion_lineCoachAnonymous": "Koçunla bağlantın kalkar.",
+  "@deletion_lineCoachAnonymous": {
+    "description": "Third line while the coach's name is not known yet (it is loaded in the background)."
+  },
+  "deletion_lineExams": "Okuttuğun {count} deneme ve analizleri silinir.",
+  "@deletion_lineExams": {
+    "description": "First line of the list (pano 9.4 kare 2); the count is the number of exams the student has read.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "deletion_lineExamsAnonymous": "Okuttuğun denemeler ve analizleri silinir.",
+  "@deletion_lineExamsAnonymous": {
+    "description": "First line of the list when the account does not say how many exams were read (no number is made up)."
+  },
+  "deletion_lineIrreversible": "Bu işlem geri alınamaz.",
+  "@deletion_lineIrreversible": {
+    "description": "Last line of the list (pano 9.4 kare 2)."
+  },
+  "deletion_lineProgress": "Eksik konuların, programların ve bilgi kartı ilerlemen silinir.",
+  "@deletion_lineProgress": {
+    "description": "Second line of the list (pano 9.4 kare 2)."
+  },
+  "deletion_listHeading": "Hesabını silersen:",
+  "@deletion_listHeading": {
+    "description": "Heading of the list of what is lost (pano 9.4 kare 2)."
+  },
+  "deletion_pauseHint": "Yalnız bir süre ara vermek istiyorsan çıkış yapman yeterli; verilerin hesabında kalır.",
+  "@deletion_pauseHint": {
+    "description": "Closing note under the list: signing out is enough for a pause (pano 9.4 kare 2)."
+  },
+  "deletion_progressBody": "Uygulamayı kapatma.",
+  "@deletion_progressBody": {
+    "description": "Sentence under the progress title (pano 9.4 kare 4)."
+  },
+  "deletion_progressTitle": "Hesabın siliniyor",
+  "@deletion_progressTitle": {
+    "description": "Title of the full-screen progress (pano 9.4 kare 4)."
+  },
+  "deletion_title": "Hesabını sil",
+  "@deletion_title": {
+    "description": "Title of the account deletion explanation (pano 9.4 kare 2)."
   },
   "errors_cancelled": "İşlem durduruldu.",
   "@errors_cancelled": {
@@ -456,6 +1263,356 @@
   "errors_validation": "Bilgilerini kontrol edip tekrar dene.",
   "@errors_validation": {
     "description": "AppErrorCode.validation: the server rejected the input. A server-written message may replace this text."
+  },
+  "examDetail_analysisEmpty": "Bu soru için çözüm açıklaması yok.",
+  "@examDetail_analysisEmpty": {
+    "description": "Text when the question has no explanation (pano 5.7 kare 2)."
+  },
+  "examDetail_analysisTitle": "Soru Analizi",
+  "@examDetail_analysisTitle": {
+    "description": "Section title of Soru Detay (pano 5.7)."
+  },
+  "examDetail_answerBlankSentence": "Bu soruyu boş bıraktın.",
+  "@examDetail_answerBlankSentence": {
+    "description": "Answer card sentence of a blank question when the letters are not in the data (no pano text)."
+  },
+  "examDetail_answerCorrect": "Doğru cevap",
+  "@examDetail_answerCorrect": {
+    "description": "Label of the answer card (pano 5.7)."
+  },
+  "examDetail_answerCorrectSentence": "İşaretin doğru cevap.",
+  "@examDetail_answerCorrectSentence": {
+    "description": "Answer card sentence of a right question (pano 5.7 kare 2)."
+  },
+  "examDetail_answerMarked": "İşaretin",
+  "@examDetail_answerMarked": {
+    "description": "Label of the answer card (pano 5.7)."
+  },
+  "examDetail_answerWrongSentence": "Bu soruyu yanlış işaretledin.",
+  "@examDetail_answerWrongSentence": {
+    "description": "Answer card sentence of a wrong question when the letters are not in the data (no pano text: the board always shows the letters)."
+  },
+  "examDetail_cardGroupA11y": "{lesson}, {count} kart",
+  "@examDetail_cardGroupA11y": {
+    "description": "Screen reader reading of a lesson row of the Kartlar tab; it opens the lesson's deck.",
+    "placeholders": {
+      "lesson": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_cardGroupCount": "{count} kart",
+  "@examDetail_cardGroupCount": {
+    "description": "Count at the right of a lesson group of the Kartlar tab.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_cardsAdded": "{count} bilgi kartı eklendi",
+  "@examDetail_cardsAdded": {
+    "description": "Title of the info card of the Kartlar tab (pano 5.6).",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_cardsAddedBody": "Bu denemede yanlış ve boş bıraktığın sorulardan.",
+  "@examDetail_cardsAddedBody": {
+    "description": "Body of the info card of the Kartlar tab (pano 5.6)."
+  },
+  "examDetail_cardsEmpty": "Bu denemeden kart eklenmedi.",
+  "@examDetail_cardsEmpty": {
+    "description": "Section empty text of the Kartlar tab (pano 5.8 'Boş metinleri')."
+  },
+  "examDetail_cardsError": "Kartlar yüklenemedi.",
+  "@examDetail_cardsError": {
+    "description": "Section error text of the Kartlar tab."
+  },
+  "examDetail_copyrightNote": "Sorunun fotoğrafı telif hakları nedeniyle paylaşılamıyor.",
+  "@examDetail_copyrightNote": {
+    "description": "Note at the end of Soru Detay (pano 5.7)."
+  },
+  "examDetail_counterBlank": "{count} boş",
+  "@examDetail_counterBlank": {
+    "description": "Counter of the 'Boşlar' option (pano 5.4).",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_counterNoBlank": "boş yok",
+  "@examDetail_counterNoBlank": {
+    "description": "Counter of the 'Boşlar' option when there is no blank question (pano 5.4)."
+  },
+  "examDetail_counterNoWrong": "yanlış yok",
+  "@examDetail_counterNoWrong": {
+    "description": "Counter of the 'Yanlışlar' option when there is no wrong question."
+  },
+  "examDetail_counterWrong": "{count} yanlış",
+  "@examDetail_counterWrong": {
+    "description": "Counter of the 'Yanlışlar' option (pano 5.4: '74 yanlış').",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_errorMessage": "Bağlantını kontrol edip tekrar dene.",
+  "@examDetail_errorMessage": {
+    "description": "Screen error message (pano 5.8 kare 3)."
+  },
+  "examDetail_errorTitle": "Deneme yüklenemedi",
+  "@examDetail_errorTitle": {
+    "description": "Screen error title (pano 5.8 kare 3)."
+  },
+  "examDetail_filterA11y": "Soru süzgeci",
+  "@examDetail_filterA11y": {
+    "description": "Screen reader name of the question filter segment (pano 5.4)."
+  },
+  "examDetail_filterAll": "Tümü",
+  "@examDetail_filterAll": {
+    "description": "Question filter option (pano 5.4)."
+  },
+  "examDetail_filterBlank": "Boşlar",
+  "@examDetail_filterBlank": {
+    "description": "Question filter option (pano 5.4)."
+  },
+  "examDetail_filterWrong": "Yanlışlar",
+  "@examDetail_filterWrong": {
+    "description": "Question filter option (pano 5.4)."
+  },
+  "examDetail_lessonGroupA11y": "{lesson}, zayıftan güçlüye, {total} soru",
+  "@examDetail_lessonGroupA11y": {
+    "description": "Screen reader reading of a lesson heading of the Konular tab.",
+    "placeholders": {
+      "lesson": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_mostMissedLabel": "En çok kaçırdığın konu",
+  "@examDetail_mostMissedLabel": {
+    "description": "Caption of the most missed topic card (pano 5.5)."
+  },
+  "examDetail_mostMissedSentence": "{total} sorudan {wrong} kaçırdın.",
+  "@examDetail_mostMissedSentence": {
+    "description": "Sentence of the most missed topic card (pano 5.5). {wrong} arrives with its suffix from TurkishSuffix.possessiveAccusative ('7'sini').",
+    "placeholders": {
+      "total": {
+        "type": "String"
+      },
+      "wrong": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_netRule": "Net = doğru − yanlış ÷ 4; boş neti etkilemez.",
+  "@examDetail_netRule": {
+    "description": "Footnote of the Genel tab (pano 5.3 kare 2)."
+  },
+  "examDetail_netsByScoreType": "Puan türüne göre net: {list}.",
+  "@examDetail_netsByScoreType": {
+    "description": "Footnote of the Genel tab (pano 5.3 kare 2); {list} is the 'Eşit Ağırlık 40 · Sayısal 37,5 · Sözel 30' text.",
+    "placeholders": {
+      "list": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_noBlankBody": "Bu denemedeki {count} sorunun hepsini işaretledin.",
+  "@examDetail_noBlankBody": {
+    "description": "Body of the empty card of the 'Boşlar' filter (pano 5.4 kare 3).",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_noBlankTitle": "Boş bıraktığın soru yok",
+  "@examDetail_noBlankTitle": {
+    "description": "Title of the empty card of the 'Boşlar' filter (pano 5.4 kare 3)."
+  },
+  "examDetail_noBreakdownBody": "Netin ve doğru, yanlış, boş sayıların hesaplandı; bu deneme için ders bazında sonuç gelmedi.",
+  "@examDetail_noBreakdownBody": {
+    "description": "Body of the section empty card of the Genel tab (pano 5.8 kare 2)."
+  },
+  "examDetail_noBreakdownTitle": "Ders kırılımı yok",
+  "@examDetail_noBreakdownTitle": {
+    "description": "Title of the section empty card of the Genel tab (pano 5.8 kare 2)."
+  },
+  "examDetail_noWrongBody": "Bu denemedeki {count} sorunun hiçbirini yanlış yapmadın.",
+  "@examDetail_noWrongBody": {
+    "description": "Body of the empty card of the 'Yanlışlar' filter.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_noWrongTitle": "Yanlış yaptığın soru yok",
+  "@examDetail_noWrongTitle": {
+    "description": "Title of the empty card of the 'Yanlışlar' filter (same pattern as pano 5.4 kare 3; the board draws only the blank one)."
+  },
+  "examDetail_questionContext": "{test} · {lesson}",
+  "@examDetail_questionContext": {
+    "description": "Line under the Soru Detay title (pano 5.7).",
+    "placeholders": {
+      "test": {
+        "type": "String"
+      },
+      "lesson": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_questionErrorTitle": "Soru yüklenemedi",
+  "@examDetail_questionErrorTitle": {
+    "description": "Screen error title of Soru Detay."
+  },
+  "examDetail_questionLoadError": "Soru açıklaması yüklenemedi.",
+  "@examDetail_questionLoadError": {
+    "description": "Section error text of Soru Detay (the explanation and cards did not load; the answer card stays)."
+  },
+  "examDetail_questionTitle": "{number}. soru",
+  "@examDetail_questionTitle": {
+    "description": "Title of Soru Detay (pano 5.7: '31. soru').",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_questionsEmpty": "Bu deneme için soru ayrıntısı yok.",
+  "@examDetail_questionsEmpty": {
+    "description": "Section empty text of the Sorular tab (pano 5.8 'Boş metinleri')."
+  },
+  "examDetail_questionsError": "Sorular yüklenemedi.",
+  "@examDetail_questionsError": {
+    "description": "Section error text of the Sorular tab."
+  },
+  "examDetail_rawScore": "Ham puan",
+  "@examDetail_rawScore": {
+    "description": "Label under the raw points of the score card (Tur 12 B, 14.4)."
+  },
+  "examDetail_relatedCards": "İlgili kartlar",
+  "@examDetail_relatedCards": {
+    "description": "Section title of Soru Detay (pano 5.7)."
+  },
+  "examDetail_relatedCount": "{count} kart",
+  "@examDetail_relatedCount": {
+    "description": "Count next to the section title (pano 5.7: '2 kart').",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_scoreTypeNet": "{field} {net}",
+  "@examDetail_scoreTypeNet": {
+    "description": "One score type of the footnote: 'Eşit Ağırlık 40'.",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "net": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_showAllQuestions": "Tüm Soruları Göster",
+  "@examDetail_showAllQuestions": {
+    "description": "Text button of the filter empty card (pano 5.4 kare 3)."
+  },
+  "examDetail_studyCards": "Kartları Çalış",
+  "@examDetail_studyCards": {
+    "description": "Primary button of the Kartlar tab and of Soru Detay (pano 5.6, 5.7)."
+  },
+  "examDetail_studyTopic": "Bu Konuyu Çalış",
+  "@examDetail_studyTopic": {
+    "description": "Primary button of the most missed topic card (pano 5.5)."
+  },
+  "examDetail_tabCards": "Kartlar",
+  "@examDetail_tabCards": {
+    "description": "In-screen tab (pano 5.6)."
+  },
+  "examDetail_tabGeneral": "Genel",
+  "@examDetail_tabGeneral": {
+    "description": "In-screen tab (pano 5.3)."
+  },
+  "examDetail_tabQuestions": "Sorular",
+  "@examDetail_tabQuestions": {
+    "description": "In-screen tab (pano 5.4)."
+  },
+  "examDetail_tabTopics": "Konular",
+  "@examDetail_tabTopics": {
+    "description": "In-screen tab (pano 5.5)."
+  },
+  "examDetail_tabsA11y": "Deneme bölümleri",
+  "@examDetail_tabsA11y": {
+    "description": "Screen reader name of the in-screen tab row (pano 5.3 'aria: Deneme bölümleri')."
+  },
+  "examDetail_testBasicMath": "Temel Matematik",
+  "@examDetail_testBasicMath": {
+    "description": "Test name, TYT mathematics (pano 5.3 kare 3)."
+  },
+  "examDetail_testMath": "Matematik",
+  "@examDetail_testMath": {
+    "description": "Test name, AYT mathematics (pano 5.3 kare 1)."
+  },
+  "examDetail_testNumbered": "{number}. Test",
+  "@examDetail_testNumbered": {
+    "description": "Name of a test the app has no name for.",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "examDetail_testSciences": "Fen Bilimleri",
+  "@examDetail_testSciences": {
+    "description": "Test name, fourth test of both exams (pano 5.3)."
+  },
+  "examDetail_testSocial": "Sosyal Bilimler",
+  "@examDetail_testSocial": {
+    "description": "Test name, TYT second test (pano 5.3 kare 3)."
+  },
+  "examDetail_testSocial2": "Sosyal Bilimler 2",
+  "@examDetail_testSocial2": {
+    "description": "Test name, AYT second test (pano 5.3 kare 1)."
+  },
+  "examDetail_testSocialLiterature": "Türk Dili ve Edebiyatı–Sosyal Bilimler 1",
+  "@examDetail_testSocialLiterature": {
+    "description": "Test name, AYT first test (pano 5.3 kare 1). The dash is an en dash."
+  },
+  "examDetail_testTurkish": "Türkçe",
+  "@examDetail_testTurkish": {
+    "description": "Test name, TYT first test (pano 5.3 kare 3)."
+  },
+  "examDetail_topicNotFound": "Bu konu Derslerim'de bulunamadı.",
+  "@examDetail_topicNotFound": {
+    "description": "Toast when a topic of the analysis is not among the lesson's topics; the lesson opens instead."
+  },
+  "examDetail_topicsEmpty": "Konu analizi henüz hazır değil.",
+  "@examDetail_topicsEmpty": {
+    "description": "Section empty text of the Konular tab (pano 5.8 'Boş metinleri')."
+  },
+  "examDetail_topicsError": "Konu analizi yüklenemedi.",
+  "@examDetail_topicsError": {
+    "description": "Section error text of the Konular tab."
+  },
+  "examDetail_weakToStrong": "zayıftan güçlüye",
+  "@examDetail_weakToStrong": {
+    "description": "Sort note at the right of a lesson heading (pano 5.5)."
   },
   "exams_correctAnswer": "Doğru {answer}",
   "@exams_correctAnswer": {
@@ -1610,6 +2767,99 @@
   "@nav_tabStudents": {
     "description": "Bottom bar tab, coach only (C84)."
   },
+  "notifications_categoriesHeading": "Kategoriler",
+  "@notifications_categoriesHeading": {
+    "description": "Heading of the group of category switches (pano 9.6 kare 1)."
+  },
+  "notifications_coachAssignedBody": "{name} yeni bir şey atadığında",
+  "@notifications_coachAssignedBody": {
+    "description": "Category line with the coach's name (pano 9.6 kare 1).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifications_coachAssignedBodyAnonymous": "Koçun yeni bir şey atadığında",
+  "@notifications_coachAssignedBodyAnonymous": {
+    "description": "Category line while the coach's name is not known."
+  },
+  "notifications_coachAssignedTitle": "Koçun deneme ya da ödev atadı",
+  "@notifications_coachAssignedTitle": {
+    "description": "Category title (pano 9.6 kare 1)."
+  },
+  "notifications_examReadyBody": "Okuttuğun denemenin analizi bitince",
+  "@notifications_examReadyBody": {
+    "description": "Category line (pano 9.6 kare 1)."
+  },
+  "notifications_examReadyTitle": "Deneme sonucun hazır",
+  "@notifications_examReadyTitle": {
+    "description": "Category title (pano 9.6 kare 1)."
+  },
+  "notifications_meetingPlannedBody": "Koçun bir görüşme planladığında",
+  "@notifications_meetingPlannedBody": {
+    "description": "Category line (pano 9.6 kare 1)."
+  },
+  "notifications_meetingPlannedTitle": "Görüşme planlandı",
+  "@notifications_meetingPlannedTitle": {
+    "description": "Category title (pano 9.6 kare 1)."
+  },
+  "notifications_openSettings": "Ayarları Aç",
+  "@notifications_openSettings": {
+    "description": "Text button of the warning box; opens the system settings (pano 9.6 kare 2)."
+  },
+  "notifications_permissionOff": "Bildirim izni kapalı. Telefonunun ayarlarından SMAP'e izin verirsen bu tercihler geçerli olur.",
+  "@notifications_permissionOff": {
+    "description": "Warning box when the system permission is off (pano 9.6 kare 2)."
+  },
+  "notifications_plannedNotice": "Bildirimler planlı: tercihlerin şimdiden kaydedilir, bildirimler açıldığında bunlara göre gelir.",
+  "@notifications_plannedNotice": {
+    "description": "Info box while notifications are not sent yet (pano 9.6 kare 1)."
+  },
+  "notifications_quietBody": "Bu saatlerde bildirim gelmez",
+  "@notifications_quietBody": {
+    "description": "Line of the quiet hours switch row (pano 9.6 kare 1)."
+  },
+  "notifications_quietEnd": "Bitiş",
+  "@notifications_quietEnd": {
+    "description": "Row that sets the end of the quiet hours (pano 9.6 kare 1)."
+  },
+  "notifications_quietEndTitle": "Sessiz saat bitişi",
+  "@notifications_quietEndTitle": {
+    "description": "Title of the time wheel sheet for the end (assumed; the board draws only the start, spec 9.6 'belirtilmemiş')."
+  },
+  "notifications_quietHeading": "Sessiz saatler",
+  "@notifications_quietHeading": {
+    "description": "Heading of the quiet hours group (pano 9.6 kare 1)."
+  },
+  "notifications_quietStart": "Başlangıç",
+  "@notifications_quietStart": {
+    "description": "Row that sets the start of the quiet hours (pano 9.6 kare 1)."
+  },
+  "notifications_quietStartTitle": "Sessiz saat başlangıcı",
+  "@notifications_quietStartTitle": {
+    "description": "Title of the time wheel sheet for the start (pano 9.6 kare 3)."
+  },
+  "notifications_quietTitle": "Sessiz saatler",
+  "@notifications_quietTitle": {
+    "description": "Title of the quiet hours switch row (pano 9.6 kare 1)."
+  },
+  "notifications_savedNote": "Değişiklikler anında kaydedilir.",
+  "@notifications_savedNote": {
+    "description": "Note under the quiet hours group; there is no Save button (pano 9.6 kare 1)."
+  },
+  "notifications_studyReminderBody": "Programındaki çalışmanın saatinde",
+  "@notifications_studyReminderBody": {
+    "description": "Category line (pano 9.6 kare 1)."
+  },
+  "notifications_studyReminderTitle": "Çalışma hatırlatıcısı",
+  "@notifications_studyReminderTitle": {
+    "description": "Category title (pano 9.6 kare 1)."
+  },
+  "notifications_title": "Bildirimler",
+  "@notifications_title": {
+    "description": "Title of the notifications screen (pano 9.6)."
+  },
   "onboarding_cameraAllow": "Kameraya İzin Ver",
   "@onboarding_cameraAllow": {
     "description": "Camera primer primary button; opens the system dialog (pano 2.2 kare 4)."
@@ -1814,6 +3064,46 @@
   "onboarding_welcomeTitle": "SMAP'e hoş geldin",
   "@onboarding_welcomeTitle": {
     "description": "Welcome screen title (pano 2.2 kare 5)."
+  },
+  "password_currentLabel": "Mevcut şifre",
+  "@password_currentLabel": {
+    "description": "Label of the first field (pano 9.3 kare 1)."
+  },
+  "password_errMismatch": "Şifreler aynı değil.",
+  "@password_errMismatch": {
+    "description": "Error under the repeat field when the two new passwords differ (pano 9.3 'Kurallar ve hata metinleri')."
+  },
+  "password_errSame": "Yeni şifre eskisiyle aynı olamaz.",
+  "@password_errSame": {
+    "description": "Error under the new password when it equals the current one (pano 9.3 'Kurallar ve hata metinleri')."
+  },
+  "password_errWrongCurrent": "Mevcut şifren doğru değil.",
+  "@password_errWrongCurrent": {
+    "description": "Error under the current password when the server refuses it (pano 9.3 kare 2)."
+  },
+  "password_newLabel": "Yeni şifre",
+  "@password_newLabel": {
+    "description": "Label of the second field (pano 9.3 kare 1)."
+  },
+  "password_newRule": "En az 8 karakter.",
+  "@password_newRule": {
+    "description": "Rule line under the new password; turns red when it is too short (pano 9.3 kare 1, spec 1.12)."
+  },
+  "password_repeatLabel": "Yeni şifre (tekrar)",
+  "@password_repeatLabel": {
+    "description": "Label of the third field (pano 9.3 kare 1)."
+  },
+  "password_submit": "Şifreyi Güncelle",
+  "@password_submit": {
+    "description": "The single primary button of the password screen (pano 9.3 kare 1)."
+  },
+  "password_title": "Şifre",
+  "@password_title": {
+    "description": "Title of the password screen (pano 9.3 kare 1)."
+  },
+  "password_updated": "Şifren güncellendi.",
+  "@password_updated": {
+    "description": "Toast on Hesap after the password was changed (pano 9.3 kare 3)."
   },
   "pickers_a11yDayChip": "{weekday} {day} {month}",
   "@pickers_a11yDayChip": {

@@ -18,7 +18,6 @@ import 'package:smap/features/home/application/last_exam_summary.dart';
 import 'package:smap/features/home/application/subject_strip.dart';
 import 'package:smap/features/home/application/today_summary.dart';
 import 'package:smap/features/home/presentation/home/home_viewmodel.dart';
-import 'package:smap/features/legacy/legacy_links_e6.dart';
 import 'package:smap/features/lessons/application/lessons_service.dart';
 import 'package:smap/features/lessons/presentation/widgets/subject_tile.dart';
 import 'package:smap/features/schedule/application/schedule_service.dart';
@@ -141,14 +140,23 @@ const EdgeInsets _gutter = EdgeInsets.symmetric(horizontal: AppSpacing.gutter);
 
 // ── Where the links go ────────────────────────────────────────────────────
 //
-// Every destination is opened from one function here. Ders and Konu Detayı
-// live in the Derslerim tab's stack, Programım in this tab's stack and the
-// new-program flow on the root stack (spec §3.6). Deneme Detay is still the
-// legacy screen until E10 (`LegacyLinksE6`).
+// Every destination is opened from one function here. Deneme Detay lives in
+// the Analizlerim tab's stack, Ders and Konu Detayı in the Derslerim tab's,
+// Programım in this tab's and the new-program flow on the root stack (spec
+// §3.6).
 
-/// "Analizi Gör": the result detail of the last exam (spec §3.6).
-void _openExam(BuildContext context, String examId) =>
-    unawaited(LegacyLinksE6.openExamDetail(context, examId: examId));
+/// "Analizi Gör": the result detail of the last exam, in the Analizlerim tab
+/// (spec §3.6).
+void _openExam(BuildContext context, String examId) => unawaited(
+  context.navigateTo(
+    AnalyticsTabRoute(
+      children: [
+        AnalyticsRoute(),
+        ExamDetailRoute(examId: examId),
+      ],
+    ),
+  ),
+);
 
 /// A lesson tile: the lesson detail, in the Derslerim tab.
 void _openLesson(BuildContext context, String lessonId) => unawaited(

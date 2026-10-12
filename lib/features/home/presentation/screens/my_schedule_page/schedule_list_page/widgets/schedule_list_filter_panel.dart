@@ -12,7 +12,8 @@ class ScheduleListFilterPanel extends StatefulWidget {
   final VoidCallback onClear;
 
   @override
-  State<ScheduleListFilterPanel> createState() => _ScheduleListFilterPanelState();
+  State<ScheduleListFilterPanel> createState() =>
+      _ScheduleListFilterPanelState();
 }
 
 class _ScheduleListFilterPanelState extends State<ScheduleListFilterPanel> {
@@ -143,7 +144,10 @@ class _ScheduleListFilterPanelState extends State<ScheduleListFilterPanel> {
                 value: value,
                 activeColor: AppColors.appBarBackground,
                 checkColor: AppColors.white,
-                side: const BorderSide(color: AppColors.appBarBackground, width: 1.5),
+                side: const BorderSide(
+                  color: AppColors.appBarBackground,
+                  width: 1.5,
+                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(4),
                 ),

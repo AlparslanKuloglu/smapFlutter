@@ -15,6 +15,23 @@ import 'package:smap/core/services/device_preferences.dart';
 import 'package:smap/core/theme/app_motion.dart';
 import 'package:smap/features/auth/domain/session_state.dart';
 import 'package:smap/app/shell/tab_stack_pages.dart';
+import 'package:smap/features/account/data/dtos/legal_document_dto.dart';
+import 'package:smap/features/account/presentation/account/account_view.dart';
+import 'package:smap/features/account/presentation/contract_reader/contract_reader_view.dart';
+import 'package:smap/features/account/presentation/contracts/contracts_view.dart';
+import 'package:smap/features/account/presentation/profile/profile_view.dart';
+import 'package:smap/features/account/account_settings_routes.dart';
+import 'package:smap/features/account/presentation/coaching/coaching_view.dart';
+import 'package:smap/features/account/presentation/deletion/account_deletion_view.dart';
+import 'package:smap/features/account/presentation/deletion/done/account_deletion_done_view.dart';
+import 'package:smap/features/account/presentation/deletion/progress/account_deletion_progress_view.dart';
+import 'package:smap/features/account/presentation/notifications/notifications_view.dart';
+import 'package:smap/features/account/presentation/password/password_view.dart';
+import 'package:smap/features/cards/presentation/deck/card_deck_view.dart';
+import 'package:smap/features/exams/domain/exam_detail.dart';
+import 'package:smap/features/exams/presentation/exam_detail/exam_detail_view.dart';
+import 'package:smap/features/exams/presentation/question_detail/question_detail_view.dart';
+import 'package:smap/shared/ui/navigation/student_scope.dart';
 import 'package:smap/features/analytics/presentation/analytics/analytics_view.dart';
 import 'package:smap/features/home/presentation/home/home_view.dart';
 import 'package:smap/features/lessons/presentation/lesson_detail/lesson_detail_view.dart';
@@ -91,6 +108,7 @@ final class AppRouter extends RootStackRouter implements RouteCatalog {
     ...authRoutes,
     ...registerRoutes,
     ...scheduleRootRoutes,
+    ...accountSettingsRootRoutes,
     ...shellRoutes,
   ];
 

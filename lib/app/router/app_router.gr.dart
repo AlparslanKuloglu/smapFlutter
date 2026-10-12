@@ -11,6 +11,54 @@
 part of 'app_router.dart';
 
 /// generated route for
+/// [AccountDeletionDoneView]
+class AccountDeletionDoneRoute extends PageRouteInfo<void> {
+  const AccountDeletionDoneRoute({List<PageRouteInfo>? children})
+    : super(AccountDeletionDoneRoute.name, initialChildren: children);
+
+  static const String name = 'AccountDeletionDoneRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const AccountDeletionDoneView();
+    },
+  );
+}
+
+/// generated route for
+/// [AccountDeletionProgressView]
+class AccountDeletionProgressRoute extends PageRouteInfo<void> {
+  const AccountDeletionProgressRoute({List<PageRouteInfo>? children})
+    : super(AccountDeletionProgressRoute.name, initialChildren: children);
+
+  static const String name = 'AccountDeletionProgressRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const AccountDeletionProgressView();
+    },
+  );
+}
+
+/// generated route for
+/// [AccountDeletionView]
+class AccountDeletionRoute extends PageRouteInfo<void> {
+  const AccountDeletionRoute({List<PageRouteInfo>? children})
+    : super(AccountDeletionRoute.name, initialChildren: children);
+
+  static const String name = 'AccountDeletionRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const AccountDeletionView();
+    },
+  );
+}
+
+/// generated route for
 /// [AccountTabPage]
 class AccountTabRoute extends PageRouteInfo<void> {
   const AccountTabRoute({List<PageRouteInfo>? children})
@@ -22,6 +70,22 @@ class AccountTabRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const AccountTabPage();
+    },
+  );
+}
+
+/// generated route for
+/// [AccountView]
+class AccountRoute extends PageRouteInfo<void> {
+  const AccountRoute({List<PageRouteInfo>? children})
+    : super(AccountRoute.name, initialChildren: children);
+
+  static const String name = 'AccountRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const AccountView();
     },
   );
 }
@@ -88,6 +152,85 @@ class AnalyticsRouteArgs {
 
   @override
   int get hashCode => tab.hashCode ^ key.hashCode;
+}
+
+/// generated route for
+/// [CardDeckView]
+class CardDeckRoute extends PageRouteInfo<CardDeckRouteArgs> {
+  CardDeckRoute({
+    String? lessonId,
+    String? examId,
+    String? group,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         CardDeckRoute.name,
+         args: CardDeckRouteArgs(
+           lessonId: lessonId,
+           examId: examId,
+           group: group,
+           key: key,
+         ),
+         rawQueryParams: {
+           'lessonId': lessonId,
+           'examId': examId,
+           'group': group,
+         },
+         initialChildren: children,
+       );
+
+  static const String name = 'CardDeckRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final queryParams = data.queryParams;
+      final args = data.argsAs<CardDeckRouteArgs>(
+        orElse: () => CardDeckRouteArgs(
+          lessonId: queryParams.optString('lessonId'),
+          examId: queryParams.optString('examId'),
+          group: queryParams.optString('group'),
+        ),
+      );
+      return CardDeckView(
+        lessonId: args.lessonId,
+        examId: args.examId,
+        group: args.group,
+        key: args.key,
+      );
+    },
+  );
+}
+
+class CardDeckRouteArgs {
+  const CardDeckRouteArgs({this.lessonId, this.examId, this.group, this.key});
+
+  final String? lessonId;
+
+  final String? examId;
+
+  final String? group;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'CardDeckRouteArgs{lessonId: $lessonId, examId: $examId, group: $group, key: $key}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! CardDeckRouteArgs) return false;
+    return lessonId == other.lessonId &&
+        examId == other.examId &&
+        group == other.group &&
+        key == other.key;
+  }
+
+  @override
+  int get hashCode =>
+      lessonId.hashCode ^ examId.hashCode ^ group.hashCode ^ key.hashCode;
 }
 
 /// generated route for
@@ -171,6 +314,177 @@ class CoachStudentsTabRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [CoachingView]
+class CoachingRoute extends PageRouteInfo<void> {
+  const CoachingRoute({List<PageRouteInfo>? children})
+    : super(CoachingRoute.name, initialChildren: children);
+
+  static const String name = 'CoachingRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const CoachingView();
+    },
+  );
+}
+
+/// generated route for
+/// [ContractReaderView]
+class ContractReaderRoute extends PageRouteInfo<ContractReaderRouteArgs> {
+  ContractReaderRoute({
+    required LegalDocumentDto document,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         ContractReaderRoute.name,
+         args: ContractReaderRouteArgs(document: document, key: key),
+         initialChildren: children,
+       );
+
+  static const String name = 'ContractReaderRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<ContractReaderRouteArgs>();
+      return ContractReaderView(document: args.document, key: args.key);
+    },
+  );
+}
+
+class ContractReaderRouteArgs {
+  const ContractReaderRouteArgs({required this.document, this.key});
+
+  final LegalDocumentDto document;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'ContractReaderRouteArgs{document: $document, key: $key}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! ContractReaderRouteArgs) return false;
+    return document == other.document && key == other.key;
+  }
+
+  @override
+  int get hashCode => document.hashCode ^ key.hashCode;
+}
+
+/// generated route for
+/// [ContractsView]
+class ContractsRoute extends PageRouteInfo<void> {
+  const ContractsRoute({List<PageRouteInfo>? children})
+    : super(ContractsRoute.name, initialChildren: children);
+
+  static const String name = 'ContractsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const ContractsView();
+    },
+  );
+}
+
+/// generated route for
+/// [ExamDetailView]
+class ExamDetailRoute extends PageRouteInfo<ExamDetailRouteArgs> {
+  ExamDetailRoute({
+    required String examId,
+    String? tab,
+    StudentRef? student,
+    ExamDetail? exam,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         ExamDetailRoute.name,
+         args: ExamDetailRouteArgs(
+           examId: examId,
+           tab: tab,
+           student: student,
+           exam: exam,
+           key: key,
+         ),
+         rawPathParams: {'examId': examId},
+         rawQueryParams: {'tab': tab},
+         initialChildren: children,
+       );
+
+  static const String name = 'ExamDetailRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final pathParams = data.inheritedPathParams;
+      final queryParams = data.queryParams;
+      final args = data.argsAs<ExamDetailRouteArgs>(
+        orElse: () => ExamDetailRouteArgs(
+          examId: pathParams.getString('examId'),
+          tab: queryParams.optString('tab'),
+        ),
+      );
+      return ExamDetailView(
+        examId: args.examId,
+        tab: args.tab,
+        student: args.student,
+        exam: args.exam,
+        key: args.key,
+      );
+    },
+  );
+}
+
+class ExamDetailRouteArgs {
+  const ExamDetailRouteArgs({
+    required this.examId,
+    this.tab,
+    this.student,
+    this.exam,
+    this.key,
+  });
+
+  final String examId;
+
+  final String? tab;
+
+  final StudentRef? student;
+
+  final ExamDetail? exam;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'ExamDetailRouteArgs{examId: $examId, tab: $tab, student: $student, exam: $exam, key: $key}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! ExamDetailRouteArgs) return false;
+    return examId == other.examId &&
+        tab == other.tab &&
+        student == other.student &&
+        exam == other.exam &&
+        key == other.key;
+  }
+
+  @override
+  int get hashCode =>
+      examId.hashCode ^
+      tab.hashCode ^
+      student.hashCode ^
+      exam.hashCode ^
+      key.hashCode;
+}
+
+/// generated route for
 /// [ForceUpdateView]
 class ForceUpdateRoute extends PageRouteInfo<void> {
   const ForceUpdateRoute({List<PageRouteInfo>? children})
@@ -230,38 +544,6 @@ class HomeRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const HomeView();
-    },
-  );
-}
-
-/// generated route for
-/// [LegacyAccountTabPage]
-class LegacyAccountTabRoute extends PageRouteInfo<void> {
-  const LegacyAccountTabRoute({List<PageRouteInfo>? children})
-    : super(LegacyAccountTabRoute.name, initialChildren: children);
-
-  static const String name = 'LegacyAccountTabRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const LegacyAccountTabPage();
-    },
-  );
-}
-
-/// generated route for
-/// [LegacyCoachAccountTabPage]
-class LegacyCoachAccountTabRoute extends PageRouteInfo<void> {
-  const LegacyCoachAccountTabRoute({List<PageRouteInfo>? children})
-    : super(LegacyCoachAccountTabRoute.name, initialChildren: children);
-
-  static const String name = 'LegacyCoachAccountTabRoute';
-
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const LegacyCoachAccountTabPage();
     },
   );
 }
@@ -505,6 +787,22 @@ class NewProgramRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [NotificationsView]
+class NotificationsRoute extends PageRouteInfo<void> {
+  const NotificationsRoute({List<PageRouteInfo>? children})
+    : super(NotificationsRoute.name, initialChildren: children);
+
+  static const String name = 'NotificationsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const NotificationsView();
+    },
+  );
+}
+
+/// generated route for
 /// [OnboardingView]
 class OnboardingRoute extends PageRouteInfo<void> {
   const OnboardingRoute({List<PageRouteInfo>? children})
@@ -516,6 +814,38 @@ class OnboardingRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const OnboardingView();
+    },
+  );
+}
+
+/// generated route for
+/// [PasswordView]
+class PasswordRoute extends PageRouteInfo<void> {
+  const PasswordRoute({List<PageRouteInfo>? children})
+    : super(PasswordRoute.name, initialChildren: children);
+
+  static const String name = 'PasswordRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const PasswordView();
+    },
+  );
+}
+
+/// generated route for
+/// [ProfileView]
+class ProfileRoute extends PageRouteInfo<void> {
+  const ProfileRoute({List<PageRouteInfo>? children})
+    : super(ProfileRoute.name, initialChildren: children);
+
+  static const String name = 'ProfileRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const ProfileView();
     },
   );
 }
@@ -616,6 +946,107 @@ class ProgramListRoute extends PageRouteInfo<void> {
       return const ProgramListView();
     },
   );
+}
+
+/// generated route for
+/// [QuestionDetailView]
+class QuestionDetailRoute extends PageRouteInfo<QuestionDetailRouteArgs> {
+  QuestionDetailRoute({
+    required String examId,
+    int lesson = 0,
+    int q = 1,
+    StudentRef? student,
+    ExamDetail? exam,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         QuestionDetailRoute.name,
+         args: QuestionDetailRouteArgs(
+           examId: examId,
+           lesson: lesson,
+           q: q,
+           student: student,
+           exam: exam,
+           key: key,
+         ),
+         rawPathParams: {'examId': examId},
+         rawQueryParams: {'lesson': lesson, 'q': q},
+         initialChildren: children,
+       );
+
+  static const String name = 'QuestionDetailRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final pathParams = data.inheritedPathParams;
+      final queryParams = data.queryParams;
+      final args = data.argsAs<QuestionDetailRouteArgs>(
+        orElse: () => QuestionDetailRouteArgs(
+          examId: pathParams.getString('examId'),
+          lesson: queryParams.getInt('lesson', 0),
+          q: queryParams.getInt('q', 1),
+        ),
+      );
+      return QuestionDetailView(
+        examId: args.examId,
+        lesson: args.lesson,
+        q: args.q,
+        student: args.student,
+        exam: args.exam,
+        key: args.key,
+      );
+    },
+  );
+}
+
+class QuestionDetailRouteArgs {
+  const QuestionDetailRouteArgs({
+    required this.examId,
+    this.lesson = 0,
+    this.q = 1,
+    this.student,
+    this.exam,
+    this.key,
+  });
+
+  final String examId;
+
+  final int lesson;
+
+  final int q;
+
+  final StudentRef? student;
+
+  final ExamDetail? exam;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'QuestionDetailRouteArgs{examId: $examId, lesson: $lesson, q: $q, student: $student, exam: $exam, key: $key}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! QuestionDetailRouteArgs) return false;
+    return examId == other.examId &&
+        lesson == other.lesson &&
+        q == other.q &&
+        student == other.student &&
+        exam == other.exam &&
+        key == other.key;
+  }
+
+  @override
+  int get hashCode =>
+      examId.hashCode ^
+      lesson.hashCode ^
+      q.hashCode ^
+      student.hashCode ^
+      exam.hashCode ^
+      key.hashCode;
 }
 
 /// generated route for

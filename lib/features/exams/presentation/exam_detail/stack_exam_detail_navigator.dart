@@ -3,7 +3,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:smap/app/router/app_router.dart';
 import 'package:smap/features/exams/domain/exam_detail.dart';
 import 'package:smap/features/exams/presentation/exam_detail/exam_detail_navigator.dart';
-import 'package:smap/features/legacy/legacy_links_e10.dart';
 import 'package:smap/features/lessons/application/lesson_category.dart';
 import 'package:smap/features/lessons/presentation/lessons_navigator.dart';
 import 'package:smap/shared/ui/navigation/student_scope.dart';
@@ -69,10 +68,12 @@ class StackExamDetailNavigator implements ExamDetailNavigator {
     required String examId,
     String? backendLessonId,
     String? lessonName,
-  }) => LegacyLinksE10.openExamCardDeck(
-    _router.root.navigatorKey.currentState,
-    examId: examId,
-    backendLessonId: backendLessonId,
-    lessonName: lessonName,
+  }) => _router.navigate(
+    LessonsTabRoute(
+      children: [
+        const LessonsRoute(),
+        CardDeckRoute(lessonId: backendLessonId, examId: examId),
+      ],
+    ),
   );
 }

@@ -94,6 +94,552 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('tr')];
 
+  /// Sentence of the screen-level error state of Koçluk (pano 2.18 'Ekran hatası metni').
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantını kontrol edip tekrar dene. Sorun sürerse biraz sonra yeniden açabilirsin.'**
+  String get accountSettings_loadErrorMessage;
+
+  /// Toast and inline text when a change of the account settings (password, coach link, unlink) could not be sent (pano 1.22 kare 1 error toast wording).
+  ///
+  /// In tr, this message translates to:
+  /// **'Gönderilemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get accountSettings_sendFailed;
+
+  /// Part of the profile summary reading of a coach (pano 9.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'koçluk kodu {code}'**
+  String account_a11yCoachCode(String code);
+
+  /// Part of the profile summary reading: the student's coach (pano 9.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'koçun {name}'**
+  String account_a11yCoachOf(String name);
+
+  /// Part of the profile summary reading of a coach (pano 9.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'öğrenci koçu'**
+  String get account_a11yCoachRole;
+
+  /// Hint of the profile summary button (pano 9.1: "tek dokunma alanı, Profil'i açar").
+  ///
+  /// In tr, this message translates to:
+  /// **'Profili açar'**
+  String get account_a11yOpensProfile;
+
+  /// Reading of the profile summary (C37, pano 9.1): "Profil: Alparslan Kuloğlu, 12. Sınıf, Eşit Ağırlık, koçun Mehmet Özkan".
+  ///
+  /// In tr, this message translates to:
+  /// **'Profil: {details}'**
+  String account_a11yProfile(String details);
+
+  /// Reading of the chosen avatar of the sheet.
+  ///
+  /// In tr, this message translates to:
+  /// **'seçili'**
+  String get account_avatarSelected;
+
+  /// Title of the avatar sheet (pano 9.2 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Avatarını seç'**
+  String get account_avatarTitle;
+
+  /// Primary button of the avatar sheet (pano 9.2 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu Avatarı Kullan'**
+  String get account_avatarUse;
+
+  /// Toast after the code was copied (pano 9.1 Davranış).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kod kopyalandı.'**
+  String get account_coachCodeCopied;
+
+  /// Accessible name and tooltip of the copy button (pano 9.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kodu kopyala'**
+  String get account_coachCodeCopy;
+
+  /// Accessible name and tooltip of the share button (pano 9.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kodu paylaş'**
+  String get account_coachCodeShare;
+
+  /// Text the system share sheet carries (a decision: the design gives none).
+  ///
+  /// In tr, this message translates to:
+  /// **'SMAP\'te koçluk kodum: {code}'**
+  String account_coachCodeShareText(String code);
+
+  /// Title of the coach's code row (pano 9.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçluk kodun'**
+  String get account_coachCodeTitle;
+
+  /// Title of the KVKK notice when the server sent none.
+  ///
+  /// In tr, this message translates to:
+  /// **'KVKK Aydınlatma Metni'**
+  String get account_contractKvkk;
+
+  /// Title of the privacy policy when the server sent none.
+  ///
+  /// In tr, this message translates to:
+  /// **'Gizlilik Politikası'**
+  String get account_contractPrivacy;
+
+  /// Title of the terms of use when the server sent none.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kullanım Koşulları'**
+  String get account_contractTerms;
+
+  /// Sub text of a contract: its version (pano 9.7 kare 1; the date of the design is not sent).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sürüm {version}'**
+  String account_contractVersion(String version);
+
+  /// Sentence of the empty contracts list.
+  ///
+  /// In tr, this message translates to:
+  /// **'Gösterilecek bir sözleşme metni bulunamadı.'**
+  String get account_contractsEmptyMessage;
+
+  /// Title of the empty contracts list (a decision: pano 9.7 draws none).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sözleşme yok'**
+  String get account_contractsEmptyTitle;
+
+  /// Title of the error state of the contracts list (pano 1.22 wording).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sözleşmeler yüklenemedi'**
+  String get account_contractsErrorTitle;
+
+  /// Note under the list of contracts (pano 9.7 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kayıt olurken bu sürümleri onayladın. Bir metin değişirse uygulama açılışında yeni sürümü onaylaman istenir.'**
+  String get account_contractsFooter;
+
+  /// Title of the contracts screen (pano 9.7 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sözleşmeler'**
+  String get account_contractsTitle;
+
+  /// Body of that confirmation (spec 9.2, a decision).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yaptığın değişiklikler silinecek.'**
+  String get account_discardBody;
+
+  /// Primary button of that confirmation (spec 9.2, a decision).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kaydetmeden Çık'**
+  String get account_discardConfirm;
+
+  /// Title of the confirmation when leaving edit mode with changes (pano 9.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Değişiklikler kaydedilmesin mi?'**
+  String get account_discardTitle;
+
+  /// Field label (pano 9.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'E-posta'**
+  String get account_fieldEmail;
+
+  /// Field label and sheet title (pano 9.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sınıf'**
+  String get account_fieldGrade;
+
+  /// Field label (pano 9.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ad Soyad'**
+  String get account_fieldName;
+
+  /// Field label (pano 9.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Telefon'**
+  String get account_fieldPhone;
+
+  /// Field label and sheet title (pano 9.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Alan'**
+  String get account_fieldTrack;
+
+  /// Field label (pano 9.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kullanıcı adı'**
+  String get account_fieldUserName;
+
+  /// The graduate option of the grade (pano 9.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Mezun'**
+  String get account_gradeGraduate;
+
+  /// Note under the grade options (pano 9.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'9. ya da 10. sınıfı seçersen alan kaldırılır.'**
+  String get account_gradeNote;
+
+  /// A school year: "12. Sınıf" (pano 9.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'{grade}. Sınıf'**
+  String account_gradeValue(int grade);
+
+  /// Group heading: profile and password (pano 9.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesap'**
+  String get account_groupAccount;
+
+  /// Group heading: the coaching row (pano 9.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçluk'**
+  String get account_groupCoaching;
+
+  /// Group heading of the contracts row (pano 9.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yasal'**
+  String get account_groupLegal;
+
+  /// Group heading of the notifications row (pano 9.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bildirimler'**
+  String get account_groupNotifications;
+
+  /// Group heading of the "Bize Yaz" row (pano 9.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Destek'**
+  String get account_groupSupport;
+
+  /// Field error of the e-mail (same wording as the sign-up form).
+  ///
+  /// In tr, this message translates to:
+  /// **'E-posta adresi eksik görünüyor. Örn: ad@alan.com'**
+  String get account_issueEmailInvalid;
+
+  /// Field error of the name (a decision: pano 9.2 draws none).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ad soyadını yaz.'**
+  String get account_issueNameMissing;
+
+  /// Field error of the phone number (a decision: pano 9.2 draws none).
+  ///
+  /// In tr, this message translates to:
+  /// **'Telefon numaranı 5XX XXX XX XX biçiminde yaz.'**
+  String get account_issuePhoneInvalid;
+
+  /// Sentence of the error states of the account screens.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantını kontrol edip tekrar dene.'**
+  String get account_loadErrorMessage;
+
+  /// Primary button of the sign-out confirmation (pano 9.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Çıkış Yap'**
+  String get account_logoutConfirm;
+
+  /// Body of the sign-out confirmation (pano 9.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Tekrar girmek için kullanıcı adın ve şifren gerekecek. Okuttuğun denemeler hesabında kalır.'**
+  String get account_logoutMessage;
+
+  /// Body of the sign-out confirmation while forms wait to be sent (pano 9.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Gönderilmeyi bekleyen {count} form var; çıkarsan silinir.'**
+  String account_logoutMessagePending(String count);
+
+  /// Title of the sign-out confirmation (pano 9.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Çıkış yapılsın mı?'**
+  String get account_logoutTitle;
+
+  /// Example in the empty phone field after the +90 prefix (pano 9.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'5XX XXX XX XX'**
+  String get account_phoneHint;
+
+  /// Text button next to the avatar (pano 9.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Avatarı Değiştir'**
+  String get account_profileChangeAvatar;
+
+  /// Danger link at the bottom of the profile (pano 9.2, 9.4 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabı Sil'**
+  String get account_profileDelete;
+
+  /// Bar action that starts editing (pano 9.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Düzenle'**
+  String get account_profileEdit;
+
+  /// Title of the profile screen when the account is not available.
+  ///
+  /// In tr, this message translates to:
+  /// **'Profil açılamadı'**
+  String get account_profileErrorTitle;
+
+  /// Error toast when saving failed (pano 9.2 Davranış).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kaydedilemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get account_profileSaveFailed;
+
+  /// Success toast after saving (pano 9.2 Davranış).
+  ///
+  /// In tr, this message translates to:
+  /// **'Profilin güncellendi.'**
+  String get account_profileSaved;
+
+  /// Title of the profile screen (pano 9.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Profil'**
+  String get account_profileTitle;
+
+  /// Reading screen when the document has no text.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu metin şu an gösterilemiyor.'**
+  String get account_readerEmpty;
+
+  /// Row title of the student's coaching row (pano 9.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçluk'**
+  String get account_rowCoaching;
+
+  /// Sub text of the Koçluk row of a student without a coach (spec 9.1, a decision: the design draws none).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçunla bağlan'**
+  String get account_rowCoachingNone;
+
+  /// Row title (pano 9.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sözleşmeler'**
+  String get account_rowContracts;
+
+  /// Sub text of the Sözleşmeler row (pano 9.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kullanım Koşulları, KVKK, Gizlilik'**
+  String get account_rowContractsSub;
+
+  /// The sign-out row, in its own red group (pano 9.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Çıkış Yap'**
+  String get account_rowLogout;
+
+  /// Row title (pano 9.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bildirimler'**
+  String get account_rowNotifications;
+
+  /// Sub text of the Bildirimler row (pano 9.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Deneme sonucu, koç, görüşme, hatırlatıcı'**
+  String get account_rowNotificationsSub;
+
+  /// Row title (pano 9.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifre'**
+  String get account_rowPassword;
+
+  /// Row title (pano 9.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Profil'**
+  String get account_rowProfile;
+
+  /// Sub text of the Profil row of a coach, who has no grade or track (spec 9.1 Ç-46).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ad, e-posta ve telefon'**
+  String get account_rowProfileCoachSub;
+
+  /// Sub text of the Profil row of a student (pano 9.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ad, e-posta, telefon, sınıf ve alan'**
+  String get account_rowProfileStudentSub;
+
+  /// Row title that opens a mail draft (pano 9.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bize Yaz'**
+  String get account_rowSupport;
+
+  /// Sub text of the "Bize Yaz" row (pano 9.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'E-posta uygulaman açılır'**
+  String get account_rowSupportSub;
+
+  /// Third line of the profile summary of a student with a coach (pano 9.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçun: {name}'**
+  String account_summaryCoach(String name);
+
+  /// Third line of the profile summary of a coach (pano 9.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçluk kodun: {code}'**
+  String account_summaryCoachCode(String code);
+
+  /// Second line of the profile summary of a coach (pano 9.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci koçu'**
+  String get account_summaryCoachRole;
+
+  /// Second line of the profile summary of a student with both: "12. Sınıf · Eşit Ağırlık" (pano 9.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'{grade} · {track}'**
+  String account_summaryGradeTrack(String grade, String track);
+
+  /// Toast when the mail app could not be opened.
+  ///
+  /// In tr, this message translates to:
+  /// **'E-posta uygulaması açılamadı.'**
+  String get account_supportMailFailed;
+
+  /// Subject of the support mail draft (pano 9.1: the design gives none).
+  ///
+  /// In tr, this message translates to:
+  /// **'SMAP · Destek'**
+  String get account_supportMailSubject;
+
+  /// Line of the support mail draft with the operating system.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sistem: {system}'**
+  String account_supportMailSystem(String system);
+
+  /// Line of the support mail draft with the app version.
+  ///
+  /// In tr, this message translates to:
+  /// **'Uygulama sürümü: {version}'**
+  String account_supportMailVersion(String version);
+
+  /// Title of the Hesap tab root band (pano 9.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesap'**
+  String get account_title;
+
+  /// Study track.
+  ///
+  /// In tr, this message translates to:
+  /// **'Dil'**
+  String get account_trackDil;
+
+  /// Help line of the disabled track field.
+  ///
+  /// In tr, this message translates to:
+  /// **'9. ve 10. sınıfta alan seçilmez.'**
+  String get account_trackDisabledHelper;
+
+  /// What the disabled track field reads in the 9th and 10th grade (pano 9.2, spec 9.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Seçilmez'**
+  String get account_trackDisabledValue;
+
+  /// Study track.
+  ///
+  /// In tr, this message translates to:
+  /// **'Eşit Ağırlık'**
+  String get account_trackEsitAgirlik;
+
+  /// Study track.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sayısal'**
+  String get account_trackSayisal;
+
+  /// Study track.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sözel'**
+  String get account_trackSozel;
+
+  /// Help line under the user name in edit mode (pano 9.2 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kullanıcı adı değiştirilemez.'**
+  String get account_userNameLocked;
+
+  /// The version line at the bottom of Hesap (pano 9.1 kare 2): "Sürüm 3.0.0 (300)".
+  ///
+  /// In tr, this message translates to:
+  /// **'Sürüm {version} ({build})'**
+  String account_version(String version, String build);
+
+  /// Toast after a long press on the version line copied it (pano 9.1 Davranış, a decision for the wording).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sürüm kopyalandı.'**
+  String get account_versionCopied;
+
+  /// Hint of the version line.
+  ///
+  /// In tr, this message translates to:
+  /// **'Uzun basınca kopyalar'**
+  String get account_versionCopyHint;
+
+  /// The version line when the platform gives no build number.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sürüm {version}'**
+  String account_versionNoBuild(String version);
+
   /// Stat box label (pano 6.1).
   ///
   /// In tr, this message translates to:
@@ -443,6 +989,168 @@ abstract class AppLocalizations {
   /// **'Tümü'**
   String get analytics_typeAll;
 
+  /// Counter line of a segment option (pano 8.1): "23 kart".
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} kart'**
+  String cardDeck_count(String count);
+
+  /// Counter line of an empty segment option (pano 8.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'kart yok'**
+  String get cardDeck_countNone;
+
+  /// Secondary button under the deck; opens the card sheet (pano 8.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Detay'**
+  String get cardDeck_detail;
+
+  /// Sentence of the error state of the card deck.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantını kontrol edip tekrar dene.'**
+  String get cardDeck_errorMessage;
+
+  /// Title of the screen-level error state of the card deck.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kartlar yüklenemedi'**
+  String get cardDeck_errorTitle;
+
+  /// Empty state of Favorilerim (pano 8.1 "Boş metinler", Ek C).
+  ///
+  /// In tr, this message translates to:
+  /// **'Favoriye eklediğin kart yok.'**
+  String get cardDeck_favoriteEmpty;
+
+  /// Text button of the empty Eksiklerim; opens Bildiklerim (pano 8.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bildiklerime Geç'**
+  String get cardDeck_goKnown;
+
+  /// Third option of the deck's segment (pano 8.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Favorilerim'**
+  String get cardDeck_groupFavorite;
+
+  /// Second option of the deck's segment (pano 8.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bildiklerim'**
+  String get cardDeck_groupKnown;
+
+  /// First option of the deck's segment (pano 8.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Eksiklerim'**
+  String get cardDeck_groupMissing;
+
+  /// Empty state of Bildiklerim (pano 8.1 "Boş metinler", Ek C).
+  ///
+  /// In tr, this message translates to:
+  /// **'Henüz öğrendiğin kart yok.'**
+  String get cardDeck_knownEmpty;
+
+  /// Primary button under the deck, only on a missing card (pano 8.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrendim'**
+  String get cardDeck_learned;
+
+  /// Sentence under the title of the empty Eksiklerim (pano 8.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bildiklerim\'deki {count} kartı tekrar etmek istersen oradan devam edebilirsin.'**
+  String cardDeck_missingDoneMessage(String count);
+
+  /// Empty state of Eksiklerim once every card is learned (pano 8.1 kare 4; Ek C).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu derste eksik kartın kalmadı.'**
+  String get cardDeck_missingDoneTitle;
+
+  /// Same, in the deck opened from an exam (assumption: the pano has the lesson wording only).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu denemede eksik kartın kalmadı.'**
+  String get cardDeck_missingDoneTitleExam;
+
+  /// Toast after "Öğrendim", with "Geri Al" for 6 s (pano 8.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kart Bildiklerim\'e taşındı.'**
+  String get cardDeck_moved;
+
+  /// Screen reader action of the top card (spec C52 customActions).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sonraki kart'**
+  String get cardDeck_nextA11y;
+
+  /// Sentence under the no-cards title (assumption; wording of pano 5.6: "yanlış ve boş bıraktığın sorulardan").
+  ///
+  /// In tr, this message translates to:
+  /// **'Kartlar, denemelerde yanlış ve boş bıraktığın sorulardan eklenir.'**
+  String get cardDeck_noCardsMessage;
+
+  /// Empty state of a lesson with no card in any group (assumption: the pano does not draw this case).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu derste henüz kartın yok.'**
+  String get cardDeck_noCardsTitle;
+
+  /// Empty state of an exam that earned no cards (assumption).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu denemeden kart eklenmedi.'**
+  String get cardDeck_noCardsTitleExam;
+
+  /// Screen reader action of the top card (spec C52 customActions).
+  ///
+  /// In tr, this message translates to:
+  /// **'Önceki kart'**
+  String get cardDeck_previousA11y;
+
+  /// Session progress next to the bar (pano 8.1): "12/23".
+  ///
+  /// In tr, this message translates to:
+  /// **'{current}/{total}'**
+  String cardDeck_progress(String current, String total);
+
+  /// Screen reader sentence of the session progress (pano 8.1: aria "Oturum").
+  ///
+  /// In tr, this message translates to:
+  /// **'Oturum, {total} karttan {current}. kart'**
+  String cardDeck_progressA11y(String current, String total);
+
+  /// Toast when "Öğrendim" or the star could not be sent; the card goes back (spec C52: hata olursa geri alınır).
+  ///
+  /// In tr, this message translates to:
+  /// **'Gönderilemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get cardDeck_sendFailed;
+
+  /// Large title of the card deck of a lesson (pano 8.1): "Tarih Kartları".
+  ///
+  /// In tr, this message translates to:
+  /// **'{lesson} Kartları'**
+  String cardDeck_title(String lesson);
+
+  /// Large title of the card deck opened from an exam ("Kartları Çalış"; spec 8.1 [Karar]).
+  ///
+  /// In tr, this message translates to:
+  /// **'Deneme Kartları'**
+  String get cardDeck_titleExam;
+
+  /// Large title of the card deck of a lesson that is not in the catalog.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bilgi Kartları'**
+  String get cardDeck_titleFallback;
+
   /// Sentence of the confirmation of "Öğrendim" (pano 8.1 kare 2).
   ///
   /// In tr, this message translates to:
@@ -485,6 +1193,180 @@ abstract class AppLocalizations {
   /// **'Favorilerden çıkar'**
   String get cards_favoriteRemove;
 
+  /// Primary button of the change sheet (Tur 12 F).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçu Değiştir'**
+  String get coachingChange_action;
+
+  /// Label of the code field of the change sheet (Tur 12 F).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni koçunun kodu'**
+  String get coachingChange_codeLabel;
+
+  /// Error under the code field when the code is the current coach's (Tur 12 F, 14.10 kare 3); the name arrives with its dative suffix: "Mehmet Özkan'a".
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu kod zaten koçun {name} ait.'**
+  String coachingChange_errSameCoach(String name);
+
+  /// Note under the disabled "Koçunu Değiştir" when the device is offline (Tur 12 F).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçunu değiştirmek için bağlantı gerekiyor.'**
+  String get coachingChange_offlineNote;
+
+  /// Text button above "Bağlantıyı Kaldır" that opens the change sheet (Tur 12 F, 14.10 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçunu Değiştir'**
+  String get coachingChange_open;
+
+  /// Title of the change sheet (Tur 12 F, 14.10 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçunu değiştir'**
+  String get coachingChange_title;
+
+  /// Warning box of the change sheet (Tur 12 F).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} ile bağlantın kalkacak. Yeni koçun denemelerini, analizlerini ve programını görebilecek.'**
+  String coachingChange_warning(String name);
+
+  /// First paragraph of the explanation sheet (pano 9.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçluk kodu, koçunun SMAP hesabına özel koddur; dört harf ve dört rakamdan oluşur.'**
+  String get coachingInfo_body1;
+
+  /// Second paragraph of the explanation sheet (pano 9.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kodu koçundan iste. Girdiğinde koçun denemelerini, analizlerini ve programını görebilir. Bağlantıyı istediğin an buradan kaldırabilirsin.'**
+  String get coachingInfo_body2;
+
+  /// First paragraph of the coach's explanation sheet (Tur 12 G).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrencin bu kodu kendi hesabında Hesap › Koçluk bölümüne girer; böylece hesabı seninkine bağlanır.'**
+  String get coachingInfo_coachBody1;
+
+  /// Second paragraph of the coach's explanation sheet (Tur 12 G).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlanan öğrenciler Öğrencilerim\'de listelenir; denemelerini, analizlerini ve programını görürsün. Hesabını senin açtığın öğrenciler zaten bağlı gelir.'**
+  String get coachingInfo_coachBody2;
+
+  /// Title of the coach's explanation sheet on the coach's Hesap (Tur 12 G, 14.11 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçluk kodu ne işe yarar?'**
+  String get coachingInfo_coachTitle;
+
+  /// Title of the explanation sheet (pano 9.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçluk kodu nedir?'**
+  String get coachingInfo_title;
+
+  /// Small line under the coach's name on the coach card (pano 9.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçun'**
+  String get coaching_coachLabel;
+
+  /// Help line under the coaching code field (pano 9.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'4 harf ve 4 rakam; tire kendiliğinden gelir.'**
+  String get coaching_codeHelp;
+
+  /// Example in the empty coaching code field (pano 9.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Örn: MOZK-4821'**
+  String get coaching_codeHint;
+
+  /// Label of the coaching code field (pano 9.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçluk kodu'**
+  String get coaching_codeLabel;
+
+  /// Primary button of the unlinked state (pano 9.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koça Bağlan'**
+  String get coaching_connect;
+
+  /// Error under the code field when no coach has the code (pano 9.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu kodla bir koç bulunamadı. Kodu koçundan yeniden iste.'**
+  String get coaching_errNotFound;
+
+  /// Title of the screen-level error state of Koçluk (pano 1.22 kare 4 wording).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçluk yüklenemedi'**
+  String get coaching_errorTitle;
+
+  /// Info box under the coach card (pano 9.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} denemelerini, analizlerini ve programını görebilir.'**
+  String coaching_infoBox(String name);
+
+  /// Toast after linking to a coach (pano 9.5 kare 3); the name arrives with its dative suffix: "Mehmet Özkan'a".
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} bağlandın.'**
+  String coaching_linked(String name);
+
+  /// Title of the coaching screen (pano 9.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçluk'**
+  String get coaching_title;
+
+  /// Red text button and the danger button of its confirm sheet (pano 9.5 kare 1 and 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantıyı Kaldır'**
+  String get coaching_unlinkAction;
+
+  /// Body of the unlink confirm sheet (pano 9.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} gelişimini artık göremeyecek. Yeniden bağlanmak için koçluk kodunu tekrar girmen gerekir.'**
+  String coaching_unlinkBody(String name);
+
+  /// Title of the unlink confirm sheet (pano 9.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koç bağlantısı kaldırılsın mı?'**
+  String get coaching_unlinkTitle;
+
+  /// Toast after the coach was unlinked (pano 9.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koç bağlantın kaldırıldı.'**
+  String get coaching_unlinked;
+
+  /// Sentence above the code field when the student has no coach (pano 9.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçunun verdiği kodu gir; koçun denemelerini, analizlerini ve programını görebilsin.'**
+  String get coaching_unlinkedIntro;
+
+  /// Text button that opens the explanation sheet (pano 9.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçluk Kodu Nedir?'**
+  String get coaching_whatIsCode;
+
   /// Dismiss button of dialogs and sheets. Never use 'İptal'.
   ///
   /// In tr, this message translates to:
@@ -526,6 +1408,114 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Geri Al'**
   String get common_undo;
+
+  /// The danger button of the explanation and of the confirm sheet (pano 9.4 kare 2 and 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabımı Sil'**
+  String get deletion_confirmAction;
+
+  /// Body of the dangerous confirm sheet (pano 9.4 kare 3); the name is the user's full name.
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} hesabı ve bütün verilerin kalıcı olarak silinecek. Bu işlem geri alınamaz.'**
+  String deletion_confirmBody(String name);
+
+  /// Body of the confirm sheet when the account has no name to show.
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabın ve bütün verilerin kalıcı olarak silinecek. Bu işlem geri alınamaz.'**
+  String get deletion_confirmBodyAnonymous;
+
+  /// Title of the dangerous confirm sheet (pano 9.4 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabın silinsin mi?'**
+  String get deletion_confirmTitle;
+
+  /// Sentence under the end title (pano 9.4 kare 5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Verilerin silindi. İstersen yeni bir hesapla yeniden başlayabilirsin.'**
+  String get deletion_doneBody;
+
+  /// Title of the end screen (pano 9.4 kare 5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabın silindi'**
+  String get deletion_doneTitle;
+
+  /// Error box on the explanation after the deletion failed (pano 9.4 kare 4 note).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabın silinemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get deletion_failed;
+
+  /// Third line of the list, for a student who has a coach (pano 9.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçun {name} ile bağlantın kalkar.'**
+  String deletion_lineCoach(String name);
+
+  /// Third line while the coach's name is not known yet (it is loaded in the background).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçunla bağlantın kalkar.'**
+  String get deletion_lineCoachAnonymous;
+
+  /// First line of the list (pano 9.4 kare 2); the count is the number of exams the student has read.
+  ///
+  /// In tr, this message translates to:
+  /// **'Okuttuğun {count} deneme ve analizleri silinir.'**
+  String deletion_lineExams(String count);
+
+  /// First line of the list when the account does not say how many exams were read (no number is made up).
+  ///
+  /// In tr, this message translates to:
+  /// **'Okuttuğun denemeler ve analizleri silinir.'**
+  String get deletion_lineExamsAnonymous;
+
+  /// Last line of the list (pano 9.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu işlem geri alınamaz.'**
+  String get deletion_lineIrreversible;
+
+  /// Second line of the list (pano 9.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Eksik konuların, programların ve bilgi kartı ilerlemen silinir.'**
+  String get deletion_lineProgress;
+
+  /// Heading of the list of what is lost (pano 9.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabını silersen:'**
+  String get deletion_listHeading;
+
+  /// Closing note under the list: signing out is enough for a pause (pano 9.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yalnız bir süre ara vermek istiyorsan çıkış yapman yeterli; verilerin hesabında kalır.'**
+  String get deletion_pauseHint;
+
+  /// Sentence under the progress title (pano 9.4 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Uygulamayı kapatma.'**
+  String get deletion_progressBody;
+
+  /// Title of the full-screen progress (pano 9.4 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabın siliniyor'**
+  String get deletion_progressTitle;
+
+  /// Title of the account deletion explanation (pano 9.4 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabını sil'**
+  String get deletion_title;
 
   /// AppErrorCode.cancelled. Normally not shown. Never say 'iptal'.
   ///
@@ -598,6 +1588,396 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Bilgilerini kontrol edip tekrar dene.'**
   String get errors_validation;
+
+  /// Text when the question has no explanation (pano 5.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu soru için çözüm açıklaması yok.'**
+  String get examDetail_analysisEmpty;
+
+  /// Section title of Soru Detay (pano 5.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'Soru Analizi'**
+  String get examDetail_analysisTitle;
+
+  /// Answer card sentence of a blank question when the letters are not in the data (no pano text).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu soruyu boş bıraktın.'**
+  String get examDetail_answerBlankSentence;
+
+  /// Label of the answer card (pano 5.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'Doğru cevap'**
+  String get examDetail_answerCorrect;
+
+  /// Answer card sentence of a right question (pano 5.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'İşaretin doğru cevap.'**
+  String get examDetail_answerCorrectSentence;
+
+  /// Label of the answer card (pano 5.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'İşaretin'**
+  String get examDetail_answerMarked;
+
+  /// Answer card sentence of a wrong question when the letters are not in the data (no pano text: the board always shows the letters).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu soruyu yanlış işaretledin.'**
+  String get examDetail_answerWrongSentence;
+
+  /// Screen reader reading of a lesson row of the Kartlar tab; it opens the lesson's deck.
+  ///
+  /// In tr, this message translates to:
+  /// **'{lesson}, {count} kart'**
+  String examDetail_cardGroupA11y(String lesson, String count);
+
+  /// Count at the right of a lesson group of the Kartlar tab.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} kart'**
+  String examDetail_cardGroupCount(String count);
+
+  /// Title of the info card of the Kartlar tab (pano 5.6).
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} bilgi kartı eklendi'**
+  String examDetail_cardsAdded(String count);
+
+  /// Body of the info card of the Kartlar tab (pano 5.6).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu denemede yanlış ve boş bıraktığın sorulardan.'**
+  String get examDetail_cardsAddedBody;
+
+  /// Section empty text of the Kartlar tab (pano 5.8 'Boş metinleri').
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu denemeden kart eklenmedi.'**
+  String get examDetail_cardsEmpty;
+
+  /// Section error text of the Kartlar tab.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kartlar yüklenemedi.'**
+  String get examDetail_cardsError;
+
+  /// Note at the end of Soru Detay (pano 5.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sorunun fotoğrafı telif hakları nedeniyle paylaşılamıyor.'**
+  String get examDetail_copyrightNote;
+
+  /// Counter of the 'Boşlar' option (pano 5.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} boş'**
+  String examDetail_counterBlank(String count);
+
+  /// Counter of the 'Boşlar' option when there is no blank question (pano 5.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'boş yok'**
+  String get examDetail_counterNoBlank;
+
+  /// Counter of the 'Yanlışlar' option when there is no wrong question.
+  ///
+  /// In tr, this message translates to:
+  /// **'yanlış yok'**
+  String get examDetail_counterNoWrong;
+
+  /// Counter of the 'Yanlışlar' option (pano 5.4: '74 yanlış').
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} yanlış'**
+  String examDetail_counterWrong(String count);
+
+  /// Screen error message (pano 5.8 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantını kontrol edip tekrar dene.'**
+  String get examDetail_errorMessage;
+
+  /// Screen error title (pano 5.8 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Deneme yüklenemedi'**
+  String get examDetail_errorTitle;
+
+  /// Screen reader name of the question filter segment (pano 5.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Soru süzgeci'**
+  String get examDetail_filterA11y;
+
+  /// Question filter option (pano 5.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Tümü'**
+  String get examDetail_filterAll;
+
+  /// Question filter option (pano 5.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Boşlar'**
+  String get examDetail_filterBlank;
+
+  /// Question filter option (pano 5.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yanlışlar'**
+  String get examDetail_filterWrong;
+
+  /// Screen reader reading of a lesson heading of the Konular tab.
+  ///
+  /// In tr, this message translates to:
+  /// **'{lesson}, zayıftan güçlüye, {total} soru'**
+  String examDetail_lessonGroupA11y(String lesson, String total);
+
+  /// Caption of the most missed topic card (pano 5.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'En çok kaçırdığın konu'**
+  String get examDetail_mostMissedLabel;
+
+  /// Sentence of the most missed topic card (pano 5.5). {wrong} arrives with its suffix from TurkishSuffix.possessiveAccusative ('7'sini').
+  ///
+  /// In tr, this message translates to:
+  /// **'{total} sorudan {wrong} kaçırdın.'**
+  String examDetail_mostMissedSentence(String total, String wrong);
+
+  /// Footnote of the Genel tab (pano 5.3 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Net = doğru − yanlış ÷ 4; boş neti etkilemez.'**
+  String get examDetail_netRule;
+
+  /// Footnote of the Genel tab (pano 5.3 kare 2); {list} is the 'Eşit Ağırlık 40 · Sayısal 37,5 · Sözel 30' text.
+  ///
+  /// In tr, this message translates to:
+  /// **'Puan türüne göre net: {list}.'**
+  String examDetail_netsByScoreType(String list);
+
+  /// Body of the empty card of the 'Boşlar' filter (pano 5.4 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu denemedeki {count} sorunun hepsini işaretledin.'**
+  String examDetail_noBlankBody(String count);
+
+  /// Title of the empty card of the 'Boşlar' filter (pano 5.4 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Boş bıraktığın soru yok'**
+  String get examDetail_noBlankTitle;
+
+  /// Body of the section empty card of the Genel tab (pano 5.8 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Netin ve doğru, yanlış, boş sayıların hesaplandı; bu deneme için ders bazında sonuç gelmedi.'**
+  String get examDetail_noBreakdownBody;
+
+  /// Title of the section empty card of the Genel tab (pano 5.8 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ders kırılımı yok'**
+  String get examDetail_noBreakdownTitle;
+
+  /// Body of the empty card of the 'Yanlışlar' filter.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu denemedeki {count} sorunun hiçbirini yanlış yapmadın.'**
+  String examDetail_noWrongBody(String count);
+
+  /// Title of the empty card of the 'Yanlışlar' filter (same pattern as pano 5.4 kare 3; the board draws only the blank one).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yanlış yaptığın soru yok'**
+  String get examDetail_noWrongTitle;
+
+  /// Line under the Soru Detay title (pano 5.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'{test} · {lesson}'**
+  String examDetail_questionContext(String test, String lesson);
+
+  /// Screen error title of Soru Detay.
+  ///
+  /// In tr, this message translates to:
+  /// **'Soru yüklenemedi'**
+  String get examDetail_questionErrorTitle;
+
+  /// Section error text of Soru Detay (the explanation and cards did not load; the answer card stays).
+  ///
+  /// In tr, this message translates to:
+  /// **'Soru açıklaması yüklenemedi.'**
+  String get examDetail_questionLoadError;
+
+  /// Title of Soru Detay (pano 5.7: '31. soru').
+  ///
+  /// In tr, this message translates to:
+  /// **'{number}. soru'**
+  String examDetail_questionTitle(String number);
+
+  /// Section empty text of the Sorular tab (pano 5.8 'Boş metinleri').
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu deneme için soru ayrıntısı yok.'**
+  String get examDetail_questionsEmpty;
+
+  /// Section error text of the Sorular tab.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sorular yüklenemedi.'**
+  String get examDetail_questionsError;
+
+  /// Label under the raw points of the score card (Tur 12 B, 14.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ham puan'**
+  String get examDetail_rawScore;
+
+  /// Section title of Soru Detay (pano 5.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'İlgili kartlar'**
+  String get examDetail_relatedCards;
+
+  /// Count next to the section title (pano 5.7: '2 kart').
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} kart'**
+  String examDetail_relatedCount(String count);
+
+  /// One score type of the footnote: 'Eşit Ağırlık 40'.
+  ///
+  /// In tr, this message translates to:
+  /// **'{field} {net}'**
+  String examDetail_scoreTypeNet(String field, String net);
+
+  /// Text button of the filter empty card (pano 5.4 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Tüm Soruları Göster'**
+  String get examDetail_showAllQuestions;
+
+  /// Primary button of the Kartlar tab and of Soru Detay (pano 5.6, 5.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kartları Çalış'**
+  String get examDetail_studyCards;
+
+  /// Primary button of the most missed topic card (pano 5.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu Konuyu Çalış'**
+  String get examDetail_studyTopic;
+
+  /// In-screen tab (pano 5.6).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kartlar'**
+  String get examDetail_tabCards;
+
+  /// In-screen tab (pano 5.3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Genel'**
+  String get examDetail_tabGeneral;
+
+  /// In-screen tab (pano 5.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sorular'**
+  String get examDetail_tabQuestions;
+
+  /// In-screen tab (pano 5.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Konular'**
+  String get examDetail_tabTopics;
+
+  /// Screen reader name of the in-screen tab row (pano 5.3 'aria: Deneme bölümleri').
+  ///
+  /// In tr, this message translates to:
+  /// **'Deneme bölümleri'**
+  String get examDetail_tabsA11y;
+
+  /// Test name, TYT mathematics (pano 5.3 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Temel Matematik'**
+  String get examDetail_testBasicMath;
+
+  /// Test name, AYT mathematics (pano 5.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Matematik'**
+  String get examDetail_testMath;
+
+  /// Name of a test the app has no name for.
+  ///
+  /// In tr, this message translates to:
+  /// **'{number}. Test'**
+  String examDetail_testNumbered(String number);
+
+  /// Test name, fourth test of both exams (pano 5.3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Fen Bilimleri'**
+  String get examDetail_testSciences;
+
+  /// Test name, TYT second test (pano 5.3 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sosyal Bilimler'**
+  String get examDetail_testSocial;
+
+  /// Test name, AYT second test (pano 5.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sosyal Bilimler 2'**
+  String get examDetail_testSocial2;
+
+  /// Test name, AYT first test (pano 5.3 kare 1). The dash is an en dash.
+  ///
+  /// In tr, this message translates to:
+  /// **'Türk Dili ve Edebiyatı–Sosyal Bilimler 1'**
+  String get examDetail_testSocialLiterature;
+
+  /// Test name, TYT first test (pano 5.3 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Türkçe'**
+  String get examDetail_testTurkish;
+
+  /// Toast when a topic of the analysis is not among the lesson's topics; the lesson opens instead.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu konu Derslerim\'de bulunamadı.'**
+  String get examDetail_topicNotFound;
+
+  /// Section empty text of the Konular tab (pano 5.8 'Boş metinleri').
+  ///
+  /// In tr, this message translates to:
+  /// **'Konu analizi henüz hazır değil.'**
+  String get examDetail_topicsEmpty;
+
+  /// Section error text of the Konular tab.
+  ///
+  /// In tr, this message translates to:
+  /// **'Konu analizi yüklenemedi.'**
+  String get examDetail_topicsError;
+
+  /// Sort note at the right of a lesson heading (pano 5.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'zayıftan güçlüye'**
+  String get examDetail_weakToStrong;
 
   /// Question cell (C43): the right option under a wrong or blank question, "Doğru A".
   ///
@@ -1733,6 +3113,138 @@ abstract class AppLocalizations {
   /// **'Öğrencilerim'**
   String get nav_tabStudents;
 
+  /// Heading of the group of category switches (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kategoriler'**
+  String get notifications_categoriesHeading;
+
+  /// Category line with the coach's name (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} yeni bir şey atadığında'**
+  String notifications_coachAssignedBody(String name);
+
+  /// Category line while the coach's name is not known.
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçun yeni bir şey atadığında'**
+  String get notifications_coachAssignedBodyAnonymous;
+
+  /// Category title (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçun deneme ya da ödev atadı'**
+  String get notifications_coachAssignedTitle;
+
+  /// Category line (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Okuttuğun denemenin analizi bitince'**
+  String get notifications_examReadyBody;
+
+  /// Category title (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Deneme sonucun hazır'**
+  String get notifications_examReadyTitle;
+
+  /// Category line (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçun bir görüşme planladığında'**
+  String get notifications_meetingPlannedBody;
+
+  /// Category title (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüşme planlandı'**
+  String get notifications_meetingPlannedTitle;
+
+  /// Text button of the warning box; opens the system settings (pano 9.6 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ayarları Aç'**
+  String get notifications_openSettings;
+
+  /// Warning box when the system permission is off (pano 9.6 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bildirim izni kapalı. Telefonunun ayarlarından SMAP\'e izin verirsen bu tercihler geçerli olur.'**
+  String get notifications_permissionOff;
+
+  /// Info box while notifications are not sent yet (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bildirimler planlı: tercihlerin şimdiden kaydedilir, bildirimler açıldığında bunlara göre gelir.'**
+  String get notifications_plannedNotice;
+
+  /// Line of the quiet hours switch row (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu saatlerde bildirim gelmez'**
+  String get notifications_quietBody;
+
+  /// Row that sets the end of the quiet hours (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bitiş'**
+  String get notifications_quietEnd;
+
+  /// Title of the time wheel sheet for the end (assumed; the board draws only the start, spec 9.6 'belirtilmemiş').
+  ///
+  /// In tr, this message translates to:
+  /// **'Sessiz saat bitişi'**
+  String get notifications_quietEndTitle;
+
+  /// Heading of the quiet hours group (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sessiz saatler'**
+  String get notifications_quietHeading;
+
+  /// Row that sets the start of the quiet hours (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Başlangıç'**
+  String get notifications_quietStart;
+
+  /// Title of the time wheel sheet for the start (pano 9.6 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sessiz saat başlangıcı'**
+  String get notifications_quietStartTitle;
+
+  /// Title of the quiet hours switch row (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sessiz saatler'**
+  String get notifications_quietTitle;
+
+  /// Note under the quiet hours group; there is no Save button (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Değişiklikler anında kaydedilir.'**
+  String get notifications_savedNote;
+
+  /// Category line (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Programındaki çalışmanın saatinde'**
+  String get notifications_studyReminderBody;
+
+  /// Category title (pano 9.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Çalışma hatırlatıcısı'**
+  String get notifications_studyReminderTitle;
+
+  /// Title of the notifications screen (pano 9.6).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bildirimler'**
+  String get notifications_title;
+
   /// Camera primer primary button; opens the system dialog (pano 2.2 kare 4).
   ///
   /// In tr, this message translates to:
@@ -2032,6 +3544,66 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'SMAP\'e hoş geldin'**
   String get onboarding_welcomeTitle;
+
+  /// Label of the first field (pano 9.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Mevcut şifre'**
+  String get password_currentLabel;
+
+  /// Error under the repeat field when the two new passwords differ (pano 9.3 'Kurallar ve hata metinleri').
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifreler aynı değil.'**
+  String get password_errMismatch;
+
+  /// Error under the new password when it equals the current one (pano 9.3 'Kurallar ve hata metinleri').
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni şifre eskisiyle aynı olamaz.'**
+  String get password_errSame;
+
+  /// Error under the current password when the server refuses it (pano 9.3 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Mevcut şifren doğru değil.'**
+  String get password_errWrongCurrent;
+
+  /// Label of the second field (pano 9.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni şifre'**
+  String get password_newLabel;
+
+  /// Rule line under the new password; turns red when it is too short (pano 9.3 kare 1, spec 1.12).
+  ///
+  /// In tr, this message translates to:
+  /// **'En az 8 karakter.'**
+  String get password_newRule;
+
+  /// Label of the third field (pano 9.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni şifre (tekrar)'**
+  String get password_repeatLabel;
+
+  /// The single primary button of the password screen (pano 9.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifreyi Güncelle'**
+  String get password_submit;
+
+  /// Title of the password screen (pano 9.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifre'**
+  String get password_title;
+
+  /// Toast on Hesap after the password was changed (pano 9.3 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifren güncellendi.'**
+  String get password_updated;
 
   /// Day chip reading without the state words (C62): "Cumartesi 10 Ekim".
   ///

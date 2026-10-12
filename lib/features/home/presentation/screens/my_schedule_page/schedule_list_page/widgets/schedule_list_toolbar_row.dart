@@ -23,15 +23,9 @@ class ScheduleListToolbarRow extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            if (leading != null) ...[
-              leading!,
-              const SizedBox(width: gap),
-            ],
+            if (leading != null) ...[leading!, const SizedBox(width: gap)],
             Expanded(child: center),
-            if (trailing != null) ...[
-              const SizedBox(width: gap),
-              trailing!,
-            ],
+            if (trailing != null) ...[const SizedBox(width: gap), trailing!],
           ],
         ),
       ),

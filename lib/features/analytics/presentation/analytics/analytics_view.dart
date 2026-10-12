@@ -29,7 +29,6 @@ import 'package:smap/features/exams/domain/ayt_field.dart';
 import 'package:smap/features/exams/domain/exam_detail.dart';
 import 'package:smap/features/exams/domain/exam_summary.dart';
 import 'package:smap/features/exams/presentation/widgets/exam_row.dart';
-import 'package:smap/features/legacy/legacy_links_e11.dart';
 import 'package:smap/gen/assets.gen.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/services/current_user_service.dart';
@@ -207,10 +206,10 @@ class _AnalyticsBody
   };
 }
 
-/// A row opens the exam's detail. Until E10's screen exists this is the
-/// legacy one ([openLegacyExamDetail]).
-void _openExam(BuildContext context, ExamDetail exam) =>
-    openLegacyExamDetail(context, exam);
+/// A row opens the exam's detail on this tab's stack (pano 6.2 → 5.3).
+void _openExam(BuildContext context, ExamDetail exam) => unawaited(
+  context.router.push(ExamDetailRoute(examId: exam.id, exam: exam)),
+);
 
 /// "TYT denemesi" for an exam the server did not name (pano 6.2).
 String _examTitle(AppLocalizations l10n, String? name, NetExamType? type) {

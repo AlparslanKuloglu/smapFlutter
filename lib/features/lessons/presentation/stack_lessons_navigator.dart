@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 
 import 'package:smap/app/router/app_router.dart';
-import 'package:smap/features/legacy/legacy_links_e12.dart';
 import 'package:smap/features/lessons/application/lesson_category.dart';
 import 'package:smap/features/lessons/presentation/lessons_navigator.dart';
 
@@ -40,9 +39,5 @@ class StackLessonsNavigator implements LessonsNavigator {
   Future<void> openCardDeck({
     required String backendLessonId,
     required String lessonName,
-  }) => openLegacyCardDeck(
-    _router.root.navigatorKey.currentState,
-    lessonId: backendLessonId,
-    lessonName: lessonName,
-  );
+  }) => _router.push(CardDeckRoute(lessonId: backendLessonId));
 }

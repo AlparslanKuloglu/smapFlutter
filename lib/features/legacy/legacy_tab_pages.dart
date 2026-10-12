@@ -11,12 +11,9 @@ import 'package:smap/features/home/presentation/screens/home_flow_screen.dart';
 import 'package:smap/features/legacy/legacy_theme.dart';
 import 'package:smap/features/my_interviews/interviews_screen.dart';
 import 'package:smap/features/my_students/my_students_screen.dart';
-import 'package:smap/features/profile/presentation/provider/account_nav_provider.dart';
-import 'package:smap/features/profile/presentation/screens/account/account_flow_screen.dart';
 import 'package:smap/features/shared/presentation/provider/user_provider.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/repository/coach_repository.dart';
-import 'package:smap/repository/profile_repository.dart';
 import 'package:smap/shared/ui/buttons/app_icon_button.dart';
 import 'package:smap/shared/ui/indicators/app_spinner.dart';
 import 'package:smap/shared/ui/navigation/app_system_overlay.dart';
@@ -36,15 +33,6 @@ import 'package:smap/shared/ui/navigation/app_system_overlay.dart';
 //
 // The pages sit in two themes: the band and the spinner under `SmapTheme`,
 // the screen under `LegacyTheme` (the look it was built for).
-
-/// Student Hesap tab (`/account`): the legacy account hub and its sub pages.
-@RoutePage()
-class LegacyAccountTabPage extends StatelessWidget {
-  const LegacyAccountTabPage({super.key});
-
-  @override
-  Widget build(BuildContext context) => const _LegacyAccountTab();
-}
 
 /// Coach Anasayfa tab (`/coach/home`): the legacy home hub (students).
 @RoutePage()
@@ -86,15 +74,6 @@ class LegacyMeetingsTabPage extends StatelessWidget {
   );
 }
 
-/// Coach Hesap tab (`/coach/account`): the legacy account hub.
-@RoutePage()
-class LegacyCoachAccountTabPage extends StatelessWidget {
-  const LegacyCoachAccountTabPage({super.key});
-
-  @override
-  Widget build(BuildContext context) => const _LegacyAccountTab();
-}
-
 /// The home hub with its [HomeNavNotifier]: the band shows "Anasayfa", or
 /// the sub page's title ("Programım") with Back while a sub page is open.
 class _LegacyHomeTab extends StatelessWidget {
@@ -116,41 +95,6 @@ class _LegacyHomeTab extends StatelessWidget {
             ),
           ),
           const Expanded(child: LegacyTheme(child: HomeFlowScreen())),
-        ],
-      ),
-    ),
-  );
-}
-
-/// The account hub with its [AccountNavNotifier] (hub, profile, notifications,
-/// contracts ...).
-class _LegacyAccountTab extends StatelessWidget {
-  const _LegacyAccountTab();
-
-  @override
-  Widget build(BuildContext context) => _LegacyGate(
-    child: ChangeNotifierProvider<AccountNavNotifier>(
-      create: (_) => AccountNavNotifier(),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Consumer<AccountNavNotifier>(
-            builder: (context, nav, _) => _LegacyBand(
-              title: nav.isHub
-                  ? AppLocalizations.of(context).nav_tabAccount
-                  : nav.title,
-              onBack: nav.showBackButton ? nav.backToHub : null,
-            ),
-          ),
-          Expanded(
-            child: LegacyTheme(
-              child: Builder(
-                builder: (context) => AccountFlowScreen(
-                  profileRepository: context.read<ProfileRepository>(),
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     ),

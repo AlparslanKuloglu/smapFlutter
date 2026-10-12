@@ -139,31 +139,34 @@ void main() {
   group('createInterview', () {
     final when = DateTime.utc(2026, 7, 1, 11, 30);
 
-    test('sends the date as zoneless local time and returns the interview', () async {
-      backend(
-        FakeAdapter.json({
-          'success': true,
-          'newInterview': interviewJson(id: 'new', student: 'student-1'),
-        }),
-      );
+    test(
+      'sends the date as zoneless local time and returns the interview',
+      () async {
+        backend(
+          FakeAdapter.json({
+            'success': true,
+            'newInterview': interviewJson(id: 'new', student: 'student-1'),
+          }),
+        );
 
-      final created = (await repository.createInterview(
-        studentId: 'student-1',
-        type: InterviewType.student,
-        date: when,
-      )).rightOrNull!;
+        final created = (await repository.createInterview(
+          studentId: 'student-1',
+          type: InterviewType.student,
+          date: when,
+        )).rightOrNull!;
 
-      expect(created.id, 'new');
-      expect(adapter.last.method, 'POST');
-      expect(adapter.last.path, '/coach/addNewInterview');
-      expect(adapter.last.data, {
-        'dataObj': {
-          'date': when.toLocal().toIso8601String(),
-          'type': 1,
-          'student': 'student-1',
-        },
-      });
-    });
+        expect(created.id, 'new');
+        expect(adapter.last.method, 'POST');
+        expect(adapter.last.path, '/coach/addNewInterview');
+        expect(adapter.last.data, {
+          'dataObj': {
+            'date': when.toLocal().toIso8601String(),
+            'type': 1,
+            'student': 'student-1',
+          },
+        });
+      },
+    );
 
     test('a local time is converted to UTC before it is sent', () async {
       backend(FakeAdapter.json({'success': true}));

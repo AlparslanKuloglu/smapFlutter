@@ -28,7 +28,10 @@ class CoachShellView extends StackedView<ShellViewModel> {
     ShellTabSpec(route: CoachHomeTabRoute()),
     ShellTabSpec(route: CoachStudentsTabRoute()),
     ShellTabSpec(route: CoachMeetingsTabRoute()),
-    ShellTabSpec(route: CoachAccountTabRoute()),
+    ShellTabSpec(
+      route: CoachAccountTabRoute(),
+      content: ShellTabContent.screen,
+    ),
   ];
 
   @override
