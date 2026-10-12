@@ -191,7 +191,10 @@ class AppStatusView extends StatelessWidget {
     final safeBottom = MediaQuery.viewPaddingOf(context).bottom;
     final actions = [?primary, ?secondary];
 
-    final view = ColoredBox(
+    // A `Material` of its own: the launch, maintenance and unknown-role pages
+    // have no Scaffold above, and a `Text` without a Material ancestor draws
+    // the yellow double underline.
+    final view = Material(
       color: colors.bgCanvas,
       child: SafeArea(
         bottom: false,

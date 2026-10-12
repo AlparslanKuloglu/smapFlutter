@@ -103,9 +103,12 @@ class _SpinnerPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
+    // The shortest side, not the width: a parent that stretches the spinner
+    // to a wide box (a full-width panel) must not blow the ring up.
+    final edge = size.shortestSide;
     final center = size.center(Offset.zero);
-    final radius = _radius * size.width;
-    final stroke = _line * size.width;
+    final radius = _radius * edge;
+    final stroke = _line * edge;
     Paint line(Color value) => Paint()
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round

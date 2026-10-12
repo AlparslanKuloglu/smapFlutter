@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart' show ValueListenable;
 import 'package:flutter/material.dart';
 
 import 'package:smap/app/shell/scroll_to_top.dart';
+import 'package:smap/app/shell/shell_preview.dart';
 import 'package:smap/app/shell/shell_tab_spec.dart';
 import 'package:smap/core/theme/app_motion.dart';
 import 'package:smap/core/theme/theme_context.dart';
@@ -66,10 +67,23 @@ class _ShellFrameState extends State<ShellFrame> {
     (_) => GlobalKey(),
   );
 
+  /// The debug preview opens on `SHELL_PREVIEW_TAB` once.
+  bool _previewTabApplied = false;
+
   @override
   void initState() {
     super.initState();
     widget.viewModel.attach();
+  }
+
+  void _applyPreviewTab(TabsRouter tabs) {
+    if (_previewTabApplied) return;
+    _previewTabApplied = true;
+    final index = ShellPreview.initialTab;
+    if (index == 0 || index >= widget.tabs.length) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) tabs.setActiveIndex(index);
+    });
   }
 
   void _onTab(TabsRouter tabs, int index) {
@@ -96,26 +110,33 @@ class _ShellFrameState extends State<ShellFrame> {
     return AutoTabsRouter.builder(
       routes: _routes,
       homeIndex: 0,
-      builder: (context, children, tabs) => Scaffold(
-        extendBody: true,
-        resizeToAvoidBottomInset: false,
-        backgroundColor: context.appColors.bgCanvas,
-        body: _ShellOfflineStrip(
-          online: widget.viewModel.online,
-          child: _ShellTabStack(
-            activeIndex: tabs.activeIndex,
-            specs: widget.tabs,
-            keys: _tabKeys,
-            children: children,
+      builder: (context, children, tabs) {
+        _applyPreviewTab(tabs);
+        // Read here, above the Scaffold: its body sees `viewPadding.bottom`
+        // as 0 (the bar takes the inset).
+        final deviceBottom = MediaQuery.viewPaddingOf(context).bottom;
+        return Scaffold(
+          extendBody: true,
+          resizeToAvoidBottomInset: false,
+          backgroundColor: context.appColors.bgCanvas,
+          body: _ShellOfflineStrip(
+            online: widget.viewModel.online,
+            child: _ShellTabStack(
+              activeIndex: tabs.activeIndex,
+              specs: widget.tabs,
+              keys: _tabKeys,
+              deviceBottom: deviceBottom,
+              children: children,
+            ),
           ),
-        ),
-        bottomNavigationBar: AppBottomBar(
-          role: widget.role,
-          selectedIndex: tabs.activeIndex,
-          onTap: (index) => _onTab(tabs, index),
-          onCamera: widget.viewModel.openCamera,
-        ),
-      ),
+          bottomNavigationBar: AppBottomBar(
+            role: widget.role,
+            selectedIndex: tabs.activeIndex,
+            onTap: (index) => _onTab(tabs, index),
+            onCamera: widget.viewModel.openCamera,
+          ),
+        );
+      },
     );
   }
 }

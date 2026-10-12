@@ -4,6 +4,7 @@ import 'package:smap/core/theme/theme_context.dart';
 import 'package:smap/features/debug/gallery_registry.dart';
 import 'package:smap/features/debug/gallery_settings.dart';
 import 'package:smap/features/debug/gallery_widgets.dart';
+import 'package:smap/features/debug/launch_env.dart';
 import 'package:smap/shared/ui/controls/app_chip.dart';
 import 'package:smap/shared/ui/controls/app_tab_bar.dart';
 
@@ -25,7 +26,9 @@ class ComponentGalleryView extends StatefulWidget {
 }
 
 class _ComponentGalleryViewState extends State<ComponentGalleryView> {
-  int _page = const int.fromEnvironment('GALLERY_PAGE');
+  int _page =
+      int.tryParse(debugLaunchEnv('GALLERY_PAGE') ?? '') ??
+      const int.fromEnvironment('GALLERY_PAGE');
 
   @override
   Widget build(BuildContext context) {

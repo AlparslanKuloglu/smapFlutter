@@ -9,6 +9,7 @@ import 'package:smap/core/theme/app_radius.dart';
 import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/theme_context.dart';
 import 'package:smap/features/debug/gallery_widgets.dart';
+import 'package:smap/features/debug/launch_env.dart';
 import 'package:smap/shared/ui/buttons/app_button.dart';
 import 'package:smap/shared/ui/controls/app_chip.dart';
 import 'package:smap/shared/ui/feedback/app_empty_state.dart';
@@ -45,6 +46,32 @@ class _FeedbackGalleryState extends State<FeedbackGallery> {
   var _retries = 0;
   AsyncSection<String> _section = const AsyncSection.ready('Hazır');
   int _waited = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    // `GALLERY_ACTION` shows one toast (or the offline strip) at start, for
+    // a screenshot run.
+    final action = debugLaunchEnv('GALLERY_ACTION');
+    if (action == null) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      switch (action) {
+        case 'toastInfo':
+          _toast.info((_) => 'Sonucun hazır olunca bildirim gelecek.');
+        case 'toastSuccess':
+          _toast.success((_) => 'Program kaydedildi.');
+        case 'toastError':
+          _toast.error(
+            (_) => 'Gönderilemedi. Bağlantını kontrol edip tekrar dene.',
+          );
+        case 'toastUndo':
+          _toast.undo((_) => "Kart Bildiklerim'e taşındı.", onUndo: () {});
+        case 'offline':
+          _online.value = false;
+      }
+    });
+  }
 
   @override
   void dispose() {
