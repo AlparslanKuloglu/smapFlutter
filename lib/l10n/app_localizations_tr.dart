@@ -2328,6 +2328,9 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String get nav_homeGreetingNoName => 'Merhaba';
+
+  @override
   String get nav_tabAccount => 'Hesap';
 
   @override

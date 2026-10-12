@@ -281,7 +281,9 @@ class _GreetingRow extends StatelessWidget {
     final greeting = Semantics(
       header: true,
       child: Text(
-        l10n.nav_homeGreeting(band.name),
+        band.name.trim().isEmpty
+            ? l10n.nav_homeGreetingNoName
+            : l10n.nav_homeGreeting(band.name),
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
         style: TextStyle.lerp(

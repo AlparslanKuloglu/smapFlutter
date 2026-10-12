@@ -3525,6 +3525,10 @@
       }
     }
   },
+  "nav_homeGreetingNoName": "Merhaba",
+  "@nav_homeGreetingNoName": {
+    "description": "The band greeting when the user has no name to show (no comma)."
+  },
   "nav_tabAccount": "Hesap",
   "@nav_tabAccount": {
     "description": "Bottom bar tab, student and coach (C84)."

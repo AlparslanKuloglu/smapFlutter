@@ -3968,6 +3968,12 @@ abstract class AppLocalizations {
   /// **'Merhaba, {name}'**
   String nav_homeGreeting(String name);
 
+  /// The band greeting when the user has no name to show (no comma).
+  ///
+  /// In tr, this message translates to:
+  /// **'Merhaba'**
+  String get nav_homeGreetingNoName;
+
   /// Bottom bar tab, student and coach (C84).
   ///
   /// In tr, this message translates to:
