@@ -31,7 +31,7 @@ import 'package:smap/shared/ui/inputs/app_field_frame.dart';
 import 'package:smap/shared/ui/inputs/app_select_field.dart';
 import 'package:smap/shared/ui/inputs/app_text_field.dart';
 import 'package:smap/shared/ui/inputs/input_masks.dart';
-import 'package:smap/shared/ui/navigation/app_bottom_bar.dart';
+import 'package:smap/features/account/presentation/account_bar_clearance.dart';
 import 'package:smap/shared/ui/navigation/app_detail_bar.dart';
 import 'package:smap/shared/ui/navigation/large_title_sliver.dart';
 
@@ -135,7 +135,7 @@ class _ProfilePage extends SelectorViewModelWidget<ProfileViewModel, bool> {
                 AppSpacing.gutter,
                 AppSpacing.s8,
                 AppSpacing.gutter,
-                AppBottomBar.heightOf(context) + AppSpacing.s16,
+                accountBarClearance(context) + AppSpacing.s16,
               ),
               sliver: const SliverList(
                 delegate: SliverChildListDelegate.fixed([

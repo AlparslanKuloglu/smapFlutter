@@ -4,6 +4,7 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:stacked/stacked.dart';
 
 import 'package:smap/app/router/app_router.dart';
+import 'package:smap/core/theme/theme_context.dart';
 import 'package:smap/dependency_injection/injection_container.dart';
 import 'package:smap/features/startup/application/startup_gate.dart';
 import 'package:smap/features/startup/presentation/maintenance/maintenance_viewmodel.dart';
@@ -44,18 +45,21 @@ class MaintenanceView extends StackedView<MaintenanceViewModel> {
     final l10n = AppLocalizations.of(context);
     return AppSystemOverlayRegion(
       kind: AppSystemOverlayKind.bar,
-      child: ValueListenableBuilder<bool>(
-        valueListenable: viewModel.checking,
-        builder: (context, checking, _) => AppStatusView(
-          title: l10n.startup_maintenanceTitle,
-          message: l10n.startup_maintenanceBody,
-          icon: PhosphorIconsRegular.wrench,
-          blocking: true,
-          primary: AppStatusAction(
-            label: l10n.common_retry,
-            variant: AppButtonVariant.quiet,
-            loading: checking,
-            onPressed: viewModel.retry,
+      child: Material(
+        color: context.appColors.bgCanvas,
+        child: ValueListenableBuilder<bool>(
+          valueListenable: viewModel.checking,
+          builder: (context, checking, _) => AppStatusView(
+            title: l10n.startup_maintenanceTitle,
+            message: l10n.startup_maintenanceBody,
+            icon: PhosphorIconsRegular.wrench,
+            blocking: true,
+            primary: AppStatusAction(
+              label: l10n.common_retry,
+              variant: AppButtonVariant.quiet,
+              loading: checking,
+              onPressed: viewModel.retry,
+            ),
           ),
         ),
       ),

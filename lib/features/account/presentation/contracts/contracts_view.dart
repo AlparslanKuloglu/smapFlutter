@@ -19,7 +19,7 @@ import 'package:smap/shared/ui/feedback/app_empty_state.dart';
 import 'package:smap/shared/ui/feedback/app_error_state.dart';
 import 'package:smap/shared/ui/feedback/app_skeleton.dart';
 import 'package:smap/shared/ui/feedback/section_state.dart';
-import 'package:smap/shared/ui/navigation/app_bottom_bar.dart';
+import 'package:smap/features/account/presentation/account_bar_clearance.dart';
 import 'package:smap/shared/ui/navigation/app_detail_bar.dart';
 import 'package:smap/shared/ui/navigation/large_title_sliver.dart';
 import 'package:smap/shared/ui/surfaces/app_row.dart';
@@ -79,7 +79,7 @@ class _ContractsPage extends StatelessWidget {
           const _ContractsBody(),
           SliverToBoxAdapter(
             child: SizedBox(
-              height: AppBottomBar.heightOf(context) + AppSpacing.s16,
+              height: accountBarClearance(context) + AppSpacing.s16,
             ),
           ),
         ],
