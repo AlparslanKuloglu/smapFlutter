@@ -1,0 +1,311 @@
+{
+  "@@locale": "tr",
+  "coachHome_students": "Öğrencilerin",
+  "@coachHome_students": {
+    "description": "Section title of the student strip (pano 10.1 kare 1, SectionHeader)."
+  },
+  "coachHome_addStudent": "Öğrenci Ekle",
+  "@coachHome_addStudent": {
+    "description": "The one link of the student section and the primary button of the empty page (pano 10.1 kare 1 and 3); opens the add-student sheet (10.3)."
+  },
+  "coachHome_studentsError": "Öğrenciler yüklenemedi.",
+  "@coachHome_studentsError": {
+    "description": "Section error card of the student strip; the board has no copy, written after \"Dersler yüklenemedi.\" (pano 3.2 pattern)."
+  },
+  "coachHome_attention": "Dikkat gerektirenler",
+  "@coachHome_attention": {
+    "description": "Section title of the attention list (pano 10.1 kare 1 and 2); drawn only with FeatureFlags.attentionListEnabled."
+  },
+  "coachHome_attentionEmptyTitle": "Şu an dikkat gerektiren öğrenci yok.",
+  "@coachHome_attentionEmptyTitle": {
+    "description": "Empty card of the attention list, first line (pano 10.1 kare 1)."
+  },
+  "coachHome_attentionEmptyBody": "14 gündür deneme okutmayan ya da son iki denemesinde neti düşen öğrenci burada görünür.",
+  "@coachHome_attentionEmptyBody": {
+    "description": "Empty card of the attention list, explanation of the two rules (pano 10.1 kare 1, D-27)."
+  },
+  "coachHome_attentionError": "Dikkat listesi yüklenemedi.",
+  "@coachHome_attentionError": {
+    "description": "Section error card of the attention list; no board copy."
+  },
+  "coachHome_meetings": "Yaklaşan görüşmeler",
+  "@coachHome_meetings": {
+    "description": "Section title of the upcoming meetings (pano 10.1 kare 1)."
+  },
+  "coachHome_meetingsError": "Görüşmeler yüklenemedi.",
+  "@coachHome_meetingsError": {
+    "description": "Section error card of the upcoming meetings; no board copy."
+  },
+  "coachHome_noMeetings": "Önümüzdeki 7 günde görüşme yok.",
+  "@coachHome_noMeetings": {
+    "description": "Empty card of the upcoming meetings (spec Flutter §4 10.1 [Karar])."
+  },
+  "coachHome_newMeeting": "Yeni Görüşme",
+  "@coachHome_newMeeting": {
+    "description": "Text button of the empty meetings card; opens the new-meeting sheet (10.5 kare 2)."
+  },
+  "coachHome_emptyTitle": "İlk öğrencini ekle",
+  "@coachHome_emptyTitle": {
+    "description": "Title of the page of a coach with no student (pano 10.1 kare 3)."
+  },
+  "coachHome_emptyMessage": "Öğrencin koçluk kodunla kendi hesabından bağlanabilir ya da hesabını sen açabilirsin.",
+  "@coachHome_emptyMessage": {
+    "description": "Message of the page of a coach with no student (pano 10.1 kare 3)."
+  },
+  "coachWidgets_codeTitle": "Koçluk kodun",
+  "@coachWidgets_codeTitle": {
+    "description": "Label of the coaching code card (C35; pano 10.1 kare 3, 10.3 kare 1)."
+  },
+  "coachWidgets_codeHint": "Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır.",
+  "@coachWidgets_codeHint": {
+    "description": "Help line of the coaching code card (C35)."
+  },
+  "coachWidgets_codeCopy": "Kopyala",
+  "@coachWidgets_codeCopy": {
+    "description": "Button of the coaching code card that copies the code (C35)."
+  },
+  "coachWidgets_codeShare": "Paylaş",
+  "@coachWidgets_codeShare": {
+    "description": "Button of the coaching code card that opens the share sheet (C35)."
+  },
+  "coachWidgets_codeCopied": "Kod kopyalandı.",
+  "@coachWidgets_codeCopied": {
+    "description": "Toast after the code is copied (C35, 4 s)."
+  },
+  "coachWidgets_codeShareText": "SMAP'te koçluk kodum: {code}",
+  "@coachWidgets_codeShareText": {
+    "description": "The sentence the share sheet carries.",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_codeA11y": "Koçluk kodun {code}",
+  "@coachWidgets_codeA11y": {
+    "description": "Screen-reader reading of the code (C35).",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_tileLastExam": "Son deneme {date}",
+  "@coachWidgets_tileLastExam": {
+    "description": "Second line of a student tile with a last exam date: 'Son deneme 5 Eki.' (C32; pano 10.1 kare 1).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_tileA11y": "{name}, öğrenci",
+  "@coachWidgets_tileA11y": {
+    "description": "Screen-reader reading of a student tile (C32).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_tileA11yLastExam": "{name}, son deneme {date}",
+  "@coachWidgets_tileA11yLastExam": {
+    "description": "Screen-reader reading of a student tile with a last exam date (C32).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_meetingStudent": "Öğrenci",
+  "@coachWidgets_meetingStudent": {
+    "description": "Meeting kind tag/meta: with the student (C34; pano 10.1, 10.5)."
+  },
+  "coachWidgets_meetingParent": "Veli",
+  "@coachWidgets_meetingParent": {
+    "description": "Meeting kind tag/meta: with the parent (C34; pano 10.1, 10.5)."
+  },
+  "coachWidgets_meetingMonth": "{month}.",
+  "@coachWidgets_meetingMonth": {
+    "description": "Month under the day of the meeting's date block: 'Eki.' (C34; pano 10.1).",
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_meetingMeta": "{day} {time} · {kind}",
+  "@coachWidgets_meetingMeta": {
+    "description": "Meta of the date-block meeting row: 'Pazartesi 16:00 · Öğrenci' (C34; pano 10.1).",
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      },
+      "kind": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_meetingMetaPlain": "{day} {time}",
+  "@coachWidgets_meetingMetaPlain": {
+    "description": "Meta of the date-block meeting row when the kind is unknown (C34).",
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_meetingListMeta": "{date} · {time}",
+  "@coachWidgets_meetingListMeta": {
+    "description": "Meta of the list meeting row: '12 Ekim 2026 Pazartesi · 16:00' (C34; pano 10.5).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_meetingA11y": "{name}, {date}, {time}, {kind}",
+  "@coachWidgets_meetingA11y": {
+    "description": "Screen-reader reading of a meeting row: 'Alparslan Kuloğlu, 12 Ekim 2026 Pazartesi, 16:00, Öğrenci görüşmesi' (C34).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      },
+      "kind": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_meetingA11yPlain": "{name}, {date}, {time}",
+  "@coachWidgets_meetingA11yPlain": {
+    "description": "Screen-reader reading of a meeting row of unknown kind (C34).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_meetingKindStudentA11y": "Öğrenci görüşmesi",
+  "@coachWidgets_meetingKindStudentA11y": {
+    "description": "Meeting kind in the screen-reader reading (C34)."
+  },
+  "coachWidgets_meetingKindParentA11y": "Veli görüşmesi",
+  "@coachWidgets_meetingKindParentA11y": {
+    "description": "Meeting kind in the screen-reader reading (C34)."
+  },
+  "coachWidgets_attentionInactive": "{days} gündür deneme okutmadı",
+  "@coachWidgets_attentionInactive": {
+    "description": "Sentence of the inactive rule: '45 gündür deneme okutmadı' (C33; pano 10.1 kare 2, D-27).",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_attentionInactiveEvidence": "Son deneme {date}",
+  "@coachWidgets_attentionInactiveEvidence": {
+    "description": "Evidence line of the inactive rule: 'Son deneme 17 Haz. 2026' (C33).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_attentionInactiveEvidenceType": "Son deneme {date} · {type}",
+  "@coachWidgets_attentionInactiveEvidenceType": {
+    "description": "Evidence line of the inactive rule with the exam type: 'Son deneme 17 Haz. 2026 · TYT' (C33).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_attentionNetDrop": "Son iki {type} denemesinde net düştü",
+  "@coachWidgets_attentionNetDrop": {
+    "description": "Sentence of the net-drop rule: 'Son iki TYT denemesinde net düştü' (C33; pano 10.1 kare 2, D-27).",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_attentionNetDropPlain": "Son iki denemede net düştü",
+  "@coachWidgets_attentionNetDropPlain": {
+    "description": "Sentence of the net-drop rule without the exam type (C33)."
+  },
+  "coachWidgets_attentionNetEvidence": "{from} → {to} · {dates}",
+  "@coachWidgets_attentionNetEvidence": {
+    "description": "Evidence line of the net-drop rule: '68 → 66,75 · 17 Haz. ve 4 Ağu.' (C33).",
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      },
+      "dates": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_attentionNetEvidenceNets": "{from} → {to}",
+  "@coachWidgets_attentionNetEvidenceNets": {
+    "description": "Evidence line of the net-drop rule without the dates (C33).",
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_attentionDates": "{first} ve {second}",
+  "@coachWidgets_attentionDates": {
+    "description": "The two exam dates of the net-drop evidence: '17 Haz. ve 4 Ağu.' (C33).",
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_attentionLastExamA11y": "son deneme {date}",
+  "@coachWidgets_attentionLastExamA11y": {
+    "description": "Screen-reader tail of the inactive rule: 'son deneme 17 Haziran' (C33).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  }
+}

@@ -67,4 +67,15 @@ abstract final class FeatureFlags {
   /// that screen. Opening it also needs the queue itself; the screen of
   /// pano 4.10 kare 3 is built and waits behind this flag.
   static const bool offlineQueueEnabled = false;
+
+  /// "Dikkat gerektirenler" on the coach home (pano 10.1 kare 1 and 2).
+  ///
+  /// Closed because the backend has no endpoint that works out the two rules
+  /// of D-27 (no exam read for 14 days, the net fell in the last two exams of
+  /// a type) and sends the evidence (spec §6.3 #28, #29). While it is `false`
+  /// the whole section, its skeleton and its empty card are not drawn: the
+  /// board's empty card would claim that nobody needs attention, which nobody
+  /// has checked. Opening it also needs an `AttentionRepository` registered in
+  /// the locator.
+  static const bool attentionListEnabled = false;
 }
