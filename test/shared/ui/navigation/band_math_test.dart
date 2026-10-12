@@ -1,6 +1,7 @@
 import 'package:flutter/painting.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:smap/shared/ui/navigation/band_math.dart';
+import 'package:smap/shared/ui/navigation/band_text.dart';
 
 void main() {
   group('BandMath', () {
@@ -158,6 +159,109 @@ void main() {
       expect(band.progressAt(42), 0.5);
       expect(band.progressAt(84), 1);
       expect(band.extentAt(84), 110);
+    });
+  });
+
+  group('HomeBandMetrics at large text (FIN14E)', () {
+    const large = TextScaler.linear(1.35);
+
+    test('a two-line greeting grows the open row and the band', () {
+      const one = HomeBandMetrics(
+        role: AppHomeBandRole.student,
+        safeTop: 62,
+        greetingHeight: 38,
+        textScaler: large,
+      );
+      const two = HomeBandMetrics(
+        role: AppHomeBandRole.student,
+        safeTop: 62,
+        greetingHeight: 76,
+        textScaler: large,
+      );
+      expect(one.openRow, 56);
+      expect(two.openRow, 76);
+      expect(two.maxExtent - one.maxExtent, 20);
+      expect(two.minExtent, one.minExtent);
+    });
+
+    test('the counter row is as tall as its tallest part', () {
+      const figureOnly = HomeBandMetrics(
+        role: AppHomeBandRole.student,
+        safeTop: 62,
+        textScaler: large,
+      );
+      const withSide = HomeBandMetrics(
+        role: AppHomeBandRole.student,
+        safeTop: 62,
+        counterHeight: 90,
+        textScaler: large,
+      );
+      expect(figureOnly.counterRowOpen, closeTo(64.8, 0.01));
+      expect(withSide.counterRowOpen, 90);
+      expect(withSide.maxExtent - figureOnly.maxExtent, closeTo(25.2, 0.01));
+    });
+
+    test('a coach row holds the greeting and its sub line', () {
+      const coach = HomeBandMetrics(
+        role: AppHomeBandRole.coach,
+        safeTop: 62,
+        greetingHeight: 38,
+        subtitleHeight: 54,
+        textScaler: large,
+      );
+      expect(coach.openRow, 92);
+      expect(coach.maxExtent, 62 + 92 + 20);
+    });
+
+    test('the greeting is two lines only while the band is open', () {
+      expect(HomeBandMetrics.greetingMaxLines(0), 2);
+      expect(HomeBandMetrics.greetingMaxLines(0.24), 2);
+      expect(HomeBandMetrics.greetingMaxLines(0.25), 1);
+      expect(HomeBandMetrics.greetingMaxLines(1), 1);
+    });
+
+    test('the collapsed counter takes no width until the band shrinks', () {
+      expect(HomeBandMetrics.collapsedCounterWidthFactor(0), 0);
+      expect(HomeBandMetrics.collapsedCounterWidthFactor(0.5), 0);
+      expect(HomeBandMetrics.collapsedCounterWidthFactor(0.75), 0.5);
+      expect(HomeBandMetrics.collapsedCounterWidthFactor(1), 1);
+    });
+  });
+
+  group('BandText', () {
+    const style = TextStyle(fontSize: 20, height: 1.4);
+
+    test('a long text wraps to two lines at a narrow width, not more', () {
+      final one = BandText.height(
+        text: 'Merhaba, Alparslan',
+        style: style,
+        width: 1000,
+        textScaler: TextScaler.noScaling,
+        textDirection: TextDirection.ltr,
+        maxLines: 2,
+      );
+      final two = BandText.height(
+        text: 'Merhaba, Alparslan Mehmet Yılmaz Karaoğlanoğlu',
+        style: style,
+        width: 160,
+        textScaler: TextScaler.noScaling,
+        textDirection: TextDirection.ltr,
+        maxLines: 2,
+      );
+      expect(one, 28);
+      expect(two, 56);
+    });
+
+    test('the text grows with the scaler and sizes are whole pixels', () {
+      final size = BandText.size(
+        text: '252',
+        style: style,
+        width: 500,
+        textScaler: const TextScaler.linear(1.35),
+        textDirection: TextDirection.ltr,
+      );
+      expect(size.height, 38);
+      expect(size.width, size.width.ceilToDouble());
     });
   });
 

@@ -13,7 +13,7 @@ import 'package:smap/shared/ui/controls/app_tab_bar.dart';
 /// KIT1). Opened by its own entry point, `lib/main_gallery.dart`, which has no
 /// router (Düzeltmeler #22); never part of the release app.
 ///
-/// At the top: light or dark theme, text scale 1,3 and reduce motion, then
+/// At the top: light or dark theme, text scale 1,35 and reduce motion, then
 /// one tab per [GalleryPage] of the [galleryPages] list. Each page shows every
 /// state of its components: normal, pressed (a note: press and hold),
 /// focused (a ring, or Tab on a keyboard), disabled, loading, error.
@@ -60,7 +60,7 @@ class _ComponentGalleryViewState extends State<ComponentGalleryView> {
                     onTap: () => settings.dark = !settings.dark,
                   ),
                   AppChip(
-                    label: 'Metin 1,3',
+                    label: 'Metin 1,35',
                     selected: settings.largeText,
                     onTap: () => settings.largeText = !settings.largeText,
                   ),

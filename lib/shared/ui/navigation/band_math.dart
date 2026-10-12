@@ -168,14 +168,20 @@ class RootBandMetrics {
 ///
 /// Student: `62 + 56 + 8 + 48 + 20 = 194` with the counter, `62 + 56 + 20 =
 /// 138` without. Coach: `62 + 56 + 20 = 138`. Both shrink to `62 + 48 =
-/// 110`. At text scale 1,3 the greeting and the counter grow (26/34, 52/60 in
-/// the spec) and so does the band.
+/// 110`. At large text the band grows with its content instead of cutting
+/// it: the open greeting may wrap to two lines ([greetingHeight], measured
+/// by the band at the width it gets) and the counter row is as tall as its
+/// tallest part ([counterHeight]: the figure, or "gün kaldı" plus the exam
+/// date, which wraps). Collapsed, the greeting is one line and may end in
+/// an ellipsis ([greetingMaxLines]).
 class HomeBandMetrics {
   const HomeBandMetrics({
     required this.role,
     required this.safeTop,
     this.hasCounter = true,
+    this.greetingHeight,
     this.subtitleHeight,
+    this.counterHeight,
     this.textScaler = TextScaler.noScaling,
   });
 
@@ -198,36 +204,56 @@ class HomeBandMetrics {
   static const double avatarOpen = 40;
   static const double avatarCollapsed = 32;
 
+  /// The greeting may wrap to this many lines while the band is open.
+  static const int openGreetingLines = 2;
+
+  /// Scroll progress up to which the greeting keeps its two lines; after it
+  /// the greeting is one line (ellipsis allowed) so it fits the shrinking
+  /// row.
+  static const double twoLineUntil = 0.25;
+
   final AppHomeBandRole role;
   final double safeTop;
 
   /// Student only: whether the YKS counter row exists.
   final bool hasCounter;
 
+  /// The measured height of the open greeting (up to two lines at the width
+  /// it gets); one scaled line (20/28) when null.
+  final double? greetingHeight;
+
   /// Coach only: the measured height of the sub line (it may wrap to two
   /// lines on a narrow screen or at large text); one scaled line (13/20)
   /// when null.
   final double? subtitleHeight;
+
+  /// Student only: the measured height of the counter row; one scaled
+  /// metric line when null.
+  final double? counterHeight;
   final TextScaler textScaler;
 
   bool get _hasCounterRow => role == AppHomeBandRole.student && hasCounter;
 
   /// Greeting row when open: 56 for a student; a coach also fits the sub
-  /// line (20/28 + 13/20) in it, and more at large text.
-  double get openRow => role == AppHomeBandRole.coach
-      ? math.max(
-          row,
-          textScaler.scale(28) + (subtitleHeight ?? textScaler.scale(20)),
-        )
-      : math.max(row, textScaler.scale(28));
+  /// line (13/20) under the greeting, and both grow at large text.
+  double get openRow {
+    final greeting = greetingHeight ?? textScaler.scale(28);
+    return role == AppHomeBandRole.coach
+        ? math.max(row, greeting + (subtitleHeight ?? textScaler.scale(20)))
+        : math.max(row, greeting);
+  }
 
-  /// Counter row height at the current text scale.
+  /// Counter row height at the current text scale: the figure alone.
   double get counterRow => textScaler.scale(counterRowBase);
+
+  /// The counter row as laid out: at least [counterRow], and as tall as the
+  /// measured [counterHeight].
+  double get counterRowOpen => math.max(counterRow, counterHeight ?? 0);
 
   double get maxExtent =>
       safeTop +
       openRow +
-      (_hasCounterRow ? counterGap + counterRow : 0) +
+      (_hasCounterRow ? counterGap + counterRowOpen : 0) +
       bottomPadding;
 
   double get minExtent =>
@@ -249,6 +275,11 @@ class HomeBandMetrics {
   static double avatarAt(double progress) =>
       BandMath.lerp(avatarOpen, avatarCollapsed, progress);
 
+  /// Lines the greeting may use at [progress]: two while the band is open,
+  /// one once it has started to shrink.
+  static int greetingMaxLines(double progress) =>
+      progress < twoLineUntil ? openGreetingLines : 1;
+
   /// Opacity of the open-only content (counter row, coach sub line): gone
   /// before the band is half shrunk so it never crowds the greeting.
   static double openContentOpacity(double progress) =>
@@ -258,6 +289,12 @@ class HomeBandMetrics {
   /// the second half of the shrink.
   static double collapsedContentOpacity(double progress) =>
       (progress * 2 - 1).clamp(0.0, 1.0);
+
+  /// Share of its width the collapsed one-line counter takes at [progress]:
+  /// none while the band is open, so the greeting gets the whole row (it
+  /// used to be cut to "Merhaba, Al…" by a hidden counter).
+  static double collapsedCounterWidthFactor(double progress) =>
+      collapsedContentOpacity(progress);
 }
 
 /// Numbers of the detail bar (C82; board 1.18 frames 4 and 5).

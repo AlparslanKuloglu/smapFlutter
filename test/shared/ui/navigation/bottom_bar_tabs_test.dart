@@ -138,4 +138,47 @@ void main() {
       );
     });
   });
+
+  group('labelScale (FIN14E: one scale for the five labels)', () {
+    // 4 x 82,5 tab slots and the 72 camera slot of a 402 bar.
+    const slots = [82.5, 82.5, 82.5, 82.5, 72.0];
+
+    test('1 when every label fits its slot', () {
+      expect(
+        AppBottomBarTabs.labelScale(
+          textWidths: [50, 60, 55, 30, 28],
+          slotWidths: slots,
+        ),
+        1,
+      );
+    });
+
+    test('the tightest label sets the scale for all', () {
+      // Room is slot - 2 x 4 = 74,5; a 93 wide label needs 0,8.
+      final scale = AppBottomBarTabs.labelScale(
+        textWidths: [70, 93, 60, 40, 30],
+        slotWidths: slots,
+      );
+      expect(scale, closeTo(74.5 / 93, 1e-9));
+      // That scale fits every label.
+      for (final (i, width) in [70.0, 93.0, 60.0, 40.0, 30.0].indexed) {
+        expect(width * scale, lessThanOrEqualTo(slots[i] - 8 + 1e-9));
+      }
+    });
+
+    test('the narrow camera slot counts too', () {
+      final scale = AppBottomBarTabs.labelScale(
+        textWidths: [10, 10, 10, 10, 80],
+        slotWidths: slots,
+      );
+      expect(scale, closeTo(64 / 80, 1e-9));
+    });
+
+    test('a slot without room never gives a zero or negative scale', () {
+      expect(
+        AppBottomBarTabs.labelScale(textWidths: [40], slotWidths: [6]),
+        greaterThan(0),
+      );
+    });
+  });
 }

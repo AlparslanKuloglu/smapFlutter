@@ -145,5 +145,13 @@
         "type": "int"
       }
     }
+  },
+  "kit_a11yAccordionExpanded": "genişletilmiş",
+  "@kit_a11yAccordionExpanded": {
+    "description": "State word read after the header of an open accordion (C50): 'Konu başlığı, 4 madde, genişletilmiş'."
+  },
+  "kit_a11yAccordionCollapsed": "daraltılmış",
+  "@kit_a11yAccordionCollapsed": {
+    "description": "State word read after the header of a closed accordion (C50): 'Konu başlığı, 4 madde, daraltılmış'."
   }
 }

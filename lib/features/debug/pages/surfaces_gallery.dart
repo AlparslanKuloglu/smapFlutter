@@ -225,6 +225,31 @@ class _SurfacesGalleryState extends State<SurfacesGallery> {
             ),
           ],
         ),
+        GallerySection(
+          title: 'AppAccordion · büyük metin ve ekran okuyucu',
+          note:
+              'Başlık tek okunur: "Konu başlığı, 4 madde, 1 eksik, '
+              'daraltılmış" (summaryLabel); gövde ayrı düğüm. Metin 1,35.',
+          children: [
+            GalleryLargeText(
+              child: GalleryPanel(
+                tone: GalleryTone.canvas,
+                child: AppAccordion(
+                  title: 'Türk Dili ve Edebiyatı-Sosyal Bilimler 1',
+                  summaryLabel: '4 madde, 1 eksik',
+                  summary: Text(
+                    '4 madde · 1 eksik',
+                    style: text.caption.copyWith(color: colors.textSecondary),
+                  ),
+                  child: Text(
+                    'Gövde burada başlar.',
+                    style: text.body.copyWith(color: colors.textPrimary),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
         const GallerySection(
           title: 'AppNoticeBox · C39 · pano 1.4',
           note:

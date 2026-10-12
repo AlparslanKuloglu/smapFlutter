@@ -138,6 +138,52 @@ class _PickersGalleryState extends State<PickersGallery> {
           ],
         ),
         GallerySection(
+          title: 'AppDayChip · büyük metin',
+          note:
+              'Metin 1,35: nokta rakama değmez, "1 konu" çipe sığar (çip '
+              'uzar; kaydırılan sırada genişlik de büyüyebilir).',
+          children: [
+            GalleryLargeText(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      for (final day in week)
+                        AppDayChip(
+                          date: day,
+                          today: CalendarMath.sameDay(day, _today),
+                          selected: CalendarMath.sameDay(day, _chip),
+                          onTap: () => setState(() => _chip = day),
+                        ),
+                    ],
+                  ),
+                  const SizedBox(height: AppSpacing.s16),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        for (final (i, day) in nextWeek.take(6).indexed) ...[
+                          if (i > 0) const SizedBox(width: AppSpacing.s8),
+                          AppDayChip(
+                            date: day,
+                            size: AppDayChipSize.large,
+                            today: CalendarMath.sameDay(day, _today),
+                            selected: CalendarMath.sameDay(day, _largeChip),
+                            caption: i == 0 ? '1 konu' : null,
+                            onTap: () => setState(() => _largeChip = day),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        GallerySection(
           title: 'AppCalendar · C65 · pano 3.5 kare 1',
           note:
               'Çoklu seçim; geçmiş günler pasif ama okunur; bugün 2 pt '

@@ -11,6 +11,7 @@ import 'package:smap/core/theme/theme_context.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/shared/ui/navigation/app_camera_button.dart';
 import 'package:smap/shared/ui/navigation/app_nav_tab.dart';
+import 'package:smap/shared/ui/navigation/band_text.dart';
 import 'package:smap/shared/ui/navigation/bottom_bar_tabs.dart';
 
 /// The bottom bar of the student and coach shells (C84 `SmapBottomBar(role:
@@ -95,56 +96,100 @@ class AppBottomBar extends StatelessWidget {
       label: l10n.nav_barLabel,
       child: SizedBox(
         height: AppSize.cameraButtonLift + AppSize.bottomBar + inset,
-        child: Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Positioned(
-              left: 0,
-              right: 0,
-              bottom: 0,
-              height: AppSize.bottomBar + inset,
-              child: FrostedContainer(
-                blur: _blur,
-                overlayColor: colors.bgBar,
-                borderRadius: AppRadius.barTop,
-                child: CustomPaint(
-                  foregroundPainter: _TopEdgePainter(
-                    color: colors.borderSubtle,
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: inset),
-                    child: LayoutBuilder(
-                      builder: (context, constraints) => _Slots(
-                        width: constraints.maxWidth,
-                        tabs: tabs,
-                        selectedIndex: index,
-                        labelOf: (d) => _labelOf(l10n, d),
-                        positionPhraseOf: l10n.nav_a11yTabPosition,
-                        onTap: (i) {
-                          if (i != index) AppHaptics.selection();
-                          onTap(i);
-                        },
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final labelScale = _labelScaleOf(
+              context,
+              width: constraints.maxWidth,
+              labels: [for (final tab in tabs) _labelOf(l10n, tab.destination)],
+              cameraLabel: l10n.nav_cameraLabel,
+            );
+            return Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Positioned(
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  height: AppSize.bottomBar + inset,
+                  child: FrostedContainer(
+                    blur: _blur,
+                    overlayColor: colors.bgBar,
+                    borderRadius: AppRadius.barTop,
+                    child: CustomPaint(
+                      foregroundPainter: _TopEdgePainter(
+                        color: colors.borderSubtle,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(bottom: inset),
+                        child: _Slots(
+                          width: constraints.maxWidth,
+                          tabs: tabs,
+                          selectedIndex: index,
+                          labelOf: (d) => _labelOf(l10n, d),
+                          labelScale: labelScale,
+                          positionPhraseOf: l10n.nav_a11yTabPosition,
+                          onTap: (i) {
+                            if (i != index) AppHaptics.selection();
+                            onTap(i);
+                          },
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ),
-            Positioned(
-              left: 0,
-              right: 0,
-              top: 0,
-              child: Center(
-                child: AppCameraButton(
-                  label: l10n.nav_cameraLabel,
-                  semanticLabel: l10n.nav_cameraA11y,
-                  onPressed: onCamera,
+                Positioned(
+                  left: 0,
+                  right: 0,
+                  top: 0,
+                  child: Center(
+                    child: AppCameraButton(
+                      label: l10n.nav_cameraLabel,
+                      semanticLabel: l10n.nav_cameraA11y,
+                      onPressed: onCamera,
+                      labelScale: labelScale,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          ],
+              ],
+            );
+          },
         ),
       ),
+    );
+  }
+
+  /// The one label scale of the five labels (four tabs and "Okut"): each is
+  /// measured in the heaviest weight at the platform text scale against the
+  /// room its slot gives it (pano 1.19 "sığmazsa küçülür"; C77 to C79).
+  static double _labelScaleOf(
+    BuildContext context, {
+    required double width,
+    required List<String> labels,
+    required String cameraLabel,
+  }) {
+    final scaler = MediaQuery.textScalerOf(context);
+    final direction = Directionality.of(context);
+    final style = context.appText.labelSm.copyWith(fontWeight: FontWeight.w700);
+    double measure(String text) => BandText.size(
+      text: text,
+      style: style,
+      width: double.infinity,
+      textScaler: scaler,
+      textDirection: direction,
+      maxLines: 1,
+    ).width;
+    final tabWidth =
+        (width - AppCameraButton.slotWidth) / AppBottomBarTabs.tabCount;
+    return AppBottomBarTabs.labelScale(
+      textWidths: [
+        for (final label in labels) measure(label),
+        measure(cameraLabel),
+      ],
+      slotWidths: [
+        for (var i = 0; i < labels.length; i++) tabWidth,
+        AppCameraButton.slotWidth,
+      ],
     );
   }
 
@@ -169,6 +214,7 @@ class _Slots extends StatelessWidget {
     required this.tabs,
     required this.selectedIndex,
     required this.labelOf,
+    required this.labelScale,
     required this.positionPhraseOf,
     required this.onTap,
   });
@@ -177,6 +223,7 @@ class _Slots extends StatelessWidget {
   final List<AppNavTabSpec> tabs;
   final int? selectedIndex;
   final String Function(AppNavDestination) labelOf;
+  final double labelScale;
   final String Function(int position) positionPhraseOf;
   final ValueChanged<int> onTap;
 
@@ -203,6 +250,7 @@ class _Slots extends StatelessWidget {
                   positionPhraseOf(AppBottomBarTabs.positionOf(i)),
                 ),
                 selected: i == selected,
+                labelScale: labelScale,
                 onTap: () => onTap(i),
               ),
             ),

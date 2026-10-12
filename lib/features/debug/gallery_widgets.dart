@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smap/core/theme/app_radius.dart';
 import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/theme_context.dart';
+import 'package:smap/features/debug/gallery_settings.dart';
 import 'package:smap/features/debug/launch_env.dart';
 
 /// Scroll area of one gallery page: 16 pt page edge, a column of sections.
@@ -227,6 +228,31 @@ class GalleryOnNavyLabel extends StatelessWidget {
         style: context.appText.labelMd.copyWith(
           color: context.appColors.textOnNavy,
         ),
+      ),
+    );
+  }
+}
+
+/// Shows [child] at text scale 1,35 whatever the page switches say, with a
+/// caption, so a component's large-text state sits next to its normal one
+/// (the "Metin 1,35" chip at the top turns the whole page on; the theme chip
+/// still applies).
+class GalleryLargeText extends StatelessWidget {
+  const GalleryLargeText({required this.child, this.label, super.key});
+
+  /// Caption above the demo; "Metin 1,35" when null.
+  final String? label;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return GalleryState(
+      label: label ?? 'Metin 1,35',
+      child: MediaQuery(
+        data: MediaQuery.of(context).copyWith(
+          textScaler: const TextScaler.linear(GallerySettings.largeTextScale),
+        ),
+        child: child,
       ),
     );
   }

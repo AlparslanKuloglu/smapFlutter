@@ -8,6 +8,7 @@ import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/theme_context.dart';
 import 'package:smap/shared/ui/buttons/app_focus_ring.dart';
 import 'package:smap/shared/ui/buttons/app_pressable.dart';
+import 'package:smap/shared/ui/navigation/app_nav_tab.dart';
 
 /// The camera button in the middle of the bottom bar (C84 `SmapCameraButton`;
 /// pano 1.19 "Kamera"; UI guide §5 #35).
@@ -29,6 +30,7 @@ class AppCameraButton extends StatelessWidget {
     required this.label,
     required this.semanticLabel,
     required this.onPressed,
+    this.labelScale,
     super.key,
   });
 
@@ -38,6 +40,11 @@ class AppCameraButton extends StatelessWidget {
   /// The accessible name, "Okut: deneme formunu kamerayla okut".
   final String semanticLabel;
   final VoidCallback onPressed;
+
+  /// The bar's shared label shrink factor (0..1) so "Okut" matches the tab
+  /// labels at large text; null draws it at the plain text scale, shrunk to
+  /// the slot if needed.
+  final double? labelScale;
 
   /// Width of the slot the button lives in.
   static const double slotWidth = 72;
@@ -51,7 +58,6 @@ class AppCameraButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = context.appColors;
-    final text = context.appText;
 
     return Semantics(
       button: true,
@@ -93,21 +99,47 @@ class AppCameraButton extends StatelessWidget {
               ),
               const SizedBox(height: AppSpacing.s4),
               ExcludeSemantics(
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    label,
-                    maxLines: 1,
-                    style: text.labelSm.copyWith(
-                      fontWeight: FontWeight.w700,
-                      color: colors.textPrimary,
-                    ),
-                  ),
-                ),
+                child: _CameraLabel(label: label, scale: labelScale),
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+/// "Okut" under the button: like the tab labels, a shared [scale] or a fit
+/// to the slot.
+class _CameraLabel extends StatelessWidget {
+  const _CameraLabel({required this.label, required this.scale});
+
+  final String label;
+  final double? scale;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = context.appColors;
+    final style = context.appText.labelSm.copyWith(
+      fontWeight: FontWeight.w700,
+      color: colors.textPrimary,
+    );
+    final shared = scale;
+    if (shared == null) {
+      return FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Text(label, maxLines: 1, style: style),
+      );
+    }
+    return Text(
+      label,
+      maxLines: 1,
+      softWrap: false,
+      textScaler: TextScaler.noScaling,
+      style: AppNavTab.sharedStyle(
+        style,
+        MediaQuery.textScalerOf(context),
+        shared,
       ),
     );
   }

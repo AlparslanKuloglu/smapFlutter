@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:smap/features/debug/launch_env.dart';
 
 /// The three switches at the top of the component gallery: light or dark
-/// theme, text scale 1,0 or 1,3, reduce motion. The gallery app applies them
+/// theme, text scale 1,0 or 1,35, reduce motion. The gallery app applies them
 /// to the theme mode and to `MediaQuery`; every page reads the same state.
 ///
 /// The start values can be set with `--dart-define` so a screenshot run needs
@@ -34,14 +34,18 @@ class GallerySettings extends ChangeNotifier {
   /// Dark theme on.
   bool get dark => _dark;
 
-  /// Text scale 1,3 on (the accessibility limit of the design, spec §1.6).
+  /// Large text on: 1,35, a little past the design's 1,3 limit (spec §1.6)
+  /// so the kit is checked with headroom (FIN14E).
   bool get largeText => _largeText;
 
   /// "Reduce motion" on: the same signal as the platform setting.
   bool get reduceMotion => _reduceMotion;
 
+  /// The factor of the "Metin 1,35" switch.
+  static const double largeTextScale = 1.35;
+
   /// The text scale factor the gallery applies.
-  double get textScale => _largeText ? 1.3 : 1;
+  double get textScale => _largeText ? largeTextScale : 1;
 
   set dark(bool value) {
     if (_dark == value) return;
