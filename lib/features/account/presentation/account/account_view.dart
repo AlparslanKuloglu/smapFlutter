@@ -30,11 +30,11 @@ import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/services/current_user_service.dart';
 import 'package:smap/services/session_manager.dart';
 import 'package:smap/shared/ui/buttons/app_icon_button.dart';
-import 'package:smap/features/account/presentation/account_bar_clearance.dart';
 import 'package:smap/shared/ui/navigation/app_system_overlay.dart';
 import 'package:smap/shared/ui/surfaces/app_row.dart';
 import 'package:smap/shared/ui/surfaces/app_row_group.dart';
 import 'package:smap/shared/ui/surfaces/app_row_shell.dart';
+import 'package:smap/shared/ui/navigation/app_bottom_bar.dart';
 
 part 'widgets/account_band.dart';
 part 'widgets/account_code_row.dart';
@@ -125,7 +125,7 @@ class _AccountPage extends StatelessWidget {
               AppSpacing.gutter,
               AppSpacing.s16,
               AppSpacing.gutter,
-              accountBarClearance(context) + AppSpacing.s16,
+              AppBottomBar.heightOf(context) + AppSpacing.s16,
             ),
             sliver: const SliverList(
               delegate: SliverChildListDelegate.fixed([

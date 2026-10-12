@@ -13,9 +13,9 @@ import 'package:smap/features/account/presentation/password/password_viewmodel.d
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/shared/ui/buttons/app_button.dart';
 import 'package:smap/shared/ui/inputs/app_text_field.dart';
-import 'package:smap/features/account/presentation/account_bar_clearance.dart';
 import 'package:smap/shared/ui/navigation/app_detail_bar.dart';
 import 'package:smap/shared/ui/navigation/large_title_sliver.dart';
+import 'package:smap/shared/ui/navigation/app_bottom_bar.dart';
 
 part 'widgets/password_form.dart';
 
@@ -73,7 +73,7 @@ class _PasswordPage extends StatelessWidget {
           const _PasswordFormSection(),
           SliverToBoxAdapter(
             child: SizedBox(
-              height: accountBarClearance(context) + AppSpacing.s16,
+              height: AppBottomBar.heightOf(context) + AppSpacing.s16,
             ),
           ),
         ],

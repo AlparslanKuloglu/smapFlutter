@@ -23,11 +23,11 @@ import 'package:smap/shared/ui/feedback/section_state.dart';
 import 'package:smap/shared/ui/identity/app_avatar.dart';
 import 'package:smap/shared/ui/inputs/app_text_field.dart';
 import 'package:smap/shared/ui/inputs/input_masks.dart';
-import 'package:smap/features/account/presentation/account_bar_clearance.dart';
 import 'package:smap/shared/ui/navigation/app_detail_bar.dart';
 import 'package:smap/shared/ui/navigation/large_title_sliver.dart';
 import 'package:smap/shared/ui/surfaces/app_card.dart';
 import 'package:smap/shared/ui/surfaces/app_notice_box.dart';
+import 'package:smap/shared/ui/navigation/app_bottom_bar.dart';
 
 part 'widgets/coaching_linked.dart';
 part 'widgets/coaching_states.dart';
@@ -91,7 +91,7 @@ class _CoachingPage extends StatelessWidget {
           const _CoachingContent(),
           SliverToBoxAdapter(
             child: SizedBox(
-              height: accountBarClearance(context) + AppSpacing.s16,
+              height: AppBottomBar.heightOf(context) + AppSpacing.s16,
             ),
           ),
         ],

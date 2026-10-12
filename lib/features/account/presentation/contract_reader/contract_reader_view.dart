@@ -10,8 +10,8 @@ import 'package:smap/features/account/data/dtos/legal_document_dto.dart';
 import 'package:smap/features/account/presentation/account_texts.dart';
 import 'package:smap/features/account/presentation/contract_reader/contract_reader_viewmodel.dart';
 import 'package:smap/l10n/app_localizations.dart';
-import 'package:smap/features/account/presentation/account_bar_clearance.dart';
 import 'package:smap/shared/ui/navigation/app_detail_bar.dart';
+import 'package:smap/shared/ui/navigation/app_bottom_bar.dart';
 
 part 'widgets/contract_reader_text.dart';
 
@@ -62,7 +62,7 @@ class ContractReaderView extends StackedView<ContractReaderViewModel> {
               AppSpacing.gutter,
               AppSpacing.s8,
               AppSpacing.gutter,
-              accountBarClearance(context) + AppSpacing.s16,
+              AppBottomBar.heightOf(context) + AppSpacing.s16,
             ),
             sliver: SliverList(
               delegate: SliverChildListDelegate.fixed([

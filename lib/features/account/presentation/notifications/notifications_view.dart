@@ -17,12 +17,12 @@ import 'package:smap/features/account/presentation/notifications/notifications_v
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/services/current_user_service.dart';
 import 'package:smap/shared/ui/controls/app_switch.dart';
-import 'package:smap/features/account/presentation/account_bar_clearance.dart';
 import 'package:smap/shared/ui/navigation/app_detail_bar.dart';
 import 'package:smap/shared/ui/navigation/large_title_sliver.dart';
 import 'package:smap/shared/ui/surfaces/app_notice_box.dart';
 import 'package:smap/shared/ui/surfaces/app_row.dart';
 import 'package:smap/shared/ui/surfaces/app_row_group.dart';
+import 'package:smap/shared/ui/navigation/app_bottom_bar.dart';
 
 part 'widgets/notifications_categories.dart';
 part 'widgets/notifications_notice.dart';
@@ -120,7 +120,7 @@ class _NotificationsPageState extends State<_NotificationsPage>
           const _QuietSliver(),
           SliverToBoxAdapter(
             child: SizedBox(
-              height: accountBarClearance(context) + AppSpacing.s16,
+              height: AppBottomBar.heightOf(context) + AppSpacing.s16,
             ),
           ),
         ],
