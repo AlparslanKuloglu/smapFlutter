@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 <uses-permission android:name="android.permission.INTERNET" />
+<!-- Optik form okuma (features/scan); camera_android de ekliyor, burada açıkça. -->
+<uses-permission android:name="android.permission.CAMERA" />
     <application
         android:label="smap"
         android:name="${applicationName}"
