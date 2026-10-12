@@ -43,11 +43,13 @@ import 'package:smap/shared/ui/indicators/app_spinner.dart';
 import 'package:smap/shared/ui/indicators/app_stat_box.dart';
 import 'package:smap/shared/ui/navigation/app_bottom_bar.dart';
 import 'package:smap/shared/ui/navigation/app_root_band.dart';
+import 'package:smap/shared/ui/navigation/student_scope.dart';
 import 'package:smap/shared/ui/buttons/app_button.dart';
 import 'package:smap/shared/ui/surfaces/app_card.dart';
 import 'package:smap/shared/ui/text/section_header.dart';
 
 part 'widgets/analytics_band.dart';
+part 'widgets/analytics_body.dart';
 part 'widgets/analytics_exams_body.dart';
 part 'widgets/analytics_exams_controls.dart';
 part 'widgets/analytics_exams_list.dart';
@@ -58,12 +60,10 @@ part 'widgets/analytics_general_filter.dart';
 part 'widgets/analytics_general_states.dart';
 part 'widgets/analytics_general_stats.dart';
 
-/// The gap between the sections of a tab (pano 6.1: filter row y=190, chart
-/// card y=246, boxes y=566 over a 304 high card: 16).
+/// The gap between the sections of a tab (pano 6.1: 16).
 const double _sectionGap = AppSpacing.s16;
 
-/// The gap between the two columns and the two rows of the stat grid (pano
-/// 6.1: "2 sütun, aralık 8").
+/// The gap between the columns and rows of the stat grid (pano 6.1: 8).
 const double _boxGap = AppSpacing.s8;
 
 /// Analizlerim (pano 6.1 to 6.4; flow 13.7): the tab root of the student
@@ -71,11 +71,10 @@ const double _boxGap = AppSpacing.s8;
 ///
 /// A navy root band "Analizlerim" with the tabs "Genel" and "Denemelerim",
 /// then the selected tab's sections in the one scroll view: Genel has the
-/// filter pill ("TYT · Genel", "6 deneme"), the net chart and the stat boxes;
-/// Denemelerim has the exam type segment, the summary line with "Süz ve
-/// Sırala" and the paged list. Each section has its own skeleton, empty,
-/// error and offline state; the tabs load separately, so an error of one
-/// leaves the other working.
+/// filter pill, the net chart and the stat boxes; Denemelerim has the type
+/// segment, the summary line with "Süz ve Sırala" and the paged list. Each
+/// section has its own skeleton, empty, error and offline state; the tabs
+/// load separately.
 ///
 /// [tab] is the `?tab=genel|denemelerim` query of the route.
 @RoutePage()
@@ -191,25 +190,52 @@ class _AnalyticsPageState extends State<_AnalyticsPage> {
   }
 }
 
-/// The selected tab's sections.
-class _AnalyticsBody
-    extends SelectorViewModelWidget<AnalyticsViewModel, AnalyticsTab> {
-  const _AnalyticsBody();
+/// A row opens the exam's detail on this tab's stack (pano 6.2 → 5.3; a
+/// coach's [student] goes along: the detail shows the context strip, pano
+/// 10.4 kare 4).
+void _openExam(BuildContext context, ExamDetail exam, {StudentRef? student}) =>
+    unawaited(
+      context.router.push(
+        ExamDetailRoute(examId: exam.id, exam: exam, student: student),
+      ),
+    );
+
+/// The Genel sections as one sliver (a coach's profile, pano 10.4 kare 1);
+/// needs an `AnalyticsViewModel` above it (`StudentAnalyticsView`).
+class AnalyticsGeneralSliver extends StatelessWidget {
+  const AnalyticsGeneralSliver({super.key});
 
   @override
-  AnalyticsTab selector(AnalyticsViewModel viewModel) => viewModel.tab;
-
-  @override
-  Widget build(BuildContext context, AnalyticsTab tab) => switch (tab) {
-    AnalyticsTab.general => const _GeneralBody(),
-    AnalyticsTab.exams => const _ExamsBody(),
-  };
+  Widget build(BuildContext context) => const _GeneralBody();
 }
 
-/// A row opens the exam's detail on this tab's stack (pano 6.2 → 5.3).
-void _openExam(BuildContext context, ExamDetail exam) => unawaited(
-  context.router.push(ExamDetailRoute(examId: exam.id, exam: exam)),
-);
+/// The Denemelerim sections as one sliver (pano 10.4 kare 2); loads the list
+/// the first time it is built.
+class AnalyticsExamsSliver extends StatefulWidget {
+  const AnalyticsExamsSliver({super.key});
+
+  @override
+  State<AnalyticsExamsSliver> createState() => _AnalyticsExamsSliverState();
+}
+
+class _AnalyticsExamsSliverState extends State<AnalyticsExamsSliver> {
+  @override
+  void initState() {
+    super.initState();
+    // The load notifies at once: not while the tree is building.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final model = getParentViewModel<AnalyticsViewModel>(
+        context,
+        listen: false,
+      );
+      unawaited(model.loadExams());
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) => const _ExamsBody();
+}
 
 /// "TYT denemesi" for an exam the server did not name (pano 6.2).
 String _examTitle(AppLocalizations l10n, String? name, NetExamType? type) {

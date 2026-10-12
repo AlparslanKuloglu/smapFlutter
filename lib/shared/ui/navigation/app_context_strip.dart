@@ -34,11 +34,12 @@ class AppContextStrip extends StatelessWidget {
   /// Whose data is shown.
   final StudentRef student;
 
-  /// The visible class and field, "12. Sınıf · EA".
+  /// The visible class and field, "12. Sınıf · EA"; the student's own
+  /// ([StudentRef.detail]) when null.
   final String? detail;
 
-  /// The spoken form of [detail], "12. sınıf, Eşit Ağırlık"; [detail] when
-  /// null.
+  /// The spoken form of [detail], "12. sınıf, Eşit Ağırlık"; the student's
+  /// own ([StudentRef.detailSemantics]) or [detail] when null.
   final String? detailSemantics;
 
   /// Height at text scale 1 (C83).
@@ -55,7 +56,8 @@ class AppContextStrip extends StatelessWidget {
     final title = l10n.nav_contextStripTitle(
       TurkishSuffix.genitive(student.name),
     );
-    final spoken = detailSemantics ?? detail;
+    final shown = detail ?? student.detail;
+    final spoken = detailSemantics ?? student.detailSemantics ?? shown;
     final label = spoken == null
         ? title
         : l10n.nav_contextStripA11y(title, spoken);
@@ -97,7 +99,7 @@ class AppContextStrip extends StatelessWidget {
                     ),
                   ),
                 ),
-                if (detail case final trailing?) ...[
+                if (shown case final trailing?) ...[
                   const SizedBox(width: AppSpacing.s8),
                   Text(
                     trailing,

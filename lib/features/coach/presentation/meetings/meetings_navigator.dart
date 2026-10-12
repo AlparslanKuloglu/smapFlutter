@@ -8,8 +8,8 @@ abstract interface class MeetingsNavigator {
   Future<void> openMeeting(MeetingEntry meeting);
 
   /// "Öğrencinin verileri" (pano 10.5 kare 3: "Analiz, denemeler, program"):
-  /// the student's own data in the coach's view. Until Öğrenci Profili (E17)
-  /// exists this opens the legacy screen of the student's analysis.
+  /// the student's own data in the coach's view, Öğrenci Profili (pano 10.4)
+  /// on its Program tab (Tur 12 A).
   Future<void> openStudentData({
     required String studentId,
     required String name,

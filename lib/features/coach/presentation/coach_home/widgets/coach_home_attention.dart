@@ -85,12 +85,7 @@ class _AttentionRows extends StatelessWidget {
                   rule: item.rule,
                   semanticLabel: copy.semanticLabel,
                   avatar: CoachAvatars.imageOf(item.photo),
-                  onTap: () => _openStudent(
-                    context,
-                    id: item.studentId,
-                    name: item.name,
-                    photo: item.photo,
-                  ),
+                  onTap: () => _openStudent(context, id: item.studentId),
                 );
               },
             ),

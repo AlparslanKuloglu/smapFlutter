@@ -29,7 +29,8 @@ class _TopicListSection
       SectionState.empty => const _TopicListEmpty(),
       SectionState.ready => _TopicGroups(
         groups: section.data ?? const [],
-        bag: data.source == TopicSource.bag,
+        // The bag has no "eksik" field for a coach's student (Tur 12 A).
+        bag: data.source == TopicSource.bag && !viewModel.isCoachView,
       ),
     };
   }

@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 
 import 'package:smap/app/router/app_router.dart';
 import 'package:smap/features/schedule/domain/weekly_draft.dart';
+import 'package:smap/shared/ui/navigation/student_scope.dart';
 
 /// Where the program screens go from one another. The ViewModels hold this
 /// instead of a router, so they stay free of the router's generated classes
@@ -23,11 +24,15 @@ abstract interface class ProgramNavigator {
 
 /// [ProgramNavigator] on auto_route: [router] is the stack router of the
 /// screen that asks (`context.router`): the tab's stack for the list and the
-/// detail, the root for the flow.
+/// detail, the root for the flow. A coach's [student] goes with every route,
+/// so the next screen shows the context strip and writes to the student.
 class RouterProgramNavigator implements ProgramNavigator {
-  const RouterProgramNavigator(this._router);
+  const RouterProgramNavigator(this._router, {this.student});
 
   final StackRouter _router;
+
+  /// The student a coach is looking at; `null` for the user's own programs.
+  final StudentRef? student;
 
   @override
   void openDetail(String programId, {DateTime? day}) {
@@ -35,13 +40,14 @@ class RouterProgramNavigator implements ProgramNavigator {
       ProgramDetailRoute(
         programId: programId,
         date: day == null ? null : formatDayKey(day),
+        student: student,
       ),
     );
   }
 
   @override
   Future<String?> openNewProgram() =>
-      _router.root.push<String>(const NewProgramRoute());
+      _router.root.push<String>(NewProgramRoute(student: student));
 
   @override
   void close([Object? result]) => _router.pop(result);

@@ -95,12 +95,7 @@ class _StudentTiles extends StatelessWidget {
               StudentTile(
                 name: student.name,
                 avatar: CoachAvatars.imageOf(student.photo),
-                onTap: () => _openStudent(
-                  context,
-                  id: student.id,
-                  name: student.name,
-                  photo: student.photo,
-                ),
+                onTap: () => _openStudent(context, id: student.id),
               ),
             ],
           ],

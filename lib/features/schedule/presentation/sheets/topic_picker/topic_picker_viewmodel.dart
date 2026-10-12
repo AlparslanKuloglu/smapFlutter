@@ -23,6 +23,7 @@ class TopicPickerViewModel extends BaseViewModel {
     required ScheduleService schedule,
     required this.placements,
     this.studentId,
+    this.studentFirstName,
     TopicSource initial = TopicSource.bag,
   }) : _schedule = schedule,
        _source = initial;
@@ -34,6 +35,14 @@ class TopicPickerViewModel extends BaseViewModel {
 
   /// The student whose bag and lessons these are; `null` for the user's own.
   final String? studentId;
+
+  /// The student's first name in a coach's view (the sheet names the student
+  /// and leaves out the "Eksik" tag: the bag has no such field, Tur 12 A);
+  /// `null` for the user's own.
+  final String? studentFirstName;
+
+  /// A coach writes a student's program.
+  bool get isCoachView => studentId != null;
 
   TopicSource _source;
   AsyncSection<List<TopicGroup>> _bag =

@@ -32,6 +32,10 @@ enum NewProgramStep { days, grid, name }
 /// with the new program's id, which opens the program (pano 13.3). A failure
 /// toasts and keeps the form. Leaving with something entered asks "Program
 /// kaydedilmesin mi?".
+///
+/// A coach sets up a program for a student ([studentId]; Tur 12 A, brief
+/// 14.2): the program goes to the student's account, and [savedText] is the
+/// toast that says so ("Program Alparslan'ın hesabına kaydedildi.").
 class NewProgramViewModel extends BaseViewModel {
   NewProgramViewModel({
     required ScheduleService schedule,
@@ -41,6 +45,7 @@ class NewProgramViewModel extends BaseViewModel {
     required ValueListenable<bool> online,
     required String Function(String month, int week) defaultName,
     this.studentId,
+    this.savedText,
     DateTime Function()? clock,
   }) : _schedule = schedule,
        _toast = toast,
@@ -52,6 +57,9 @@ class NewProgramViewModel extends BaseViewModel {
 
   /// The student the program is for; `null` for the signed-in user.
   final String? studentId;
+
+  /// The toast after a save; "Program kaydedildi." when null.
+  final ToastText? savedText;
 
   final ScheduleService _schedule;
   final ToastService _toast;
@@ -238,7 +246,7 @@ class NewProgramViewModel extends BaseViewModel {
     _saving = false;
     notifyListeners();
     result.fold((_) => _toast.error((l) => l.schedule_saveFailed), (created) {
-      _toast.success((l) => l.schedule_toastProgramSaved);
+      _toast.success(savedText ?? (l) => l.schedule_toastProgramSaved);
       _navigator.close(created.id);
     });
   }

@@ -2,9 +2,22 @@ import 'package:flutter/widgets.dart';
 
 /// The student a coach is looking at: id for the repository calls, name and
 /// picture for the context strip (C85; board 10.4).
+///
+/// [detail] and [detailSemantics] are the class and field the strip writes on
+/// its right ("12. Sınıf · EA", "12. Sınıf, Eşit Ağırlık"); the screen that
+/// opens the student composes them (the kit has no Turkish words for grades).
+/// [aimType] is the student's field as the backend's number, for the screens
+/// that pick a score by field (the AYT score of an exam); null when unknown.
 @immutable
 class StudentRef {
-  const StudentRef({required this.id, required this.name, this.avatar});
+  const StudentRef({
+    required this.id,
+    required this.name,
+    this.avatar,
+    this.detail,
+    this.detailSemantics,
+    this.aimType,
+  });
 
   /// Backend id; every repository call of a coach screen carries it.
   final String id;
@@ -15,15 +28,39 @@ class StudentRef {
   /// The student's picture; initials show when null.
   final ImageProvider? avatar;
 
+  /// The visible class and field, "12. Sınıf · EA"; the strip leaves the
+  /// right side empty when null.
+  final String? detail;
+
+  /// The spoken form of [detail], "12. Sınıf, Eşit Ağırlık".
+  final String? detailSemantics;
+
+  /// The student's study field as the backend's `aimType`; null when unknown.
+  final int? aimType;
+
+  /// The name without its last word, the part the coach calls the student by
+  /// ("Alparslan Kuloğlu" → "Alparslan", "Ayşe Nur Kaya" → "Ayşe Nur"); a
+  /// single word is kept whole.
+  String get firstName {
+    final words = name.trim().split(RegExp(r'\s+'));
+    return words.length < 2
+        ? words.first
+        : words.sublist(0, words.length - 1).join(' ');
+  }
+
   @override
   bool operator ==(Object other) =>
       other is StudentRef &&
       other.id == id &&
       other.name == name &&
-      other.avatar == avatar;
+      other.avatar == avatar &&
+      other.detail == detail &&
+      other.detailSemantics == detailSemantics &&
+      other.aimType == aimType;
 
   @override
-  int get hashCode => Object.hash(id, name, avatar);
+  int get hashCode =>
+      Object.hash(id, name, avatar, detail, detailSemantics, aimType);
 }
 
 /// Tells the student screens under it whose data they show (C85 "Tur 9").

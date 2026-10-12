@@ -5,14 +5,12 @@ import 'package:stacked/stacked.dart';
 
 import 'package:smap/core/errors/app_exception.dart';
 import 'package:smap/core/errors/app_result.dart';
-import 'package:smap/core/extensions/either_extensions.dart';
 import 'package:smap/core/services/toast_service.dart';
 import 'package:smap/core/theme/app_motion.dart';
 import 'package:smap/features/coach/application/coach_students_service.dart';
 import 'package:smap/features/coach/application/meeting_list_logic.dart';
 import 'package:smap/features/coach/application/meeting_models.dart';
-import 'package:smap/features/coach/application/meeting_schedule_logic.dart';
-import 'package:smap/features/coach/data/dtos/coach_student_dto.dart';
+import 'package:smap/features/coach/application/new_meeting_flow.dart';
 import 'package:smap/features/coach/data/interview_page.dart';
 import 'package:smap/features/coach/data/interview_repository.dart';
 import 'package:smap/features/coach/domain/interview_filter.dart';
@@ -109,19 +107,22 @@ class MeetingsViewModel extends BaseViewModel {
     this.maxSearchPages = 30,
   }) : _interviews = interviews,
        _navigator = navigator,
-       _dialogs = dialogs,
        _toast = toast,
        _online = online,
-       _students = students,
+       _newMeeting = NewMeetingFlow(
+         dialogs: dialogs,
+         interviews: interviews,
+         toast: toast,
+         students: students,
+       ),
        _clock = clock ?? DateTime.now,
        _timeout = timeout;
 
   final InterviewRepository _interviews;
   final MeetingsNavigator _navigator;
-  final MeetingsDialogs _dialogs;
   final ToastService _toast;
   final ValueListenable<bool> _online;
-  final CoachStudentsService? _students;
+  final NewMeetingFlow _newMeeting;
   final DateTime Function() _clock;
   final Duration _timeout;
 
@@ -138,8 +139,6 @@ class MeetingsViewModel extends BaseViewModel {
   String _query = '';
   int _token = 0;
   Future<void>? _more;
-  bool _creating = false;
-  bool _noteFailed = false;
   bool _started = false;
   bool _disposed = false;
   MeetingListData? _data;
@@ -331,75 +330,13 @@ class MeetingsViewModel extends BaseViewModel {
   Future<void> openMeeting(MeetingEntry meeting) =>
       _navigator.openMeeting(meeting);
 
-  /// The Plus of the band and "Yeni Görüşme": the sheet. [studentId] opens it
-  /// with that student chosen (Öğrenci Profili's "Görüşme Planla").
+  /// The Plus of the band and "Yeni Görüşme": the flow (the sheet, the save
+  /// and the toast; `NewMeetingFlow`). [studentId] opens it with that student
+  /// chosen (Öğrenci Profili's "Görüşme Planla"). A saved meeting reads the
+  /// list again.
   Future<void> newMeeting({String? studentId}) async {
-    if (_creating) return;
-    _creating = true;
-    try {
-      final students = await _loadStudents();
-      if (students == null || _disposed) return;
-      if (students.isEmpty) {
-        _toast.info((l) => l.coachMeetings_noStudents);
-        return;
-      }
-      _noteFailed = false;
-      final saved = await _dialogs.newMeeting(
-        students: students,
-        submit: _save,
-        studentId: studentId,
-      );
-      if (!saved || _disposed) return;
-      if (_noteFailed) {
-        _toast.error((l) => l.coachMeetings_savedWithoutNote);
-      } else {
-        _toast.success((l) => l.coachMeetings_saved);
-      }
-      unawaited(_reload(skeleton: false));
-    } finally {
-      _creating = false;
-    }
-  }
-
-  /// The coach's students, in Turkish order; `null` (after a toast) when
-  /// they could not be loaded.
-  Future<List<CoachStudentDto>?> _loadStudents() async {
-    final service = _students;
-    if (service == null) {
-      _toast.error((l) => l.coachMeetings_studentsFailed);
-      return null;
-    }
-    final loaded = await service.load();
-    if (loaded.isLeft()) {
-      _toast.error((l) => l.coachMeetings_studentsFailed);
-      return null;
-    }
-    return service.sortedStudents;
-  }
-
-  /// The sheet's "Görüşmeyi Kaydet": the meeting, then its note.
-  Future<bool> _save(MeetingDraft draft) async {
-    final created = await _interviews.createInterview(
-      studentId: draft.studentId,
-      type: draft.type,
-      date: draft.moment,
-    );
-    if (created.isLeft()) {
-      _toast.error((l) => l.coachMeetings_saveFailed);
-      return false;
-    }
-    final note = draft.note;
-    if (note == null) return true;
-    final id = created.rightOrNull?.id;
-    if (id == null) {
-      // The server accepted the meeting without echoing it: there is no id
-      // to put the note under.
-      _noteFailed = true;
-      return true;
-    }
-    final added = await _interviews.addNote(interviewId: id, note: note);
-    _noteFailed = added.isLeft();
-    return true;
+    if (!await _newMeeting.run(studentId: studentId) || _disposed) return;
+    unawaited(_reload(skeleton: false));
   }
 
   // ── Plumbing ─────────────────────────────────────────────────────────

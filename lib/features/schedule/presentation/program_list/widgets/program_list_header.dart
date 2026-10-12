@@ -24,7 +24,9 @@ class _ListBar extends SelectorViewModelWidget<ProgramListViewModel, _BarData> {
     );
     final showAction = data.canCreate && data.phase == ProgramListPhase.content;
     return AppDetailBar(
-      title: l10n.schedule_title,
+      title: viewModel.isCoachView
+          ? l10n.coachStudentProfile_programsTitle
+          : l10n.schedule_title,
       action: showAction
           ? AppBarAction(
               label: l10n.schedule_new,
@@ -50,7 +52,16 @@ class _ListTitle
     if (phase == ProgramListPhase.error) {
       return const SliverToBoxAdapter(child: SizedBox.shrink());
     }
-    return LargeTitleSliver(title: AppLocalizations.of(context).schedule_title);
+    final l10n = AppLocalizations.of(context);
+    final coach = getParentViewModel<ProgramListViewModel>(
+      context,
+      listen: false,
+    ).isCoachView;
+    return LargeTitleSliver(
+      title: coach
+          ? l10n.coachStudentProfile_programsTitle
+          : l10n.schedule_title,
+    );
   }
 }
 

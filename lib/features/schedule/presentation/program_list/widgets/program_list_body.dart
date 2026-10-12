@@ -32,6 +32,7 @@ class _ListBody
       ProgramListPhase.empty => _ListEmpty(
         onSetUp: viewModel.canCreateNow ? viewModel.startNewProgram : null,
         canCreate: viewModel.canCreate,
+        studentFirstName: StudentScope.studentOf(context)?.firstName,
       ),
       ProgramListPhase.error => _ListError(onRetry: viewModel.retry),
       ProgramListPhase.content => SliverPadding(
@@ -145,7 +146,8 @@ class _NoMatch extends StatelessWidget {
 
 /// The note under the saved list while offline (pano 3.7 kare 4): "Program
 /// kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı programını
-/// görebilirsin."
+/// görebilirsin." ("…Kayıtlı programı görebilirsin." for a coach, brief 14.3
+/// kare 3).
 class _OfflineNote extends StatelessWidget {
   const _OfflineNote();
 
@@ -159,7 +161,11 @@ class _OfflineNote extends StatelessWidget {
         0,
       ),
       child: Text(
-        AppLocalizations.of(context).schedule_offlineNote,
+        StudentScope.isCoachView(context)
+            ? AppLocalizations.of(
+                context,
+              ).coachStudentProfile_programOfflineNote
+            : AppLocalizations.of(context).schedule_offlineNote,
         style: context.appText.caption.copyWith(
           color: context.appColors.textSecondary,
         ),

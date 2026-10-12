@@ -15,9 +15,11 @@ import 'package:smap/features/account/application/avatar_catalog.dart';
 import 'package:smap/features/coach/application/coach_code_actions.dart';
 import 'package:smap/features/coach/application/coach_home_models.dart';
 import 'package:smap/features/coach/application/coach_students_service.dart';
+import 'package:smap/features/coach/application/new_meeting_flow.dart';
 import 'package:smap/features/coach/data/interview_repository.dart';
 import 'package:smap/features/coach/domain/attention_item.dart';
 import 'package:smap/features/coach/presentation/coach_home/coach_home_viewmodel.dart';
+import 'package:smap/features/coach/presentation/meetings/sheet_meetings_dialogs.dart';
 import 'package:smap/features/coach/presentation/widgets/attention_copy.dart';
 import 'package:smap/features/coach/presentation/widgets/attention_row.dart';
 import 'package:smap/features/coach/presentation/widgets/code_card.dart';
@@ -26,7 +28,6 @@ import 'package:smap/features/coach/presentation/widgets/meeting_row.dart';
 import 'package:smap/features/coach/presentation/widgets/student_tile.dart';
 import 'package:smap/features/coach/application/meeting_models.dart';
 import 'package:smap/features/coach/presentation/add_student/add_student_sheet.dart';
-import 'package:smap/features/legacy/legacy_links_e16.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/services/current_user_service.dart';
 import 'package:smap/shared/ui/buttons/app_button.dart';
@@ -91,6 +92,12 @@ class CoachHomeView extends StackedView<CoachHomeViewModel> {
         attention: FeatureFlags.attentionListEnabled
             ? locator<AttentionRepository>()
             : null,
+        newMeeting: NewMeetingFlow(
+          dialogs: SheetMeetingsDialogs(l10n: AppLocalizations.of(context)),
+          interviews: locator<InterviewRepository>(),
+          toast: locator<ToastService>(),
+          students: locator<CoachStudentsService>(),
+        ),
       );
 
   @override
@@ -179,32 +186,19 @@ class _CoachBody extends SelectorViewModelWidget<CoachHomeViewModel, bool> {
 
 // ── Where the links go ────────────────────────────────────────────────────
 //
-// Every destination is opened from one function here. The profile of a
-// student is E17's screen; until it lands a student opens the legacy coach
-// analysis (`openLegacyStudentProfile`).
+// Every destination is opened from one function here.
 
 /// A student tile or an attention row: the student's profile, in the
-/// Öğrencilerim tab (pano 10.1 "Gezinme": "→ 10.4"). Once `StudentProfileRoute`
-/// exists:
-///
-/// ```dart
-/// context.navigateTo(
-///   CoachStudentsTabRoute(
-///     children: [StudentsRoute(), StudentProfileRoute(studentId: id)],
-///   ),
-/// );
-/// ```
-void _openStudent(
-  BuildContext context, {
-  required String id,
-  required String name,
-  String? photo,
-}) => unawaited(
-  openLegacyStudentProfile(
-    Navigator.maybeOf(context),
-    studentId: id,
-    studentName: name,
-    photo: photo,
+/// Öğrencilerim tab (pano 10.1 "Gezinme": "→ 10.4"). The tab switches and its
+/// stack becomes the list and the profile, so Back returns to the list.
+void _openStudent(BuildContext context, {required String id}) => unawaited(
+  context.navigateTo(
+    CoachStudentsTabRoute(
+      children: [
+        const StudentsRoute(),
+        StudentProfileRoute(studentId: id),
+      ],
+    ),
   ),
 );
 
@@ -241,7 +235,8 @@ void _openMeeting(BuildContext context, HomeMeeting meeting) => unawaited(
   ),
 );
 
-/// "Yeni Görüşme": the Görüşmelerim tab, whose "Yeni Görüşme" opens the
-/// new-meeting sheet (10.5 kare 2) with the save and note logic of that tab.
-void _openNewMeeting(BuildContext context) =>
-    unawaited(context.navigateTo(const CoachMeetingsTabRoute()));
+/// "Yeni Görüşme": the new-meeting flow of Görüşmelerim (sheet, save, toast),
+/// then the upcoming list is read again.
+void _openNewMeeting(BuildContext context) => unawaited(
+  getParentViewModel<CoachHomeViewModel>(context, listen: false).newMeeting(),
+);

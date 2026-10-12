@@ -190,8 +190,8 @@ void _openTopic(BuildContext context, TodayRow row) {
 
 /// "Programım": the program list, on this tab's stack.
 void _openProgram(BuildContext context) =>
-    unawaited(context.router.push(const ProgramListRoute()));
+    unawaited(context.router.push(ProgramListRoute()));
 
 /// "Haftalık Programını Kur": the new-program flow, full screen.
 void _openProgramSetup(BuildContext context) =>
-    unawaited(context.router.root.push(const NewProgramRoute()));
+    unawaited(context.router.root.push(NewProgramRoute()));

@@ -4,6 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/theme_context.dart';
 import 'package:smap/core/utils/tr_format.dart';
+import 'package:smap/core/utils/turkish_text.dart';
 import 'package:smap/features/lessons/presentation/widgets/eksik_tag.dart';
 import 'package:smap/features/schedule/application/program_entry.dart';
 import 'package:smap/features/schedule/application/schedule_service.dart';
@@ -39,6 +40,7 @@ class TopicPickerSheet extends StatelessWidget {
     required this.schedule,
     required this.placements,
     required this.studentId,
+    required this.studentFirstName,
   });
 
   /// The day and hour of the slot the topic is for.
@@ -47,6 +49,7 @@ class TopicPickerSheet extends StatelessWidget {
   final ScheduleService schedule;
   final Map<String, ProgramEntry> placements;
   final String? studentId;
+  final String? studentFirstName;
 
   /// Opens the sheet; completes with the picked topic or `null` when it was
   /// dismissed.
@@ -56,6 +59,7 @@ class TopicPickerSheet extends StatelessWidget {
     required ScheduleService schedule,
     Map<String, ProgramEntry> placements = const {},
     String? studentId,
+    String? studentFirstName,
     BuildContext? context,
   }) => AppSheet.show<TopicChoice>(
     context: context,
@@ -66,6 +70,7 @@ class TopicPickerSheet extends StatelessWidget {
       schedule: schedule,
       placements: placements,
       studentId: studentId,
+      studentFirstName: studentFirstName,
     ),
   );
 
@@ -83,6 +88,7 @@ class TopicPickerSheet extends StatelessWidget {
         schedule: schedule,
         placements: placements,
         studentId: studentId,
+        studentFirstName: studentFirstName,
       ),
       onViewModelReady: (viewModel) => viewModel.init(),
       builder: (context, viewModel, _) => _TopicPickerFrame(title: title),
@@ -159,7 +165,12 @@ class _SourceSegment
       ),
       child: AppSegmented<TopicSource>(
         segments: [
-          AppSegment(value: TopicSource.bag, label: l10n.schedule_srcBag),
+          AppSegment(
+            value: TopicSource.bag,
+            label: viewModel.isCoachView
+                ? l10n.coachStudentProfile_bagSegment
+                : l10n.schedule_srcBag,
+          ),
           AppSegment(
             value: TopicSource.lessons,
             label: l10n.schedule_srcLessons,
@@ -182,6 +193,11 @@ class _SourceHelp
   @override
   Widget build(BuildContext context, TopicSource source) {
     if (source != TopicSource.bag) return const SizedBox.shrink();
+    final l10n = AppLocalizations.of(context);
+    final name = getParentViewModel<TopicPickerViewModel>(
+      context,
+      listen: false,
+    ).studentFirstName;
     return Padding(
       padding: const EdgeInsets.fromLTRB(
         AppSpacing.s24,
@@ -190,7 +206,9 @@ class _SourceHelp
         0,
       ),
       child: Text(
-        AppLocalizations.of(context).schedule_bagHelp,
+        name == null
+            ? l10n.schedule_bagHelp
+            : l10n.coachStudentProfile_bagHelp(TurkishSuffix.genitive(name)),
         style: context.appText.caption.copyWith(
           color: context.appColors.textSecondary,
         ),

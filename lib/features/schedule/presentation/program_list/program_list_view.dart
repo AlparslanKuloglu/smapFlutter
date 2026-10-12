@@ -7,6 +7,7 @@ import 'package:smap/core/services/connectivity_service.dart';
 import 'package:smap/core/theme/app_radius.dart';
 import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/theme_context.dart';
+import 'package:smap/core/utils/turkish_text.dart';
 import 'package:smap/dependency_injection/injection_container.dart';
 import 'package:smap/features/schedule/application/program_summary.dart';
 import 'package:smap/features/schedule/application/schedule_service.dart';
@@ -21,8 +22,10 @@ import 'package:smap/shared/ui/feedback/app_error_state.dart';
 import 'package:smap/shared/ui/feedback/app_skeleton.dart';
 import 'package:smap/shared/ui/inputs/app_search_field.dart';
 import 'package:smap/shared/ui/navigation/app_bottom_bar.dart';
+import 'package:smap/shared/ui/navigation/app_context_strip.dart';
 import 'package:smap/shared/ui/navigation/app_detail_bar.dart';
 import 'package:smap/shared/ui/navigation/large_title_sliver.dart';
+import 'package:smap/shared/ui/navigation/student_scope.dart';
 import 'package:smap/shared/ui/surfaces/app_card.dart';
 
 part 'widgets/program_list_header.dart';
@@ -42,9 +45,17 @@ part 'widgets/program_list_states.dart';
 ///
 /// A tap on a row opens the program on its Gün view; the shell's offline strip
 /// is the app's, not drawn here.
+///
+/// A coach opens a student's programs with [student] (Tur 12 A, brief 14.1
+/// kare 2: "Programlar"): the context strip sits under the bar, every request
+/// carries the student's id, the coach may set up a new program for the
+/// student, and the empty state names the student.
 @RoutePage()
 class ProgramListView extends StackedView<ProgramListViewModel> {
-  const ProgramListView({super.key});
+  const ProgramListView({this.student, super.key});
+
+  /// The student a coach is looking at; `null` for the user's own programs.
+  final StudentRef? student;
 
   @override
   bool get reactive => false;
@@ -53,8 +64,9 @@ class ProgramListView extends StackedView<ProgramListViewModel> {
   ProgramListViewModel viewModelBuilder(BuildContext context) =>
       ProgramListViewModel(
         schedule: locator<ScheduleService>(),
-        navigator: RouterProgramNavigator(context.router),
+        navigator: RouterProgramNavigator(context.router, student: student),
         online: locator<ConnectivityService>().online,
+        studentId: student?.id,
       );
 
   @override
@@ -65,13 +77,18 @@ class ProgramListView extends StackedView<ProgramListViewModel> {
     BuildContext context,
     ProgramListViewModel viewModel,
     Widget? child,
-  ) => const _ProgramListPage();
+  ) => StudentScope(
+    student: student,
+    child: _ProgramListPage(student: student),
+  );
 }
 
 /// The page: one scroll view of the bar, the title, the search field and the
 /// body. It owns the search field's controller (the ViewModel holds none).
 class _ProgramListPage extends StatefulWidget {
-  const _ProgramListPage();
+  const _ProgramListPage({required this.student});
+
+  final StudentRef? student;
 
   @override
   State<_ProgramListPage> createState() => _ProgramListPageState();
@@ -103,6 +120,8 @@ class _ProgramListPageState extends State<_ProgramListPage> {
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         slivers: [
           const _ListBar(),
+          if (widget.student case final student?)
+            PinnedHeaderSliver(child: AppContextStrip(student: student)),
           const _ListTitle(),
           _ListSearch(controller: _search),
           const _ListBody(),

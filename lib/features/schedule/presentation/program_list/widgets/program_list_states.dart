@@ -40,14 +40,23 @@ class _ListSkeleton extends StatelessWidget {
 
 /// No program yet (pano 3.7 kare 1): the clay bulb, "Henüz programın yok", the
 /// sentence and "Haftalık Programını Kur". The bar has no "Yeni Program" and
-/// there is no search field.
+/// there is no search field. A coach sees the student's name instead (Tur 12
+/// A, brief 14.1 kare 4): "Alparslan'ın programı yok", "Onun için bir hafta
+/// kurabilirsin; …" and "Program Kur".
 class _ListEmpty extends StatelessWidget {
-  const _ListEmpty({required this.onSetUp, required this.canCreate});
+  const _ListEmpty({
+    required this.onSetUp,
+    required this.canCreate,
+    this.studentFirstName,
+  });
 
   final VoidCallback? onSetUp;
 
-  /// A coach reading a student's programs has no action to offer.
+  /// A screen that only reads has no action to offer.
   final bool canCreate;
+
+  /// The student's first name in a coach's view; null for the user's own.
+  final String? studentFirstName;
 
   /// The clay "Ampul" picture of board 1.25 (a crop of the board, like the
   /// welcome screen's map); nothing is drawn while the file is missing.
@@ -56,11 +65,22 @@ class _ListEmpty extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final name = studentFirstName;
     return SliverToBoxAdapter(
       child: AppEmptyState.screen(
-        title: l10n.schedule_emptyTitle,
-        message: l10n.schedule_emptyBody,
-        actionLabel: canCreate ? l10n.schedule_emptyAction : null,
+        title: name == null
+            ? l10n.schedule_emptyTitle
+            : l10n.coachStudentProfile_programEmptyTitle(
+                TurkishSuffix.genitive(name),
+              ),
+        message: name == null
+            ? l10n.schedule_emptyBody
+            : l10n.coachStudentProfile_programEmptyBody(name),
+        actionLabel: canCreate
+            ? (name == null
+                  ? l10n.schedule_emptyAction
+                  : l10n.coachStudentProfile_programSetUp)
+            : null,
         onAction: onSetUp,
         topPadding: AppSpacing.s64,
         illustration: Image.asset(

@@ -44,10 +44,17 @@ class ProgramServer {
   int listCalls = 0;
   int subjectCalls = 0;
   final List<Map<String, Object?>> updates = [];
+
+  /// Every request as `path studentId` (`-` when it carried none): a coach's
+  /// calls carry the student's id, a student's carry none.
+  final List<String> requests = [];
   final List<Map<String, Object?>> adds = [];
   Completer<void>? holdWrites;
 
   FakeAdapter get adapter => FakeAdapter((options) async {
+    requests.add(
+      '${options.path} ${options.queryParameters['studentId'] ?? '-'}',
+    );
     switch (options.path) {
       case '/student/getMyWeeklies':
         listCalls++;

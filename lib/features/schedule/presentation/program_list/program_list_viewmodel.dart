@@ -61,9 +61,13 @@ class ProgramListViewModel extends ReactiveViewModel {
   /// own.
   final String? studentId;
 
-  /// A coach reads a student's programs: no "Yeni Program" (pano 3.4 "Koçta
-  /// salt okunur").
+  /// No "Yeni Program": a screen that only reads. A coach is not read only
+  /// (Tur 12 A overrules pano 3.4 "Koçta salt okunur"): the Program tab sets
+  /// up and edits the student's programs.
   final bool readOnly;
+
+  /// A coach looks at a student's programs.
+  bool get isCoachView => studentId != null;
 
   AsyncSection<ScheduleSnapshot> _load =
       const AsyncSection<ScheduleSnapshot>.loading();

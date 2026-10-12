@@ -82,10 +82,16 @@ class _ExamRowItem extends SelectorViewModelWidget<AnalyticsViewModel, bool> {
               date: exam.date,
               publisher: exam.publisherName,
               isFavorite: favorite,
-              onFavoriteChanged: (_) => viewModel.toggleFavorite(exam.id),
+              // The star is kept on the student's own device (Ek D-25): a
+              // coach's list has none.
+              onFavoriteChanged: viewModel.isCoachView
+                  ? null
+                  : (_) => viewModel.toggleFavorite(exam.id),
               onTap: () {
                 final detail = viewModel.detailOf(exam.id);
-                if (detail != null) _openExam(context, detail);
+                if (detail != null) {
+                  _openExam(context, detail, student: viewModel.student);
+                }
               },
             ),
           ],
@@ -95,7 +101,7 @@ class _ExamRowItem extends SelectorViewModelWidget<AnalyticsViewModel, bool> {
   }
 }
 
-typedef _FooterData = ({bool loading, bool failed});
+typedef _FooterData = ({bool loading, bool failed, bool more, int count});
 
 /// Under the list: a small spinner while the next page loads ("altta küçük
 /// çark"), a section error with "Tekrar Dene" if it failed. Nothing when the
@@ -110,6 +116,8 @@ class _ExamsFooter
     return (
       loading: data?.loadingMore ?? false,
       failed: data?.moreFailed ?? false,
+      more: viewModel.isCoachView && (data?.hasMore ?? false),
+      count: data?.exams.length ?? 0,
     );
   }
 
@@ -137,7 +145,14 @@ class _ExamsFooter
       );
     }
     if (!data.loading) {
-      return const SliverToBoxAdapter(child: SizedBox.shrink());
+      // A coach's list lives inside the student profile's own scroll view,
+      // which has no scroll listener of ours: reaching the footer asks for
+      // the next page.
+      return SliverToBoxAdapter(
+        child: data.more
+            ? _LoadMoreOnReach(key: ValueKey<int>(data.count))
+            : const SizedBox.shrink(),
+      );
     }
     return SliverToBoxAdapter(
       child: Padding(
@@ -148,4 +163,33 @@ class _ExamsFooter
       ),
     );
   }
+}
+
+/// Asks for the next page the moment it is built: the footer of a coach's
+/// list is built when the scroll view comes within reach of it. One request
+/// per page (the key is the number of rows).
+class _LoadMoreOnReach extends StatefulWidget {
+  const _LoadMoreOnReach({super.key});
+
+  @override
+  State<_LoadMoreOnReach> createState() => _LoadMoreOnReachState();
+}
+
+class _LoadMoreOnReachState extends State<_LoadMoreOnReach> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      unawaited(
+        getParentViewModel<AnalyticsViewModel>(
+          context,
+          listen: false,
+        ).loadMore(),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) => const SizedBox.shrink();
 }
