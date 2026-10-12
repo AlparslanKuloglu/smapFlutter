@@ -7,6 +7,7 @@ import 'package:smap/app/router/app_router.dart';
 import 'package:smap/core/services/connectivity_service.dart';
 import 'package:smap/core/services/toast_service.dart';
 import 'package:smap/features/shell/application/shell_bar_policy.dart';
+import 'package:smap/features/scan/presentation/scan_entry.dart';
 
 /// The logic of a shell (student or coach; pano 1.19).
 ///
@@ -67,8 +68,8 @@ class ShellViewModel extends BaseViewModel {
     );
   }
 
-  /// "Okut": the full-screen scan flow (today the legacy OMR flow).
-  Future<void> openCamera() => _router.push(const LegacyScanRoute());
+  /// "Okut": the scan (its gate, then the full-screen camera; flow 13.4).
+  Future<void> openCamera() => ScanEntry.start(_router);
 
   @override
   void dispose() {

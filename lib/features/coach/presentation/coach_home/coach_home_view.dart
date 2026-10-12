@@ -24,7 +24,9 @@ import 'package:smap/features/coach/presentation/widgets/code_card.dart';
 import 'package:smap/features/coach/presentation/widgets/coach_avatars.dart';
 import 'package:smap/features/coach/presentation/widgets/meeting_row.dart';
 import 'package:smap/features/coach/presentation/widgets/student_tile.dart';
-import 'package:smap/features/legacy/legacy_links_e15.dart';
+import 'package:smap/features/coach/application/meeting_models.dart';
+import 'package:smap/features/coach/presentation/add_student/add_student_sheet.dart';
+import 'package:smap/features/legacy/legacy_links_e16.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/services/current_user_service.dart';
 import 'package:smap/shared/ui/buttons/app_button.dart';
@@ -178,9 +180,8 @@ class _CoachBody extends SelectorViewModelWidget<CoachHomeViewModel, bool> {
 // ── Where the links go ────────────────────────────────────────────────────
 //
 // Every destination is opened from one function here. The profile of a
-// student is E17's screen, the add-student sheet E16's and the meetings E18's;
-// until they land the functions open what exists (`LegacyLinksE15`, the
-// meetings tab). The coordinator swaps the bodies when the screens join.
+// student is E17's screen; until it lands a student opens the legacy coach
+// analysis (`openLegacyStudentProfile`).
 
 /// A student tile or an attention row: the student's profile, in the
 /// Öğrencilerim tab (pano 10.1 "Gezinme": "→ 10.4"). Once `StudentProfileRoute`
@@ -189,7 +190,7 @@ class _CoachBody extends SelectorViewModelWidget<CoachHomeViewModel, bool> {
 /// ```dart
 /// context.navigateTo(
 ///   CoachStudentsTabRoute(
-///     children: [CoachStudentsRoute(), StudentProfileRoute(studentId: id)],
+///     children: [StudentsRoute(), StudentProfileRoute(studentId: id)],
 ///   ),
 /// );
 /// ```
@@ -199,8 +200,8 @@ void _openStudent(
   required String name,
   String? photo,
 }) => unawaited(
-  LegacyLinksE15.openStudentAnalysis(
-    context,
+  openLegacyStudentProfile(
+    Navigator.maybeOf(context),
     studentId: id,
     studentName: name,
     photo: photo,
@@ -208,22 +209,39 @@ void _openStudent(
 );
 
 /// "Öğrenci Ekle": the add-student sheet (10.3), then the list is read again.
-/// Once E16 lands this is `AddStudentSheet.show(context)`.
 Future<void> _openAddStudent(BuildContext context) async {
   final viewModel = getParentViewModel<CoachHomeViewModel>(
     context,
     listen: false,
   );
-  await LegacyLinksE15.openAddStudent(context);
-  await viewModel.reloadStudents();
+  final added = await AddStudentSheet.show(context);
+  if (added != null) await viewModel.reloadStudents();
 }
 
-/// A meeting row: the meeting's detail (10.5 kare 3) in the Görüşmelerim tab;
-/// until it exists, the tab itself.
-void _openMeeting(BuildContext context, HomeMeeting meeting) =>
-    unawaited(context.navigateTo(const CoachMeetingsTabRoute()));
+/// A meeting row: the meeting's detail (10.5 kare 3) in the Görüşmelerim tab.
+/// The detail reads the meeting again, so the row's fields are enough.
+void _openMeeting(BuildContext context, HomeMeeting meeting) => unawaited(
+  context.navigateTo(
+    CoachMeetingsTabRoute(
+      children: [
+        const MeetingsRoute(),
+        MeetingDetailRoute(
+          meetingId: meeting.id,
+          meeting: MeetingEntry(
+            id: meeting.id,
+            type: meeting.type,
+            moment: meeting.date,
+            studentId: meeting.studentId,
+            studentName: meeting.studentName,
+            photo: meeting.photo,
+          ),
+        ),
+      ],
+    ),
+  ),
+);
 
-/// "Yeni Görüşme": the new-meeting sheet (10.5 kare 2) of the Görüşmelerim
-/// tab; until it exists, the tab itself.
+/// "Yeni Görüşme": the Görüşmelerim tab, whose "Yeni Görüşme" opens the
+/// new-meeting sheet (10.5 kare 2) with the save and note logic of that tab.
 void _openNewMeeting(BuildContext context) =>
     unawaited(context.navigateTo(const CoachMeetingsTabRoute()));

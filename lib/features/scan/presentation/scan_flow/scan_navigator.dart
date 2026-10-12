@@ -1,5 +1,7 @@
+import 'dart:async';
+
 import 'package:auto_route/auto_route.dart';
-import 'package:smap/features/legacy/legacy_links_e8.dart';
+import 'package:smap/app/router/app_router.dart';
 
 /// Where the scan leads out of itself (spec §3.6 "Çekim … onay → mexamFound
 /// ise /scan/result/:id, değilse /scan/exam-not-found"; pano 4.9 kare 4): the
@@ -27,9 +29,17 @@ class RouterScanNavigator implements ScanNavigator {
   @override
   void close() => _router.maybePop();
 
+  /// The result moment takes the scan's place on the root stack; its own
+  /// exits ("Detaylı Analiz", "Anasayfa") navigate into the shell.
   @override
-  void showResult(String examId) => openScanResult(_router, examId);
+  void showResult(String examId) =>
+      unawaited(_router.replace(ResultMomentRoute(examId: examId)));
 
+  /// The root stack is popped down to the shell and the Anasayfa tab is
+  /// selected (pano 4.9 kare 4 "Anasayfa").
   @override
-  void goHome() => goHomeAfterScan(_router);
+  void goHome() {
+    _router.popUntilRoot();
+    unawaited(_router.navigate(const HomeTabRoute()));
+  }
 }

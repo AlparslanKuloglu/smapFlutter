@@ -73,7 +73,7 @@ void main() {
   test('the scan flow over the shell clears it, closing it brings it back', () {
     viewModel.updateBar(const ['StudentShellRoute']);
 
-    viewModel.updateBar(const ['StudentShellRoute', 'LegacyScanRoute']);
+    viewModel.updateBar(const ['StudentShellRoute', 'ScanFlowRoute']);
     expect(toast.bottomBarHeight.value, isNull);
 
     viewModel.updateBar(const ['StudentShellRoute']);

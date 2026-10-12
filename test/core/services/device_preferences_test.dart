@@ -73,6 +73,7 @@ void main() {
         DevicePreferences.installIdKey,
         DevicePreferences.cameraPrimerAnsweredKey,
         DevicePreferences.cameraTutorialSeenKey,
+        DevicePreferences.cornersHintHiddenKey,
         DevicePreferences.skipLearnedConfirmKey,
         DevicePreferences.notificationPrimerAnsweredKey,
         DevicePreferences.lessonsExamTypeKey,

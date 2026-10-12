@@ -21,6 +21,7 @@ import 'package:smap/features/exams/domain/ayt_field.dart';
 import 'package:smap/features/exams/domain/exam_detail.dart';
 import 'package:smap/features/exams/domain/exam_summary.dart';
 import 'package:smap/shared/ui/feedback/section_state.dart';
+import 'package:smap/features/scan/presentation/scan_entry.dart';
 
 /// The two tabs of the root band (pano 6.1 "Genel", 6.2 "Denemelerim").
 enum AnalyticsTab { general, exams }
@@ -436,7 +437,7 @@ class AnalyticsViewModel extends BaseViewModel {
   }
 
   /// "İlk Denemeni Okut": the camera, as the shell's "Okut" opens it.
-  Future<void> openCamera() => _router.push(const LegacyScanRoute());
+  Future<void> openCamera() => ScanEntry.start(_router);
 
   // ── Plumbing ─────────────────────────────────────────────────────────
 

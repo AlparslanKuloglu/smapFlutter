@@ -439,12 +439,16 @@ class $AssetsIllustrationsGen {
   AssetGenImage get clayBulb =>
       const AssetGenImage('assets/illustrations/clay_bulb.webp');
 
+  /// File path: assets/illustrations/clay_inkwell.webp
+  AssetGenImage get clayInkwell =>
+      const AssetGenImage('assets/illustrations/clay_inkwell.webp');
+
   /// File path: assets/illustrations/clay_map.webp
   AssetGenImage get clayMap =>
       const AssetGenImage('assets/illustrations/clay_map.webp');
 
   /// List of all assets
-  List<dynamic> get values => [aGitkeep, clayBulb, clayMap];
+  List<dynamic> get values => [aGitkeep, clayBulb, clayInkwell, clayMap];
 }
 
 class $AssetsMenuIconsGen {

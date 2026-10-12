@@ -34,6 +34,10 @@ final class DevicePreferences {
   /// The camera tutorial was shown once (`bool`).
   static const cameraTutorialSeenKey = 'scan.tutorialSeen';
 
+  /// "Bir daha gösterme" on the hint card of the scan's corner screen was
+  /// pressed (`bool`; pano 4.4 kare 1). See `ScanPreferenceKeys`.
+  static const cornersHintHiddenKey = 'scan.cornersHintHidden';
+
   /// "Bir daha sorma" on the learned-card confirmation (`bool`).
   static const skipLearnedConfirmKey = 'cards.skipLearnedConfirm';
 
@@ -67,6 +71,7 @@ final class DevicePreferences {
     installIdKey,
     cameraPrimerAnsweredKey,
     cameraTutorialSeenKey,
+    cornersHintHiddenKey,
     skipLearnedConfirmKey,
     notificationPrimerAnsweredKey,
     lessonsExamTypeKey,

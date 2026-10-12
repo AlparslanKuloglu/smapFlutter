@@ -440,6 +440,168 @@
       }
     }
   },
+  "addStudent_addedNote": "Bu ekranı kapatınca şifre yeniden gösterilmez.",
+  "@addStudent_addedNote": {
+    "description": "Help line under the password of the credentials sheet (pano 10.3 kare 3)."
+  },
+  "addStudent_addedSubtitle": "Giriş bilgilerini öğrencine ilet.",
+  "@addStudent_addedSubtitle": {
+    "description": "Subtitle of the credentials sheet (pano 10.3 kare 3)."
+  },
+  "addStudent_addedTitle": "{name} eklendi",
+  "@addStudent_addedTitle": {
+    "description": "Title of the credentials sheet (pano 10.3 kare 3).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "addStudent_avatarLabel": "Avatar",
+  "@addStudent_avatarLabel": {
+    "description": "Label above the seven avatars of the form (Tur 12 D, brief 14.8 kare 1)."
+  },
+  "addStudent_avatarPickerA11y": "Öğrencinin avatarı",
+  "@addStudent_avatarPickerA11y": {
+    "description": "Screen reader name of the avatar group (Tur 12 D)."
+  },
+  "addStudent_check": "Kontrol Et",
+  "@addStudent_check": {
+    "description": "Action beside the user name: asks the server now (pano 10.3 kare 1)."
+  },
+  "addStudent_codeHeading": "Öğrencin kendi hesabıyla bağlansın",
+  "@addStudent_codeHeading": {
+    "description": "Heading above the coaching code card in the sheet (pano 10.3 kare 1)."
+  },
+  "addStudent_credentialsShareText": "SMAP giriş bilgilerin\nKullanıcı adı: {userName}\nŞifre: {password}",
+  "@addStudent_credentialsShareText": {
+    "description": "The text the share sheet carries from the credentials sheet.",
+    "placeholders": {
+      "userName": {
+        "type": "String"
+      },
+      "password": {
+        "type": "String"
+      }
+    }
+  },
+  "addStudent_firstName": "Ad",
+  "@addStudent_firstName": {
+    "description": "First name field label (pano 10.3 kare 1)."
+  },
+  "addStudent_generate": "Oluştur",
+  "@addStudent_generate": {
+    "description": "Action beside the password: makes a readable 10-character password (pano 10.3 kare 1)."
+  },
+  "addStudent_grade": "Sınıf",
+  "@addStudent_grade": {
+    "description": "Grade select label and its sheet title (pano 10.3 kare 1)."
+  },
+  "addStudent_issueFirstName": "Öğrencinin adını yaz.",
+  "@addStudent_issueFirstName": {
+    "description": "First name left empty."
+  },
+  "addStudent_issueGrade": "Sınıfı seç.",
+  "@addStudent_issueGrade": {
+    "description": "Grade not chosen."
+  },
+  "addStudent_issueLastName": "Öğrencinin soyadını yaz.",
+  "@addStudent_issueLastName": {
+    "description": "Surname left empty."
+  },
+  "addStudent_issuePasswordMissing": "Bir şifre yaz ya da Oluştur'a dokun.",
+  "@addStudent_issuePasswordMissing": {
+    "description": "Password left empty."
+  },
+  "addStudent_issuePasswordShort": "Şifre en az 8 karakter olmalı.",
+  "@addStudent_issuePasswordShort": {
+    "description": "Password shorter than 8 characters (decision 7.5)."
+  },
+  "addStudent_issueTrack": "Alanı seç.",
+  "@addStudent_issueTrack": {
+    "description": "Track not chosen for a student of 11th grade or above."
+  },
+  "addStudent_issueUsername": "Bir kullanıcı adı yaz.",
+  "@addStudent_issueUsername": {
+    "description": "User name left empty."
+  },
+  "addStudent_lastName": "Soyad",
+  "@addStudent_lastName": {
+    "description": "Surname field label (pano 10.3 kare 1)."
+  },
+  "addStudent_or": "ya da",
+  "@addStudent_or": {
+    "description": "Word between two rules that separates the form from the coaching code (pano 10.3 kare 1 and 2)."
+  },
+  "addStudent_password": "Şifre",
+  "@addStudent_password": {
+    "description": "Password field label (pano 10.3 kare 1 and 3)."
+  },
+  "addStudent_passwordHelp": "Öğrencine ilet; ilk girişte değiştirmesi önerilir.",
+  "@addStudent_passwordHelp": {
+    "description": "Help line under the password (pano 10.3 kare 1)."
+  },
+  "addStudent_save": "Öğrenciyi Kaydet",
+  "@addStudent_save": {
+    "description": "Primary button of the form (pano 10.3 kare 1 and 2)."
+  },
+  "addStudent_saveFailed": "Öğrenci eklenemedi. Bağlantını kontrol edip tekrar dene.",
+  "@addStudent_saveFailed": {
+    "description": "Notice above \"Öğrenciyi Kaydet\" when the save failed for a reason with no text of its own; the sheet stays open and keeps what was typed."
+  },
+  "addStudent_shareCredentials": "Bilgileri Paylaş",
+  "@addStudent_shareCredentials": {
+    "description": "Primary button of the credentials sheet; opens the system share sheet (pano 10.3 kare 3)."
+  },
+  "addStudent_subtitle": "Hesabını sen aç ya da kodunu paylaş.",
+  "@addStudent_subtitle": {
+    "description": "Subtitle of the add-student sheet (pano 10.3 kare 1)."
+  },
+  "addStudent_title": "Öğrenci ekle",
+  "@addStudent_title": {
+    "description": "Title of the add-student sheet (pano 10.3 kare 1)."
+  },
+  "addStudent_track": "Alan",
+  "@addStudent_track": {
+    "description": "Study track select label and its sheet title (pano 10.3 kare 1)."
+  },
+  "addStudent_trackNotSelectable": "Seçilmez",
+  "@addStudent_trackNotSelectable": {
+    "description": "Value of the passive track field for grade 9 and 10 (pano 10.3 \"Sınıf ve Alan 1.12; 9.–10. sınıfta Alan pasif\")."
+  },
+  "addStudent_trackNotSelectableReason": "9. ve 10. sınıfta alan seçilmez.",
+  "@addStudent_trackNotSelectableReason": {
+    "description": "Help line under the passive track field."
+  },
+  "addStudent_username": "Kullanıcı adı",
+  "@addStudent_username": {
+    "description": "User name field label (pano 10.3 kare 1 and 3)."
+  },
+  "addStudent_usernameFree": "Bu kullanıcı adı boşta.",
+  "@addStudent_usernameFree": {
+    "description": "Live check passed (pano 10.3 kare 1)."
+  },
+  "addStudent_usernameOffline": "Bağlanınca kontrol edilecek.",
+  "@addStudent_usernameOffline": {
+    "description": "Help line under the user name while the device is offline."
+  },
+  "addStudent_usernameSuggest": "Boşta olan:",
+  "@addStudent_usernameSuggest": {
+    "description": "Label before the free-name chip under a taken user name."
+  },
+  "addStudent_usernameSuggestA11y": "Boşta olan kullanıcı adı: {name}. Yazmak için dokun.",
+  "@addStudent_usernameSuggestA11y": {
+    "description": "Screen reader reading of the free-name chip.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "addStudent_usernameTaken": "Bu kullanıcı adı alınmış.",
+  "@addStudent_usernameTaken": {
+    "description": "Live check or save: the user name is in use (spec 10.3 \"Alınmış\")."
+  },
   "analytics_boxAverageNet": "Ortalama net",
   "@analytics_boxAverageNet": {
     "description": "Stat box label (pano 6.1)."
@@ -959,6 +1121,626 @@
   "cards_favoriteRemove": "Favorilerden çıkar",
   "@cards_favoriteRemove": {
     "description": "Study card favorite star, already a favorite (C52)."
+  },
+  "coachHome_addStudent": "Öğrenci Ekle",
+  "@coachHome_addStudent": {
+    "description": "The one link of the student section and the primary button of the empty page (pano 10.1 kare 1 and 3); opens the add-student sheet (10.3)."
+  },
+  "coachHome_attention": "Dikkat gerektirenler",
+  "@coachHome_attention": {
+    "description": "Section title of the attention list (pano 10.1 kare 1 and 2); drawn only with FeatureFlags.attentionListEnabled."
+  },
+  "coachHome_attentionEmptyBody": "14 gündür deneme okutmayan ya da son iki denemesinde neti düşen öğrenci burada görünür.",
+  "@coachHome_attentionEmptyBody": {
+    "description": "Empty card of the attention list, explanation of the two rules (pano 10.1 kare 1, D-27)."
+  },
+  "coachHome_attentionEmptyTitle": "Şu an dikkat gerektiren öğrenci yok.",
+  "@coachHome_attentionEmptyTitle": {
+    "description": "Empty card of the attention list, first line (pano 10.1 kare 1)."
+  },
+  "coachHome_attentionError": "Dikkat listesi yüklenemedi.",
+  "@coachHome_attentionError": {
+    "description": "Section error card of the attention list; no board copy."
+  },
+  "coachHome_emptyMessage": "Öğrencin koçluk kodunla kendi hesabından bağlanabilir ya da hesabını sen açabilirsin.",
+  "@coachHome_emptyMessage": {
+    "description": "Message of the page of a coach with no student (pano 10.1 kare 3)."
+  },
+  "coachHome_emptyTitle": "İlk öğrencini ekle",
+  "@coachHome_emptyTitle": {
+    "description": "Title of the page of a coach with no student (pano 10.1 kare 3)."
+  },
+  "coachHome_meetings": "Yaklaşan görüşmeler",
+  "@coachHome_meetings": {
+    "description": "Section title of the upcoming meetings (pano 10.1 kare 1)."
+  },
+  "coachHome_meetingsError": "Görüşmeler yüklenemedi.",
+  "@coachHome_meetingsError": {
+    "description": "Section error card of the upcoming meetings; no board copy."
+  },
+  "coachHome_newMeeting": "Yeni Görüşme",
+  "@coachHome_newMeeting": {
+    "description": "Text button of the empty meetings card; opens the new-meeting sheet (10.5 kare 2)."
+  },
+  "coachHome_noMeetings": "Önümüzdeki 7 günde görüşme yok.",
+  "@coachHome_noMeetings": {
+    "description": "Empty card of the upcoming meetings (spec Flutter §4 10.1 [Karar])."
+  },
+  "coachHome_students": "Öğrencilerin",
+  "@coachHome_students": {
+    "description": "Section title of the student strip (pano 10.1 kare 1, SectionHeader)."
+  },
+  "coachHome_studentsError": "Öğrenciler yüklenemedi.",
+  "@coachHome_studentsError": {
+    "description": "Section error card of the student strip; the board has no copy, written after \"Dersler yüklenemedi.\" (pano 3.2 pattern)."
+  },
+  "coachMeetings_a11yKindParent": "veli görüşmesi",
+  "@coachMeetings_a11yKindParent": {
+    "description": "End of the screen reader sentence of a row for a parent meeting."
+  },
+  "coachMeetings_a11yKindStudent": "öğrenci görüşmesi",
+  "@coachMeetings_a11yKindStudent": {
+    "description": "End of the screen reader sentence of a row: \"Alparslan Kuloğlu, 12 Ekim 2026 Pazartesi, 16:00, öğrenci görüşmesi\" (Tur 9 erişilebilirlik)."
+  },
+  "coachMeetings_clearSearch": "Aramayı Temizle",
+  "@coachMeetings_clearSearch": {
+    "description": "Action of the no-result card of a search (follows pano 10.2 kare 3)."
+  },
+  "coachMeetings_dateLabel": "Tarih",
+  "@coachMeetings_dateLabel": {
+    "description": "Label of the day field (pano 10.5 kare 2)."
+  },
+  "coachMeetings_dateTitle": "Tarih",
+  "@coachMeetings_dateTitle": {
+    "description": "Title of the day picker sheet. The board draws no picker; built from the kit calendar. Assumption."
+  },
+  "coachMeetings_detailErrorTitle": "Görüşme açılamadı",
+  "@coachMeetings_detailErrorTitle": {
+    "description": "Error state title of the detail when the meeting could not be loaded."
+  },
+  "coachMeetings_detailKindParent": "Veli görüşmesi",
+  "@coachMeetings_detailKindParent": {
+    "description": "Same line for a parent meeting. The board draws only the student one; spec 10.5 notes the legacy \"Veli Görüşmesi\"."
+  },
+  "coachMeetings_detailKindStudent": "Öğrenci görüşmesi",
+  "@coachMeetings_detailKindStudent": {
+    "description": "Line under the student name on the detail screen (pano 10.5 kare 3); also the row title when the server named no student."
+  },
+  "coachMeetings_detailMissingMessage": "Bu görüşme silinmiş olabilir. Listeye dönüp yenileyebilirsin.",
+  "@coachMeetings_detailMissingMessage": {
+    "description": "Error state sentence when the meeting is not in the server list any more."
+  },
+  "coachMeetings_detailMissingTitle": "Görüşme bulunamadı",
+  "@coachMeetings_detailMissingTitle": {
+    "description": "Error state title when the meeting is not in the server list any more."
+  },
+  "coachMeetings_emptyAction": "Yeni Görüşme",
+  "@coachMeetings_emptyAction": {
+    "description": "Empty state primary action (pano 10.5 kare 4)."
+  },
+  "coachMeetings_emptyMessage": "Öğrencinle ya da velisiyle görüşme planladığında burada listelenir.",
+  "@coachMeetings_emptyMessage": {
+    "description": "Empty state sentence (pano 10.5 kare 4)."
+  },
+  "coachMeetings_emptyTitle": "Henüz görüşme yok",
+  "@coachMeetings_emptyTitle": {
+    "description": "Empty state title (pano 10.5 kare 4)."
+  },
+  "coachMeetings_kindParent": "Veli",
+  "@coachMeetings_kindParent": {
+    "description": "\"Kiminle\" chip, segment option and row tag: a meeting with the parent (pano 10.5)."
+  },
+  "coachMeetings_kindStudent": "Öğrenci",
+  "@coachMeetings_kindStudent": {
+    "description": "\"Kiminle\" chip, segment option and row tag: a meeting with the student (pano 10.5)."
+  },
+  "coachMeetings_loadErrorMessage": "Bağlantını kontrol edip tekrar dene. Sorun sürerse biraz sonra yeniden açabilirsin.",
+  "@coachMeetings_loadErrorMessage": {
+    "description": "Error state sentence of the list and of the detail (1.22 pattern)."
+  },
+  "coachMeetings_loadErrorTitle": "Görüşmelerin yüklenemedi",
+  "@coachMeetings_loadErrorTitle": {
+    "description": "Error state title of the list (1.22 pattern)."
+  },
+  "coachMeetings_loadingMore": "Görüşmeler yükleniyor",
+  "@coachMeetings_loadingMore": {
+    "description": "Screen reader name of the spinner under the list."
+  },
+  "coachMeetings_meetingFallback": "Görüşme",
+  "@coachMeetings_meetingFallback": {
+    "description": "Row title and bar title of a meeting with no student name and an unknown kind. Assumption."
+  },
+  "coachMeetings_moreFailed": "Daha fazla görüşme yüklenemedi.",
+  "@coachMeetings_moreFailed": {
+    "description": "Section error under the list when the next page failed."
+  },
+  "coachMeetings_newA11y": "Yeni görüşme",
+  "@coachMeetings_newA11y": {
+    "description": "Accessible name of the Plus in the band of Görüşmelerim (pano 10.5 kare 1)."
+  },
+  "coachMeetings_newTitle": "Yeni görüşme",
+  "@coachMeetings_newTitle": {
+    "description": "Title of the new-meeting sheet (pano 10.5 kare 2)."
+  },
+  "coachMeetings_noKind": "Bu süzgeçle görüşme yok. Başka bir seçenek deneyebilirsin.",
+  "@coachMeetings_noKind": {
+    "description": "No result of the \"Kiminle\" choice (not drawn on the board). Assumption."
+  },
+  "coachMeetings_noMatch": "“{query}” ile eşleşen görüşme yok. Öğrenci adında arar; büyük-küçük harf ve I/ı/İ/i farkı gözetmez.",
+  "@coachMeetings_noMatch": {
+    "description": "No result of a search (the board draws none; follows \"Sonuç yok\" of pano 10.2 kare 3). Assumption.",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "coachMeetings_noStudents": "Görüşme planlamak için önce bir öğrenci eklemelisin.",
+  "@coachMeetings_noStudents": {
+    "description": "Toast when the coach has no student to plan a meeting with."
+  },
+  "coachMeetings_noteAdd": "Not Ekle",
+  "@coachMeetings_noteAdd": {
+    "description": "Text button next to \"Notlar\" (pano 10.5 kare 3)."
+  },
+  "coachMeetings_noteAddTitle": "Not ekle",
+  "@coachMeetings_noteAddTitle": {
+    "description": "Title of the note sheet for a new note (pano 10.6 kare 1)."
+  },
+  "coachMeetings_noteAdded": "Not eklendi.",
+  "@coachMeetings_noteAdded": {
+    "description": "Toast after adding a note. The board draws none. Assumption."
+  },
+  "coachMeetings_noteContext": "{date} · {name}",
+  "@coachMeetings_noteContext": {
+    "description": "Sub title of the note sheet: \"12 Ekim 2026 · Alparslan Kuloğlu\" (pano 10.6 kare 1).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachMeetings_noteDelete": "Sil",
+  "@coachMeetings_noteDelete": {
+    "description": "Text button of a note card, in the error color (pano 10.6 \"Not kartı\")."
+  },
+  "coachMeetings_noteDeleteAction": "Notu Sil",
+  "@coachMeetings_noteDeleteAction": {
+    "description": "Danger action of the confirmation (pano 10.6 kare 3)."
+  },
+  "coachMeetings_noteDeleteBody": "“{text}” notu silinecek.",
+  "@coachMeetings_noteDeleteBody": {
+    "description": "Body of the confirmation; it quotes the note (pano 10.6 kare 3).",
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "coachMeetings_noteDeleteFailed": "Not silinemedi. Bağlantını kontrol edip tekrar dene.",
+  "@coachMeetings_noteDeleteFailed": {
+    "description": "Toast when the held deletion of a note failed; the note comes back."
+  },
+  "coachMeetings_noteDeleteTitle": "Not silinsin mi?",
+  "@coachMeetings_noteDeleteTitle": {
+    "description": "Title of the danger confirmation (pano 10.6 kare 3)."
+  },
+  "coachMeetings_noteDeleted": "Not silindi.",
+  "@coachMeetings_noteDeleted": {
+    "description": "Toast with \"Geri Al\" after deleting a note, 6 s (pano 10.6 kare 4)."
+  },
+  "coachMeetings_noteEdit": "Düzenle",
+  "@coachMeetings_noteEdit": {
+    "description": "Text button of a note card (pano 10.6 \"Not kartı\")."
+  },
+  "coachMeetings_noteEditTitle": "Notu düzenle",
+  "@coachMeetings_noteEditTitle": {
+    "description": "Title of the note sheet for an existing note (pano 10.6 kare 2)."
+  },
+  "coachMeetings_noteFieldA11y": "Not",
+  "@coachMeetings_noteFieldA11y": {
+    "description": "Accessible name of the note sheet's field, which has no visible label."
+  },
+  "coachMeetings_noteHint": "Örn: Deneme sonucunu birlikte inceleyeceğiz.",
+  "@coachMeetings_noteHint": {
+    "description": "Placeholder of the note fields (pano 10.5 kare 2, 10.6 kare 1)."
+  },
+  "coachMeetings_noteLabel": "Not",
+  "@coachMeetings_noteLabel": {
+    "description": "Label of the note field; the kit adds \"(isteğe bağlı)\" (pano 10.5 kare 2)."
+  },
+  "coachMeetings_noteSave": "Notu Kaydet",
+  "@coachMeetings_noteSave": {
+    "description": "Primary action of the sheet for a new note (pano 10.6 kare 1)."
+  },
+  "coachMeetings_noteSaveFailed": "Not kaydedilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@coachMeetings_noteSaveFailed": {
+    "description": "Toast when saving a note failed; the sheet stays open with the text (pano 10.6 Davranış)."
+  },
+  "coachMeetings_noteUpdated": "Not güncellendi.",
+  "@coachMeetings_noteUpdated": {
+    "description": "Toast after editing a note. The board draws none. Assumption."
+  },
+  "coachMeetings_notesEmpty": "Henüz not yok.",
+  "@coachMeetings_notesEmpty": {
+    "description": "The notes card when there is no note (pano 10.6 kare 4)."
+  },
+  "coachMeetings_notesLoadFailed": "Notlar yüklenemedi.",
+  "@coachMeetings_notesLoadFailed": {
+    "description": "Section error of the notes (1.22 pattern)."
+  },
+  "coachMeetings_notesTitle": "Notlar",
+  "@coachMeetings_notesTitle": {
+    "description": "Section title of the notes (pano 10.5 kare 3)."
+  },
+  "coachMeetings_past": "Geçmiş · {count}",
+  "@coachMeetings_past": {
+    "description": "Group title of the meetings that have passed. The board gives no text (\"O başlığın metni belirtilmemiş\"); this follows \"Yaklaşan · 2\". Assumption.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "coachMeetings_pickStudentNoMatch": "Eşleşen öğrenci yok.",
+  "@coachMeetings_pickStudentNoMatch": {
+    "description": "Student list sheet when the search keeps nobody."
+  },
+  "coachMeetings_pickStudentSearch": "Öğrenci ara",
+  "@coachMeetings_pickStudentSearch": {
+    "description": "Search field of the student list sheet (same text as pano 10.2)."
+  },
+  "coachMeetings_pickStudentTitle": "Öğrenci seç",
+  "@coachMeetings_pickStudentTitle": {
+    "description": "Title of the student list sheet (pano 10.5 kare 2: \"Alttan öğrenci listesi\")."
+  },
+  "coachMeetings_refreshFailed": "Liste yenilenemedi. Bağlantını kontrol edip tekrar dene.",
+  "@coachMeetings_refreshFailed": {
+    "description": "Toast when a pull to refresh failed and the list stays."
+  },
+  "coachMeetings_rowWhen": "{date} · {time}",
+  "@coachMeetings_rowWhen": {
+    "description": "Second line of a meeting row: \"12 Ekim 2026 Pazartesi · 16:00\" (pano 10.5 kare 1).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "coachMeetings_saveAction": "Görüşmeyi Kaydet",
+  "@coachMeetings_saveAction": {
+    "description": "Primary action of the new-meeting sheet (pano 10.5 kare 2)."
+  },
+  "coachMeetings_saveFailed": "Görüşme kaydedilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@coachMeetings_saveFailed": {
+    "description": "Toast when saving a meeting failed; the sheet stays open (kit rule, pano 10.6 Davranış)."
+  },
+  "coachMeetings_saved": "Görüşme kaydedildi.",
+  "@coachMeetings_saved": {
+    "description": "Toast after \"Görüşmeyi Kaydet\" (pano 10.5 Davranış)."
+  },
+  "coachMeetings_savedWithoutNote": "Görüşme kaydedildi ama not eklenemedi.",
+  "@coachMeetings_savedWithoutNote": {
+    "description": "Toast when the meeting was saved and its note was not (the note goes in a second call)."
+  },
+  "coachMeetings_searchHint": "Görüşme ara",
+  "@coachMeetings_searchHint": {
+    "description": "Search field placeholder and accessible name (pano 10.5 kare 1)."
+  },
+  "coachMeetings_showAll": "Tümünü Göster",
+  "@coachMeetings_showAll": {
+    "description": "Action of the no-result card of the \"Kiminle\" choice: back to \"Tümü\"."
+  },
+  "coachMeetings_studentData": "Öğrencinin verileri",
+  "@coachMeetings_studentData": {
+    "description": "Detail row title (pano 10.5 kare 3)."
+  },
+  "coachMeetings_studentDataHint": "Analiz, denemeler, program",
+  "@coachMeetings_studentDataHint": {
+    "description": "Detail row sub text (pano 10.5 kare 3)."
+  },
+  "coachMeetings_studentHint": "Öğrenci seç",
+  "@coachMeetings_studentHint": {
+    "description": "Placeholder of the student field while none is chosen. Assumption."
+  },
+  "coachMeetings_studentLabel": "Öğrenci",
+  "@coachMeetings_studentLabel": {
+    "description": "Label of the student field (pano 10.5 kare 2)."
+  },
+  "coachMeetings_studentMissing": "Bir öğrenci seç.",
+  "@coachMeetings_studentMissing": {
+    "description": "Error under the student field when \"Görüşmeyi Kaydet\" is pressed without one. Assumption."
+  },
+  "coachMeetings_studentsFailed": "Öğrenciler yüklenemedi. Bağlantını kontrol edip tekrar dene.",
+  "@coachMeetings_studentsFailed": {
+    "description": "Toast when the student list for the new-meeting sheet could not be loaded."
+  },
+  "coachMeetings_timeLabel": "Saat",
+  "@coachMeetings_timeLabel": {
+    "description": "Label of the time field (pano 10.5 kare 2)."
+  },
+  "coachMeetings_timeTitle": "Saat",
+  "@coachMeetings_timeTitle": {
+    "description": "Title of the time picker sheet. The board draws no picker; built from the kit time wheel. Assumption."
+  },
+  "coachMeetings_upcoming": "Yaklaşan · {count}",
+  "@coachMeetings_upcoming": {
+    "description": "Group title of the meetings from now on (pano 10.5 kare 1: \"Yaklaşan · 2\").",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "coachMeetings_withAll": "Tümü",
+  "@coachMeetings_withAll": {
+    "description": "\"Kiminle\" chip: every kind (pano 10.5 kare 1)."
+  },
+  "coachMeetings_withLabel": "Kiminle",
+  "@coachMeetings_withLabel": {
+    "description": "Accessible name of the \"Kiminle\" chips and the label of the kind segment in the new-meeting sheet (pano 10.5 kare 1 and 2)."
+  },
+  "coachWidgets_attentionDates": "{first} ve {second}",
+  "@coachWidgets_attentionDates": {
+    "description": "The two exam dates of the net-drop evidence: '17 Haz. ve 4 Ağu.' (C33).",
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_attentionInactive": "{days} gündür deneme okutmadı",
+  "@coachWidgets_attentionInactive": {
+    "description": "Sentence of the inactive rule: '45 gündür deneme okutmadı' (C33; pano 10.1 kare 2, D-27).",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_attentionInactiveEvidence": "Son deneme {date}",
+  "@coachWidgets_attentionInactiveEvidence": {
+    "description": "Evidence line of the inactive rule: 'Son deneme 17 Haz. 2026' (C33).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_attentionInactiveEvidenceType": "Son deneme {date} · {type}",
+  "@coachWidgets_attentionInactiveEvidenceType": {
+    "description": "Evidence line of the inactive rule with the exam type: 'Son deneme 17 Haz. 2026 · TYT' (C33).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_attentionLastExamA11y": "son deneme {date}",
+  "@coachWidgets_attentionLastExamA11y": {
+    "description": "Screen-reader tail of the inactive rule: 'son deneme 17 Haziran' (C33).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_attentionNetDrop": "Son iki {type} denemesinde net düştü",
+  "@coachWidgets_attentionNetDrop": {
+    "description": "Sentence of the net-drop rule: 'Son iki TYT denemesinde net düştü' (C33; pano 10.1 kare 2, D-27).",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_attentionNetDropPlain": "Son iki denemede net düştü",
+  "@coachWidgets_attentionNetDropPlain": {
+    "description": "Sentence of the net-drop rule without the exam type (C33)."
+  },
+  "coachWidgets_attentionNetEvidence": "{from} → {to} · {dates}",
+  "@coachWidgets_attentionNetEvidence": {
+    "description": "Evidence line of the net-drop rule: '68 → 66,75 · 17 Haz. ve 4 Ağu.' (C33).",
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      },
+      "dates": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_attentionNetEvidenceNets": "{from} → {to}",
+  "@coachWidgets_attentionNetEvidenceNets": {
+    "description": "Evidence line of the net-drop rule without the dates (C33).",
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_codeA11y": "Koçluk kodun {code}",
+  "@coachWidgets_codeA11y": {
+    "description": "Screen-reader reading of the code (C35).",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_codeCopied": "Kod kopyalandı.",
+  "@coachWidgets_codeCopied": {
+    "description": "Toast after the code is copied (C35, 4 s)."
+  },
+  "coachWidgets_codeCopy": "Kopyala",
+  "@coachWidgets_codeCopy": {
+    "description": "Button of the coaching code card that copies the code (C35)."
+  },
+  "coachWidgets_codeHint": "Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır.",
+  "@coachWidgets_codeHint": {
+    "description": "Help line of the coaching code card (C35)."
+  },
+  "coachWidgets_codeShare": "Paylaş",
+  "@coachWidgets_codeShare": {
+    "description": "Button of the coaching code card that opens the share sheet (C35)."
+  },
+  "coachWidgets_codeShareText": "SMAP'te koçluk kodum: {code}",
+  "@coachWidgets_codeShareText": {
+    "description": "The sentence the share sheet carries.",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_codeTitle": "Koçluk kodun",
+  "@coachWidgets_codeTitle": {
+    "description": "Label of the coaching code card (C35; pano 10.1 kare 3, 10.3 kare 1)."
+  },
+  "coachWidgets_meetingA11y": "{name}, {date}, {time}, {kind}",
+  "@coachWidgets_meetingA11y": {
+    "description": "Screen-reader reading of a meeting row: 'Alparslan Kuloğlu, 12 Ekim 2026 Pazartesi, 16:00, Öğrenci görüşmesi' (C34).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      },
+      "kind": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_meetingA11yPlain": "{name}, {date}, {time}",
+  "@coachWidgets_meetingA11yPlain": {
+    "description": "Screen-reader reading of a meeting row of unknown kind (C34).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_meetingKindParentA11y": "Veli görüşmesi",
+  "@coachWidgets_meetingKindParentA11y": {
+    "description": "Meeting kind in the screen-reader reading (C34)."
+  },
+  "coachWidgets_meetingKindStudentA11y": "Öğrenci görüşmesi",
+  "@coachWidgets_meetingKindStudentA11y": {
+    "description": "Meeting kind in the screen-reader reading (C34)."
+  },
+  "coachWidgets_meetingListMeta": "{date} · {time}",
+  "@coachWidgets_meetingListMeta": {
+    "description": "Meta of the list meeting row: '12 Ekim 2026 Pazartesi · 16:00' (C34; pano 10.5).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_meetingMeta": "{day} {time} · {kind}",
+  "@coachWidgets_meetingMeta": {
+    "description": "Meta of the date-block meeting row: 'Pazartesi 16:00 · Öğrenci' (C34; pano 10.1).",
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      },
+      "kind": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_meetingMetaPlain": "{day} {time}",
+  "@coachWidgets_meetingMetaPlain": {
+    "description": "Meta of the date-block meeting row when the kind is unknown (C34).",
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_meetingMonth": "{month}.",
+  "@coachWidgets_meetingMonth": {
+    "description": "Month under the day of the meeting's date block: 'Eki.' (C34; pano 10.1).",
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_meetingParent": "Veli",
+  "@coachWidgets_meetingParent": {
+    "description": "Meeting kind tag/meta: with the parent (C34; pano 10.1, 10.5)."
+  },
+  "coachWidgets_meetingStudent": "Öğrenci",
+  "@coachWidgets_meetingStudent": {
+    "description": "Meeting kind tag/meta: with the student (C34; pano 10.1, 10.5)."
+  },
+  "coachWidgets_tileA11y": "{name}, öğrenci",
+  "@coachWidgets_tileA11y": {
+    "description": "Screen-reader reading of a student tile (C32).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_tileA11yLastExam": "{name}, son deneme {date}",
+  "@coachWidgets_tileA11yLastExam": {
+    "description": "Screen-reader reading of a student tile with a last exam date (C32).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "coachWidgets_tileLastExam": "Son deneme {date}",
+  "@coachWidgets_tileLastExam": {
+    "description": "Second line of a student tile with a last exam date: 'Son deneme 5 Eki.' (C32; pano 10.1 kare 1).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
   },
   "coachingChange_action": "Koçu Değiştir",
   "@coachingChange_action": {
@@ -2767,6 +3549,22 @@
   "@nav_tabStudents": {
     "description": "Bottom bar tab, coach only (C84)."
   },
+  "notificationPrimer_allow": "Bildirimlere İzin Ver",
+  "@notificationPrimer_allow": {
+    "description": "Primary button of the notification permission sheet (pano 5.2); opens the system dialog."
+  },
+  "notificationPrimer_body": "Sistemde olmayan bir denemeyi okuttuğunda analizini hazırlayınca bildirim gönderelim. Hesap › Bildirimler'den istediğin zaman kapatabilirsin.",
+  "@notificationPrimer_body": {
+    "description": "Body of the notification permission sheet (pano 5.2)."
+  },
+  "notificationPrimer_later": "Sonra",
+  "@notificationPrimer_later": {
+    "description": "Quiet button of the notification permission sheet (pano 5.2); never asks again."
+  },
+  "notificationPrimer_title": "Sonucun hazır olunca haber verelim mi?",
+  "@notificationPrimer_title": {
+    "description": "Title of the notification permission sheet (pano 5.2)."
+  },
   "notifications_categoriesHeading": "Kategoriler",
   "@notifications_categoriesHeading": {
     "description": "Heading of the group of category switches (pano 9.6 kare 1)."
@@ -3371,6 +4169,572 @@
   "@register_usernameTaken": {
     "description": "Live check or register call: the user name is in use (pano 2.6 kare 1)."
   },
+  "resultMoment_cards": "Bu denemeden {count} bilgi kartı eklendi",
+  "@resultMoment_cards": {
+    "description": "Cards row of the result moment (pano 5.1 kare 1); {count} is formatted with TrFormat.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "resultMoment_detail": "Detaylı Analiz",
+  "@resultMoment_detail": {
+    "description": "The primary button of the result moment (pano 5.1); opens Deneme Detay."
+  },
+  "resultMoment_errorMessage": "Bağlantını kontrol edip tekrar dene.",
+  "@resultMoment_errorMessage": {
+    "description": "Message of the screen error of the result moment (the pano 5.8 kare 3 sentence)."
+  },
+  "resultMoment_errorTitle": "Sonuç yüklenemedi",
+  "@resultMoment_errorTitle": {
+    "description": "Title of the screen error of the result moment (not on the board; the pano 5.8 kare 3 pattern)."
+  },
+  "resultMoment_fieldA11y": "Puan türü",
+  "@resultMoment_fieldA11y": {
+    "description": "Screen reader name of the score type segment of the result moment (pano 5.1 'aria: Puan türü')."
+  },
+  "resultMoment_fieldNet": "{field} neti {net}",
+  "@resultMoment_fieldNet": {
+    "description": "Net of the chosen AYT score type under the score boxes (pano 5.1 kare 1: 'Eşit Ağırlık neti 40').",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "net": {
+        "type": "String"
+      }
+    }
+  },
+  "resultMoment_fieldTests": "{first} ve {second}",
+  "@resultMoment_fieldTests": {
+    "description": "The two tests a score type is made of (pano 5.1 kare 1: 'Türk Dili ve Edebiyatı–Sosyal Bilimler 1 ve Matematik').",
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "resultMoment_home": "Anasayfa",
+  "@resultMoment_home": {
+    "description": "Quiet button of the result moment (pano 5.1)."
+  },
+  "scan_addCorrection": "Düzeltmeyi Ekle",
+  "@scan_addCorrection": {
+    "description": "Primary button of the fix sheet (pano 4.7 kare 2)."
+  },
+  "scan_answersOffline": "Bağlantı yok. Bağlantı gelince tekrar dene.",
+  "@scan_answersOffline": {
+    "description": "Inline alert when the device is offline (pano 4.8 kare 2)."
+  },
+  "scan_answersRead": "{n} cevap okundu",
+  "@scan_answersRead": {
+    "description": "Summary line (pano 4.7): '160 cevap okundu'.",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_answersSendFailed": "Cevaplar gönderilemedi. Düzeltmelerin duruyor; tekrar dene.",
+  "@scan_answersSendFailed": {
+    "description": "Inline alert after the answers could not be sent (pano 4.8 kare 2)."
+  },
+  "scan_blank": "Boş",
+  "@scan_blank": {
+    "description": "Name of a blank answer: the chip and the read value (pano 4.7 kare 2)."
+  },
+  "scan_blankCount": "{n} boş",
+  "@scan_blankCount": {
+    "description": "Blank count in the summary and in the column segment (pano 4.7): '2 boş'.",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_cameraFailBody": "Başka bir uygulama kamerayı kullanıyor olabilir. Onu kapatıp tekrar dene.",
+  "@scan_cameraFailBody": {
+    "description": "Body of the camera failure screen (pano 4.10 kare 4)."
+  },
+  "scan_cameraFailTitle": "Kamera açılamadı",
+  "@scan_cameraFailTitle": {
+    "description": "Title of the camera failure screen (pano 4.10 kare 4)."
+  },
+  "scan_cameraLoadingA11y": "Kamera açılıyor",
+  "@scan_cameraLoadingA11y": {
+    "description": "Screen-reader name of the spinner shown while the camera starts (not drawn in the boards)."
+  },
+  "scan_columnCaption": "{n}. kolon · {q} soru · düzeltmek için soruya dokun",
+  "@scan_columnCaption": {
+    "description": "Caption over the answer grid (pano 4.7).",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      },
+      "q": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_columnN": "{n}. kolon",
+  "@scan_columnN": {
+    "description": "Column name by its number (pano 4.7): '3. kolon'.",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_confirmAnswers": "Cevapları Onayla",
+  "@scan_confirmAnswers": {
+    "description": "Primary button of the answer check (pano 4.7)."
+  },
+  "scan_cornerBottomLeftA11y": "Sol alt köşe",
+  "@scan_cornerBottomLeftA11y": {
+    "description": "Accessible name of the bottom left handle (spec C68)."
+  },
+  "scan_cornerBottomRightA11y": "Sağ alt köşe",
+  "@scan_cornerBottomRightA11y": {
+    "description": "Accessible name of the bottom right handle (spec C68)."
+  },
+  "scan_cornerMoveDownA11y": "Aşağı taşı",
+  "@scan_cornerMoveDownA11y": {
+    "description": "Screen-reader action that moves a handle down (spec C68)."
+  },
+  "scan_cornerMoveLeftA11y": "Sola taşı",
+  "@scan_cornerMoveLeftA11y": {
+    "description": "Screen-reader action that moves a handle left (spec C68)."
+  },
+  "scan_cornerMoveRightA11y": "Sağa taşı",
+  "@scan_cornerMoveRightA11y": {
+    "description": "Screen-reader action that moves a handle right (spec C68)."
+  },
+  "scan_cornerMoveUpA11y": "Yukarı taşı",
+  "@scan_cornerMoveUpA11y": {
+    "description": "Screen-reader action that moves a handle up (spec C68)."
+  },
+  "scan_cornerTopLeftA11y": "Sol üst köşe",
+  "@scan_cornerTopLeftA11y": {
+    "description": "Accessible name of the top left handle (spec C68)."
+  },
+  "scan_cornerTopRightA11y": "Sağ üst köşe",
+  "@scan_cornerTopRightA11y": {
+    "description": "Accessible name of the top right handle (spec C68)."
+  },
+  "scan_cornersHint": "Noktaları cevap alanının köşelerine getir.",
+  "@scan_cornersHint": {
+    "description": "Corner hint card, first line (pano 4.4 kare 1)."
+  },
+  "scan_cornersHintSub": "Ders adları şeridi dışarıda kalsın.",
+  "@scan_cornersHintSub": {
+    "description": "Corner hint card, second line (pano 4.4 kare 1)."
+  },
+  "scan_cornersTitle": "Köşeleri Ayarla",
+  "@scan_cornersTitle": {
+    "description": "Title of the corner screen (pano 4.4)."
+  },
+  "scan_correctionChange": "{from} → {to}",
+  "@scan_correctionChange": {
+    "description": "What a correction changed (pano 4.7 kare 3): 'Boş → C'.",
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_correctionCount": "{n} düzeltme",
+  "@scan_correctionCount": {
+    "description": "Correction count in the summary and the fix sheet (pano 4.7): '2 düzeltme'.",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_correctionRow": "{col}. kolon · {q}. soru",
+  "@scan_correctionRow": {
+    "description": "One correction row (pano 4.7 kare 3).",
+    "placeholders": {
+      "col": {
+        "type": "String"
+      },
+      "q": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_corrections": "Düzeltmeler",
+  "@scan_corrections": {
+    "description": "Heading of the corrections list (pano 4.7 kare 2)."
+  },
+  "scan_correctionsEmpty": "Henüz düzeltme yok. Okunan cevap formundakinden farklıysa yukarıdan ekle.",
+  "@scan_correctionsEmpty": {
+    "description": "Empty corrections list (pano 4.7 kare 2)."
+  },
+  "scan_debugGalleryPick": "Galeriden seç",
+  "@scan_debugGalleryPick": {
+    "description": "Debug-only button of the camera failure screen (SCAN_GALLERY define; never in release)."
+  },
+  "scan_deniedBody": "Formunu okutabilmek için Ayarlar'da SMAP'e kamera izni ver. Sonra buraya dön; kaldığın yerden devam edersin.",
+  "@scan_deniedBody": {
+    "description": "Body of the refused-permission sheet (pano 4.1 kare 2)."
+  },
+  "scan_deniedTitle": "Kamera izni kapalı",
+  "@scan_deniedTitle": {
+    "description": "Title of the sheet shown when the camera permission was refused (pano 4.1 kare 2)."
+  },
+  "scan_dontShowAgain": "Bir daha gösterme",
+  "@scan_dontShowAgain": {
+    "description": "Checkbox of the how-to-shoot sheet and text button of the corner hint (pano 4.2, 4.4 kare 1)."
+  },
+  "scan_enfBody": "Yayınevini ve deneme adını yaz; analizini en geç 72 saat içinde hazırlayalım.",
+  "@scan_enfBody": {
+    "description": "Sub-line of the exam request screen (pano 4.9)."
+  },
+  "scan_enfConfirmNote": "Analizin hazır olunca Analizlerim › Denemelerim'de görünür.",
+  "@scan_enfConfirmNote": {
+    "description": "Note of the request confirmation sheet (pano 4.9 kare 3)."
+  },
+  "scan_enfConfirmTitle": "Talep oluşturulsun mu?",
+  "@scan_enfConfirmTitle": {
+    "description": "Title of the request confirmation sheet (pano 4.9 kare 3)."
+  },
+  "scan_enfDoneBody": "En geç 72 saat içinde hazır. Hazır olunca Analizlerim › Denemelerim'de görünecek.",
+  "@scan_enfDoneBody": {
+    "description": "Body after the request was sent (pano 4.9 kare 4)."
+  },
+  "scan_enfDoneTitle": "Talebin alındı",
+  "@scan_enfDoneTitle": {
+    "description": "Title after the request was sent (pano 4.9 kare 4)."
+  },
+  "scan_enfSaved": "Cevapların kaydedildi. Yeniden okutman gerekmez.",
+  "@scan_enfSaved": {
+    "description": "Info card of the exam request screen (pano 4.9)."
+  },
+  "scan_enfSubmit": "Analizimi Hazırlayın",
+  "@scan_enfSubmit": {
+    "description": "Primary button of the exam request screen (pano 4.9)."
+  },
+  "scan_enfTitle": "Bu deneme henüz sistemde yok",
+  "@scan_enfTitle": {
+    "description": "Title of the exam request screen (pano 4.9)."
+  },
+  "scan_errExamNameRequired": "Deneme adını yaz.",
+  "@scan_errExamNameRequired": {
+    "description": "Error of the empty exam name field (pano 4.9 kare 2)."
+  },
+  "scan_errPublisherRequired": "Yayınevini yaz.",
+  "@scan_errPublisherRequired": {
+    "description": "Error of the empty publisher field (pano 4.9 kare 2)."
+  },
+  "scan_exitBody": "Düzelttiğin cevaplar kaydedilmeyecek.",
+  "@scan_exitBody": {
+    "description": "Body of the exit confirmation (spec decision, board draws no body)."
+  },
+  "scan_exitConfirm": "Çık",
+  "@scan_exitConfirm": {
+    "description": "Confirm button of the exit confirmation (spec decision)."
+  },
+  "scan_exitTitle": "Okutmadan çıkılsın mı?",
+  "@scan_exitTitle": {
+    "description": "Confirmation when closing the answer check with corrections (pano 4.7; spec exitScanConfirm)."
+  },
+  "scan_fieldColumn": "Kolon",
+  "@scan_fieldColumn": {
+    "description": "Label of the column segment in the fix sheet (pano 4.7 kare 2)."
+  },
+  "scan_fieldExamName": "Deneme adı",
+  "@scan_fieldExamName": {
+    "description": "Label of the exam name field (pano 4.9)."
+  },
+  "scan_fieldExamNameHint": "Örn: Türkiye Geneli Deneme 7",
+  "@scan_fieldExamNameHint": {
+    "description": "Example in the exam name field (pano 4.9)."
+  },
+  "scan_fieldPublisher": "Yayınevi",
+  "@scan_fieldPublisher": {
+    "description": "Label of the publisher field (pano 4.9)."
+  },
+  "scan_fieldPublisherHint": "Örn: Örnek Yayınları",
+  "@scan_fieldPublisherHint": {
+    "description": "Example in the publisher field (pano 4.9)."
+  },
+  "scan_fieldQuestion": "Soru",
+  "@scan_fieldQuestion": {
+    "description": "Label of the question stepper in the fix sheet (pano 4.7 kare 2)."
+  },
+  "scan_fix": "Düzelt",
+  "@scan_fix": {
+    "description": "Outline button that opens the fix sheet (pano 4.7)."
+  },
+  "scan_fixSheetTitle": "Cevap Düzelt",
+  "@scan_fixSheetTitle": {
+    "description": "Title of the fix sheet (pano 4.7 kare 2)."
+  },
+  "scan_formNotFoundBody": "Fotoğrafta cevap alanı seçilemedi. Formun tamamı görünsün, ışık yansımasın, ders adları şeridi dışarıda kalsın.",
+  "@scan_formNotFoundBody": {
+    "description": "Body of the form-not-found screen (pano 4.10 kare 1)."
+  },
+  "scan_formNotFoundTitle": "Formu bulamadık",
+  "@scan_formNotFoundTitle": {
+    "description": "Title of the form-not-found screen (pano 4.10 kare 1)."
+  },
+  "scan_goHome": "Anasayfa",
+  "@scan_goHome": {
+    "description": "Primary button after the request was sent (pano 4.9 kare 4)."
+  },
+  "scan_gotIt": "Anladım",
+  "@scan_gotIt": {
+    "description": "Primary button of the how-to-shoot sheet (pano 4.2)."
+  },
+  "scan_hintReady": "Hazır. Telefonu sabit tut ve çek.",
+  "@scan_hintReady": {
+    "description": "Hint pill once the form is found (pano 4.3 kare 2)."
+  },
+  "scan_hintSearching": "Cevap alanını çerçeveye al.\nDers adları şeridi dışarıda kalsın.",
+  "@scan_hintSearching": {
+    "description": "Hint pill while the form is being looked for (pano 4.3 kare 1)."
+  },
+  "scan_howToShoot": "Nasıl Çekilir?",
+  "@scan_howToShoot": {
+    "description": "Quiet button of the form-not-found screen; opens the how-to-shoot sheet (pano 4.10 kare 1)."
+  },
+  "scan_howToShootA11y": "Nasıl çekilir?",
+  "@scan_howToShootA11y": {
+    "description": "Accessible name of the question-mark button in the camera top bar (pano 4.2, 4.3)."
+  },
+  "scan_imageLoadFailed": "Görüntü yüklenemedi",
+  "@scan_imageLoadFailed": {
+    "description": "Message of the image card after it failed to load (pano 4.8 kare 1 note)."
+  },
+  "scan_imageLoading": "Form görüntüsü yükleniyor",
+  "@scan_imageLoading": {
+    "description": "Caption of the image skeleton (pano 4.8 kare 1)."
+  },
+  "scan_inProgressA11y": "Sürüyor",
+  "@scan_inProgressA11y": {
+    "description": "Screen-reader state of the running step (pano 4.5)."
+  },
+  "scan_newPhoto": "Yeni Fotoğraf",
+  "@scan_newPhoto": {
+    "description": "Quiet button after a failure; back to the camera (pano 4.5 kare 4, 4.10 kare 1)."
+  },
+  "scan_next": "Devam",
+  "@scan_next": {
+    "description": "Primary button of the corner screen (pano 4.4)."
+  },
+  "scan_nextQuestionA11y": "Sonraki soru",
+  "@scan_nextQuestionA11y": {
+    "description": "Accessible name of the plus button of the question stepper (pano 4.7)."
+  },
+  "scan_noBlank": "boş yok",
+  "@scan_noBlank": {
+    "description": "Counter line of a column with no blank answer (pano 4.7)."
+  },
+  "scan_noCorrection": "Düzeltme yok",
+  "@scan_noCorrection": {
+    "description": "Correction counter of the fix sheet while there is none (pano 4.7 kare 2)."
+  },
+  "scan_offlineQueuedBody": "Fotoğrafın telefonunda saklandı. Bağlantı gelince gönderilecek.",
+  "@scan_offlineQueuedBody": {
+    "description": "Body of the planned offline screen; used only when the offline queue exists (pano 4.10 kare 3)."
+  },
+  "scan_offlineTitle": "Bağlantı yok",
+  "@scan_offlineTitle": {
+    "description": "Title of the planned offline screen (pano 4.10 kare 3)."
+  },
+  "scan_ok": "Tamam",
+  "@scan_ok": {
+    "description": "Button of the maintenance sheet and the offline screen (pano 4.10 kare 2, 3)."
+  },
+  "scan_omrClosedBody": "Kısa bir bakım yapıyoruz. Birazdan tekrar dene.",
+  "@scan_omrClosedBody": {
+    "description": "Body of the maintenance sheet (pano 4.10 kare 2)."
+  },
+  "scan_omrClosedTitle": "Optik okuma şu an kapalı",
+  "@scan_omrClosedTitle": {
+    "description": "Title of the maintenance sheet (pano 4.10 kare 2)."
+  },
+  "scan_openSettings": "Ayarları Aç",
+  "@scan_openSettings": {
+    "description": "Primary button of the refused-permission sheet; opens the app's system settings (pano 4.1 kare 2)."
+  },
+  "scan_percent": "%{n}",
+  "@scan_percent": {
+    "description": "Upload percentage next to \"Gönderiliyor\" (pano 4.5 kare 2).",
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_pinchHint": "İki parmakla yakınlaştırabilirsin.",
+  "@scan_pinchHint": {
+    "description": "Hint under the form image (pano 4.7)."
+  },
+  "scan_previousQuestionA11y": "Önceki soru",
+  "@scan_previousQuestionA11y": {
+    "description": "Accessible name of the minus button of the question stepper (pano 4.7)."
+  },
+  "scan_primerAllow": "Kameraya İzin Ver",
+  "@scan_primerAllow": {
+    "description": "Primary button of the permission sheet (pano 4.1 kare 1)."
+  },
+  "scan_primerBody": "SMAP kamerayı yalnız optik formunu çekerken kullanır. Bir sonraki adımda telefonun izin isteyecek.",
+  "@scan_primerBody": {
+    "description": "Camera permission sheet, body (pano 4.1 kare 1)."
+  },
+  "scan_primerLater": "Sonra",
+  "@scan_primerLater": {
+    "description": "Quiet button of the permission sheet; closes it and stays where you were (pano 4.1 kare 1)."
+  },
+  "scan_primerTitle": "Formunu okutmak için kamera gerekli",
+  "@scan_primerTitle": {
+    "description": "Camera permission sheet before the system dialog, title (pano 4.1 kare 1)."
+  },
+  "scan_questionNumberA11y": "Soru numarası",
+  "@scan_questionNumberA11y": {
+    "description": "Accessible name of the question number (pano 4.7)."
+  },
+  "scan_readValue": "Okunan",
+  "@scan_readValue": {
+    "description": "Label of the read value next to the stepper (pano 4.7 kare 2)."
+  },
+  "scan_removeCorrectionA11y": "Düzeltmeyi kaldır: {col}. kolon, {q}. soru",
+  "@scan_removeCorrectionA11y": {
+    "description": "Accessible name of the remove button of a correction (pano 4.7 kare 3).",
+    "placeholders": {
+      "col": {
+        "type": "String"
+      },
+      "q": {
+        "type": "String"
+      }
+    }
+  },
+  "scan_retake": "Tekrar Çek",
+  "@scan_retake": {
+    "description": "Outline button of the corner screen; back to the camera (pano 4.4)."
+  },
+  "scan_retryNow": "Şimdi Tekrar Dene",
+  "@scan_retryNow": {
+    "description": "Quiet button of the planned offline screen (pano 4.10 kare 3)."
+  },
+  "scan_reviewSub": "Okunan cevapları formunla karşılaştır.",
+  "@scan_reviewSub": {
+    "description": "Sub-line of the answer check (pano 4.7)."
+  },
+  "scan_reviewTitle": "Form Kontrol",
+  "@scan_reviewTitle": {
+    "description": "Title of the answer check (pano 4.7)."
+  },
+  "scan_sendRequest": "Talebi Gönder",
+  "@scan_sendRequest": {
+    "description": "Primary button of the request confirmation sheet (pano 4.9 kare 3)."
+  },
+  "scan_sending": "Gönderiliyor",
+  "@scan_sending": {
+    "description": "Label of the busy primary button (pano 4.7 kare 4)."
+  },
+  "scan_shutterA11y": "Fotoğraf çek",
+  "@scan_shutterA11y": {
+    "description": "Accessible name of the shutter button (pano 4.3)."
+  },
+  "scan_stepPrepared": "Fotoğraf hazırlandı",
+  "@scan_stepPrepared": {
+    "description": "Step 1 when done (pano 4.5 kare 2)."
+  },
+  "scan_stepPreparing": "Fotoğraf hazırlanıyor",
+  "@scan_stepPreparing": {
+    "description": "Step 1 while it runs (pano 4.5 kare 1)."
+  },
+  "scan_stepReading": "Cevapların okunuyor",
+  "@scan_stepReading": {
+    "description": "Step 3 while it runs (pano 4.5 kare 3)."
+  },
+  "scan_stepSendFailed": "Gönderilemedi",
+  "@scan_stepSendFailed": {
+    "description": "Step 2 after a failure (pano 4.5 kare 4)."
+  },
+  "scan_stepSending": "Gönderiliyor",
+  "@scan_stepSending": {
+    "description": "Step 2 while it runs, with the percentage (pano 4.5 kare 2)."
+  },
+  "scan_stepSent": "Gönderildi",
+  "@scan_stepSent": {
+    "description": "Step 2 when done (pano 4.5 kare 3)."
+  },
+  "scan_stepToRead": "Cevaplar okunacak",
+  "@scan_stepToRead": {
+    "description": "Step 3 while waiting (pano 4.5 kare 1)."
+  },
+  "scan_stepToSend": "Gönderilecek",
+  "@scan_stepToSend": {
+    "description": "Step 2 while waiting (pano 4.5 kare 1)."
+  },
+  "scan_topTitle": "Optik Form",
+  "@scan_topTitle": {
+    "description": "Title in the top bar of the camera (pano 4.2, 4.3)."
+  },
+  "scan_tutorialStep1": "Cevap alanını çerçeveye al.",
+  "@scan_tutorialStep1": {
+    "description": "Step 1 of the how-to-shoot sheet (pano 4.2)."
+  },
+  "scan_tutorialStep2": "Ders adlarının yazdığı yatay şeridi dışarıda bırak.",
+  "@scan_tutorialStep2": {
+    "description": "Step 2 of the how-to-shoot sheet (pano 4.2)."
+  },
+  "scan_tutorialStep3": "Turuncu noktaları cevap alanının dört köşesine getir.",
+  "@scan_tutorialStep3": {
+    "description": "Step 3 of the how-to-shoot sheet (pano 4.2)."
+  },
+  "scan_tutorialTitle": "Formu böyle çek",
+  "@scan_tutorialTitle": {
+    "description": "Title of the how-to-shoot sheet (pano 4.2)."
+  },
+  "scan_uploadFailBody": "Bağlantı koptu. Fotoğrafın duruyor; tekrar gönderebilir ya da yeniden çekebilirsin.",
+  "@scan_uploadFailBody": {
+    "description": "Sub-line after the upload failed (pano 4.5 kare 4)."
+  },
+  "scan_uploadFailTitle": "Formun gönderilemedi",
+  "@scan_uploadFailTitle": {
+    "description": "Title after the upload failed (pano 4.5 kare 4)."
+  },
+  "scan_uploadPhotoA11y": "Okunan form görüntüsü: dört kolon, kırk satır",
+  "@scan_uploadPhotoA11y": {
+    "description": "Screen-reader name of the photo card (pano 4.5)."
+  },
+  "scan_uploadProgressA11y": "Gönderim",
+  "@scan_uploadProgressA11y": {
+    "description": "Screen-reader name of the upload progress bar (pano 4.5)."
+  },
+  "scan_uploadSub": "Birkaç saniye sürebilir.",
+  "@scan_uploadSub": {
+    "description": "Sub-line of the upload screen (pano 4.5)."
+  },
+  "scan_uploadTimeoutBody": "Sunucu yanıt vermedi.",
+  "@scan_uploadTimeoutBody": {
+    "description": "Sub-line after a timeout (pano 4.5 kare 4)."
+  },
+  "scan_uploadTitle": "Formun okunuyor",
+  "@scan_uploadTitle": {
+    "description": "Title of the upload screen (pano 4.5)."
+  },
+  "scan_yourMark": "Formdaki işaretin",
+  "@scan_yourMark": {
+    "description": "Label of the option chips in the fix sheet (pano 4.7 kare 2)."
+  },
+  "scan_zoomFormA11y": "Formu büyüt",
+  "@scan_zoomFormA11y": {
+    "description": "Accessible name of the magnify button on the form image (pano 4.7)."
+  },
   "schedule_add": "Ekle",
   "@schedule_add": {
     "description": "Topic sheet primary button (pano 3.5 kare 3)."
@@ -3934,6 +5298,106 @@
   "startup_unknownRoleTitle": "Hesabın açılamadı",
   "@startup_unknownRoleTitle": {
     "description": "Unknown role screen title (pano 2.7 kare 4)."
+  },
+  "students_addA11y": "Öğrenci ekle",
+  "@students_addA11y": {
+    "description": "Accessible name and tooltip of the Plus action of the navy band (pano 10.2 kare 1, \"aria Öğrenci ekle\")."
+  },
+  "students_added": "{name} eklendi.",
+  "@students_added": {
+    "description": "Toast after the credentials sheet closed with \"Tamam\" (pano 10.3 kare 3).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "students_clearSearch": "Aramayı Temizle",
+  "@students_clearSearch": {
+    "description": "Text button of the no-match card; empties the search (pano 10.2 kare 3)."
+  },
+  "students_count": "{count} öğrenci",
+  "@students_count": {
+    "description": "The counter under the search field (pano 10.2 kare 1 and 2): \"5 öğrenci\", \"1 öğrenci\".",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "students_emptyAdd": "Öğrenci Ekle",
+  "@students_emptyAdd": {
+    "description": "Primary button of the empty list; opens the add-student sheet (pano 10.2 kare 4)."
+  },
+  "students_emptyMessage": "Öğrencinin hesabını sen aç ya da koçluk kodunu paylaş; bağlanan öğrenciler burada listelenir.",
+  "@students_emptyMessage": {
+    "description": "Sentence of the empty list (pano 10.2 kare 4)."
+  },
+  "students_emptyShare": "Kodunu Paylaş",
+  "@students_emptyShare": {
+    "description": "Secondary button of the empty list; opens the system share sheet with the coaching code (pano 10.2 kare 4)."
+  },
+  "students_emptyTitle": "Henüz öğrencin yok",
+  "@students_emptyTitle": {
+    "description": "Title of the empty list (pano 10.2 kare 4)."
+  },
+  "students_examCount": "{count} deneme",
+  "@students_examCount": {
+    "description": "The exam count in the meta line of a student row (pano 10.2 kare 1): \"12. Sınıf · Eşit Ağırlık · 10 deneme\". Written only when the student has read an exam.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "students_loadErrorMessage": "Bağlantını kontrol edip tekrar dene. Sorun sürerse biraz sonra yeniden açabilirsin.",
+  "@students_loadErrorMessage": {
+    "description": "Sentence of the screen-level error state (spec 2.18 \"Ekran hatası metni\")."
+  },
+  "students_loadErrorTitle": "Öğrenciler yüklenemedi",
+  "@students_loadErrorTitle": {
+    "description": "Title of the error state of the student list (pano 1.22 kare 4 wording; pano 10.2 has no drawn error)."
+  },
+  "students_metaJoin": "{first} · {second}",
+  "@students_metaJoin": {
+    "description": "Two parts of the meta line of a student row, joined by a middle dot (pano 10.2 kare 1).",
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "students_noResultMessage": "Ad ve soyadda arar; büyük-küçük harf ve I/ı/İ/i farkı gözetmez.",
+  "@students_noResultMessage": {
+    "description": "How the search works, under the no-match title (pano 10.2 kare 3)."
+  },
+  "students_noResultTitle": "“{query}” ile eşleşen öğrenci yok",
+  "@students_noResultTitle": {
+    "description": "Title of the no-match card of the search (pano 10.2 kare 3).",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "students_rowA11y": "{name}, {details}",
+  "@students_rowA11y": {
+    "description": "Screen reader reading of a student row: the name and the meta line (pano 10.2 kare 1).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "details": {
+        "type": "String"
+      }
+    }
+  },
+  "students_searchHint": "Öğrenci ara",
+  "@students_searchHint": {
+    "description": "Placeholder and accessible name of the search field (pano 10.2 kare 1)."
   },
   "topicDetail_context": "{lesson} · {number}. konu",
   "@topicDetail_context": {

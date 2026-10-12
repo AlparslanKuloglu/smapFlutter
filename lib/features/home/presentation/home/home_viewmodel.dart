@@ -16,6 +16,7 @@ import 'package:smap/features/lessons/application/lessons_service.dart';
 import 'package:smap/features/schedule/application/schedule_service.dart';
 import 'package:smap/services/current_user_service.dart';
 import 'package:smap/shared/ui/feedback/section_state.dart';
+import 'package:smap/features/scan/presentation/scan_entry.dart';
 
 /// The student home screen's logic (pano 3.1 to 3.3; spec §4.B "3.1–3.3";
 /// flow 13.3).
@@ -170,8 +171,8 @@ class HomeViewModel extends ReactiveViewModel {
     return _loadSubjects(force: true);
   }
 
-  /// "İlk Denemeni Okut": the scan flow, today the legacy one.
-  Future<void> openScan() => _router.push(const LegacyScanRoute());
+  /// "İlk Denemeni Okut": the scan (its gate, then the camera; flow 13.4).
+  Future<void> openScan() => ScanEntry.start(_router);
 
   // ── Loading ───────────────────────────────────────────────────────────
 

@@ -321,6 +321,125 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String get addStudent_addedNote =>
+      'Bu ekranı kapatınca şifre yeniden gösterilmez.';
+
+  @override
+  String get addStudent_addedSubtitle => 'Giriş bilgilerini öğrencine ilet.';
+
+  @override
+  String addStudent_addedTitle(String name) {
+    return '$name eklendi';
+  }
+
+  @override
+  String get addStudent_avatarLabel => 'Avatar';
+
+  @override
+  String get addStudent_avatarPickerA11y => 'Öğrencinin avatarı';
+
+  @override
+  String get addStudent_check => 'Kontrol Et';
+
+  @override
+  String get addStudent_codeHeading => 'Öğrencin kendi hesabıyla bağlansın';
+
+  @override
+  String addStudent_credentialsShareText(String userName, String password) {
+    return 'SMAP giriş bilgilerin\nKullanıcı adı: $userName\nŞifre: $password';
+  }
+
+  @override
+  String get addStudent_firstName => 'Ad';
+
+  @override
+  String get addStudent_generate => 'Oluştur';
+
+  @override
+  String get addStudent_grade => 'Sınıf';
+
+  @override
+  String get addStudent_issueFirstName => 'Öğrencinin adını yaz.';
+
+  @override
+  String get addStudent_issueGrade => 'Sınıfı seç.';
+
+  @override
+  String get addStudent_issueLastName => 'Öğrencinin soyadını yaz.';
+
+  @override
+  String get addStudent_issuePasswordMissing =>
+      'Bir şifre yaz ya da Oluştur\'a dokun.';
+
+  @override
+  String get addStudent_issuePasswordShort => 'Şifre en az 8 karakter olmalı.';
+
+  @override
+  String get addStudent_issueTrack => 'Alanı seç.';
+
+  @override
+  String get addStudent_issueUsername => 'Bir kullanıcı adı yaz.';
+
+  @override
+  String get addStudent_lastName => 'Soyad';
+
+  @override
+  String get addStudent_or => 'ya da';
+
+  @override
+  String get addStudent_password => 'Şifre';
+
+  @override
+  String get addStudent_passwordHelp =>
+      'Öğrencine ilet; ilk girişte değiştirmesi önerilir.';
+
+  @override
+  String get addStudent_save => 'Öğrenciyi Kaydet';
+
+  @override
+  String get addStudent_saveFailed =>
+      'Öğrenci eklenemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get addStudent_shareCredentials => 'Bilgileri Paylaş';
+
+  @override
+  String get addStudent_subtitle => 'Hesabını sen aç ya da kodunu paylaş.';
+
+  @override
+  String get addStudent_title => 'Öğrenci ekle';
+
+  @override
+  String get addStudent_track => 'Alan';
+
+  @override
+  String get addStudent_trackNotSelectable => 'Seçilmez';
+
+  @override
+  String get addStudent_trackNotSelectableReason =>
+      '9. ve 10. sınıfta alan seçilmez.';
+
+  @override
+  String get addStudent_username => 'Kullanıcı adı';
+
+  @override
+  String get addStudent_usernameFree => 'Bu kullanıcı adı boşta.';
+
+  @override
+  String get addStudent_usernameOffline => 'Bağlanınca kontrol edilecek.';
+
+  @override
+  String get addStudent_usernameSuggest => 'Boşta olan:';
+
+  @override
+  String addStudent_usernameSuggestA11y(String name) {
+    return 'Boşta olan kullanıcı adı: $name. Yazmak için dokun.';
+  }
+
+  @override
+  String get addStudent_usernameTaken => 'Bu kullanıcı adı alınmış.';
+
+  @override
   String get analytics_boxAverageNet => 'Ortalama net';
 
   @override
@@ -647,6 +766,414 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get cards_favoriteRemove => 'Favorilerden çıkar';
+
+  @override
+  String get coachHome_addStudent => 'Öğrenci Ekle';
+
+  @override
+  String get coachHome_attention => 'Dikkat gerektirenler';
+
+  @override
+  String get coachHome_attentionEmptyBody =>
+      '14 gündür deneme okutmayan ya da son iki denemesinde neti düşen öğrenci burada görünür.';
+
+  @override
+  String get coachHome_attentionEmptyTitle =>
+      'Şu an dikkat gerektiren öğrenci yok.';
+
+  @override
+  String get coachHome_attentionError => 'Dikkat listesi yüklenemedi.';
+
+  @override
+  String get coachHome_emptyMessage =>
+      'Öğrencin koçluk kodunla kendi hesabından bağlanabilir ya da hesabını sen açabilirsin.';
+
+  @override
+  String get coachHome_emptyTitle => 'İlk öğrencini ekle';
+
+  @override
+  String get coachHome_meetings => 'Yaklaşan görüşmeler';
+
+  @override
+  String get coachHome_meetingsError => 'Görüşmeler yüklenemedi.';
+
+  @override
+  String get coachHome_newMeeting => 'Yeni Görüşme';
+
+  @override
+  String get coachHome_noMeetings => 'Önümüzdeki 7 günde görüşme yok.';
+
+  @override
+  String get coachHome_students => 'Öğrencilerin';
+
+  @override
+  String get coachHome_studentsError => 'Öğrenciler yüklenemedi.';
+
+  @override
+  String get coachMeetings_a11yKindParent => 'veli görüşmesi';
+
+  @override
+  String get coachMeetings_a11yKindStudent => 'öğrenci görüşmesi';
+
+  @override
+  String get coachMeetings_clearSearch => 'Aramayı Temizle';
+
+  @override
+  String get coachMeetings_dateLabel => 'Tarih';
+
+  @override
+  String get coachMeetings_dateTitle => 'Tarih';
+
+  @override
+  String get coachMeetings_detailErrorTitle => 'Görüşme açılamadı';
+
+  @override
+  String get coachMeetings_detailKindParent => 'Veli görüşmesi';
+
+  @override
+  String get coachMeetings_detailKindStudent => 'Öğrenci görüşmesi';
+
+  @override
+  String get coachMeetings_detailMissingMessage =>
+      'Bu görüşme silinmiş olabilir. Listeye dönüp yenileyebilirsin.';
+
+  @override
+  String get coachMeetings_detailMissingTitle => 'Görüşme bulunamadı';
+
+  @override
+  String get coachMeetings_emptyAction => 'Yeni Görüşme';
+
+  @override
+  String get coachMeetings_emptyMessage =>
+      'Öğrencinle ya da velisiyle görüşme planladığında burada listelenir.';
+
+  @override
+  String get coachMeetings_emptyTitle => 'Henüz görüşme yok';
+
+  @override
+  String get coachMeetings_kindParent => 'Veli';
+
+  @override
+  String get coachMeetings_kindStudent => 'Öğrenci';
+
+  @override
+  String get coachMeetings_loadErrorMessage =>
+      'Bağlantını kontrol edip tekrar dene. Sorun sürerse biraz sonra yeniden açabilirsin.';
+
+  @override
+  String get coachMeetings_loadErrorTitle => 'Görüşmelerin yüklenemedi';
+
+  @override
+  String get coachMeetings_loadingMore => 'Görüşmeler yükleniyor';
+
+  @override
+  String get coachMeetings_meetingFallback => 'Görüşme';
+
+  @override
+  String get coachMeetings_moreFailed => 'Daha fazla görüşme yüklenemedi.';
+
+  @override
+  String get coachMeetings_newA11y => 'Yeni görüşme';
+
+  @override
+  String get coachMeetings_newTitle => 'Yeni görüşme';
+
+  @override
+  String get coachMeetings_noKind =>
+      'Bu süzgeçle görüşme yok. Başka bir seçenek deneyebilirsin.';
+
+  @override
+  String coachMeetings_noMatch(String query) {
+    return '“$query” ile eşleşen görüşme yok. Öğrenci adında arar; büyük-küçük harf ve I/ı/İ/i farkı gözetmez.';
+  }
+
+  @override
+  String get coachMeetings_noStudents =>
+      'Görüşme planlamak için önce bir öğrenci eklemelisin.';
+
+  @override
+  String get coachMeetings_noteAdd => 'Not Ekle';
+
+  @override
+  String get coachMeetings_noteAddTitle => 'Not ekle';
+
+  @override
+  String get coachMeetings_noteAdded => 'Not eklendi.';
+
+  @override
+  String coachMeetings_noteContext(String date, String name) {
+    return '$date · $name';
+  }
+
+  @override
+  String get coachMeetings_noteDelete => 'Sil';
+
+  @override
+  String get coachMeetings_noteDeleteAction => 'Notu Sil';
+
+  @override
+  String coachMeetings_noteDeleteBody(String text) {
+    return '“$text” notu silinecek.';
+  }
+
+  @override
+  String get coachMeetings_noteDeleteFailed =>
+      'Not silinemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get coachMeetings_noteDeleteTitle => 'Not silinsin mi?';
+
+  @override
+  String get coachMeetings_noteDeleted => 'Not silindi.';
+
+  @override
+  String get coachMeetings_noteEdit => 'Düzenle';
+
+  @override
+  String get coachMeetings_noteEditTitle => 'Notu düzenle';
+
+  @override
+  String get coachMeetings_noteFieldA11y => 'Not';
+
+  @override
+  String get coachMeetings_noteHint =>
+      'Örn: Deneme sonucunu birlikte inceleyeceğiz.';
+
+  @override
+  String get coachMeetings_noteLabel => 'Not';
+
+  @override
+  String get coachMeetings_noteSave => 'Notu Kaydet';
+
+  @override
+  String get coachMeetings_noteSaveFailed =>
+      'Not kaydedilemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get coachMeetings_noteUpdated => 'Not güncellendi.';
+
+  @override
+  String get coachMeetings_notesEmpty => 'Henüz not yok.';
+
+  @override
+  String get coachMeetings_notesLoadFailed => 'Notlar yüklenemedi.';
+
+  @override
+  String get coachMeetings_notesTitle => 'Notlar';
+
+  @override
+  String coachMeetings_past(String count) {
+    return 'Geçmiş · $count';
+  }
+
+  @override
+  String get coachMeetings_pickStudentNoMatch => 'Eşleşen öğrenci yok.';
+
+  @override
+  String get coachMeetings_pickStudentSearch => 'Öğrenci ara';
+
+  @override
+  String get coachMeetings_pickStudentTitle => 'Öğrenci seç';
+
+  @override
+  String get coachMeetings_refreshFailed =>
+      'Liste yenilenemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String coachMeetings_rowWhen(String date, String time) {
+    return '$date · $time';
+  }
+
+  @override
+  String get coachMeetings_saveAction => 'Görüşmeyi Kaydet';
+
+  @override
+  String get coachMeetings_saveFailed =>
+      'Görüşme kaydedilemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get coachMeetings_saved => 'Görüşme kaydedildi.';
+
+  @override
+  String get coachMeetings_savedWithoutNote =>
+      'Görüşme kaydedildi ama not eklenemedi.';
+
+  @override
+  String get coachMeetings_searchHint => 'Görüşme ara';
+
+  @override
+  String get coachMeetings_showAll => 'Tümünü Göster';
+
+  @override
+  String get coachMeetings_studentData => 'Öğrencinin verileri';
+
+  @override
+  String get coachMeetings_studentDataHint => 'Analiz, denemeler, program';
+
+  @override
+  String get coachMeetings_studentHint => 'Öğrenci seç';
+
+  @override
+  String get coachMeetings_studentLabel => 'Öğrenci';
+
+  @override
+  String get coachMeetings_studentMissing => 'Bir öğrenci seç.';
+
+  @override
+  String get coachMeetings_studentsFailed =>
+      'Öğrenciler yüklenemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get coachMeetings_timeLabel => 'Saat';
+
+  @override
+  String get coachMeetings_timeTitle => 'Saat';
+
+  @override
+  String coachMeetings_upcoming(String count) {
+    return 'Yaklaşan · $count';
+  }
+
+  @override
+  String get coachMeetings_withAll => 'Tümü';
+
+  @override
+  String get coachMeetings_withLabel => 'Kiminle';
+
+  @override
+  String coachWidgets_attentionDates(String first, String second) {
+    return '$first ve $second';
+  }
+
+  @override
+  String coachWidgets_attentionInactive(String days) {
+    return '$days gündür deneme okutmadı';
+  }
+
+  @override
+  String coachWidgets_attentionInactiveEvidence(String date) {
+    return 'Son deneme $date';
+  }
+
+  @override
+  String coachWidgets_attentionInactiveEvidenceType(String date, String type) {
+    return 'Son deneme $date · $type';
+  }
+
+  @override
+  String coachWidgets_attentionLastExamA11y(String date) {
+    return 'son deneme $date';
+  }
+
+  @override
+  String coachWidgets_attentionNetDrop(String type) {
+    return 'Son iki $type denemesinde net düştü';
+  }
+
+  @override
+  String get coachWidgets_attentionNetDropPlain => 'Son iki denemede net düştü';
+
+  @override
+  String coachWidgets_attentionNetEvidence(
+    String from,
+    String to,
+    String dates,
+  ) {
+    return '$from → $to · $dates';
+  }
+
+  @override
+  String coachWidgets_attentionNetEvidenceNets(String from, String to) {
+    return '$from → $to';
+  }
+
+  @override
+  String coachWidgets_codeA11y(String code) {
+    return 'Koçluk kodun $code';
+  }
+
+  @override
+  String get coachWidgets_codeCopied => 'Kod kopyalandı.';
+
+  @override
+  String get coachWidgets_codeCopy => 'Kopyala';
+
+  @override
+  String get coachWidgets_codeHint =>
+      'Öğrencin bu kodu Hesap › Koçluk\'a girince sana bağlanır.';
+
+  @override
+  String get coachWidgets_codeShare => 'Paylaş';
+
+  @override
+  String coachWidgets_codeShareText(String code) {
+    return 'SMAP\'te koçluk kodum: $code';
+  }
+
+  @override
+  String get coachWidgets_codeTitle => 'Koçluk kodun';
+
+  @override
+  String coachWidgets_meetingA11y(
+    String name,
+    String date,
+    String time,
+    String kind,
+  ) {
+    return '$name, $date, $time, $kind';
+  }
+
+  @override
+  String coachWidgets_meetingA11yPlain(String name, String date, String time) {
+    return '$name, $date, $time';
+  }
+
+  @override
+  String get coachWidgets_meetingKindParentA11y => 'Veli görüşmesi';
+
+  @override
+  String get coachWidgets_meetingKindStudentA11y => 'Öğrenci görüşmesi';
+
+  @override
+  String coachWidgets_meetingListMeta(String date, String time) {
+    return '$date · $time';
+  }
+
+  @override
+  String coachWidgets_meetingMeta(String day, String time, String kind) {
+    return '$day $time · $kind';
+  }
+
+  @override
+  String coachWidgets_meetingMetaPlain(String day, String time) {
+    return '$day $time';
+  }
+
+  @override
+  String coachWidgets_meetingMonth(String month) {
+    return '$month.';
+  }
+
+  @override
+  String get coachWidgets_meetingParent => 'Veli';
+
+  @override
+  String get coachWidgets_meetingStudent => 'Öğrenci';
+
+  @override
+  String coachWidgets_tileA11y(String name) {
+    return '$name, öğrenci';
+  }
+
+  @override
+  String coachWidgets_tileA11yLastExam(String name, String date) {
+    return '$name, son deneme $date';
+  }
+
+  @override
+  String coachWidgets_tileLastExam(String date) {
+    return 'Son deneme $date';
+  }
 
   @override
   String get coachingChange_action => 'Koçu Değiştir';
@@ -1819,6 +2346,20 @@ class AppLocalizationsTr extends AppLocalizations {
   String get nav_tabStudents => 'Öğrencilerim';
 
   @override
+  String get notificationPrimer_allow => 'Bildirimlere İzin Ver';
+
+  @override
+  String get notificationPrimer_body =>
+      'Sistemde olmayan bir denemeyi okuttuğunda analizini hazırlayınca bildirim gönderelim. Hesap › Bildirimler\'den istediğin zaman kapatabilirsin.';
+
+  @override
+  String get notificationPrimer_later => 'Sonra';
+
+  @override
+  String get notificationPrimer_title =>
+      'Sonucun hazır olunca haber verelim mi?';
+
+  @override
   String get notifications_categoriesHeading => 'Kategoriler';
 
   @override
@@ -2277,6 +2818,415 @@ class AppLocalizationsTr extends AppLocalizations {
   String get register_usernameTaken => 'Bu kullanıcı adı alınmış.';
 
   @override
+  String resultMoment_cards(String count) {
+    return 'Bu denemeden $count bilgi kartı eklendi';
+  }
+
+  @override
+  String get resultMoment_detail => 'Detaylı Analiz';
+
+  @override
+  String get resultMoment_errorMessage =>
+      'Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get resultMoment_errorTitle => 'Sonuç yüklenemedi';
+
+  @override
+  String get resultMoment_fieldA11y => 'Puan türü';
+
+  @override
+  String resultMoment_fieldNet(String field, String net) {
+    return '$field neti $net';
+  }
+
+  @override
+  String resultMoment_fieldTests(String first, String second) {
+    return '$first ve $second';
+  }
+
+  @override
+  String get resultMoment_home => 'Anasayfa';
+
+  @override
+  String get scan_addCorrection => 'Düzeltmeyi Ekle';
+
+  @override
+  String get scan_answersOffline =>
+      'Bağlantı yok. Bağlantı gelince tekrar dene.';
+
+  @override
+  String scan_answersRead(String n) {
+    return '$n cevap okundu';
+  }
+
+  @override
+  String get scan_answersSendFailed =>
+      'Cevaplar gönderilemedi. Düzeltmelerin duruyor; tekrar dene.';
+
+  @override
+  String get scan_blank => 'Boş';
+
+  @override
+  String scan_blankCount(String n) {
+    return '$n boş';
+  }
+
+  @override
+  String get scan_cameraFailBody =>
+      'Başka bir uygulama kamerayı kullanıyor olabilir. Onu kapatıp tekrar dene.';
+
+  @override
+  String get scan_cameraFailTitle => 'Kamera açılamadı';
+
+  @override
+  String get scan_cameraLoadingA11y => 'Kamera açılıyor';
+
+  @override
+  String scan_columnCaption(String n, String q) {
+    return '$n. kolon · $q soru · düzeltmek için soruya dokun';
+  }
+
+  @override
+  String scan_columnN(String n) {
+    return '$n. kolon';
+  }
+
+  @override
+  String get scan_confirmAnswers => 'Cevapları Onayla';
+
+  @override
+  String get scan_cornerBottomLeftA11y => 'Sol alt köşe';
+
+  @override
+  String get scan_cornerBottomRightA11y => 'Sağ alt köşe';
+
+  @override
+  String get scan_cornerMoveDownA11y => 'Aşağı taşı';
+
+  @override
+  String get scan_cornerMoveLeftA11y => 'Sola taşı';
+
+  @override
+  String get scan_cornerMoveRightA11y => 'Sağa taşı';
+
+  @override
+  String get scan_cornerMoveUpA11y => 'Yukarı taşı';
+
+  @override
+  String get scan_cornerTopLeftA11y => 'Sol üst köşe';
+
+  @override
+  String get scan_cornerTopRightA11y => 'Sağ üst köşe';
+
+  @override
+  String get scan_cornersHint => 'Noktaları cevap alanının köşelerine getir.';
+
+  @override
+  String get scan_cornersHintSub => 'Ders adları şeridi dışarıda kalsın.';
+
+  @override
+  String get scan_cornersTitle => 'Köşeleri Ayarla';
+
+  @override
+  String scan_correctionChange(String from, String to) {
+    return '$from → $to';
+  }
+
+  @override
+  String scan_correctionCount(String n) {
+    return '$n düzeltme';
+  }
+
+  @override
+  String scan_correctionRow(String col, String q) {
+    return '$col. kolon · $q. soru';
+  }
+
+  @override
+  String get scan_corrections => 'Düzeltmeler';
+
+  @override
+  String get scan_correctionsEmpty =>
+      'Henüz düzeltme yok. Okunan cevap formundakinden farklıysa yukarıdan ekle.';
+
+  @override
+  String get scan_debugGalleryPick => 'Galeriden seç';
+
+  @override
+  String get scan_deniedBody =>
+      'Formunu okutabilmek için Ayarlar\'da SMAP\'e kamera izni ver. Sonra buraya dön; kaldığın yerden devam edersin.';
+
+  @override
+  String get scan_deniedTitle => 'Kamera izni kapalı';
+
+  @override
+  String get scan_dontShowAgain => 'Bir daha gösterme';
+
+  @override
+  String get scan_enfBody =>
+      'Yayınevini ve deneme adını yaz; analizini en geç 72 saat içinde hazırlayalım.';
+
+  @override
+  String get scan_enfConfirmNote =>
+      'Analizin hazır olunca Analizlerim › Denemelerim\'de görünür.';
+
+  @override
+  String get scan_enfConfirmTitle => 'Talep oluşturulsun mu?';
+
+  @override
+  String get scan_enfDoneBody =>
+      'En geç 72 saat içinde hazır. Hazır olunca Analizlerim › Denemelerim\'de görünecek.';
+
+  @override
+  String get scan_enfDoneTitle => 'Talebin alındı';
+
+  @override
+  String get scan_enfSaved =>
+      'Cevapların kaydedildi. Yeniden okutman gerekmez.';
+
+  @override
+  String get scan_enfSubmit => 'Analizimi Hazırlayın';
+
+  @override
+  String get scan_enfTitle => 'Bu deneme henüz sistemde yok';
+
+  @override
+  String get scan_errExamNameRequired => 'Deneme adını yaz.';
+
+  @override
+  String get scan_errPublisherRequired => 'Yayınevini yaz.';
+
+  @override
+  String get scan_exitBody => 'Düzelttiğin cevaplar kaydedilmeyecek.';
+
+  @override
+  String get scan_exitConfirm => 'Çık';
+
+  @override
+  String get scan_exitTitle => 'Okutmadan çıkılsın mı?';
+
+  @override
+  String get scan_fieldColumn => 'Kolon';
+
+  @override
+  String get scan_fieldExamName => 'Deneme adı';
+
+  @override
+  String get scan_fieldExamNameHint => 'Örn: Türkiye Geneli Deneme 7';
+
+  @override
+  String get scan_fieldPublisher => 'Yayınevi';
+
+  @override
+  String get scan_fieldPublisherHint => 'Örn: Örnek Yayınları';
+
+  @override
+  String get scan_fieldQuestion => 'Soru';
+
+  @override
+  String get scan_fix => 'Düzelt';
+
+  @override
+  String get scan_fixSheetTitle => 'Cevap Düzelt';
+
+  @override
+  String get scan_formNotFoundBody =>
+      'Fotoğrafta cevap alanı seçilemedi. Formun tamamı görünsün, ışık yansımasın, ders adları şeridi dışarıda kalsın.';
+
+  @override
+  String get scan_formNotFoundTitle => 'Formu bulamadık';
+
+  @override
+  String get scan_goHome => 'Anasayfa';
+
+  @override
+  String get scan_gotIt => 'Anladım';
+
+  @override
+  String get scan_hintReady => 'Hazır. Telefonu sabit tut ve çek.';
+
+  @override
+  String get scan_hintSearching =>
+      'Cevap alanını çerçeveye al.\nDers adları şeridi dışarıda kalsın.';
+
+  @override
+  String get scan_howToShoot => 'Nasıl Çekilir?';
+
+  @override
+  String get scan_howToShootA11y => 'Nasıl çekilir?';
+
+  @override
+  String get scan_imageLoadFailed => 'Görüntü yüklenemedi';
+
+  @override
+  String get scan_imageLoading => 'Form görüntüsü yükleniyor';
+
+  @override
+  String get scan_inProgressA11y => 'Sürüyor';
+
+  @override
+  String get scan_newPhoto => 'Yeni Fotoğraf';
+
+  @override
+  String get scan_next => 'Devam';
+
+  @override
+  String get scan_nextQuestionA11y => 'Sonraki soru';
+
+  @override
+  String get scan_noBlank => 'boş yok';
+
+  @override
+  String get scan_noCorrection => 'Düzeltme yok';
+
+  @override
+  String get scan_offlineQueuedBody =>
+      'Fotoğrafın telefonunda saklandı. Bağlantı gelince gönderilecek.';
+
+  @override
+  String get scan_offlineTitle => 'Bağlantı yok';
+
+  @override
+  String get scan_ok => 'Tamam';
+
+  @override
+  String get scan_omrClosedBody =>
+      'Kısa bir bakım yapıyoruz. Birazdan tekrar dene.';
+
+  @override
+  String get scan_omrClosedTitle => 'Optik okuma şu an kapalı';
+
+  @override
+  String get scan_openSettings => 'Ayarları Aç';
+
+  @override
+  String scan_percent(String n) {
+    return '%$n';
+  }
+
+  @override
+  String get scan_pinchHint => 'İki parmakla yakınlaştırabilirsin.';
+
+  @override
+  String get scan_previousQuestionA11y => 'Önceki soru';
+
+  @override
+  String get scan_primerAllow => 'Kameraya İzin Ver';
+
+  @override
+  String get scan_primerBody =>
+      'SMAP kamerayı yalnız optik formunu çekerken kullanır. Bir sonraki adımda telefonun izin isteyecek.';
+
+  @override
+  String get scan_primerLater => 'Sonra';
+
+  @override
+  String get scan_primerTitle => 'Formunu okutmak için kamera gerekli';
+
+  @override
+  String get scan_questionNumberA11y => 'Soru numarası';
+
+  @override
+  String get scan_readValue => 'Okunan';
+
+  @override
+  String scan_removeCorrectionA11y(String col, String q) {
+    return 'Düzeltmeyi kaldır: $col. kolon, $q. soru';
+  }
+
+  @override
+  String get scan_retake => 'Tekrar Çek';
+
+  @override
+  String get scan_retryNow => 'Şimdi Tekrar Dene';
+
+  @override
+  String get scan_reviewSub => 'Okunan cevapları formunla karşılaştır.';
+
+  @override
+  String get scan_reviewTitle => 'Form Kontrol';
+
+  @override
+  String get scan_sendRequest => 'Talebi Gönder';
+
+  @override
+  String get scan_sending => 'Gönderiliyor';
+
+  @override
+  String get scan_shutterA11y => 'Fotoğraf çek';
+
+  @override
+  String get scan_stepPrepared => 'Fotoğraf hazırlandı';
+
+  @override
+  String get scan_stepPreparing => 'Fotoğraf hazırlanıyor';
+
+  @override
+  String get scan_stepReading => 'Cevapların okunuyor';
+
+  @override
+  String get scan_stepSendFailed => 'Gönderilemedi';
+
+  @override
+  String get scan_stepSending => 'Gönderiliyor';
+
+  @override
+  String get scan_stepSent => 'Gönderildi';
+
+  @override
+  String get scan_stepToRead => 'Cevaplar okunacak';
+
+  @override
+  String get scan_stepToSend => 'Gönderilecek';
+
+  @override
+  String get scan_topTitle => 'Optik Form';
+
+  @override
+  String get scan_tutorialStep1 => 'Cevap alanını çerçeveye al.';
+
+  @override
+  String get scan_tutorialStep2 =>
+      'Ders adlarının yazdığı yatay şeridi dışarıda bırak.';
+
+  @override
+  String get scan_tutorialStep3 =>
+      'Turuncu noktaları cevap alanının dört köşesine getir.';
+
+  @override
+  String get scan_tutorialTitle => 'Formu böyle çek';
+
+  @override
+  String get scan_uploadFailBody =>
+      'Bağlantı koptu. Fotoğrafın duruyor; tekrar gönderebilir ya da yeniden çekebilirsin.';
+
+  @override
+  String get scan_uploadFailTitle => 'Formun gönderilemedi';
+
+  @override
+  String get scan_uploadPhotoA11y =>
+      'Okunan form görüntüsü: dört kolon, kırk satır';
+
+  @override
+  String get scan_uploadProgressA11y => 'Gönderim';
+
+  @override
+  String get scan_uploadSub => 'Birkaç saniye sürebilir.';
+
+  @override
+  String get scan_uploadTimeoutBody => 'Sunucu yanıt vermedi.';
+
+  @override
+  String get scan_uploadTitle => 'Formun okunuyor';
+
+  @override
+  String get scan_yourMark => 'Formdaki işaretin';
+
+  @override
+  String get scan_zoomFormA11y => 'Formu büyüt';
+
+  @override
   String get schedule_add => 'Ekle';
 
   @override
@@ -2633,6 +3583,69 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get startup_unknownRoleTitle => 'Hesabın açılamadı';
+
+  @override
+  String get students_addA11y => 'Öğrenci ekle';
+
+  @override
+  String students_added(String name) {
+    return '$name eklendi.';
+  }
+
+  @override
+  String get students_clearSearch => 'Aramayı Temizle';
+
+  @override
+  String students_count(String count) {
+    return '$count öğrenci';
+  }
+
+  @override
+  String get students_emptyAdd => 'Öğrenci Ekle';
+
+  @override
+  String get students_emptyMessage =>
+      'Öğrencinin hesabını sen aç ya da koçluk kodunu paylaş; bağlanan öğrenciler burada listelenir.';
+
+  @override
+  String get students_emptyShare => 'Kodunu Paylaş';
+
+  @override
+  String get students_emptyTitle => 'Henüz öğrencin yok';
+
+  @override
+  String students_examCount(String count) {
+    return '$count deneme';
+  }
+
+  @override
+  String get students_loadErrorMessage =>
+      'Bağlantını kontrol edip tekrar dene. Sorun sürerse biraz sonra yeniden açabilirsin.';
+
+  @override
+  String get students_loadErrorTitle => 'Öğrenciler yüklenemedi';
+
+  @override
+  String students_metaJoin(String first, String second) {
+    return '$first · $second';
+  }
+
+  @override
+  String get students_noResultMessage =>
+      'Ad ve soyadda arar; büyük-küçük harf ve I/ı/İ/i farkı gözetmez.';
+
+  @override
+  String students_noResultTitle(String query) {
+    return '“$query” ile eşleşen öğrenci yok';
+  }
+
+  @override
+  String students_rowA11y(String name, String details) {
+    return '$name, $details';
+  }
+
+  @override
+  String get students_searchHint => 'Öğrenci ara';
 
   @override
   String topicDetail_context(String lesson, int number) {

@@ -4,6 +4,9 @@ import 'package:smap/app/router/app_router.dart';
 import 'package:smap/features/account/account_routes.dart';
 import 'package:smap/features/account/account_settings_routes.dart';
 import 'package:smap/features/cards/cards_routes.dart';
+import 'package:smap/features/coach/coach_home_routes.dart';
+import 'package:smap/features/coach/coach_meetings_routes.dart';
+import 'package:smap/features/coach/coach_students_routes.dart';
 import 'package:smap/features/exams/exams_routes.dart';
 import 'package:smap/features/analytics/analytics_routes.dart';
 import 'package:smap/features/home/home_routes.dart';
@@ -62,19 +65,17 @@ List<AutoRoute> get shellRoutes => [
       AutoRoute(
         page: CoachHomeTabRoute.page,
         path: 'home',
-        children: [
-          AutoRoute(page: LegacyCoachHomeTabRoute.page, initial: true),
-        ],
+        children: coachHomeTabRoutes,
       ),
       AutoRoute(
         page: CoachStudentsTabRoute.page,
         path: 'students',
-        children: [AutoRoute(page: LegacyStudentsTabRoute.page, initial: true)],
+        children: coachStudentsTabRoutes,
       ),
       AutoRoute(
         page: CoachMeetingsTabRoute.page,
         path: 'meetings',
-        children: [AutoRoute(page: LegacyMeetingsTabRoute.page, initial: true)],
+        children: coachMeetingsTabRoutes,
       ),
       AutoRoute(
         page: CoachAccountTabRoute.page,
@@ -87,5 +88,4 @@ List<AutoRoute> get shellRoutes => [
       ),
     ],
   ),
-  AutoRoute(page: LegacyScanRoute.page, path: '/scan'),
 ];

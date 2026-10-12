@@ -13,17 +13,14 @@ import 'package:smap/app/router/app_router.dart';
 ///
 /// | path | screen |
 /// |---|---|
-/// | `/scan/flow` | `ScanFlowView`, the whole scan: Çekim, Köşeler, Gönderim, Form Kontrol, Deneme Bulunamadı and the errors, as stages of one route |
+/// | `/scan` | `ScanFlowView`, the whole scan: Çekim, Köşeler, Gönderim, Form Kontrol, Deneme Bulunamadı and the errors, as stages of one route |
 ///
-/// The path is `/scan/flow` while the legacy `/scan` page (`LegacyScanPage`,
-/// a shim that runs the gate and replaces itself with this route) is the
-/// entry the camera button still pushes. Once the three callers (the shell's
-/// camera button, Anasayfa's "İlk Denemeni Okut" and Analizlerim's empty state)
-/// call `ScanEntry.start(router)` instead of `push(const LegacyScanRoute())`,
-/// delete the shim and its route and give this one the path `/scan`.
+/// "Okut" opens it through `ScanEntry.start(router)`, which runs the gate
+/// (permission primer, refused permission, maintenance) over the screen the
+/// student is on first.
 ///
 /// The route is pushed, never deep-linked: it needs the photo of the stage
 /// before it. Nothing in it is a tab child.
 List<AutoRoute> get scanRootRoutes => [
-  AutoRoute(page: ScanFlowRoute.page, path: '/scan/flow'),
+  AutoRoute(page: ScanFlowRoute.page, path: '/scan'),
 ];

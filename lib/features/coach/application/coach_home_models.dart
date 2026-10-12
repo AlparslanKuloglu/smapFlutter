@@ -4,6 +4,7 @@ import 'package:smap/core/utils/turkish_text.dart';
 import 'package:smap/features/coach/data/dtos/coach_student_dto.dart';
 import 'package:smap/features/coach/data/dtos/interview_dtos.dart';
 import 'package:smap/features/coach/domain/interview_type.dart';
+import 'package:smap/features/coach/application/meeting_models.dart';
 
 /// The student's whole name for the coach's screens.
 ///
@@ -154,7 +155,9 @@ class UpcomingMeetings {
     final items = <HomeMeeting>[];
     final seen = <String>{};
     for (final interview in interviews) {
-      final date = interview.date?.toLocal();
+      // The coach's wall clock, as the meetings tab reads it (no zone shift;
+      // the app sends dates zoneless, DATA2).
+      final date = MeetingMoment.wallClock(interview.date);
       final id = interview.id;
       if (date == null || id == null || id.isEmpty) continue;
       if (date.isBefore(now) || date.isAfter(end)) continue;

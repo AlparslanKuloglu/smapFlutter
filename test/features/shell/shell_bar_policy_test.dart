@@ -50,7 +50,7 @@ void main() {
     test('a full-screen flow over the shell hides it', () {
       expect(
         ShellBarPolicy.barVisible(
-          rootStack: const ['StudentShellRoute', 'LegacyScanRoute'],
+          rootStack: const ['StudentShellRoute', 'ScanFlowRoute'],
           shellRouteNames: shells,
         ),
         isFalse,
@@ -58,7 +58,7 @@ void main() {
     });
 
     test('the flow closing shows it again', () {
-      final stack = ['StudentShellRoute', 'LegacyScanRoute'];
+      final stack = ['StudentShellRoute', 'ScanFlowRoute'];
       expect(
         ShellBarPolicy.barVisible(rootStack: stack, shellRouteNames: shells),
         isFalse,

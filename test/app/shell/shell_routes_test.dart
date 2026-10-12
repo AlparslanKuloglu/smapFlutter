@@ -80,17 +80,17 @@ void main() {
       expect(namesOf('/coach/home'), [
         CoachShellRoute.name,
         CoachHomeTabRoute.name,
-        LegacyCoachHomeTabRoute.name,
+        CoachHomeRoute.name,
       ]);
       expect(namesOf('/coach/students'), [
         CoachShellRoute.name,
         CoachStudentsTabRoute.name,
-        LegacyStudentsTabRoute.name,
+        StudentsRoute.name,
       ]);
       expect(namesOf('/coach/meetings'), [
         CoachShellRoute.name,
         CoachMeetingsTabRoute.name,
-        LegacyMeetingsTabRoute.name,
+        MeetingsRoute.name,
       ]);
       expect(namesOf('/coach/account'), [
         CoachShellRoute.name,
@@ -110,12 +110,24 @@ void main() {
   });
 
   test('the scan flow is a root page, not a tab', () {
-    expect(namesOf('/scan'), [LegacyScanRoute.name]);
+    expect(namesOf('/scan'), [ScanFlowRoute.name]);
     final tabs = [
       ...StudentShellView.tabs,
       ...CoachShellView.tabs,
     ].map((tab) => tab.route.routeName);
-    expect(tabs, isNot(contains(LegacyScanRoute.name)));
+    expect(tabs, isNot(contains(ScanFlowRoute.name)));
+  });
+
+  test('the result moment is a root page under /scan/result', () {
+    expect(namesOf('/scan/result/r1'), [ResultMomentRoute.name]);
+  });
+
+  test('a meeting opens in the Görüşmelerim stack', () {
+    expect(namesOf('/coach/meetings/m1'), [
+      CoachShellRoute.name,
+      CoachMeetingsTabRoute.name,
+      MeetingDetailRoute.name,
+    ]);
   });
 
   test('the launch screen keeps "/"', () {
@@ -125,7 +137,7 @@ void main() {
   test('the tab stacks are in no guard group (only the shells are)', () {
     expect(router.groupOf(HomeTabRoute.name), RouteGroup.other);
     expect(router.groupOf(CoachStudentsTabRoute.name), RouteGroup.other);
-    expect(router.groupOf(LegacyScanRoute.name), RouteGroup.other);
+    expect(router.groupOf(ScanFlowRoute.name), RouteGroup.other);
   });
 
   group('ShellPreview', () {

@@ -15,6 +15,7 @@ import 'package:smap/features/cards/cards_module.dart';
 import 'package:smap/features/coach/coach_module.dart';
 import 'package:smap/features/exams/exams_module.dart';
 import 'package:smap/features/lessons/lessons_module.dart';
+import 'package:smap/features/scan/scan_module.dart';
 import 'package:smap/features/schedule/schedule_module.dart';
 import 'package:smap/features/startup/startup_module.dart';
 
@@ -49,6 +50,7 @@ const List<ModuleRegistration> kDataModules = <ModuleRegistration>[
   registerScheduleData,
   registerAccountData,
   registerCoachData,
+  registerScanData,
 ];
 
 /// Phase 3: app-level services modules (stateful services that depend on the

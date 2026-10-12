@@ -16,18 +16,24 @@ import 'package:smap/shared/ui/navigation/bottom_bar_tabs.dart';
 /// bar, each tab with its own stack (`/coach/home`, `/coach/students`,
 /// `/coach/meetings`, `/coach/account`).
 ///
-/// The camera is here too (a coach picks the student first in the scan flow
-/// to come). The tabs show the legacy screens for now; the guards put only a
-/// signed-in coach here (`RoleGuard`).
+/// The camera is here too; picking the student first (pano 9.9, task E19)
+/// waits on the backend (#34), so today it opens the same scan as the
+/// student's. The guards put only a signed-in coach here (`RoleGuard`).
 @RoutePage()
 class CoachShellView extends StackedView<ShellViewModel> {
   const CoachShellView({super.key});
 
   /// The four tabs, in bar order.
   static const List<ShellTabSpec> tabs = [
-    ShellTabSpec(route: CoachHomeTabRoute()),
-    ShellTabSpec(route: CoachStudentsTabRoute()),
-    ShellTabSpec(route: CoachMeetingsTabRoute()),
+    ShellTabSpec(route: CoachHomeTabRoute(), content: ShellTabContent.screen),
+    ShellTabSpec(
+      route: CoachStudentsTabRoute(),
+      content: ShellTabContent.screen,
+    ),
+    ShellTabSpec(
+      route: CoachMeetingsTabRoute(),
+      content: ShellTabContent.screen,
+    ),
     ShellTabSpec(
       route: CoachAccountTabRoute(),
       content: ShellTabContent.screen,

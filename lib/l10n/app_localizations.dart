@@ -640,6 +640,222 @@ abstract class AppLocalizations {
   /// **'Sürüm {version}'**
   String account_versionNoBuild(String version);
 
+  /// Help line under the password of the credentials sheet (pano 10.3 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu ekranı kapatınca şifre yeniden gösterilmez.'**
+  String get addStudent_addedNote;
+
+  /// Subtitle of the credentials sheet (pano 10.3 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Giriş bilgilerini öğrencine ilet.'**
+  String get addStudent_addedSubtitle;
+
+  /// Title of the credentials sheet (pano 10.3 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} eklendi'**
+  String addStudent_addedTitle(String name);
+
+  /// Label above the seven avatars of the form (Tur 12 D, brief 14.8 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Avatar'**
+  String get addStudent_avatarLabel;
+
+  /// Screen reader name of the avatar group (Tur 12 D).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrencinin avatarı'**
+  String get addStudent_avatarPickerA11y;
+
+  /// Action beside the user name: asks the server now (pano 10.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kontrol Et'**
+  String get addStudent_check;
+
+  /// Heading above the coaching code card in the sheet (pano 10.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrencin kendi hesabıyla bağlansın'**
+  String get addStudent_codeHeading;
+
+  /// The text the share sheet carries from the credentials sheet.
+  ///
+  /// In tr, this message translates to:
+  /// **'SMAP giriş bilgilerin\nKullanıcı adı: {userName}\nŞifre: {password}'**
+  String addStudent_credentialsShareText(String userName, String password);
+
+  /// First name field label (pano 10.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ad'**
+  String get addStudent_firstName;
+
+  /// Action beside the password: makes a readable 10-character password (pano 10.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Oluştur'**
+  String get addStudent_generate;
+
+  /// Grade select label and its sheet title (pano 10.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sınıf'**
+  String get addStudent_grade;
+
+  /// First name left empty.
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrencinin adını yaz.'**
+  String get addStudent_issueFirstName;
+
+  /// Grade not chosen.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sınıfı seç.'**
+  String get addStudent_issueGrade;
+
+  /// Surname left empty.
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrencinin soyadını yaz.'**
+  String get addStudent_issueLastName;
+
+  /// Password left empty.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bir şifre yaz ya da Oluştur\'a dokun.'**
+  String get addStudent_issuePasswordMissing;
+
+  /// Password shorter than 8 characters (decision 7.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifre en az 8 karakter olmalı.'**
+  String get addStudent_issuePasswordShort;
+
+  /// Track not chosen for a student of 11th grade or above.
+  ///
+  /// In tr, this message translates to:
+  /// **'Alanı seç.'**
+  String get addStudent_issueTrack;
+
+  /// User name left empty.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bir kullanıcı adı yaz.'**
+  String get addStudent_issueUsername;
+
+  /// Surname field label (pano 10.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Soyad'**
+  String get addStudent_lastName;
+
+  /// Word between two rules that separates the form from the coaching code (pano 10.3 kare 1 and 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'ya da'**
+  String get addStudent_or;
+
+  /// Password field label (pano 10.3 kare 1 and 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şifre'**
+  String get addStudent_password;
+
+  /// Help line under the password (pano 10.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrencine ilet; ilk girişte değiştirmesi önerilir.'**
+  String get addStudent_passwordHelp;
+
+  /// Primary button of the form (pano 10.3 kare 1 and 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenciyi Kaydet'**
+  String get addStudent_save;
+
+  /// Notice above "Öğrenciyi Kaydet" when the save failed for a reason with no text of its own; the sheet stays open and keeps what was typed.
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci eklenemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get addStudent_saveFailed;
+
+  /// Primary button of the credentials sheet; opens the system share sheet (pano 10.3 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bilgileri Paylaş'**
+  String get addStudent_shareCredentials;
+
+  /// Subtitle of the add-student sheet (pano 10.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hesabını sen aç ya da kodunu paylaş.'**
+  String get addStudent_subtitle;
+
+  /// Title of the add-student sheet (pano 10.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci ekle'**
+  String get addStudent_title;
+
+  /// Study track select label and its sheet title (pano 10.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Alan'**
+  String get addStudent_track;
+
+  /// Value of the passive track field for grade 9 and 10 (pano 10.3 "Sınıf ve Alan 1.12; 9.–10. sınıfta Alan pasif").
+  ///
+  /// In tr, this message translates to:
+  /// **'Seçilmez'**
+  String get addStudent_trackNotSelectable;
+
+  /// Help line under the passive track field.
+  ///
+  /// In tr, this message translates to:
+  /// **'9. ve 10. sınıfta alan seçilmez.'**
+  String get addStudent_trackNotSelectableReason;
+
+  /// User name field label (pano 10.3 kare 1 and 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kullanıcı adı'**
+  String get addStudent_username;
+
+  /// Live check passed (pano 10.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu kullanıcı adı boşta.'**
+  String get addStudent_usernameFree;
+
+  /// Help line under the user name while the device is offline.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlanınca kontrol edilecek.'**
+  String get addStudent_usernameOffline;
+
+  /// Label before the free-name chip under a taken user name.
+  ///
+  /// In tr, this message translates to:
+  /// **'Boşta olan:'**
+  String get addStudent_usernameSuggest;
+
+  /// Screen reader reading of the free-name chip.
+  ///
+  /// In tr, this message translates to:
+  /// **'Boşta olan kullanıcı adı: {name}. Yazmak için dokun.'**
+  String addStudent_usernameSuggestA11y(String name);
+
+  /// Live check or save: the user name is in use (spec 10.3 "Alınmış").
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu kullanıcı adı alınmış.'**
+  String get addStudent_usernameTaken;
+
   /// Stat box label (pano 6.1).
   ///
   /// In tr, this message translates to:
@@ -1192,6 +1408,681 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Favorilerden çıkar'**
   String get cards_favoriteRemove;
+
+  /// The one link of the student section and the primary button of the empty page (pano 10.1 kare 1 and 3); opens the add-student sheet (10.3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci Ekle'**
+  String get coachHome_addStudent;
+
+  /// Section title of the attention list (pano 10.1 kare 1 and 2); drawn only with FeatureFlags.attentionListEnabled.
+  ///
+  /// In tr, this message translates to:
+  /// **'Dikkat gerektirenler'**
+  String get coachHome_attention;
+
+  /// Empty card of the attention list, explanation of the two rules (pano 10.1 kare 1, D-27).
+  ///
+  /// In tr, this message translates to:
+  /// **'14 gündür deneme okutmayan ya da son iki denemesinde neti düşen öğrenci burada görünür.'**
+  String get coachHome_attentionEmptyBody;
+
+  /// Empty card of the attention list, first line (pano 10.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şu an dikkat gerektiren öğrenci yok.'**
+  String get coachHome_attentionEmptyTitle;
+
+  /// Section error card of the attention list; no board copy.
+  ///
+  /// In tr, this message translates to:
+  /// **'Dikkat listesi yüklenemedi.'**
+  String get coachHome_attentionError;
+
+  /// Message of the page of a coach with no student (pano 10.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrencin koçluk kodunla kendi hesabından bağlanabilir ya da hesabını sen açabilirsin.'**
+  String get coachHome_emptyMessage;
+
+  /// Title of the page of a coach with no student (pano 10.1 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'İlk öğrencini ekle'**
+  String get coachHome_emptyTitle;
+
+  /// Section title of the upcoming meetings (pano 10.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yaklaşan görüşmeler'**
+  String get coachHome_meetings;
+
+  /// Section error card of the upcoming meetings; no board copy.
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüşmeler yüklenemedi.'**
+  String get coachHome_meetingsError;
+
+  /// Text button of the empty meetings card; opens the new-meeting sheet (10.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni Görüşme'**
+  String get coachHome_newMeeting;
+
+  /// Empty card of the upcoming meetings (spec Flutter §4 10.1 [Karar]).
+  ///
+  /// In tr, this message translates to:
+  /// **'Önümüzdeki 7 günde görüşme yok.'**
+  String get coachHome_noMeetings;
+
+  /// Section title of the student strip (pano 10.1 kare 1, SectionHeader).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrencilerin'**
+  String get coachHome_students;
+
+  /// Section error card of the student strip; the board has no copy, written after "Dersler yüklenemedi." (pano 3.2 pattern).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenciler yüklenemedi.'**
+  String get coachHome_studentsError;
+
+  /// End of the screen reader sentence of a row for a parent meeting.
+  ///
+  /// In tr, this message translates to:
+  /// **'veli görüşmesi'**
+  String get coachMeetings_a11yKindParent;
+
+  /// End of the screen reader sentence of a row: "Alparslan Kuloğlu, 12 Ekim 2026 Pazartesi, 16:00, öğrenci görüşmesi" (Tur 9 erişilebilirlik).
+  ///
+  /// In tr, this message translates to:
+  /// **'öğrenci görüşmesi'**
+  String get coachMeetings_a11yKindStudent;
+
+  /// Action of the no-result card of a search (follows pano 10.2 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Aramayı Temizle'**
+  String get coachMeetings_clearSearch;
+
+  /// Label of the day field (pano 10.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Tarih'**
+  String get coachMeetings_dateLabel;
+
+  /// Title of the day picker sheet. The board draws no picker; built from the kit calendar. Assumption.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tarih'**
+  String get coachMeetings_dateTitle;
+
+  /// Error state title of the detail when the meeting could not be loaded.
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüşme açılamadı'**
+  String get coachMeetings_detailErrorTitle;
+
+  /// Same line for a parent meeting. The board draws only the student one; spec 10.5 notes the legacy "Veli Görüşmesi".
+  ///
+  /// In tr, this message translates to:
+  /// **'Veli görüşmesi'**
+  String get coachMeetings_detailKindParent;
+
+  /// Line under the student name on the detail screen (pano 10.5 kare 3); also the row title when the server named no student.
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci görüşmesi'**
+  String get coachMeetings_detailKindStudent;
+
+  /// Error state sentence when the meeting is not in the server list any more.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu görüşme silinmiş olabilir. Listeye dönüp yenileyebilirsin.'**
+  String get coachMeetings_detailMissingMessage;
+
+  /// Error state title when the meeting is not in the server list any more.
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüşme bulunamadı'**
+  String get coachMeetings_detailMissingTitle;
+
+  /// Empty state primary action (pano 10.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni Görüşme'**
+  String get coachMeetings_emptyAction;
+
+  /// Empty state sentence (pano 10.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrencinle ya da velisiyle görüşme planladığında burada listelenir.'**
+  String get coachMeetings_emptyMessage;
+
+  /// Empty state title (pano 10.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Henüz görüşme yok'**
+  String get coachMeetings_emptyTitle;
+
+  /// "Kiminle" chip, segment option and row tag: a meeting with the parent (pano 10.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Veli'**
+  String get coachMeetings_kindParent;
+
+  /// "Kiminle" chip, segment option and row tag: a meeting with the student (pano 10.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci'**
+  String get coachMeetings_kindStudent;
+
+  /// Error state sentence of the list and of the detail (1.22 pattern).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantını kontrol edip tekrar dene. Sorun sürerse biraz sonra yeniden açabilirsin.'**
+  String get coachMeetings_loadErrorMessage;
+
+  /// Error state title of the list (1.22 pattern).
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüşmelerin yüklenemedi'**
+  String get coachMeetings_loadErrorTitle;
+
+  /// Screen reader name of the spinner under the list.
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüşmeler yükleniyor'**
+  String get coachMeetings_loadingMore;
+
+  /// Row title and bar title of a meeting with no student name and an unknown kind. Assumption.
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüşme'**
+  String get coachMeetings_meetingFallback;
+
+  /// Section error under the list when the next page failed.
+  ///
+  /// In tr, this message translates to:
+  /// **'Daha fazla görüşme yüklenemedi.'**
+  String get coachMeetings_moreFailed;
+
+  /// Accessible name of the Plus in the band of Görüşmelerim (pano 10.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni görüşme'**
+  String get coachMeetings_newA11y;
+
+  /// Title of the new-meeting sheet (pano 10.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni görüşme'**
+  String get coachMeetings_newTitle;
+
+  /// No result of the "Kiminle" choice (not drawn on the board). Assumption.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu süzgeçle görüşme yok. Başka bir seçenek deneyebilirsin.'**
+  String get coachMeetings_noKind;
+
+  /// No result of a search (the board draws none; follows "Sonuç yok" of pano 10.2 kare 3). Assumption.
+  ///
+  /// In tr, this message translates to:
+  /// **'“{query}” ile eşleşen görüşme yok. Öğrenci adında arar; büyük-küçük harf ve I/ı/İ/i farkı gözetmez.'**
+  String coachMeetings_noMatch(String query);
+
+  /// Toast when the coach has no student to plan a meeting with.
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüşme planlamak için önce bir öğrenci eklemelisin.'**
+  String get coachMeetings_noStudents;
+
+  /// Text button next to "Notlar" (pano 10.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Not Ekle'**
+  String get coachMeetings_noteAdd;
+
+  /// Title of the note sheet for a new note (pano 10.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Not ekle'**
+  String get coachMeetings_noteAddTitle;
+
+  /// Toast after adding a note. The board draws none. Assumption.
+  ///
+  /// In tr, this message translates to:
+  /// **'Not eklendi.'**
+  String get coachMeetings_noteAdded;
+
+  /// Sub title of the note sheet: "12 Ekim 2026 · Alparslan Kuloğlu" (pano 10.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'{date} · {name}'**
+  String coachMeetings_noteContext(String date, String name);
+
+  /// Text button of a note card, in the error color (pano 10.6 "Not kartı").
+  ///
+  /// In tr, this message translates to:
+  /// **'Sil'**
+  String get coachMeetings_noteDelete;
+
+  /// Danger action of the confirmation (pano 10.6 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Notu Sil'**
+  String get coachMeetings_noteDeleteAction;
+
+  /// Body of the confirmation; it quotes the note (pano 10.6 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'“{text}” notu silinecek.'**
+  String coachMeetings_noteDeleteBody(String text);
+
+  /// Toast when the held deletion of a note failed; the note comes back.
+  ///
+  /// In tr, this message translates to:
+  /// **'Not silinemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get coachMeetings_noteDeleteFailed;
+
+  /// Title of the danger confirmation (pano 10.6 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Not silinsin mi?'**
+  String get coachMeetings_noteDeleteTitle;
+
+  /// Toast with "Geri Al" after deleting a note, 6 s (pano 10.6 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Not silindi.'**
+  String get coachMeetings_noteDeleted;
+
+  /// Text button of a note card (pano 10.6 "Not kartı").
+  ///
+  /// In tr, this message translates to:
+  /// **'Düzenle'**
+  String get coachMeetings_noteEdit;
+
+  /// Title of the note sheet for an existing note (pano 10.6 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Notu düzenle'**
+  String get coachMeetings_noteEditTitle;
+
+  /// Accessible name of the note sheet's field, which has no visible label.
+  ///
+  /// In tr, this message translates to:
+  /// **'Not'**
+  String get coachMeetings_noteFieldA11y;
+
+  /// Placeholder of the note fields (pano 10.5 kare 2, 10.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Örn: Deneme sonucunu birlikte inceleyeceğiz.'**
+  String get coachMeetings_noteHint;
+
+  /// Label of the note field; the kit adds "(isteğe bağlı)" (pano 10.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Not'**
+  String get coachMeetings_noteLabel;
+
+  /// Primary action of the sheet for a new note (pano 10.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Notu Kaydet'**
+  String get coachMeetings_noteSave;
+
+  /// Toast when saving a note failed; the sheet stays open with the text (pano 10.6 Davranış).
+  ///
+  /// In tr, this message translates to:
+  /// **'Not kaydedilemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get coachMeetings_noteSaveFailed;
+
+  /// Toast after editing a note. The board draws none. Assumption.
+  ///
+  /// In tr, this message translates to:
+  /// **'Not güncellendi.'**
+  String get coachMeetings_noteUpdated;
+
+  /// The notes card when there is no note (pano 10.6 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Henüz not yok.'**
+  String get coachMeetings_notesEmpty;
+
+  /// Section error of the notes (1.22 pattern).
+  ///
+  /// In tr, this message translates to:
+  /// **'Notlar yüklenemedi.'**
+  String get coachMeetings_notesLoadFailed;
+
+  /// Section title of the notes (pano 10.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Notlar'**
+  String get coachMeetings_notesTitle;
+
+  /// Group title of the meetings that have passed. The board gives no text ("O başlığın metni belirtilmemiş"); this follows "Yaklaşan · 2". Assumption.
+  ///
+  /// In tr, this message translates to:
+  /// **'Geçmiş · {count}'**
+  String coachMeetings_past(String count);
+
+  /// Student list sheet when the search keeps nobody.
+  ///
+  /// In tr, this message translates to:
+  /// **'Eşleşen öğrenci yok.'**
+  String get coachMeetings_pickStudentNoMatch;
+
+  /// Search field of the student list sheet (same text as pano 10.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci ara'**
+  String get coachMeetings_pickStudentSearch;
+
+  /// Title of the student list sheet (pano 10.5 kare 2: "Alttan öğrenci listesi").
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci seç'**
+  String get coachMeetings_pickStudentTitle;
+
+  /// Toast when a pull to refresh failed and the list stays.
+  ///
+  /// In tr, this message translates to:
+  /// **'Liste yenilenemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get coachMeetings_refreshFailed;
+
+  /// Second line of a meeting row: "12 Ekim 2026 Pazartesi · 16:00" (pano 10.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'{date} · {time}'**
+  String coachMeetings_rowWhen(String date, String time);
+
+  /// Primary action of the new-meeting sheet (pano 10.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüşmeyi Kaydet'**
+  String get coachMeetings_saveAction;
+
+  /// Toast when saving a meeting failed; the sheet stays open (kit rule, pano 10.6 Davranış).
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüşme kaydedilemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get coachMeetings_saveFailed;
+
+  /// Toast after "Görüşmeyi Kaydet" (pano 10.5 Davranış).
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüşme kaydedildi.'**
+  String get coachMeetings_saved;
+
+  /// Toast when the meeting was saved and its note was not (the note goes in a second call).
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüşme kaydedildi ama not eklenemedi.'**
+  String get coachMeetings_savedWithoutNote;
+
+  /// Search field placeholder and accessible name (pano 10.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüşme ara'**
+  String get coachMeetings_searchHint;
+
+  /// Action of the no-result card of the "Kiminle" choice: back to "Tümü".
+  ///
+  /// In tr, this message translates to:
+  /// **'Tümünü Göster'**
+  String get coachMeetings_showAll;
+
+  /// Detail row title (pano 10.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrencinin verileri'**
+  String get coachMeetings_studentData;
+
+  /// Detail row sub text (pano 10.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Analiz, denemeler, program'**
+  String get coachMeetings_studentDataHint;
+
+  /// Placeholder of the student field while none is chosen. Assumption.
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci seç'**
+  String get coachMeetings_studentHint;
+
+  /// Label of the student field (pano 10.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci'**
+  String get coachMeetings_studentLabel;
+
+  /// Error under the student field when "Görüşmeyi Kaydet" is pressed without one. Assumption.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bir öğrenci seç.'**
+  String get coachMeetings_studentMissing;
+
+  /// Toast when the student list for the new-meeting sheet could not be loaded.
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenciler yüklenemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get coachMeetings_studentsFailed;
+
+  /// Label of the time field (pano 10.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Saat'**
+  String get coachMeetings_timeLabel;
+
+  /// Title of the time picker sheet. The board draws no picker; built from the kit time wheel. Assumption.
+  ///
+  /// In tr, this message translates to:
+  /// **'Saat'**
+  String get coachMeetings_timeTitle;
+
+  /// Group title of the meetings from now on (pano 10.5 kare 1: "Yaklaşan · 2").
+  ///
+  /// In tr, this message translates to:
+  /// **'Yaklaşan · {count}'**
+  String coachMeetings_upcoming(String count);
+
+  /// "Kiminle" chip: every kind (pano 10.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Tümü'**
+  String get coachMeetings_withAll;
+
+  /// Accessible name of the "Kiminle" chips and the label of the kind segment in the new-meeting sheet (pano 10.5 kare 1 and 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kiminle'**
+  String get coachMeetings_withLabel;
+
+  /// The two exam dates of the net-drop evidence: '17 Haz. ve 4 Ağu.' (C33).
+  ///
+  /// In tr, this message translates to:
+  /// **'{first} ve {second}'**
+  String coachWidgets_attentionDates(String first, String second);
+
+  /// Sentence of the inactive rule: '45 gündür deneme okutmadı' (C33; pano 10.1 kare 2, D-27).
+  ///
+  /// In tr, this message translates to:
+  /// **'{days} gündür deneme okutmadı'**
+  String coachWidgets_attentionInactive(String days);
+
+  /// Evidence line of the inactive rule: 'Son deneme 17 Haz. 2026' (C33).
+  ///
+  /// In tr, this message translates to:
+  /// **'Son deneme {date}'**
+  String coachWidgets_attentionInactiveEvidence(String date);
+
+  /// Evidence line of the inactive rule with the exam type: 'Son deneme 17 Haz. 2026 · TYT' (C33).
+  ///
+  /// In tr, this message translates to:
+  /// **'Son deneme {date} · {type}'**
+  String coachWidgets_attentionInactiveEvidenceType(String date, String type);
+
+  /// Screen-reader tail of the inactive rule: 'son deneme 17 Haziran' (C33).
+  ///
+  /// In tr, this message translates to:
+  /// **'son deneme {date}'**
+  String coachWidgets_attentionLastExamA11y(String date);
+
+  /// Sentence of the net-drop rule: 'Son iki TYT denemesinde net düştü' (C33; pano 10.1 kare 2, D-27).
+  ///
+  /// In tr, this message translates to:
+  /// **'Son iki {type} denemesinde net düştü'**
+  String coachWidgets_attentionNetDrop(String type);
+
+  /// Sentence of the net-drop rule without the exam type (C33).
+  ///
+  /// In tr, this message translates to:
+  /// **'Son iki denemede net düştü'**
+  String get coachWidgets_attentionNetDropPlain;
+
+  /// Evidence line of the net-drop rule: '68 → 66,75 · 17 Haz. ve 4 Ağu.' (C33).
+  ///
+  /// In tr, this message translates to:
+  /// **'{from} → {to} · {dates}'**
+  String coachWidgets_attentionNetEvidence(
+    String from,
+    String to,
+    String dates,
+  );
+
+  /// Evidence line of the net-drop rule without the dates (C33).
+  ///
+  /// In tr, this message translates to:
+  /// **'{from} → {to}'**
+  String coachWidgets_attentionNetEvidenceNets(String from, String to);
+
+  /// Screen-reader reading of the code (C35).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçluk kodun {code}'**
+  String coachWidgets_codeA11y(String code);
+
+  /// Toast after the code is copied (C35, 4 s).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kod kopyalandı.'**
+  String get coachWidgets_codeCopied;
+
+  /// Button of the coaching code card that copies the code (C35).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kopyala'**
+  String get coachWidgets_codeCopy;
+
+  /// Help line of the coaching code card (C35).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrencin bu kodu Hesap › Koçluk\'a girince sana bağlanır.'**
+  String get coachWidgets_codeHint;
+
+  /// Button of the coaching code card that opens the share sheet (C35).
+  ///
+  /// In tr, this message translates to:
+  /// **'Paylaş'**
+  String get coachWidgets_codeShare;
+
+  /// The sentence the share sheet carries.
+  ///
+  /// In tr, this message translates to:
+  /// **'SMAP\'te koçluk kodum: {code}'**
+  String coachWidgets_codeShareText(String code);
+
+  /// Label of the coaching code card (C35; pano 10.1 kare 3, 10.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçluk kodun'**
+  String get coachWidgets_codeTitle;
+
+  /// Screen-reader reading of a meeting row: 'Alparslan Kuloğlu, 12 Ekim 2026 Pazartesi, 16:00, Öğrenci görüşmesi' (C34).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name}, {date}, {time}, {kind}'**
+  String coachWidgets_meetingA11y(
+    String name,
+    String date,
+    String time,
+    String kind,
+  );
+
+  /// Screen-reader reading of a meeting row of unknown kind (C34).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name}, {date}, {time}'**
+  String coachWidgets_meetingA11yPlain(String name, String date, String time);
+
+  /// Meeting kind in the screen-reader reading (C34).
+  ///
+  /// In tr, this message translates to:
+  /// **'Veli görüşmesi'**
+  String get coachWidgets_meetingKindParentA11y;
+
+  /// Meeting kind in the screen-reader reading (C34).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci görüşmesi'**
+  String get coachWidgets_meetingKindStudentA11y;
+
+  /// Meta of the list meeting row: '12 Ekim 2026 Pazartesi · 16:00' (C34; pano 10.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'{date} · {time}'**
+  String coachWidgets_meetingListMeta(String date, String time);
+
+  /// Meta of the date-block meeting row: 'Pazartesi 16:00 · Öğrenci' (C34; pano 10.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'{day} {time} · {kind}'**
+  String coachWidgets_meetingMeta(String day, String time, String kind);
+
+  /// Meta of the date-block meeting row when the kind is unknown (C34).
+  ///
+  /// In tr, this message translates to:
+  /// **'{day} {time}'**
+  String coachWidgets_meetingMetaPlain(String day, String time);
+
+  /// Month under the day of the meeting's date block: 'Eki.' (C34; pano 10.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'{month}.'**
+  String coachWidgets_meetingMonth(String month);
+
+  /// Meeting kind tag/meta: with the parent (C34; pano 10.1, 10.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Veli'**
+  String get coachWidgets_meetingParent;
+
+  /// Meeting kind tag/meta: with the student (C34; pano 10.1, 10.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci'**
+  String get coachWidgets_meetingStudent;
+
+  /// Screen-reader reading of a student tile (C32).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name}, öğrenci'**
+  String coachWidgets_tileA11y(String name);
+
+  /// Screen-reader reading of a student tile with a last exam date (C32).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name}, son deneme {date}'**
+  String coachWidgets_tileA11yLastExam(String name, String date);
+
+  /// Second line of a student tile with a last exam date: 'Son deneme 5 Eki.' (C32; pano 10.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Son deneme {date}'**
+  String coachWidgets_tileLastExam(String date);
 
   /// Primary button of the change sheet (Tur 12 F).
   ///
@@ -3113,6 +4004,30 @@ abstract class AppLocalizations {
   /// **'Öğrencilerim'**
   String get nav_tabStudents;
 
+  /// Primary button of the notification permission sheet (pano 5.2); opens the system dialog.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bildirimlere İzin Ver'**
+  String get notificationPrimer_allow;
+
+  /// Body of the notification permission sheet (pano 5.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sistemde olmayan bir denemeyi okuttuğunda analizini hazırlayınca bildirim gönderelim. Hesap › Bildirimler\'den istediğin zaman kapatabilirsin.'**
+  String get notificationPrimer_body;
+
+  /// Quiet button of the notification permission sheet (pano 5.2); never asks again.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sonra'**
+  String get notificationPrimer_later;
+
+  /// Title of the notification permission sheet (pano 5.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sonucun hazır olunca haber verelim mi?'**
+  String get notificationPrimer_title;
+
   /// Heading of the group of category switches (pano 9.6 kare 1).
   ///
   /// In tr, this message translates to:
@@ -3941,6 +4856,738 @@ abstract class AppLocalizations {
   /// **'Bu kullanıcı adı alınmış.'**
   String get register_usernameTaken;
 
+  /// Cards row of the result moment (pano 5.1 kare 1); {count} is formatted with TrFormat.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu denemeden {count} bilgi kartı eklendi'**
+  String resultMoment_cards(String count);
+
+  /// The primary button of the result moment (pano 5.1); opens Deneme Detay.
+  ///
+  /// In tr, this message translates to:
+  /// **'Detaylı Analiz'**
+  String get resultMoment_detail;
+
+  /// Message of the screen error of the result moment (the pano 5.8 kare 3 sentence).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantını kontrol edip tekrar dene.'**
+  String get resultMoment_errorMessage;
+
+  /// Title of the screen error of the result moment (not on the board; the pano 5.8 kare 3 pattern).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sonuç yüklenemedi'**
+  String get resultMoment_errorTitle;
+
+  /// Screen reader name of the score type segment of the result moment (pano 5.1 'aria: Puan türü').
+  ///
+  /// In tr, this message translates to:
+  /// **'Puan türü'**
+  String get resultMoment_fieldA11y;
+
+  /// Net of the chosen AYT score type under the score boxes (pano 5.1 kare 1: 'Eşit Ağırlık neti 40').
+  ///
+  /// In tr, this message translates to:
+  /// **'{field} neti {net}'**
+  String resultMoment_fieldNet(String field, String net);
+
+  /// The two tests a score type is made of (pano 5.1 kare 1: 'Türk Dili ve Edebiyatı–Sosyal Bilimler 1 ve Matematik').
+  ///
+  /// In tr, this message translates to:
+  /// **'{first} ve {second}'**
+  String resultMoment_fieldTests(String first, String second);
+
+  /// Quiet button of the result moment (pano 5.1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Anasayfa'**
+  String get resultMoment_home;
+
+  /// Primary button of the fix sheet (pano 4.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Düzeltmeyi Ekle'**
+  String get scan_addCorrection;
+
+  /// Inline alert when the device is offline (pano 4.8 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantı yok. Bağlantı gelince tekrar dene.'**
+  String get scan_answersOffline;
+
+  /// Summary line (pano 4.7): '160 cevap okundu'.
+  ///
+  /// In tr, this message translates to:
+  /// **'{n} cevap okundu'**
+  String scan_answersRead(String n);
+
+  /// Inline alert after the answers could not be sent (pano 4.8 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Cevaplar gönderilemedi. Düzeltmelerin duruyor; tekrar dene.'**
+  String get scan_answersSendFailed;
+
+  /// Name of a blank answer: the chip and the read value (pano 4.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Boş'**
+  String get scan_blank;
+
+  /// Blank count in the summary and in the column segment (pano 4.7): '2 boş'.
+  ///
+  /// In tr, this message translates to:
+  /// **'{n} boş'**
+  String scan_blankCount(String n);
+
+  /// Body of the camera failure screen (pano 4.10 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Başka bir uygulama kamerayı kullanıyor olabilir. Onu kapatıp tekrar dene.'**
+  String get scan_cameraFailBody;
+
+  /// Title of the camera failure screen (pano 4.10 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kamera açılamadı'**
+  String get scan_cameraFailTitle;
+
+  /// Screen-reader name of the spinner shown while the camera starts (not drawn in the boards).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kamera açılıyor'**
+  String get scan_cameraLoadingA11y;
+
+  /// Caption over the answer grid (pano 4.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'{n}. kolon · {q} soru · düzeltmek için soruya dokun'**
+  String scan_columnCaption(String n, String q);
+
+  /// Column name by its number (pano 4.7): '3. kolon'.
+  ///
+  /// In tr, this message translates to:
+  /// **'{n}. kolon'**
+  String scan_columnN(String n);
+
+  /// Primary button of the answer check (pano 4.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'Cevapları Onayla'**
+  String get scan_confirmAnswers;
+
+  /// Accessible name of the bottom left handle (spec C68).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sol alt köşe'**
+  String get scan_cornerBottomLeftA11y;
+
+  /// Accessible name of the bottom right handle (spec C68).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sağ alt köşe'**
+  String get scan_cornerBottomRightA11y;
+
+  /// Screen-reader action that moves a handle down (spec C68).
+  ///
+  /// In tr, this message translates to:
+  /// **'Aşağı taşı'**
+  String get scan_cornerMoveDownA11y;
+
+  /// Screen-reader action that moves a handle left (spec C68).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sola taşı'**
+  String get scan_cornerMoveLeftA11y;
+
+  /// Screen-reader action that moves a handle right (spec C68).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sağa taşı'**
+  String get scan_cornerMoveRightA11y;
+
+  /// Screen-reader action that moves a handle up (spec C68).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yukarı taşı'**
+  String get scan_cornerMoveUpA11y;
+
+  /// Accessible name of the top left handle (spec C68).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sol üst köşe'**
+  String get scan_cornerTopLeftA11y;
+
+  /// Accessible name of the top right handle (spec C68).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sağ üst köşe'**
+  String get scan_cornerTopRightA11y;
+
+  /// Corner hint card, first line (pano 4.4 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Noktaları cevap alanının köşelerine getir.'**
+  String get scan_cornersHint;
+
+  /// Corner hint card, second line (pano 4.4 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ders adları şeridi dışarıda kalsın.'**
+  String get scan_cornersHintSub;
+
+  /// Title of the corner screen (pano 4.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Köşeleri Ayarla'**
+  String get scan_cornersTitle;
+
+  /// What a correction changed (pano 4.7 kare 3): 'Boş → C'.
+  ///
+  /// In tr, this message translates to:
+  /// **'{from} → {to}'**
+  String scan_correctionChange(String from, String to);
+
+  /// Correction count in the summary and the fix sheet (pano 4.7): '2 düzeltme'.
+  ///
+  /// In tr, this message translates to:
+  /// **'{n} düzeltme'**
+  String scan_correctionCount(String n);
+
+  /// One correction row (pano 4.7 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'{col}. kolon · {q}. soru'**
+  String scan_correctionRow(String col, String q);
+
+  /// Heading of the corrections list (pano 4.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Düzeltmeler'**
+  String get scan_corrections;
+
+  /// Empty corrections list (pano 4.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Henüz düzeltme yok. Okunan cevap formundakinden farklıysa yukarıdan ekle.'**
+  String get scan_correctionsEmpty;
+
+  /// Debug-only button of the camera failure screen (SCAN_GALLERY define; never in release).
+  ///
+  /// In tr, this message translates to:
+  /// **'Galeriden seç'**
+  String get scan_debugGalleryPick;
+
+  /// Body of the refused-permission sheet (pano 4.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Formunu okutabilmek için Ayarlar\'da SMAP\'e kamera izni ver. Sonra buraya dön; kaldığın yerden devam edersin.'**
+  String get scan_deniedBody;
+
+  /// Title of the sheet shown when the camera permission was refused (pano 4.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kamera izni kapalı'**
+  String get scan_deniedTitle;
+
+  /// Checkbox of the how-to-shoot sheet and text button of the corner hint (pano 4.2, 4.4 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bir daha gösterme'**
+  String get scan_dontShowAgain;
+
+  /// Sub-line of the exam request screen (pano 4.9).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yayınevini ve deneme adını yaz; analizini en geç 72 saat içinde hazırlayalım.'**
+  String get scan_enfBody;
+
+  /// Note of the request confirmation sheet (pano 4.9 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Analizin hazır olunca Analizlerim › Denemelerim\'de görünür.'**
+  String get scan_enfConfirmNote;
+
+  /// Title of the request confirmation sheet (pano 4.9 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Talep oluşturulsun mu?'**
+  String get scan_enfConfirmTitle;
+
+  /// Body after the request was sent (pano 4.9 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'En geç 72 saat içinde hazır. Hazır olunca Analizlerim › Denemelerim\'de görünecek.'**
+  String get scan_enfDoneBody;
+
+  /// Title after the request was sent (pano 4.9 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Talebin alındı'**
+  String get scan_enfDoneTitle;
+
+  /// Info card of the exam request screen (pano 4.9).
+  ///
+  /// In tr, this message translates to:
+  /// **'Cevapların kaydedildi. Yeniden okutman gerekmez.'**
+  String get scan_enfSaved;
+
+  /// Primary button of the exam request screen (pano 4.9).
+  ///
+  /// In tr, this message translates to:
+  /// **'Analizimi Hazırlayın'**
+  String get scan_enfSubmit;
+
+  /// Title of the exam request screen (pano 4.9).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu deneme henüz sistemde yok'**
+  String get scan_enfTitle;
+
+  /// Error of the empty exam name field (pano 4.9 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Deneme adını yaz.'**
+  String get scan_errExamNameRequired;
+
+  /// Error of the empty publisher field (pano 4.9 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yayınevini yaz.'**
+  String get scan_errPublisherRequired;
+
+  /// Body of the exit confirmation (spec decision, board draws no body).
+  ///
+  /// In tr, this message translates to:
+  /// **'Düzelttiğin cevaplar kaydedilmeyecek.'**
+  String get scan_exitBody;
+
+  /// Confirm button of the exit confirmation (spec decision).
+  ///
+  /// In tr, this message translates to:
+  /// **'Çık'**
+  String get scan_exitConfirm;
+
+  /// Confirmation when closing the answer check with corrections (pano 4.7; spec exitScanConfirm).
+  ///
+  /// In tr, this message translates to:
+  /// **'Okutmadan çıkılsın mı?'**
+  String get scan_exitTitle;
+
+  /// Label of the column segment in the fix sheet (pano 4.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kolon'**
+  String get scan_fieldColumn;
+
+  /// Label of the exam name field (pano 4.9).
+  ///
+  /// In tr, this message translates to:
+  /// **'Deneme adı'**
+  String get scan_fieldExamName;
+
+  /// Example in the exam name field (pano 4.9).
+  ///
+  /// In tr, this message translates to:
+  /// **'Örn: Türkiye Geneli Deneme 7'**
+  String get scan_fieldExamNameHint;
+
+  /// Label of the publisher field (pano 4.9).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yayınevi'**
+  String get scan_fieldPublisher;
+
+  /// Example in the publisher field (pano 4.9).
+  ///
+  /// In tr, this message translates to:
+  /// **'Örn: Örnek Yayınları'**
+  String get scan_fieldPublisherHint;
+
+  /// Label of the question stepper in the fix sheet (pano 4.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Soru'**
+  String get scan_fieldQuestion;
+
+  /// Outline button that opens the fix sheet (pano 4.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'Düzelt'**
+  String get scan_fix;
+
+  /// Title of the fix sheet (pano 4.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Cevap Düzelt'**
+  String get scan_fixSheetTitle;
+
+  /// Body of the form-not-found screen (pano 4.10 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Fotoğrafta cevap alanı seçilemedi. Formun tamamı görünsün, ışık yansımasın, ders adları şeridi dışarıda kalsın.'**
+  String get scan_formNotFoundBody;
+
+  /// Title of the form-not-found screen (pano 4.10 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Formu bulamadık'**
+  String get scan_formNotFoundTitle;
+
+  /// Primary button after the request was sent (pano 4.9 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Anasayfa'**
+  String get scan_goHome;
+
+  /// Primary button of the how-to-shoot sheet (pano 4.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Anladım'**
+  String get scan_gotIt;
+
+  /// Hint pill once the form is found (pano 4.3 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hazır. Telefonu sabit tut ve çek.'**
+  String get scan_hintReady;
+
+  /// Hint pill while the form is being looked for (pano 4.3 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Cevap alanını çerçeveye al.\nDers adları şeridi dışarıda kalsın.'**
+  String get scan_hintSearching;
+
+  /// Quiet button of the form-not-found screen; opens the how-to-shoot sheet (pano 4.10 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Nasıl Çekilir?'**
+  String get scan_howToShoot;
+
+  /// Accessible name of the question-mark button in the camera top bar (pano 4.2, 4.3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Nasıl çekilir?'**
+  String get scan_howToShootA11y;
+
+  /// Message of the image card after it failed to load (pano 4.8 kare 1 note).
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüntü yüklenemedi'**
+  String get scan_imageLoadFailed;
+
+  /// Caption of the image skeleton (pano 4.8 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Form görüntüsü yükleniyor'**
+  String get scan_imageLoading;
+
+  /// Screen-reader state of the running step (pano 4.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sürüyor'**
+  String get scan_inProgressA11y;
+
+  /// Quiet button after a failure; back to the camera (pano 4.5 kare 4, 4.10 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni Fotoğraf'**
+  String get scan_newPhoto;
+
+  /// Primary button of the corner screen (pano 4.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Devam'**
+  String get scan_next;
+
+  /// Accessible name of the plus button of the question stepper (pano 4.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sonraki soru'**
+  String get scan_nextQuestionA11y;
+
+  /// Counter line of a column with no blank answer (pano 4.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'boş yok'**
+  String get scan_noBlank;
+
+  /// Correction counter of the fix sheet while there is none (pano 4.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Düzeltme yok'**
+  String get scan_noCorrection;
+
+  /// Body of the planned offline screen; used only when the offline queue exists (pano 4.10 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Fotoğrafın telefonunda saklandı. Bağlantı gelince gönderilecek.'**
+  String get scan_offlineQueuedBody;
+
+  /// Title of the planned offline screen (pano 4.10 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantı yok'**
+  String get scan_offlineTitle;
+
+  /// Button of the maintenance sheet and the offline screen (pano 4.10 kare 2, 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Tamam'**
+  String get scan_ok;
+
+  /// Body of the maintenance sheet (pano 4.10 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kısa bir bakım yapıyoruz. Birazdan tekrar dene.'**
+  String get scan_omrClosedBody;
+
+  /// Title of the maintenance sheet (pano 4.10 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Optik okuma şu an kapalı'**
+  String get scan_omrClosedTitle;
+
+  /// Primary button of the refused-permission sheet; opens the app's system settings (pano 4.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ayarları Aç'**
+  String get scan_openSettings;
+
+  /// Upload percentage next to "Gönderiliyor" (pano 4.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'%{n}'**
+  String scan_percent(String n);
+
+  /// Hint under the form image (pano 4.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'İki parmakla yakınlaştırabilirsin.'**
+  String get scan_pinchHint;
+
+  /// Accessible name of the minus button of the question stepper (pano 4.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'Önceki soru'**
+  String get scan_previousQuestionA11y;
+
+  /// Primary button of the permission sheet (pano 4.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kameraya İzin Ver'**
+  String get scan_primerAllow;
+
+  /// Camera permission sheet, body (pano 4.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'SMAP kamerayı yalnız optik formunu çekerken kullanır. Bir sonraki adımda telefonun izin isteyecek.'**
+  String get scan_primerBody;
+
+  /// Quiet button of the permission sheet; closes it and stays where you were (pano 4.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sonra'**
+  String get scan_primerLater;
+
+  /// Camera permission sheet before the system dialog, title (pano 4.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Formunu okutmak için kamera gerekli'**
+  String get scan_primerTitle;
+
+  /// Accessible name of the question number (pano 4.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'Soru numarası'**
+  String get scan_questionNumberA11y;
+
+  /// Label of the read value next to the stepper (pano 4.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Okunan'**
+  String get scan_readValue;
+
+  /// Accessible name of the remove button of a correction (pano 4.7 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Düzeltmeyi kaldır: {col}. kolon, {q}. soru'**
+  String scan_removeCorrectionA11y(String col, String q);
+
+  /// Outline button of the corner screen; back to the camera (pano 4.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Tekrar Çek'**
+  String get scan_retake;
+
+  /// Quiet button of the planned offline screen (pano 4.10 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Şimdi Tekrar Dene'**
+  String get scan_retryNow;
+
+  /// Sub-line of the answer check (pano 4.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'Okunan cevapları formunla karşılaştır.'**
+  String get scan_reviewSub;
+
+  /// Title of the answer check (pano 4.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'Form Kontrol'**
+  String get scan_reviewTitle;
+
+  /// Primary button of the request confirmation sheet (pano 4.9 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Talebi Gönder'**
+  String get scan_sendRequest;
+
+  /// Label of the busy primary button (pano 4.7 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Gönderiliyor'**
+  String get scan_sending;
+
+  /// Accessible name of the shutter button (pano 4.3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Fotoğraf çek'**
+  String get scan_shutterA11y;
+
+  /// Step 1 when done (pano 4.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Fotoğraf hazırlandı'**
+  String get scan_stepPrepared;
+
+  /// Step 1 while it runs (pano 4.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Fotoğraf hazırlanıyor'**
+  String get scan_stepPreparing;
+
+  /// Step 3 while it runs (pano 4.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Cevapların okunuyor'**
+  String get scan_stepReading;
+
+  /// Step 2 after a failure (pano 4.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Gönderilemedi'**
+  String get scan_stepSendFailed;
+
+  /// Step 2 while it runs, with the percentage (pano 4.5 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Gönderiliyor'**
+  String get scan_stepSending;
+
+  /// Step 2 when done (pano 4.5 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Gönderildi'**
+  String get scan_stepSent;
+
+  /// Step 3 while waiting (pano 4.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Cevaplar okunacak'**
+  String get scan_stepToRead;
+
+  /// Step 2 while waiting (pano 4.5 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Gönderilecek'**
+  String get scan_stepToSend;
+
+  /// Title in the top bar of the camera (pano 4.2, 4.3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Optik Form'**
+  String get scan_topTitle;
+
+  /// Step 1 of the how-to-shoot sheet (pano 4.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Cevap alanını çerçeveye al.'**
+  String get scan_tutorialStep1;
+
+  /// Step 2 of the how-to-shoot sheet (pano 4.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ders adlarının yazdığı yatay şeridi dışarıda bırak.'**
+  String get scan_tutorialStep2;
+
+  /// Step 3 of the how-to-shoot sheet (pano 4.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Turuncu noktaları cevap alanının dört köşesine getir.'**
+  String get scan_tutorialStep3;
+
+  /// Title of the how-to-shoot sheet (pano 4.2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Formu böyle çek'**
+  String get scan_tutorialTitle;
+
+  /// Sub-line after the upload failed (pano 4.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantı koptu. Fotoğrafın duruyor; tekrar gönderebilir ya da yeniden çekebilirsin.'**
+  String get scan_uploadFailBody;
+
+  /// Title after the upload failed (pano 4.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Formun gönderilemedi'**
+  String get scan_uploadFailTitle;
+
+  /// Screen-reader name of the photo card (pano 4.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Okunan form görüntüsü: dört kolon, kırk satır'**
+  String get scan_uploadPhotoA11y;
+
+  /// Screen-reader name of the upload progress bar (pano 4.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Gönderim'**
+  String get scan_uploadProgressA11y;
+
+  /// Sub-line of the upload screen (pano 4.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Birkaç saniye sürebilir.'**
+  String get scan_uploadSub;
+
+  /// Sub-line after a timeout (pano 4.5 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Sunucu yanıt vermedi.'**
+  String get scan_uploadTimeoutBody;
+
+  /// Title of the upload screen (pano 4.5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Formun okunuyor'**
+  String get scan_uploadTitle;
+
+  /// Label of the option chips in the fix sheet (pano 4.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Formdaki işaretin'**
+  String get scan_yourMark;
+
+  /// Accessible name of the magnify button on the form image (pano 4.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'Formu büyüt'**
+  String get scan_zoomFormA11y;
+
   /// Topic sheet primary button (pano 3.5 kare 3).
   ///
   /// In tr, this message translates to:
@@ -4508,6 +6155,102 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Hesabın açılamadı'**
   String get startup_unknownRoleTitle;
+
+  /// Accessible name and tooltip of the Plus action of the navy band (pano 10.2 kare 1, "aria Öğrenci ekle").
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci ekle'**
+  String get students_addA11y;
+
+  /// Toast after the credentials sheet closed with "Tamam" (pano 10.3 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} eklendi.'**
+  String students_added(String name);
+
+  /// Text button of the no-match card; empties the search (pano 10.2 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Aramayı Temizle'**
+  String get students_clearSearch;
+
+  /// The counter under the search field (pano 10.2 kare 1 and 2): "5 öğrenci", "1 öğrenci".
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} öğrenci'**
+  String students_count(String count);
+
+  /// Primary button of the empty list; opens the add-student sheet (pano 10.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci Ekle'**
+  String get students_emptyAdd;
+
+  /// Sentence of the empty list (pano 10.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrencinin hesabını sen aç ya da koçluk kodunu paylaş; bağlanan öğrenciler burada listelenir.'**
+  String get students_emptyMessage;
+
+  /// Secondary button of the empty list; opens the system share sheet with the coaching code (pano 10.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kodunu Paylaş'**
+  String get students_emptyShare;
+
+  /// Title of the empty list (pano 10.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Henüz öğrencin yok'**
+  String get students_emptyTitle;
+
+  /// The exam count in the meta line of a student row (pano 10.2 kare 1): "12. Sınıf · Eşit Ağırlık · 10 deneme". Written only when the student has read an exam.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} deneme'**
+  String students_examCount(String count);
+
+  /// Sentence of the screen-level error state (spec 2.18 "Ekran hatası metni").
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantını kontrol edip tekrar dene. Sorun sürerse biraz sonra yeniden açabilirsin.'**
+  String get students_loadErrorMessage;
+
+  /// Title of the error state of the student list (pano 1.22 kare 4 wording; pano 10.2 has no drawn error).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenciler yüklenemedi'**
+  String get students_loadErrorTitle;
+
+  /// Two parts of the meta line of a student row, joined by a middle dot (pano 10.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'{first} · {second}'**
+  String students_metaJoin(String first, String second);
+
+  /// How the search works, under the no-match title (pano 10.2 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Ad ve soyadda arar; büyük-küçük harf ve I/ı/İ/i farkı gözetmez.'**
+  String get students_noResultMessage;
+
+  /// Title of the no-match card of the search (pano 10.2 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'“{query}” ile eşleşen öğrenci yok'**
+  String students_noResultTitle(String query);
+
+  /// Screen reader reading of a student row: the name and the meta line (pano 10.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'{name}, {details}'**
+  String students_rowA11y(String name, String details);
+
+  /// Placeholder and accessible name of the search field (pano 10.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci ara'**
+  String get students_searchHint;
 
   /// The same line for a lesson opened on "Tümü", which has no track name.
   ///
