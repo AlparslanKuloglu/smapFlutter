@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import 'package:smap/app/app_theme_mode.dart';
 import 'package:smap/app/router/app_router.dart';
 import 'package:smap/app/router/route_refresh.dart';
 import 'package:smap/core/theme/smap_theme.dart';
@@ -66,7 +67,7 @@ class _SmapAppState extends State<SmapApp> {
         debugShowCheckedModeBanner: false,
         theme: SmapTheme.light(),
         darkTheme: SmapTheme.dark(),
-        themeMode: ThemeMode.light,
+        themeMode: AppThemeMode.current,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: const [Locale('tr')],
         locale: const Locale('tr'),
