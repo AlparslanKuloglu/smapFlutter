@@ -1,0 +1,265 @@
+{
+  "@@locale": "tr",
+  "students_addA11y": "Öğrenci ekle",
+  "@students_addA11y": {
+    "description": "Accessible name and tooltip of the Plus action of the navy band (pano 10.2 kare 1, \"aria Öğrenci ekle\")."
+  },
+  "students_searchHint": "Öğrenci ara",
+  "@students_searchHint": {
+    "description": "Placeholder and accessible name of the search field (pano 10.2 kare 1)."
+  },
+  "students_count": "{count} öğrenci",
+  "@students_count": {
+    "description": "The counter under the search field (pano 10.2 kare 1 and 2): \"5 öğrenci\", \"1 öğrenci\".",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "students_examCount": "{count} deneme",
+  "@students_examCount": {
+    "description": "The exam count in the meta line of a student row (pano 10.2 kare 1): \"12. Sınıf · Eşit Ağırlık · 10 deneme\". Written only when the student has read an exam.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "students_metaJoin": "{first} · {second}",
+  "@students_metaJoin": {
+    "description": "Two parts of the meta line of a student row, joined by a middle dot (pano 10.2 kare 1).",
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "students_rowA11y": "{name}, {details}",
+  "@students_rowA11y": {
+    "description": "Screen reader reading of a student row: the name and the meta line (pano 10.2 kare 1).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "details": {
+        "type": "String"
+      }
+    }
+  },
+  "students_noResultTitle": "“{query}” ile eşleşen öğrenci yok",
+  "@students_noResultTitle": {
+    "description": "Title of the no-match card of the search (pano 10.2 kare 3).",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "students_noResultMessage": "Ad ve soyadda arar; büyük-küçük harf ve I/ı/İ/i farkı gözetmez.",
+  "@students_noResultMessage": {
+    "description": "How the search works, under the no-match title (pano 10.2 kare 3)."
+  },
+  "students_clearSearch": "Aramayı Temizle",
+  "@students_clearSearch": {
+    "description": "Text button of the no-match card; empties the search (pano 10.2 kare 3)."
+  },
+  "students_emptyTitle": "Henüz öğrencin yok",
+  "@students_emptyTitle": {
+    "description": "Title of the empty list (pano 10.2 kare 4)."
+  },
+  "students_emptyMessage": "Öğrencinin hesabını sen aç ya da koçluk kodunu paylaş; bağlanan öğrenciler burada listelenir.",
+  "@students_emptyMessage": {
+    "description": "Sentence of the empty list (pano 10.2 kare 4)."
+  },
+  "students_emptyAdd": "Öğrenci Ekle",
+  "@students_emptyAdd": {
+    "description": "Primary button of the empty list; opens the add-student sheet (pano 10.2 kare 4)."
+  },
+  "students_emptyShare": "Kodunu Paylaş",
+  "@students_emptyShare": {
+    "description": "Secondary button of the empty list; opens the system share sheet with the coaching code (pano 10.2 kare 4)."
+  },
+  "students_loadErrorTitle": "Öğrenciler yüklenemedi",
+  "@students_loadErrorTitle": {
+    "description": "Title of the error state of the student list (pano 1.22 kare 4 wording; pano 10.2 has no drawn error)."
+  },
+  "students_loadErrorMessage": "Bağlantını kontrol edip tekrar dene. Sorun sürerse biraz sonra yeniden açabilirsin.",
+  "@students_loadErrorMessage": {
+    "description": "Sentence of the screen-level error state (spec 2.18 \"Ekran hatası metni\")."
+  },
+  "students_added": "{name} eklendi.",
+  "@students_added": {
+    "description": "Toast after the credentials sheet closed with \"Tamam\" (pano 10.3 kare 3).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "addStudent_title": "Öğrenci ekle",
+  "@addStudent_title": {
+    "description": "Title of the add-student sheet (pano 10.3 kare 1)."
+  },
+  "addStudent_subtitle": "Hesabını sen aç ya da kodunu paylaş.",
+  "@addStudent_subtitle": {
+    "description": "Subtitle of the add-student sheet (pano 10.3 kare 1)."
+  },
+  "addStudent_avatarLabel": "Avatar",
+  "@addStudent_avatarLabel": {
+    "description": "Label above the seven avatars of the form (Tur 12 D, brief 14.8 kare 1)."
+  },
+  "addStudent_avatarPickerA11y": "Öğrencinin avatarı",
+  "@addStudent_avatarPickerA11y": {
+    "description": "Screen reader name of the avatar group (Tur 12 D)."
+  },
+  "addStudent_firstName": "Ad",
+  "@addStudent_firstName": {
+    "description": "First name field label (pano 10.3 kare 1)."
+  },
+  "addStudent_lastName": "Soyad",
+  "@addStudent_lastName": {
+    "description": "Surname field label (pano 10.3 kare 1)."
+  },
+  "addStudent_username": "Kullanıcı adı",
+  "@addStudent_username": {
+    "description": "User name field label (pano 10.3 kare 1 and 3)."
+  },
+  "addStudent_check": "Kontrol Et",
+  "@addStudent_check": {
+    "description": "Action beside the user name: asks the server now (pano 10.3 kare 1)."
+  },
+  "addStudent_usernameFree": "Bu kullanıcı adı boşta.",
+  "@addStudent_usernameFree": {
+    "description": "Live check passed (pano 10.3 kare 1)."
+  },
+  "addStudent_usernameTaken": "Bu kullanıcı adı alınmış.",
+  "@addStudent_usernameTaken": {
+    "description": "Live check or save: the user name is in use (spec 10.3 \"Alınmış\")."
+  },
+  "addStudent_usernameSuggest": "Boşta olan:",
+  "@addStudent_usernameSuggest": {
+    "description": "Label before the free-name chip under a taken user name."
+  },
+  "addStudent_usernameSuggestA11y": "Boşta olan kullanıcı adı: {name}. Yazmak için dokun.",
+  "@addStudent_usernameSuggestA11y": {
+    "description": "Screen reader reading of the free-name chip.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "addStudent_usernameOffline": "Bağlanınca kontrol edilecek.",
+  "@addStudent_usernameOffline": {
+    "description": "Help line under the user name while the device is offline."
+  },
+  "addStudent_password": "Şifre",
+  "@addStudent_password": {
+    "description": "Password field label (pano 10.3 kare 1 and 3)."
+  },
+  "addStudent_generate": "Oluştur",
+  "@addStudent_generate": {
+    "description": "Action beside the password: makes a readable 10-character password (pano 10.3 kare 1)."
+  },
+  "addStudent_passwordHelp": "Öğrencine ilet; ilk girişte değiştirmesi önerilir.",
+  "@addStudent_passwordHelp": {
+    "description": "Help line under the password (pano 10.3 kare 1)."
+  },
+  "addStudent_grade": "Sınıf",
+  "@addStudent_grade": {
+    "description": "Grade select label and its sheet title (pano 10.3 kare 1)."
+  },
+  "addStudent_track": "Alan",
+  "@addStudent_track": {
+    "description": "Study track select label and its sheet title (pano 10.3 kare 1)."
+  },
+  "addStudent_trackNotSelectable": "Seçilmez",
+  "@addStudent_trackNotSelectable": {
+    "description": "Value of the passive track field for grade 9 and 10 (pano 10.3 \"Sınıf ve Alan 1.12; 9.–10. sınıfta Alan pasif\")."
+  },
+  "addStudent_trackNotSelectableReason": "9. ve 10. sınıfta alan seçilmez.",
+  "@addStudent_trackNotSelectableReason": {
+    "description": "Help line under the passive track field."
+  },
+  "addStudent_save": "Öğrenciyi Kaydet",
+  "@addStudent_save": {
+    "description": "Primary button of the form (pano 10.3 kare 1 and 2)."
+  },
+  "addStudent_or": "ya da",
+  "@addStudent_or": {
+    "description": "Word between two rules that separates the form from the coaching code (pano 10.3 kare 1 and 2)."
+  },
+  "addStudent_codeHeading": "Öğrencin kendi hesabıyla bağlansın",
+  "@addStudent_codeHeading": {
+    "description": "Heading above the coaching code card in the sheet (pano 10.3 kare 1)."
+  },
+  "addStudent_issueFirstName": "Öğrencinin adını yaz.",
+  "@addStudent_issueFirstName": {
+    "description": "First name left empty."
+  },
+  "addStudent_issueLastName": "Öğrencinin soyadını yaz.",
+  "@addStudent_issueLastName": {
+    "description": "Surname left empty."
+  },
+  "addStudent_issueUsername": "Bir kullanıcı adı yaz.",
+  "@addStudent_issueUsername": {
+    "description": "User name left empty."
+  },
+  "addStudent_issuePasswordMissing": "Bir şifre yaz ya da Oluştur'a dokun.",
+  "@addStudent_issuePasswordMissing": {
+    "description": "Password left empty."
+  },
+  "addStudent_issuePasswordShort": "Şifre en az 8 karakter olmalı.",
+  "@addStudent_issuePasswordShort": {
+    "description": "Password shorter than 8 characters (decision 7.5)."
+  },
+  "addStudent_issueGrade": "Sınıfı seç.",
+  "@addStudent_issueGrade": {
+    "description": "Grade not chosen."
+  },
+  "addStudent_issueTrack": "Alanı seç.",
+  "@addStudent_issueTrack": {
+    "description": "Track not chosen for a student of 11th grade or above."
+  },
+  "addStudent_saveFailed": "Öğrenci eklenemedi. Bağlantını kontrol edip tekrar dene.",
+  "@addStudent_saveFailed": {
+    "description": "Notice above \"Öğrenciyi Kaydet\" when the save failed for a reason with no text of its own; the sheet stays open and keeps what was typed."
+  },
+  "addStudent_addedTitle": "{name} eklendi",
+  "@addStudent_addedTitle": {
+    "description": "Title of the credentials sheet (pano 10.3 kare 3).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "addStudent_addedSubtitle": "Giriş bilgilerini öğrencine ilet.",
+  "@addStudent_addedSubtitle": {
+    "description": "Subtitle of the credentials sheet (pano 10.3 kare 3)."
+  },
+  "addStudent_addedNote": "Bu ekranı kapatınca şifre yeniden gösterilmez.",
+  "@addStudent_addedNote": {
+    "description": "Help line under the password of the credentials sheet (pano 10.3 kare 3)."
+  },
+  "addStudent_shareCredentials": "Bilgileri Paylaş",
+  "@addStudent_shareCredentials": {
+    "description": "Primary button of the credentials sheet; opens the system share sheet (pano 10.3 kare 3)."
+  },
+  "addStudent_credentialsShareText": "SMAP giriş bilgilerin\nKullanıcı adı: {userName}\nŞifre: {password}",
+  "@addStudent_credentialsShareText": {
+    "description": "The text the share sheet carries from the credentials sheet.",
+    "placeholders": {
+      "userName": {
+        "type": "String"
+      },
+      "password": {
+        "type": "String"
+      }
+    }
+  }
+}
