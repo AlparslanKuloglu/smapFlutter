@@ -38,6 +38,7 @@ class InfoCardFace extends StatelessWidget {
     this.isFavorite = false,
     this.onFavoriteTap,
     this.dragging = false,
+    this.announce = false,
     this.minHeight = defaultMinHeight,
     super.key,
   });
@@ -63,6 +64,10 @@ class InfoCardFace extends StatelessWidget {
 
   /// The card is being dragged: the shadow shows.
   final bool dragging;
+
+  /// The card on top of a deck: a screen reader reads it again when it
+  /// changes (live region), so "Sonraki kart" tells which card came.
+  final bool announce;
   final double minHeight;
 
   /// The board's example height.
@@ -94,6 +99,12 @@ class InfoCardFace extends StatelessWidget {
     final text = context.appText;
     final l10n = AppLocalizations.of(context);
     final bodyText = body;
+    final reading = [
+      subjectName,
+      title,
+      ?bodyText,
+      if (isMissing) l10n.lessons_missingItem,
+    ].where((part) => part.isNotEmpty).join(', ');
     return DecoratedBox(
       decoration: BoxDecoration(
         color: colors.bgSurface,
@@ -104,51 +115,57 @@ class InfoCardFace extends StatelessWidget {
         constraints: BoxConstraints(minHeight: minHeight),
         child: Stack(
           children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(
-                padding,
-                padding,
-                padding,
-                isMissing ? _tagBottom + EksikTag.height + _bodyGap : padding,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Row(
-                    children: [
-                      SubjectGlyph(
-                        subject: subject,
-                        size: SubjectGlyphSize.card,
-                      ),
-                      const SizedBox(width: AppSpacing.s8),
-                      Expanded(
-                        child: Text(
-                          subjectName,
-                          style: text.caption.copyWith(
-                            color: colors.textPrimary,
-                            fontWeight: FontWeight.w700,
+            Semantics(
+              container: true,
+              liveRegion: announce,
+              label: reading,
+              excludeSemantics: true,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(
+                  padding,
+                  padding,
+                  padding,
+                  isMissing ? _tagBottom + EksikTag.height + _bodyGap : padding,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Row(
+                      children: [
+                        SubjectGlyph(
+                          subject: subject,
+                          size: SubjectGlyphSize.card,
+                        ),
+                        const SizedBox(width: AppSpacing.s8),
+                        Expanded(
+                          child: Text(
+                            subjectName,
+                            style: text.caption.copyWith(
+                              color: colors.textPrimary,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ),
-                      ),
-                      if (onFavoriteTap != null)
-                        const SizedBox(width: _starRoom),
-                    ],
-                  ),
-                  const SizedBox(height: _titleGap),
-                  Text(
-                    title,
-                    style: text.titleMd.copyWith(color: colors.textPrimary),
-                  ),
-                  if (bodyText != null) ...[
-                    const SizedBox(height: _bodyGap),
-                    Text(
-                      bodyText,
-                      style: text.bodyReading.copyWith(
-                        color: colors.textPrimary,
-                      ),
+                        if (onFavoriteTap != null)
+                          const SizedBox(width: _starRoom),
+                      ],
                     ),
+                    const SizedBox(height: _titleGap),
+                    Text(
+                      title,
+                      style: text.titleMd.copyWith(color: colors.textPrimary),
+                    ),
+                    if (bodyText != null) ...[
+                      const SizedBox(height: _bodyGap),
+                      Text(
+                        bodyText,
+                        style: text.bodyReading.copyWith(
+                          color: colors.textPrimary,
+                        ),
+                      ),
+                    ],
                   ],
-                ],
+                ),
               ),
             ),
             if (onFavoriteTap != null)
@@ -171,7 +188,8 @@ class InfoCardFace extends StatelessWidget {
               const Positioned(
                 left: padding,
                 bottom: _tagBottom,
-                child: EksikTag(),
+                // Part of the card's reading above.
+                child: ExcludeSemantics(child: EksikTag()),
               ),
           ],
         ),

@@ -13,7 +13,8 @@ import 'package:smap/shared/ui/surfaces/app_card.dart';
 /// One subject card of the horizontal strip on the home screen (C21
 /// "SubjectTile"; Tur 6 G3; pano 3.1 "Derslerin").
 ///
-/// 132 wide, padding 16, radius 16, `bgSurface` (an `AppCard`), content
+/// 132 wide at text scale 1 (more as the text grows, [widthOf]), padding 16,
+/// radius 16, `bgSurface` (an `AppCard`), content
 /// stacked and left aligned, 12 apart: the 40 pt [SubjectGlyph], the name 16/24
 /// · 600 (it wraps), and 6 under it either the [EksikTag] ("60 eksik") or the
 /// "Web'de" tag with ArrowSquareOut 14. A subject whose count is unknown draws
@@ -43,8 +44,14 @@ class SubjectTile extends StatelessWidget {
   final bool webOnly;
   final VoidCallback? onTap;
 
-  /// The width of the tile.
+  /// The width of the tile at text scale 1.
   static const double width = 132;
+
+  /// The width of the tile at the user's text scale: it grows with the text,
+  /// so the name and the "60 eksik" tag keep the room they had at scale 1
+  /// (at 1,3 a fixed 132 broke the tag into two lines and cut "Coğrafya").
+  static double widthOf(BuildContext context) =>
+      MediaQuery.textScalerOf(context).scale(width);
 
   /// Gap between the name and the tag.
   static const double _tagGap = 6;
@@ -66,7 +73,7 @@ class SubjectTile extends StatelessWidget {
               ? l10n.lessons_tileMissingA11y(name, TrFormat.sira(count))
               : name);
     return SizedBox(
-      width: width,
+      width: widthOf(context),
       child: AppCard(
         onTap: onTap,
         semanticLabel: reading,

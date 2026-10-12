@@ -90,6 +90,41 @@ class WeekGrid extends StatefulWidget {
   State<WeekGrid> createState() => _WeekGridState();
 }
 
+/// The grid's measures at the user's text scale: the board's sizes (hour
+/// column 44, day column 84, hour row 40, header 44, block 36) times the text
+/// scale, so a topic block, a header and an hour label keep the room their
+/// text needs and are never cut (text scale 1,3 rule). The scale stops at
+/// [maxScale]; the grid's own text is held to the same limit, the blocks stay
+/// readable as buttons through their semantics label.
+class WeekGridMetrics {
+  const WeekGridMetrics(this.scale);
+
+  /// The scale the grid grows to at most.
+  static const double maxScale = 1.5;
+
+  /// The metrics for the text scale of [context].
+  factory WeekGridMetrics.of(BuildContext context) =>
+      WeekGridMetrics.forTextScale(
+        MediaQuery.textScalerOf(context).scale(16) / 16,
+      );
+
+  /// The metrics for a text scale factor: never below the board's sizes (1)
+  /// and never above [maxScale].
+  factory WeekGridMetrics.forTextScale(double factor) =>
+      WeekGridMetrics(factor.clamp(1.0, maxScale));
+
+  final double scale;
+
+  double get hourColumn => WeekGrid.hourColumn * scale;
+  double get dayColumn => WeekGrid.dayColumn * scale;
+  double get hourRow => WeekGrid.hourRow * scale;
+  double get headerRow => WeekGrid.headerRow * scale;
+  double get blockHeight => WeekGrid.blockHeight * scale;
+  double get blockInsetX => WeekGrid._blockInsetX * scale;
+  double get blockInsetY => WeekGrid._blockInsetY * scale;
+  double get glyph => 14 * scale;
+}
+
 class _WeekGridState extends State<WeekGrid> {
   final ScrollController _days = ScrollController();
   final ScrollController _header = ScrollController();
@@ -125,7 +160,7 @@ class _WeekGridState extends State<WeekGrid> {
 
   /// Opens on today's column and the earliest topic, once the first layout
   /// has told how many columns fit. No animation: it is placement, not motion.
-  void _openOnce(HourRange range) {
+  void _openOnce(HourRange range, WeekGridMetrics m) {
     if (_positioned) return;
     _positioned = true;
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -141,13 +176,11 @@ class _WeekGridState extends State<WeekGrid> {
       );
       if (_days.hasClients) {
         _days.jumpTo(
-          math.min(column * WeekGrid.dayColumn, _days.position.maxScrollExtent),
+          math.min(column * m.dayColumn, _days.position.maxScrollExtent),
         );
       }
       if (_rows.hasClients) {
-        _rows.jumpTo(
-          math.min(row * WeekGrid.hourRow, _rows.position.maxScrollExtent),
-        );
+        _rows.jumpTo(math.min(row * m.hourRow, _rows.position.maxScrollExtent));
       }
     });
   }
@@ -177,151 +210,161 @@ class _WeekGridState extends State<WeekGrid> {
     final colors = context.appColors;
     final l10n = AppLocalizations.of(context);
     final dark = Theme.brightnessOf(context) == Brightness.dark;
+    final m = WeekGridMetrics.of(context);
     final range = HourRange.of(widget.entries);
     final line = dark ? colors.borderSubtle : colors.bgSunken;
     final columns = widget.days.length;
-    final bodyHeight = range.rows * WeekGrid.hourRow;
-    final bodyWidth = columns * WeekGrid.dayColumn;
+    final bodyHeight = range.rows * m.hourRow;
+    final bodyWidth = columns * m.dayColumn;
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        _visibleColumns = math.max(
-          1,
-          ((constraints.maxWidth - WeekGrid.hourColumn) / WeekGrid.dayColumn)
-              .floor(),
-        );
-        _openOnce(range);
-        final hours =
-            '${TrFormat.saatParcali(range.first)}–'
-            '${TrFormat.saatParcali(range.last)}';
-        final hidden = _hiddenLeft(l10n);
-        final label = [
-          l10n.schedule_weekGridA11y(hours),
-          if (hidden.isNotEmpty) hidden,
-        ].join('; ');
+    return MediaQuery.withClampedTextScaling(
+      maxScaleFactor: WeekGridMetrics.maxScale,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          _visibleColumns = math.max(
+            1,
+            ((constraints.maxWidth - m.hourColumn) / m.dayColumn).floor(),
+          );
+          _openOnce(range, m);
+          final hours =
+              '${TrFormat.saatParcali(range.first)}–'
+              '${TrFormat.saatParcali(range.last)}';
+          final hidden = _hiddenLeft(l10n);
+          final label = [
+            l10n.schedule_weekGridA11y(hours),
+            if (hidden.isNotEmpty) hidden,
+          ].join('; ');
 
-        return Semantics(
-          container: true,
-          label: label,
-          explicitChildNodes: true,
-          child: Column(
-            children: [
-              SizedBox(
-                height: WeekGrid.headerRow,
-                child: Row(
-                  children: [
-                    const SizedBox(width: WeekGrid.hourColumn),
-                    Expanded(
-                      child: SingleChildScrollView(
-                        controller: _header,
-                        scrollDirection: Axis.horizontal,
-                        physics: const NeverScrollableScrollPhysics(),
-                        child: Row(
-                          children: [
-                            for (final day in widget.days)
-                              _DayHeader(
-                                day: day,
-                                today: CalendarMath.sameDay(day, widget.today),
-                              ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: SingleChildScrollView(
-                  controller: _rows,
-                  padding: EdgeInsets.only(bottom: widget.bottomPadding),
-                  child: SizedBox(
-                    height: bodyHeight,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          left: WeekGrid.hourColumn,
-                          top: 0,
-                          right: 0,
-                          bottom: 0,
-                          child: SingleChildScrollView(
-                            controller: _days,
-                            scrollDirection: Axis.horizontal,
-                            child: SizedBox(
-                              width: bodyWidth,
-                              height: bodyHeight,
-                              child: Stack(
-                                children: [
-                                  Positioned.fill(
-                                    child: CustomPaint(
-                                      painter: _GridLinePainter(
-                                        color: line,
-                                        rows: range.rows,
-                                        columns: columns,
-                                      ),
-                                    ),
+          return Semantics(
+            container: true,
+            label: label,
+            explicitChildNodes: true,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: m.headerRow,
+                  child: Row(
+                    children: [
+                      SizedBox(width: m.hourColumn),
+                      Expanded(
+                        child: SingleChildScrollView(
+                          controller: _header,
+                          scrollDirection: Axis.horizontal,
+                          physics: const NeverScrollableScrollPhysics(),
+                          child: Row(
+                            children: [
+                              for (final day in widget.days)
+                                _DayHeader(
+                                  metrics: m,
+                                  day: day,
+                                  today: CalendarMath.sameDay(
+                                    day,
+                                    widget.today,
                                   ),
-                                  for (var i = 0; i < columns; i++)
-                                    ..._blocksOfColumn(
-                                      context,
-                                      widget.days[i],
-                                      i,
-                                      range,
-                                    ),
-                                ],
-                              ),
-                            ),
+                                ),
+                            ],
                           ),
                         ),
-                        Positioned(
-                          left: 0,
-                          top: 0,
-                          bottom: 0,
-                          width: WeekGrid.hourColumn,
-                          child: _HourColumn(range: range),
-                        ),
-                        Positioned(
-                          left: WeekGrid.hourColumn,
-                          top: 0,
-                          bottom: 0,
-                          width: WeekGrid.edgeFade,
-                          child: IgnorePointer(
-                            child: ValueListenableBuilder<bool>(
-                              valueListenable: _scrolledSideways,
-                              builder: (context, scrolled, _) =>
-                                  AnimatedOpacity(
-                                    opacity: scrolled ? 1 : 0,
-                                    duration: context.motion(
-                                      AppMotion.fast,
-                                      reduced: AppMotion.reducedFade,
-                                    ),
-                                    child: DecoratedBox(
-                                      decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                          colors: [
-                                            colors.bgCanvas,
-                                            colors.bgCanvas.clear,
-                                          ],
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    controller: _rows,
+                    padding: EdgeInsets.only(bottom: widget.bottomPadding),
+                    child: SizedBox(
+                      height: bodyHeight,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            left: m.hourColumn,
+                            top: 0,
+                            right: 0,
+                            bottom: 0,
+                            child: SingleChildScrollView(
+                              controller: _days,
+                              scrollDirection: Axis.horizontal,
+                              child: SizedBox(
+                                width: bodyWidth,
+                                height: bodyHeight,
+                                child: Stack(
+                                  children: [
+                                    Positioned.fill(
+                                      child: CustomPaint(
+                                        painter: _GridLinePainter(
+                                          metrics: m,
+                                          color: line,
+                                          rows: range.rows,
+                                          columns: columns,
                                         ),
                                       ),
                                     ),
-                                  ),
+                                    for (var i = 0; i < columns; i++)
+                                      ..._blocksOfColumn(
+                                        context,
+                                        m,
+                                        widget.days[i],
+                                        i,
+                                        range,
+                                      ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                          Positioned(
+                            left: 0,
+                            top: 0,
+                            bottom: 0,
+                            width: m.hourColumn,
+                            child: _HourColumn(range: range, metrics: m),
+                          ),
+                          Positioned(
+                            left: m.hourColumn,
+                            top: 0,
+                            bottom: 0,
+                            width: WeekGrid.edgeFade,
+                            child: IgnorePointer(
+                              child: ValueListenableBuilder<bool>(
+                                valueListenable: _scrolledSideways,
+                                builder: (context, scrolled, _) =>
+                                    AnimatedOpacity(
+                                      opacity: scrolled ? 1 : 0,
+                                      duration: context.motion(
+                                        AppMotion.fast,
+                                        reduced: AppMotion.reducedFade,
+                                      ),
+                                      child: DecoratedBox(
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                            colors: [
+                                              colors.bgCanvas,
+                                              colors.bgCanvas.clear,
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        );
-      },
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 
   List<Widget> _blocksOfColumn(
     BuildContext context,
+    WeekGridMetrics m,
     DateTime day,
     int column,
     HourRange range,
@@ -332,20 +375,21 @@ class _WeekGridState extends State<WeekGrid> {
     ];
     final blocks = WeekGridLayout.blocksOf(dayEntries);
     final open = widget.onOpenEntry;
-    const inner = WeekGrid.dayColumn - 2 * WeekGrid._blockInsetX;
+    final inner = m.dayColumn - 2 * m.blockInsetX;
     return [
       for (final block in blocks)
         Positioned(
           left:
-              column * WeekGrid.dayColumn +
-              WeekGrid._blockInsetX +
+              column * m.dayColumn +
+              m.blockInsetX +
               block.lane * inner / block.lanes,
           top:
-              (block.entry.minutes - range.first * 60) * WeekGrid.hourRow / 60 +
-              WeekGrid._blockInsetY,
+              (block.entry.minutes - range.first * 60) * m.hourRow / 60 +
+              m.blockInsetY,
           width: inner / block.lanes,
-          height: WeekGrid.blockHeight,
+          height: m.blockHeight,
           child: _Block(
+            metrics: m,
             entry: block.entry,
             onTap: open == null || !block.entry.canOpenTopic
                 ? null

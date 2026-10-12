@@ -140,13 +140,16 @@ class _NumberBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = context.appColors;
+    // The circle grows with the text (the line is 28 high at scale 1), so the
+    // number stays inside it and centered at large text sizes.
+    final size = MediaQuery.textScalerOf(context).scale(_size);
     return DecoratedBox(
       decoration: BoxDecoration(
         color: colors.bgSunken,
         borderRadius: AppRadius.borderFull,
       ),
       child: SizedBox.square(
-        dimension: _size,
+        dimension: size,
         child: Center(
           child: Text(
             '$number',

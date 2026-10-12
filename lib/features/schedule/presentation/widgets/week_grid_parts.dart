@@ -4,8 +4,13 @@ part of 'week_grid.dart';
 // painter and a block.
 
 class _DayHeader extends StatelessWidget {
-  const _DayHeader({required this.day, required this.today});
+  const _DayHeader({
+    required this.metrics,
+    required this.day,
+    required this.today,
+  });
 
+  final WeekGridMetrics metrics;
   final DateTime day;
   final bool today;
 
@@ -18,8 +23,8 @@ class _DayHeader extends StatelessWidget {
     final colors = context.appColors;
     final text = context.appText;
     return SizedBox(
-      width: WeekGrid.dayColumn,
-      height: WeekGrid.headerRow,
+      width: metrics.dayColumn,
+      height: metrics.headerRow,
       child: Semantics(
         header: true,
         label: TrFormat.uzunTarihGun(day),
@@ -68,9 +73,10 @@ class _DayHeader extends StatelessWidget {
 }
 
 class _HourColumn extends StatelessWidget {
-  const _HourColumn({required this.range});
+  const _HourColumn({required this.range, required this.metrics});
 
   final HourRange range;
+  final WeekGridMetrics metrics;
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +89,7 @@ class _HourColumn extends StatelessWidget {
           children: [
             for (final hour in range.hours)
               SizedBox(
-                height: WeekGrid.hourRow,
+                height: metrics.hourRow,
                 child: Align(
                   alignment: Alignment.topLeft,
                   child: Padding(
@@ -108,11 +114,13 @@ class _HourColumn extends StatelessWidget {
 
 class _GridLinePainter extends CustomPainter {
   const _GridLinePainter({
+    required this.metrics,
     required this.color,
     required this.rows,
     required this.columns,
   });
 
+  final WeekGridMetrics metrics;
   final Color color;
   final int rows;
   final int columns;
@@ -123,27 +131,33 @@ class _GridLinePainter extends CustomPainter {
       ..color = color
       ..strokeWidth = 1;
     for (var row = 0; row <= rows; row++) {
-      final y = row * WeekGrid.hourRow;
+      final y = row * metrics.hourRow;
       canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);
     }
     for (var column = 0; column <= columns; column++) {
-      final x = column * WeekGrid.dayColumn;
+      final x = column * metrics.dayColumn;
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
     }
   }
 
   @override
   bool shouldRepaint(_GridLinePainter old) =>
-      old.color != color || old.rows != rows || old.columns != columns;
+      old.metrics.scale != metrics.scale ||
+      old.color != color ||
+      old.rows != rows ||
+      old.columns != columns;
 }
 
 class _Block extends StatelessWidget {
-  const _Block({required this.entry, required this.onTap});
+  const _Block({
+    required this.metrics,
+    required this.entry,
+    required this.onTap,
+  });
 
+  final WeekGridMetrics metrics;
   final ProgramEntry entry;
   final VoidCallback? onTap;
-
-  static const double _glyph = 14;
 
   @override
   Widget build(BuildContext context) {
@@ -180,22 +194,27 @@ class _Block extends StatelessWidget {
               borderRadius: AppRadius.borderSm,
             ),
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(6, 2, 6, 2),
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               child: ClipRect(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    PhosphorIcon(icon, size: _glyph, color: accent),
-                    Text(
-                      entry.shortLesson,
-                      maxLines: 1,
-                      softWrap: false,
-                      overflow: TextOverflow.ellipsis,
-                      style: text.caption.copyWith(
-                        color: accent,
-                        fontWeight: FontWeight.w700,
-                        height: 16 / 13,
+                    PhosphorIcon(icon, size: metrics.glyph, color: accent),
+                    // A long name ("Matematik", "Coğrafya") shrinks a little
+                    // instead of ending in "…": the block has no other line.
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: AlignmentDirectional.centerStart,
+                      child: Text(
+                        entry.shortLesson,
+                        maxLines: 1,
+                        softWrap: false,
+                        style: text.caption.copyWith(
+                          color: accent,
+                          fontWeight: FontWeight.w700,
+                          height: 16 / 13,
+                        ),
                       ),
                     ),
                   ],
