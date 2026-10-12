@@ -811,6 +811,10 @@ class _SubTopicItemTileState extends State<_SubTopicItemTile> {
         ? Colors.red
         : AppColors.textPrimary;
 
+    final String iconImage = widget.titleAlert
+        ? 'assets/icons/w.png'
+        : 'assets/icons/q2.png';
+
     print("itemName: ${widget.itemName}");
     print(widget.descList);
 
@@ -844,7 +848,7 @@ class _SubTopicItemTileState extends State<_SubTopicItemTile> {
         title: Row(
           children: [
             Image.asset(
-              'assets/icons/q2.png',
+              iconImage,
               width: 22,
               height: 22,
               fit: BoxFit.contain, // Görselin oranını korumak için
