@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:smap/features/debug/pages/buttons_gallery.dart';
 import 'package:smap/features/debug/pages/choices_gallery.dart';
+import 'package:smap/features/debug/pages/coach_gallery.dart';
 import 'package:smap/features/debug/pages/controls_gallery.dart';
 import 'package:smap/features/debug/pages/domain_gallery.dart';
 import 'package:smap/features/debug/pages/feedback_gallery.dart';
@@ -50,4 +51,5 @@ final List<GalleryPage> galleryPages = [
   GalleryPage(title: 'Kabuk', builder: (_) => const NavigationGallery()),
   GalleryPage(title: 'Alan', builder: (_) => const DomainGallery()),
   GalleryPage(title: 'Program', builder: (_) => const PickersGallery()),
+  GalleryPage(title: 'Koç', builder: (_) => const CoachGallery()),
 ];
