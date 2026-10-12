@@ -29,4 +29,22 @@ abstract final class FeatureFlags {
   /// drawn. Opening it also needs a delete call given to
   /// `ProgramDetailViewModel.deleteProgram`.
   static const bool programDeleteEnabled = false;
+
+  /// "Şifre" (pano 9.3, all three frames) and its row in Hesap.
+  ///
+  /// Closed because the backend has no endpoint that changes the password
+  /// (spec §6.3 #8, S7; the legacy screen only showed a success message). While
+  /// it is `false` the row is not drawn and `PasswordRoute` is not in the
+  /// router's route list. Opening it also needs a `PasswordRepository`
+  /// registered in the locator.
+  static const bool passwordChangeEnabled = false;
+
+  /// Push notifications behind "Bildirimler" (pano 9.6).
+  ///
+  /// Closed because the backend has no preferences endpoint and no push
+  /// delivery (spec D-23, T2.17, 8.4; S10). The screen is open anyway: the
+  /// choices are kept on the device, and while this is `false` an info box
+  /// says that notifications are planned. Opening it also means writing the
+  /// choices to the server (`PUT /devices`).
+  static const bool notificationsEnabled = false;
 }
