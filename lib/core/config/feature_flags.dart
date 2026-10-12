@@ -47,4 +47,24 @@ abstract final class FeatureFlags {
   /// says that notifications are planned. Opening it also means writing the
   /// choices to the server (`PUT /devices`).
   static const bool notificationsEnabled = false;
+
+  /// The optical reading service is on ("okuma açık" flag; pano 4.10 kare 2,
+  /// spec T2.16).
+  ///
+  /// Open (`true`) until the backend can tell the app when the reading is in
+  /// maintenance (spec §6.3 #4 "Bakım bayrağı"; there is no such endpoint yet).
+  /// When it is `false` "Okut" does not open the camera: it shows the sheet
+  /// "Optik okuma şu an kapalı". Today a 503 from the reading host is the other
+  /// way the same words appear (after the first upload).
+  static const bool omrEnabled = true;
+
+  /// Photos taken without a connection are kept on the phone and sent later
+  /// (pano 4.10 kare 3 "Bağlantı yok · planlı"; spec T2.15).
+  ///
+  /// Closed because the queue does not exist: in v1 an upload that fails for
+  /// want of a connection shows the failure of pano 4.5 kare 4 ("Formun
+  /// gönderilemedi", "Tekrar Dene", "Yeni Fotoğraf") and keeps the photo on
+  /// that screen. Opening it also needs the queue itself; the screen of
+  /// pano 4.10 kare 3 is built and waits behind this flag.
+  static const bool offlineQueueEnabled = false;
 }
