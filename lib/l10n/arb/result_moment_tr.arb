@@ -1,0 +1,72 @@
+{
+  "@@locale": "tr",
+  "resultMoment_fieldA11y": "Puan türü",
+  "@resultMoment_fieldA11y": {
+    "description": "Screen reader name of the score type segment of the result moment (pano 5.1 'aria: Puan türü')."
+  },
+  "resultMoment_fieldNet": "{field} neti {net}",
+  "@resultMoment_fieldNet": {
+    "description": "Net of the chosen AYT score type under the score boxes (pano 5.1 kare 1: 'Eşit Ağırlık neti 40').",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      },
+      "net": {
+        "type": "String"
+      }
+    }
+  },
+  "resultMoment_fieldTests": "{first} ve {second}",
+  "@resultMoment_fieldTests": {
+    "description": "The two tests a score type is made of (pano 5.1 kare 1: 'Türk Dili ve Edebiyatı–Sosyal Bilimler 1 ve Matematik').",
+    "placeholders": {
+      "first": {
+        "type": "String"
+      },
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "resultMoment_cards": "Bu denemeden {count} bilgi kartı eklendi",
+  "@resultMoment_cards": {
+    "description": "Cards row of the result moment (pano 5.1 kare 1); {count} is formatted with TrFormat.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "resultMoment_home": "Anasayfa",
+  "@resultMoment_home": {
+    "description": "Quiet button of the result moment (pano 5.1)."
+  },
+  "resultMoment_detail": "Detaylı Analiz",
+  "@resultMoment_detail": {
+    "description": "The primary button of the result moment (pano 5.1); opens Deneme Detay."
+  },
+  "resultMoment_errorTitle": "Sonuç yüklenemedi",
+  "@resultMoment_errorTitle": {
+    "description": "Title of the screen error of the result moment (not on the board; the pano 5.8 kare 3 pattern)."
+  },
+  "resultMoment_errorMessage": "Bağlantını kontrol edip tekrar dene.",
+  "@resultMoment_errorMessage": {
+    "description": "Message of the screen error of the result moment (the pano 5.8 kare 3 sentence)."
+  },
+  "notificationPrimer_title": "Sonucun hazır olunca haber verelim mi?",
+  "@notificationPrimer_title": {
+    "description": "Title of the notification permission sheet (pano 5.2)."
+  },
+  "notificationPrimer_body": "Sistemde olmayan bir denemeyi okuttuğunda analizini hazırlayınca bildirim gönderelim. Hesap › Bildirimler'den istediğin zaman kapatabilirsin.",
+  "@notificationPrimer_body": {
+    "description": "Body of the notification permission sheet (pano 5.2)."
+  },
+  "notificationPrimer_allow": "Bildirimlere İzin Ver",
+  "@notificationPrimer_allow": {
+    "description": "Primary button of the notification permission sheet (pano 5.2); opens the system dialog."
+  },
+  "notificationPrimer_later": "Sonra",
+  "@notificationPrimer_later": {
+    "description": "Quiet button of the notification permission sheet (pano 5.2); never asks again."
+  }
+}
