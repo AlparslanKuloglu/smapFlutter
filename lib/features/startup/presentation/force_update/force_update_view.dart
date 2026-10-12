@@ -39,19 +39,14 @@ class ForceUpdateView extends StackedView<ForceUpdateViewModel> {
     final l10n = AppLocalizations.of(context);
     return AppSystemOverlayRegion(
       kind: AppSystemOverlayKind.bar,
-      // A Material ancestor gives the texts their theme style (without one
-      // Text draws the yellow debug underline).
-      child: Material(
-        color: context.appColors.bgCanvas,
-        child: AppStatusView(
-          title: l10n.startup_forceUpdateTitle,
-          message: l10n.startup_forceUpdateBody,
-          leading: const _AppIcon(),
-          blocking: true,
-          primary: AppStatusAction(
-            label: l10n.startup_forceUpdateAction,
-            onPressed: viewModel.update,
-          ),
+      child: AppStatusView(
+        title: l10n.startup_forceUpdateTitle,
+        message: l10n.startup_forceUpdateBody,
+        leading: const _AppIcon(),
+        blocking: true,
+        primary: AppStatusAction(
+          label: l10n.startup_forceUpdateAction,
+          onPressed: viewModel.update,
         ),
       ),
     );
