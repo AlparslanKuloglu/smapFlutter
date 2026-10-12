@@ -47,6 +47,7 @@ class _ReviewAlert
 /// wide) and the primary "Cevapları Onayla" (the rest). While the answers are
 /// being sent "Düzelt" is off and the primary shows its spinner; after a
 /// failure the primary reads "Tekrar Dene". No second confirmation is asked.
+/// From a text scale of 1,25 the two buttons are stacked, the primary on top.
 class _ReviewActions
     extends SelectorViewModelWidget<ScanReviewViewModel, ReviewSend> {
   const _ReviewActions();
@@ -57,6 +58,9 @@ class _ReviewActions
   /// The width of "Düzelt" (pano 4.7).
   static const double _fixWidth = 120;
 
+  /// From this text scale on the buttons are stacked.
+  static const double _stackScale = 1.25;
+
   @override
   Widget build(BuildContext context, ReviewSend send) {
     final colors = context.appColors;
@@ -64,6 +68,26 @@ class _ReviewActions
     final vm = getParentViewModel<ScanReviewViewModel>(context, listen: false);
     final safe = MediaQuery.paddingOf(context);
     final sending = send == ReviewSend.sending;
+    // At a large text scale the two labels no longer share a row ("Cevapları
+    // Onayla" was cut at 1,35): the primary goes on top, "Düzelt" under it.
+    final stacked = MediaQuery.textScalerOf(context).scale(1) >= _stackScale;
+    final fix = AppButton(
+      label: l10n.scan_fix,
+      variant: AppButtonVariant.outline,
+      icon: PhosphorIconsRegular.pencilSimple,
+      expand: true,
+      onPressed: sending ? null : () => unawaited(vm.fix()),
+    );
+    final confirm = AppButton(
+      label: switch (send) {
+        ReviewSend.idle => l10n.scan_confirmAnswers,
+        ReviewSend.sending => l10n.scan_sending,
+        ReviewSend.failed => l10n.common_retry,
+      },
+      expand: true,
+      loading: sending,
+      onPressed: sending ? null : () => unawaited(vm.confirm()),
+    );
     return DecoratedBox(
       decoration: BoxDecoration(
         color: colors.bgSurface,
@@ -76,33 +100,25 @@ class _ReviewActions
           AppSpacing.s16,
           safe.bottom + AppSpacing.s8,
         ),
-        child: Row(
-          children: [
-            SizedBox(
-              width: _fixWidth,
-              child: AppButton(
-                label: l10n.scan_fix,
-                variant: AppButtonVariant.outline,
-                icon: PhosphorIconsRegular.pencilSimple,
-                expand: true,
-                onPressed: sending ? null : () => unawaited(vm.fix()),
+        child: stacked
+            ? Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  confirm,
+                  const SizedBox(height: AppSpacing.s12),
+                  fix,
+                ],
+              )
+            : Row(
+                children: [
+                  SizedBox(
+                    width: MediaQuery.textScalerOf(context).scale(_fixWidth),
+                    child: fix,
+                  ),
+                  const SizedBox(width: AppSpacing.s12),
+                  Expanded(child: confirm),
+                ],
               ),
-            ),
-            const SizedBox(width: AppSpacing.s12),
-            Expanded(
-              child: AppButton(
-                label: switch (send) {
-                  ReviewSend.idle => l10n.scan_confirmAnswers,
-                  ReviewSend.sending => l10n.scan_sending,
-                  ReviewSend.failed => l10n.common_retry,
-                },
-                expand: true,
-                loading: sending,
-                onPressed: sending ? null : () => unawaited(vm.confirm()),
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }

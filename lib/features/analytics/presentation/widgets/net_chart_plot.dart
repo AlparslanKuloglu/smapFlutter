@@ -37,8 +37,23 @@ class NetChartPlot extends StatefulWidget {
   /// The top of the y axis.
   final double axisMax;
 
-  /// Height of the whole plot with its x labels.
-  static const double height = 214;
+  /// Height of the whole plot with its x labels at the normal text size
+  /// (pano 6.1).
+  static const double baseHeight = 214;
+
+  /// The x labels' strip: one text line and 8 pt of air.
+  static const double _labelLine = 20;
+  static const double _labelAir = 8;
+
+  /// The height of the plot for [scaler]: the drawing area and the x label
+  /// strip grow with the text, because the balloon (two text lines) sits
+  /// above the selected point and, in a fixed area, would cover it from
+  /// about 1,3 (a 1,35 balloon is 87 pt tall over a point 68 pt below the
+  /// top). At scale 1 it is [baseHeight].
+  static double heightFor(TextScaler scaler) =>
+      scaler.scale(baseHeight - _labelLine - _labelAir) +
+      scaler.scale(_labelLine) +
+      _labelAir;
 
   @override
   State<NetChartPlot> createState() => _NetChartPlotState();
@@ -94,7 +109,9 @@ class _NetChartPlotState extends State<NetChartPlot> {
     final label = text.caption.copyWith(color: colors.textSecondary);
     final digits = TrFormat.net(max).length;
     final left = (scaler.scale(13) * _digitEm * digits + 8).ceilToDouble();
-    final bottom = (scaler.scale(20) + 8).ceilToDouble();
+    final bottom =
+        (scaler.scale(NetChartPlot._labelLine) + NetChartPlot._labelAir)
+            .ceilToDouble();
 
     return LayoutBuilder(
       builder: (context, box) {

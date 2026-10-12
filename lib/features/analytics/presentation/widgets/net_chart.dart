@@ -91,7 +91,7 @@ class NetChart extends StatelessWidget {
             explicitChildNodes: true,
             label: NetChartReading.summary(l10n, scope, points),
             child: SizedBox(
-              height: NetChartPlot.height,
+              height: NetChartPlot.heightFor(MediaQuery.textScalerOf(context)),
               child: NetChartPlot(points: points, axisMax: top),
             ),
           ),

@@ -78,7 +78,12 @@ class NetChartPointSemantics extends StatelessWidget {
           children: [
             for (final (i, point) in points.indexed)
               Positioned(
-                left: (i - minX) * unit - unit / 2,
+                // Kept inside the plot: the first and last items used to be
+                // cut by its edge to 0,8 of a slot (44 pt of 54).
+                left: ((i - minX) * unit - unit / 2).clamp(
+                  0.0,
+                  box.maxWidth - unit,
+                ),
                 width: unit,
                 top: 0,
                 bottom: 0,

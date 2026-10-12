@@ -1,5 +1,23 @@
 {
   "@@locale": "tr",
+  "examDetail_questionCorrectNoMarkA11y": "Soru {number}, doğru",
+  "@examDetail_questionCorrectNoMarkA11y": {
+    "description": "Question cell reading, right answer when the data does not say which option was marked (the backend sends the outcome only, spec 6.3 #9): the reading never ends in an empty \"işaretin\".",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "examDetail_questionWrongNoMarkA11y": "Soru {number}, yanlış",
+  "@examDetail_questionWrongNoMarkA11y": {
+    "description": "Question cell reading, wrong answer when the data does not say which option was marked.",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
   "examDetail_tabsA11y": "Deneme bölümleri",
   "@examDetail_tabsA11y": {
     "description": "Screen reader name of the in-screen tab row (pano 5.3 'aria: Deneme bölümleri')."

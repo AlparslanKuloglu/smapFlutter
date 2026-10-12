@@ -79,6 +79,24 @@ void main() {
       expect(shown, {0, 3, 6, 9});
       expect(shown.contains(0) && shown.contains(9), isTrue);
     });
+    test('no two shown labels are side by side (6 points, 4 labels)', () {
+      // Rounded even positions gave {0, 2, 3, 5}: the middle two overlapped.
+      final shown = ChartAxis.visibleLabelIndices(6, 4).toList()..sort();
+      expect(shown, [1, 3, 5]);
+    });
+    test('the stride is the same between every shown label', () {
+      for (var count = 3; count < 40; count++) {
+        for (var limit = 2; limit < count; limit++) {
+          final shown = ChartAxis.visibleLabelIndices(count, limit).toList()
+            ..sort();
+          expect(shown.last, count - 1, reason: '$count/$limit');
+          final gaps = {
+            for (var i = 1; i < shown.length; i++) shown[i] - shown[i - 1],
+          };
+          expect(gaps.length, lessThanOrEqualTo(1), reason: '$count/$limit');
+        }
+      }
+    });
     test('never more than the limit', () {
       for (var count = 7; count < 40; count++) {
         expect(

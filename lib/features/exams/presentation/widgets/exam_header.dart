@@ -37,7 +37,7 @@ enum ExamHeaderVariant {
 /// göre") when there is a previous exam of the type; the large counter. The
 /// content rises 8 pt while fading in over 250 ms (a plain fade under
 /// "Reduce motion"); the success haptic is played once by the screen, not
-/// here. The whole moment is read as one sentence: "Türkiye Geneli Deneme 6,
+/// here. The whole moment is read as one sentence (a heading): "Türkiye Geneli Deneme 6,
 /// 67,5 net, 86 doğru, 74 yanlış, 0 boş, önceki sınava göre +8,25".
 ///
 /// The collapse of the large title into the short bar when the page scrolls
@@ -153,10 +153,15 @@ class ExamHeader extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                  Text(
-                    name,
-                    style: (_isMoment ? text.headline : text.titleMd).copyWith(
-                      color: colors.textPrimary,
+                  // The screen's title: its own heading node for the detail
+                  // header (the moment is one sentence, a heading itself).
+                  Semantics(
+                    header: !_isMoment,
+                    container: !_isMoment,
+                    child: Text(
+                      name,
+                      style: (_isMoment ? text.headline : text.titleMd)
+                          .copyWith(color: colors.textPrimary),
                     ),
                   ),
                   SizedBox(height: _isMoment ? 6 : AppSpacing.s4),
@@ -239,6 +244,7 @@ class ExamHeader extends StatelessWidget {
     final summary = countValues!;
     return Semantics(
       container: true,
+      header: true,
       label: change == null
           ? l10n.exams_momentA11y(
               name,

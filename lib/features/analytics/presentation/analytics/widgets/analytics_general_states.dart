@@ -29,14 +29,19 @@ class _GeneralSkeleton extends StatelessWidget {
       ),
       sliver: SliverToBoxAdapter(
         child: AppSkeleton(
+          // Stretch: the chart card is as wide as the screen (it shrank to
+          // its 120 pt title line when the column was start-aligned).
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               if (withPill) ...[
-                const SkeletonBox(
-                  width: _pillWidth,
-                  height: _pillHeight,
-                  radius: AppRadius.full,
+                const Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: SkeletonBox(
+                    width: _pillWidth,
+                    height: _pillHeight,
+                    radius: AppRadius.full,
+                  ),
                 ),
                 const SizedBox(height: _sectionGap),
               ],
