@@ -26,8 +26,11 @@ class RouterScanNavigator implements ScanNavigator {
 
   final StackRouter _router;
 
+  /// `pop`, not `maybePop`: every stage blocks Back with its own `PopScope`
+  /// and answers it by calling this; `maybePop` would ask that `PopScope`
+  /// again, which calls this again, and the loop froze the app.
   @override
-  void close() => _router.maybePop();
+  void close() => _router.pop();
 
   /// The result moment takes the scan's place on the root stack; its own
   /// exits ("Detaylı Analiz", "Anasayfa") navigate into the shell.
