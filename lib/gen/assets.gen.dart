@@ -1078,21 +1078,6 @@ class $AssetsMenuIconsGen {
   ];
 }
 
-class $AssetsSplashGen {
-  const $AssetsSplashGen();
-
-  /// File path: assets/splash/smap_splash.png
-  AssetGenImage get smapSplash =>
-      const AssetGenImage('assets/splash/smap_splash.png');
-
-  /// File path: assets/splash/smap_splash_android12.png
-  AssetGenImage get smapSplashAndroid12 =>
-      const AssetGenImage('assets/splash/smap_splash_android12.png');
-
-  /// List of all assets
-  List<AssetGenImage> get values => [smapSplash, smapSplashAndroid12];
-}
-
 class $AssetsSvgsGen {
   const $AssetsSvgsGen();
 
@@ -3101,7 +3086,6 @@ abstract final class Assets {
   static const AssetGenImage smaplogo = AssetGenImage('assets/smaplogo.png');
   static const AssetGenImage smpr1 = AssetGenImage('assets/smpr1.png');
   static const AssetGenImage smpr2 = AssetGenImage('assets/smpr2.png');
-  static const $AssetsSplashGen splash = $AssetsSplashGen();
   static const $AssetsSvgsGen svgs = $AssetsSvgsGen();
   static const AssetGenImage tarih = AssetGenImage('assets/tarih.png');
   static const AssetGenImage turkce = AssetGenImage('assets/turkce.png');

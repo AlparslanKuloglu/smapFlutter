@@ -3,7 +3,7 @@
 <!-- Optik form okuma (features/scan); camera_android de ekliyor, burada açıkça. -->
 <uses-permission android:name="android.permission.CAMERA" />
     <application
-        android:label="smap"
+        android:label="SMAP"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
