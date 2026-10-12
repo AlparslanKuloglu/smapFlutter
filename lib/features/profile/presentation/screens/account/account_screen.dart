@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:smap/core/theme/app_colors.dart';
+import 'package:smap/features/legacy/legacy_links_e14b.dart';
 import 'package:smap/features/profile/presentation/provider/account_nav_provider.dart';
 import 'package:smap/features/profile/presentation/screens/account/widgets/account_menu_tile.dart';
 import 'package:smap/features/shared/presentation/provider/user_provider.dart';
@@ -112,7 +113,7 @@ class AccountScreen extends StatelessWidget {
           AccountMenuTile(
             title: 'Bildirimler',
             svgPath: "assets/svgs/ntf.svg",
-            onTap: () => accountNav.open(AccountRoute.notifications),
+            onTap: () => openNotificationsFromLegacyHub(context),
           ),
 
           // --- ÇIKIŞ YAP ALANI ---

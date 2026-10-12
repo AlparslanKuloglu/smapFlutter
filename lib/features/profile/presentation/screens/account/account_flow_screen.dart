@@ -5,7 +5,6 @@ import 'package:smap/features/profile/presentation/provider/account_nav_provider
 import 'package:smap/features/profile/presentation/screens/account/account_screen.dart';
 import 'package:smap/features/profile/presentation/screens/account_settings/account_settings_screen.dart';
 import 'package:smap/features/profile/presentation/screens/contracts/contracts_screen.dart';
-import 'package:smap/features/profile/presentation/screens/notifications/notifications_screen.dart';
 import 'package:smap/features/profile/presentation/screens/payment_settings/payment_settings_screen.dart';
 import 'package:smap/features/profile/presentation/screens/saved_cards/saved_cards_screen.dart';
 
@@ -37,7 +36,8 @@ class AccountFlowScreen extends StatelessWidget {
         AccountRoute.payment => const PaymentSettingsScreen(),
         AccountRoute.savedCards => const SavedCardsScreen(),
         AccountRoute.contracts => const ContractsScreen(),
-        AccountRoute.notifications => const NotificationsScreen(),
+        // "Bildirimler" is the new NotificationsView (route, not this flow).
+        AccountRoute.notifications => const AccountScreen(),
       },
     );
   }

@@ -1,0 +1,372 @@
+{
+  "@@locale": "tr",
+  "accountSettings_sendFailed": "Gönderilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@accountSettings_sendFailed": {
+    "description": "Toast and inline text when a change of the account settings (password, coach link, unlink) could not be sent (pano 1.22 kare 1 error toast wording)."
+  },
+  "accountSettings_loadErrorMessage": "Bağlantını kontrol edip tekrar dene. Sorun sürerse biraz sonra yeniden açabilirsin.",
+  "@accountSettings_loadErrorMessage": {
+    "description": "Sentence of the screen-level error state of Koçluk (pano 2.18 'Ekran hatası metni')."
+  },
+  "password_title": "Şifre",
+  "@password_title": {
+    "description": "Title of the password screen (pano 9.3 kare 1)."
+  },
+  "password_currentLabel": "Mevcut şifre",
+  "@password_currentLabel": {
+    "description": "Label of the first field (pano 9.3 kare 1)."
+  },
+  "password_newLabel": "Yeni şifre",
+  "@password_newLabel": {
+    "description": "Label of the second field (pano 9.3 kare 1)."
+  },
+  "password_newRule": "En az 8 karakter.",
+  "@password_newRule": {
+    "description": "Rule line under the new password; turns red when it is too short (pano 9.3 kare 1, spec 1.12)."
+  },
+  "password_repeatLabel": "Yeni şifre (tekrar)",
+  "@password_repeatLabel": {
+    "description": "Label of the third field (pano 9.3 kare 1)."
+  },
+  "password_submit": "Şifreyi Güncelle",
+  "@password_submit": {
+    "description": "The single primary button of the password screen (pano 9.3 kare 1)."
+  },
+  "password_errWrongCurrent": "Mevcut şifren doğru değil.",
+  "@password_errWrongCurrent": {
+    "description": "Error under the current password when the server refuses it (pano 9.3 kare 2)."
+  },
+  "password_errSame": "Yeni şifre eskisiyle aynı olamaz.",
+  "@password_errSame": {
+    "description": "Error under the new password when it equals the current one (pano 9.3 'Kurallar ve hata metinleri')."
+  },
+  "password_errMismatch": "Şifreler aynı değil.",
+  "@password_errMismatch": {
+    "description": "Error under the repeat field when the two new passwords differ (pano 9.3 'Kurallar ve hata metinleri')."
+  },
+  "password_updated": "Şifren güncellendi.",
+  "@password_updated": {
+    "description": "Toast on Hesap after the password was changed (pano 9.3 kare 3)."
+  },
+  "deletion_title": "Hesabını sil",
+  "@deletion_title": {
+    "description": "Title of the account deletion explanation (pano 9.4 kare 2)."
+  },
+  "deletion_listHeading": "Hesabını silersen:",
+  "@deletion_listHeading": {
+    "description": "Heading of the list of what is lost (pano 9.4 kare 2)."
+  },
+  "deletion_lineExams": "Okuttuğun {count} deneme ve analizleri silinir.",
+  "@deletion_lineExams": {
+    "description": "First line of the list (pano 9.4 kare 2); the count is the number of exams the student has read.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "deletion_lineExamsAnonymous": "Okuttuğun denemeler ve analizleri silinir.",
+  "@deletion_lineExamsAnonymous": {
+    "description": "First line of the list when the account does not say how many exams were read (no number is made up)."
+  },
+  "deletion_lineProgress": "Eksik konuların, programların ve bilgi kartı ilerlemen silinir.",
+  "@deletion_lineProgress": {
+    "description": "Second line of the list (pano 9.4 kare 2)."
+  },
+  "deletion_lineCoach": "Koçun {name} ile bağlantın kalkar.",
+  "@deletion_lineCoach": {
+    "description": "Third line of the list, for a student who has a coach (pano 9.4 kare 2).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deletion_lineCoachAnonymous": "Koçunla bağlantın kalkar.",
+  "@deletion_lineCoachAnonymous": {
+    "description": "Third line while the coach's name is not known yet (it is loaded in the background)."
+  },
+  "deletion_lineIrreversible": "Bu işlem geri alınamaz.",
+  "@deletion_lineIrreversible": {
+    "description": "Last line of the list (pano 9.4 kare 2)."
+  },
+  "deletion_pauseHint": "Yalnız bir süre ara vermek istiyorsan çıkış yapman yeterli; verilerin hesabında kalır.",
+  "@deletion_pauseHint": {
+    "description": "Closing note under the list: signing out is enough for a pause (pano 9.4 kare 2)."
+  },
+  "deletion_confirmAction": "Hesabımı Sil",
+  "@deletion_confirmAction": {
+    "description": "The danger button of the explanation and of the confirm sheet (pano 9.4 kare 2 and 3)."
+  },
+  "deletion_confirmTitle": "Hesabın silinsin mi?",
+  "@deletion_confirmTitle": {
+    "description": "Title of the dangerous confirm sheet (pano 9.4 kare 3)."
+  },
+  "deletion_confirmBody": "{name} hesabı ve bütün verilerin kalıcı olarak silinecek. Bu işlem geri alınamaz.",
+  "@deletion_confirmBody": {
+    "description": "Body of the dangerous confirm sheet (pano 9.4 kare 3); the name is the user's full name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deletion_confirmBodyAnonymous": "Hesabın ve bütün verilerin kalıcı olarak silinecek. Bu işlem geri alınamaz.",
+  "@deletion_confirmBodyAnonymous": {
+    "description": "Body of the confirm sheet when the account has no name to show."
+  },
+  "deletion_failed": "Hesabın silinemedi. Bağlantını kontrol edip tekrar dene.",
+  "@deletion_failed": {
+    "description": "Error box on the explanation after the deletion failed (pano 9.4 kare 4 note)."
+  },
+  "deletion_progressTitle": "Hesabın siliniyor",
+  "@deletion_progressTitle": {
+    "description": "Title of the full-screen progress (pano 9.4 kare 4)."
+  },
+  "deletion_progressBody": "Uygulamayı kapatma.",
+  "@deletion_progressBody": {
+    "description": "Sentence under the progress title (pano 9.4 kare 4)."
+  },
+  "deletion_doneTitle": "Hesabın silindi",
+  "@deletion_doneTitle": {
+    "description": "Title of the end screen (pano 9.4 kare 5)."
+  },
+  "deletion_doneBody": "Verilerin silindi. İstersen yeni bir hesapla yeniden başlayabilirsin.",
+  "@deletion_doneBody": {
+    "description": "Sentence under the end title (pano 9.4 kare 5)."
+  },
+  "coaching_title": "Koçluk",
+  "@coaching_title": {
+    "description": "Title of the coaching screen (pano 9.5)."
+  },
+  "coaching_errorTitle": "Koçluk yüklenemedi",
+  "@coaching_errorTitle": {
+    "description": "Title of the screen-level error state of Koçluk (pano 1.22 kare 4 wording)."
+  },
+  "coaching_coachLabel": "Koçun",
+  "@coaching_coachLabel": {
+    "description": "Small line under the coach's name on the coach card (pano 9.5 kare 1)."
+  },
+  "coaching_infoBox": "{name} denemelerini, analizlerini ve programını görebilir.",
+  "@coaching_infoBox": {
+    "description": "Info box under the coach card (pano 9.5 kare 1).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coaching_unlinkAction": "Bağlantıyı Kaldır",
+  "@coaching_unlinkAction": {
+    "description": "Red text button and the danger button of its confirm sheet (pano 9.5 kare 1 and 2)."
+  },
+  "coaching_unlinkTitle": "Koç bağlantısı kaldırılsın mı?",
+  "@coaching_unlinkTitle": {
+    "description": "Title of the unlink confirm sheet (pano 9.5 kare 2)."
+  },
+  "coaching_unlinkBody": "{name} gelişimini artık göremeyecek. Yeniden bağlanmak için koçluk kodunu tekrar girmen gerekir.",
+  "@coaching_unlinkBody": {
+    "description": "Body of the unlink confirm sheet (pano 9.5 kare 2).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coaching_unlinked": "Koç bağlantın kaldırıldı.",
+  "@coaching_unlinked": {
+    "description": "Toast after the coach was unlinked (pano 9.5 kare 2)."
+  },
+  "coaching_linked": "{name} bağlandın.",
+  "@coaching_linked": {
+    "description": "Toast after linking to a coach (pano 9.5 kare 3); the name arrives with its dative suffix: \"Mehmet Özkan'a\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coaching_unlinkedIntro": "Koçunun verdiği kodu gir; koçun denemelerini, analizlerini ve programını görebilsin.",
+  "@coaching_unlinkedIntro": {
+    "description": "Sentence above the code field when the student has no coach (pano 9.5 kare 3)."
+  },
+  "coaching_codeLabel": "Koçluk kodu",
+  "@coaching_codeLabel": {
+    "description": "Label of the coaching code field (pano 9.5 kare 3)."
+  },
+  "coaching_codeHint": "Örn: MOZK-4821",
+  "@coaching_codeHint": {
+    "description": "Example in the empty coaching code field (pano 9.5 kare 3)."
+  },
+  "coaching_codeHelp": "4 harf ve 4 rakam; tire kendiliğinden gelir.",
+  "@coaching_codeHelp": {
+    "description": "Help line under the coaching code field (pano 9.5 kare 3)."
+  },
+  "coaching_errNotFound": "Bu kodla bir koç bulunamadı. Kodu koçundan yeniden iste.",
+  "@coaching_errNotFound": {
+    "description": "Error under the code field when no coach has the code (pano 9.5 kare 3)."
+  },
+  "coaching_connect": "Koça Bağlan",
+  "@coaching_connect": {
+    "description": "Primary button of the unlinked state (pano 9.5 kare 3)."
+  },
+  "coaching_whatIsCode": "Koçluk Kodu Nedir?",
+  "@coaching_whatIsCode": {
+    "description": "Text button that opens the explanation sheet (pano 9.5 kare 3)."
+  },
+  "coachingInfo_title": "Koçluk kodu nedir?",
+  "@coachingInfo_title": {
+    "description": "Title of the explanation sheet (pano 9.5 kare 4)."
+  },
+  "coachingInfo_body1": "Koçluk kodu, koçunun SMAP hesabına özel koddur; dört harf ve dört rakamdan oluşur.",
+  "@coachingInfo_body1": {
+    "description": "First paragraph of the explanation sheet (pano 9.5 kare 4)."
+  },
+  "coachingInfo_body2": "Kodu koçundan iste. Girdiğinde koçun denemelerini, analizlerini ve programını görebilir. Bağlantıyı istediğin an buradan kaldırabilirsin.",
+  "@coachingInfo_body2": {
+    "description": "Second paragraph of the explanation sheet (pano 9.5 kare 4)."
+  },
+  "coachingInfo_coachTitle": "Koçluk kodu ne işe yarar?",
+  "@coachingInfo_coachTitle": {
+    "description": "Title of the coach's explanation sheet on the coach's Hesap (Tur 12 G, 14.11 kare 2)."
+  },
+  "coachingInfo_coachBody1": "Öğrencin bu kodu kendi hesabında Hesap › Koçluk bölümüne girer; böylece hesabı seninkine bağlanır.",
+  "@coachingInfo_coachBody1": {
+    "description": "First paragraph of the coach's explanation sheet (Tur 12 G)."
+  },
+  "coachingInfo_coachBody2": "Bağlanan öğrenciler Öğrencilerim'de listelenir; denemelerini, analizlerini ve programını görürsün. Hesabını senin açtığın öğrenciler zaten bağlı gelir.",
+  "@coachingInfo_coachBody2": {
+    "description": "Second paragraph of the coach's explanation sheet (Tur 12 G)."
+  },
+  "coachingChange_open": "Koçunu Değiştir",
+  "@coachingChange_open": {
+    "description": "Text button above \"Bağlantıyı Kaldır\" that opens the change sheet (Tur 12 F, 14.10 kare 1)."
+  },
+  "coachingChange_offlineNote": "Koçunu değiştirmek için bağlantı gerekiyor.",
+  "@coachingChange_offlineNote": {
+    "description": "Note under the disabled \"Koçunu Değiştir\" when the device is offline (Tur 12 F)."
+  },
+  "coachingChange_title": "Koçunu değiştir",
+  "@coachingChange_title": {
+    "description": "Title of the change sheet (Tur 12 F, 14.10 kare 2)."
+  },
+  "coachingChange_warning": "{name} ile bağlantın kalkacak. Yeni koçun denemelerini, analizlerini ve programını görebilecek.",
+  "@coachingChange_warning": {
+    "description": "Warning box of the change sheet (Tur 12 F).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachingChange_codeLabel": "Yeni koçunun kodu",
+  "@coachingChange_codeLabel": {
+    "description": "Label of the code field of the change sheet (Tur 12 F)."
+  },
+  "coachingChange_action": "Koçu Değiştir",
+  "@coachingChange_action": {
+    "description": "Primary button of the change sheet (Tur 12 F)."
+  },
+  "coachingChange_errSameCoach": "Bu kod zaten koçun {name} ait.",
+  "@coachingChange_errSameCoach": {
+    "description": "Error under the code field when the code is the current coach's (Tur 12 F, 14.10 kare 3); the name arrives with its dative suffix: \"Mehmet Özkan'a\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifications_title": "Bildirimler",
+  "@notifications_title": {
+    "description": "Title of the notifications screen (pano 9.6)."
+  },
+  "notifications_plannedNotice": "Bildirimler planlı: tercihlerin şimdiden kaydedilir, bildirimler açıldığında bunlara göre gelir.",
+  "@notifications_plannedNotice": {
+    "description": "Info box while notifications are not sent yet (pano 9.6 kare 1)."
+  },
+  "notifications_permissionOff": "Bildirim izni kapalı. Telefonunun ayarlarından SMAP'e izin verirsen bu tercihler geçerli olur.",
+  "@notifications_permissionOff": {
+    "description": "Warning box when the system permission is off (pano 9.6 kare 2)."
+  },
+  "notifications_openSettings": "Ayarları Aç",
+  "@notifications_openSettings": {
+    "description": "Text button of the warning box; opens the system settings (pano 9.6 kare 2)."
+  },
+  "notifications_categoriesHeading": "Kategoriler",
+  "@notifications_categoriesHeading": {
+    "description": "Heading of the group of category switches (pano 9.6 kare 1)."
+  },
+  "notifications_examReadyTitle": "Deneme sonucun hazır",
+  "@notifications_examReadyTitle": {
+    "description": "Category title (pano 9.6 kare 1)."
+  },
+  "notifications_examReadyBody": "Okuttuğun denemenin analizi bitince",
+  "@notifications_examReadyBody": {
+    "description": "Category line (pano 9.6 kare 1)."
+  },
+  "notifications_coachAssignedTitle": "Koçun deneme ya da ödev atadı",
+  "@notifications_coachAssignedTitle": {
+    "description": "Category title (pano 9.6 kare 1)."
+  },
+  "notifications_coachAssignedBody": "{name} yeni bir şey atadığında",
+  "@notifications_coachAssignedBody": {
+    "description": "Category line with the coach's name (pano 9.6 kare 1).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "notifications_coachAssignedBodyAnonymous": "Koçun yeni bir şey atadığında",
+  "@notifications_coachAssignedBodyAnonymous": {
+    "description": "Category line while the coach's name is not known."
+  },
+  "notifications_meetingPlannedTitle": "Görüşme planlandı",
+  "@notifications_meetingPlannedTitle": {
+    "description": "Category title (pano 9.6 kare 1)."
+  },
+  "notifications_meetingPlannedBody": "Koçun bir görüşme planladığında",
+  "@notifications_meetingPlannedBody": {
+    "description": "Category line (pano 9.6 kare 1)."
+  },
+  "notifications_studyReminderTitle": "Çalışma hatırlatıcısı",
+  "@notifications_studyReminderTitle": {
+    "description": "Category title (pano 9.6 kare 1)."
+  },
+  "notifications_studyReminderBody": "Programındaki çalışmanın saatinde",
+  "@notifications_studyReminderBody": {
+    "description": "Category line (pano 9.6 kare 1)."
+  },
+  "notifications_quietHeading": "Sessiz saatler",
+  "@notifications_quietHeading": {
+    "description": "Heading of the quiet hours group (pano 9.6 kare 1)."
+  },
+  "notifications_quietTitle": "Sessiz saatler",
+  "@notifications_quietTitle": {
+    "description": "Title of the quiet hours switch row (pano 9.6 kare 1)."
+  },
+  "notifications_quietBody": "Bu saatlerde bildirim gelmez",
+  "@notifications_quietBody": {
+    "description": "Line of the quiet hours switch row (pano 9.6 kare 1)."
+  },
+  "notifications_quietStart": "Başlangıç",
+  "@notifications_quietStart": {
+    "description": "Row that sets the start of the quiet hours (pano 9.6 kare 1)."
+  },
+  "notifications_quietEnd": "Bitiş",
+  "@notifications_quietEnd": {
+    "description": "Row that sets the end of the quiet hours (pano 9.6 kare 1)."
+  },
+  "notifications_quietStartTitle": "Sessiz saat başlangıcı",
+  "@notifications_quietStartTitle": {
+    "description": "Title of the time wheel sheet for the start (pano 9.6 kare 3)."
+  },
+  "notifications_quietEndTitle": "Sessiz saat bitişi",
+  "@notifications_quietEndTitle": {
+    "description": "Title of the time wheel sheet for the end (assumed; the board draws only the start, spec 9.6 'belirtilmemiş')."
+  },
+  "notifications_savedNote": "Değişiklikler anında kaydedilir.",
+  "@notifications_savedNote": {
+    "description": "Note under the quiet hours group; there is no Save button (pano 9.6 kare 1)."
+  }
+}
