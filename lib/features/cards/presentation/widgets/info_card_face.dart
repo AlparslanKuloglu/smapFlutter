@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart' show OrdinalSortKey;
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:smap/core/theme/app_radius.dart';
 import 'package:smap/core/theme/app_shadows.dart';
@@ -117,6 +118,8 @@ class InfoCardFace extends StatelessWidget {
           children: [
             Semantics(
               container: true,
+              // The card is read first, then its star.
+              sortKey: const OrdinalSortKey(0),
               liveRegion: announce,
               label: reading,
               excludeSemantics: true,
@@ -172,16 +175,19 @@ class InfoCardFace extends StatelessWidget {
               Positioned(
                 top: _starTop,
                 right: _starRight,
-                child: AppIconButton(
-                  icon: PhosphorIconsRegular.star,
-                  selectedIcon: PhosphorIconsFill.star,
-                  selected: isFavorite,
-                  iconSize: 22,
-                  color: isFavorite ? colors.primary : colors.borderControl,
-                  semanticLabel: isFavorite
-                      ? l10n.cards_favoriteRemove
-                      : l10n.cards_favoriteAdd,
-                  onPressed: onFavoriteTap,
+                child: Semantics(
+                  sortKey: const OrdinalSortKey(1),
+                  child: AppIconButton(
+                    icon: PhosphorIconsRegular.star,
+                    selectedIcon: PhosphorIconsFill.star,
+                    selected: isFavorite,
+                    iconSize: 22,
+                    color: isFavorite ? colors.primary : colors.borderControl,
+                    semanticLabel: isFavorite
+                        ? l10n.cards_favoriteRemove
+                        : l10n.cards_favoriteAdd,
+                    onPressed: onFavoriteTap,
+                  ),
                 ),
               ),
             if (isMissing)

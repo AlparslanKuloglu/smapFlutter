@@ -182,13 +182,25 @@ class _ItemBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        for (final (index, paragraph) in item.text.definition.indexed) ...[
-          if (index > 0) const SizedBox(height: AppSpacing.s8),
-          Text(
-            paragraph,
-            style: text.bodyReading.copyWith(color: colors.textPrimary),
+        // Its own node: without it the paragraphs merge into the sub-topic
+        // card and a screen reader reads them before the item's title.
+        if (item.text.definition.isNotEmpty)
+          Semantics(
+            container: true,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                for (final (index, paragraph)
+                    in item.text.definition.indexed) ...[
+                  if (index > 0) const SizedBox(height: AppSpacing.s8),
+                  Text(
+                    paragraph,
+                    style: text.bodyReading.copyWith(color: colors.textPrimary),
+                  ),
+                ],
+              ],
+            ),
           ),
-        ],
         for (final example in item.text.examples) ...[
           const SizedBox(height: AppSpacing.s12),
           ExampleBox(example: example.text, explanation: example.explanation),

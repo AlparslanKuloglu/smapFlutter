@@ -16,7 +16,8 @@ import 'package:smap/shared/ui/surfaces/app_row_shell.dart';
 /// name 16/24 · 600, wrapping to two lines or more, never cut ("İkinci Dünya
 /// Savaşı Sürecinde Türkiye ve Dünya"). Right: the [EksikTag] when [missing] is
 /// above zero (nothing is written for none, "0 eksik" never) and CaretRight
-/// 20.
+/// 20. From text scale 1,25 the tag sits under the name instead, and the
+/// number circle grows with the text.
 ///
 /// [number] is made on the device, 1 to n without a gap, and a filtered list
 /// keeps the numbers of the full list (`TopicNumbering`). Read as "9. Fiilde

@@ -25,7 +25,9 @@ part 'week_grid_parts.dart';
 /// the hours of a program down the side, its days across, a block where a
 /// topic is planned.
 ///
-/// - **Measures**: hour column 44, day column 84, hour row 40, header row 44.
+/// - **Measures**: hour column 44, day column 84, hour row 40, header row 44
+///   (and the block height 36), all times the text scale up to 1,5
+///   ([WeekGridMetrics]); the grid's own text is held to that limit.
 ///   Lines are 1 pt (`bgSunken` in light, `borderSubtle` in dark); the hour
 ///   labels are 13/20 · 600 `textSecondary`.
 /// - **Header**: the weekday (13/20 · 600) over the day number (15/20 · 700);
