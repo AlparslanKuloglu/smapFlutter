@@ -810,18 +810,51 @@ class MeetingsRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [NewProgramView]
-class NewProgramRoute extends PageRouteInfo<void> {
-  const NewProgramRoute({List<PageRouteInfo>? children})
-    : super(NewProgramRoute.name, initialChildren: children);
+class NewProgramRoute extends PageRouteInfo<NewProgramRouteArgs> {
+  NewProgramRoute({
+    StudentRef? student,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         NewProgramRoute.name,
+         args: NewProgramRouteArgs(student: student, key: key),
+         initialChildren: children,
+       );
 
   static const String name = 'NewProgramRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const NewProgramView();
+      final args = data.argsAs<NewProgramRouteArgs>(
+        orElse: () => const NewProgramRouteArgs(),
+      );
+      return NewProgramView(student: args.student, key: args.key);
     },
   );
+}
+
+class NewProgramRouteArgs {
+  const NewProgramRouteArgs({this.student, this.key});
+
+  final StudentRef? student;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'NewProgramRouteArgs{student: $student, key: $key}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! NewProgramRouteArgs) return false;
+    return student == other.student && key == other.key;
+  }
+
+  @override
+  int get hashCode => student.hashCode ^ key.hashCode;
 }
 
 /// generated route for
@@ -895,6 +928,7 @@ class ProgramDetailRoute extends PageRouteInfo<ProgramDetailRouteArgs> {
     required String programId,
     String? view,
     String? date,
+    StudentRef? student,
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
@@ -903,6 +937,7 @@ class ProgramDetailRoute extends PageRouteInfo<ProgramDetailRouteArgs> {
            programId: programId,
            view: view,
            date: date,
+           student: student,
            key: key,
          ),
          rawPathParams: {'programId': programId},
@@ -928,6 +963,7 @@ class ProgramDetailRoute extends PageRouteInfo<ProgramDetailRouteArgs> {
         programId: args.programId,
         view: args.view,
         date: args.date,
+        student: args.student,
         key: args.key,
       );
     },
@@ -939,6 +975,7 @@ class ProgramDetailRouteArgs {
     required this.programId,
     this.view,
     this.date,
+    this.student,
     this.key,
   });
 
@@ -948,11 +985,13 @@ class ProgramDetailRouteArgs {
 
   final String? date;
 
+  final StudentRef? student;
+
   final Key? key;
 
   @override
   String toString() {
-    return 'ProgramDetailRouteArgs{programId: $programId, view: $view, date: $date, key: $key}';
+    return 'ProgramDetailRouteArgs{programId: $programId, view: $view, date: $date, student: $student, key: $key}';
   }
 
   @override
@@ -962,28 +1001,66 @@ class ProgramDetailRouteArgs {
     return programId == other.programId &&
         view == other.view &&
         date == other.date &&
+        student == other.student &&
         key == other.key;
   }
 
   @override
   int get hashCode =>
-      programId.hashCode ^ view.hashCode ^ date.hashCode ^ key.hashCode;
+      programId.hashCode ^
+      view.hashCode ^
+      date.hashCode ^
+      student.hashCode ^
+      key.hashCode;
 }
 
 /// generated route for
 /// [ProgramListView]
-class ProgramListRoute extends PageRouteInfo<void> {
-  const ProgramListRoute({List<PageRouteInfo>? children})
-    : super(ProgramListRoute.name, initialChildren: children);
+class ProgramListRoute extends PageRouteInfo<ProgramListRouteArgs> {
+  ProgramListRoute({
+    StudentRef? student,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         ProgramListRoute.name,
+         args: ProgramListRouteArgs(student: student, key: key),
+         initialChildren: children,
+       );
 
   static const String name = 'ProgramListRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const ProgramListView();
+      final args = data.argsAs<ProgramListRouteArgs>(
+        orElse: () => const ProgramListRouteArgs(),
+      );
+      return ProgramListView(student: args.student, key: args.key);
     },
   );
+}
+
+class ProgramListRouteArgs {
+  const ProgramListRouteArgs({this.student, this.key});
+
+  final StudentRef? student;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'ProgramListRouteArgs{student: $student, key: $key}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! ProgramListRouteArgs) return false;
+    return student == other.student && key == other.key;
+  }
+
+  @override
+  int get hashCode => student.hashCode ^ key.hashCode;
 }
 
 /// generated route for
@@ -1238,6 +1315,87 @@ class StartupRoute extends PageRouteInfo<void> {
       return const StartupView();
     },
   );
+}
+
+/// generated route for
+/// [StudentProfileView]
+class StudentProfileRoute extends PageRouteInfo<StudentProfileRouteArgs> {
+  StudentProfileRoute({
+    required String studentId,
+    String? tab,
+    StudentRef? student,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         StudentProfileRoute.name,
+         args: StudentProfileRouteArgs(
+           studentId: studentId,
+           tab: tab,
+           student: student,
+           key: key,
+         ),
+         rawPathParams: {'studentId': studentId},
+         rawQueryParams: {'tab': tab},
+         initialChildren: children,
+       );
+
+  static const String name = 'StudentProfileRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final pathParams = data.inheritedPathParams;
+      final queryParams = data.queryParams;
+      final args = data.argsAs<StudentProfileRouteArgs>(
+        orElse: () => StudentProfileRouteArgs(
+          studentId: pathParams.getString('studentId'),
+          tab: queryParams.optString('tab'),
+        ),
+      );
+      return StudentProfileView(
+        studentId: args.studentId,
+        tab: args.tab,
+        student: args.student,
+        key: args.key,
+      );
+    },
+  );
+}
+
+class StudentProfileRouteArgs {
+  const StudentProfileRouteArgs({
+    required this.studentId,
+    this.tab,
+    this.student,
+    this.key,
+  });
+
+  final String studentId;
+
+  final String? tab;
+
+  final StudentRef? student;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'StudentProfileRouteArgs{studentId: $studentId, tab: $tab, student: $student, key: $key}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! StudentProfileRouteArgs) return false;
+    return studentId == other.studentId &&
+        tab == other.tab &&
+        student == other.student &&
+        key == other.key;
+  }
+
+  @override
+  int get hashCode =>
+      studentId.hashCode ^ tab.hashCode ^ student.hashCode ^ key.hashCode;
 }
 
 /// generated route for

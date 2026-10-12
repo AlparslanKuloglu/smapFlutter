@@ -122,6 +122,19 @@ void main() {
     expect(namesOf('/scan/result/r1'), [ResultMomentRoute.name]);
   });
 
+  test('a student profile opens in the Öğrencilerim stack', () {
+    expect(namesOf('/coach/students/s1'), [
+      CoachShellRoute.name,
+      CoachStudentsTabRoute.name,
+      StudentProfileRoute.name,
+    ]);
+    expect(namesOf('/coach/students/program'), [
+      CoachShellRoute.name,
+      CoachStudentsTabRoute.name,
+      ProgramListRoute.name,
+    ]);
+  });
+
   test('a meeting opens in the Görüşmelerim stack', () {
     expect(namesOf('/coach/meetings/m1'), [
       CoachShellRoute.name,

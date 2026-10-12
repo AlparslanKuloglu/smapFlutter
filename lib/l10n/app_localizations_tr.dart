@@ -1041,6 +1041,136 @@ class AppLocalizationsTr extends AppLocalizations {
   String get coachMeetings_withLabel => 'Kiminle';
 
   @override
+  String coachStudentProfile_bagHelp(String name) {
+    return 'Çanta: $name denemelerinden çıkan eksik konular.';
+  }
+
+  @override
+  String get coachStudentProfile_bagSegment => 'Çanta';
+
+  @override
+  String get coachStudentProfile_errorMessage =>
+      'Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get coachStudentProfile_errorTitle => 'Öğrenci yüklenemedi';
+
+  @override
+  String coachStudentProfile_examsEmptyMessage(String name) {
+    return '$name bir deneme okuttuğunda sonuçları burada görünür.';
+  }
+
+  @override
+  String get coachStudentProfile_examsOrder => 'En yeni önce';
+
+  @override
+  String coachStudentProfile_examsSummary(String count) {
+    return '$count deneme · en yeni önce';
+  }
+
+  @override
+  String coachStudentProfile_newDaysBody(String name) {
+    return '$name için birden çok gün seçebilirsin; geçmiş günler seçilemez.';
+  }
+
+  @override
+  String get coachStudentProfile_newDaysTitle => 'Hangi günler çalışacak?';
+
+  @override
+  String get coachStudentProfile_newNameTitle => 'Programa ad ver';
+
+  @override
+  String get coachStudentProfile_notFoundMessage =>
+      'Bu öğrenci listende görünmüyor. Öğrencilerim\'e dönüp yeniden seçebilirsin.';
+
+  @override
+  String get coachStudentProfile_notFoundTitle => 'Öğrenci bulunamadı';
+
+  @override
+  String get coachStudentProfile_planMeeting => 'Görüşme Planla';
+
+  @override
+  String coachStudentProfile_programEditA11y(String name) {
+    return '$name programını düzenle';
+  }
+
+  @override
+  String coachStudentProfile_programEmptyBody(String name) {
+    return 'Onun için bir hafta kurabilirsin; $name programı kendi Anasayfa\'sında görür.';
+  }
+
+  @override
+  String coachStudentProfile_programEmptyTitle(String name) {
+    return '$name programı yok';
+  }
+
+  @override
+  String coachStudentProfile_programInfo(String name) {
+    return 'Bu programı $name da görür ve düzenleyebilir. Yaptığın değişiklik onun programına hemen yansır.';
+  }
+
+  @override
+  String get coachStudentProfile_programLoadError =>
+      'Programlar yüklenemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get coachStudentProfile_programOfflineNote =>
+      'Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı programı görebilirsin.';
+
+  @override
+  String coachStudentProfile_programSaved(String name) {
+    return 'Program $name hesabına kaydedildi.';
+  }
+
+  @override
+  String get coachStudentProfile_programSetUp => 'Program Kur';
+
+  @override
+  String coachStudentProfile_programsCount(String count) {
+    return '$count program';
+  }
+
+  @override
+  String get coachStudentProfile_programsRow => 'Programlar';
+
+  @override
+  String get coachStudentProfile_programsTitle => 'Programlar';
+
+  @override
+  String coachStudentProfile_stripDetail(String grade, String track) {
+    return '$grade · $track';
+  }
+
+  @override
+  String coachStudentProfile_stripDetailA11y(String grade, String track) {
+    return '$grade, $track';
+  }
+
+  @override
+  String get coachStudentProfile_tabAnalysis => 'Analiz';
+
+  @override
+  String get coachStudentProfile_tabExams => 'Denemeler';
+
+  @override
+  String get coachStudentProfile_tabProgram => 'Program';
+
+  @override
+  String get coachStudentProfile_tabsA11y => 'Öğrenci verileri sekmeleri';
+
+  @override
+  String get coachStudentProfile_trackShortDil => 'DİL';
+
+  @override
+  String get coachStudentProfile_trackShortEsitAgirlik => 'EA';
+
+  @override
+  String get coachStudentProfile_trackShortSayisal => 'SAY';
+
+  @override
+  String get coachStudentProfile_trackShortSozel => 'SÖZ';
+
+  @override
   String coachWidgets_attentionDates(String first, String second) {
     return '$first ve $second';
   }

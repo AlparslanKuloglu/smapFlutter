@@ -6,6 +6,7 @@ import 'package:smap/features/account/account_settings_routes.dart';
 import 'package:smap/features/cards/cards_routes.dart';
 import 'package:smap/features/coach/coach_home_routes.dart';
 import 'package:smap/features/coach/coach_meetings_routes.dart';
+import 'package:smap/features/coach/coach_student_profile_routes.dart';
 import 'package:smap/features/coach/coach_students_routes.dart';
 import 'package:smap/features/exams/exams_routes.dart';
 import 'package:smap/features/analytics/analytics_routes.dart';
@@ -70,7 +71,8 @@ List<AutoRoute> get shellRoutes => [
       AutoRoute(
         page: CoachStudentsTabRoute.page,
         path: 'students',
-        children: coachStudentsTabRoutes,
+        // Fixed paths come before `:studentId` (E17).
+        children: [...coachStudentsTabRoutes, ...coachStudentProfileRoutes],
       ),
       AutoRoute(
         page: CoachMeetingsTabRoute.page,

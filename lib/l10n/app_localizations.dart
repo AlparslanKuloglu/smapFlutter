@@ -1901,6 +1901,210 @@ abstract class AppLocalizations {
   /// **'Kiminle'**
   String get coachMeetings_withLabel;
 
+  /// Help under the topic sheet segment in a coach's view; {name} carries its genitive suffix: "Çanta: Alparslan'ın denemelerinden çıkan eksik konular." (brief 14.2 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Çanta: {name} denemelerinden çıkan eksik konular.'**
+  String coachStudentProfile_bagHelp(String name);
+
+  /// Topic sheet segment in a coach's view (brief 14.2 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Çanta'**
+  String get coachStudentProfile_bagSegment;
+
+  /// Sentence under the screen error title; no inner code.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantını kontrol edip tekrar dene.'**
+  String get coachStudentProfile_errorMessage;
+
+  /// Title of the screen error when the student could not be read (pano 1.22 kare 4 pattern; brief 14.3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci yüklenemedi'**
+  String get coachStudentProfile_errorTitle;
+
+  /// Sentence of the empty Analiz and Denemeler tabs of a coach's view; {name} is the student's first name.
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} bir deneme okuttuğunda sonuçları burada görünür.'**
+  String coachStudentProfile_examsEmptyMessage(String name);
+
+  /// Summary line of the Denemeler tab when the exam count is not known.
+  ///
+  /// In tr, this message translates to:
+  /// **'En yeni önce'**
+  String get coachStudentProfile_examsOrder;
+
+  /// Summary line of the Denemeler tab (pano 10.4 kare 2): "10 deneme · en yeni önce".
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} deneme · en yeni önce'**
+  String coachStudentProfile_examsSummary(String count);
+
+  /// Step 1 sentence of a coach's new program flow (brief 14.2 kare 1); {name} is the first name.
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} için birden çok gün seçebilirsin; geçmiş günler seçilemez.'**
+  String coachStudentProfile_newDaysBody(String name);
+
+  /// Step 1 title of a coach's new program flow (brief 14.2 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Hangi günler çalışacak?'**
+  String get coachStudentProfile_newDaysTitle;
+
+  /// Step 3 title of a coach's new program flow (brief 14.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Programa ad ver'**
+  String get coachStudentProfile_newNameTitle;
+
+  /// Sentence under the not-found title.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu öğrenci listende görünmüyor. Öğrencilerim\'e dönüp yeniden seçebilirsin.'**
+  String get coachStudentProfile_notFoundMessage;
+
+  /// Title shown when the student id is not in the coach's list (a stale link).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci bulunamadı'**
+  String get coachStudentProfile_notFoundTitle;
+
+  /// Bar action of Öğrenci Profili; opens the new meeting sheet with the student chosen (pano 10.4 kare 1 to 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Görüşme Planla'**
+  String get coachStudentProfile_planMeeting;
+
+  /// Reading of the inline "Düzenle" of the Program tab (brief 14.1 "Okunuş"); {name} carries its genitive suffix.
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} programını düzenle'**
+  String coachStudentProfile_programEditA11y(String name);
+
+  /// Sentence of the empty Program tab / list (brief 14.1 kare 4); {name} is the first name.
+  ///
+  /// In tr, this message translates to:
+  /// **'Onun için bir hafta kurabilirsin; {name} programı kendi Anasayfa\'sında görür.'**
+  String coachStudentProfile_programEmptyBody(String name);
+
+  /// Title of the empty Program tab / list (brief 14.1 kare 4); {name} carries its genitive suffix: "Alparslan'ın programı yok".
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} programı yok'**
+  String coachStudentProfile_programEmptyTitle(String name);
+
+  /// InfoBox under the Program tab (brief 14.1 kare 1); {name} is the first name.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu programı {name} da görür ve düzenleyebilir. Yaptığın değişiklik onun programına hemen yansır.'**
+  String coachStudentProfile_programInfo(String name);
+
+  /// Section error of the Program tab (brief 14.3 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Programlar yüklenemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get coachStudentProfile_programLoadError;
+
+  /// Note while offline in a coach's program screens (brief 14.3 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı programı görebilirsin.'**
+  String get coachStudentProfile_programOfflineNote;
+
+  /// Toast after a coach saved a new program; {name} carries its genitive suffix: "Program Alparslan'ın hesabına kaydedildi." (brief 14.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Program {name} hesabına kaydedildi.'**
+  String coachStudentProfile_programSaved(String name);
+
+  /// Primary action of the empty Program tab / list (brief 14.1 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Program Kur'**
+  String get coachStudentProfile_programSetUp;
+
+  /// Value line of the "Programlar" row: "3 program".
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} program'**
+  String coachStudentProfile_programsCount(String count);
+
+  /// Settings row that opens the student's program list (brief 14.1 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Programlar'**
+  String get coachStudentProfile_programsRow;
+
+  /// Title of the program list in a coach's view (brief 14.1 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Programlar'**
+  String get coachStudentProfile_programsTitle;
+
+  /// Right side of the context strip: the class and the field short form, "12. Sınıf · EA" (pano 10.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'{grade} · {track}'**
+  String coachStudentProfile_stripDetail(String grade, String track);
+
+  /// Spoken form of the context strip's class and field: "12. Sınıf, Eşit Ağırlık".
+  ///
+  /// In tr, this message translates to:
+  /// **'{grade}, {track}'**
+  String coachStudentProfile_stripDetailA11y(String grade, String track);
+
+  /// First in-screen tab of Öğrenci Profili (pano 10.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Analiz'**
+  String get coachStudentProfile_tabAnalysis;
+
+  /// Second in-screen tab of Öğrenci Profili (pano 10.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Denemeler'**
+  String get coachStudentProfile_tabExams;
+
+  /// Third in-screen tab of Öğrenci Profili (pano 10.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Program'**
+  String get coachStudentProfile_tabProgram;
+
+  /// Accessible name of the Analiz, Denemeler and Program tabs (pano 10.4, "tablist").
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci verileri sekmeleri'**
+  String get coachStudentProfile_tabsA11y;
+
+  /// Short form of the Dil field in the context strip (pano 10.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'DİL'**
+  String get coachStudentProfile_trackShortDil;
+
+  /// Short form of the Eşit Ağırlık field in the context strip: "12. Sınıf · EA" (pano 10.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'EA'**
+  String get coachStudentProfile_trackShortEsitAgirlik;
+
+  /// Short form of the Sayısal field in the context strip's "12. Sınıf · SAY" (pano 10.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'SAY'**
+  String get coachStudentProfile_trackShortSayisal;
+
+  /// Short form of the Sözel field in the context strip (pano 10.4).
+  ///
+  /// In tr, this message translates to:
+  /// **'SÖZ'**
+  String get coachStudentProfile_trackShortSozel;
+
   /// The two exam dates of the net-drop evidence: '17 Haz. ve 4 Ağu.' (C33).
   ///
   /// In tr, this message translates to:

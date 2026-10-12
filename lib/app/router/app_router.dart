@@ -52,6 +52,7 @@ import 'package:smap/features/auth/register_routes.dart';
 import 'package:smap/features/coach/presentation/coach_home/coach_home_view.dart';
 import 'package:smap/features/coach/presentation/meetings/detail/meeting_detail_view.dart';
 import 'package:smap/features/coach/presentation/meetings/meetings_view.dart';
+import 'package:smap/features/coach/presentation/student_profile/student_profile_view.dart';
 import 'package:smap/features/coach/presentation/students/students_view.dart';
 import 'package:smap/features/exams/presentation/result_moment/result_moment_view.dart';
 import 'package:smap/features/exams/result_moment_routes.dart';
