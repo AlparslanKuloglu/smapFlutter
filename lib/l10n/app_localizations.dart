@@ -3626,6 +3626,18 @@ abstract class AppLocalizations {
   /// **'Seç'**
   String get kit2_selectPlaceholder;
 
+  /// State word read after the header of a closed accordion (C50): 'Konu başlığı, 4 madde, daraltılmış'.
+  ///
+  /// In tr, this message translates to:
+  /// **'daraltılmış'**
+  String get kit_a11yAccordionCollapsed;
+
+  /// State word read after the header of an open accordion (C50): 'Konu başlığı, 4 madde, genişletilmiş'.
+  ///
+  /// In tr, this message translates to:
+  /// **'genişletilmiş'**
+  String get kit_a11yAccordionExpanded;
+
   /// Hint of a dangerous row that opens a confirmation (C17).
   ///
   /// In tr, this message translates to:

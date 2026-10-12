@@ -3190,6 +3190,14 @@
   "@kit2_selectPlaceholder": {
     "description": "Value shown by an empty SelectField (C12)."
   },
+  "kit_a11yAccordionCollapsed": "daraltılmış",
+  "@kit_a11yAccordionCollapsed": {
+    "description": "State word read after the header of a closed accordion (C50): 'Konu başlığı, 4 madde, daraltılmış'."
+  },
+  "kit_a11yAccordionExpanded": "genişletilmiş",
+  "@kit_a11yAccordionExpanded": {
+    "description": "State word read after the header of an open accordion (C50): 'Konu başlığı, 4 madde, genişletilmiş'."
+  },
   "kit_a11yAsksConfirmation": "onay ister",
   "@kit_a11yAsksConfirmation": {
     "description": "Hint of a dangerous row that opens a confirmation (C17)."

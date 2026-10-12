@@ -137,6 +137,15 @@ class _TestAccordion extends StatelessWidget {
       initiallyExpanded: initiallyExpanded,
       headerPadding: _headerPadding,
       bodyPadding: _bodyPadding,
+      // One reading for the header: "23 doğru, 17 yanlış, 0 boş, 40 soru".
+      summaryLabel: [
+        l10n.exams_dybA11y(
+          test.counts.correct,
+          test.counts.wrong,
+          test.counts.blank,
+        ),
+        l10n.exams_questionCount(test.questionCount),
+      ].join(', '),
       summary: Wrap(
         spacing: AppSpacing.s12,
         runSpacing: AppSpacing.s4,

@@ -84,6 +84,12 @@ class _SubTopicCard
       headerPadding: _headerPadding,
       bodyPadding: EdgeInsets.zero,
       initiallyExpanded: viewModel.opensInitially(data.id),
+      // One reading for the header: "4 madde, 1 eksik".
+      summaryLabel: [
+        l10n.topicDetail_itemCount(TrFormat.sira(data.items.length)),
+        if (data.missingCount > 0)
+          l10n.lessons_missingCount(TrFormat.sira(data.missingCount)),
+      ].join(', '),
       summary: Wrap(
         spacing: AppSpacing.s8,
         runSpacing: AppSpacing.s4,

@@ -2121,6 +2121,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get kit2_selectPlaceholder => 'Seç';
 
   @override
+  String get kit_a11yAccordionCollapsed => 'daraltılmış';
+
+  @override
+  String get kit_a11yAccordionExpanded => 'genişletilmiş';
+
+  @override
   String get kit_a11yAsksConfirmation => 'onay ister';
 
   @override
