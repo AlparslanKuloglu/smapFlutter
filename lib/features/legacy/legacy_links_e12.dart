@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'package:smap/features/legacy/legacy_theme.dart';
-import 'package:smap/features/my_card/presentation/screens/my_cards_page/my_card_lesson_detail_page/my_card_lesson_detail_page.dart';
-import 'package:smap/repository/cards_repository.dart';
+import 'package:smap/features/cards/presentation/deck/card_deck_view.dart';
 
-/// Opens the legacy card deck of an exam lesson ("Kartlarım" of Ders Detayı,
-/// pano 7.2 → 8.1) until the new `CardDeckView` of E13 exists. The deck
-/// opens on the root navigator, so it covers the shell and its bottom bar
-/// like the legacy page's own header expects, and it goes away when E13
-/// swaps this one call for its route.
+/// Opens the card deck of an exam lesson ("Kartlarım" of Ders Detayı, pano 7.2
+/// → 8.1). The legacy card pages are gone; this opens the new `CardDeckView`
+/// on the root navigator until the coordinator swaps this one call for the
+/// `CardDeckRoute` in the Derslerim stack (`cardsTabRoutes`), where the bottom
+/// bar stays. On the root navigator the deck covers the shell and its bar.
 ///
-/// [lessonId] is the backend lesson of the deck (`LessonIds.forTrack`), the
-/// id `getLessonInfoCards` takes; [lessonName] is the title the legacy header
-/// shows. Does nothing without a [navigator].
+/// [lessonId] is the backend lesson of the deck (`LessonIds.forTrack`), the id
+/// `getLessonInfoCards` takes; the deck writes the lesson's name itself, so
+/// [lessonName] is not used. Does nothing without a [navigator].
 Future<void> openLegacyCardDeck(
   NavigatorState? navigator, {
   required String lessonId,
@@ -20,16 +18,6 @@ Future<void> openLegacyCardDeck(
 }) async {
   if (navigator == null) return;
   await navigator.push<void>(
-    MaterialPageRoute<void>(
-      builder: (_) => LegacyTheme(
-        child: MyCardLessonDetailPage(
-          lessonId: lessonId,
-          lessonName: lessonName,
-          repository: CardsRepository(),
-          lesson: null,
-          onCountsChanged: null,
-        ),
-      ),
-    ),
+    MaterialPageRoute<void>(builder: (_) => CardDeckView(lessonId: lessonId)),
   );
 }

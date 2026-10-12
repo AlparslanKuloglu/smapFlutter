@@ -1,0 +1,141 @@
+{
+  "cardDeck_title": "{lesson} Kartları",
+  "@cardDeck_title": {
+    "description": "Large title of the card deck of a lesson (pano 8.1): \"Tarih Kartları\".",
+    "placeholders": {
+      "lesson": {
+        "type": "String"
+      }
+    }
+  },
+  "cardDeck_titleExam": "Deneme Kartları",
+  "@cardDeck_titleExam": {
+    "description": "Large title of the card deck opened from an exam (\"Kartları Çalış\"; spec 8.1 [Karar])."
+  },
+  "cardDeck_titleFallback": "Bilgi Kartları",
+  "@cardDeck_titleFallback": {
+    "description": "Large title of the card deck of a lesson that is not in the catalog."
+  },
+  "cardDeck_groupMissing": "Eksiklerim",
+  "@cardDeck_groupMissing": {
+    "description": "First option of the deck's segment (pano 8.1)."
+  },
+  "cardDeck_groupKnown": "Bildiklerim",
+  "@cardDeck_groupKnown": {
+    "description": "Second option of the deck's segment (pano 8.1)."
+  },
+  "cardDeck_groupFavorite": "Favorilerim",
+  "@cardDeck_groupFavorite": {
+    "description": "Third option of the deck's segment (pano 8.1)."
+  },
+  "cardDeck_count": "{count} kart",
+  "@cardDeck_count": {
+    "description": "Counter line of a segment option (pano 8.1): \"23 kart\".",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "cardDeck_countNone": "kart yok",
+  "@cardDeck_countNone": {
+    "description": "Counter line of an empty segment option (pano 8.1 kare 4)."
+  },
+  "cardDeck_progress": "{current}/{total}",
+  "@cardDeck_progress": {
+    "description": "Session progress next to the bar (pano 8.1): \"12/23\".",
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "cardDeck_progressA11y": "Oturum, {total} karttan {current}. kart",
+  "@cardDeck_progressA11y": {
+    "description": "Screen reader sentence of the session progress (pano 8.1: aria \"Oturum\").",
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "cardDeck_detail": "Detay",
+  "@cardDeck_detail": {
+    "description": "Secondary button under the deck; opens the card sheet (pano 8.1)."
+  },
+  "cardDeck_learned": "Öğrendim",
+  "@cardDeck_learned": {
+    "description": "Primary button under the deck, only on a missing card (pano 8.1)."
+  },
+  "cardDeck_moved": "Kart Bildiklerim'e taşındı.",
+  "@cardDeck_moved": {
+    "description": "Toast after \"Öğrendim\", with \"Geri Al\" for 6 s (pano 8.1 kare 3)."
+  },
+  "cardDeck_sendFailed": "Gönderilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@cardDeck_sendFailed": {
+    "description": "Toast when \"Öğrendim\" or the star could not be sent; the card goes back (spec C52: hata olursa geri alınır)."
+  },
+  "cardDeck_missingDoneTitle": "Bu derste eksik kartın kalmadı.",
+  "@cardDeck_missingDoneTitle": {
+    "description": "Empty state of Eksiklerim once every card is learned (pano 8.1 kare 4; Ek C)."
+  },
+  "cardDeck_missingDoneTitleExam": "Bu denemede eksik kartın kalmadı.",
+  "@cardDeck_missingDoneTitleExam": {
+    "description": "Same, in the deck opened from an exam (assumption: the pano has the lesson wording only)."
+  },
+  "cardDeck_missingDoneMessage": "Bildiklerim'deki {count} kartı tekrar etmek istersen oradan devam edebilirsin.",
+  "@cardDeck_missingDoneMessage": {
+    "description": "Sentence under the title of the empty Eksiklerim (pano 8.1 kare 4).",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "cardDeck_goKnown": "Bildiklerime Geç",
+  "@cardDeck_goKnown": {
+    "description": "Text button of the empty Eksiklerim; opens Bildiklerim (pano 8.1 kare 4)."
+  },
+  "cardDeck_knownEmpty": "Henüz öğrendiğin kart yok.",
+  "@cardDeck_knownEmpty": {
+    "description": "Empty state of Bildiklerim (pano 8.1 \"Boş metinler\", Ek C)."
+  },
+  "cardDeck_favoriteEmpty": "Favoriye eklediğin kart yok.",
+  "@cardDeck_favoriteEmpty": {
+    "description": "Empty state of Favorilerim (pano 8.1 \"Boş metinler\", Ek C)."
+  },
+  "cardDeck_noCardsTitle": "Bu derste henüz kartın yok.",
+  "@cardDeck_noCardsTitle": {
+    "description": "Empty state of a lesson with no card in any group (assumption: the pano does not draw this case)."
+  },
+  "cardDeck_noCardsTitleExam": "Bu denemeden kart eklenmedi.",
+  "@cardDeck_noCardsTitleExam": {
+    "description": "Empty state of an exam that earned no cards (assumption)."
+  },
+  "cardDeck_noCardsMessage": "Kartlar, denemelerde yanlış ve boş bıraktığın sorulardan eklenir.",
+  "@cardDeck_noCardsMessage": {
+    "description": "Sentence under the no-cards title (assumption; wording of pano 5.6: \"yanlış ve boş bıraktığın sorulardan\")."
+  },
+  "cardDeck_errorTitle": "Kartlar yüklenemedi",
+  "@cardDeck_errorTitle": {
+    "description": "Title of the screen-level error state of the card deck."
+  },
+  "cardDeck_errorMessage": "Bağlantını kontrol edip tekrar dene.",
+  "@cardDeck_errorMessage": {
+    "description": "Sentence of the error state of the card deck."
+  },
+  "cardDeck_nextA11y": "Sonraki kart",
+  "@cardDeck_nextA11y": {
+    "description": "Screen reader action of the top card (spec C52 customActions)."
+  },
+  "cardDeck_previousA11y": "Önceki kart",
+  "@cardDeck_previousA11y": {
+    "description": "Screen reader action of the top card (spec C52 customActions)."
+  }
+}

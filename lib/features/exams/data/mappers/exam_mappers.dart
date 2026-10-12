@@ -176,12 +176,15 @@ extension TotalInfoCardMapping on TotalInfoCardResponse {
   /// Counts one card per entry under its lesson (the legacy counting).
   ExamCardCounts toDomain() {
     final byLesson = <String, int>{};
+    final itemIds = <String>{};
     for (final card in cards ?? const <EarnedCardDto>[]) {
       final lesson = card.lesson;
       if (lesson == null) continue;
       byLesson[lesson] = (byLesson[lesson] ?? 0) + 1;
+      final item = card.item;
+      if (item != null && item.isNotEmpty) itemIds.add(item);
     }
-    return ExamCardCounts(byLesson: byLesson);
+    return ExamCardCounts(byLesson: byLesson, itemIds: itemIds);
   }
 }
 

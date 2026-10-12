@@ -1104,14 +1104,24 @@ class EarnedCardDtoMapper extends ClassMapperBase<EarnedCardDto> {
     opt: true,
     hook: IdRefHook(),
   );
+  static String? _$item(EarnedCardDto v) => v.item;
+  static const Field<EarnedCardDto, String> _f$item = Field(
+    'item',
+    _$item,
+    opt: true,
+    hook: IdRefHook(),
+  );
 
   @override
-  final MappableFields<EarnedCardDto> fields = const {#lesson: _f$lesson};
+  final MappableFields<EarnedCardDto> fields = const {
+    #lesson: _f$lesson,
+    #item: _f$item,
+  };
   @override
   final bool ignoreNull = true;
 
   static EarnedCardDto _instantiate(DecodingData data) {
-    return EarnedCardDto(lesson: data.dec(_f$lesson));
+    return EarnedCardDto(lesson: data.dec(_f$lesson), item: data.dec(_f$item));
   }
 
   @override
@@ -1176,7 +1186,7 @@ extension EarnedCardDtoValueCopy<$R, $Out>
 
 abstract class EarnedCardDtoCopyWith<$R, $In extends EarnedCardDto, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  $R call({String? lesson});
+  $R call({String? lesson, String? item});
   EarnedCardDtoCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -1189,11 +1199,17 @@ class _EarnedCardDtoCopyWithImpl<$R, $Out>
   late final ClassMapperBase<EarnedCardDto> $mapper =
       EarnedCardDtoMapper.ensureInitialized();
   @override
-  $R call({Object? lesson = $none}) =>
-      $apply(FieldCopyWithData({if (lesson != $none) #lesson: lesson}));
+  $R call({Object? lesson = $none, Object? item = $none}) => $apply(
+    FieldCopyWithData({
+      if (lesson != $none) #lesson: lesson,
+      if (item != $none) #item: item,
+    }),
+  );
   @override
-  EarnedCardDto $make(CopyWithData data) =>
-      EarnedCardDto(lesson: data.get(#lesson, or: $value.lesson));
+  EarnedCardDto $make(CopyWithData data) => EarnedCardDto(
+    lesson: data.get(#lesson, or: $value.lesson),
+    item: data.get(#item, or: $value.item),
+  );
 
   @override
   EarnedCardDtoCopyWith<$R2, EarnedCardDto, $Out2> $chain<$R2, $Out2>(

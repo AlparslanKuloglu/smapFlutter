@@ -277,6 +277,29 @@ void main() {
       },
     );
 
+    test('getEarnedCardCounts keeps the item ids the entries name', () async {
+      final repository = repositoryOver(
+        FakeAdapter.json({
+          'success': true,
+          'data': [
+            {'lesson': 'a', 'item': 'i-1'},
+            {
+              'lesson': 'a',
+              'item': {'_id': 'i-2', 'name': 'Populated'},
+            },
+            {'lesson': 'b'},
+          ],
+        }),
+      );
+
+      final counts = (await repository.getEarnedCardCounts(
+        examId: 'res-1',
+      )).rightOrNull!;
+
+      expect(counts.byLesson, {'a': 2, 'b': 1});
+      expect(counts.itemIds, {'i-1', 'i-2'});
+    });
+
     test('an exam that earned no cards is zero', () async {
       final repository = repositoryOver(
         FakeAdapter.json({'success': true, 'data': <Object>[]}),
