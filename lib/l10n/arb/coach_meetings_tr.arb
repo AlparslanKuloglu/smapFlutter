@@ -1,0 +1,315 @@
+{
+  "@@locale": "tr",
+  "coachMeetings_newA11y": "Yeni görüşme",
+  "@coachMeetings_newA11y": {
+    "description": "Accessible name of the Plus in the band of Görüşmelerim (pano 10.5 kare 1)."
+  },
+  "coachMeetings_searchHint": "Görüşme ara",
+  "@coachMeetings_searchHint": {
+    "description": "Search field placeholder and accessible name (pano 10.5 kare 1)."
+  },
+  "coachMeetings_withLabel": "Kiminle",
+  "@coachMeetings_withLabel": {
+    "description": "Accessible name of the \"Kiminle\" chips and the label of the kind segment in the new-meeting sheet (pano 10.5 kare 1 and 2)."
+  },
+  "coachMeetings_withAll": "Tümü",
+  "@coachMeetings_withAll": {
+    "description": "\"Kiminle\" chip: every kind (pano 10.5 kare 1)."
+  },
+  "coachMeetings_kindStudent": "Öğrenci",
+  "@coachMeetings_kindStudent": {
+    "description": "\"Kiminle\" chip, segment option and row tag: a meeting with the student (pano 10.5)."
+  },
+  "coachMeetings_kindParent": "Veli",
+  "@coachMeetings_kindParent": {
+    "description": "\"Kiminle\" chip, segment option and row tag: a meeting with the parent (pano 10.5)."
+  },
+  "coachMeetings_detailKindStudent": "Öğrenci görüşmesi",
+  "@coachMeetings_detailKindStudent": {
+    "description": "Line under the student name on the detail screen (pano 10.5 kare 3); also the row title when the server named no student."
+  },
+  "coachMeetings_detailKindParent": "Veli görüşmesi",
+  "@coachMeetings_detailKindParent": {
+    "description": "Same line for a parent meeting. The board draws only the student one; spec 10.5 notes the legacy \"Veli Görüşmesi\"."
+  },
+  "coachMeetings_meetingFallback": "Görüşme",
+  "@coachMeetings_meetingFallback": {
+    "description": "Row title and bar title of a meeting with no student name and an unknown kind. Assumption."
+  },
+  "coachMeetings_a11yKindStudent": "öğrenci görüşmesi",
+  "@coachMeetings_a11yKindStudent": {
+    "description": "End of the screen reader sentence of a row: \"Alparslan Kuloğlu, 12 Ekim 2026 Pazartesi, 16:00, öğrenci görüşmesi\" (Tur 9 erişilebilirlik)."
+  },
+  "coachMeetings_a11yKindParent": "veli görüşmesi",
+  "@coachMeetings_a11yKindParent": {
+    "description": "End of the screen reader sentence of a row for a parent meeting."
+  },
+  "coachMeetings_upcoming": "Yaklaşan · {count}",
+  "@coachMeetings_upcoming": {
+    "description": "Group title of the meetings from now on (pano 10.5 kare 1: \"Yaklaşan · 2\").",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "coachMeetings_past": "Geçmiş · {count}",
+  "@coachMeetings_past": {
+    "description": "Group title of the meetings that have passed. The board gives no text (\"O başlığın metni belirtilmemiş\"); this follows \"Yaklaşan · 2\". Assumption.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "coachMeetings_rowWhen": "{date} · {time}",
+  "@coachMeetings_rowWhen": {
+    "description": "Second line of a meeting row: \"12 Ekim 2026 Pazartesi · 16:00\" (pano 10.5 kare 1).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "coachMeetings_emptyTitle": "Henüz görüşme yok",
+  "@coachMeetings_emptyTitle": {
+    "description": "Empty state title (pano 10.5 kare 4)."
+  },
+  "coachMeetings_emptyMessage": "Öğrencinle ya da velisiyle görüşme planladığında burada listelenir.",
+  "@coachMeetings_emptyMessage": {
+    "description": "Empty state sentence (pano 10.5 kare 4)."
+  },
+  "coachMeetings_emptyAction": "Yeni Görüşme",
+  "@coachMeetings_emptyAction": {
+    "description": "Empty state primary action (pano 10.5 kare 4)."
+  },
+  "coachMeetings_noMatch": "“{query}” ile eşleşen görüşme yok. Öğrenci adında arar; büyük-küçük harf ve I/ı/İ/i farkı gözetmez.",
+  "@coachMeetings_noMatch": {
+    "description": "No result of a search (the board draws none; follows \"Sonuç yok\" of pano 10.2 kare 3). Assumption.",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "coachMeetings_noKind": "Bu süzgeçle görüşme yok. Başka bir seçenek deneyebilirsin.",
+  "@coachMeetings_noKind": {
+    "description": "No result of the \"Kiminle\" choice (not drawn on the board). Assumption."
+  },
+  "coachMeetings_clearSearch": "Aramayı Temizle",
+  "@coachMeetings_clearSearch": {
+    "description": "Action of the no-result card of a search (follows pano 10.2 kare 3)."
+  },
+  "coachMeetings_showAll": "Tümünü Göster",
+  "@coachMeetings_showAll": {
+    "description": "Action of the no-result card of the \"Kiminle\" choice: back to \"Tümü\"."
+  },
+  "coachMeetings_loadErrorTitle": "Görüşmelerin yüklenemedi",
+  "@coachMeetings_loadErrorTitle": {
+    "description": "Error state title of the list (1.22 pattern)."
+  },
+  "coachMeetings_loadErrorMessage": "Bağlantını kontrol edip tekrar dene. Sorun sürerse biraz sonra yeniden açabilirsin.",
+  "@coachMeetings_loadErrorMessage": {
+    "description": "Error state sentence of the list and of the detail (1.22 pattern)."
+  },
+  "coachMeetings_moreFailed": "Daha fazla görüşme yüklenemedi.",
+  "@coachMeetings_moreFailed": {
+    "description": "Section error under the list when the next page failed."
+  },
+  "coachMeetings_loadingMore": "Görüşmeler yükleniyor",
+  "@coachMeetings_loadingMore": {
+    "description": "Screen reader name of the spinner under the list."
+  },
+  "coachMeetings_refreshFailed": "Liste yenilenemedi. Bağlantını kontrol edip tekrar dene.",
+  "@coachMeetings_refreshFailed": {
+    "description": "Toast when a pull to refresh failed and the list stays."
+  },
+  "coachMeetings_saved": "Görüşme kaydedildi.",
+  "@coachMeetings_saved": {
+    "description": "Toast after \"Görüşmeyi Kaydet\" (pano 10.5 Davranış)."
+  },
+  "coachMeetings_saveFailed": "Görüşme kaydedilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@coachMeetings_saveFailed": {
+    "description": "Toast when saving a meeting failed; the sheet stays open (kit rule, pano 10.6 Davranış)."
+  },
+  "coachMeetings_savedWithoutNote": "Görüşme kaydedildi ama not eklenemedi.",
+  "@coachMeetings_savedWithoutNote": {
+    "description": "Toast when the meeting was saved and its note was not (the note goes in a second call)."
+  },
+  "coachMeetings_studentsFailed": "Öğrenciler yüklenemedi. Bağlantını kontrol edip tekrar dene.",
+  "@coachMeetings_studentsFailed": {
+    "description": "Toast when the student list for the new-meeting sheet could not be loaded."
+  },
+  "coachMeetings_noStudents": "Görüşme planlamak için önce bir öğrenci eklemelisin.",
+  "@coachMeetings_noStudents": {
+    "description": "Toast when the coach has no student to plan a meeting with."
+  },
+  "coachMeetings_newTitle": "Yeni görüşme",
+  "@coachMeetings_newTitle": {
+    "description": "Title of the new-meeting sheet (pano 10.5 kare 2)."
+  },
+  "coachMeetings_studentLabel": "Öğrenci",
+  "@coachMeetings_studentLabel": {
+    "description": "Label of the student field (pano 10.5 kare 2)."
+  },
+  "coachMeetings_studentHint": "Öğrenci seç",
+  "@coachMeetings_studentHint": {
+    "description": "Placeholder of the student field while none is chosen. Assumption."
+  },
+  "coachMeetings_studentMissing": "Bir öğrenci seç.",
+  "@coachMeetings_studentMissing": {
+    "description": "Error under the student field when \"Görüşmeyi Kaydet\" is pressed without one. Assumption."
+  },
+  "coachMeetings_dateLabel": "Tarih",
+  "@coachMeetings_dateLabel": {
+    "description": "Label of the day field (pano 10.5 kare 2)."
+  },
+  "coachMeetings_timeLabel": "Saat",
+  "@coachMeetings_timeLabel": {
+    "description": "Label of the time field (pano 10.5 kare 2)."
+  },
+  "coachMeetings_noteLabel": "Not",
+  "@coachMeetings_noteLabel": {
+    "description": "Label of the note field; the kit adds \"(isteğe bağlı)\" (pano 10.5 kare 2)."
+  },
+  "coachMeetings_saveAction": "Görüşmeyi Kaydet",
+  "@coachMeetings_saveAction": {
+    "description": "Primary action of the new-meeting sheet (pano 10.5 kare 2)."
+  },
+  "coachMeetings_dateTitle": "Tarih",
+  "@coachMeetings_dateTitle": {
+    "description": "Title of the day picker sheet. The board draws no picker; built from the kit calendar. Assumption."
+  },
+  "coachMeetings_timeTitle": "Saat",
+  "@coachMeetings_timeTitle": {
+    "description": "Title of the time picker sheet. The board draws no picker; built from the kit time wheel. Assumption."
+  },
+  "coachMeetings_pickStudentTitle": "Öğrenci seç",
+  "@coachMeetings_pickStudentTitle": {
+    "description": "Title of the student list sheet (pano 10.5 kare 2: \"Alttan öğrenci listesi\")."
+  },
+  "coachMeetings_pickStudentSearch": "Öğrenci ara",
+  "@coachMeetings_pickStudentSearch": {
+    "description": "Search field of the student list sheet (same text as pano 10.2)."
+  },
+  "coachMeetings_pickStudentNoMatch": "Eşleşen öğrenci yok.",
+  "@coachMeetings_pickStudentNoMatch": {
+    "description": "Student list sheet when the search keeps nobody."
+  },
+  "coachMeetings_studentData": "Öğrencinin verileri",
+  "@coachMeetings_studentData": {
+    "description": "Detail row title (pano 10.5 kare 3)."
+  },
+  "coachMeetings_studentDataHint": "Analiz, denemeler, program",
+  "@coachMeetings_studentDataHint": {
+    "description": "Detail row sub text (pano 10.5 kare 3)."
+  },
+  "coachMeetings_detailErrorTitle": "Görüşme açılamadı",
+  "@coachMeetings_detailErrorTitle": {
+    "description": "Error state title of the detail when the meeting could not be loaded."
+  },
+  "coachMeetings_detailMissingTitle": "Görüşme bulunamadı",
+  "@coachMeetings_detailMissingTitle": {
+    "description": "Error state title when the meeting is not in the server list any more."
+  },
+  "coachMeetings_detailMissingMessage": "Bu görüşme silinmiş olabilir. Listeye dönüp yenileyebilirsin.",
+  "@coachMeetings_detailMissingMessage": {
+    "description": "Error state sentence when the meeting is not in the server list any more."
+  },
+  "coachMeetings_notesTitle": "Notlar",
+  "@coachMeetings_notesTitle": {
+    "description": "Section title of the notes (pano 10.5 kare 3)."
+  },
+  "coachMeetings_noteAdd": "Not Ekle",
+  "@coachMeetings_noteAdd": {
+    "description": "Text button next to \"Notlar\" (pano 10.5 kare 3)."
+  },
+  "coachMeetings_noteEdit": "Düzenle",
+  "@coachMeetings_noteEdit": {
+    "description": "Text button of a note card (pano 10.6 \"Not kartı\")."
+  },
+  "coachMeetings_noteDelete": "Sil",
+  "@coachMeetings_noteDelete": {
+    "description": "Text button of a note card, in the error color (pano 10.6 \"Not kartı\")."
+  },
+  "coachMeetings_notesEmpty": "Henüz not yok.",
+  "@coachMeetings_notesEmpty": {
+    "description": "The notes card when there is no note (pano 10.6 kare 4)."
+  },
+  "coachMeetings_notesLoadFailed": "Notlar yüklenemedi.",
+  "@coachMeetings_notesLoadFailed": {
+    "description": "Section error of the notes (1.22 pattern)."
+  },
+  "coachMeetings_noteAddTitle": "Not ekle",
+  "@coachMeetings_noteAddTitle": {
+    "description": "Title of the note sheet for a new note (pano 10.6 kare 1)."
+  },
+  "coachMeetings_noteEditTitle": "Notu düzenle",
+  "@coachMeetings_noteEditTitle": {
+    "description": "Title of the note sheet for an existing note (pano 10.6 kare 2)."
+  },
+  "coachMeetings_noteContext": "{date} · {name}",
+  "@coachMeetings_noteContext": {
+    "description": "Sub title of the note sheet: \"12 Ekim 2026 · Alparslan Kuloğlu\" (pano 10.6 kare 1).",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachMeetings_noteHint": "Örn: Deneme sonucunu birlikte inceleyeceğiz.",
+  "@coachMeetings_noteHint": {
+    "description": "Placeholder of the note fields (pano 10.5 kare 2, 10.6 kare 1)."
+  },
+  "coachMeetings_noteSave": "Notu Kaydet",
+  "@coachMeetings_noteSave": {
+    "description": "Primary action of the sheet for a new note (pano 10.6 kare 1)."
+  },
+  "coachMeetings_noteFieldA11y": "Not",
+  "@coachMeetings_noteFieldA11y": {
+    "description": "Accessible name of the note sheet's field, which has no visible label."
+  },
+  "coachMeetings_noteDeleteTitle": "Not silinsin mi?",
+  "@coachMeetings_noteDeleteTitle": {
+    "description": "Title of the danger confirmation (pano 10.6 kare 3)."
+  },
+  "coachMeetings_noteDeleteBody": "“{text}” notu silinecek.",
+  "@coachMeetings_noteDeleteBody": {
+    "description": "Body of the confirmation; it quotes the note (pano 10.6 kare 3).",
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "coachMeetings_noteDeleteAction": "Notu Sil",
+  "@coachMeetings_noteDeleteAction": {
+    "description": "Danger action of the confirmation (pano 10.6 kare 3)."
+  },
+  "coachMeetings_noteDeleted": "Not silindi.",
+  "@coachMeetings_noteDeleted": {
+    "description": "Toast with \"Geri Al\" after deleting a note, 6 s (pano 10.6 kare 4)."
+  },
+  "coachMeetings_noteAdded": "Not eklendi.",
+  "@coachMeetings_noteAdded": {
+    "description": "Toast after adding a note. The board draws none. Assumption."
+  },
+  "coachMeetings_noteUpdated": "Not güncellendi.",
+  "@coachMeetings_noteUpdated": {
+    "description": "Toast after editing a note. The board draws none. Assumption."
+  },
+  "coachMeetings_noteSaveFailed": "Not kaydedilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@coachMeetings_noteSaveFailed": {
+    "description": "Toast when saving a note failed; the sheet stays open with the text (pano 10.6 Davranış)."
+  },
+  "coachMeetings_noteDeleteFailed": "Not silinemedi. Bağlantını kontrol edip tekrar dene.",
+  "@coachMeetings_noteDeleteFailed": {
+    "description": "Toast when the held deletion of a note failed; the note comes back."
+  }
+}
