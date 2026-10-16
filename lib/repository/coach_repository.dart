@@ -99,8 +99,8 @@ class CoachRepository {
 
       // İstek burada atılıyor
       final response = await request(finalQuery);
-      print('🚀 [API ISTEK]: ${response.requestOptions.uri}');
-      print('📥 [API RESPONSE]: ${response.data}');
+      //print('🚀 [API ISTEK]: ${response.requestOptions.uri}');
+      //print('📥 [API RESPONSE]: ${response.data}');
 
       if (response.statusCode == 200) {
         final data = response.data;
@@ -109,7 +109,7 @@ class CoachRepository {
       }
       throw Exception('Bağlantı hatası: ${response.statusCode}');
     } on DioException catch (e) {
-      print('❌ [SUNUCUDAN GELEN HATA MESAJI]: ${e.response?.data}');
+      //print('❌ [SUNUCUDAN GELEN HATA MESAJI]: ${e.response?.data}');
       throw Exception('Ağ hatası: ${e.message}');
     } catch (e) {
       throw Exception('Hata: $e');

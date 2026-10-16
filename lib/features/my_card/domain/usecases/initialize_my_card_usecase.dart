@@ -1,4 +1,4 @@
-import 'package:smap/features/my_card/domain/repositories/my_card_repository.dart';
+import 'package:studentmap/features/my_card/domain/repositories/my_card_repository.dart';
 
 class InitializeMyCardUseCase {
   const InitializeMyCardUseCase(this._repository);

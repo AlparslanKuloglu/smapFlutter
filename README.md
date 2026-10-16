@@ -1,4 +1,4 @@
-# smap
+# studentmap
 
 A new Flutter project.
 

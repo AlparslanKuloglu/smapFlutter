@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 
 class InvoiceTableHeader extends StatelessWidget {
   const InvoiceTableHeader({super.key});
@@ -14,20 +14,12 @@ class InvoiceTableHeader extends StatelessWidget {
           topLeft: Radius.circular(12),
           topRight: Radius.circular(12),
         ),
-        border: Border(
-          bottom: BorderSide(color: Color(0xFFE8ECF0)),
-        ),
+        border: Border(bottom: BorderSide(color: Color(0xFFE8ECF0))),
       ),
       child: const Row(
         children: [
-          Expanded(
-            flex: 3,
-            child: _HeaderCell(label: 'Fatura Numarası'),
-          ),
-          Expanded(
-            flex: 2,
-            child: _HeaderCell(label: 'Kesilme Tarihi'),
-          ),
+          Expanded(flex: 3, child: _HeaderCell(label: 'Fatura Numarası')),
+          Expanded(flex: 2, child: _HeaderCell(label: 'Kesilme Tarihi')),
         ],
       ),
     );

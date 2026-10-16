@@ -5,16 +5,16 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
-import 'package:smap/core/constants/lesson_constants.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/domain/models/general_lessons.dart';
-import 'package:smap/features/analytics/presentation/screens/lesson_bar.dart';
-import 'package:smap/features/home/presentation/provider/home_provider.dart';
-import 'package:smap/features/home/presentation/widgets/lesson_navigation_helper.dart';
-import 'package:smap/features/my_card/presentation/screens/my_cards_page/my_card_lesson_detail_page/my_card_lesson_detail_page.dart';
-import 'package:smap/features/my_card/presentation/screens/my_cards_page/my_card_page/widgets/my_card_header.dart';
-import 'package:smap/features/my_card/presentation/screens/my_cards_page/my_card_page/widgets/my_card_lesson_grid_item.dart';
-import 'package:smap/repository/cards_repository.dart';
+import 'package:studentmap/core/constants/lesson_constants.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/domain/models/general_lessons.dart';
+import 'package:studentmap/features/analytics/presentation/screens/lesson_bar.dart';
+import 'package:studentmap/features/home/presentation/provider/home_provider.dart';
+import 'package:studentmap/features/home/presentation/widgets/lesson_navigation_helper.dart';
+import 'package:studentmap/features/my_card/presentation/screens/my_cards_page/my_card_lesson_detail_page/my_card_lesson_detail_page.dart';
+import 'package:studentmap/features/my_card/presentation/screens/my_cards_page/my_card_page/widgets/my_card_header.dart';
+import 'package:studentmap/features/my_card/presentation/screens/my_cards_page/my_card_page/widgets/my_card_lesson_grid_item.dart';
+import 'package:studentmap/repository/cards_repository.dart';
 
 class MyCardPage extends StatefulWidget {
   const MyCardPage({super.key, required this.repository});

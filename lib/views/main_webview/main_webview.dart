@@ -1,6 +1,6 @@
 // import 'package:flutter/material.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
-// import 'package:smapwebflutter/views/optic_mark_detection_view/optic_mark_detection_view.dart';
+// import 'package:studentmapwebflutter/views/optic_mark_detection_view/optic_mark_detection_view.dart';
 // import 'package:webview_flutter/webview_flutter.dart';
 
 // @immutable

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/profile/presentation/screens/saved_cards/widgets/saved_card_widget.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/profile/presentation/screens/saved_cards/widgets/saved_card_widget.dart';
 
 class SavedCardsScreen extends StatelessWidget {
   const SavedCardsScreen({super.key});
@@ -41,10 +41,7 @@ class SavedCardsScreen extends StatelessWidget {
               ),
               child: const Text(
                 'Yeni Kart Ekle',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                ),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
               ),
             ),
           ),

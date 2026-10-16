@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 
 class DaySelectionCalendar extends StatefulWidget {
   const DaySelectionCalendar({
@@ -138,8 +138,9 @@ class _DaySelectionCalendarState extends State<DaySelectionCalendar> {
                         children: List.generate(7, (col) {
                           final date = cells[row * 7 + col];
                           final inMonth = date.month == _focusedMonth.month;
-                          final selected =
-                              widget.selectedDays.contains(_dateKey(date));
+                          final selected = widget.selectedDays.contains(
+                            _dateKey(date),
+                          );
 
                           return Expanded(
                             child: _CalendarDayCell(

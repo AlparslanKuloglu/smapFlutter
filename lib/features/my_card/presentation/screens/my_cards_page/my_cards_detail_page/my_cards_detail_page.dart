@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import 'package:smap/features/my_card/presentation/screens/my_cards_page/my_cards_detail_page/widgets/my_card_info_card.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/repository/cards_repository.dart';
+import 'package:studentmap/features/my_card/presentation/screens/my_cards_page/my_cards_detail_page/widgets/my_card_info_card.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/repository/cards_repository.dart';
 
 enum CardSwipeAction {
   markedAsSuccess, // Kart başarıyla öğrenildi (Doğru bilindi)

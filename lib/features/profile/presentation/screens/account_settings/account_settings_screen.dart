@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/profile/presentation/screens/account_settings/widgets/account_settings_navy_header.dart';
-import 'package:smap/features/profile/presentation/screens/account_settings/widgets/account_settings_password_field.dart';
-import 'package:smap/features/profile/presentation/screens/account_settings/widgets/account_settings_text_field.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/profile/presentation/screens/account_settings/widgets/account_settings_navy_header.dart';
+import 'package:studentmap/features/profile/presentation/screens/account_settings/widgets/account_settings_password_field.dart';
+import 'package:studentmap/features/profile/presentation/screens/account_settings/widgets/account_settings_text_field.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
-import 'package:smap/repository/profile_repository.dart';
-import 'package:smap/features/auth/data/datasources/auth_remote_data_source.dart';
+import 'package:studentmap/repository/profile_repository.dart';
+import 'package:studentmap/features/auth/data/datasources/auth_remote_data_source.dart';
 
 class AccountSettingsScreen extends StatefulWidget {
   final ProfileRepository profileRepository;
@@ -420,7 +420,6 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
           _coachingCodeController.text = coachCode;
           _hasCoach = true;
         } else {
-          print("else 295");
           coachMessage = coachResult['message'] ?? "Koçluk kodu bulunamadı.";
         }
       } catch (e) {

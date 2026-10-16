@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 import '../../domain/models/student_model.dart';
 
 class StudentCard extends StatelessWidget {

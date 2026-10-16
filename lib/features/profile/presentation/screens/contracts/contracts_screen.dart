@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/domain/models/legal_document.dart';
-import 'package:smap/features/auth/domain/usecases/get_legal_documents_usecase.dart';
-import 'package:smap/features/profile/presentation/screens/contracts/widgets/contract_card.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/domain/models/legal_document.dart';
+import 'package:studentmap/features/auth/domain/usecases/get_legal_documents_usecase.dart';
+import 'package:studentmap/features/profile/presentation/screens/contracts/widgets/contract_card.dart';
 
 class ContractsScreen extends StatefulWidget {
   const ContractsScreen({super.key});

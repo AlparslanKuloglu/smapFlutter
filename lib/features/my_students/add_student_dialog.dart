@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/home/presentation/provider/home_provider.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/home/presentation/provider/home_provider.dart';
 
 class AddStudentDialog extends StatefulWidget {
   final dynamic

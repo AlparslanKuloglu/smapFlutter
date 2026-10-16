@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/analytics/presentation/widgets/my_test_results_detail_widgets.dart';
-import 'package:smap/repository/analysis_repository.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/analytics/presentation/widgets/my_test_results_detail_widgets.dart';
+import 'package:studentmap/repository/analysis_repository.dart';
 
 String formatNumber(String value) {
   final number = int.tryParse(value);

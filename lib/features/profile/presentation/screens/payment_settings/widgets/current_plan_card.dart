@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 
 class CurrentPlanCard extends StatelessWidget {
   const CurrentPlanCard({super.key, this.onChangePlan});

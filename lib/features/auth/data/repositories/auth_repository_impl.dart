@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:smap/features/auth/data/datasources/auth_local_data_source.dart';
-import 'package:smap/features/auth/data/datasources/auth_remote_data_source.dart';
-import 'package:smap/features/auth/domain/repositories/auth_repository.dart';
+import 'package:studentmap/features/auth/data/datasources/auth_local_data_source.dart';
+import 'package:studentmap/features/auth/data/datasources/auth_remote_data_source.dart';
+import 'package:studentmap/features/auth/domain/repositories/auth_repository.dart';
 import 'dart:convert';
-import 'package:smap/features/shared/presentation/provider/user_provider.dart';
-import 'package:smap/core/network/dio_client.dart';
-import 'package:smap/domain/models/legal_document.dart';
+import 'package:studentmap/features/shared/presentation/provider/user_provider.dart';
+import 'package:studentmap/core/network/dio_client.dart';
+import 'package:studentmap/domain/models/legal_document.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   const AuthRepositoryImpl({
@@ -34,7 +34,6 @@ class AuthRepositoryImpl implements AuthRepository {
       } else if (responseData is Map) {
         mappedData = Map<String, dynamic>.from(responseData);
       } else {
-        print("Hata: Beklenmeyen veri formatı -> ${responseData.runtimeType}");
         await _localDataSource.setLoggedIn(false);
         return false;
       }
@@ -57,7 +56,6 @@ class AuthRepositoryImpl implements AuthRepository {
       await _localDataSource.setLoggedIn(false);
       return false;
     } catch (e) {
-      print("ValidateSession Hatası: $e");
       await _localDataSource.setLoggedIn(false);
       return false;
     }
@@ -89,6 +87,8 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<bool> register({required Map<String, dynamic> payload}) async {
     // 🧼 TEMİZLİK: sessionCookie parametreleri kaldırıldı.
     final response = await _remoteDataSource.register(payload: payload);
+
+    print(response);
 
     dynamic responseData = response.data;
     Map<String, dynamic> mappedData = {};
@@ -148,7 +148,6 @@ class AuthRepositoryImpl implements AuthRepository {
       }
       return [];
     } catch (e) {
-      print("getLegalDocuments Repository Hatası: $e");
       return [];
     }
   }

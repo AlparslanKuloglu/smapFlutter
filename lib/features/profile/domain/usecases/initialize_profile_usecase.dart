@@ -1,4 +1,4 @@
-import 'package:smap/features/profile/domain/repositories/profile_repository.dart';
+import 'package:studentmap/features/profile/domain/repositories/profile_repository.dart';
 
 class InitializeProfileUseCase {
   const InitializeProfileUseCase(this._repository);

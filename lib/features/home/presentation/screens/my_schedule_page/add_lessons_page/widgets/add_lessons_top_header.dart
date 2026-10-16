@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 
 class AddLessonsTopHeader extends StatelessWidget {
   const AddLessonsTopHeader({

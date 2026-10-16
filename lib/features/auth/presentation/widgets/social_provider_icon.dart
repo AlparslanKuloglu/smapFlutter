@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smap/features/auth/presentation/widgets/auth_enums.dart';
+import 'package:studentmap/features/auth/presentation/widgets/auth_enums.dart';
 
 class SocialProviderIcon extends StatelessWidget {
   const SocialProviderIcon({super.key, required this.provider});
@@ -27,7 +27,9 @@ class SocialProviderIcon extends StatelessWidget {
           ),
         ],
       ),
-      child: Center(child: Icon(icon, size: iconSize, color: color)),
+      child: Center(
+        child: Icon(icon, size: iconSize, color: color),
+      ),
     );
   }
 }

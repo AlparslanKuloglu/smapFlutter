@@ -1,4 +1,4 @@
-import 'package:smap/domain/models/legal_document.dart';
+import 'package:studentmap/domain/models/legal_document.dart';
 
 abstract class AuthRepository {
   Future<bool> getOnboardingCompleted();

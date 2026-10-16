@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/profile/presentation/provider/account_nav_provider.dart';
-import 'package:smap/features/profile/presentation/screens/account/widgets/account_menu_tile.dart';
-import 'package:smap/features/shared/presentation/provider/user_provider.dart';
-import 'package:smap/features/auth/data/repositories/auth_repository_impl.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/profile/presentation/provider/account_nav_provider.dart';
+import 'package:studentmap/features/profile/presentation/screens/account/widgets/account_menu_tile.dart';
+import 'package:studentmap/features/shared/presentation/provider/user_provider.dart';
+import 'package:studentmap/features/auth/data/repositories/auth_repository_impl.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});

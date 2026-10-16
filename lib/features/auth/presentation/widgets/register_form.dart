@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:smap/features/auth/presentation/widgets/auth_enums.dart';
-import 'package:smap/features/auth/presentation/widgets/role_toggle_button.dart';
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/features/auth/presentation/widgets/auth_enums.dart';
+import 'package:studentmap/features/auth/presentation/widgets/role_toggle_button.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 import 'package:provider/provider.dart';
-import 'package:smap/features/auth/presentation/provider/register_provider.dart';
+import 'package:studentmap/features/auth/presentation/provider/register_provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter_html/flutter_html.dart';
 
@@ -22,11 +22,11 @@ class _RegisterFormState extends State<RegisterForm> {
   static const Color _inputFill = Color(0xFFE8F1FA);
 
   final _formKey = GlobalKey<FormState>();
-  final _fullNameController = TextEditingController(text: "Ad Soyad");
-  final _usernameController = TextEditingController(text: "usernametest");
-  final _emailController = TextEditingController(text: "test@smap.tr");
-  final _passwordController = TextEditingController(text: "12101210");
-  final _confirmPasswordController = TextEditingController(text: "12101210");
+  final _fullNameController = TextEditingController(text: "");
+  final _usernameController = TextEditingController(text: "");
+  final _emailController = TextEditingController(text: "");
+  final _passwordController = TextEditingController(text: "");
+  final _confirmPasswordController = TextEditingController(text: "");
   final _coachCodeController = TextEditingController();
 
   RegisterRole _role = RegisterRole.student;
@@ -178,19 +178,19 @@ class _RegisterFormState extends State<RegisterForm> {
     final String fullPhotoPath = _avatars[_currentAvatarIndex];
     final String cleanPhotoPath = fullPhotoPath.split('/').last;
 
-    // Form üzerindeki Ad Soyad alanını boşluktan ikiye bölerek name ve surname üretme
     final String fullName = _fullNameController.text.trim();
     final List<String> nameParts = fullName.split(' ');
     final String surname = nameParts.length > 1 ? nameParts.last : '';
-    final String name = nameParts.length > 1
+    final String firstName = nameParts.length > 1
         ? nameParts.sublist(0, nameParts.length - 1).join(' ')
         : fullName;
 
     final int userType = _role == RegisterRole.student ? 1 : 2;
 
     final Map<String, dynamic> dataObj = {
-      "name": name,
-      "surname": surname,
+      "name": fullName, // Adın tam hali (Full Name)
+      "firstName": firstName, // Sadece adı
+      "surname": surname, // Soyadı
       "userName": _usernameController.text.trim(),
       "email": _emailController.text.trim(),
       "password": _passwordController.text,
@@ -290,9 +290,11 @@ class _RegisterFormState extends State<RegisterForm> {
               ],
             ),
           ),
-          const SizedBox(height: 16),
+          //const SizedBox(height: 16),
           Row(
             children: [
+              /*
+
               Expanded(
                 child: RoleToggleButton(
                   label: 'Öğrenci',
@@ -308,6 +310,7 @@ class _RegisterFormState extends State<RegisterForm> {
                   onTap: () => setState(() => _role = RegisterRole.coach),
                 ),
               ),
+              */
             ],
           ),
           // Ok Butonlu Avatar Seçim Alanı

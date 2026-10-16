@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:smap/features/auth/domain/usecases/login_usecase.dart';
+import 'package:studentmap/features/auth/domain/usecases/login_usecase.dart';
 
 class LoginNotifier extends ChangeNotifier {
   LoginNotifier(this._loginUseCase) : _state = const LoginState.initial();

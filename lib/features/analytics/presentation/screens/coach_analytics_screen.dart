@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/analytics/presentation/screens/analytics_screen.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/analytics/presentation/screens/analytics_screen.dart';
 
 class CoachAnalyticsDetailScreen extends StatelessWidget {
   final String studentName;
@@ -19,9 +19,6 @@ class CoachAnalyticsDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String fullImage = "assets/$studentImage";
-
-    print(studentName);
-    print(studentImage);
     return Scaffold(
       appBar: AppBar(
         titleSpacing: 0,

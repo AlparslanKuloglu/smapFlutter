@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/profile/presentation/screens/notifications/widgets/notification_toggle_tile.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/profile/presentation/screens/notifications/widgets/notification_toggle_tile.dart';
 
 class NotificationsScreen extends StatefulWidget {
   const NotificationsScreen({super.key});
@@ -73,10 +73,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 ),
                 child: const Text(
                   'Değişiklikleri Kaydet',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                  ),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
                 ),
               ),
             ),

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_add_button.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_card.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_filter_button.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_filter_panel.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_search_field.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_toolbar_row.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_add_button.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_card.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_filter_button.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_filter_panel.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_search_field.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_toolbar_row.dart';
 
-import 'package:smap/features/home/presentation/screens/my_schedule_page/day_selection_page/day_selection_page.dart';
-import 'package:smap/repository/weekly_repository.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/day_selection_page/day_selection_page.dart';
+import 'package:studentmap/repository/weekly_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 

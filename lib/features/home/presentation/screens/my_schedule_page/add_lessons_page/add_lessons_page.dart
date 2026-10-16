@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_lessons_complete_button.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_lessons_date_header.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_lessons_day_selector.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_lessons_timeline_card.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_topic_popup.dart';
-import 'package:smap/repository/weekly_repository.dart';
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_lessons_complete_button.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_lessons_date_header.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_lessons_day_selector.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_lessons_timeline_card.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_topic_popup.dart';
+import 'package:studentmap/repository/weekly_repository.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 
 class AddLessonsPage extends StatefulWidget {
   const AddLessonsPage({
@@ -601,9 +601,7 @@ class _AddLessonsPageState extends State<AddLessonsPage> {
 
         return '#${(rHex + gHex + bHex).toUpperCase()}';
       }
-    } catch (e) {
-      print('Color parsing hatası: $e');
-    }
+    } catch (e) {}
     return '#000000';
   }
 

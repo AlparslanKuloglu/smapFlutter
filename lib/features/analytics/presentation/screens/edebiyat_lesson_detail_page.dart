@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:smap/domain/models/general_lessons.dart';
-import 'package:smap/core/constants/lesson_constants.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/repository/analysis_repository.dart';
+import 'package:studentmap/domain/models/general_lessons.dart';
+import 'package:studentmap/core/constants/lesson_constants.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/repository/analysis_repository.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:smap/features/analytics/presentation/screens/subject_detail_page.dart'
+import 'package:studentmap/features/analytics/presentation/screens/subject_detail_page.dart'
     as subjectDetailPage;
 
 class EserTypeHelper {
@@ -336,9 +336,7 @@ class _EdebiyatLessonDetailPageState extends State<EdebiyatLessonDetailPage> {
                     lessonName: widget.lesson.name,
                     missingCount: getMissingCountForTab(_selectedTabIndex),
                     showOnlyMissing: false, // Geçici aktiflik durumu
-                    onMissingToggle: () {
-                      print("Eksikler butonuna basıldı!");
-                    },
+                    onMissingToggle: () {},
                   ),
                   Expanded(
                     child: _topicsY == null || _topicsY!.isEmpty

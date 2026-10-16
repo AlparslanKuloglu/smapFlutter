@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smap/features/shared/presentation/widgets/navy_header_band.dart';
+import 'package:studentmap/features/shared/presentation/widgets/navy_header_band.dart';
 
 /// Anasayfa [HomeLessonsCards] üstündeki lacivert bant — ölçüler birebir aynı.
 class HomeNavyHeaderBand extends StatelessWidget {
@@ -20,9 +20,6 @@ class HomeNavyHeaderBand extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return NavyHeaderBand(
-      height: bandHeight,
-      bottomRadius: bottomRadius,
-    );
+    return NavyHeaderBand(height: bandHeight, bottomRadius: bottomRadius);
   }
 }

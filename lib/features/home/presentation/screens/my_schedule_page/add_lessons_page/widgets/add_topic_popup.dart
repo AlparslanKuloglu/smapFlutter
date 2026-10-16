@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/core/constants/lesson_constants.dart';
-import 'package:smap/repository/weekly_repository.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/core/constants/lesson_constants.dart';
+import 'package:studentmap/repository/weekly_repository.dart';
 
 class AddTopicPopup extends StatefulWidget {
   const AddTopicPopup({

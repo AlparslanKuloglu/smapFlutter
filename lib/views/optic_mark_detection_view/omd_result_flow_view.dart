@@ -4,7 +4,7 @@ import 'dart:convert'; // 1. Mutlaka bu kütüphaneyi ekle
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 
 final Map<String, Map<String, String>> lessonNameAndPhoto = {
   "66214a6982ff212039ea3294": {
@@ -127,9 +127,6 @@ class _OmdResultFlowViewState extends State<OmdResultFlowView> {
 
   void _initializeData() {
     final int userAimType = userData?['aimType'] ?? 3;
-
-    print("userData: $userData");
-    print("userAimType: $userAimType");
 
     _currentType = _isTypeOne ? 0 : userAimType;
     _currentTypeRanks = _isTypeOne ? 0 : userAimType;

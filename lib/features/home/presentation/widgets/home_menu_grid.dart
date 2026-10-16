@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 import 'package:provider/provider.dart';
-import 'package:smap/features/home/presentation/provider/home_nav_provider.dart';
-import 'package:smap/features/root/presentation/provider/root_nav_provider.dart';
-import 'package:smap/features/shared/presentation/provider/user_provider.dart';
-import 'package:smap/features/home/presentation/widgets/app_dialog.dart';
+import 'package:studentmap/features/home/presentation/provider/home_nav_provider.dart';
+import 'package:studentmap/features/root/presentation/provider/root_nav_provider.dart';
+import 'package:studentmap/features/shared/presentation/provider/user_provider.dart';
+import 'package:studentmap/features/home/presentation/widgets/app_dialog.dart';
 
 /// Anasayfa menü kartları — 2 satır × 3 sütun.
 class HomeMenuGrid extends StatelessWidget {

@@ -1,5 +1,5 @@
-import 'package:smap/features/root/data/datasources/root_nav_local_data_source.dart';
-import 'package:smap/features/root/domain/repositories/root_nav_repository.dart';
+import 'package:studentmap/features/root/data/datasources/root_nav_local_data_source.dart';
+import 'package:studentmap/features/root/domain/repositories/root_nav_repository.dart';
 
 class RootNavRepositoryImpl implements RootNavRepository {
   const RootNavRepositoryImpl(this._localDataSource);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smap/features/auth/presentation/widgets/auth_enums.dart';
-import 'package:smap/features/auth/presentation/widgets/role_toggle_button.dart';
-import 'package:smap/features/auth/presentation/widgets/social_provider_icon.dart';
+import 'package:studentmap/features/auth/presentation/widgets/auth_enums.dart';
+import 'package:studentmap/features/auth/presentation/widgets/role_toggle_button.dart';
+import 'package:studentmap/features/auth/presentation/widgets/social_provider_icon.dart';
 
 class SocialSignUpContent extends StatefulWidget {
   const SocialSignUpContent({

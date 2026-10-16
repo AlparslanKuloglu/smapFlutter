@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:smapwebflutter/views/optic_mark_detection_view/optic_mark_detection_view.dart';
+import 'package:studentmapwebflutter/views/optic_mark_detection_view/optic_mark_detection_view.dart';
 
 @immutable
 final class MainInappWebView extends StatefulWidget {
@@ -75,7 +75,9 @@ class _MainInappWebViewState extends State<MainInappWebView> {
       debugPrint("🗑️ Mevcut cookie'ler temizlendi");
 
       if (_sessionCookie != null && _sessionCookie!.isNotEmpty) {
-        final expiresDate = DateTime.now().add(const Duration(days: 3)).millisecondsSinceEpoch;
+        final expiresDate = DateTime.now()
+            .add(const Duration(days: 3))
+            .millisecondsSinceEpoch;
 
         debugPrint('🍪 Setlenecek cookie değeri: $_sessionCookie');
 
@@ -101,7 +103,10 @@ class _MainInappWebViewState extends State<MainInappWebView> {
         }
 
         // Doğrulama için cookie'leri oku
-        final Cookie? cookie = await cookieManager.getCookie(url: url, name: 'connect.sid');
+        final Cookie? cookie = await cookieManager.getCookie(
+          url: url,
+          name: 'connect.sid',
+        );
         final cookies = await cookieManager.getCookies(url: url);
         debugPrint('✅ Setlenen cookie: $cookie');
         debugPrint("📋 Tüm cookie'ler: $cookies");
@@ -126,7 +131,11 @@ class _MainInappWebViewState extends State<MainInappWebView> {
   }
 
   Future<void> _navigatePreview(BuildContext context) async {
-    await Navigator.of(context).push(MaterialPageRoute<void>(builder: (context) => const OpticMarkDetectionView2()));
+    await Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (context) => const OpticMarkDetectionView2(),
+      ),
+    );
   }
 
   // iOS için cookie header'lı URLRequest oluştur
@@ -135,7 +144,10 @@ class _MainInappWebViewState extends State<MainInappWebView> {
 
     // iOS için cookie'yi header'a ekle
     if (defaultTargetPlatform == TargetPlatform.iOS && _sessionCookie != null) {
-      return URLRequest(url: url, headers: {'Cookie': 'connect.sid=$_sessionCookie'});
+      return URLRequest(
+        url: url,
+        headers: {'Cookie': 'connect.sid=$_sessionCookie'},
+      );
     }
 
     return URLRequest(url: url);
@@ -159,7 +171,10 @@ class _MainInappWebViewState extends State<MainInappWebView> {
       body: Column(
         children: [
           // Telefonun çentik (status bar) yüksekliği + 40 birim ekstra alan
-          Container(height: MediaQuery.paddingOf(context).top + 15, color: topAreaColor),
+          Container(
+            height: MediaQuery.paddingOf(context).top + 15,
+            color: topAreaColor,
+          ),
           // WebView'ın geri kalan alanı kaplaması için Expanded kullanıldı
           Expanded(
             child: InAppWebView(
@@ -171,16 +186,18 @@ class _MainInappWebViewState extends State<MainInappWebView> {
                   ..addWebMessageListener(
                     WebMessageListener(
                       jsObjectName: 'Toaster',
-                      onPostMessage: (message, sourceOrigin, isMainFrame, replyProxy) {
-                        _handleJsMessage(message?.data as String);
-                      },
+                      onPostMessage:
+                          (message, sourceOrigin, isMainFrame, replyProxy) {
+                            _handleJsMessage(message?.data as String);
+                          },
                     ),
                   );
               },
 
               onLoadStart: (controller, url) async {
                 debugPrint('🌐 Sayfa yükleniyor: $url');
-                if (url.toString().contains('/giris') || url.toString().contains('/login')) {
+                if (url.toString().contains('/giris') ||
+                    url.toString().contains('/login')) {
                   await Navigator.of(context).pushReplacementNamed('/login');
                   return;
                 }
@@ -189,17 +206,22 @@ class _MainInappWebViewState extends State<MainInappWebView> {
               onLoadStop: (controller, url) async {
                 debugPrint('✅ Sayfa yüklendi: $url');
 
-                if (url.toString().contains('/giris') || url.toString().contains('/login')) {
+                if (url.toString().contains('/giris') ||
+                    url.toString().contains('/login')) {
                   await Navigator.of(context).pushReplacementNamed('/login');
                   return;
                 }
 
                 // Yükleme sonrası cookie durumunu kontrol et
-                final cookies = await cookieManager.getCookies(url: WebUri(initialUrl));
+                final cookies = await cookieManager.getCookies(
+                  url: WebUri(initialUrl),
+                );
                 debugPrint("🍪 Yükleme sonrası cookie'ler: $cookies");
               },
               onReceivedError: (controller, request, error) {
-                debugPrint('❌ WebView hatası: ${error.type} - ${error.description}');
+                debugPrint(
+                  '❌ WebView hatası: ${error.type} - ${error.description}',
+                );
               },
               onProgressChanged: (controller, progress) {},
               onUpdateVisitedHistory: (controller, url, androidIsReload) {},

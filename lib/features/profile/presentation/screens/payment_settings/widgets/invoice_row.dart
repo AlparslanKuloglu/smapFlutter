@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/profile/presentation/screens/payment_settings/models/payment_invoice_item.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/profile/presentation/screens/payment_settings/models/payment_invoice_item.dart';
 
 class InvoiceRow extends StatelessWidget {
   const InvoiceRow({super.key, required this.invoice});
@@ -8,8 +8,18 @@ class InvoiceRow extends StatelessWidget {
   final PaymentInvoiceItem invoice;
 
   static const List<String> _months = [
-    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
   ];
 
   static String _formatDate(DateTime date) =>

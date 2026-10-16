@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/day_selection_page/widgets/day_selection_calendar.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/day_selection_page/widgets/day_selection_calendar.dart';
 
 class DaySelectionBody extends StatelessWidget {
   const DaySelectionBody({

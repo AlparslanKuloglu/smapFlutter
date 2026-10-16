@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 
 enum SavedCardBrand { mastercard, visa }
 
@@ -27,7 +27,9 @@ class SavedCardWidget extends StatelessWidget {
         color: AppColors.white,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: isDefault ? AppColors.appBarBackground : const Color(0xFFE8ECF0),
+          color: isDefault
+              ? AppColors.appBarBackground
+              : const Color(0xFFE8ECF0),
           width: isDefault ? 1.5 : 1,
         ),
         boxShadow: const [
@@ -47,7 +49,10 @@ class SavedCardWidget extends StatelessWidget {
               if (isDefault) ...[
                 const SizedBox(width: 10),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
                     color: const Color(0x28102849),
                     borderRadius: BorderRadius.circular(8),

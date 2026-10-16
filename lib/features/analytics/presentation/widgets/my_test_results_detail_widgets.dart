@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:smap/features/analytics/presentation/screens/question_detail_page.dart';
-import 'package:smap/repository/analysis_repository.dart';
+import 'package:studentmap/features/analytics/presentation/screens/question_detail_page.dart';
+import 'package:studentmap/repository/analysis_repository.dart';
 
 /// `OmdResultFlowView._buildStepOne` içindeki kapak (200x150 + shadow + Image.network).
 class MyTestResultsDetailOmdExamCover extends StatelessWidget {

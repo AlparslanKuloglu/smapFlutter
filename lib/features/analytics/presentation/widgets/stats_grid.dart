@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/analytics/presentation/models/analytics_general_data.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/analytics/presentation/models/analytics_general_data.dart';
 
 class StatsGrid extends StatelessWidget {
   const StatsGrid({super.key, required this.cards});

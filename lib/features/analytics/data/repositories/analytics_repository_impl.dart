@@ -1,5 +1,5 @@
-import 'package:smap/features/analytics/data/datasources/analytics_local_data_source.dart';
-import 'package:smap/features/analytics/domain/repositories/analytics_repository.dart';
+import 'package:studentmap/features/analytics/data/datasources/analytics_local_data_source.dart';
+import 'package:studentmap/features/analytics/domain/repositories/analytics_repository.dart';
 
 class AnalyticsRepositoryImpl implements AnalyticsRepository {
   const AnalyticsRepositoryImpl(this._localDataSource);

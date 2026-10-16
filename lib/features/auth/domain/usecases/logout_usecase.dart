@@ -1,4 +1,4 @@
-import 'package:smap/features/auth/domain/repositories/auth_repository.dart';
+import 'package:studentmap/features/auth/domain/repositories/auth_repository.dart';
 
 class LogoutUseCase {
   const LogoutUseCase(this._repository);

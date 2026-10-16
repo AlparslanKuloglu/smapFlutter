@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'dart:convert';
-import 'package:smap/repository/coach_repository.dart';
+import 'package:studentmap/repository/coach_repository.dart';
 
 class InterviewDetailScreen extends StatefulWidget {
   final Map<String, dynamic> interviewData;
@@ -520,8 +520,6 @@ class _InterviewDetailScreenState extends State<InterviewDetailScreen> {
   Widget build(BuildContext context) {
     final String studentImage =
         widget.interviewData['studentImage']?.toString() ?? '';
-
-    print(widget.interviewData);
 
     return Scaffold(
       backgroundColor: Colors.grey.shade50,

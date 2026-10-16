@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/analytics/presentation/models/analytics_general_data.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/analytics/presentation/models/analytics_general_data.dart';
 
 class NetChartCard extends StatelessWidget {
   const NetChartCard({

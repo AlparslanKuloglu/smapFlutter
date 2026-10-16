@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:smap/features/shared/presentation/provider/user_provider.dart'; // UserProvider'ı ekledik
+import 'package:studentmap/features/shared/presentation/provider/user_provider.dart'; // UserProvider'ı ekledik
 
 class AppUserAvatar extends StatelessWidget {
   const AppUserAvatar({super.key, this.radius = 24, this.borderWidth = 2});

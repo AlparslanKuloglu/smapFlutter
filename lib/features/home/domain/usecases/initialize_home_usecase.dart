@@ -1,4 +1,4 @@
-import 'package:smap/features/home/domain/repositories/home_repository.dart';
+import 'package:studentmap/features/home/domain/repositories/home_repository.dart';
 
 class InitializeHomeUseCase {
   const InitializeHomeUseCase(this._repository);

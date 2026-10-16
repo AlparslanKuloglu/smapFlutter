@@ -1,13 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:rest_api_package/rest_api_package.dart';
-import 'package:smap/domain/models/answer_response_model.dart';
-import 'package:smap/domain/models/image_response_model.dart';
-import 'package:smap/domain/models/nFoundexam_response_model.dart';
-import 'package:smap/http_service/rest_api_http_service.dart';
-import 'package:smap/repository/optic_requests/requests/send_answers_request.dart';
-import 'package:smap/repository/optic_requests/requests/send_notfoundexam_request.dart';
-import 'package:smap/repository/optic_requests/requests/send_om_image_request.dart';
+import 'package:studentmap/domain/models/answer_response_model.dart';
+import 'package:studentmap/domain/models/image_response_model.dart';
+import 'package:studentmap/domain/models/nFoundexam_response_model.dart';
+import 'package:studentmap/http_service/rest_api_http_service.dart';
+import 'package:studentmap/repository/optic_requests/requests/send_answers_request.dart';
+import 'package:studentmap/repository/optic_requests/requests/send_notfoundexam_request.dart';
+import 'package:studentmap/repository/optic_requests/requests/send_om_image_request.dart';
 
 @immutable
 final class OmdRepository {

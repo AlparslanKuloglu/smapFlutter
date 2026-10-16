@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 
 /// Anasayfa ders kartları üstündeki ve hesap ayarlarındaki lacivert bant.
 class NavyHeaderBand extends StatelessWidget {

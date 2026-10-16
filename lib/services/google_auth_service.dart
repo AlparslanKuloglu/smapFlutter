@@ -24,9 +24,6 @@ class GoogleAuthService {
 
       final auth = account.authentication;
 
-      print(account.email);
-      print(auth.idToken);
-
       return account;
     } on GoogleSignInException catch (e) {
       print(e);

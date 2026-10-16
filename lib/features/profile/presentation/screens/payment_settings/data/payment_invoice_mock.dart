@@ -1,4 +1,4 @@
-import 'package:smap/features/profile/presentation/screens/payment_settings/models/payment_invoice_item.dart';
+import 'package:studentmap/features/profile/presentation/screens/payment_settings/models/payment_invoice_item.dart';
 
 class PaymentInvoiceMock {
   PaymentInvoiceMock._();

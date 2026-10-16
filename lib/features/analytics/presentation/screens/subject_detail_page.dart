@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:smap/domain/models/general_lessons.dart';
-import 'package:smap/core/constants/lesson_constants.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/repository/analysis_repository.dart';
+import 'package:studentmap/domain/models/general_lessons.dart';
+import 'package:studentmap/core/constants/lesson_constants.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/repository/analysis_repository.dart';
 
 class SubTopicDetailPage extends StatefulWidget {
   final String topicId;
@@ -214,14 +214,6 @@ class _SubTopicDetailPageState extends State<SubTopicDetailPage> {
                                             parentCategory['barColor'],
                                           );
 
-                                      print(
-                                        "parentCategory: ${parentCategory}",
-                                      );
-
-                                      print(
-                                        "barColor: ${parentCategory['barColor']}",
-                                      );
-
                                       return _MainTopicExpansionCard(
                                         categoryTitle: categoryTitle,
                                         items: items,
@@ -356,12 +348,6 @@ class _MainTopicExpansionCardState extends State<_MainTopicExpansionCard> {
         : '';
     const double dividerThickness = 1.2;
     const double dividerHeight = 16.0;
-
-    /*
-    print(widget.categoryTitle);
-    print(widget.image);
-    print(widget.items);
-    */
 
     int totalCards = 0;
     int goodCount = 0;

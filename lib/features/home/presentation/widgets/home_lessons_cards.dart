@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/home/presentation/widgets/home_navy_header_band.dart';
-import 'package:smap/domain/models/general_lessons.dart';
-import 'package:smap/features/analytics/presentation/screens/lesson_detail_page.dart';
-import 'package:smap/features/analytics/presentation/screens/edebiyat_lesson_detail_page.dart';
-import 'package:smap/core/constants/lesson_constants.dart';
-import 'package:smap/features/home/presentation/widgets/app_dialog.dart';
-import 'package:smap/features/home/presentation/widgets/lesson_navigation_helper.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/home/presentation/widgets/home_navy_header_band.dart';
+import 'package:studentmap/domain/models/general_lessons.dart';
+import 'package:studentmap/features/analytics/presentation/screens/lesson_detail_page.dart';
+import 'package:studentmap/features/analytics/presentation/screens/edebiyat_lesson_detail_page.dart';
+import 'package:studentmap/core/constants/lesson_constants.dart';
+import 'package:studentmap/features/home/presentation/widgets/app_dialog.dart';
+import 'package:studentmap/features/home/presentation/widgets/lesson_navigation_helper.dart';
 
 /// Yatay kaydırılabilir ders kartları satırı
 class HomeLessonsCards extends StatelessWidget {

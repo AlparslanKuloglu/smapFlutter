@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:smap/features/auth/domain/usecases/register_usecase.dart';
-import 'package:smap/features/auth/domain/usecases/get_legal_documents_usecase.dart';
-import 'package:smap/domain/models/legal_document.dart';
+import 'package:studentmap/features/auth/domain/usecases/register_usecase.dart';
+import 'package:studentmap/features/auth/domain/usecases/get_legal_documents_usecase.dart';
+import 'package:studentmap/domain/models/legal_document.dart';
 
 class RegisterNotifier extends ChangeNotifier {
   RegisterNotifier({

@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:smap/features/auth/domain/usecases/get_app_launch_destination_usecase.dart';
+import 'package:studentmap/features/auth/domain/usecases/get_app_launch_destination_usecase.dart';
 
 class AppStartNotifier extends ChangeNotifier {
   AppStartNotifier(this._getAppLaunchDestinationUseCase)

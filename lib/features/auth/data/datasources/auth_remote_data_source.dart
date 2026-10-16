@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:smap/core/network/dio_client.dart';
+import 'package:studentmap/core/network/dio_client.dart';
 
 class AuthRemoteDataSource {
   final Dio _dio;

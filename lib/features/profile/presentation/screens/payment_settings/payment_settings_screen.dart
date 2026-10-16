@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/profile/presentation/screens/payment_settings/data/payment_invoice_mock.dart';
-import 'package:smap/features/profile/presentation/screens/payment_settings/widgets/current_plan_card.dart';
-import 'package:smap/features/profile/presentation/screens/payment_settings/widgets/invoice_pagination.dart';
-import 'package:smap/features/profile/presentation/screens/payment_settings/widgets/invoice_row.dart';
-import 'package:smap/features/profile/presentation/screens/payment_settings/widgets/invoice_table_header.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/profile/presentation/screens/payment_settings/data/payment_invoice_mock.dart';
+import 'package:studentmap/features/profile/presentation/screens/payment_settings/widgets/current_plan_card.dart';
+import 'package:studentmap/features/profile/presentation/screens/payment_settings/widgets/invoice_pagination.dart';
+import 'package:studentmap/features/profile/presentation/screens/payment_settings/widgets/invoice_row.dart';
+import 'package:studentmap/features/profile/presentation/screens/payment_settings/widgets/invoice_table_header.dart';
 
 class PaymentSettingsScreen extends StatefulWidget {
   const PaymentSettingsScreen({super.key});

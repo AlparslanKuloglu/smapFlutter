@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/home/presentation/provider/home_provider.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/home/presentation/provider/home_provider.dart';
 import 'student_card.dart';
-import 'package:smap/features/home/presentation/screens/coach_programs_screen.dart';
-import 'package:smap/repository/coach_repository.dart';
-import 'package:smap/features/analytics/presentation/screens/coach_analytics_screen.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_add_button.dart';
-import 'package:smap/domain/models/student_model.dart';
+import 'package:studentmap/features/home/presentation/screens/coach_programs_screen.dart';
+import 'package:studentmap/repository/coach_repository.dart';
+import 'package:studentmap/features/analytics/presentation/screens/coach_analytics_screen.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_add_button.dart';
+import 'package:studentmap/domain/models/student_model.dart';
 
 import './add_student_dialog.dart';
 

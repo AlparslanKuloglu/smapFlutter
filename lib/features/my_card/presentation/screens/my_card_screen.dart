@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart'; // Veya projedeki DI yapısı
-import 'package:smap/features/my_card/presentation/screens/my_cards_page/my_card_page/my_card_page.dart';
+import 'package:studentmap/features/my_card/presentation/screens/my_cards_page/my_card_page/my_card_page.dart';
 
-import 'package:smap/repository/cards_repository.dart';
+import 'package:studentmap/repository/cards_repository.dart';
 
 class MyCardScreen extends StatelessWidget {
   const MyCardScreen({super.key});

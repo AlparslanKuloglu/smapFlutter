@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
-import 'package:smap/repository/analysis_repository.dart';
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/repository/analysis_repository.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 
 class QuestionDetailsPage extends StatefulWidget {
   final Map<String, dynamic> question;
@@ -542,9 +542,7 @@ class _QuestionDetailsPageState extends State<QuestionDetailsPage>
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: ElevatedButton(
-        onPressed: () {
-          print("Fotoğraf çekme başlatıldı");
-        },
+        onPressed: () {},
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.accentOrange,
           foregroundColor: Colors.white,

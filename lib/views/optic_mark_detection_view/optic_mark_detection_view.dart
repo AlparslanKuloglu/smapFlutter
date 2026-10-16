@@ -4,10 +4,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_document_scanner/flutter_document_scanner.dart';
 import 'package:shared_preferences/shared_preferences.dart'; // Import ekle
-import 'package:smap/repository/omd_repository/omd_repository.dart';
-import 'package:smap/views/optic_mark_detection_view/omd_loading.dart';
-import 'package:smap/views/optic_mark_detection_view/omd_warp_tutorial.dart';
-
+import 'package:studentmap/repository/omd_repository/omd_repository.dart';
+import 'package:studentmap/views/optic_mark_detection_view/omd_loading.dart';
+import 'package:studentmap/views/optic_mark_detection_view/omd_warp_tutorial.dart';
 
 import 'camera_tutorial.dart'; // Eğer ayrı dosyadaysa import et
 
@@ -20,10 +19,12 @@ final class OpticMarkDetectionView2 extends StatefulWidget {
   const OpticMarkDetectionView2({super.key});
 
   @override
-  State<OpticMarkDetectionView2> createState() => _OpticMarkDetectionView2State();
+  State<OpticMarkDetectionView2> createState() =>
+      _OpticMarkDetectionView2State();
 }
 
-class _OpticMarkDetectionView2State extends State<OpticMarkDetectionView2> with OMDMixin {
+class _OpticMarkDetectionView2State extends State<OpticMarkDetectionView2>
+    with OMDMixin {
   bool _showTutorial = false;
   bool _isManualOpen = false; // Bilgi butonuyla mı açıldı kontrolü
   static const String _storageKey = 'omd_tutorial_hidden';
@@ -78,7 +79,8 @@ class _OpticMarkDetectionView2State extends State<OpticMarkDetectionView2> with 
                 }
                 setState(() {
                   _showTutorial = false;
-                  _isManualOpen = false; // Kapatınca durumu sıfırla ki bir sonraki otomatik açılışı bozmasın
+                  _isManualOpen =
+                      false; // Kapatınca durumu sıfırla ki bir sonraki otomatik açılışı bozmasın
                 });
               },
             ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/home/presentation/widgets/home_navy_header_band.dart';
-import 'package:smap/domain/models/student_model.dart';
-import 'package:smap/features/analytics/presentation/screens/coach_analytics_screen.dart';
-import 'package:smap/features/home/presentation/screens/coach_programs_screen.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/home/presentation/widgets/home_navy_header_band.dart';
+import 'package:studentmap/domain/models/student_model.dart';
+import 'package:studentmap/features/analytics/presentation/screens/coach_analytics_screen.dart';
+import 'package:studentmap/features/home/presentation/screens/coach_programs_screen.dart';
 import 'dart:math' as math;
 import 'package:flutter_svg/flutter_svg.dart'; // SVG ikonlar için
 

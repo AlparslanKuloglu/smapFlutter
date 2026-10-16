@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:smap/domain/models/general_lessons.dart';
-import 'package:smap/core/constants/lesson_constants.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/repository/analysis_repository.dart';
-import 'package:smap/features/analytics/presentation/screens/subject_detail_page.dart';
+import 'package:studentmap/domain/models/general_lessons.dart';
+import 'package:studentmap/core/constants/lesson_constants.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/repository/analysis_repository.dart';
+import 'package:studentmap/features/analytics/presentation/screens/subject_detail_page.dart';
 
 class LessonDetailPage extends StatefulWidget {
   /// Sayfa başlığında görünmesi için dersin adını alıyoruz.
@@ -166,9 +166,7 @@ class _LessonDetailPageState extends State<LessonDetailPage> {
                   lessonName: widget.lessonFullName,
                   missingCount: getMissingCountForTab(_selectedFilterValue),
                   showOnlyMissing: false, // Geçici aktiflik durumu
-                  onMissingToggle: () {
-                    print("Eksikler butonuna basıldı!");
-                  },
+                  onMissingToggle: () {},
                 ),
                 Expanded(
                   child: _topicsData == null || _topicsData!.isEmpty

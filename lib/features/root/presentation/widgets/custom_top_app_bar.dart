@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/root/presentation/widgets/header_user_section.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/root/presentation/widgets/header_user_section.dart';
 
 class CustomTopAppBar extends StatelessWidget {
   const CustomTopAppBar({

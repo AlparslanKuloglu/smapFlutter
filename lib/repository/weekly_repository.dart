@@ -86,9 +86,6 @@ class WeeklyRepository {
       // Reponun kendi instance'ındaki studentId'yi otomatik enjekte ediyoruz!
       if (studentId != null && studentId!.isNotEmpty) {
         finalQuery['studentId'] = studentId;
-        print("studentId eklendi : $studentId");
-      } else {
-        print("studentId empty: $studentId");
       }
 
       final response = await request(finalQuery);

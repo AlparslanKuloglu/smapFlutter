@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart'; // HomeProvider'ı okumak için eklendi
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 // Kendi projenizdeki HomeProvider path'ini buraya ekleyin
-import 'package:smap/features/home/presentation/provider/home_provider.dart';
+import 'package:studentmap/features/home/presentation/provider/home_provider.dart';
 import 'interview_card.dart';
 import 'interview_detail_screen.dart';
-import 'package:smap/repository/coach_repository.dart';
+import 'package:studentmap/repository/coach_repository.dart';
 import 'package:intl/intl.dart'; // Eğer yüklüyse en tepede import et
 import 'package:intl/date_symbol_data_local.dart'; // Türkçe lokalizasyon için
 

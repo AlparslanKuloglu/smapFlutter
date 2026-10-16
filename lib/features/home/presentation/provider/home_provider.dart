@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:smap/domain/models/general_lessons.dart';
-import 'package:smap/domain/models/student_model.dart';
-import 'package:smap/repository/home_repository.dart';
+import 'package:studentmap/domain/models/general_lessons.dart';
+import 'package:studentmap/domain/models/student_model.dart';
+import 'package:studentmap/repository/home_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
@@ -98,7 +98,6 @@ class HomeProvider extends ChangeNotifier {
       _error = "Veriler güncellenirken bir sorun oluştu: $e";
       print(e); // Debug için hatayı konsola yazdırıyoruz
     } finally {
-      print("home provider 106");
       _isLoading = false;
       notifyListeners();
     }

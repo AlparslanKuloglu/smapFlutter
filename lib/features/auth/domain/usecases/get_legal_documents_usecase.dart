@@ -1,5 +1,5 @@
-import 'package:smap/features/auth/domain/repositories/auth_repository.dart';
-import 'package:smap/domain/models/legal_document.dart';
+import 'package:studentmap/features/auth/domain/repositories/auth_repository.dart';
+import 'package:studentmap/domain/models/legal_document.dart';
 
 class GetLegalDocumentsUseCase {
   final AuthRepository _repository;

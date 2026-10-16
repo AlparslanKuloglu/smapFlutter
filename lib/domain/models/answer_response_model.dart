@@ -13,7 +13,6 @@ final class AnswerResponseModel {
   });
 
   factory AnswerResponseModel.fromJson(Map<String, dynamic> json) {
-    print("DEBUG: Model'e giren ham JSON: $json");
     return AnswerResponseModel(
       mexamFound: json['mexamFound'],
       success: json['success'] as bool?,

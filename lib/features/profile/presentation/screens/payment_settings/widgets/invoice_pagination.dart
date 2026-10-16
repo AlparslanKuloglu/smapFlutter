@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 
 class InvoicePagination extends StatelessWidget {
   const InvoicePagination({
@@ -45,9 +45,8 @@ class InvoicePagination extends StatelessWidget {
   List<Widget> _buildPageButtons() {
     final items = <_PageItem>[];
     for (var page = 1; page <= totalPages; page++) {
-      final showPage = page == 1 ||
-          page == totalPages ||
-          (page - currentPage).abs() <= 1;
+      final showPage =
+          page == 1 || page == totalPages || (page - currentPage).abs() <= 1;
       if (!showPage) {
         if (items.isEmpty || items.last.page != null) {
           items.add(const _PageItem.ellipsis());
@@ -62,7 +61,10 @@ class InvoicePagination extends StatelessWidget {
           (item) => item.page == null
               ? const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 4),
-                  child: Text('...', style: TextStyle(color: AppColors.textSecondary)),
+                  child: Text(
+                    '...',
+                    style: TextStyle(color: AppColors.textSecondary),
+                  ),
                 )
               : _PageNumberButton(
                   page: item.page!,
@@ -100,12 +102,26 @@ class _NavButton extends StatelessWidget {
     final color = enabled ? AppColors.textPrimary : AppColors.navUnselected;
     final children = iconAfterText
         ? [
-            Text(label, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: color)),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+                color: color,
+              ),
+            ),
             Icon(icon, size: 20, color: color),
           ]
         : [
             Icon(icon, size: 20, color: color),
-            Text(label, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: color)),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+                color: color,
+              ),
+            ),
           ];
 
     return InkWell(

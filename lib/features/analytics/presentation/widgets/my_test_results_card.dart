@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/analytics/presentation/screens/my_test_result_detail_screen.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/analytics/presentation/screens/my_test_result_detail_screen.dart';
 
 class MyTestResultsCard extends StatefulWidget {
   final dynamic data;

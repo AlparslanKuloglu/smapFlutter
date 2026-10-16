@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart'; // Eklendi
-import 'package:smap/core/extensions/dartz_extension.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/repository/omd_repository/omd_repository.dart';
-import 'package:smap/views/optic_mark_detection_view/omd_result_flow_view.dart';
+import 'package:studentmap/core/extensions/dartz_extension.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/repository/omd_repository/omd_repository.dart';
+import 'package:studentmap/views/optic_mark_detection_view/omd_result_flow_view.dart';
 
 class OmdAnalyzingView extends StatefulWidget {
   final Uint8List imageBytes;
@@ -127,11 +127,7 @@ class _ExamNotFoundViewState extends State<ExamNotFoundView> {
                       json.decode(userJson) as Map<String, dynamic>;
                   finalData['user'] = userData;
                   // Burada userData'yı güvenle kullanabilirsin
-                } else {
-                  // Veri yoksa yapılacaklar (örn: giriş sayfasına yönlendir)
-                  print("Kullanıcı verisi bulunamadı.");
                 }
-
                 // 2. API İsteği
                 final result = await widget.repository.sendExamDetailToServer(
                   examData: finalData,
@@ -550,7 +546,6 @@ class _OmdVerificationViewState extends State<OmdVerificationView> {
       if (result.isRight()) {
         final successData = result.asRight();
         final responseData = successData.toJson();
-        print(responseData);
 
         final originalImageFileName =
             widget.responseData['originalImageFileName'];
@@ -900,7 +895,6 @@ class _OmdAnalyzingViewState extends State<OmdAnalyzingView> {
       if (userJson != null) {
         setState(() {
           userData = json.decode(userJson) as Map<String, dynamic>;
-          print(userData);
           isLoadingUser = false;
         });
       } else {

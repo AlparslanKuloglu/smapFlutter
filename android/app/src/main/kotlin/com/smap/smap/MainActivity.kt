@@ -1,4 +1,4 @@
-package com.smap.smap
+package com.studentmap.smap
 
 import io.flutter.embedding.android.FlutterActivity
 

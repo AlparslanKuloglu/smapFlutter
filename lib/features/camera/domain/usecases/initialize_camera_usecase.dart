@@ -1,4 +1,4 @@
-import 'package:smap/features/camera/domain/repositories/camera_repository.dart';
+import 'package:studentmap/features/camera/domain/repositories/camera_repository.dart';
 
 class InitializeCameraUseCase {
   const InitializeCameraUseCase(this._repository);

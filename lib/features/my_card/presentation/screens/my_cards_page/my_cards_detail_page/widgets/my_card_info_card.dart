@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/repository/cards_repository.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/repository/cards_repository.dart';
 
 class MyCardInfoCard extends StatefulWidget {
   const MyCardInfoCard({

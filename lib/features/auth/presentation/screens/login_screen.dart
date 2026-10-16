@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:smap/features/auth/presentation/provider/login_provider.dart';
-import 'package:smap/features/auth/presentation/widgets/auth_enums.dart';
-import 'package:smap/features/auth/presentation/widgets/login_card.dart';
-import 'package:smap/features/root/presentation/screens/root_screen.dart';
-import 'package:smap/features/shared/presentation/provider/user_provider.dart';
-import 'package:smap/repository/profile_repository.dart';
+import 'package:studentmap/features/auth/presentation/provider/login_provider.dart';
+import 'package:studentmap/features/auth/presentation/widgets/auth_enums.dart';
+import 'package:studentmap/features/auth/presentation/widgets/login_card.dart';
+import 'package:studentmap/features/root/presentation/screens/root_screen.dart';
+import 'package:studentmap/features/shared/presentation/provider/user_provider.dart';
+import 'package:studentmap/repository/profile_repository.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -16,8 +16,8 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   final _formKey = GlobalKey<FormState>();
-  final _usernameController = TextEditingController(text: 'student');
-  final _passwordController = TextEditingController(text: 'smap2025');
+  final _usernameController = TextEditingController(text: '');
+  final _passwordController = TextEditingController(text: '');
 
   bool _rememberMe = false;
   LoginCardContent _cardContent = LoginCardContent.login;

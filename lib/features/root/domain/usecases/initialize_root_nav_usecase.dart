@@ -1,4 +1,4 @@
-import 'package:smap/features/root/domain/repositories/root_nav_repository.dart';
+import 'package:studentmap/features/root/domain/repositories/root_nav_repository.dart';
 
 class InitializeRootNavUseCase {
   const InitializeRootNavUseCase(this._repository);

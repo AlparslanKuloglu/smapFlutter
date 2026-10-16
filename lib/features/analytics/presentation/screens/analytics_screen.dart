@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/analytics/presentation/provider/analytics_view_provider.dart';
-import 'package:smap/features/analytics/presentation/widgets/analytics_tabs.dart';
-import 'package:smap/features/analytics/presentation/widgets/general_tab.dart';
-import 'package:smap/features/analytics/presentation/widgets/general_filter_panel.dart';
-import 'package:smap/features/analytics/presentation/widgets/my_test_results_tab.dart';
-import 'package:smap/features/analytics/presentation/widgets/section_placeholder.dart';
-import 'package:smap/repository/analysis_repository.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/analytics/presentation/provider/analytics_view_provider.dart';
+import 'package:studentmap/features/analytics/presentation/widgets/analytics_tabs.dart';
+import 'package:studentmap/features/analytics/presentation/widgets/general_tab.dart';
+import 'package:studentmap/features/analytics/presentation/widgets/general_filter_panel.dart';
+import 'package:studentmap/features/analytics/presentation/widgets/my_test_results_tab.dart';
+import 'package:studentmap/features/analytics/presentation/widgets/section_placeholder.dart';
+import 'package:studentmap/repository/analysis_repository.dart';
 
 // analytics_view.dart
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/day_selection_page/day_selection_page.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/schedule_list_page/schedule_list_page.dart';
-import 'package:smap/repository/weekly_repository.dart';
-import 'package:smap/core/constants/lesson_constants.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/day_selection_page/day_selection_page.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/schedule_list_page/schedule_list_page.dart';
+import 'package:studentmap/repository/weekly_repository.dart';
+import 'package:studentmap/core/constants/lesson_constants.dart';
 
 class MySchedulePage extends StatelessWidget {
   String? studentId;

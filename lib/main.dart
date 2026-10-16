@@ -2,30 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:provider/provider.dart';
-import 'package:smap/core/bloc/app_bloc_observer.dart';
-import 'package:smap/core/theme/app_theme.dart';
-import 'package:smap/features/auth/data/datasources/auth_local_data_source.dart';
-import 'package:smap/features/auth/data/datasources/auth_remote_data_source.dart';
-import 'package:smap/features/auth/data/repositories/auth_repository_impl.dart';
-import 'package:smap/features/auth/domain/usecases/complete_onboarding_usecase.dart';
-import 'package:smap/features/auth/domain/usecases/get_app_launch_destination_usecase.dart';
-import 'package:smap/features/auth/domain/usecases/get_legal_documents_usecase.dart'; // 👈 EKLENDİ
-import 'package:smap/features/auth/domain/usecases/login_usecase.dart';
-import 'package:smap/features/auth/domain/usecases/logout_usecase.dart';
-import 'package:smap/features/auth/domain/usecases/register_usecase.dart';
+import 'package:studentmap/core/bloc/app_bloc_observer.dart';
+import 'package:studentmap/core/theme/app_theme.dart';
+import 'package:studentmap/features/auth/data/datasources/auth_local_data_source.dart';
+import 'package:studentmap/features/auth/data/datasources/auth_remote_data_source.dart';
+import 'package:studentmap/features/auth/data/repositories/auth_repository_impl.dart';
+import 'package:studentmap/features/auth/domain/usecases/complete_onboarding_usecase.dart';
+import 'package:studentmap/features/auth/domain/usecases/get_app_launch_destination_usecase.dart';
+import 'package:studentmap/features/auth/domain/usecases/get_legal_documents_usecase.dart'; // 👈 EKLENDİ
+import 'package:studentmap/features/auth/domain/usecases/login_usecase.dart';
+import 'package:studentmap/features/auth/domain/usecases/logout_usecase.dart';
+import 'package:studentmap/features/auth/domain/usecases/register_usecase.dart';
 
-import 'package:smap/features/auth/presentation/screens/login_screen.dart';
-import 'package:smap/features/auth/presentation/provider/app_start_provider.dart';
-import 'package:smap/features/auth/presentation/provider/login_provider.dart';
-import 'package:smap/features/home/presentation/provider/home_provider.dart';
-import 'package:smap/features/onboarding/onboarding_page.dart';
-import 'package:smap/features/root/presentation/screens/root_screen.dart';
-import 'package:smap/features/shared/presentation/provider/user_provider.dart';
-import 'package:smap/repository/profile_repository.dart';
-import 'package:smap/repository/cards_repository.dart';
+import 'package:studentmap/features/auth/presentation/screens/login_screen.dart';
+import 'package:studentmap/features/auth/presentation/provider/app_start_provider.dart';
+import 'package:studentmap/features/auth/presentation/provider/login_provider.dart';
+import 'package:studentmap/features/home/presentation/provider/home_provider.dart';
+import 'package:studentmap/features/onboarding/onboarding_page.dart';
+import 'package:studentmap/features/root/presentation/screens/root_screen.dart';
+import 'package:studentmap/features/shared/presentation/provider/user_provider.dart';
+import 'package:studentmap/repository/profile_repository.dart';
+import 'package:studentmap/repository/cards_repository.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'package:smap/core/network/dio_client.dart';
+import 'package:studentmap/core/network/dio_client.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

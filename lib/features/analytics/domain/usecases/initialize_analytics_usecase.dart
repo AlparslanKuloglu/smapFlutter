@@ -1,4 +1,4 @@
-import 'package:smap/features/analytics/domain/repositories/analytics_repository.dart';
+import 'package:studentmap/features/analytics/domain/repositories/analytics_repository.dart';
 
 class InitializeAnalyticsUseCase {
   const InitializeAnalyticsUseCase(this._repository);

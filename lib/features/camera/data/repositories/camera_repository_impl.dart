@@ -1,5 +1,5 @@
-import 'package:smap/features/camera/data/datasources/camera_local_data_source.dart';
-import 'package:smap/features/camera/domain/repositories/camera_repository.dart';
+import 'package:studentmap/features/camera/data/datasources/camera_local_data_source.dart';
+import 'package:studentmap/features/camera/domain/repositories/camera_repository.dart';
 
 class CameraRepositoryImpl implements CameraRepository {
   const CameraRepositoryImpl(this._localDataSource);

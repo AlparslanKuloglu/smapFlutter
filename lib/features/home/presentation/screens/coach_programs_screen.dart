@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/my_schedule_page.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/my_schedule_page.dart';
 
 class TeacherViewScheduleScreen extends StatelessWidget {
   final String studentName;

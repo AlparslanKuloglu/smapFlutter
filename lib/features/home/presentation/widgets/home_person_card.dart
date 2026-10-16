@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart'; // Provider paketini ekledik
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/shared/presentation/widgets/app_user_avatar.dart';
-import 'package:smap/features/shared/presentation/provider/user_provider.dart'; // UserProvider'ın yolu
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/shared/presentation/widgets/app_user_avatar.dart';
+import 'package:studentmap/features/shared/presentation/provider/user_provider.dart'; // UserProvider'ın yolu
 
 /// Anasayfa üst bölümünde gösterilen kullanıcı özeti kartı.
 class HomePersonCard extends StatelessWidget {

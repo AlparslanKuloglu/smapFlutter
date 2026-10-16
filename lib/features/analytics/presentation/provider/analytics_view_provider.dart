@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smap/features/analytics/presentation/models/analytics_filters.dart';
-import 'package:smap/features/analytics/presentation/models/analytics_general_data.dart';
-import 'package:smap/repository/analysis_repository.dart';
-import 'package:smap/features/home/presentation/widgets/app_dialog.dart';
+import 'package:studentmap/features/analytics/presentation/models/analytics_filters.dart';
+import 'package:studentmap/features/analytics/presentation/models/analytics_general_data.dart';
+import 'package:studentmap/repository/analysis_repository.dart';
+import 'package:studentmap/features/home/presentation/widgets/app_dialog.dart';
 
 class AnalyticsViewNotifier extends ChangeNotifier {
   final AnalysisRepository _repository;

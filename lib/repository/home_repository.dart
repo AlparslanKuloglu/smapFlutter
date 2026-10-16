@@ -61,7 +61,6 @@ class HomeRepository {
       final response = await _dioClient.dio.post('/coach/getMyStudents');
       if (response.statusCode == 200) {
         final List<dynamic> data = response.data['students'];
-        print(data);
         return data.map((json) => Student.fromJson(json)).toList();
       } else {
         throw Exception('Öğrenciler alınamadı: ${response.statusCode}');

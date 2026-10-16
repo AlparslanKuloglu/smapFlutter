@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:smap/features/my_card/presentation/screens/my_cards_page/my_card_lesson_detail_page/widgets/my_card_lesson_detail_header.dart';
-import 'package:smap/features/my_card/presentation/screens/my_cards_page/my_cards_detail_page/my_cards_detail_page.dart';
-import 'package:smap/repository/cards_repository.dart';
+import 'package:studentmap/features/my_card/presentation/screens/my_cards_page/my_card_lesson_detail_page/widgets/my_card_lesson_detail_header.dart';
+import 'package:studentmap/features/my_card/presentation/screens/my_cards_page/my_cards_detail_page/my_cards_detail_page.dart';
+import 'package:studentmap/repository/cards_repository.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MyCardLessonDetailPage extends StatefulWidget {
@@ -50,10 +50,6 @@ class _MyCardLessonDetailPageState extends State<MyCardLessonDetailPage> {
           String title = 'Konu Analizi';
           if (item['mainSubject'] is Map) {
             title = item['mainSubject']['name']?.toString() ?? 'Konu Analizi';
-          } else {
-            print(
-              "Uyarı: mainSubject populate edilmemiş, ID olarak geldi: ${item['mainSubject']}",
-            );
           }
 
           formatted.add({

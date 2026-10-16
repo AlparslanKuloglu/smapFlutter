@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/my_card/presentation/screens/my_cards_page/my_card_page/widgets/my_card_lesson_stat_column.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/my_card/presentation/screens/my_cards_page/my_card_page/widgets/my_card_lesson_stat_column.dart';
 
 class MyCardLessonGridItem extends StatelessWidget {
   const MyCardLessonGridItem({

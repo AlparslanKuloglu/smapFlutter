@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smap/features/analytics/presentation/models/analytics_general_data.dart';
-import 'package:smap/features/analytics/presentation/widgets/lesson_distribution_chart_card.dart';
-import 'package:smap/features/analytics/presentation/widgets/net_chart_card.dart';
-import 'package:smap/features/analytics/presentation/widgets/stats_grid.dart';
+import 'package:studentmap/features/analytics/presentation/models/analytics_general_data.dart';
+import 'package:studentmap/features/analytics/presentation/widgets/lesson_distribution_chart_card.dart';
+import 'package:studentmap/features/analytics/presentation/widgets/net_chart_card.dart';
+import 'package:studentmap/features/analytics/presentation/widgets/stats_grid.dart';
 
 class GeneralTab extends StatelessWidget {
   const GeneralTab({super.key, required this.data});

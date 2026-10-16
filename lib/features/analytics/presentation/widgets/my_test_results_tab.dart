@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:smap/features/analytics/presentation/provider/analytics_view_provider.dart';
+import 'package:studentmap/features/analytics/presentation/provider/analytics_view_provider.dart';
 import 'my_test_results_card.dart';
 
 class MyTestResultsTab extends StatefulWidget {

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:smap/core/theme/app_colors.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/add_lessons_page/add_lessons_page.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_lessons_top_header.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/day_selection_page/widgets/day_selection_body.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/day_selection_page/widgets/day_selection_empty_dialog.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/day_selection_page/widgets/day_selection_top_app_bar.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/add_lessons_page/add_lessons_page.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_lessons_top_header.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/day_selection_page/widgets/day_selection_body.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/day_selection_page/widgets/day_selection_empty_dialog.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/day_selection_page/widgets/day_selection_top_app_bar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:smap/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_topic_popup.dart';
-import 'package:smap/repository/weekly_repository.dart';
+import 'package:studentmap/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_topic_popup.dart';
+import 'package:studentmap/repository/weekly_repository.dart';
 import 'dart:convert'; // 🔴 DOSYANIN EN ÜSTÜNE BU IMPORT'U EKLEMEYİ UNUTMA
 
 enum _DaySelectionStep { calendar, addLessons }

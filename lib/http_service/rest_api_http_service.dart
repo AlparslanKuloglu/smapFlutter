@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:rest_api_package/rest_api_package.dart';
-import 'package:smap/core/constants/api_constants.dart';
+import 'package:studentmap/core/constants/api_constants.dart';
 
 @immutable
 final class RestApiHttpServiceClass {
@@ -9,7 +9,8 @@ final class RestApiHttpServiceClass {
 
   const RestApiHttpServiceClass._internal();
 
-  static const RestApiHttpServiceClass _instance = RestApiHttpServiceClass._internal();
+  static const RestApiHttpServiceClass _instance =
+      RestApiHttpServiceClass._internal();
 
   static final RestApiHttpService _restApiHttpService = RestApiHttpService(
     Dio(),

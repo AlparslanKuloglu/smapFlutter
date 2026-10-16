@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:smap/features/auth/presentation/screens/forgot_password_screen.dart';
-import 'package:smap/features/auth/presentation/widgets/auth_enums.dart';
-import 'package:smap/features/auth/presentation/widgets/register_form.dart';
-import 'package:smap/features/auth/presentation/widgets/social_provider_icon.dart';
-import 'package:smap/features/auth/presentation/widgets/social_sign_up_content.dart';
+import 'package:studentmap/features/auth/presentation/screens/forgot_password_screen.dart';
+import 'package:studentmap/features/auth/presentation/widgets/auth_enums.dart';
+import 'package:studentmap/features/auth/presentation/widgets/register_form.dart';
+import 'package:studentmap/features/auth/presentation/widgets/social_provider_icon.dart';
+import 'package:studentmap/features/auth/presentation/widgets/social_sign_up_content.dart';
 
 import 'package:provider/provider.dart'; // ChangeNotifierProvider ve context.read için
-import 'package:smap/features/auth/domain/usecases/register_usecase.dart'; // RegisterUseCase için
-import 'package:smap/features/auth/presentation/provider/register_provider.dart'; // RegisterNotifier için (dosya yolun farklıysa ona göre düzenle)
-import 'package:smap/features/auth/domain/usecases/get_legal_documents_usecase.dart'; // RegisterUseCase için
+import 'package:studentmap/features/auth/domain/usecases/register_usecase.dart'; // RegisterUseCase için
+import 'package:studentmap/features/auth/presentation/provider/register_provider.dart'; // RegisterNotifier için (dosya yolun farklıysa ona göre düzenle)
+import 'package:studentmap/features/auth/domain/usecases/get_legal_documents_usecase.dart'; // RegisterUseCase için
 
 class LoginCard extends StatelessWidget {
   const LoginCard({
@@ -350,6 +350,9 @@ class _LoginFormContent extends StatelessWidget {
             ),
           ],
         ),
+        SizedBox(height: 40),
+
+        /*
         SizedBox(height: spaceXs),
         Text(
           'veya hesabınızla bağlanın',
@@ -370,6 +373,7 @@ class _LoginFormContent extends StatelessWidget {
             ),
           ],
         ),
+        */
         SizedBox(height: spaceMd),
         SizedBox(
           width: double.infinity,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
-import 'package:smap/domain/models/user_model.dart';
+import 'package:studentmap/domain/models/user_model.dart';
 
 class UserProvider extends ChangeNotifier {
   UserModel? _user;
