@@ -27,8 +27,8 @@ class HomeMenuGrid extends StatelessWidget {
       iconBg: Color(0xFFEDE7F6),
     ),
     _MenuItemData(
-      title: 'Gelen Kutusu',
-      imagePath: 'assets/menuIcons/messages.png',
+      title: 'Sıralamalar',
+      imagePath: 'assets/menuIcons/ranks4.png',
       iconBg: Color(0xFFE8EAF6),
       //badgeCount: 1,
     ),
@@ -164,7 +164,7 @@ class _MenuTile extends StatelessWidget {
                   "Kendi bilgi kartlarından sana özel quizler oluşturabileceğin veya genel kategorilerde online rekabet edebileceğin bir alan.\n\nŞu anda yapım aşamasında.",
             );
           }
-          if (data.title == 'Gelen Kutusu') {
+          if (data.title == 'Sıralamalar') {
             AppDialogs.showUnderConstruction(
               context,
               title: data.title,

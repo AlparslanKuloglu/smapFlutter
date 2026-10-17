@@ -38,7 +38,7 @@ android {
 
     defaultConfig {
         applicationId = "com.studentmap.smap"
-        minSdk = 35
+        minSdk = 24
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
