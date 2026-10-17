@@ -423,21 +423,16 @@ class _LessonCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   shape: BoxShape.circle,
-                  border: Border.all(color: const Color(0xFFE2E8F0), width: 1),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
-                      blurRadius: 4,
-                      offset: const Offset(0, 1),
-                    ),
-                  ],
+                  border: Border.all(color: const Color(0xFFE8ECF1), width: 1),
                 ),
                 child: Text(
                   '$totalCount',
                   style: TextStyle(
                     fontSize: 10,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w700,
                     color: AppColors.primaryOrange,
+                    height: 1,
+                    fontFeatures: [FontFeature.tabularFigures()],
                   ),
                 ),
               ),
