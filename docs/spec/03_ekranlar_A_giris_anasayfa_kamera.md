@@ -1417,7 +1417,7 @@ Kaynak klasörler:
 - docs/design/panolar/SMAP-02
 - docs/design/panolar/SMAP-03
 - docs/design/panolar/SMAP-04
-- docs/design/panolar/SMAP-11/13-11-14-Teslim-Ekran-Bileşen-Eşlemesi
+- docs/design/panolar/SMAP-11/13-11-14-Ekran-Bileşen-Eşlemesi
 - Flutter mevcut kod: lib/main.dart, lib/repository/, lib/features/auth/data/datasources/auth_remote_data_source.dart
 
 İkon adları ve sheet içerikleri işaretlenmiş, sadeleştirilmiş markup ağaçları (bu oturumun scratchpad klasöründe, geçici):

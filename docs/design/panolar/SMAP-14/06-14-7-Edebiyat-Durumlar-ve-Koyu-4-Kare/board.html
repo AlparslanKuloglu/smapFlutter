@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="tr"><head><style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  </style>
+<meta charset="utf-8">
+<title>14.7 Edebiyat Durumlar ve Koyu</title>
+<style>x-dc{display:none!important}</style>
+<style data-dc-tpl="1">/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style><style data-dc-tpl="2">
+body{margin:0}
+*{box-sizing:border-box}
+button{font-family:inherit;border:0;margin:0;cursor:pointer;background:transparent;color:inherit;padding:0}
+input{font-family:inherit;margin:0;outline:none}
+.ph{width:402px;height:874px;border-radius:56px;overflow:hidden;position:relative;background:#F2F4F7;box-shadow:0 0 0 1px #C3CBD6;color:#1B2232;flex:none}
+.ph.dk{background:#0A1424;box-shadow:0 0 0 1px #34445F;color:#EDF1F6}
+.ph.cm{background:#000000;box-shadow:0 0 0 1px #34445F;color:#FFFFFF}
+.di{position:absolute;top:11px;left:138px;width:126px;height:37px;border-radius:19px;background:#000000;z-index:9}
+.hi{position:absolute;bottom:8px;left:134px;width:134px;height:5px;border-radius:3px;background:#1B2232;z-index:9}
+.dk .hi,.cm .hi{background:#EDF1F6}
+.abs{position:absolute}
+.cap{width:402px}
+.cap b{display:block;font-size:15px;line-height:20px;margin-top:16px}
+.cap span{display:block;font-size:13px;line-height:20px;color:#556173;margin-top:2px}
+.t24{margin:0;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.3px}
+.t20{margin:0;font-size:20px;line-height:28px;font-weight:700;letter-spacing:-0.2px}
+.t17{margin:0;font-size:17px;line-height:24px;font-weight:700;letter-spacing:-0.1px}
+.b16{margin:0;font-size:16px;line-height:24px}
+.b15{margin:0;font-size:15px;line-height:24px}
+.c13{margin:0;font-size:13px;line-height:20px}
+.mu{color:#556173}
+.dk .mu,.cm .mu{color:#A9B5C6}
+.bp{height:48px;border-radius:12px;background:#0F294A;color:#FFFFFF;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bp,.cm .bp{background:#C5D4E8;color:#091A31}
+.bp.off{background:#DCE2E9;color:#9AA5B4}
+.dk .bp.off,.cm .bp.off{background:#213049;color:#56657C}
+.bo{height:48px;border-radius:12px;background:#FFFFFF;color:#0F294A;box-shadow:inset 0 0 0 1.5px #0F294A;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bo,.cm .bo{background:transparent;color:#C5D4E8;box-shadow:inset 0 0 0 1.5px #C5D4E8}
+.bq{height:48px;border-radius:12px;background:#E8ECF1;color:#1B2232;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bq,.cm .bq{background:#213049;color:#EDF1F6}
+.bt{height:48px;padding:0 12px;border-radius:12px;color:#1A3357;font-size:16px;line-height:24px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.dk .bt,.cm .bt{color:#9BB3D3}
+.ib{width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;flex:none;border-radius:12px;color:inherit}
+.ibc{width:40px;height:40px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:rgba(10,20,36,0.64);color:#FFFFFF}
+.scrim{position:absolute;inset:0;background:rgba(9,26,49,0.48);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:4}
+.scrim.dk2{background:rgba(2,6,14,0.64)}
+.sh{position:absolute;left:0;right:0;bottom:0;background:#FFFFFF;border-radius:24px 24px 0 0;z-index:5;display:flex;flex-direction:column;color:#1B2232}
+.dk .sh{background:#18263D;color:#EDF1F6}
+.hd{width:36px;height:4px;border-radius:999px;background:#C3CBD6;margin:8px auto 0;flex:none}
+.dk .hd{background:#34445F}
+.shh{display:flex;align-items:flex-start;gap:8px;padding:12px 12px 0 24px}
+.shf{padding:16px 24px 42px;display:flex;flex-direction:column;gap:12px}
+.xi{width:36px;height:36px;border-radius:999px;background:#E8ECF1;color:#1B2232;display:inline-flex;align-items:center;justify-content:center}
+.dk .xi{background:#213049;color:#EDF1F6}
+.fl{display:block;font-size:14px;line-height:20px;font-weight:600;margin-bottom:8px}
+.in{width:100%;height:48px;padding:0 16px;border-radius:12px;border:1px solid #697586;background:#FFFFFF;font-size:16px;line-height:24px;color:#1B2232;display:flex;align-items:center}
+.in.err{border:2px solid #C42D35;padding:0 15px}
+.ph-t{color:#697586}
+.er{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:13px;line-height:20px;font-weight:600;color:#C42D35}
+.hp{font-size:13px;line-height:20px;color:#556173;margin-top:6px}
+.seg{display:flex;gap:4px;padding:4px;background:#E8ECF1;border-radius:12px}
+.dk .seg{background:#213049}
+.seg button{flex:1;min-height:36px;border-radius:8px;color:#556173;font-size:14px;line-height:20px;font-weight:600}
+.dk .seg button{color:#A9B5C6}
+.seg button.on{background:#0F294A;color:#FFFFFF}
+.dk .seg button.on{background:#C5D4E8;color:#091A31}
+.seg.cnt button{min-height:48px;padding:4px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.seg.cnt button b{font-size:14px;line-height:20px;font-weight:700;color:#1B2232}
+.seg.cnt button i{font-style:normal;font-size:13px;line-height:20px;font-weight:500}
+.seg.cnt button.on b{color:#FFFFFF}
+.seg.cnt button.on i{color:#C5D4E8}
+.dk .seg.cnt button b{color:#EDF1F6}
+.dk .seg.cnt button.on b{color:#091A31}
+.dk .seg.cnt button.on i{color:#1A3357}
+.sq{width:48px;height:48px;border-radius:12px;background:#FFFFFF;color:#1B2232;box-shadow:inset 0 0 0 1px #697586;font-size:16px;line-height:24px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.sq.w{width:64px}
+.sq.on{background:#0F294A;color:#FFFFFF;box-shadow:none}
+.cb{display:flex;align-items:center;gap:12px;min-height:48px;font-size:15px;line-height:24px;text-align:left}
+.cbx{width:24px;height:24px;border-radius:4px;box-shadow:inset 0 0 0 2px #697586;flex:none;display:inline-flex;align-items:center;justify-content:center}
+.dk .cbx{box-shadow:inset 0 0 0 2px #6B7D97}
+.c24{width:24px;height:24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;flex:none}
+.dyl{font-size:15px;line-height:24px;font-weight:600;color:#556173}
+.dk .dyl{color:#A9B5C6}
+.dyv{font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.4px;margin-top:4px}
+.card{background:#FFFFFF;border-radius:16px}
+.dk .card{background:#121D31}
+.toast{display:flex;align-items:center;gap:12px;min-height:48px;padding:12px 16px;border-radius:12px;background:#0F294A;color:#FFFFFF;font-size:15px;line-height:24px;box-shadow:0 8px 24px rgba(15,41,74,0.16)}
+.sk{background:#E8ECF1;border-radius:8px}
+.nts{display:grid;column-gap:48px;row-gap:24px}
+.nts h3{margin:0 0 10px;font-size:17px;line-height:24px;font-weight:700}
+.nts ul{margin:0;padding:0 0 0 18px;font-size:14px;line-height:22px;color:#1B2232}
+.nts li{margin:0 0 6px}
+.nts code{font-family:inherit;font-weight:600;color:#264066}
+.tk{display:inline-block;font-weight:600;color:#264066}
+.cm .sh .bp{background:#0F294A;color:#FFFFFF}
+.cm .sh .bq{background:#E8ECF1;color:#1B2232}
+.cm .sh .mu{color:#556173}
+.cm .sh .bt{color:#1A3357}
+.c16{width:16px;height:16px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;flex:none}
+.dk .c16{color:#0A1424}
+.sm{display:inline-flex;align-items:center;gap:4px;font-size:15px;line-height:20px;font-weight:700}
+.sm i{font-style:normal;font-size:13px;font-weight:500;color:#556173}
+.dk .sm i{color:#A9B5C6}
+.qc{height:76px;border-radius:8px;padding:6px;display:flex;flex-direction:column;justify-content:space-between;position:relative;text-align:center}
+.qn{font-size:13px;line-height:20px;font-weight:600;color:#556173;text-align:left}
+.dk .qn{color:#A9B5C6}
+.qm{font-size:20px;line-height:24px;font-weight:700}
+.qa{font-size:13px;line-height:16px;font-weight:600;color:#0B6E3E}
+.dk .qa{color:#52CC8E}
+.qs{position:absolute;top:8px;right:8px}
+.bar{display:flex;gap:2px;height:12px;border-radius:999px;overflow:hidden}
+.tr{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:72px;width:100%;text-align:left}
+.tr+.tr{border-top:1px solid #E8ECF1}
+.dk .tr+.tr{border-top:1px solid #26354D}
+.tn{font-size:16px;line-height:24px;font-weight:600}
+.tm{font-size:13px;line-height:20px;color:#556173}
+.dk .tm{color:#A9B5C6}
+.tg{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:8px;background:#E8ECF1;color:#1B2232;font-size:13px;line-height:20px;font-weight:600;white-space:nowrap}
+.dk .tg{background:#213049;color:#EDF1F6}
+.tabs{display:flex;height:48px;box-shadow:inset 0 -1px 0 #DCE2E9}
+.dk .tabs{box-shadow:inset 0 -1px 0 #26354D}
+.tabs button{flex:1;position:relative;color:#556173;font-size:15px;line-height:24px;font-weight:600}
+.dk .tabs button{color:#A9B5C6}
+.tabs button.on{color:#1B2232;font-weight:700}
+.dk .tabs button.on{color:#EDF1F6}
+.tabs .u{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:3px;border-radius:999px;background:#E05500}
+.dk .tabs .u{background:#FF8533}
+.sep{border-top:1px solid #E8ECF1}
+.dk .sep{border-top:1px solid #26354D}
+.off{display:flex;align-items:center;gap:10px;min-height:40px;padding:8px 16px;background:#1B2232;color:#FFFFFF;font-size:13px;line-height:20px;font-weight:600}
+.av{display:inline-block;border-radius:999px;overflow:hidden;flex:none;background-size:cover;background-position:center;background-color:#DCE2E9}
+.cap .rp{display:inline-block;margin-top:10px;padding:2px 8px;border-radius:6px;background:#E2EAF4;color:#1A3357;font-size:13px;line-height:20px;font-weight:600}
+.gt{width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.ek{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 8px;border-radius:8px;background:#FCF1D9;color:#8A5A00;font-size:13px;line-height:20px;font-weight:700;white-space:nowrap;flex:none}
+.dk .ek{background:#33270F;color:#F2C46D}
+.ctx{position:absolute;left:0;right:0;height:40px;display:flex;align-items:center;gap:8px;padding:0 16px;background:#F1F5FA;box-shadow:inset 0 1px 0 #DCE2E9,inset 0 -1px 0 #DCE2E9;z-index:2}
+.dk .ctx{background:#1A2B45;box-shadow:inset 0 1px 0 #26354D,inset 0 -1px 0 #26354D}
+.ctx b{font-size:13px;line-height:20px;font-weight:600}
+.ctx i{margin-left:auto;font-style:normal;font-size:13px;line-height:20px;color:#556173}
+.dk .ctx i{color:#A9B5C6}
+.tabs3{display:flex;height:48px;box-shadow:inset 0 -1px 0 #DCE2E9;background:#F2F4F7;z-index:2}
+.dk .tabs3{box-shadow:inset 0 -1px 0 #26354D;background:#0A1424}
+.tabs3 button{flex:1;position:relative;color:#556173;font-size:15px;line-height:24px;font-weight:600}
+.dk .tabs3 button{color:#A9B5C6}
+.tabs3 button.on{color:#1B2232;font-weight:700}
+.dk .tabs3 button.on{color:#EDF1F6}
+.tabs3 .u{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:3px;border-radius:999px;background:#E05500}
+.dk .tabs3 .u{background:#FF8533}
+.s2{height:40px;padding:0 14px;border-radius:12px;background:#FFFFFF;color:#0F294A;box-shadow:inset 0 0 0 1.5px #0F294A;font-size:14px;line-height:20px;font-weight:600;display:inline-flex;align-items:center;gap:6px;flex:none}
+.dk .s2{background:transparent;color:#C5D4E8;box-shadow:inset 0 0 0 1.5px #C5D4E8}
+.s2.dis{background:#DCE2E9;color:#9AA5B4;box-shadow:none}
+.dk .s2.dis{background:#213049;color:#56657C;box-shadow:none}
+.dc{width:48px;height:64px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;background:#FFFFFF}
+.dk .dc{background:#121D31}
+.dc i{font-style:normal;font-size:13px;line-height:20px;font-weight:600;color:#556173}
+.dk .dc i{color:#A9B5C6}
+.dc b{font-size:17px;line-height:24px;font-weight:700}
+.dc.on{background:#0F294A;color:#FFFFFF}
+.dc.on i{color:#C5D4E8}
+.dk .dc.on{background:#C5D4E8;color:#091A31}
+.dk .dc.on i{color:#1A3357}
+.td{position:absolute;bottom:5px;left:50%;transform:translateX(-50%);width:6px;height:6px;border-radius:999px;background:#E05500}
+.dk .td{background:#FF8533}
+.dc.on .td{background:#FF6600}
+.dk .dc.on .td{background:#E05500}
+.pr{display:flex;align-items:center;gap:12px;padding:10px 12px 10px 16px;min-height:64px;width:100%;text-align:left}
+.pr+.pr{border-top:1px solid #E8ECF1}
+.dk .pr+.pr{border-top:1px solid #26354D}
+.tt{font-size:15px;line-height:24px;font-weight:600;min-width:48px;flex:none}
+.inf{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:#E2EAF4;color:#1B2232;font-size:15px;line-height:22px}
+.dk .inf{background:#1A2B45;color:#EDF1F6}
+.inf .ii{color:#36537C;display:inline-flex;padding-top:1px;flex:none}
+.dk .inf .ii{color:#9BB3D3}
+.wrn{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:#FCF1D9;color:#1B2232;font-size:15px;line-height:22px}
+.dk .wrn{background:#33280F;color:#EDF1F6}
+.wrn .ii{color:#8A5A00;display:inline-flex;padding-top:1px;flex:none}
+.dk .wrn .ii{color:#EBC25B}
+.srw{width:100%;display:flex;align-items:center;gap:12px;min-height:56px;padding:12px 16px;text-align:left}
+.srw .ic{width:24px;height:24px;flex:none;color:#556173;display:inline-flex}
+.dk .srw .ic{color:#A9B5C6}
+.ti{display:block;font-size:16px;line-height:24px;font-weight:600}
+.su{display:block;font-size:13px;line-height:20px;color:#556173}
+.dk .su{color:#A9B5C6}
+.rw{width:100%;display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 16px;position:relative;text-align:left}
+.rw+.rw{border-top:1px solid #E8ECF1}
+.dk .rw+.rw{border-top:1px solid #26354D}
+.nb{width:28px;height:28px;border-radius:999px;background:#E8ECF1;font-size:13px;line-height:28px;font-weight:700;text-align:center;flex:none}
+.dk .nb{background:#213049}
+.cal{display:grid;grid-template-columns:repeat(7,46px);gap:4px;justify-content:center}
+.cal span,.cal button{height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;line-height:24px;font-weight:600}
+.cal .wd{height:24px;font-size:13px;line-height:20px;color:#556173}
+.cal .ds{color:#9AA5B4;font-weight:500}
+.cal .on{background:#0F294A;color:#FFFFFF}
+.cal .tdy{box-shadow:inset 0 0 0 2px #E05500}
+.hr{display:flex;align-items:stretch;gap:8px;min-height:52px;padding:4px 12px 4px 16px}
+.hr+.hr{border-top:1px solid #E8ECF1}
+.hl{width:44px;flex:none;font-size:13px;line-height:20px;font-weight:600;color:#556173;padding-top:12px}
+.blk{flex:1;min-width:0;border-radius:12px;display:flex;align-items:center;gap:10px;padding:8px 4px 8px 12px}
+.rd{width:24px;height:24px;border-radius:999px;box-shadow:inset 0 0 0 2px #697586;flex:none}
+.rd.on{box-shadow:inset 0 0 0 7px #0F294A}
+.ro{display:flex;align-items:center;gap:12px;min-height:64px;padding:8px 24px;width:100%;text-align:left}
+.ro+.ro{border-top:1px solid #E8ECF1}
+.bdg{height:48px;border-radius:12px;background:#C42D35;color:#FFFFFF;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.dk .bdg{background:#FF8F8F;color:#3B0A10}
+.fr{box-shadow:0 0 0 2px #FFFFFF,0 0 0 4px #36537C}
+.dn{color:#C42D35}
+.dk .dn{color:#FF8F8F}
+.pv{font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.4px}
+.ph2{font-size:17px;line-height:24px;font-weight:700}
+.wk{display:flex;align-items:center;gap:8px;min-height:52px;padding:2px 0}
+.wk+.wk{border-top:1px solid #E8ECF1}
+.dk .wk+.wk{border-top:1px solid #26354D}
+.wn{flex:1;min-width:0;font-size:16px;line-height:24px}
+.okk{display:inline-flex;align-items:center;gap:6px;font-size:13px;line-height:20px;font-weight:600;color:#0B6E3E;flex:none}
+.dk .okk{color:#52CC8E}
+.bt.dis{color:#9AA5B4}
+.dk .bt.dis{color:#56657C}
+.ftr{position:absolute;left:0;right:0;bottom:0;background:#FFFFFF;box-shadow:0 -1px 0 #DCE2E9;padding:12px 24px 42px;z-index:2}
+</style></head>
+<body>
+<div id="dc-root"><div class="sc-host" data-sc-name="board06"><div data-dc-tpl="3" style="width: 1880px; height: 1500px; background: rgb(255, 255, 255); color: rgb(27, 34, 50); font-family: &quot;Plus Jakarta Sans&quot;, system-ui, sans-serif; padding: 64px; display: flex; flex-direction: column; gap: 40px; font-variant-numeric: tabular-nums;"><header data-dc-tpl="4" style="display: flex; flex-direction: column; gap: 8px;"><div data-dc-tpl="5" style="font-size: 15px; line-height: 20px; font-weight: 600; color: rgb(85, 97, 115);">14.7 · Tur 12 · Geri Gelen Özellikler</div><h1 data-dc-tpl="6" style="margin: 0px; font-size: 36px; line-height: 44px; font-weight: 800; letter-spacing: -0.5px;">Edebiyat · Durumlar ve Koyu · 4 Kare</h1><p data-dc-tpl="7" style="margin: 4px 0px 0px; font-size: 17px; line-height: 28px; color: rgb(85, 97, 115); max-width: 1500px;">İskelet, bölüm hatası, çevrimdışı ve yazar sheet'inin koyu teması.</p></header><div data-dc-tpl="8" style="display: flex; gap: 48px; align-items: flex-start;"><div data-dc-tpl="9" style="flex: 0 0 auto;"><div data-dc-tpl="10" class="ph" role="img" aria-label="Dönemler yükleniyor"><div data-dc-tpl="11" class="di"></div><div data-dc-tpl="12" class="abs" style="top: 54px; left: 4px;"><button data-dc-tpl="13" class="ib" aria-label="Geri"><svg data-dc-tpl="14" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="15" points="160 208 80 128 160 48"></polyline></svg></button></div><div data-dc-tpl="16" class="abs" style="top: 102px; left: 16px; right: 16px; display: flex; align-items: center; gap: 12px;"><span data-dc-tpl="17" class="gt" style="background: rgb(246, 231, 236); color: rgb(138, 47, 78); width: 40px; height: 40px;"><svg data-dc-tpl="18" width="22" height="22" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="19" d="M72 184v-72l64-64a50 50 0 0 1 72 72l-64 64Z"></path><line data-dc-tpl="20" x1="40" y1="216" x2="168" y2="88"></line></svg></span><h2 data-dc-tpl="21" class="t24">Türk Dili ve Edebiyatı</h2></div><div data-dc-tpl="22" class="abs" style="top: 158px; left: 16px; right: 16px;"><div data-dc-tpl="23" class="seg" role="radiogroup" aria-label="Bölüm"><button data-dc-tpl="24" role="radio" aria-checked="false">Konular</button><button data-dc-tpl="25" role="radio" aria-checked="true" class="on">Yazar ve Eserler</button></div></div><div data-dc-tpl="26" class="abs card" aria-busy="true" aria-label="Dönemler yükleniyor" style="top: 230px; left: 16px; right: 16px; overflow: hidden;"><div data-dc-tpl="27" style="display: flex; align-items: center; gap: 12px; height: 64px; padding: 0px 16px;"><div data-dc-tpl="28" class="sk" style="width: 28px; height: 28px; border-radius: 999px; flex: 0 0 auto;"></div><div data-dc-tpl="29" class="sk" style="width: 150px; height: 18px; border-radius: 8px; flex: 0 0 auto;"></div></div><div data-dc-tpl="30" style="display: flex; align-items: center; gap: 12px; height: 64px; padding: 0px 16px;"><div data-dc-tpl="31" class="sk" style="width: 28px; height: 28px; border-radius: 999px; flex: 0 0 auto;"></div><div data-dc-tpl="32" class="sk" style="width: 190px; height: 18px; border-radius: 8px; flex: 0 0 auto;"></div></div><div data-dc-tpl="33" style="display: flex; align-items: center; gap: 12px; height: 64px; padding: 0px 16px;"><div data-dc-tpl="34" class="sk" style="width: 28px; height: 28px; border-radius: 999px; flex: 0 0 auto;"></div><div data-dc-tpl="35" class="sk" style="width: 100px; height: 18px; border-radius: 8px; flex: 0 0 auto;"></div></div><div data-dc-tpl="36" style="display: flex; align-items: center; gap: 12px; height: 64px; padding: 0px 16px;"><div data-dc-tpl="37" class="sk" style="width: 28px; height: 28px; border-radius: 999px; flex: 0 0 auto;"></div><div data-dc-tpl="38" class="sk" style="width: 170px; height: 18px; border-radius: 8px; flex: 0 0 auto;"></div></div><div data-dc-tpl="39" style="display: flex; align-items: center; gap: 12px; height: 64px; padding: 0px 16px;"><div data-dc-tpl="40" class="sk" style="width: 28px; height: 28px; border-radius: 999px; flex: 0 0 auto;"></div><div data-dc-tpl="41" class="sk" style="width: 140px; height: 18px; border-radius: 8px; flex: 0 0 auto;"></div></div></div><nav data-dc-tpl="42" aria-label="Ana gezinme" style="position: absolute; left: 0px; right: 0px; bottom: 0px; height: 102px; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(20px); border-radius: 24px 24px 0px 0px; box-shadow: rgb(220, 226, 233) 0px 1px 0px inset; z-index: 3;"><div data-dc-tpl="43" style="display: flex; height: 68px;"><button data-dc-tpl="44" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(85, 97, 115);"><svg data-dc-tpl="45" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="46" d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span data-dc-tpl="47" style="font-size: 12px; line-height: 16px; font-weight: 600;">Anasayfa</span></button><button data-dc-tpl="48" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(85, 97, 115);"><svg data-dc-tpl="49" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="50" points="224 208 32 208 32 48"></polyline><polyline data-dc-tpl="51" points="224 96 160 152 96 104 32 160"></polyline></svg><span data-dc-tpl="52" style="font-size: 12px; line-height: 16px; font-weight: 600;">Analizlerim</span></button><div data-dc-tpl="53" style="width: 72px; position: relative;"><button data-dc-tpl="54" aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: rgb(255, 102, 0); color: rgb(15, 41, 74); display: inline-flex; align-items: center; justify-content: center; box-shadow: rgba(15, 41, 74, 0.08) 0px 2px 8px;"><svg data-dc-tpl="55" width="28" height="28" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="56" d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle data-dc-tpl="57" cx="128" cy="132" r="36"></circle></svg></button><span data-dc-tpl="58" aria-hidden="true" style="position: absolute; top: 44px; left: 0px; right: 0px; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: rgb(27, 34, 50);">Okut</span></div><button data-dc-tpl="59" aria-current="page" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(15, 41, 74);"><span data-dc-tpl="60" style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0px 0px 4px 4px; background: rgb(224, 85, 0);"></span><svg data-dc-tpl="61" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="62" d="M128 88a32 32 0 0 1 32-32h72v144h-72a32 32 0 0 0-32 32"></path><path data-dc-tpl="63" d="M24 200h72a32 32 0 0 1 32 32V88a32 32 0 0 0-32-32H24Z"></path></svg><span data-dc-tpl="64" style="font-size: 12px; line-height: 16px; font-weight: 700;">Derslerim</span></button><button data-dc-tpl="65" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(85, 97, 115);"><svg data-dc-tpl="66" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle data-dc-tpl="67" cx="128" cy="128" r="96"></circle><circle data-dc-tpl="68" cx="128" cy="120" r="40"></circle><path data-dc-tpl="69" d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span data-dc-tpl="70" style="font-size: 12px; line-height: 16px; font-weight: 600;">Hesap</span></button></div></nav><div data-dc-tpl="71" class="hi"></div></div><div data-dc-tpl="72" class="cap"><b data-dc-tpl="73">1 · İskelet</b><span data-dc-tpl="74">Başlık ve segment hemen; segment sayacı veri gelince. Satırlar iskelet.</span></div></div><div data-dc-tpl="75" style="flex: 0 0 auto;"><div data-dc-tpl="76" class="ph" role="img" aria-label="Yazarlar yüklenemedi"><div data-dc-tpl="77" class="di"></div><div data-dc-tpl="78" class="abs" style="top: 54px; left: 4px;"><button data-dc-tpl="79" class="ib" aria-label="Geri"><svg data-dc-tpl="80" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="81" points="160 208 80 128 160 48"></polyline></svg></button></div><div data-dc-tpl="82" class="abs" style="top: 102px; left: 16px; right: 16px;"><h2 data-dc-tpl="83" class="t24">Tanzimat Dönemi</h2><div data-dc-tpl="84" style="margin-top: 8px;"><span data-dc-tpl="85" class="ek"><svg data-dc-tpl="86" width="14" height="14" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="87" x1="48" y1="224" x2="48" y2="48"></line><path data-dc-tpl="88" d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>2 eksik eser</span></div></div><div data-dc-tpl="89" class="abs" style="top: 182px; left: 16px; right: 16px; display: flex; flex-direction: column; gap: 8px;"><div data-dc-tpl="90" class="card" style="overflow: hidden;"><button data-dc-tpl="91" aria-expanded="true" style="width: 100%; display: flex; align-items: center; gap: 8px; padding: 14px 12px 14px 16px; min-height: 56px; text-align: left;"><div data-dc-tpl="92" style="flex: 1 1 0%; min-width: 0px;"><div data-dc-tpl="93" class="t17">Birinci Dönem Sanatçıları</div><div data-dc-tpl="94" style="margin-top: 6px;"><span data-dc-tpl="95" class="ek"><svg data-dc-tpl="96" width="14" height="14" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="97" x1="48" y1="224" x2="48" y2="48"></line><path data-dc-tpl="98" d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>2 eksik</span></div></div><span data-dc-tpl="99" class="mu" style="display: inline-flex;"><svg data-dc-tpl="100" width="22" height="22" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="101" points="48 160 128 80 208 160"></polyline></svg></span></button><div data-dc-tpl="102" style="border-top: 1px solid rgb(232, 236, 241);"><div data-dc-tpl="103" role="alert" style="padding: 16px 16px 8px; display: flex; gap: 12px; align-items: flex-start;"><span data-dc-tpl="104" class="dn" style="display: inline-flex; padding-top: 2px;"><svg data-dc-tpl="105" width="22" height="22" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle data-dc-tpl="106" cx="128" cy="128" r="96"></circle><line data-dc-tpl="107" x1="128" y1="80" x2="128" y2="136"></line><circle data-dc-tpl="108" cx="128" cy="172" r="12" fill="currentColor" stroke="none"></circle></svg></span><div data-dc-tpl="109" style="flex: 1 1 0%;"><p data-dc-tpl="110" class="b15" style="font-weight: 600;">Yazarlar yüklenemedi.</p><p data-dc-tpl="111" class="c13 mu" style="margin-top: 2px;">Bağlantını kontrol edip tekrar dene.</p><button data-dc-tpl="112" class="bt" style="margin-left: -12px;">Tekrar Dene</button></div></div></div></div><div data-dc-tpl="113" class="card" style="overflow: hidden;"><button data-dc-tpl="114" aria-expanded="false" style="width: 100%; display: flex; align-items: center; gap: 8px; padding: 14px 12px 14px 16px; min-height: 56px; text-align: left;"><div data-dc-tpl="115" style="flex: 1 1 0%; min-width: 0px;"><div data-dc-tpl="116" class="t17">İkinci Dönem Sanatçıları</div></div><span data-dc-tpl="117" class="mu" style="display: inline-flex;"><svg data-dc-tpl="118" width="22" height="22" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="119" points="208 96 128 176 48 96"></polyline></svg></span></button></div></div><nav data-dc-tpl="120" aria-label="Ana gezinme" style="position: absolute; left: 0px; right: 0px; bottom: 0px; height: 102px; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(20px); border-radius: 24px 24px 0px 0px; box-shadow: rgb(220, 226, 233) 0px 1px 0px inset; z-index: 3;"><div data-dc-tpl="121" style="display: flex; height: 68px;"><button data-dc-tpl="122" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(85, 97, 115);"><svg data-dc-tpl="123" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="124" d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span data-dc-tpl="125" style="font-size: 12px; line-height: 16px; font-weight: 600;">Anasayfa</span></button><button data-dc-tpl="126" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(85, 97, 115);"><svg data-dc-tpl="127" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="128" points="224 208 32 208 32 48"></polyline><polyline data-dc-tpl="129" points="224 96 160 152 96 104 32 160"></polyline></svg><span data-dc-tpl="130" style="font-size: 12px; line-height: 16px; font-weight: 600;">Analizlerim</span></button><div data-dc-tpl="131" style="width: 72px; position: relative;"><button data-dc-tpl="132" aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: rgb(255, 102, 0); color: rgb(15, 41, 74); display: inline-flex; align-items: center; justify-content: center; box-shadow: rgba(15, 41, 74, 0.08) 0px 2px 8px;"><svg data-dc-tpl="133" width="28" height="28" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="134" d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle data-dc-tpl="135" cx="128" cy="132" r="36"></circle></svg></button><span data-dc-tpl="136" aria-hidden="true" style="position: absolute; top: 44px; left: 0px; right: 0px; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: rgb(27, 34, 50);">Okut</span></div><button data-dc-tpl="137" aria-current="page" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(15, 41, 74);"><span data-dc-tpl="138" style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0px 0px 4px 4px; background: rgb(224, 85, 0);"></span><svg data-dc-tpl="139" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="140" d="M128 88a32 32 0 0 1 32-32h72v144h-72a32 32 0 0 0-32 32"></path><path data-dc-tpl="141" d="M24 200h72a32 32 0 0 1 32 32V88a32 32 0 0 0-32-32H24Z"></path></svg><span data-dc-tpl="142" style="font-size: 12px; line-height: 16px; font-weight: 700;">Derslerim</span></button><button data-dc-tpl="143" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(85, 97, 115);"><svg data-dc-tpl="144" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle data-dc-tpl="145" cx="128" cy="128" r="96"></circle><circle data-dc-tpl="146" cx="128" cy="120" r="40"></circle><path data-dc-tpl="147" d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span data-dc-tpl="148" style="font-size: 12px; line-height: 16px; font-weight: 600;">Hesap</span></button></div></nav><div data-dc-tpl="149" class="hi"></div></div><div data-dc-tpl="150" class="cap"><b data-dc-tpl="151">2 · Bölüm hatası</b><span data-dc-tpl="152">Akordeon içinde: "Yazarlar yüklenemedi." ve "Tekrar Dene"; diğer akordeonlar çalışır.</span></div></div><div data-dc-tpl="153" style="flex: 0 0 auto;"><div data-dc-tpl="154" class="ph" role="img" aria-label="Yazar sheet'i, çevrimdışı"><div data-dc-tpl="155" class="di"></div><div data-dc-tpl="156" class="abs" style="top: 54px; left: 4px;"><button data-dc-tpl="157" class="ib" aria-label="Geri"><svg data-dc-tpl="158" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="159" points="160 208 80 128 160 48"></polyline></svg></button></div><div data-dc-tpl="160" class="abs off" role="status" style="top: 102px; left: 0px; right: 0px; z-index: 5;"><svg data-dc-tpl="161" width="18" height="18" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="162" x1="48" y1="40" x2="208" y2="216"></line><path data-dc-tpl="163" d="M25.11 98.81A159.73 159.73 0 0 1 75 69.82"></path><path data-dc-tpl="164" d="M107.35 61.48a160.17 160.17 0 0 1 123.54 37.33"></path><path data-dc-tpl="165" d="M60.47 134.88a111.4 111.4 0 0 1 49.8-22.23"></path><path data-dc-tpl="166" d="M155.15 117.38a111.3 111.3 0 0 1 40.38 17.5"></path><path data-dc-tpl="167" d="M96.73 168.69a64 64 0 0 1 62.54 0"></path><circle data-dc-tpl="168" cx="128" cy="204" r="12" fill="currentColor" stroke="none"></circle></svg><span data-dc-tpl="169">Çevrimdışısın. Son kaydedilen veriler gösteriliyor.</span></div><div data-dc-tpl="170" class="abs" style="top: 142px; left: 16px; right: 16px;"><h2 data-dc-tpl="171" class="t24">Tanzimat Dönemi</h2><div data-dc-tpl="172" style="margin-top: 8px;"><span data-dc-tpl="173" class="ek"><svg data-dc-tpl="174" width="14" height="14" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="175" x1="48" y1="224" x2="48" y2="48"></line><path data-dc-tpl="176" d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>2 eksik eser</span></div></div><div data-dc-tpl="177" class="abs" style="top: 222px; left: 16px; right: 16px; display: flex; flex-direction: column; gap: 8px;"><div data-dc-tpl="178" class="card" style="overflow: hidden;"><button data-dc-tpl="179" aria-expanded="true" style="width: 100%; display: flex; align-items: center; gap: 8px; padding: 14px 12px 14px 16px; min-height: 56px; text-align: left;"><div data-dc-tpl="180" style="flex: 1 1 0%; min-width: 0px;"><div data-dc-tpl="181" class="t17">Birinci Dönem Sanatçıları</div><div data-dc-tpl="182" style="margin-top: 6px;"><span data-dc-tpl="183" class="ek"><svg data-dc-tpl="184" width="14" height="14" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="185" x1="48" y1="224" x2="48" y2="48"></line><path data-dc-tpl="186" d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>2 eksik</span></div></div><span data-dc-tpl="187" class="mu" style="display: inline-flex;"><svg data-dc-tpl="188" width="22" height="22" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="189" points="48 160 128 80 208 160"></polyline></svg></span></button><div data-dc-tpl="190" style="border-top: 1px solid rgb(232, 236, 241);"><button data-dc-tpl="191" class="rw" aria-label="Şinasi, 3 eser" style="min-height: 72px;"><span data-dc-tpl="192" aria-hidden="true" style="width: 48px; height: 48px; border-radius: 999px; background: rgb(246, 231, 236); color: rgb(138, 47, 78); display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex: 0 0 auto;">Ş</span><div data-dc-tpl="193" style="flex: 1 1 0%; min-width: 0px;"><div data-dc-tpl="194" class="tn">Şinasi</div><div data-dc-tpl="195" class="tm">3 eser</div></div><span data-dc-tpl="196" class="mu" style="display: inline-flex;"><svg data-dc-tpl="197" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="198" points="96 48 176 128 96 208"></polyline></svg></span></button><button data-dc-tpl="199" class="rw" aria-label="Namık Kemal, 8 eser, 2 eksik" style="min-height: 72px;"><span data-dc-tpl="200" aria-hidden="true" style="width: 48px; height: 48px; border-radius: 999px; background: rgb(246, 231, 236); color: rgb(138, 47, 78); display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex: 0 0 auto;">NK</span><div data-dc-tpl="201" style="flex: 1 1 0%; min-width: 0px;"><div data-dc-tpl="202" class="tn">Namık Kemal</div><div data-dc-tpl="203" class="tm">8 eser</div></div><span data-dc-tpl="204" class="ek"><svg data-dc-tpl="205" width="14" height="14" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="206" x1="48" y1="224" x2="48" y2="48"></line><path data-dc-tpl="207" d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>2 eksik</span><span data-dc-tpl="208" class="mu" style="display: inline-flex;"><svg data-dc-tpl="209" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="210" points="96 48 176 128 96 208"></polyline></svg></span></button><button data-dc-tpl="211" class="rw" aria-label="Ziya Paşa, 6 eser" style="min-height: 72px;"><span data-dc-tpl="212" aria-hidden="true" style="width: 48px; height: 48px; border-radius: 999px; background: rgb(246, 231, 236); color: rgb(138, 47, 78); display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex: 0 0 auto;">ZP</span><div data-dc-tpl="213" style="flex: 1 1 0%; min-width: 0px;"><div data-dc-tpl="214" class="tn">Ziya Paşa</div><div data-dc-tpl="215" class="tm">6 eser</div></div><span data-dc-tpl="216" class="mu" style="display: inline-flex;"><svg data-dc-tpl="217" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="218" points="96 48 176 128 96 208"></polyline></svg></span></button></div></div><div data-dc-tpl="219" class="card" style="overflow: hidden;"><button data-dc-tpl="220" aria-expanded="false" style="width: 100%; display: flex; align-items: center; gap: 8px; padding: 14px 12px 14px 16px; min-height: 56px; text-align: left;"><div data-dc-tpl="221" style="flex: 1 1 0%; min-width: 0px;"><div data-dc-tpl="222" class="t17">İkinci Dönem Sanatçıları</div></div><span data-dc-tpl="223" class="mu" style="display: inline-flex;"><svg data-dc-tpl="224" width="22" height="22" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="225" points="208 96 128 176 48 96"></polyline></svg></span></button></div></div><nav data-dc-tpl="226" aria-label="Ana gezinme" style="position: absolute; left: 0px; right: 0px; bottom: 0px; height: 102px; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(20px); border-radius: 24px 24px 0px 0px; box-shadow: rgb(220, 226, 233) 0px 1px 0px inset; z-index: 3;"><div data-dc-tpl="227" style="display: flex; height: 68px;"><button data-dc-tpl="228" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(85, 97, 115);"><svg data-dc-tpl="229" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="230" d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span data-dc-tpl="231" style="font-size: 12px; line-height: 16px; font-weight: 600;">Anasayfa</span></button><button data-dc-tpl="232" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(85, 97, 115);"><svg data-dc-tpl="233" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="234" points="224 208 32 208 32 48"></polyline><polyline data-dc-tpl="235" points="224 96 160 152 96 104 32 160"></polyline></svg><span data-dc-tpl="236" style="font-size: 12px; line-height: 16px; font-weight: 600;">Analizlerim</span></button><div data-dc-tpl="237" style="width: 72px; position: relative;"><button data-dc-tpl="238" aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: rgb(255, 102, 0); color: rgb(15, 41, 74); display: inline-flex; align-items: center; justify-content: center; box-shadow: rgba(15, 41, 74, 0.08) 0px 2px 8px;"><svg data-dc-tpl="239" width="28" height="28" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="240" d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle data-dc-tpl="241" cx="128" cy="132" r="36"></circle></svg></button><span data-dc-tpl="242" aria-hidden="true" style="position: absolute; top: 44px; left: 0px; right: 0px; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: rgb(27, 34, 50);">Okut</span></div><button data-dc-tpl="243" aria-current="page" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(15, 41, 74);"><span data-dc-tpl="244" style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0px 0px 4px 4px; background: rgb(224, 85, 0);"></span><svg data-dc-tpl="245" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="246" d="M128 88a32 32 0 0 1 32-32h72v144h-72a32 32 0 0 0-32 32"></path><path data-dc-tpl="247" d="M24 200h72a32 32 0 0 1 32 32V88a32 32 0 0 0-32-32H24Z"></path></svg><span data-dc-tpl="248" style="font-size: 12px; line-height: 16px; font-weight: 700;">Derslerim</span></button><button data-dc-tpl="249" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(85, 97, 115);"><svg data-dc-tpl="250" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle data-dc-tpl="251" cx="128" cy="128" r="96"></circle><circle data-dc-tpl="252" cx="128" cy="120" r="40"></circle><path data-dc-tpl="253" d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span data-dc-tpl="254" style="font-size: 12px; line-height: 16px; font-weight: 600;">Hesap</span></button></div></nav><div data-dc-tpl="255" class="scrim"></div><section data-dc-tpl="256" class="sh" role="dialog" aria-modal="true" aria-label="Namık Kemal" style="top: 142px; overflow: hidden;"><div data-dc-tpl="257" class="hd"></div><div data-dc-tpl="258" class="shh"><div data-dc-tpl="259" style="flex: 1 1 0%; display: flex; gap: 12px; align-items: center; padding-top: 8px;"><span data-dc-tpl="260" aria-hidden="true" style="width: 56px; height: 56px; border-radius: 999px; background: rgb(246, 231, 236); color: rgb(138, 47, 78); display: inline-flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 700; flex: 0 0 auto;">NK</span><div data-dc-tpl="261"><h2 data-dc-tpl="262" class="t20">Namık Kemal</h2><p data-dc-tpl="263" class="c13 mu" style="font-weight: 600;">Tanzimat Dönemi</p></div></div><button data-dc-tpl="264" class="ib" aria-label="Kapat"><span data-dc-tpl="265" class="xi"><svg data-dc-tpl="266" width="18" height="18" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="267" x1="200" y1="56" x2="56" y2="200"></line><line data-dc-tpl="268" x1="200" y1="200" x2="56" y2="56"></line></svg></span></button></div><div data-dc-tpl="269" style="padding: 12px 24px 0px;"><h3 data-dc-tpl="270" class="t17">Hakkında</h3><p data-dc-tpl="271" class="b16" style="line-height: 26px; margin-top: 4px;">Tanzimat Dönemi'nin şair ve yazarı; "vatan şairi" olarak bilinir. Edebiyatı toplumu eğitmenin aracı olarak gördü.</p><p data-dc-tpl="272" class="b16" style="line-height: 26px; margin-top: 4px;">Vatan yahut Silistre oyunu sahnelendiğinde büyük ilgi gördü.</p><div data-dc-tpl="273" style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 18px;"><h3 data-dc-tpl="274" class="t17">Eserleri</h3><span data-dc-tpl="275" class="c13 mu" style="font-weight: 600;">8 eser · 2 eksik</span></div><p data-dc-tpl="276" class="c13 mu" style="font-weight: 700; margin-top: 14px;">Roman · 2</p><div data-dc-tpl="277" role="list"><div data-dc-tpl="278" class="wk" role="listitem" aria-label="İntibah, roman, eksik"><span data-dc-tpl="279" class="wn">İntibah</span><span data-dc-tpl="280" class="ek"><svg data-dc-tpl="281" width="14" height="14" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="282" x1="48" y1="224" x2="48" y2="48"></line><path data-dc-tpl="283" d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>Eksik</span><button data-dc-tpl="284" class="bt dis" aria-disabled="true" aria-label="İntibah, roman, eksik. Öğrendim olarak işaretle." style="height: 48px; padding: 0px 12px; margin-right: -12px;">Öğrendim</button></div><p data-dc-tpl="285" class="c13 mu" style="margin: -6px 0px 0px; padding-bottom: 10px; border-bottom: 1px solid rgb(232, 236, 241);">Öğrendim'i kaydetmek için bağlantı gerekiyor.</p><div data-dc-tpl="286" class="wk" role="listitem" aria-label="Cezmi, roman, biliyorsun"><span data-dc-tpl="287" class="wn">Cezmi</span><span data-dc-tpl="288" class="okk"><svg data-dc-tpl="289" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="290" points="40 144 96 200 224 72"></polyline></svg>Biliyorsun</span></div></div><p data-dc-tpl="291" class="c13 mu" style="font-weight: 700; margin-top: 14px;">Tiyatro · 6</p><div data-dc-tpl="292" role="list"><div data-dc-tpl="293" class="wk" role="listitem" aria-label="Vatan yahut Silistre, tiyatro, eksik"><span data-dc-tpl="294" class="wn">Vatan yahut Silistre</span><span data-dc-tpl="295" class="ek"><svg data-dc-tpl="296" width="14" height="14" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="297" x1="48" y1="224" x2="48" y2="48"></line><path data-dc-tpl="298" d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>Eksik</span><button data-dc-tpl="299" class="bt dis" aria-disabled="true" aria-label="Vatan yahut Silistre, tiyatro, eksik. Öğrendim olarak işaretle." style="height: 48px; padding: 0px 12px; margin-right: -12px;">Öğrendim</button></div><div data-dc-tpl="300" class="wk" role="listitem" aria-label="Gülnihal, tiyatro, biliyorsun"><span data-dc-tpl="301" class="wn">Gülnihal</span><span data-dc-tpl="302" class="okk"><svg data-dc-tpl="303" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="304" points="40 144 96 200 224 72"></polyline></svg>Biliyorsun</span></div><div data-dc-tpl="305" class="wk" role="listitem" aria-label="Akif Bey, tiyatro, biliyorsun"><span data-dc-tpl="306" class="wn">Akif Bey</span><span data-dc-tpl="307" class="okk"><svg data-dc-tpl="308" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="309" points="40 144 96 200 224 72"></polyline></svg>Biliyorsun</span></div><div data-dc-tpl="310" class="wk" role="listitem" aria-label="Zavallı Çocuk, tiyatro, biliyorsun"><span data-dc-tpl="311" class="wn">Zavallı Çocuk</span><span data-dc-tpl="312" class="okk"><svg data-dc-tpl="313" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="314" points="40 144 96 200 224 72"></polyline></svg>Biliyorsun</span></div><div data-dc-tpl="315" class="wk" role="listitem" aria-label="Kara Bela, tiyatro, biliyorsun"><span data-dc-tpl="316" class="wn">Kara Bela</span><span data-dc-tpl="317" class="okk"><svg data-dc-tpl="318" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="319" points="40 144 96 200 224 72"></polyline></svg>Biliyorsun</span></div><div data-dc-tpl="320" class="wk" role="listitem" aria-label="Celaleddin Harzemşah, tiyatro, biliyorsun"><span data-dc-tpl="321" class="wn">Celaleddin Harzemşah</span><span data-dc-tpl="322" class="okk"><svg data-dc-tpl="323" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="324" points="40 144 96 200 224 72"></polyline></svg>Biliyorsun</span></div></div></div><div data-dc-tpl="325" aria-hidden="true" style="position: absolute; left: 0px; right: 0px; bottom: 0px; height: 34px; background: rgb(255, 255, 255); z-index: 1;"></div></section><div data-dc-tpl="326" class="hi"></div></div><div data-dc-tpl="327" class="cap"><b data-dc-tpl="328">3 · Çevrimdışı</b><span data-dc-tpl="329">Önbellekteki liste; "Öğrendim" pasif ve nedeni ilk eksik eserin altında. OfflineStrip sheet açıkken de görünür.</span></div></div><div data-dc-tpl="330" style="flex: 0 0 auto;"><div data-dc-tpl="331" class="ph dk" role="img" aria-label="Namık Kemal, koyu"><div data-dc-tpl="332" class="di"></div><div data-dc-tpl="333" class="abs" style="top: 54px; left: 4px;"><button data-dc-tpl="334" class="ib" aria-label="Geri"><svg data-dc-tpl="335" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="336" points="160 208 80 128 160 48"></polyline></svg></button></div><div data-dc-tpl="337" class="abs" style="top: 102px; left: 16px; right: 16px;"><h2 data-dc-tpl="338" class="t24">Tanzimat Dönemi</h2><div data-dc-tpl="339" style="margin-top: 8px;"><span data-dc-tpl="340" class="ek"><svg data-dc-tpl="341" width="14" height="14" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="342" x1="48" y1="224" x2="48" y2="48"></line><path data-dc-tpl="343" d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>2 eksik eser</span></div></div><div data-dc-tpl="344" class="abs" style="top: 182px; left: 16px; right: 16px; display: flex; flex-direction: column; gap: 8px;"><div data-dc-tpl="345" class="card" style="overflow: hidden;"><button data-dc-tpl="346" aria-expanded="true" style="width: 100%; display: flex; align-items: center; gap: 8px; padding: 14px 12px 14px 16px; min-height: 56px; text-align: left;"><div data-dc-tpl="347" style="flex: 1 1 0%; min-width: 0px;"><div data-dc-tpl="348" class="t17">Birinci Dönem Sanatçıları</div><div data-dc-tpl="349" style="margin-top: 6px;"><span data-dc-tpl="350" class="ek"><svg data-dc-tpl="351" width="14" height="14" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="352" x1="48" y1="224" x2="48" y2="48"></line><path data-dc-tpl="353" d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>2 eksik</span></div></div><span data-dc-tpl="354" class="mu" style="display: inline-flex;"><svg data-dc-tpl="355" width="22" height="22" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="356" points="48 160 128 80 208 160"></polyline></svg></span></button><div data-dc-tpl="357" style="border-top: 1px solid rgb(38, 53, 77);"><button data-dc-tpl="358" class="rw" aria-label="Şinasi, 3 eser" style="min-height: 72px;"><span data-dc-tpl="359" aria-hidden="true" style="width: 48px; height: 48px; border-radius: 999px; background: rgb(48, 26, 39); color: rgb(228, 148, 190); display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex: 0 0 auto;">Ş</span><div data-dc-tpl="360" style="flex: 1 1 0%; min-width: 0px;"><div data-dc-tpl="361" class="tn">Şinasi</div><div data-dc-tpl="362" class="tm">3 eser</div></div><span data-dc-tpl="363" class="mu" style="display: inline-flex;"><svg data-dc-tpl="364" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="365" points="96 48 176 128 96 208"></polyline></svg></span></button><button data-dc-tpl="366" class="rw" aria-label="Namık Kemal, 8 eser, 2 eksik" style="min-height: 72px;"><span data-dc-tpl="367" aria-hidden="true" style="width: 48px; height: 48px; border-radius: 999px; background: rgb(48, 26, 39); color: rgb(228, 148, 190); display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex: 0 0 auto;">NK</span><div data-dc-tpl="368" style="flex: 1 1 0%; min-width: 0px;"><div data-dc-tpl="369" class="tn">Namık Kemal</div><div data-dc-tpl="370" class="tm">8 eser</div></div><span data-dc-tpl="371" class="ek"><svg data-dc-tpl="372" width="14" height="14" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="373" x1="48" y1="224" x2="48" y2="48"></line><path data-dc-tpl="374" d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>2 eksik</span><span data-dc-tpl="375" class="mu" style="display: inline-flex;"><svg data-dc-tpl="376" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="377" points="96 48 176 128 96 208"></polyline></svg></span></button><button data-dc-tpl="378" class="rw" aria-label="Ziya Paşa, 6 eser" style="min-height: 72px;"><span data-dc-tpl="379" aria-hidden="true" style="width: 48px; height: 48px; border-radius: 999px; background: rgb(48, 26, 39); color: rgb(228, 148, 190); display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex: 0 0 auto;">ZP</span><div data-dc-tpl="380" style="flex: 1 1 0%; min-width: 0px;"><div data-dc-tpl="381" class="tn">Ziya Paşa</div><div data-dc-tpl="382" class="tm">6 eser</div></div><span data-dc-tpl="383" class="mu" style="display: inline-flex;"><svg data-dc-tpl="384" width="20" height="20" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="385" points="96 48 176 128 96 208"></polyline></svg></span></button></div></div><div data-dc-tpl="386" class="card" style="overflow: hidden;"><button data-dc-tpl="387" aria-expanded="false" style="width: 100%; display: flex; align-items: center; gap: 8px; padding: 14px 12px 14px 16px; min-height: 56px; text-align: left;"><div data-dc-tpl="388" style="flex: 1 1 0%; min-width: 0px;"><div data-dc-tpl="389" class="t17">İkinci Dönem Sanatçıları</div></div><span data-dc-tpl="390" class="mu" style="display: inline-flex;"><svg data-dc-tpl="391" width="22" height="22" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="392" points="208 96 128 176 48 96"></polyline></svg></span></button></div></div><nav data-dc-tpl="393" aria-label="Ana gezinme" style="position: absolute; left: 0px; right: 0px; bottom: 0px; height: 102px; background: rgba(18, 29, 49, 0.92); backdrop-filter: blur(20px); border-radius: 24px 24px 0px 0px; box-shadow: rgb(38, 53, 77) 0px 1px 0px inset; z-index: 3;"><div data-dc-tpl="394" style="display: flex; height: 68px;"><button data-dc-tpl="395" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(169, 181, 198);"><svg data-dc-tpl="396" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="397" d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span data-dc-tpl="398" style="font-size: 12px; line-height: 16px; font-weight: 600;">Anasayfa</span></button><button data-dc-tpl="399" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(169, 181, 198);"><svg data-dc-tpl="400" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="401" points="224 208 32 208 32 48"></polyline><polyline data-dc-tpl="402" points="224 96 160 152 96 104 32 160"></polyline></svg><span data-dc-tpl="403" style="font-size: 12px; line-height: 16px; font-weight: 600;">Analizlerim</span></button><div data-dc-tpl="404" style="width: 72px; position: relative;"><button data-dc-tpl="405" aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: rgb(255, 102, 0); color: rgb(15, 41, 74); display: inline-flex; align-items: center; justify-content: center; box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 8px;"><svg data-dc-tpl="406" width="28" height="28" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="407" d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle data-dc-tpl="408" cx="128" cy="132" r="36"></circle></svg></button><span data-dc-tpl="409" aria-hidden="true" style="position: absolute; top: 44px; left: 0px; right: 0px; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: rgb(237, 241, 246);">Okut</span></div><button data-dc-tpl="410" aria-current="page" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(237, 241, 246);"><span data-dc-tpl="411" style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0px 0px 4px 4px; background: rgb(255, 133, 51);"></span><svg data-dc-tpl="412" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="413" d="M128 88a32 32 0 0 1 32-32h72v144h-72a32 32 0 0 0-32 32"></path><path data-dc-tpl="414" d="M24 200h72a32 32 0 0 1 32 32V88a32 32 0 0 0-32-32H24Z"></path></svg><span data-dc-tpl="415" style="font-size: 12px; line-height: 16px; font-weight: 700;">Derslerim</span></button><button data-dc-tpl="416" style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: rgb(169, 181, 198);"><svg data-dc-tpl="417" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle data-dc-tpl="418" cx="128" cy="128" r="96"></circle><circle data-dc-tpl="419" cx="128" cy="120" r="40"></circle><path data-dc-tpl="420" d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span data-dc-tpl="421" style="font-size: 12px; line-height: 16px; font-weight: 600;">Hesap</span></button></div></nav><div data-dc-tpl="422" class="scrim dk2"></div><section data-dc-tpl="423" class="sh" role="dialog" aria-modal="true" aria-label="Namık Kemal" style="top: 54px; overflow: hidden;"><div data-dc-tpl="424" class="hd"></div><div data-dc-tpl="425" class="shh"><div data-dc-tpl="426" style="flex: 1 1 0%; display: flex; gap: 12px; align-items: center; padding-top: 8px;"><span data-dc-tpl="427" aria-hidden="true" style="width: 56px; height: 56px; border-radius: 999px; background: rgb(48, 26, 39); color: rgb(228, 148, 190); display: inline-flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 700; flex: 0 0 auto;">NK</span><div data-dc-tpl="428"><h2 data-dc-tpl="429" class="t20">Namık Kemal</h2><p data-dc-tpl="430" class="c13 mu" style="font-weight: 600;">Tanzimat Dönemi</p></div></div><button data-dc-tpl="431" class="ib" aria-label="Kapat"><span data-dc-tpl="432" class="xi"><svg data-dc-tpl="433" width="18" height="18" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="434" x1="200" y1="56" x2="56" y2="200"></line><line data-dc-tpl="435" x1="200" y1="200" x2="56" y2="56"></line></svg></span></button></div><div data-dc-tpl="436" style="padding: 12px 24px 0px;"><h3 data-dc-tpl="437" class="t17">Hakkında</h3><p data-dc-tpl="438" class="b16" style="line-height: 26px; margin-top: 4px;">Tanzimat Dönemi'nin şair ve yazarı; "vatan şairi" olarak bilinir. Edebiyatı toplumu eğitmenin aracı olarak gördü.</p><p data-dc-tpl="439" class="b16" style="line-height: 26px; margin-top: 4px;">Vatan yahut Silistre oyunu sahnelendiğinde büyük ilgi gördü.</p><div data-dc-tpl="440" style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-top: 18px;"><h3 data-dc-tpl="441" class="t17">Eserleri</h3><span data-dc-tpl="442" class="c13 mu" style="font-weight: 600;">8 eser · 2 eksik</span></div><p data-dc-tpl="443" class="c13 mu" style="font-weight: 700; margin-top: 14px;">Roman · 2</p><div data-dc-tpl="444" role="list"><div data-dc-tpl="445" class="wk" role="listitem" aria-label="İntibah, roman, eksik"><span data-dc-tpl="446" class="wn">İntibah</span><span data-dc-tpl="447" class="ek"><svg data-dc-tpl="448" width="14" height="14" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="449" x1="48" y1="224" x2="48" y2="48"></line><path data-dc-tpl="450" d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>Eksik</span><button data-dc-tpl="451" class="bt" aria-label="İntibah, roman, eksik. Öğrendim olarak işaretle." style="height: 48px; padding: 0px 12px; margin-right: -12px;">Öğrendim</button></div><div data-dc-tpl="452" class="wk" role="listitem" aria-label="Cezmi, roman, biliyorsun"><span data-dc-tpl="453" class="wn">Cezmi</span><span data-dc-tpl="454" class="okk"><svg data-dc-tpl="455" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="456" points="40 144 96 200 224 72"></polyline></svg>Biliyorsun</span></div></div><p data-dc-tpl="457" class="c13 mu" style="font-weight: 700; margin-top: 14px;">Tiyatro · 6</p><div data-dc-tpl="458" role="list"><div data-dc-tpl="459" class="wk" role="listitem" aria-label="Vatan yahut Silistre, tiyatro, eksik"><span data-dc-tpl="460" class="wn">Vatan yahut Silistre</span><span data-dc-tpl="461" class="ek"><svg data-dc-tpl="462" width="14" height="14" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line data-dc-tpl="463" x1="48" y1="224" x2="48" y2="48"></line><path data-dc-tpl="464" d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>Eksik</span><button data-dc-tpl="465" class="bt" aria-label="Vatan yahut Silistre, tiyatro, eksik. Öğrendim olarak işaretle." style="height: 48px; padding: 0px 12px; margin-right: -12px;">Öğrendim</button></div><div data-dc-tpl="466" class="wk" role="listitem" aria-label="Gülnihal, tiyatro, biliyorsun"><span data-dc-tpl="467" class="wn">Gülnihal</span><span data-dc-tpl="468" class="okk"><svg data-dc-tpl="469" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="470" points="40 144 96 200 224 72"></polyline></svg>Biliyorsun</span></div><div data-dc-tpl="471" class="wk" role="listitem" aria-label="Akif Bey, tiyatro, biliyorsun"><span data-dc-tpl="472" class="wn">Akif Bey</span><span data-dc-tpl="473" class="okk"><svg data-dc-tpl="474" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="475" points="40 144 96 200 224 72"></polyline></svg>Biliyorsun</span></div><div data-dc-tpl="476" class="wk" role="listitem" aria-label="Zavallı Çocuk, tiyatro, biliyorsun"><span data-dc-tpl="477" class="wn">Zavallı Çocuk</span><span data-dc-tpl="478" class="okk"><svg data-dc-tpl="479" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="480" points="40 144 96 200 224 72"></polyline></svg>Biliyorsun</span></div><div data-dc-tpl="481" class="wk" role="listitem" aria-label="Kara Bela, tiyatro, biliyorsun"><span data-dc-tpl="482" class="wn">Kara Bela</span><span data-dc-tpl="483" class="okk"><svg data-dc-tpl="484" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="485" points="40 144 96 200 224 72"></polyline></svg>Biliyorsun</span></div><div data-dc-tpl="486" class="wk" role="listitem" aria-label="Celaleddin Harzemşah, tiyatro, biliyorsun"><span data-dc-tpl="487" class="wn">Celaleddin Harzemşah</span><span data-dc-tpl="488" class="okk"><svg data-dc-tpl="489" width="16" height="16" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline data-dc-tpl="490" points="40 144 96 200 224 72"></polyline></svg>Biliyorsun</span></div></div></div><div data-dc-tpl="491" aria-hidden="true" style="position: absolute; left: 0px; right: 0px; bottom: 0px; height: 34px; background: rgb(24, 38, 61); z-index: 1;"></div></section><div data-dc-tpl="492" class="hi"></div></div><div data-dc-tpl="493" class="cap"><b data-dc-tpl="494">4 · Koyu</b><span data-dc-tpl="495">AuthorSheet koyu: sheet #18263D, Edebiyat koyu tonları (#301A27 / #E494BE), eksik etiketi #F2C46D / #33270F, ✓ #52CC8E.</span></div></div></div><section data-dc-tpl="496" class="nts" style="grid-template-columns: repeat(3, minmax(0px, 1fr));"><div data-dc-tpl="497"><h3 data-dc-tpl="498">Durum metinleri</h3><ul data-dc-tpl="499"><li data-dc-tpl="500">Bölüm hatası: "Yazarlar yüklenemedi." + "Tekrar Dene". Dönem listesi gelmezse segmentin altında "Dönemler yüklenemedi." ve aynı düğme (14.3·2 düzeni).</li><li data-dc-tpl="501">Çevrimdışı: "Öğrendim'i kaydetmek için bağlantı gerekiyor."</li><li data-dc-tpl="502">Kaydetme hatası (kare yok): satır eksiğe döner, toast "Kaydedilemedi. Bağlantını kontrol edip tekrar dene."</li><li data-dc-tpl="503">Eser yok: "Bu yazarın eser listesi henüz yok."</li></ul></div><div data-dc-tpl="504"><h3 data-dc-tpl="505">Boş durum</h3><ul data-dc-tpl="506"><li data-dc-tpl="507">Dönem listesinin boş hâli anlamsız: dönemler müfredattan gelir. Veri gelmezse hata gösterilir (T12.16).</li><li data-dc-tpl="508">Alt başlıkta yazar yoksa akordeon içinde "Bu bölümde yazar yok."</li></ul></div><div data-dc-tpl="509"><h3 data-dc-tpl="510">Koyu tema</h3><ul data-dc-tpl="511"><li data-dc-tpl="512">Edebiyat koyu: zemin #301A27, vurgu #E494BE (1.5).</li><li data-dc-tpl="513">Metin düğmesi #9BB3D3; pasif #56657C.</li></ul></div></section></div></div></div>
+
+
+
+
+
+</body></html>

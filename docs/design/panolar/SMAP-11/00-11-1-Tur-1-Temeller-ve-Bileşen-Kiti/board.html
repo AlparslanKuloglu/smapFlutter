@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="tr"><head><style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  </style>
+<meta charset="utf-8">
+<title>11.1 Tur 1 Notları</title>
+<style>x-dc{display:none!important}</style>
+<style data-dc-tpl="1">/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style><style data-dc-tpl="2">
+body{margin:0}
+*{box-sizing:border-box}
+h2{margin:0;font-size:28px;line-height:36px;font-weight:800;letter-spacing:-0.3px}
+h3{margin:0;font-size:20px;line-height:28px;font-weight:700}
+.ld{margin:8px 0 0;font-size:16px;line-height:26px;color:#556173;max-width:1100px}
+.nt{width:100%;border-collapse:collapse;table-layout:fixed}
+.nt th{font-size:13px;line-height:20px;font-weight:600;color:#556173;text-align:left;padding:10px 12px;border-bottom:1px solid #C3CBD6}
+.nt td{font-size:14px;line-height:21px;padding:10px 12px;border-bottom:1px solid #E8ECF1;vertical-align:top;color:#1B2232}
+.nt td.n{font-weight:700;color:#556173}
+.nt td.m{color:#556173}
+.nt td.b{font-weight:600}
+.ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0}
+.ol li{display:grid;grid-template-columns:40px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #E8ECF1;font-size:14px;line-height:21px}
+.ol li span{font-weight:700;color:#556173}
+pre{margin:0;padding:20px 24px;border-radius:16px;background:#0F1420;color:#EDF1F6;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:13px;line-height:20px;white-space:pre-wrap;overflow:hidden}
+pre .c{color:#8B9AAF}
+.kv{display:grid;grid-template-columns:260px 1fr;font-size:14px;line-height:21px}
+.kv div{padding:8px 0;border-bottom:1px solid #E8ECF1}
+.kv div:nth-child(odd){font-weight:700}
+.ck{display:grid;grid-template-columns:28px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #E8ECF1;font-size:14px;line-height:21px}
+.ok{color:#0B6E3E;font-weight:800}
+.c2{column-count:2;column-gap:48px}
+.c2 > *{break-inside:avoid}
+.ol.c2{display:block}
+</style></head>
+<body>
+<div id="dc-root"><div class="sc-host" data-sc-name="board00"><div data-dc-tpl="3" style="width: 1440px; height: 7740px; background: rgb(255, 255, 255); color: rgb(27, 34, 50); font-family: &quot;Plus Jakarta Sans&quot;, system-ui, sans-serif; padding: 64px; display: flex; flex-direction: column; gap: 56px; font-variant-numeric: tabular-nums;"><header data-dc-tpl="4" style="display: flex; flex-direction: column; gap: 8px;"><div data-dc-tpl="5" style="font-size: 15px; line-height: 20px; font-weight: 600; color: rgb(85, 97, 115);">11.1 · Notlar · Tur 1</div><h1 data-dc-tpl="6" style="margin: 0px; font-size: 40px; line-height: 48px; font-weight: 800; letter-spacing: -0.6px;">Tur 1 · Temeller ve Bileşen Kiti</h1><p data-dc-tpl="7" class="ld">Bu turda 13 sayfa açıldı ve "1 · Temeller"e 26 pano kondu: renk (1.1–1.5), tipografi, şekil ve hareket (1.6–1.8), kontroller (1.9–1.13), veri bileşenleri (1.14–1.17), kabuk ve yüzeyler (1.18–1.22), koyu tema (1.23–1.24), illüstrasyon ve logo (1.25–1.26, Tur 1 eki). Aşağıda: ne değişti ve neden (görüntü numarasıyla), bu turda verdiğim kararlar, geliştirici devri ve Bölüm 6 denetimi.</p></header><section data-dc-tpl="8" style="display: flex; flex-direction: column; gap: 16px;"><h2 data-dc-tpl="9">Ne değişti, neden</h2><table data-dc-tpl="10" class="nt"><thead data-dc-tpl="11"><tr data-dc-tpl="12"><th data-dc-tpl="13" style="width: 44px;">#</th><th data-dc-tpl="14" style="width: 470px;">Değişiklik</th><th data-dc-tpl="15">Çözdüğü sorun</th><th data-dc-tpl="16" style="width: 120px;">Görüntü</th><th data-dc-tpl="17" style="width: 110px;">Pano</th></tr></thead><tbody data-dc-tpl="18"><tr data-dc-tpl="19"><td data-dc-tpl="20" class="n">1</td><td data-dc-tpl="21" class="b">Tek lacivert skalası, navy-900 = #0F294A</td><td data-dc-tpl="22">En az 12 lacivert: #162A40 kamera ve görüşmede, #0D2744 giriş ve koçta, #1A365D onboarding'de, #1A237E indigo 11 yerde</td><td data-dc-tpl="23" class="m">06, 09, 19, 24, 38</td><td data-dc-tpl="24" class="m">1.1</td></tr><tr data-dc-tpl="25"><td data-dc-tpl="26" class="n">2</td><td data-dc-tpl="27" class="b">Tek turuncu skalası: dolguda 500, ince öğede 600, metinde 700</td><td data-dc-tpl="28">9 turuncu; aynı yerde iki turuncu (gösterge #FF7A00, ikon #FF6600); turuncu metin beyazda 2,94:1</td><td data-dc-tpl="29" class="m">09, 19, 24</td><td data-dc-tpl="30" class="m">1.1, 1.2</td></tr><tr data-dc-tpl="31"><td data-dc-tpl="32" class="n">3</td><td data-dc-tpl="33" class="b">Kamera ikonu lacivert, altında "Okut"</td><td data-dc-tpl="34">Turuncu üstünde yarı saydam beyaz ikon (#FFA366) 1,5:1, etiketsiz kamera</td><td data-dc-tpl="35" class="m">09</td><td data-dc-tpl="36" class="m">1.19</td></tr><tr data-dc-tpl="37"><td data-dc-tpl="38" class="n">4</td><td data-dc-tpl="39" class="b">Tek nötr skala; ikincil metin #556173 (6,28:1)</td><td data-dc-tpl="40">#8A90A6 3,17:1; meta ~3:1; eksen 2,61:1; "Kapat" 2,68:1; 5 ayrı gri ailesi</td><td data-dc-tpl="41" class="m">11, 19, 22, 40</td><td data-dc-tpl="42" class="m">1.1, 1.3</td></tr><tr data-dc-tpl="43"><td data-dc-tpl="44" class="n">5</td><td data-dc-tpl="45" class="b">Pasif sekme etiketi ve ikonu #556173</td><td data-dc-tpl="46">Pasif sekme 1,96:1</td><td data-dc-tpl="47" class="m">09</td><td data-dc-tpl="48" class="m">1.19</td></tr><tr data-dc-tpl="49"><td data-dc-tpl="50" class="n">6</td><td data-dc-tpl="51" class="b">D/Y/B tek sözlük: renk + ✓ ✕ – + etiket, sabit sıra, farklı açıklık</td><td data-dc-tpl="52">Dört sözlük; bir ekranda "Doğru" lacivert; "Boş" bazen siyah bazen gri; ✓ dairesiz, ✕ daireli</td><td data-dc-tpl="53" class="m">24, 26, 28</td><td data-dc-tpl="54" class="m">1.4, 1.14</td></tr><tr data-dc-tpl="55"><td data-dc-tpl="56" class="n">7</td><td data-dc-tpl="57" class="b">Soru hücresi: işaretin, yanlışta altta doğru şık, durum çipi</td><td data-dc-tpl="58">Her hücrede anlamı belirsiz "A"; doğru şık hiç yok</td><td data-dc-tpl="59" class="m">26, 27</td><td data-dc-tpl="60" class="m">1.14</td></tr><tr data-dc-tpl="61"><td data-dc-tpl="62" class="n">8</td><td data-dc-tpl="63" class="b">Ders renkleri ayrıştı, glif kontrastı en az 4,55:1</td><td data-dc-tpl="64">Matematik, Kimya, Edebiyat 351–358°; Coğrafya, Geometri, Fizik 197–216°; Tarih glifi 1,87:1 ve turuncuya yakın; kart şeritleri rastgele</td><td data-dc-tpl="65" class="m">11, 29, 30</td><td data-dc-tpl="66" class="m">1.5</td></tr><tr data-dc-tpl="67"><td data-dc-tpl="68" class="n">9</td><td data-dc-tpl="69" class="b">Ders ikonu: ders renginde zemin + tek renk Phosphor glifi</td><td data-dc-tpl="70">Çok renkli illüstrasyon 28 pt'de okunmuyor; iki ayrı ders ikon seti</td><td data-dc-tpl="71" class="m">09, 20, 29</td><td data-dc-tpl="72" class="m">1.5, 1.17</td></tr><tr data-dc-tpl="73"><td data-dc-tpl="74" class="n">10</td><td data-dc-tpl="75" class="b">Köşe yarıçapı 22 → 5 değer + tam; iç = dış − boşluk</td><td data-dc-tpl="76">Kart 9/16, istatistik kartı 12/6, analiz çipi 7, giriş düğmesi 15</td><td data-dc-tpl="77" class="m">09, 19, 24</td><td data-dc-tpl="78" class="m">1.7</td></tr><tr data-dc-tpl="79"><td data-dc-tpl="80" class="n">11</td><td data-dc-tpl="81" class="b">Gölge 57 → 2; bir yüzeyde kenar ya da gölge</td><td data-dc-tpl="82">Filtre panelinde çift gölge; alt çubuk gölgesi görünmeyen yöne düşüyor</td><td data-dc-tpl="83" class="m">19, 20</td><td data-dc-tpl="84" class="m">1.7</td></tr><tr data-dc-tpl="85"><td data-dc-tpl="86" class="n">12</td><td data-dc-tpl="87" class="b">Plus Jakarta Sans; 12 metin + 4 rakam stili; 13 pt altı yok (alt çubuk etiketi hariç)</td><td data-dc-tpl="88">Tanımsız sistem fontu, 18 punto, 9–11 pt meta satırları</td><td data-dc-tpl="89" class="m">09, 11, 12, 40</td><td data-dc-tpl="90" class="m">1.6</td></tr><tr data-dc-tpl="91"><td data-dc-tpl="92" class="n">13</td><td data-dc-tpl="93" class="b">Türkçe sayı ve tarih biçimi, tabular rakam</td><td data-dc-tpl="94">"118.30", "72.154", "67.5", "Oct", "Pt", "Cu" karışık</td><td data-dc-tpl="95" class="m">03, 09, 19, 21</td><td data-dc-tpl="96" class="m">1.6</td></tr><tr data-dc-tpl="97"><td data-dc-tpl="98" class="n">14</td><td data-dc-tpl="99" class="b">Tek birincil düğme (lacivert), büyük harf yok, iptal sözlüğü</td><td data-dc-tpl="100">Soluk gri CTA pasif görünüyordu; indigo dialog düğmesi; "ANLADIM", "GÖNDER"; Vazgeç/İptal/Kapat/Geri Al/Tamam karışık</td><td data-dc-tpl="101" class="m">01, 22, 38, envanter</td><td data-dc-tpl="102" class="m">1.9</td></tr><tr data-dc-tpl="103"><td data-dc-tpl="104" class="n">15</td><td data-dc-tpl="105" class="b">Tek segment kontrolü, lacivert başparmak, etiketli sayaç</td><td data-dc-tpl="106">6 segment, 4 seçili turuncusu, üst üste iki segment; etiketsiz 31/28/3 rozetleri listeyle çakışıyor</td><td data-dc-tpl="107" class="m">11, 20, 24, 29</td><td data-dc-tpl="108" class="m">1.10</td></tr><tr data-dc-tpl="109"><td data-dc-tpl="110" class="n">16</td><td data-dc-tpl="111" class="b">Ekran içi sekme çubuğu, sabit ve kaydırılabilir; filtre sekmeden ayrı</td><td data-dc-tpl="112">Açılır "Genel" filtresi ile Denemelerim/Analiz/Harita sekmeleri aynı biçimde aynı satırda; ikisi "Yakında"ya çıkıyor; Deneme Detay'da 4 sekme sıkışık</td><td data-dc-tpl="113" class="m">19, 22, 23, 24</td><td data-dc-tpl="114" class="m">1.10</td></tr><tr data-dc-tpl="115"><td data-dc-tpl="116" class="n">17</td><td data-dc-tpl="117" class="b">Çip (dokunulur) ve etiket (bilgi) ayrıldı; renkli hap yok</td><td data-dc-tpl="118">"Deneme: 1" hapı; anlamsız renkli kart şeritleri</td><td data-dc-tpl="119" class="m">11, 21</td><td data-dc-tpl="120" class="m">1.11</td></tr><tr data-dc-tpl="121"><td data-dc-tpl="122" class="n">18</td><td data-dc-tpl="123" class="b">Girdi: etiket üstte, "Örn:" placeholder, tek stil, önceden dolu alan yok</td><td data-dc-tpl="124">Etiketsiz alanlar; test verisi dolu; değer ile placeholder aynı renk; üç ayrı alan stili (mavi dolgu, gri dolgu, çerçeveli)</td><td data-dc-tpl="125" class="m">06, 07, 32, 33</td><td data-dc-tpl="126" class="m">1.12</td></tr><tr data-dc-tpl="127"><td data-dc-tpl="128" class="n">19</td><td data-dc-tpl="129" class="b">Satır bileşeni; tehlikeli satır ayrı grupta; anahtar lacivert + onay işareti</td><td data-dc-tpl="130">Satırlar zeminle aynı ton (1,05:1); "Çıkış Yap" menü satırlarıyla aynı biçimde, yalnız ince çizgiyle ayrı; Tailwind yeşili (#22C55E) anahtar</td><td data-dc-tpl="131" class="m">31, 33, 37</td><td data-dc-tpl="132" class="m">1.13</td></tr><tr data-dc-tpl="133"><td data-dc-tpl="134" class="n">20</td><td data-dc-tpl="135" class="b">Akordeonda açık ve kapalı için ayrı ok</td><td data-dc-tpl="136">Açık ve kapalı bölümde aynı ok</td><td data-dc-tpl="137" class="m">26, 27</td><td data-dc-tpl="138" class="m">1.13</td></tr><tr data-dc-tpl="139"><td data-dc-tpl="140" class="n">21</td><td data-dc-tpl="141" class="b">İlerleme: veri yoksa çizilmez; "%0" ile "soru yok" ayrı; tek renk halka; doğru yuvarlama</td><td data-dc-tpl="142">%0 çubuk dolu görünüyor; %60 yazan çubuk boş; sarı halka 1,22:1; %41,67 → %41</td><td data-dc-tpl="143" class="m">09, 28, 40</td><td data-dc-tpl="144" class="m">1.15</td></tr><tr data-dc-tpl="145"><td data-dc-tpl="146" class="n">22</td><td data-dc-tpl="147" class="b">Ders ve konu satırında sahte meta yok; numara kesintisiz; ad kesilmez</td><td data-dc-tpl="148">Her kartta %75 · 15/20 · 4/26/8; numaralar 3, 4, 4, 5, 5, 6; "İkinci Dünya Savaşı Sürecin…"</td><td data-dc-tpl="149" class="m">11, 15, 18, 29</td><td data-dc-tpl="150" class="m">1.16</td></tr><tr data-dc-tpl="151"><td data-dc-tpl="152" class="n">23</td><td data-dc-tpl="153" class="b">İstatistik kutusu: değişim yalnız son iki denemeden</td><td data-dc-tpl="154">Dört kutuda sabit "+18.2% gecen ay"</td><td data-dc-tpl="155" class="m">19</td><td data-dc-tpl="156" class="m">1.16</td></tr><tr data-dc-tpl="157"><td data-dc-tpl="158" class="n">24</td><td data-dc-tpl="159" class="b">Avatar yalnız Anasayfa ve Hesap'ta; 7 avatar bir arada; koç rozeti</td><td data-dc-tpl="160">Ad ve avatar aynı ekranda iki kez; oklu avatar seçicide kaç seçenek olduğu belirsiz</td><td data-dc-tpl="161" class="m">07, 09, 32</td><td data-dc-tpl="162" class="m">1.17</td></tr><tr data-dc-tpl="163"><td data-dc-tpl="164" class="n">25</td><td data-dc-tpl="165" class="b">Tek ikon ailesi: Phosphor, Regular / seçiliyken Fill</td><td data-dc-tpl="166">Menüde 3 ikon stili; geri oku 4 farklı Material ikonu; potrace SVG'ler</td><td data-dc-tpl="167" class="m">09, 20</td><td data-dc-tpl="168" class="m">1.17</td></tr><tr data-dc-tpl="169"><td data-dc-tpl="170" class="n">26</td><td data-dc-tpl="171" class="b">Üst bar 9 → 2 tür: başlıklı kök bant, açık zeminli detay barı</td><td data-dc-tpl="172">Alt sayfalarda başlık yok; ad ve avatar tekrarı; sabit lacivert blok ekranın %25'i</td><td data-dc-tpl="173" class="m">09, 10, 19, 31–37</td><td data-dc-tpl="174" class="m">1.18</td></tr><tr data-dc-tpl="175"><td data-dc-tpl="176" class="n">27</td><td data-dc-tpl="177" class="b">Alt çubuk: tek gösterge, sekme içinde her ekranda</td><td data-dc-tpl="178">İki turuncu ve şeftali hap; alt çubuğun bazı detaylarda olup bazılarında olmaması</td><td data-dc-tpl="179" class="m">09, 39</td><td data-dc-tpl="180" class="m">1.19</td></tr><tr data-dc-tpl="181"><td data-dc-tpl="182" class="n">28</td><td data-dc-tpl="183" class="b">Seçim ve onaylar alttan sheet; tek çerçeve; meşgul durumu</td><td data-dc-tpl="184">Ortada açılan dialoglar, kapatma düğmesiz; köşe 12/16/20/24</td><td data-dc-tpl="185" class="m">14, 17, 22, 23</td><td data-dc-tpl="186" class="m">1.20, 1.21</td></tr><tr data-dc-tpl="187"><td data-dc-tpl="188" class="n">29</td><td data-dc-tpl="189" class="b">"Yakında" yalnız kitte, "Haber ver" yok</td><td data-dc-tpl="190">Hiçbir şey kaydetmeyen "Kaydınız Alındı"; web'de hazır bir şey için "yakında" çelişkisi</td><td data-dc-tpl="191" class="m">22, 23</td><td data-dc-tpl="192" class="m">1.21</td></tr><tr data-dc-tpl="193"><td data-dc-tpl="194" class="n">30</td><td data-dc-tpl="195" class="b">Toast: tek konum ve süre, emoji ve iç kod yok</td><td data-dc-tpl="196">"🎉" ve "🔴" mesajları, "Gönderim hatası 590", ham Exception metni (envanter §3)</td><td data-dc-tpl="197" class="m">envanter</td><td data-dc-tpl="198" class="m">1.22</td></tr><tr data-dc-tpl="199"><td data-dc-tpl="200" class="n">31</td><td data-dc-tpl="201" class="b">Durum kalıpları: 15 sn'de hata, bölüm düzeyi durum, çevrimdışı şeridi</td><td data-dc-tpl="202">Hata durumunda sonsuz iskelet (Anasayfa ders şeridi, sonuç akışı 2. adım)</td><td data-dc-tpl="203" class="m">envanter</td><td data-dc-tpl="204" class="m">1.22</td></tr><tr data-dc-tpl="205"><td data-dc-tpl="206" class="n">32</td><td data-dc-tpl="207" class="b">Koyu tema token düzeyinde tasarlandı</td><td data-dc-tpl="208">Koyu tema yoktu; ters çevrilmiş bir koyu tema istenmiyor</td><td data-dc-tpl="209" class="m">—</td><td data-dc-tpl="210" class="m">1.2, 1.23, 1.24</td></tr><tr data-dc-tpl="211"><td data-dc-tpl="212" class="n">33</td><td data-dc-tpl="213" class="b">Gerçek 3D avatarlar kitte; örnek kişilere sabit avatar</td><td data-dc-tpl="214">Panolarda renkli daire yer tutucusu vardı</td><td data-dc-tpl="215" class="m">07, 09, 32</td><td data-dc-tpl="216" class="m">1.17–1.24</td></tr><tr data-dc-tpl="217"><td data-dc-tpl="218" class="n">34</td><td data-dc-tpl="219" class="b">Kil illüstrasyon seti: yalnız onboarding, ekran düzeyi boş durum ve mağaza</td><td data-dc-tpl="220">Boş durum görseli yer tutucuydu; uygulamada dört ayrı illüstrasyon stili karışık</td><td data-dc-tpl="221" class="m">06, 09, 29</td><td data-dc-tpl="222" class="m">1.22, 1.25</td></tr><tr data-dc-tpl="223"><td data-dc-tpl="224" class="n">35</td><td data-dc-tpl="225" class="b">Mevcut varlıklar için tek tek karar</td><td data-dc-tpl="226">Düz ders PNG'leri, puan parası, eski logo ve 7,7 MB onboarding görselleri hâlâ pakette</td><td data-dc-tpl="227" class="m">01–06, 09</td><td data-dc-tpl="228" class="m">1.25</td></tr><tr data-dc-tpl="229"><td data-dc-tpl="230" class="n">36</td><td data-dc-tpl="231" class="b">Logo: örgülü S-rota inceltildi, varsayılan ikon lacivert pafta</td><td data-dc-tpl="232">İkondaki yazı 29 pt'de okunmuyor; lacivert yarı lacivert zeminde kayboluyor; taslaklardan birinde "Stundent" yazım hatası</td><td data-dc-tpl="233" class="m">09, varlıklar</td><td data-dc-tpl="234" class="m">1.26</td></tr></tbody></table></section><section data-dc-tpl="235" style="display: flex; flex-direction: column; gap: 16px;"><h2 data-dc-tpl="236">Varsayımlar</h2><p data-dc-tpl="237" class="ld" style="margin: 0px;">Ek D'de olmayan ve bu turda verdiğim kararlar. Hiçbiri bir ekranın çizimini engellemiyor; değiştirmek istediğin olursa bir sonraki turda düzeltirim.</p><ol data-dc-tpl="238" class="ol c2"><li data-dc-tpl="239"><span data-dc-tpl="240">1</span><div data-dc-tpl="241">Hesabındaki "Design System" artifact'ı kullanılmadı: varsayılan olarak işaretli değildi ve brif SMAP'ın kendi dilini istiyor.</div></li><li data-dc-tpl="242"><span data-dc-tpl="243">2</span><div data-dc-tpl="244">42 ekran görüntüsü Tur 1'den sonra geldi; her pano onlarla karşılaştırıldı ve renkler piksel ölçümüyle doğrulandı. Tariften gelen beş yanlış düzeltildi (aşağıda "Tur 1 eki"). Görüntü numaraları dosya adlarıyla aynı.</div></li><li data-dc-tpl="245"><span data-dc-tpl="246">3</span><div data-dc-tpl="247">Kanvas #F5F7F9 → #F2F4F7 (beyaz kart ayrışsın diye bir ton koyu). Başlık metni #1C1F33 → #1B2232 (nötr skalanın tonuna hizalı; fark algılanmaz).</div></li><li data-dc-tpl="248"><span data-dc-tpl="249">4</span><div data-dc-tpl="250">Detay üst barı açık zeminli (Ek D-9'un bıraktığı seçim). Başlık içerikte büyük durur, kaydırınca bara 2 satıra kadar iner.</div></li><li data-dc-tpl="251"><span data-dc-tpl="252">5</span><div data-dc-tpl="253">İnce turuncu öğeler (gösterge, ilerleme, "bugün", grafikte seçili nokta) orange-600, çünkü #FF6600 beyazda 3:1'i tutmuyor. Koyu temada orange-400.</div></li><li data-dc-tpl="254"><span data-dc-tpl="255">6</span><div data-dc-tpl="256">Segment, çip, anahtar ve onay kutusunda seçim lacivert. Turuncu yalnız konum, ilerleme, "bugün" ve kamerada.</div></li><li data-dc-tpl="257"><span data-dc-tpl="258">7</span><div data-dc-tpl="259">Segment başparmağı lacivert dolgu: beyaz başparmak gri rayda 1,10:1 durum kontrastı veriyordu.</div></li><li data-dc-tpl="260"><span data-dc-tpl="261">8</span><div data-dc-tpl="262">Alt çubuk etiketi 12 pt: 13 pt kuralının tek istisnası ("Görüşmelerim" 13 pt'de yuvaya sığmıyor). Büyük metinde FittedBox ile küçülür, uzun basışta büyük içerik balonu.</div></li><li data-dc-tpl="263"><span data-dc-tpl="264">9</span><div data-dc-tpl="265">Alt çubuk sekme içindeki bütün ekranlarda kalır; yalnız tam ekran akışlarda (kamera, sonuç anı, kart oturumu, onboarding, giriş) gizlenir.</div></li><li data-dc-tpl="266"><span data-dc-tpl="267">10</span><div data-dc-tpl="268">iPhone 16 Pro güvenli alanı üst 62, alt 34 pt. Klavye 336 pt ve yalnız şematik.</div></li><li data-dc-tpl="269"><span data-dc-tpl="270">11</span><div data-dc-tpl="271">Kamera düğmesi 56 × 56, radius-lg, 16 pt yukarı (eskiden 74 × 74, 12 pt).</div></li><li data-dc-tpl="272"><span data-dc-tpl="273">12</span><div data-dc-tpl="274">Kök bant 134 pt, bantta segment ya da sekme varsa 178 pt; kaydırınca 110 pt.</div></li><li data-dc-tpl="275"><span data-dc-tpl="276">13</span><div data-dc-tpl="277">Kartlar kenarsız ve gölgesiz; ayrımı kanvas/yüzey farkı yapar. Gölge yalnız sürüklenen kart, kamera düğmesi, toast ve balonlarda.</div></li><li data-dc-tpl="278"><span data-dc-tpl="279">14</span><div data-dc-tpl="280">D/Y/B değerleri: Doğru #0B6E3E, Yanlış #D8333A, Boş #7E8A9B. Sayılar metin renginde, renk çipte. Koyu temada açıklık sırası tersine döner.</div></li><li data-dc-tpl="281"><span data-dc-tpl="282">15</span><div data-dc-tpl="283">Ders glifleri: TextAa, Feather, Bank, Globe, MathOperations, Angle, Atom, Flask, Dna. Kimya eflatuna (296°), Edebiyat şarap tonuna (340°) kaydı; diğerleri kimliğini korudu.</div></li><li data-dc-tpl="284"><span data-dc-tpl="285">16</span><div data-dc-tpl="286">Başarı halkası tek renk; eşik renkleri yok. Yüzde en yakın tam sayıya yuvarlanır. Soru hiç yoksa halka çizilmez, "Soru yok" yazar.</div></li><li data-dc-tpl="287"><span data-dc-tpl="288">17</span><div data-dc-tpl="289">Net sondaki sıfırsız yazılır (68, 67,5, 74,75); puan iki haneli (381,40). Kısa tarih noktalı ay: "5 Eki.", gerekiyorsa "5 Eki. 2026".</div></li><li data-dc-tpl="290"><span data-dc-tpl="291">18</span><div data-dc-tpl="292">İptal sözlüğü: Vazgeç (eylemsiz kapatır), Tamam (bilgi sheet'inde tek düğme), Kapat (yalnız X'in erişilebilir adı), Geri Al (yalnız toast). "İptal" kullanılmaz.</div></li><li data-dc-tpl="293"><span data-dc-tpl="294">19</span><div data-dc-tpl="295">Soru biçimindeki onay başlıkları cümle düzeninde ("Koç bağlantısı kaldırılsın mı?"); ekran, sheet ve bölüm başlıkları Türkçe başlık düzeninde.</div></li><li data-dc-tpl="296"><span data-dc-tpl="297">20</span><div data-dc-tpl="298">Zorunlu alan yıldızı yok; isteğe bağlı alanın etiketi "(isteğe bağlı)" ile biter.</div></li><li data-dc-tpl="299"><span data-dc-tpl="300">21</span><div data-dc-tpl="301">Şifre ipucu "En az 8 karakter." Kodda kural yoktu; sunucu kuralı netleşince güncellenir.</div></li><li data-dc-tpl="302"><span data-dc-tpl="303">22</span><div data-dc-tpl="304">Placeholder yalnız beyaz girdi zemininde (kanvasta 4,25:1'e düşüyor).</div></li><li data-dc-tpl="305"><span data-dc-tpl="306">23</span><div data-dc-tpl="307">Toast eylemi beyaz kalın metin. Koyu temada toast ve çevrimdışı şeridi ters yüzey (açık zemin, koyu metin).</div></li><li data-dc-tpl="308"><span data-dc-tpl="309">24</span><div data-dc-tpl="310">İskelet 15 sn içinde veri alamazsa hata durumuna geçer.</div></li><li data-dc-tpl="311"><span data-dc-tpl="312">25</span><div data-dc-tpl="313">Koç rol rozeti ikon değil, "Koç" kelimesi.</div></li><li data-dc-tpl="314"><span data-dc-tpl="315">26</span><div data-dc-tpl="316">Avatarlar ve kil illüstrasyonlar paylaştığın görsellerden kırpıldı (avatar 190 px, kil 140 px) ve panolara gömüldü. Üretimde asıl dosyaların 3x kopyası kullanılır. Kapak görselleri hâlâ yer tutucu.</div></li><li data-dc-tpl="317"><span data-dc-tpl="318">27</span><div data-dc-tpl="319">Panolardaki ikonlar Phosphor'un elle çizilmiş yaklaşığı; uygulamada phosphor_flutter'daki aynı adlı ikon kullanılır.</div></li><li data-dc-tpl="320"><span data-dc-tpl="321">28</span><div data-dc-tpl="322">Soru hücresi örneğindeki şıklar, Öğrenci Ekle'deki kullanıcı adı ve sheet içi alt başlıklar örnek; Ek C'de karşılıkları yok.</div></li><li data-dc-tpl="323"><span data-dc-tpl="324">29</span><div data-dc-tpl="325">Ders bazında bilgi kartı toplamı yalnız Tarih için var (41 / 64); diğer derslerde kart ilerlemesi çizilmedi.</div></li><li data-dc-tpl="326"><span data-dc-tpl="327">30</span><div data-dc-tpl="328">Yazı tipi uygulamaya gömülür; çalışma anında indirilmez (zayıf okul Wi-Fi'ı).</div></li><li data-dc-tpl="329"><span data-dc-tpl="330">31</span><div data-dc-tpl="331">Örnek kişilerin avatarları: Alparslan 1, Mehmet Özkan 2, Kerem 3, Elif 4, Zeynep 5, Mert 2. Erkek avatarı üç tane; Mert koçuyla aynı avatarı paylaşıyor, ikisi aynı listede görünmez.</div></li><li data-dc-tpl="332"><span data-dc-tpl="333">32</span><div data-dc-tpl="334">Kil seti yeni bir ikon seti sayılmadı (Bölüm 7): mevcut görseller, avatar diliyle aynı, yalnız izin verilen yerlerde.</div></li><li data-dc-tpl="335"><span data-dc-tpl="336">33</span><div data-dc-tpl="337">Ders satırında kil görsel yerine glif kaldı (Ek D-12): kil görsel 40 pt'de bulanıklaşıyor ve ders rengini bozuyor.</div></li><li data-dc-tpl="338"><span data-dc-tpl="339">34</span><div data-dc-tpl="340">Logo için senin örgülü S'n esas alındı. Varsayılan ikon lacivert pafta önerildi; açık sürüm alternatif. Karar senin, Tur 7 (açılış) ve Tur 11 (mağaza) buna göre çizilecek.</div></li><li data-dc-tpl="341"><span data-dc-tpl="342">35</span><div data-dc-tpl="343">Wordmark Plus Jakarta Sans ExtraBold ile yazıldı; ayrı bir logo yazı tipi seçilmedi.</div></li></ol></section><section data-dc-tpl="344" style="display: flex; flex-direction: column; gap: 24px;"><h2 data-dc-tpl="345">Geliştirici notları</h2><div data-dc-tpl="346" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;"><div data-dc-tpl="347" style="display: flex; flex-direction: column; gap: 10px;"><h3 data-dc-tpl="348">ColorScheme · açık</h3><pre data-dc-tpl="349"><span data-dc-tpl="350" class="c">// seed yok; elle ColorScheme. Gri seed (#7D858D) kalkıyor.</span>
+ColorScheme(
+  brightness: Brightness.light,
+  primary: Color(0xFF0F294A),   onPrimary: Color(0xFFFFFFFF),
+  secondary: Color(0xFFFF6600), onSecondary: Color(0xFF0F294A),
+  error: Color(0xFFC42D35),     onError: Color(0xFFFFFFFF),
+  surface: Color(0xFFF2F4F7),   onSurface: Color(0xFF1B2232),
+  onSurfaceVariant: Color(0xFF556173),
+  outline: Color(0xFF697586),   outlineVariant: Color(0xFFDCE2E9),
+  surfaceContainerLowest: Color(0xFFFFFFFF),
+  surfaceContainerLow: Color(0xFFFFFFFF),
+  surfaceContainerHighest: Color(0xFFE8ECF1),
+  scrim: Color(0x7A091A31),     <span data-dc-tpl="351" class="c">// %48</span>
+)</pre></div><div data-dc-tpl="352" style="display: flex; flex-direction: column; gap: 10px;"><h3 data-dc-tpl="353">ColorScheme · koyu</h3><pre data-dc-tpl="354">ColorScheme(
+  brightness: Brightness.dark,
+  primary: Color(0xFFC5D4E8),   onPrimary: Color(0xFF091A31),
+  secondary: Color(0xFFFF6600), onSecondary: Color(0xFF0F294A),
+  error: Color(0xFFFF8F8F),     onError: Color(0xFF3B0A10),
+  surface: Color(0xFF0A1424),   onSurface: Color(0xFFEDF1F6),
+  onSurfaceVariant: Color(0xFFA9B5C6),
+  outline: Color(0xFF6B7D97),   outlineVariant: Color(0xFF26354D),
+  surfaceContainerLowest: Color(0xFF121D31),
+  surfaceContainerLow: Color(0xFF18263D),
+  surfaceContainerHighest: Color(0xFF213049),
+  scrim: Color(0xA302060E),     <span data-dc-tpl="355" class="c">// %64</span>
+)</pre></div></div><div data-dc-tpl="356" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;"><div data-dc-tpl="357" style="display: flex; flex-direction: column; gap: 10px;"><h3 data-dc-tpl="358">ThemeExtension · SmapColors</h3><pre data-dc-tpl="359"><span data-dc-tpl="360" class="c">// açık / koyu değerleri 1.2, 1.4, 1.5'te</span>
+navyBand, navyBandRaised, onNavyBand, onNavyBandVariant,
+bar, borderStrong, textPlaceholder, textDisabled,
+textAction, textAccent, primaryPressed, accentLine, focusRing,
+dybCorrect, dybWrong, dybEmpty, dybOn,
+dybCorrectBg, dybWrongBg, dybEmptyBg,
+info, infoBg, success, successBg, warning, warningBg, errorBg,
+chartLine, chartArea, chartHighlight, chartGrid, chartSeries[4],
+subjects: Map&lt;Ders, (bg, accent)&gt;   <span data-dc-tpl="361" class="c">// 9 ders</span></pre></div><div data-dc-tpl="362" style="display: flex; flex-direction: column; gap: 10px;"><h3 data-dc-tpl="363">ThemeExtension · SmapTokens</h3><pre data-dc-tpl="364">radius: xs 4 · sm 8 · md 12 · lg 16 · xl 24 · full 999
+space:  4 · 8 · 12 · 16 · 24 · 32 · 48 · 64   <span data-dc-tpl="365" class="c">// gutter 16</span>
+shadowRaised:  BoxShadow(0, 2, blur 8,  #0F294A @ .08)  <span data-dc-tpl="366" class="c">// koyu #000 @ .40</span>
+shadowOverlay: BoxShadow(0, 8, blur 24, #0F294A @ .16)  <span data-dc-tpl="367" class="c">// koyu #000 @ .56</span>
+duration: instant 100 · fast 150 · base 250 · slow 350 · loop 1200
+curves: standard Cubic(0.2, 0, 0, 1)
+        enter    Cubic(0, 0, 0, 1)
+        exit     Cubic(0.3, 0, 1, 1)
+blur: bar 20 · scrim 8   <span data-dc-tpl="368" class="c">// başka yerde BackdropFilter yok</span></pre></div></div><div data-dc-tpl="369" style="display: flex; flex-direction: column; gap: 10px;"><h3 data-dc-tpl="370">TextTheme eşlemesi · Plus Jakarta Sans, FontFeature.tabularFigures()</h3><div data-dc-tpl="371" class="kv"><div data-dc-tpl="372">displaySmall</div><div data-dc-tpl="373">display 32/40 · 800 · −0,5</div><div data-dc-tpl="374">headlineSmall</div><div data-dc-tpl="375">title-lg 24/32 · 700 · −0,3</div><div data-dc-tpl="376">titleLarge</div><div data-dc-tpl="377">title-md 20/28 · 700 · −0,2</div><div data-dc-tpl="378">titleMedium</div><div data-dc-tpl="379">headline 17/24 · 700 · −0,1</div><div data-dc-tpl="380">titleSmall</div><div data-dc-tpl="381">title-sm 16/24 · 600</div><div data-dc-tpl="382">bodyLarge · bodyMedium · bodySmall</div><div data-dc-tpl="383">body-lg 16/24 · body 15/24 · caption 13/20 500</div><div data-dc-tpl="384">labelLarge · labelMedium · labelSmall</div><div data-dc-tpl="385">label-lg 16/24 · label-md 14/20 · label-sm 12/16 (yalnız alt çubuk), hepsi 600</div><div data-dc-tpl="386">ext.metricXl · Lg · Md · Sm</div><div data-dc-tpl="387">56/64 800 −1,5 · 40/48 800 −1 · 24/32 700 −0,4 · 17/24 700</div></div></div><div data-dc-tpl="388" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;"><div data-dc-tpl="389" style="display: flex; flex-direction: column; gap: 10px;"><h3 data-dc-tpl="390">Biçimlendirme</h3><pre data-dc-tpl="391">final net   = NumberFormat('#,##0.##', 'tr');  <span data-dc-tpl="392" class="c">// 67,5 · 74,75 · 68</span>
+final puan  = NumberFormat('#,##0.00', 'tr');  <span data-dc-tpl="393" class="c">// 412,63 · 381,40</span>
+final sira  = NumberFormat('#,##0', 'tr');     <span data-dc-tpl="394" class="c">// 48.215 → "48.215. sıra"</span>
+String yuzde(int d, int toplam) =&gt;
+    '%${(d * 100 / toplam).round()}';       <span data-dc-tpl="395" class="c">// 5/12 → %42</span>
+String kisaTarih(DateTime t) =&gt;
+    '${t.day} ${DateFormat('MMM', 'tr').format(t)}.';  <span data-dc-tpl="396" class="c">// 5 Eki.</span>
+DateFormat('d MMMM y', 'tr')                  <span data-dc-tpl="397" class="c">// 15 Eylül 2026</span>
+DateFormat('EEE', 'tr')                       <span data-dc-tpl="398" class="c">// Pzt Sal Çar Per Cum Cmt Paz</span><span data-dc-tpl="399" class="c">// Büyük harf gerekirse toUpperCase() değil, tr yerel ayarlı dönüşüm (i → İ).</span></pre></div><div data-dc-tpl="400" style="display: flex; flex-direction: column; gap: 10px;"><h3 data-dc-tpl="401">Erişilebilirlik</h3><pre data-dc-tpl="402"><span data-dc-tpl="403" class="c">// D/Y/B tek okunuş</span>
+Semantics(label: '86 doğru, 74 yanlış, 0 boş', excludeSemantics: true)
+<span data-dc-tpl="404" class="c">// soru hücresi</span>
+Semantics(button: true, label: 'Soru 7, yanlış, işaretin C, doğru cevap A')
+<span data-dc-tpl="405" class="c">// ikon düğmeleri: tooltip + semanticLabel</span>
+'Geri' · 'Kapat' · 'Filtrele' · 'Favorilere ekle' · 'Şifreyi göster'
+<span data-dc-tpl="406" class="c">// metin ölçeği: 1,3'e kadar düzen kırılmaz; sabit yükseklik yok</span><span data-dc-tpl="407" class="c">// alt çubuk etiketi: FittedBox(scaleDown) + uzun basış balonu</span><span data-dc-tpl="408" class="c">// dokunma hedefi 48: MaterialTapTargetSize.padded, 40'lık düğmede pay</span><span data-dc-tpl="409" class="c">// hareketi azalt: MediaQuery.disableAnimations → opaklık geçişi</span></pre></div></div><div data-dc-tpl="410" style="display: flex; flex-direction: column; gap: 10px;"><h3 data-dc-tpl="411">Bileşen listesi (önerilen widget adları)</h3><div data-dc-tpl="412" class="kv"><div data-dc-tpl="413">SmapButton</div><div data-dc-tpl="414">variant: primary · secondary · quiet · danger · text; size: lg 48 · md 40; loading; leading/trailing ikon (1.9)</div><div data-dc-tpl="415">SmapSegmented</div><div data-dc-tpl="416">2–4 seçenek; counterLabel ("28 eksik", sıfırsa "eksik yok"); onNavy; etiket sarılır (1.10)</div><div data-dc-tpl="417">SmapTabBar</div><div data-dc-tpl="418">fixed · scrollable (sığmazsa kendiliğinden); onNavy; seçili sekmeyi görünür alana kaydırır (1.10)</div><div data-dc-tpl="419">SmapChip · SmapTag</div><div data-dc-tpl="420">chip: filter · choice · subject (nokta) · square (şık); tag: bilgi etiketi, dokunulmaz (1.11)</div><div data-dc-tpl="421">SmapTextField</div><div data-dc-tpl="422">text · password · search · select (sheet açar) · code (6 hane) · multiline; durumlar: odak · hata · pasif · salt okunur · canlı kontrol (1.12)</div><div data-dc-tpl="423">SmapRow · SmapSwitch · SmapCheckbox · SmapRadio</div><div data-dc-tpl="424">trailing: chevron · value · switch · tag; danger; accordion header (expanded) (1.13)</div><div data-dc-tpl="425">DybChip · DybCounter · DybStackedBar · QuestionCell</div><div data-dc-tpl="426">counter: large · small (harfli/kelimeli); bar: 2 pt boşluklu parçalar (1.14)</div><div data-dc-tpl="427">SubjectProgress · SmapProgress · SuccessRing · SmapSpinner</div><div data-dc-tpl="428">ring: value · noData ("Soru yok") (1.15)</div><div data-dc-tpl="429">SubjectRow · TopicRow · ExamCard · StatBox</div><div data-dc-tpl="430">veri yoksa alan çizilmez; değişim yalnız gerçekse (1.16)</div><div data-dc-tpl="431">SmapAvatar · AvatarStack · AvatarPicker</div><div data-dc-tpl="432">24/32/40/56/96; baş harf yedeği; "Koç" rozeti (1.17)</div><div data-dc-tpl="433">RootBand · DetailBar · ContextStrip</div><div data-dc-tpl="434">bant: title, action, bottom (segment/sekme), küçülme; detay: back, action, compactTitle 2 satır; koç bağlam şeridi (1.18)</div><div data-dc-tpl="435">SmapBottomBar · CameraButton</div><div data-dc-tpl="436">role: student · coach; tek gösterge; "Okut" (1.19)</div><div data-dc-tpl="437">SmapSheet · ConfirmSheet · ComingSoonSheet</div><div data-dc-tpl="438">size: small · medium · full; header, footer, busy; confirm: normal · danger; ComingSoon yalnız kitte (1.20, 1.21)</div><div data-dc-tpl="439">SmapToast · Skeleton · EmptyState · ErrorState · OfflineStrip</div><div data-dc-tpl="440">toast: info · success · error, action; empty/error: screen · section (1.22)</div></div></div><div data-dc-tpl="441" style="display: flex; flex-direction: column; gap: 10px;"><h3 data-dc-tpl="442">Koddan kalkacaklar</h3><p data-dc-tpl="443" style="margin: 0px; font-size: 14px; line-height: 22px; color: rgb(27, 34, 50);">Giriş ve kayıttaki önceden dolu test kullanıcı adı/şifresi · sabit "OBP notunuz 85" · "+18.2% gecen ay" varsayılanları · "Deneme: N" etiketi · SnackBar'lardaki emoji ve "Hata:" öneki · iç hata kodları ve ham Exception metinleri · #22C55E yeşil Switch · indigo dialog düğmesi · 6 segment ve 9 üst bar kopyası · çok renkli ders PNG'leri ve stok menü illüstrasyonları · AppTheme'deki gri seed · Colors.grey/Tailwind literal'leri (yerine SmapColors) · puan parası (smapc.png) · eski üçgen logo ve ~40 logo varyantı · ob1-6.png (7,7 MB) · loginImage.png.</p></div><div data-dc-tpl="444" style="display: flex; flex-direction: column; gap: 10px;"><h3 data-dc-tpl="445">Paketler</h3><p data-dc-tpl="446" style="margin: 0px; font-size: 14px; line-height: 22px; color: rgb(27, 34, 50);">phosphor_flutter (ikonlar) · intl, tr yerel ayarı (zaten var) · Plus Jakarta Sans TTF varlık olarak (google_fonts ile indirme yok) · bildirim haptikleri için küçük platform kanalı (iOS UINotificationFeedbackGenerator, Android HapticFeedbackConstants.CONFIRM / REJECT) · kullanılmayan cupertino_icons kaldırılabilir.</p></div></section><section data-dc-tpl="447" style="display: flex; flex-direction: column; gap: 16px;"><h2 data-dc-tpl="448">Tur 1 eki · ekran görüntüleri, varlıklar ve logo</h2><p data-dc-tpl="449" class="ld" style="margin: 0px;">Tur 1'den sonra gelen 42 ekran görüntüsü, varlık görselleri ve 1.10 logo çalışması işlendi. Tur 2'ye geçilmedi. Değişen panolar: 1.12, 1.13, 1.17, 1.18, 1.19, 1.21, 1.22, 1.24. Yeni panolar: 1.25 (illüstrasyon ve mevcut varlıklar), 1.26 (logo çalışması).</p><h3 data-dc-tpl="450">Doğrulanan</h3><ol data-dc-tpl="451" class="ol"><li data-dc-tpl="452"><span data-dc-tpl="453">D1</span><div data-dc-tpl="454">Renkler piksel ölçümüyle tuttu: bant #0F294A, giriş #0D2744, kamera öğreticisi #162A40, turuncu #FF6600, giriş alanı #E8F1FA, seçili hap #FFD4B3.</div></li><li data-dc-tpl="455"><span data-dc-tpl="456">D2</span><div data-dc-tpl="457">Kontrastlar: pasif sekme #B4B8C0 1,99:1 · konu metası #8A90A6 3,17:1 · "Kapat" #9E9E9E 2,68:1 · sarı halka #FFEB3B 1,22:1 · Hesap satırı #F9FAFB zeminde 1,05:1.</div></li><li data-dc-tpl="458"><span data-dc-tpl="459">D3</span><div data-dc-tpl="460">D/Y/B'nin dört sözlüğü ekranda da dört: Material (25), Tailwind (26, 28), Doğru lacivert (24), iOS (kart SVG'leri).</div></li><li data-dc-tpl="461"><span data-dc-tpl="462">D4</span><div data-dc-tpl="463">Sayı ve tarih karışıklığı: "118.30", "72.154", "67.5", "Cu" (09, 19, 21).</div></li></ol><h3 data-dc-tpl="464">Düzeltilen</h3><ol data-dc-tpl="465" class="ol"><li data-dc-tpl="466"><span data-dc-tpl="467">Y1</span><div data-dc-tpl="468">Satır 16: 19'da "Harita" kesik değil; kesik olan, tanıtım ekranlarındaki eski arayüz görseli. Asıl sorun: açılır filtre ile sekmeler aynı biçimde aynı satırda.</div></li><li data-dc-tpl="469"><span data-dc-tpl="470">Y2</span><div data-dc-tpl="471">Satır 19 ve 1.13: "Çıkış Yap" ayrı satırda, yalnız ince bir çizgiyle ayrılıyor; anahtar Material değil Tailwind yeşili (#22C55E).</div></li><li data-dc-tpl="472"><span data-dc-tpl="473">Y3</span><div data-dc-tpl="474">Satır 18 ve 1.12: alan stili iki değil üç (07 mavi dolgu, 32 gri dolgu, 33 çerçeveli).</div></li><li data-dc-tpl="475"><span data-dc-tpl="476">Y4</span><div data-dc-tpl="477">Satır 3 ve 1.19: kamera ikonu yarı saydam beyaz (#FFA366), turuncu üstünde 1,5:1.</div></li><li data-dc-tpl="478"><span data-dc-tpl="479">Y5</span><div data-dc-tpl="480">Satır 31: 10'da iskelet görünmüyor; kaynak yalnız envanter.</div></li></ol><h3 data-dc-tpl="481">Sonraki turlar için bulgular</h3><table data-dc-tpl="482" class="nt"><thead data-dc-tpl="483"><tr data-dc-tpl="484"><th data-dc-tpl="485" style="width: 110px;">Görüntü</th><th data-dc-tpl="486">Bulgu</th><th data-dc-tpl="487" style="width: 80px;">Tur</th></tr></thead><tbody data-dc-tpl="488"><tr data-dc-tpl="489"><td data-dc-tpl="490" class="m">01–05</td><td data-dc-tpl="491">Beş tanıtım ekranı eski arayüz görselleriyle; "5 saniyede", "yapay zeka destekli" gibi doğrulanmamış iddialar</td><td data-dc-tpl="492" class="m">7</td></tr><tr data-dc-tpl="493"><td data-dc-tpl="494" class="m">06</td><td data-dc-tpl="495">"Öğrenme yolculuğunuza başlamaya hazır mısınız?" siz dili; önceden dolu "student" ve şifre</td><td data-dc-tpl="496" class="m">7</td></tr><tr data-dc-tpl="497"><td data-dc-tpl="498" class="m">07, 08</td><td data-dc-tpl="499">Oklu avatar seçicide kaç avatar olduğu görünmüyor; koç kaydında koçluk kodu bilgisi yok</td><td data-dc-tpl="500" class="m">7</td></tr><tr data-dc-tpl="501"><td data-dc-tpl="502" class="m">09, 10</td><td data-dc-tpl="503">Kişi kartı, menü ızgarası, takvim; puan parası "0"; rozetler etiketsiz; kaydırınca menü ders şeridinin altına giriyor</td><td data-dc-tpl="504" class="m">6</td></tr><tr data-dc-tpl="505"><td data-dc-tpl="506" class="m">14, 17</td><td data-dc-tpl="507">"Dersin kategorisini seçin" ortada dialog; TYT, AYT, SOS-2 üç ayrı mavi tonunda</td><td data-dc-tpl="508" class="m">5</td></tr><tr data-dc-tpl="509"><td data-dc-tpl="510" class="m">15, 16</td><td data-dc-tpl="511">Başlıklar üç noktayla kesik; eksik rozeti "0"</td><td data-dc-tpl="512" class="m">5</td></tr><tr data-dc-tpl="513"><td data-dc-tpl="514" class="m">19–23</td><td data-dc-tpl="515">"+18.2% gecen ay" (yazımı da hatalı); filtre sekmelerle aynı biçimde; "Deneme: 1"</td><td data-dc-tpl="516" class="m">4</td></tr><tr data-dc-tpl="517"><td data-dc-tpl="518" class="m">24–28</td><td data-dc-tpl="519">"AYT Deneme (Test)", sabit "OBP notunuz 85"; "Söz Sanatları ( Edebi Sanatlar)"; sarı halka; ad iki satırda kesik</td><td data-dc-tpl="520" class="m">3</td></tr><tr data-dc-tpl="521"><td data-dc-tpl="522" class="m">31–37</td><td data-dc-tpl="523">Alt sayfalarda başlık yok; "E-Mail Adresi"; Bildirimler'de anlamı belirsiz anahtarlar ("Kullanıcılar Görebilsin", "Mobilde Göster"); turuncu "Değişiklikleri Kaydet"; İngilizce fatura satırları (v1'de gizli)</td><td data-dc-tpl="524" class="m">8</td></tr><tr data-dc-tpl="525"><td data-dc-tpl="526" class="m">38</td><td data-dc-tpl="527">"Beyaz noktaları" diyor, noktalar turuncu; tek sayfalık gösterge; "ANLADIM"</td><td data-dc-tpl="528" class="m">2</td></tr><tr data-dc-tpl="529"><td data-dc-tpl="530" class="m">39–42</td><td data-dc-tpl="531">Konu detayında %60 yazan boş çubuk, 9 pt madde metni, her alt başlıkta aynı kitap ikonu</td><td data-dc-tpl="532" class="m">5</td></tr></tbody></table></section><section data-dc-tpl="533" style="display: flex; flex-direction: column; gap: 12px;"><h2 data-dc-tpl="534">Bölüm 6 denetimi</h2><p data-dc-tpl="535" class="ld" style="margin: 0px;">Tur bitmeden her pano bu listeye karşı kontrol edildi.</p><div data-dc-tpl="536" class="c2"><div data-dc-tpl="537" class="ck"><span data-dc-tpl="538" class="ok">✓</span><div data-dc-tpl="539">Emoji yok; selamlamada el sallama emojisi de yok.</div></div><div data-dc-tpl="540" class="ck"><span data-dc-tpl="541" class="ok">✓</span><div data-dc-tpl="542">Gradyanlı hero + cam istatistik kartı + halka üçlüsü yok. Tek gradyan, iskelet parıltısı ve kaydırma solması (işlevli).</div></div><div data-dc-tpl="543" class="ck"><span data-dc-tpl="544" class="ok">✓</span><div data-dc-tpl="545">Elmas/coin/seri çipi yok; verisi olmayan oyunlaştırma yok.</div></div><div data-dc-tpl="546" class="ck"><span data-dc-tpl="547" class="ok">✓</span><div data-dc-tpl="548">Grafiğin ekseni ve etiketleri var; noktalar dokunulabilir.</div></div><div data-dc-tpl="549" class="ck"><span data-dc-tpl="550" class="ok">✓</span><div data-dc-tpl="551">Kategori başına renkli hap yok (etiketler nötr); üstü çizili görev yok.</div></div><div data-dc-tpl="552" class="ck"><span data-dc-tpl="553" class="ok">✓</span><div data-dc-tpl="554">Turuncu dört işle sınırlı: kamera, konum göstergesi, ilerleme, "bugün" (+ grafikte seçili nokta).</div></div><div data-dc-tpl="555" class="ck"><span data-dc-tpl="556" class="ok">✓</span><div data-dc-tpl="557">Gövde 15 pt, ikincil 13 pt; tek istisna alt çubuk etiketi 12 pt (varsayım 8).</div></div><div data-dc-tpl="558" class="ck"><span data-dc-tpl="559" class="ok">✓</span><div data-dc-tpl="560">Parıltı, bulanık renk lekesi, konfeti yok. Bulanıklık yalnız alt çubuk ve sheet perdesinde.</div></div><div data-dc-tpl="561" class="ck"><span data-dc-tpl="562" class="ok">✓</span><div data-dc-tpl="563">Her bölüm "kart + başlık + Tümü ›" değil; bölümleri başlık ve boşluk ayırıyor.</div></div><div data-dc-tpl="564" class="ck"><span data-dc-tpl="565" class="ok">✓</span><div data-dc-tpl="566">Uygulama arayüzünde büyük harfli, harf aralıklı üst etiket yok. Panolardaki küçük "1.x · Temeller" satırı yalnız kanvas belgelemesi.</div></div><div data-dc-tpl="567" class="ck"><span data-dc-tpl="568" class="ok">✓</span><div data-dc-tpl="569">Koyu tema ters çevrilmiş açık tema değil; ayrı roller ve ayrı oranlar.</div></div><div data-dc-tpl="570" class="ck"><span data-dc-tpl="571" class="ok">✓</span><div data-dc-tpl="572">Turuncu üstüne beyaz metin yok; bütün metin/zemin çiftleri 1.3'te ölçüldü.</div></div><div data-dc-tpl="573" class="ck"><span data-dc-tpl="574" class="ok">✓</span><div data-dc-tpl="575">Kil illüstrasyonlar yalnız boş durum ve onboarding'de, ekranda en fazla bir tane; renkli hap değil. Logo ikonunda parlama ve gradyan kaldırıldı (1.26); parlamalar yalnız mağaza görsellerinde (Tur 11).</div></div></div></section><section data-dc-tpl="576" style="display: flex; flex-direction: column; gap: 10px;"><h2 data-dc-tpl="577">Sıradaki tur</h2><p data-dc-tpl="578" class="ld" style="margin: 0px;">Tur 2: Kamera ve optik okuma, "4 · Kamera ve Optik Okuma" sayfasına; sonuç anı "5 · Deneme Sonucu ve Detay"ın ilk panosu olacak. Bu kitteki bileşenler yeniden çizilmeden kullanılacak; genişletmeler bu sayfaya "Tur 2" başlığıyla yazılacak.</p></section></div></div></div>
+
+
+
+
+
+</body></html>

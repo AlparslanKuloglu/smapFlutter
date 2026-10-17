@@ -1,0 +1,299 @@
+14.8 Koç Öğrenci Ekle Avatar
+
+14.8 · Tur 12 · Geri Gelen Özellikler
+
+Koç · Öğrenci Ekle · Avatar · 5 Kare
+
+Bugünkü uygulamadaki gibi koç, öğrenci hesabını açarken 7 avatardan birini seçer. 10.3'teki formun başına AvatarPicker eklendi; öğrenci listede bu avatarla görünür.
+
+Öğrencilerim
+
+Öğrenci ara
+
+4 öğrenci
+
+Alparslan Kuloğlu
+
+12. Sınıf · Eşit Ağırlık · 10 deneme
+
+67,5
+
+son net
+
+Elif Şahin
+
+11. Sınıf · Sayısal
+
+Kerem Aydın
+
+Mezun · Sözel
+
+Mert Yıldız
+
+10. Sınıf
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+Öğrenci ekle
+
+Hesabını sen aç ya da kodunu paylaş.
+
+Avatar 4 / 7
+
+Ad
+Zeynep
+
+Soyad
+Kaya
+
+Kullanıcı adı
+
+zeynep.kaya
+
+Kontrol Et
+
+Bu kullanıcı adı boşta.
+
+Şifre
+
+••••••••••
+
+Oluştur
+
+Öğrencine ilet; ilk girişte değiştirmesi önerilir.
+
+Sınıf 12. Sınıf
+
+Alan Eşit Ağırlık
+
+Öğrenciyi Kaydet
+
+1 · Form · avatar Formun başında 7 avatar tek sırada, sayısı yazılı; seçili 2 pt halka (1.17). İlk avatar seçili gelir; örnekte Zeynep Kaya için 4. Yerine geçtiği kare: 10.3·1
+
+Öğrencilerim
+
+Öğrenci ara
+
+5 öğrenci
+
+Alparslan Kuloğlu
+
+12. Sınıf · Eşit Ağırlık · 10 deneme
+
+67,5
+
+son net
+
+Elif Şahin
+
+11. Sınıf · Sayısal
+
+Kerem Aydın
+
+Mezun · Sözel
+
+Mert Yıldız
+
+10. Sınıf
+
+Zeynep Kaya
+
+12. Sınıf · Eşit Ağırlık
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+Zeynep Kaya eklendi
+
+Giriş bilgilerini öğrencine ilet.
+
+Kullanıcı adı
+zeynep.kaya
+
+Şifre
+
+••••••••••
+
+Bu ekranı kapatınca şifre yeniden gösterilmez.
+
+Bilgileri Paylaş Tamam
+
+2 · Eklendi Giriş bilgileri sheet'inde seçilen avatar başlığın yanında. Şifre yine bir kez gösterilir. Yerine geçtiği kare: 10.3·3
+
+Öğrencilerim
+
+Öğrenci ara
+
+5 öğrenci
+
+Alparslan Kuloğlu
+
+12. Sınıf · Eşit Ağırlık · 10 deneme
+
+67,5
+
+son net
+
+Elif Şahin
+
+11. Sınıf · Sayısal
+
+Kerem Aydın
+
+Mezun · Sözel
+
+Mert Yıldız
+
+10. Sınıf
+
+Zeynep Kaya
+
+12. Sınıf · Eşit Ağırlık
+
+Zeynep Kaya eklendi.
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+3 · Listede Tamam sonrası liste; Zeynep Kaya seçilen avatarla. Toast "Zeynep Kaya eklendi." (4 sn). Yerine geçtiği kare: 10.2·1
+
+Öğrencilerim
+
+Öğrenci ara
+
+4 öğrenci
+
+Alparslan Kuloğlu
+
+12. Sınıf · Eşit Ağırlık · 10 deneme
+
+67,5
+
+son net
+
+Elif Şahin
+
+11. Sınıf · Sayısal
+
+Kerem Aydın
+
+Mezun · Sözel
+
+Mert Yıldız
+
+10. Sınıf
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+Çevrimdışısın. Son kaydedilen veriler gösteriliyor.
+
+Öğrenci ekle
+
+Sınıf 12. Sınıf
+
+Alan Eşit Ağırlık
+
+Öğrenciyi Kaydet
+Öğrenci eklemek için bağlantı gerekiyor. Kod kartı çevrimdışında da çalışır.
+
+ya da
+
+Öğrencin kendi hesabıyla bağlansın
+
+Koçluk kodun
+
+MOZK-4821
+
+Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır.
+
+Kopyala Paylaş
+
+4 · Çevrimdışı Form ve avatar seçimi korunur; "Öğrenciyi Kaydet" pasif, neden altında. Kod kartı çevrimdışında da çalışır.
+
+Öğrencilerim
+
+Öğrenci ara
+
+4 öğrenci
+
+Alparslan Kuloğlu
+
+12. Sınıf · Eşit Ağırlık · 10 deneme
+
+67,5
+
+son net
+
+Elif Şahin
+
+11. Sınıf · Sayısal
+
+Kerem Aydın
+
+Mezun · Sözel
+
+Mert Yıldız
+
+10. Sınıf
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+Öğrenci ekle
+
+Sınıf 12. Sınıf
+
+Alan Eşit Ağırlık
+
+Öğrenciyi Kaydet
+
+ya da
+
+Öğrencin kendi hesabıyla bağlansın
+
+Koçluk kodun
+
+MOZK-4821
+
+Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır.
+
+Kopyala Paylaş
+
+Öğrenci kaydedilemedi. Bağlantını kontrol edip tekrar dene.
+
+5 · Kaydetme hatası Form ve seçilen avatar korunur; hata toast'ı 1.22 kalıbında. Alan hataları 10.3'teki gibi alanın altında.
+
+Bileşenler
+
+AvatarPicker satır varyantı (G): 7 × 44 pt, aralar eşit; dokunma alanı aralıkla 48 pt. Sayaç "4 / 7" etiketin sağında.
+
+Seçili halka 2 pt boşluk ve 2 pt lacivert (1.17); koyuda boşluk sheet rengi, halka #C5D4E8.
+
+Eklendi sheet'inde başlığın solunda 48 pt avatar.
+
+Veri
+
+Öğrenci kaydına photo alanı eklenir: avatar dosya adı ( assets/avatars/… ). Bugünkü AddStudentDialog aynı alanı gönderiyor.
+
+Sıra AppColors.studentAvatars listesindeki gibi; görseller 1.25'teki 7 avatar.
+
+Erişilebilirlik ve hareket
+
+Avatar düğmesi: "Avatar 4 / 7, seçili"; grup "Avatar, 7 seçenek" radyo grubu.
+
+Seçim selectionClick ; halka 150 ms.
+
+Hata toast'ı error haptiği, canlı bölge.
+
+Varsayımlar (T12)
+
+T12.17 Öğrenci eklerken avatar seçimi zorunlu değil: ilk avatar seçili gelir (bugünkü seçici de böyle).
+
+T12.18 §7: Zeynep Kaya'nın avatarı 7'den 4. 10.2'de 5 çizilmişti; 14.8·3 10.2·1'in yerine geçer.

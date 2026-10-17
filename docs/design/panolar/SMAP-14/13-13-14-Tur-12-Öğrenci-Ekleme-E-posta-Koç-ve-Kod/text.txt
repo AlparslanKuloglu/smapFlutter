@@ -1,0 +1,127 @@
+13.14 Tur 12 · Öğrenci Ekleme, E-posta, Koç ve Kod
+
+13.14 · Ekran Akışı
+
+Tur 12 · Öğrenci Ekleme, E-posta, Koç ve Kod
+
+Tur 12'de geri gelen D–G özelliklerinin yolu: koçun öğrenci eklerken avatar seçmesi, öğrencinin e-postasını değiştirmesi ve koçunu kodla değiştirmesi, koçun kendi kodunu paylaşması. Durumlar ve koyu tema ilgili ekranın altında.
+
+Okun üstü: dokunulan yer Kesikli ok: kendiliğinden geçiş Üst sıra ana yol; altında o ekranın durumları ve koyu teması Kod: kaynak pano ve kare
+
+D · Öğrenci eklerken avatar
+
+Buradan 13.11 Öğrencilerim · +
+
+1 Form · avatar
+
+14.8 · kare 1
+
+Durumlar ve koyu tema · 3
+
+Çevrimdışı 14.8 · kare 4
+
+Kaydetme hatası 14.8 · kare 5
+
+Koyu 14.12 · kare 1
+
+Öğrenciyi Kaydet
+
+2 Eklendi
+
+14.8 · kare 2
+
+Tamam
+
+3 Listede
+
+14.8 · kare 3
+
+E · E-posta değişikliği
+
+Buradan 13.10 Hesap › Profil › Düzenle
+
+1 Yeni adres
+
+14.9 · kare 1
+
+Durumlar ve koyu tema · 4
+
+Geçersiz adres 14.9 · kare 2
+
+Çevrimdışı 14.9 · kare 4
+
+Kaydetme hatası 14.9 · kare 5
+
+Koyu 14.12 · kare 2
+
+Kaydet
+
+2 Kaydedildi
+
+14.9 · kare 3
+
+F · Koçu değiştirmek
+
+Buradan 13.10 Hesap › Koçluk
+
+1 Koçun var
+
+14.10 · kare 1
+
+Durumlar ve koyu tema · 2
+
+Çevrimdışı 14.10 · kare 6
+
+Koyu 14.12 · kare 3
+
+Koçu Değiştir
+
+2 Yeni kod
+
+14.10 · kare 2
+
+Durumlar · 1
+
+Kod bulunamadı 14.10 · kare 3
+
+Koçu Değiştir
+
+3 Değiştiriliyor
+
+14.10 · kare 4
+
+kendiliğinden
+
+4 Yeni koç
+
+14.10 · kare 5
+
+G · Koçun koçluk kodu
+
+Buradan 13.11 Koç · Hesap
+
+1 Hesap · Koçluk kodun
+
+14.11 · kare 1
+
+satıra dokun
+
+2 Kod sheet'i
+
+14.11 · kare 2
+
+Durumlar ve koyu tema · 4
+
+Yükleniyor 14.11 · kare 4
+
+Hata 14.11 · kare 5
+
+Çevrimdışı 14.11 · kare 6
+
+Koyu 14.12 · kare 4
+
+Kopyala
+
+3 Kopyalandı
+
+14.11 · kare 3

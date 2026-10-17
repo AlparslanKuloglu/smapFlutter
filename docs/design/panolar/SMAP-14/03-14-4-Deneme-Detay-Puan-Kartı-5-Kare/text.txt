@@ -1,253 +1,283 @@
+14.4 Deneme Detay Puan Kartı
+
 14.4 · Tur 12 · Geri Gelen Özellikler
+
 Deneme Detay · Puan Kartı · 5 Kare
+
 Puan kartına ham puan ve ham puan sırası eklendi. İskelet ve koç karesi yeni karta göre yeniden çizildi.
-Örnek Yayınları 
-Türkiye Geneli Deneme 6 
-AYT
-5 Ekim 2026 
-67,5 net 
-Doğru 
-86 
-Yanlış 
-74 
-Boş 
-0 
-Eşit Ağırlık 
-412,63 
-Yerleştirme puanı 
-48.215. 
-Sıra 
-398,12 
-Ham puan 
-52.904. 
-Sıra 
-Genel
-Sorular
-Konular
-Kartlar 
-Türk Dili ve Edebiyatı–Sosyal 
-Bilimler 1 
-18,75 net 
-23 D
-17 Y
-0 B
-40 soru 
-Sosyal Bilimler 2
-11,25 net 
-17 D
-23 Y
-0 B
-40 soru 
-Matematik
-21,25 net 
-25 D
-15 Y
-0 B
-40 soru 
-Fen Bilimleri
-16,25 net 
-21 D
-19 Y
-0 B
-40 soru 
-Anasayfa
-Analizlerim
+
+Örnek Yayınları
+
+Türkiye Geneli Deneme 6
+
+AYT 5 Ekim 2026
+
+67,5 net
+
+Doğru
+
+86
+
+Yanlış
+
+74
+
+Boş
+
+0
+
+Eşit Ağırlık
+
+412,63
+
+Yerleştirme puanı
+
+48.215.
+
+Sıra
+
+398,12
+
+Ham puan
+
+52.904.
+
+Sıra
+
+Genel Sorular Konular Kartlar
+
+Türk Dili ve Edebiyatı–Sosyal Bilimler 1 18,75 net
+
+23 D 17 Y 0 B 40 soru
+
+Sosyal Bilimler 2 11,25 net
+
+17 D 23 Y 0 B 40 soru
+
+Matematik 21,25 net
+
+25 D 15 Y 0 B 40 soru
+
+Fen Bilimleri 16,25 net
+
+21 D 19 Y 0 B 40 soru
+
+Anasayfa Analizlerim
 Okut
-Derslerim
-Hesap
-1 · AYT
-Kart başlığı öğrencinin puan türü: Eşit Ağırlık. Üst satır yerleştirme 
-puanı ve sırası, ince ayraç, alt satır ham puan ve sırası. Ham değer 
-yoksa alt satır çizilmez.
-Yerine geçtiği kare: 5.3·1
-TYT Genel Deneme 9 
+Derslerim Hesap
+
+1 · AYT Kart başlığı öğrencinin puan türü: Eşit Ağırlık. Üst satır yerleştirme puanı ve sırası, ince ayraç, alt satır ham puan ve sırası. Ham değer yoksa alt satır çizilmez. Yerine geçtiği kare: 5.3·1
+
+TYT Genel Deneme 9
+
+TYT 28 Eylül 2026
+
+74,75 net
+
+Doğru
+
+80
+
+Yanlış
+
+21
+
+Boş
+
+19
+
 TYT
-28 Eylül 2026 
-74,75 net 
-Doğru 
-80 
-Yanlış 
-21 
-Boş 
-19 
-TYT 
-384,05 
-Yerleştirme puanı 
-176.320. 
-Sıra 
-371,90 
-Ham puan 
-189.004. 
-Sıra 
-Genel
-Sorular
-Konular
-Kartlar 
-Türkçe
-30,5 net 
-32 D
-6 Y
-2 B
-40 soru 
-Sosyal Bilimler
-13 net 
-14 D
-4 Y
-2 B
-20 soru 
-Temel Matematik
-20,75 net 
-22 D
-5 Y
-13 B
-40 soru 
-Fen Bilimleri
-10,5 net 
-12 D
-6 Y
-2 B
-20 soru 
-Anasayfa
-Analizlerim
+
+384,05
+
+Yerleştirme puanı
+
+176.320.
+
+Sıra
+
+371,90
+
+Ham puan
+
+189.004.
+
+Sıra
+
+Genel Sorular Konular Kartlar
+
+Türkçe 30,5 net
+
+32 D 6 Y 2 B 40 soru
+
+Sosyal Bilimler 13 net
+
+14 D 4 Y 2 B 20 soru
+
+Temel Matematik 20,75 net
+
+22 D 5 Y 13 B 40 soru
+
+Fen Bilimleri 10,5 net
+
+12 D 6 Y 2 B 20 soru
+
+Anasayfa Analizlerim
 Okut
-Derslerim
-Hesap
-2 · TYT
-Puan verisi varsa kart başlığı "TYT". İki puan da yoksa kart hiç 
-çizilmez (5.3·3 gibi).
-Örnek Yayınları 
-Türkiye Geneli Deneme 6 
-AYT
-5 Ekim 2026 
-67,5 net 
-Doğru 
-86 
-Yanlış 
-74 
-Boş 
-0 
-Eşit Ağırlık 
-412,63 
-Yerleştirme puanı 
-48.215. 
-Sıra 
-398,12 
-Ham puan 
-52.904. 
-Sıra 
-Genel
-Sorular
-Konular
-Kartlar 
-Türk Dili ve Edebiyatı–Sosyal 
-Bilimler 1 
-18,75 net 
-23 D
-17 Y
-0 B
-40 soru 
-Sosyal Bilimler 2
-11,25 net 
-17 D
-23 Y
-0 B
-40 soru 
-Matematik
-21,25 net 
-25 D
-15 Y
-0 B
-40 soru 
-Fen Bilimleri
-16,25 net 
-21 D
-19 Y
-0 B
-40 soru 
-Anasayfa
-Analizlerim
+Derslerim Hesap
+
+2 · TYT Puan verisi varsa kart başlığı "TYT". İki puan da yoksa kart hiç çizilmez (5.3·3 gibi).
+
+Örnek Yayınları
+
+Türkiye Geneli Deneme 6
+
+AYT 5 Ekim 2026
+
+67,5 net
+
+Doğru
+
+86
+
+Yanlış
+
+74
+
+Boş
+
+0
+
+Eşit Ağırlık
+
+412,63
+
+Yerleştirme puanı
+
+48.215.
+
+Sıra
+
+398,12
+
+Ham puan
+
+52.904.
+
+Sıra
+
+Genel Sorular Konular Kartlar
+
+Türk Dili ve Edebiyatı–Sosyal Bilimler 1 18,75 net
+
+23 D 17 Y 0 B 40 soru
+
+Sosyal Bilimler 2 11,25 net
+
+17 D 23 Y 0 B 40 soru
+
+Matematik 21,25 net
+
+25 D 15 Y 0 B 40 soru
+
+Fen Bilimleri 16,25 net
+
+21 D 19 Y 0 B 40 soru
+
+Anasayfa Analizlerim
 Okut
-Derslerim
-Hesap
-3 · Koyu
-5.9·1 üstünde kare 1: kart #121D31, ayraç #26354D.
-Yerine geçtiği kare: 5.9·1
-Genel
-Sorular
-Konular
-Kartlar 
-Anasayfa
-Analizlerim
+Derslerim Hesap
+
+3 · Koyu 5.9·1 üstünde kare 1: kart #121D31, ayraç #26354D. Yerine geçtiği kare: 5.9·1
+
+Genel Sorular Konular Kartlar
+
+Anasayfa Analizlerim
 Okut
-Derslerim
-Hesap
-4 · İskelet
-Puan bloğunun iskeleti yeni kartın yüksekliğinde (163 pt); sekmeler 
-aşağı iner.
-Yerine geçtiği kare: 5.8·1
-Alparslan Kuloğlu'nun verileri
-12. Sınıf · EA 
-Örnek Yayınları 
-Türkiye Geneli Deneme 6 
-AYT
-5 Ekim 2026 
-67,5 net 
-Doğru 
-86 
-Yanlış 
-74 
-Boş 
-0 
-Eşit Ağırlık 
-412,63 
-Yerleştirme puanı 
-48.215. 
-Sıra 
-398,12 
-Ham puan 
-52.904. 
-Sıra 
-Genel
-Sorular
-Konular
-Kartlar 
-Türk Dili ve Edebiyatı–Sosyal 
-Bilimler 1 
-18,75 net 
-23 D
-17 Y
-0 B
-40 soru 
-Sosyal Bilimler 2
-11,25 net 
-17 D
-23 Y
-0 B
-40 soru 
-Anasayfa
-Öğrencilerim
+Derslerim Hesap
+
+4 · İskelet Puan bloğunun iskeleti yeni kartın yüksekliğinde (163 pt); sekmeler aşağı iner. Yerine geçtiği kare: 5.8·1
+
+Alparslan Kuloğlu'nun verileri 12. Sınıf · EA
+
+Örnek Yayınları
+
+Türkiye Geneli Deneme 6
+
+AYT 5 Ekim 2026
+
+67,5 net
+
+Doğru
+
+86
+
+Yanlış
+
+74
+
+Boş
+
+0
+
+Eşit Ağırlık
+
+412,63
+
+Yerleştirme puanı
+
+48.215.
+
+Sıra
+
+398,12
+
+Ham puan
+
+52.904.
+
+Sıra
+
+Genel Sorular Konular Kartlar
+
+Türk Dili ve Edebiyatı–Sosyal Bilimler 1 18,75 net
+
+23 D 17 Y 0 B 40 soru
+
+Sosyal Bilimler 2 11,25 net
+
+17 D 23 Y 0 B 40 soru
+
+Anasayfa Öğrencilerim
 Okut
-Görüşmelerim
-Hesap
-5 · Koç
-Koç aynı kartı görür; şeridin altında aynı düzen.
-Yerine geçtiği kare: 10.4·4
+Görüşmelerim Hesap
+
+5 · Koç Koç aynı kartı görür; şeridin altında aynı düzen. Yerine geçtiği kare: 10.4·4
+
 Kurallar
-Yalnız öğrencinin alanındaki puan türü; eski Eşit Ağırlık / Sayısal / Sözel sekmeleri ve "Deneme Sonucu / 
-Sıralama" anahtarı yok. OBP satırı yok.
+
+Yalnız öğrencinin alanındaki puan türü; eski Eşit Ağırlık / Sayısal / Sözel sekmeleri ve "Deneme Sonucu / Sıralama" anahtarı yok. OBP satırı yok.
+
 Ham puan yalnız Deneme Detay'da; 5.1 sonuç anına eklenmez.
+
 Kart ayrı istek değil: hata ve çevrimdışı 5.8'deki gibi ekran düzeyinde; çevrimdışında kart önbellekten gelir.
+
 Hiyerarşi: yerleştirme metric-md 24/32, ham metric-sm 17/24; etiketler 13/20.
+
 Veri
-Deneme satırındaki points[], ranks[], pointsHam[], ranksHam[] (puan türü başına dizi) ve mexam.type (1 = 
-TYT). Ayrı istek yok.
-AYT dizisindeki sıranın hangi puan türüne ait olduğu backend'e soruldu; ürün sahibi ham puanı istemezse alt 
-satır kalkar.
+
+Deneme satırındaki points[] , ranks[] , pointsHam[] , ranksHam[] (puan türü başına dizi) ve mexam.type (1 = TYT). Ayrı istek yok.
+
+AYT dizisindeki sıranın hangi puan türüne ait olduğu backend'e soruldu; ürün sahibi ham puanı istemezse alt satır kalkar.
+
 Erişilebilirlik
+
 İki satır ayrı grup: "Yerleştirme puanı 412,63, sıra 48.215" · "Ham puan 398,12, sıra 52.904".
+
 Sıra sonundaki nokta ekran okuyucuda okunmaz (sıra sayısı).
+
 Varsayımlar (T12)
-T12.11 Puan kartı hiyerarşisi: yerleştirme puanı metric-md, ham puan metric-sm; ham satır yalnız değer 
-varsa.
-T12.12 TYT puan ve sıraları (384,05 · 176.320. ve 371,90 · 189.004.) Tur 12 örnek verisinden; Ek C'de TYT 
-puanı yok.
+
+T12.11 Puan kartı hiyerarşisi: yerleştirme puanı metric-md, ham puan metric-sm; ham satır yalnız değer varsa.
+
+T12.12 TYT puan ve sıraları (384,05 · 176.320. ve 371,90 · 189.004.) Tur 12 örnek verisinden; Ek C'de TYT puanı yok.

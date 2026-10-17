@@ -1,168 +1,189 @@
+14.1 Koç Öğrencinin Programı
+
 14.1 · Tur 12 · Geri Gelen Özellikler
+
 Koç · Öğrencinin Programı · 4 Kare
+
 Koç öğrencisinin programını görür, düzenler ve tüm programlarını listeler. 10.4·3'teki salt okunur sekmenin yerine geçer.
+
 Alparslan Kuloğlu
-Görüşme Planla 
-Alparslan Kuloğlu'nun verileri
-12. Sınıf · EA 
-Analiz
-Denemeler
-Program 
-Ekim 2. Hafta 
-Her gün biraz daha · 5–11 Ekim 2026 
-Düzenle 
-Gün
-Hafta 
-Pzt 
-5 
-Sal 
-6 
-Çar 
-7 
-Per 
-8 
-Cum 
-9 
-Cmt 
-10 
-Paz 
-11 
-10:00 
-Türkçe 
-Fiilde Çatı 
-14:00 
-Tarih 
-Kurtuluş Savaşı Hazırlık 
-Dönemi 
-20:00 
-Coğrafya 
-İklim Bilgisi 
-Bu programı Alparslan da görür ve 
-düzenleyebilir. Yaptığın değişiklik onun 
-programına hemen yansır. 
-Programlar
-3 program 
-Anasayfa
-Öğrencilerim
-Okut
-Görüşmelerim
-Hesap
-1 · Program sekmesi
-Profil başlığı kaydırınca bara iner; bağlam şeridi ve sekmeler sabit 
-kalır. Başlık satırında "Düzenle" (BarAction.inline), Gün | Hafta, gün 
-şeridi, satırlar. InfoBox koçun değişikliğinin öğrenciye yansıdığını 
-söyler; en altta Programlar.
-Yerine geçtiği kare: 10.4·3
-Yeni Program 
-Alparslan Kuloğlu'nun verileri
-12. Sınıf · EA 
-Programlar 
-Program ara 
+
+Görüşme Planla
+
+Alparslan Kuloğlu'nun verileri 12. Sınıf · EA
+
+Analiz Denemeler Program
+
 Ekim 2. Hafta
-Bu hafta 
-Her gün biraz daha 
-5–11 Ekim 2026 
-Deneme haftası 
-Az ama her gün 
-28 Eylül–4 Ekim 2026 
-Yaz tekrarı 
-17–23 Ağustos 2026 
-Anasayfa
-Öğrencilerim
+
+Her gün biraz daha · 5–11 Ekim 2026
+
+Düzenle
+
+Gün Hafta
+
+Pzt 5 Sal 6 Çar 7 Per 8 Cum 9 Cmt 10 Paz 11
+
+10:00
+
+Türkçe
+
+Fiilde Çatı
+
+14:00
+
+Tarih
+
+Kurtuluş Savaşı Hazırlık Dönemi
+
+20:00
+
+Coğrafya
+
+İklim Bilgisi
+
+Bu programı Alparslan da görür ve düzenleyebilir. Yaptığın değişiklik onun programına hemen yansır.
+
+Programlar 3 program
+
+Anasayfa Öğrencilerim
 Okut
-Görüşmelerim
-Hesap
-2 · Programlar
-3.4·1'in koç bağlamındaki hâli: barda "Yeni Program", altında 
-bağlam şeridi; arama ve üç program. Satır o programın Gün 
-görünümünü açar (kare 1 düzeni).
-Bitti 
-Alparslan Kuloğlu'nun verileri
-12. Sınıf · EA 
-Ekim 2. Hafta 
-Her gün biraz daha 
-5–11 Ekim 2026 
-Gün
-Hafta 
-Pzt 
-5 
-Sal 
-6 
-Çar 
-7 
-Per 
-8 
-Cum 
-9 
-Cmt 
-10 
-Paz 
-11 
-Cumartesi, 10 Ekim 3 çalışma 
-10:00 
-Türkçe 
-Fiilde Çatı 
-14:00 
-Tarih 
-Kurtuluş Savaşı Hazırlık 
-Dönemi 
-20:00 
-Coğrafya 
-İklim Bilgisi 
-Konu Ekle 
-Günü Sıfırla 
-Anasayfa
-Öğrencilerim
+Görüşmelerim Hesap
+
+1 · Program sekmesi Profil başlığı kaydırınca bara iner; bağlam şeridi ve sekmeler sabit kalır. Başlık satırında "Düzenle" (BarAction.inline), Gün | Hafta, gün şeridi, satırlar. InfoBox koçun değişikliğinin öğrenciye yansıdığını söyler; en altta Programlar. Yerine geçtiği kare: 10.4·3
+
+Yeni Program
+
+Alparslan Kuloğlu'nun verileri 12. Sınıf · EA
+
+Programlar
+
+Program ara
+
+Ekim 2. Hafta Bu hafta
+
+Her gün biraz daha
+
+5–11 Ekim 2026
+
+Deneme haftası
+
+Az ama her gün
+
+28 Eylül–4 Ekim 2026
+
+Yaz tekrarı
+
+17–23 Ağustos 2026
+
+Anasayfa Öğrencilerim
 Okut
-Görüşmelerim
-Hesap
-3 · Düzenleme modu
-3.6·1'in koç hâli: geri gizli, "Bitti"; saat değiştir, konu çıkar, "Konu 
-Ekle", "Günü Sıfırla". "Programı İptal Et" yok (silme ucu yok). 
-Değişiklik anında kaydedilir.
-Görüşme Planla 
-Alparslan Kuloğlu'nun verileri
-12. Sınıf · EA 
-Alparslan Kuloğlu 
-alparslan.k · 10 deneme · son 5 Eki. 2026 
-Analiz
-Denemeler
-Program 
-Alparslan'ın programı yok 
-Onun için bir hafta kurabilirsin; Alparslan 
-programı kendi Anasayfa'sında görür. 
-Program Kur 
-Anasayfa
-Öğrencilerim
+Görüşmelerim Hesap
+
+2 · Programlar 3.4·1'in koç bağlamındaki hâli: barda "Yeni Program", altında bağlam şeridi; arama ve üç program. Satır o programın Gün görünümünü açar (kare 1 düzeni).
+
+Bitti
+
+Alparslan Kuloğlu'nun verileri 12. Sınıf · EA
+
+Ekim 2. Hafta
+
+Her gün biraz daha
+
+5–11 Ekim 2026
+
+Gün Hafta
+
+Pzt 5 Sal 6 Çar 7 Per 8 Cum 9 Cmt 10 Paz 11
+
+Cumartesi, 10 Ekim
+3 çalışma
+
+10:00
+
+Türkçe
+
+Fiilde Çatı
+
+14:00
+
+Tarih
+
+Kurtuluş Savaşı Hazırlık Dönemi
+
+20:00
+
+Coğrafya
+
+İklim Bilgisi
+
+Konu Ekle
+
+Günü Sıfırla
+
+Anasayfa Öğrencilerim
 Okut
-Görüşmelerim
-Hesap
-4 · Öğrencinin programı yok
-Sekme içinde bölüm düzeyi boş durum; tek birincil eylem 
-"Program Kur". Programlar satırı çizilmez (program yok).
+Görüşmelerim Hesap
+
+3 · Düzenleme modu 3.6·1'in koç hâli: geri gizli, "Bitti"; saat değiştir, konu çıkar, "Konu Ekle", "Günü Sıfırla". "Programı İptal Et" yok (silme ucu yok). Değişiklik anında kaydedilir.
+
+Görüşme Planla
+
+Alparslan Kuloğlu'nun verileri 12. Sınıf · EA
+
+Alparslan Kuloğlu
+
+alparslan.k · 10 deneme · son 5 Eki. 2026
+
+Analiz Denemeler Program
+
+Alparslan'ın programı yok
+
+Onun için bir hafta kurabilirsin; Alparslan programı kendi Anasayfa'sında görür.
+Program Kur
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+4 · Öğrencinin programı yok Sekme içinde bölüm düzeyi boş durum; tek birincil eylem "Program Kur". Programlar satırı çizilmez (program yok).
+
 Bileşenler
-DetailBar + ContextStrip (10.4) + InScreenTabs; kaydırınca 1.18 kare 3 gibi küçülür, 
-şerit ve sekmeler yapışır.
-Program başlık satırı: headline 17/24 + BarAction.inline (PencilSimple). Alt satır 
-motto · tarih aralığı 13/20.
-Segment (Gün | Hafta), DayChip şeridi, ProgramItemRow; düzenlemede 
-ProgramItemRow.edit.
-InfoBox (info), SettingsRow değer varyantı (CalendarBlank, "Programlar", değer "3 
-program"), ProgramRow, SearchField, EmptyState bölüm düzeyi.
+
+DetailBar + ContextStrip (10.4) + InScreenTabs; kaydırınca 1.18 kare 3 gibi küçülür, şerit ve sekmeler yapışır.
+
+Program başlık satırı: headline 17/24 + BarAction.inline (PencilSimple). Alt satır motto · tarih aralığı 13/20.
+
+Segment (Gün | Hafta), DayChip şeridi, ProgramItemRow; düzenlemede ProgramItemRow.edit.
+
+InfoBox ( info ), SettingsRow değer varyantı (CalendarBlank, "Programlar", değer "3 program"), ProgramRow, SearchField, EmptyState bölüm düzeyi.
+
 Kural
+
 Koç bağlamında tek düzenleme istisnası Program (6.8 #36 ve T9.6 güncellenir).
+
 Favori, "Öğrendim", "Bu Konuyu Çalış", "Kartları Çalış" koçta yine yok.
+
 "Programı İptal Et" koçta çizilmez: silme ucu yok, bugünkü uygulamada da yok.
+
 Hafta görünümü 3.4·4 ızgarası; koçta yalnız şerit eklenir (kare yok).
+
 Programlar satırı yalnız program varsa; sayı weeklies uzunluğu.
+
 Erişilebilirlik ve hareket
+
 "Düzenle" okunuşu: "Alparslan'ın programını düzenle".
+
 Şerit ilk okunan öğe: "Alparslan Kuloğlu'nun verileri, 12. sınıf, Eşit Ağırlık".
+
 ProgramRow: "Ekim 2. Hafta, Her gün biraz daha, 5–11 Ekim 2026, bu hafta".
-Hareket ve haptik 3.4 ve 3.6 ile aynı; düzenleme kayıtları selectionClick.
+
+Hareket ve haptik 3.4 ve 3.6 ile aynı; düzenleme kayıtları selectionClick .
+
 Varsayımlar (T12)
-T12.2 14.1·1 kaydırılmış hâlde çizildi: ad bara iner, şerit ve sekmeler yapışır; InfoBox 
-ve Programlar satırı aynı karede görünsün diye.
-T12.3 Programlar satırı SettingsRow değer varyantı (tek satır, 56 pt); yalnız 
-program varsa çizilir.
+
+T12.2 14.1·1 kaydırılmış hâlde çizildi: ad bara iner, şerit ve sekmeler yapışır; InfoBox ve Programlar satırı aynı karede görünsün diye.
+
+T12.3 Programlar satırı SettingsRow değer varyantı (tek satır, 56 pt); yalnız program varsa çizilir.
+
 T12.4 Program listesi yeniden eskiye; bu haftanın programı "Bu hafta" etiketli.

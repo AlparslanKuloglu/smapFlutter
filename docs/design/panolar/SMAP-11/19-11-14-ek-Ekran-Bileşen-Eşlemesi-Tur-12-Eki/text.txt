@@ -1,0 +1,37 @@
+Ekran–Bileşen Eşlemesi · Tur 12 Eki
+
+11.14 ek · Geliştirici Teslimi · Tur 12
+
+Ekran–Bileşen Eşlemesi · Tur 12 Eki
+
+Tur 12 panoları hangi bileşenlerle kurulur. Adlar 11.13 ve 11.13 ekindeki adlar; koç ekranları öğrenci ekranlarını StudentScope ile yeniden kullanır (10.4).
+
+Eşleme
+
+Pano Bileşenler
+
+14.1 Koç · öğrencinin programı DetailBar, ContextStrip, InScreenTabs, BarAction (içerik içi), Segment, DayChip, ProgramItemRow, InfoBox, SettingsRow (değer), ProgramRow, SearchField, EmptyState (bölüm)
+
+14.2 Koç · yeni program ContextStrip, Calendar, DayChip, HourSlot, BottomSheet, Segment, Radio, TextField, Toast
+
+14.3 Koç · program durumları Skeleton, ErrorState (bölüm), OfflineStrip, BarAction (pasif)
+
+14.4 Deneme Detay · puan kartı ExamHeader (ham puan satırı), DybLarge, InScreenTabs, StackedBar, ContextStrip (koç)
+
+14.5 Edebiyat · dönemler Segment (sayaçlı), TopicRow, EksikTag, Accordion, AuthorRow
+
+14.6 Edebiyat · yazar sheet'i AuthorSheet (durumlu eser satırı), EksikTag, Button (metin), Toast (Geri Al)
+
+14.7 Edebiyat · durumlar Skeleton, Accordion (bölüm hatası), OfflineStrip
+
+14.8 Koç · öğrenci ekle BottomSheet (uzun), AvatarPicker (satır), TextField + BarAction, SelectField, CodeCard, Toast
+
+14.9 Profil · e-posta TextField (odak, hata, salt okunur), SelectField, BarAction (Kaydet), OfflineStrip, Toast
+
+14.10 Koçluk · koçu değiştir CoachCard, InfoBox, Button (çerçeveli, tehlikeli metin), BottomSheet, TextField (maskeli), Spinner, Toast
+
+14.11 Koç · koçluk kodu RootBand + ProfileSummary, SettingsRow (değer), BottomSheet, CodeCard, Skeleton, ErrorState (bölüm), OfflineStrip, Toast
+
+14.12 Koyu kareler Yukarıdakilerin koyu rolleri (11.12)
+
+13.13–13.14 Akış FlowStep, FlowArrow, FlowChip (11.17)

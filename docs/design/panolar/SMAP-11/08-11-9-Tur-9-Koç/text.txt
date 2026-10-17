@@ -1,0 +1,134 @@
+11.9 · Notlar · Tur 9 Notları
+
+11.9 · Notlar · Tur 9
+
+Tur 9 · Koç
+
+"10 · Koç"a 6 pano (10.1–10.6) kondu: Koç Anasayfa, Öğrencilerim, Öğrenci Ekle, koç bağlamında öğrenci profili, Görüşmelerim ve görüşme notları.
+
+Ne değişti, neden
+
+# Değişiklik Çözdüğü sorun Görüntü Pano
+
+1 Koç Anasayfa: öğrenci şeridi, dikkat gerektirenler, yaklaşan görüşmeler; "Öğrenci Ekle" Koçun ilk ekranı öğrencininkinden farklı bir dille ve görevsiz bir panoyla açılıyordu envanter §2.3 10.1
+
+2 Dikkat listesi yalnız iki kurala dayanır (D-27): 14 gün deneme yok, son iki denemede net düşüşü Hedef, yüzde ve tamamlama gibi D-3'te yasak sinyaller envanter §2.3 10.1
+
+3 Her dikkat satırı kanıtını yazar: gün sayısı ve son tarih; iki net ve tarihleri Neden dikkat gerektiği söylenmiyordu envanter §2.3 10.1
+
+4 Öğrencisi olmayan koç: üç avatar, "İlk öğrencini ekle", kod kartı (Kopyala, Paylaş) Boş durum yoktu envanter §2.3 10.1, 10.2
+
+5 Öğrencilerim: avatar, ad, sınıf · alan; verisi olanda deneme sayısı ve son net Satırda bağlam yoktu envanter §2.3 10.2
+
+6 Türkçe harf duyarsız arama (I/ı/İ/i), eşleşen kısım işaretli Arama Türkçe harflerde eşleşmiyordu envanter §2.3 10.2
+
+7 Öğrenci Ekle sheet'i: ad, soyad, kullanıcı adı (Kontrol Et), şifre (Oluştur + göster), sınıf, alan; altında kod kartı Hesap açma ve kodla bağlanma ayrı yerlerdeydi envanter §2.9 10.3
+
+8 Giriş bilgileri kayıttan sonra bir kez gösterilir, paylaşılır Şifrenin öğrenciye nasıl iletileceği tanımsızdı envanter §2.9 10.3
+
+9 Öğrenci profili koç bağlamında: bağlam şeridi, Analiz · Denemeler · Program Koç öğrencinin ekranında kimin verisine baktığını görmüyordu envanter §2.3 10.4
+
+10 Öğrenci ekranları aynen taşınır (6.1, 6.2, 3.4, 5.3); düzenleme ve öğrenciye özel eylemler yok Koç ekranları ayrı yazılmış kopyalardı envanter §2.3 10.4
+
+11 Görüşmelerim: arama, Kiminle süzgeci, yıllı tarih, Öğrenci/Veli etiketi Tarihte yıl yoktu; arama ve süzgeç yoktu envanter §2.9 10.5
+
+12 Yeni Görüşme sheet'i; Görüşme Detayı'nda notlar: ekle, düzenle, onaylı sil, 6 sn geri al Not silme onaysızdı envanter §2.9 10.5, 10.6
+
+13 Görüşme yok boş durumu: kil Hokka M 128 Boş liste envanter §2.9 10.5
+
+Önceki turların bileşenlerinde genişletmeler
+
+G1
+nav_coach (1.19): Anasayfa · Öğrencilerim · Okut · Görüşmelerim · Hesap; Users ve Chats ikonları.
+
+G2
+ContextStrip 1.18 kare 6 aynen: 40 pt, navy-50, avatar 24, "Ad Soyad'ın verileri", sınıf · alan.
+
+G3
+StudentTile (Tur 6 SubjectTile'ın kişi hâli): 108 pt, avatar 48, ad 2 satıra kadar, varsa son deneme tarihi.
+
+G4
+AttentionRow yeni: avatar + kural rozeti (Clock / TrendDown, warning ), kural cümlesi, kanıt satırı.
+
+G5
+MeetingRow (1.16): tarih bloğu ya da avatar; yıllı tarih, saat, Öğrenci/Veli etiketi.
+
+G6
+CodeCard yeni: koçluk kodu 24/800, açıklama, Kopyala ve Paylaş eşit.
+
+G7
+Çok satırlı alan (1.12) not sheet'inde; karakter sayacı.
+
+Varsayımlar
+
+Ek D'de karşılığı olmayan ve bu turda verdiğim kararlar. Hiçbiri bir ekranın çizimini engellemiyor.
+
+1
+Bugünkü Ek C verisinde iki dikkat kuralı da tetiklenmiyor (son deneme 5 Ekim; son iki TYT ve AYT yükseliyor). 10.1 kare 1'de bölüm boş; kare 2 aynı öğrencinin geçmişinden iki ayrı günün (1 ve 5 Ağustos) görünümünü örnek olarak gösterir.
+
+2
+Diğer öğrencilerin deneme verisi Ek C'de yok; satırlarında deneme sayısı ve net çizilmedi.
+
+3
+Öğrenci sıralaması alfabetik (Türkçe karşılaştırma).
+
+4
+Öğrenci Ekle örneği Zeynep Kaya (12, EA); kullanıcı adı "zeynep.kaya" koçun yazdığı örnek değer.
+
+5
+Mert Yıldız'ın avatarı (av-2) Tur 1'deki atamayla aynı; koçla aynı görsel.
+
+6
+Koç öğrencinin programını yalnız görüntüler; atama ve düzenleme v1'de yok.
+
+7
+Görüşme notları yalnız koça görünür.
+
+8
+Görüşmeden 1 saat önce koça hatırlatma; koçun bildirim tercihine bağlı.
+
+9
+Koçta da kamera var: okutulan form, seçilen öğrenciye yazılır (öğrenci seçimi sheet'i Tur 2 akışının başına eklenir).
+
+Geliştirici notları
+
+Ekranlar
+
+CoachHomeScreen (HomeBand + StudentStrip + AttentionSection + MeetingsSection) · StudentsScreen (RootBand + SearchField + StudentRow) · AddStudentSheet (+ CredentialsSheet) · StudentProfileScreen (ContextStrip + TabBar: Analiz/Denemeler/Program, öğrenci ekranları readOnly) · MeetingsScreen · NewMeetingSheet · MeetingDetailScreen · NoteSheet.
+
+Bağlam
+
+Öğrenci ekranları bir StudentScope ile sarılır: scope.coachView true ise ContextStrip eklenir, düzenleme eylemleri ve öğrenciye özel öğeler (favori, "Öğrendim", Günü Sıfırla) gizlenir. Aynı widget'lar, iki rol.
+
+Dikkat kuralları
+
+Sunucuda hesaplanır: last_exam_at ≤ now − 14 gün; aynı türde son iki denemenin neti azalmışsa. Her satır kanıt alanlarıyla gelir (gün sayısı, iki net, tarihler).
+
+Arama
+
+tr-TR katlama: toLowerCase(tr) sonra ı→i; ad ve soyad token'ları önek eşleşmesi. Vurgulama özgün metin aralığında.
+
+Erişilebilirlik
+
+Şerit "Alparslan Kuloğlu'nun verileri" ilk okunur. Dikkat satırı "Alparslan Kuloğlu, 45 gündür deneme okutmadı, son deneme 17 Haziran". Görüşme satırı "Alparslan Kuloğlu, 12 Ekim 2026 Pazartesi, 16:00, öğrenci görüşmesi".
+
+Bölüm 6 denetimi
+
+✓
+Dikkat listesinde yalnız iki kural; puan, hedef, tamamlama yok (D-3, D-27).
+
+✓
+Turuncu yalnız alt çubuk, kamera, sekme göstergesi ve bugün noktası.
+
+✓
+Emoji yok; uzun adlar kesilmiyor.
+
+✓
+13 pt altı metin yok (alt çubuk etiketi hariç).
+
+✓
+Kırmızı yalnız not silme onayında ve Sil metin düğmesinde.
+
+Sıradaki tur
+
+Tur 10: Tutarlılık denetimi, akış haritası ve geliştirici teslimi ("0 · Akış Haritası", "11 · Notlar").

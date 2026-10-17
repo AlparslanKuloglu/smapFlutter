@@ -1,156 +1,164 @@
+14.3 Koç Program Durumlar ve Koyu
+
 14.3 · Tur 12 · Geri Gelen Özellikler
+
 Koç · Program · Durumlar ve Koyu · 4 Kare
+
 İskelet, hata ve çevrimdışı sekme içinde; ana ekranın koyu teması.
-Görüşme Planla 
-Alparslan Kuloğlu'nun verileri
-12. Sınıf · EA 
-Alparslan Kuloğlu 
-alparslan.k · 10 deneme · son 5 Eki. 2026 
-Analiz
-Denemeler
-Program 
-Anasayfa
-Öğrencilerim
-Okut
-Görüşmelerim
-Hesap
-1 · İskelet
-Sekme içi; şerit, başlık ve sekmeler hemen gelir. Satır iskeleti 3.7·2 
-ile aynı.
-Görüşme Planla 
-Alparslan Kuloğlu'nun verileri
-12. Sınıf · EA 
-Alparslan Kuloğlu 
-alparslan.k · 10 deneme · son 5 Eki. 2026 
-Analiz
-Denemeler
-Program 
-Programlar yüklenemedi 
-Bağlantını kontrol edip tekrar dene. 
-Tekrar Dene 
-Anasayfa
-Öğrencilerim
-Okut
-Görüşmelerim
-Hesap
-2 · Hata
-ErrorState.section: neden ve "Tekrar Dene" yalnız sekmeyi yeniler; 
-şerit ve sekmeler kalır.
+
+Görüşme Planla
+
+Alparslan Kuloğlu'nun verileri 12. Sınıf · EA
+
 Alparslan Kuloğlu
-Görüşme Planla 
-Çevrimdışısın. Son kaydedilen veriler gösteriliyor. 
-Alparslan Kuloğlu'nun verileri
-12. Sınıf · EA 
-Analiz
-Denemeler
-Program 
-Ekim 2. Hafta 
-Her gün biraz daha · 5–11 Ekim 2026 
-Düzenle 
-Gün
-Hafta 
-Pzt 
-5 
-Sal 
-6 
-Çar 
-7 
-Per 
-8 
-Cum 
-9 
-Cmt 
-10 
-Paz 
-11 
-10:00 
-Türkçe 
-Fiilde Çatı 
-14:00 
-Tarih 
-Kurtuluş Savaşı Hazırlık 
-Dönemi 
-20:00 
-Coğrafya 
-İklim Bilgisi 
-Program kurmak ve düzenlemek için bağlantı gerekiyor. 
-Kayıtlı programı görebilirsin. 
-Programlar
-3 program 
-Anasayfa
-Öğrencilerim
+
+alparslan.k · 10 deneme · son 5 Eki. 2026
+
+Analiz Denemeler Program
+
+Anasayfa Öğrencilerim
 Okut
-Görüşmelerim
-Hesap
-3 · Çevrimdışı
-OfflineStrip barın altında, bağlam şeridi onun altında. "Düzenle" 
-pasif; Programlar ekranında "Yeni Program" da pasif. Neden tek 
-satırda.
+Görüşmelerim Hesap
+
+1 · İskelet Sekme içi; şerit, başlık ve sekmeler hemen gelir. Satır iskeleti 3.7·2 ile aynı.
+
+Görüşme Planla
+
+Alparslan Kuloğlu'nun verileri 12. Sınıf · EA
+
 Alparslan Kuloğlu
-Görüşme Planla 
-Alparslan Kuloğlu'nun verileri
-12. Sınıf · EA 
-Analiz
-Denemeler
-Program 
-Ekim 2. Hafta 
-Her gün biraz daha · 5–11 Ekim 2026 
-Düzenle 
-Gün
-Hafta 
-Pzt 
-5 
-Sal 
-6 
-Çar 
-7 
-Per 
-8 
-Cum 
-9 
-Cmt 
-10 
-Paz 
-11 
-10:00 
-Türkçe 
-Fiilde Çatı 
-14:00 
-Tarih 
-Kurtuluş Savaşı Hazırlık 
-Dönemi 
-20:00 
-Coğrafya 
-İklim Bilgisi 
-Bu programı Alparslan da görür ve 
-düzenleyebilir. Yaptığın değişiklik onun 
-programına hemen yansır. 
-Programlar
-3 program 
-Anasayfa
-Öğrencilerim
+
+alparslan.k · 10 deneme · son 5 Eki. 2026
+
+Analiz Denemeler Program
+
+Programlar yüklenemedi
+
+Bağlantını kontrol edip tekrar dene.
+Tekrar Dene
+
+Anasayfa Öğrencilerim
 Okut
-Görüşmelerim
-Hesap
-4 · Koyu
-14.1·1'in koyu teması: bağlam şeridi #1A2B45, InfoBox koyu bilgi 
-tonları, satırlar koyu ders tonlarında.
+Görüşmelerim Hesap
+
+2 · Hata ErrorState.section: neden ve "Tekrar Dene" yalnız sekmeyi yeniler; şerit ve sekmeler kalır.
+
+Alparslan Kuloğlu
+
+Görüşme Planla
+
+Çevrimdışısın. Son kaydedilen veriler gösteriliyor.
+
+Alparslan Kuloğlu'nun verileri 12. Sınıf · EA
+
+Analiz Denemeler Program
+
+Ekim 2. Hafta
+
+Her gün biraz daha · 5–11 Ekim 2026
+
+Düzenle
+
+Gün Hafta
+
+Pzt 5 Sal 6 Çar 7 Per 8 Cum 9 Cmt 10 Paz 11
+
+10:00
+
+Türkçe
+
+Fiilde Çatı
+
+14:00
+
+Tarih
+
+Kurtuluş Savaşı Hazırlık Dönemi
+
+20:00
+
+Coğrafya
+
+İklim Bilgisi
+
+Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı programı görebilirsin.
+
+Programlar 3 program
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+3 · Çevrimdışı OfflineStrip barın altında, bağlam şeridi onun altında. "Düzenle" pasif; Programlar ekranında "Yeni Program" da pasif. Neden tek satırda.
+
+Alparslan Kuloğlu
+
+Görüşme Planla
+
+Alparslan Kuloğlu'nun verileri 12. Sınıf · EA
+
+Analiz Denemeler Program
+
+Ekim 2. Hafta
+
+Her gün biraz daha · 5–11 Ekim 2026
+
+Düzenle
+
+Gün Hafta
+
+Pzt 5 Sal 6 Çar 7 Per 8 Cum 9 Cmt 10 Paz 11
+
+10:00
+
+Türkçe
+
+Fiilde Çatı
+
+14:00
+
+Tarih
+
+Kurtuluş Savaşı Hazırlık Dönemi
+
+20:00
+
+Coğrafya
+
+İklim Bilgisi
+
+Bu programı Alparslan da görür ve düzenleyebilir. Yaptığın değişiklik onun programına hemen yansır.
+
+Programlar 3 program
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+4 · Koyu 14.1·1'in koyu teması: bağlam şeridi #1A2B45, InfoBox koyu bilgi tonları, satırlar koyu ders tonlarında.
+
 Durum metinleri
-Hata: "Programlar yüklenemedi" · "Bağlantını kontrol edip tekrar dene." · "Tekrar 
-Dene".
-Çevrimdışı: "Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı 
-programı görebilirsin."
-Kaydetme hatası (kare yok): toast "Program kaydedilemedi. Bağlantını kontrol 
-edip tekrar dene."; değişiklik korunur.
+
+Hata: "Programlar yüklenemedi" · "Bağlantını kontrol edip tekrar dene." · "Tekrar Dene".
+
+Çevrimdışı: "Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı programı görebilirsin."
+
+Kaydetme hatası (kare yok): toast "Program kaydedilemedi. Bağlantını kontrol edip tekrar dene."; değişiklik korunur.
+
 Varsayımlar (T12)
-T12.7 Çevrimdışı şeridi bağlam şeridinin üstünde. "Görüşme Planla" çevrimdışında 
-da açık: formu açar, kayıt kendi akışında.
-T12.8 Sunucu, koç oturumundaki program yazmasını öğrencinin hesabına işler 
-(açık soru). İşlemiyorsa 14.1–14.3 bayrakla kapanır, 10.4·3 geçerli kalır.
-T12.9 Öğrenci ve koç aynı anda düzenlerse son kayıt geçerli; çakışma ekranı yok 
-(açık soru).
+
+T12.7 Çevrimdışı şeridi bağlam şeridinin üstünde. "Görüşme Planla" çevrimdışında da açık: formu açar, kayıt kendi akışında.
+
+T12.8 Sunucu, koç oturumundaki program yazmasını öğrencinin hesabına işler (açık soru). İşlemiyorsa 14.1–14.3 bayrakla kapanır, 10.4·3 geçerli kalır.
+
+T12.9 Öğrenci ve koç aynı anda düzenlerse son kayıt geçerli; çakışma ekranı yok (açık soru).
+
 T12.10 Öğrenciye bildirim gitmez; metinlerde "bildirildi" yok (açık soru).
+
 Koyu tema
+
 Kanvas #0A1424, kart #121D31, şerit #1A2B45, sekme göstergesi #FF8533.
+
 Satır ders karoları koyu ders tonlarında (1.5); gün çipi seçili #C5D4E8.
+
 BarAction.inline koyuda çerçeveli #C5D4E8.

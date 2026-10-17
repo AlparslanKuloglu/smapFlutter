@@ -1,0 +1,93 @@
+11.17 · Notlar · Ek Notları
+
+11.17 · Notlar · Ek
+
+Ek · Ekran Akışı ve Onarımlar
+
+"13 · Ekran Akışı" sayfası eklendi: tasarlanan bütün kareler kullanım sırasıyla. Aynı turda, kanvas editörünün panoları yeniden kaydederken bozduğu tablolar, kesilen 11.1, Soru Detay'daki görünmeyen D/Y/B çipleri ve yanlış yazı tipiyle işlenmiş mağaza görselleri düzeltildi.
+
+Ne değişti, neden
+
+# Değişiklik Çözdüğü sorun Görüntü Pano
+
+1 Yeni sayfa "13 · Ekran Akışı": tasarlanan 181 kare kullanım sırasıyla 12 panoda, ilk açılıştan koça ve genel ekranlara Ekranlar konu sayfalarına dağılmıştı; bir kullanıcının yolunu baştan sona görmek için sayfa sayfa gezmek gerekiyordu — 13.1–13.12
+
+2 Her panoda üst sıra ana yol; okun üstünde dokunulan yer, kesikli ok kendiliğinden geçiş; durumlar ve koyu tema ilgili ekranın altında Akış haritası (0.1–0.3) yolu kutularla anlatıyordu; gerçek ekranlar yan yana görülmüyordu — 13.1–13.12
+
+3 Tablo sütun genişlikleri başlık hücrelerinin kendi stiline taşındı Kanvas editörü panoları yeniden kaydederken <colgroup> öğelerini sildi; not, teslim ve temel tablolarında sütunlar eşit genişliğe düştü — 1.2, 1.5, 1.6, 1.8, 11.1–11.15
+
+4 11.1'de Varsayımlar ve denetim listesi iki sütuna alındı; pano 7740 pt Kanvasta pano yüksekliği en çok 8000; 11.1 9300 idi, alt kısmı kesiliyordu — 11.1
+
+5 Soru Detay'da İşaretin ve Doğru cevap çipleri yeniden renkli: ✕ kırmızı, ✓ yeşil Çip rengi ikinci bir style özniteliğindeydi, tarayıcı yok sayıyordu; çip görünmüyor, D/Y/B dili eksik kalıyordu — 5.7
+
+6 Mağaza görselleri Plus Jakarta Sans ile yeniden işlendi Telefon görüntüleri ve panorama yazı tipinin yüklenmediği bir ortamda yedek yazı tipiyle işlenmişti; panolardaki canlı metinden farklı görünüyordu — 12.1–12.3
+
+Önceki turların bileşenlerinde genişletmeler
+
+G1
+FlowStep yeni, yalnız 13. sayfada: adım numarası ( navy-900 daire), ekran adı 17/24 700, kaynak kod 13 pt, 280 × 608 telefon; durumlar altında 132 × 287, iki sütun.
+
+G2
+FlowArrow : 120 pt genişlik; etiket okun üstünde 13/18, düz çizgi dokunma, kesikli çizgi kendiliğinden geçiş ( border-control ).
+
+G3
+FlowChip : 208 pt, bg-canvas zemin ve kesintisiz kenar; "Buradan" başka panodan gelişi, "Sonra" sonraki panoyu söyler.
+
+G4
+Adım notu (ör. "Yalnız ilk sefer") info-bg üstünde info metniyle, telefonun altında.
+
+Varsayımlar
+
+Ek D'de karşılığı olmayan ve bu turda verdiğim kararlar. Hiçbiri bir ekranın çizimini engellemiyor.
+
+1
+Ekran Akışı yeni bir tasarım değil, mevcut karelerin görüntüsü. Bir ekran değişirse kaynak panosu düzeltilir, 13. sayfadaki görüntüsü yeniden alınır.
+
+2
+Her kare bir kez yer alır: ana yolda ya da bir ekranın altında durum olarak. Hoş geldin gibi ortak ekranlar tekrar çizilmedi; panolar başlangıç ve bitiş çipleriyle birbirine bağlanır.
+
+3
+Ok etiketleri ekrandaki düğme adlarıdır; düğmesi olmayan geçişler (kaydırma, kendiliğinden) küçük harfle yazıldı.
+
+4
+Koçun öğrenci akışındaki farkları (rol, kayıt) ilgili ekranın altında; koçun kendi ekranları 13.11'de.
+
+5
+Genel ekranlar (13.12) akışın bir adımı değil; her an çıkabildikleri için oksuz dizildi.
+
+6
+Yeni program kaydedilince programın gün görünümü açılır varsaydım; Programım listesine dönüş de olabilir, ekranlar ikisinde de aynı.
+
+Geliştirici notları
+
+Görüntüler
+
+181 kare kaynak panolardan 2x işlendi (Plus Jakarta Sans ile). Ana yol 480 px, durumlar 320 px genişlikte WebP; panolara gömülü. Kodlar (ör. "4.7 · kare 3") ayrıntılı notların bulunduğu kaynak kareyi gösterir.
+
+Editör kaydı
+
+Kanvas editörü panoları kaydederken <colgroup> öğelerini, kullanılmayan CSS kurallarını ve tekrarlanan öznitelikleri siliyor. Genişlik ve renk gibi değerler öğenin kendi style özniteliğinde tutulmalı; bu turdaki düzeltmeler buna göre yapıldı.
+
+Sınırlar
+
+Pano en çok 8000 × 8000. En geniş akış panosu 13.4 (6680), en uzunu 13.10 (7300).
+
+Bölüm 6 denetimi
+
+✓
+Kareler kaynak panolardaki gibi; yeni veri eklenmedi.
+
+✓
+Emoji, büyük harfli metin yok; kod satırları yalnız pano ve kare numarası.
+
+✓
+13 pt altı metin yok; ok etiketleri ve çipler 13–14 pt.
+
+✓
+Turuncu yalnız ekranların kendi içinde; akış öğeleri lacivert ve gri.
+
+✓
+Bütün görsellerin alt metni var: ekran adı ve kaynak kod.
+
+!
+Bir ekran güncellenirse 13. sayfadaki görüntüsü de yeniden alınmalı.

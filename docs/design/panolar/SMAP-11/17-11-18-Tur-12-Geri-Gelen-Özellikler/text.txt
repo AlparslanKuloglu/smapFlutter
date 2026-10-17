@@ -1,0 +1,210 @@
+11.18 · Notlar · Tur 12 Notları
+
+11.18 · Notlar · Tur 12
+
+Tur 12 · Geri Gelen Özellikler
+
+Bugünkü uygulamada çalışan ama yeni tasarımda olmayan yedi özellik mevcut dille geri geldi: koçun öğrencinin programını yönetmesi (A), ham puan (B), Edebiyat'ta eser başına durum (C), öğrenci eklerken avatar (D), doğrulamasız e-posta değişikliği (E), koçu kodla değiştirme (F) ve koçun koçluk kodu sheet'i (G). Eski panolar değişmedi; değişen kareler 14. sayfada "Yerine geçtiği kare" etiketiyle.
+
+Ne değişti, neden
+
+# Değişiklik Çözdüğü sorun Görüntü Pano
+
+1 Koç, öğrencinin Program sekmesinde "Düzenle", Gün | Hafta, satırlar, bilgi kutusu ve Programlar satırını görür; düzenleme 3.6 diliyle 10.4·3 salt okunurdu; bugünkü uygulamada koç öğrencinin programını açıp düzenliyor envanter 14.1, 14.3
+
+2 Koç öğrenci için yeni program kurar; dört adımda bağlam şeridi, kayıtta "Program Alparslan'ın hesabına kaydedildi." Yeni tasarımda koçun öğrenciye program kurma yolu yoktu envanter 14.2
+
+3 Çanta satırında eksik sayısı ve "Son denemede…" satırı kalktı; koçta ve öğrencide aynı satır Çanta verisinde bu alanlar yok; 3.5·3 olmayan veriyi gösteriyordu — 14.2
+
+4 Puan kartına ham puan ve ham puan sırası; ince ayraçla ikinci satır Deneme satırında ham puan ve sırası geliyordu, ekranda yoktu 24, 25 14.4
+
+5 Edebiyat: dönem → alt başlık → yazar → eser; eser başına Eksik, Öğrendim ve Biliyorsun 7.4'te yazar düzeyinde tek "Öğrendim" vardı; bugünkü uygulama eser başına durum tutuyor envanter 14.5–14.7
+
+6 Öğrenci eklerken 7 avatardan biri seçilir; öğrenci listede bu avatarla görünür Bugünkü öğrenci ekleme diyaloğunda avatar seçici var, 10.3'te yoktu envanter 14.8
+
+7 E-posta Kaydet'le hemen değişir; doğrulama kodu adımı kalktı 9.2 sunucuda olmayan bir doğrulama kodu varsayıyordu; bugünkü uygulama doğrudan kaydediyor 32 14.9
+
+8 "Koçu Değiştir": yeni kodla tek adımda koç değişir; kaldırma tehlikeli onayla kalır Bugünkü Hesap Bilgileri'ndeki "Değiştir" yeni tasarımda yoktu; yalnız kaldırma vardı 32 14.10
+
+9 Koçun Hesap'ındaki kod satırı sheet açar: kod, koça göre açıklama, Kopyala ve Paylaş; iskelet, hata ve çevrimdışı Bugünkü "Koçluk Kodu Nedir?" diyaloğunun koç metni yeni tasarımda yoktu envanter 14.11
+
+10 D–G ana ekranlarının koyu teması; Tur 12'nin 55 karesi iki akış panosunda Her özelliğin koyu karesi ve akıştaki yeri görünsün — 14.12, 13.13–13.14
+
+Önceki turların bileşenlerinde genişletmeler
+
+G1
+BarAction içerik içi varyant: 40 pt çerçeveli, başlık satırında ("Düzenle"); koçta Program başlığında (14.1).
+
+G2
+ContextStrip tam ekran akışlarda barın hemen altında (14.2); çevrimdışı şeridi onun üstünde (14.3).
+
+G3
+ExamHeader puan bloğu: ince ayraç ve ham puan satırı metric-sm , yalnız değer varsa (14.4).
+
+G4
+AuthorSheet eser satırı durumlu: EksikTag ve "Öğrendim" metin düğmesi ya da ✓ "Biliyorsun"; durum yoksa yalnız ad (14.6).
+
+G5
+Accordion açılınca yükler: içeride satır iskeleti ve bölüm hatası (14.5, 14.7).
+
+G6
+AvatarPicker satır varyantı: form içinde 7 × 44 pt, sayaç "4 / 7" (14.8).
+
+G7
+CoachCard altında "Koçu Değiştir" çerçeveli düğmesi; görüşme yoksa satır çizilmez (14.10).
+
+G8
+CodeCard sheet hâli: kod metric-md , koça göre açıklama, Kopyala ve Paylaş (14.11).
+
+G9
+SettingsRow değer varyantı: "Programlar · 3 program" ve "Koçluk kodun · MOZK-4821" (14.1, 14.11).
+
+G10
+Toast 1.22 kalıbı birebir: tür ikonu, "Geri Al" beyaz kalın ve ayraçlı (14.2, 14.6, 14.8–14.11).
+
+Varsayımlar
+
+Ek D'de karşılığı olmayan ve bu turda verdiğim kararlar. Hiçbiri bir ekranın çizimini engellemiyor.
+
+1
+Tam ekran akışlarda bağlam şeridi barın hemen altında, ekran başlığının üstünde (10.4 düzeni).
+
+2
+14.1·1 kaydırılmış hâlde çizildi: ad bara iner, şerit ve sekmeler yapışır; InfoBox ve Programlar satırı aynı karede görünsün diye.
+
+3
+Programlar satırı SettingsRow değer varyantı (tek satır, 56 pt); yalnız program varsa çizilir.
+
+4
+Program listesi yeniden eskiye; bu haftanın programı "Bu hafta" etiketli.
+
+5
+Yeni program örneği "Ekim 3. Hafta" / "Az ama her gün", 12–17 Ekim; konu sheet'inin açıldığı saat Pazartesi 15:00. Ek C'de yok.
+
+6
+Kayıttan sonra Program sekmesine dönülür; sekme bu haftanın programında kalır.
+
+7
+Çevrimdışı şeridi bağlam şeridinin üstünde. "Görüşme Planla" çevrimdışında da açık: formu açar, kayıt kendi akışında.
+
+8
+Sunucu, koç oturumundaki program yazmasını öğrencinin hesabına işler (açık soru). İşlemiyorsa 14.1–14.3 bayrakla kapanır, 10.4·3 geçerli kalır.
+
+9
+Öğrenci ve koç aynı anda düzenlerse son kayıt geçerli; çakışma ekranı yok (açık soru).
+
+10
+Öğrenciye bildirim gitmez; metinlerde "bildirildi" yok (açık soru).
+
+11
+Puan kartı hiyerarşisi: yerleştirme puanı metric-md, ham puan metric-sm; ham satır yalnız değer varsa.
+
+12
+TYT puan ve sıraları (384,05 · 176.320. ve 371,90 · 189.004.) Tur 12 örnek verisinden; Ek C'de TYT puanı yok.
+
+13
+Şinasi 3, Ziya Paşa 6 eser ve "Hakkında" metinleri örnek. Yazar fotoğrafı yoksa baş harf, Edebiyat tonlarında.
+
+14
+"Biliyorsun" ✓ ile success renginde. Durumu gelmeyen eserde yalnız ad; sayaçta yalnız "N eser".
+
+15
+"Öğrendim" isteği 6 sn sonra gider; "Geri Al" istemcide (geri alma ucu yok).
+
+16
+Bölüm düzeyi boş durumlarda illüstrasyon yok. Dönem listesinin boş hâli çizilmedi: dönemler müfredattan gelir.
+
+17
+Öğrenci eklerken avatar seçimi zorunlu değil: ilk avatar seçili gelir (bugünkü seçici de böyle).
+
+18
+§7: Zeynep Kaya'nın avatarı 7'den 4. 10.2'de 5 çizilmişti; 14.8·3 10.2·1'in yerine geçer.
+
+19
+E-posta doğrulaması sunucuda yok; adres Kaydet'le hemen değişir (bugünkü uygulama gibi). 9.2 notundaki 6 haneli kod maddesi kalktı; doğrulama gelirse 2.4'ün kod kutuları kullanılır.
+
+20
+Yeni adres örneği alparslan.kuloglu@ornek.com (§7); hatalı örnek "alparslan.kuloglu@ornek".
+
+21
+Koç değişikliği ayrı onay sormaz: kodu yazmak ve "Koçu Değiştir" yeterli, sonucu bilgi kutusu söyler. Kaldırma (9.5·2) tehlikeli onayla kalır.
+
+22
+Ayşe Demir'in avatarı 6 (örnek). Henüz görüşmesi olmadığı için görüşme satırı çizilmedi.
+
+23
+Hatalı kod örneği AYDM-3370 (rakamları yer değiştirmiş AYDM-3307).
+
+24
+Açık soru: addCoach yeni kodla eski bağlantıyı kendisi kaldırıyor mu? Kaldırmıyorsa istemci önce deleteCoach çağırır; ekran aynı kalır.
+
+25
+Koçun Hesap'ındaki kod satırı değerli SettingsRow oldu; Kopyala ve Paylaş ikonları sheet'e taşındı, satır tek dokunma alanı.
+
+26
+Kod yenileme yok; bugünkü uygulamada da yok. Kod refCode olarak oturum yanıtıyla gelir ve cihazda saklanır.
+
+27
+Tur 12 notları 11.18 numarasıyla: 11.17, Ek · Ekran Akışı panosunda kullanılıyor.
+
+28
+Akış iki panoya bölündü (13.13 A–C, 13.14 D–G): tek panoda yükseklik 8000 pt sınırını aşıyordu. İkisi de 14. sayfanın sonunda.
+
+29
+Ek panolar (11.13 ek, 11.14 ek, 11.16 ek) eski panolara dokunmadan 11. sayfada, Tur 12 notlarının yanında.
+
+30
+14.4 beş kare: puan kartının yüksekliği değiştiği için iskelet (5.8·1) ve koç karesi (10.4·4) de yeniden çizildi.
+
+Geliştirici notları
+
+Kapsam
+
+Yeni bileşen adı yok; bütün değişiklikler 11.13'teki adların varyantı (11.13 ek). Eski panolar değişmedi; yerine geçen kareler 14. sayfada etiketli: 10.4·3, 10.4·4, 3.5·3, 5.3·1, 5.8·1, 5.9·1, 7.4·1, 7.4·2, 10.3·1, 10.3·3, 10.2·1, 9.2·1, 9.2·2, 9.5·1, 9.1·4.
+
+Uçlar
+
+Program: POST /student/addNewProgram?studentId= , Çanta POST /student/getMyWeeklies?studentId= , Dersler GET /student/getAllMainSubjects?studentId= . Puan: points[] , ranks[] , pointsHam[] , ranksHam[] . Edebiyat: yazarEserMainSubjects , getSubSubjects , getSubjectAuthors , learnedItem . Koç: addCoach?code= , deleteCoach , getStudentsCoach ; kod refCode . Öğrenci kaydında avatar photo .
+
+Kil görseller
+
+Paylaştığın kaynak görsel 950 × 560 px; her kil 140 × 140 px. Bu 1x (128–160 pt) için yeter; 2x ve 3x için kaynakta piksel yok, büyütmek bulanıklığı gidermez. Gerekli olan: 11 görselin özgün çıktısı, en az 480 × 480 px (L 160 pt × 3), köşeleri saydam PNG ya da WebP. Adlar: kitap, islemler, piramit, atom, erlenmeyer, yaprak, sutun, kure, hokka, ampul, harita. Flutter yerleşimi: assets/illustrations/clay/ altında 1x, 2.0x/ ve 3.0x/ klasörleri. 1x dosyaları bu turla teslim edildi.
+
+Akış
+
+13.13 (A–C) ve 13.14 (D–G) 14. sayfanın sonunda; 55 karenin her biri bir kez yer alır. Kod satırı kaynak pano ve kare; 13.x ile aynı FlowStep, FlowArrow ve FlowChip.
+
+Bölüm 6 denetimi
+
+✓
+Emoji, büyük harfli düğme ve iç kod yok; metinler "sen" diliyle, "İptal" yerine "Vazgeç".
+
+✓
+Hata metni her yerde "Bağlantını kontrol edip tekrar dene."; yükleme hatalarında "Tekrar Dene".
+
+✓
+Her yeni ekran ve bölümde iskelet, boş, hata ve çevrimdışı durumu ya da neden olmadığını söyleyen not var.
+
+✓
+Koç ekranlarında bağlam şeridi; tam ekran akışlarda barın altında.
+
+✓
+Ekranda tek birincil eylem; Kopyala ve Paylaş gibi eşit eylemler çerçeveli.
+
+✓
+Sayılar Türkçe biçimde (412,63 · 48.215.); Ek C dışı değerler T12 varsayımlarında.
+
+✓
+13 pt altı metin yok; yalnız alt çubuk etiketi 12 pt (kit, 1.19).
+
+✓
+Blur yalnız alt çubukta ve perdede.
+
+!
+Tur 12 panoları (SMAP-14): o gelene kadar A–G özellikleri mevcut kitle en sade hâliyle yapıldı.
+
+!
+Kil illüstrasyonların 2x/3x dosyaları: şu an bulanık görünüyorlar; özgün çıktılar gelince değişir (Geliştirici notları).
+
+!
+Açık sorular: koçun yazmasının öğrenci hesabına işlenmesi (T12.8), eş zamanlı düzenleme (T12.9), addCoach'un eski bağlantıyı kaldırması (T12.24), AYT sırasının hangi puan türüne ait olduğu (14.4).

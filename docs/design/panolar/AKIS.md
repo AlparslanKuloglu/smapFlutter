@@ -1,6 +1,6 @@
 # SMAP — Ekran Akışı (SMAP-13'ten)
 
-Kaynak: `docs/design/panolar/SMAP-13/*` (12 akış panosu, 181 ekran), PNG'ler `docs/design/panolar/png/SMAP-13_*.png`.
+Kaynak: `docs/design/panolar/SMAP-13/*` (12 akış panosu, 181 ekran) ve Tur 12 akışları `SMAP-14/12-13-13-…`, `SMAP-14/13-13-14-…`, PNG'ler `docs/design/panolar/png/SMAP-13_*.png`.
 Gösterim: `→ [dokunulan yer]` dokunuşla geçiş, `⇢` kendiliğinden geçiş. `(2.3·1)` = kaynak pano 2.3, kare 1.
 
 ## 13.1 İlk açılış ve kayıt
@@ -57,11 +57,23 @@ Hesabı sil (Profil en altı): Giriş noktası (9.4·1) → Açıklama (9.4·2) 
 - **Final tasarımda Ödeme/Paketler, Kayıtlı Kartlar ve fatura ekranı yok.**
 
 ## 13.11 Koç (giriş · koç hesabı)
-Koç Anasayfa (10.1·1; dikkat gerektirenler 10.1·2, öğrenci yok 10.1·3, iskelet 10.1·4) → [Öğrencilerim] (10.2·1; arama sonuç yok 10.2·3, öğrenci yok 10.2·4) → [ara] Arama I/ı/İ/i (10.2·2) → [öğrenci] Öğrenci profili · Analiz (10.4·1) → [Program] salt okunur (10.4·3) · [Denemeler] (10.4·2) → [satır] Deneme Detay · koç bağlamı (10.4·4)
-Öğrenci ekle (Öğrencilerim + | Koç Anasayfa): Form (10.3·1) → kaydır Kod kartı (10.3·2) → [Öğrenciyi Kaydet] Eklendi (10.3·3) → Öğrencilerim
+Koç Anasayfa (10.1·1; dikkat gerektirenler 10.1·2, öğrenci yok 10.1·3, iskelet 10.1·4) → [Öğrencilerim] (10.2·1; arama sonuç yok 10.2·3, öğrenci yok 10.2·4) → [ara] Arama I/ı/İ/i (10.2·2) → [öğrenci] Öğrenci profili · Analiz (10.4·1) → [Program] düzenlenebilir program (Tur 12: 14.1, bkz. 13.13; 10.4·3 yalnız bayrak kapalıyken) · [Denemeler] (10.4·2) → [satır] Deneme Detay · koç bağlamı (10.4·4)
+Öğrenci ekle (Öğrencilerim + | Koç Anasayfa): Form, avatarlı (14.8·1; Tur 12, bkz. 13.14) → kaydır Kod kartı (10.3·2) → [Öğrenciyi Kaydet] Eklendi (10.3·3) → Öğrencilerim
 Görüşmelerim (10.5·1; görüşme yok 10.5·4) → [Yeni görüşme] (10.5·2) → [Kaydet] Detay (10.5·3) → [Not Ekle] (10.6·1) → [Düzenle] (10.6·2) → [Sil] onay (10.6·3) → Silindi (10.6·4)
-Hesap · koç (9.1·4): Koçluk kodu Kopyala / Paylaş
+Hesap · koç (14.11·1): [Koçluk kodun] Kod sheet'i (14.11·2) → [Kopyala | Paylaş]; Tur 12, bkz. 13.14
 - Öğrenci ekranları koça aynı bileşenlerle + öğrenci adını taşıyan bağlam şeridiyle gelir.
 
 ## 13.12 Genel ekranlar (her an)
 Zorunlu güncelleme (2.7·1) · Oturum sona erdi (2.7·2) · Bakım (2.7·3) · Bilinmeyen rol (2.7·4)
+
+## 13.13 Tur 12 · Koç programı, puan kartı, Edebiyat (SMAP-14)
+A · Programı görmek ve düzenlemek (13.11 Öğrenci profili · Program): Program sekmesi (14.1·1; programı yok 14.1·4, iskelet 14.3·1, hata 14.3·2, çevrimdışı 14.3·3, koyu 14.3·4) → [Düzenle] Düzenleme modu (14.1·3) → [Bitti] Program sekmesi
+A · Programlar ve yeni program (Program sekmesi · Programlar satırı): Programlar (14.1·2) → [Yeni Program] Günler (14.2·1) → [Devam Et] Izgara (14.2·2) → [boş saate dokun] Konu seç · Çanta (14.2·3; öğrencide Çantam 14.2·6) → [Ekle, Devam Et] Ad ve motto (14.2·4) → [Programı Kaydet] Kaydedildi (14.2·5)
+B · Puan kartında ham puan (13.6 Deneme Detay · Genel): Genel · AYT (14.4·1; TYT 14.4·2, koyu 14.4·3, iskelet 14.4·4, koç bağlamı 14.4·5)
+C · Edebiyat (13.8 Derslerim › Türk Dili ve Edebiyatı): Dönemler (14.5·1; iskelet 14.7·1) → [dönem satırı] Dönem detayı (14.5·2; akordeon yükleniyor 14.5·3, bölüm hatası 14.7·2) → [yazar satırı] Yazar sheet'i (14.6·1; durum bilinmiyor 14.6·3, çevrimdışı 14.7·3, koyu 14.7·4) → [Öğrendim] Öğrendim sonrası (14.6·2)
+
+## 13.14 Tur 12 · Öğrenci ekleme, e-posta, koç ve kod (SMAP-14)
+D · Öğrenci eklerken avatar (13.11 Öğrencilerim · +): Form · avatar (14.8·1; çevrimdışı 14.8·4, kaydetme hatası 14.8·5, koyu 14.12·1) → [Öğrenciyi Kaydet] Eklendi (14.8·2) → [Tamam] Listede (14.8·3)
+E · E-posta değişikliği (13.10 Hesap › Profil › Düzenle): Yeni adres (14.9·1; geçersiz adres 14.9·2, çevrimdışı 14.9·4, kaydetme hatası 14.9·5, koyu 14.12·2) → [Kaydet] Kaydedildi (14.9·3)
+F · Koçu değiştirmek (13.10 Hesap › Koçluk): Koçun var (14.10·1; çevrimdışı 14.10·6, koyu 14.12·3) → [Koçu Değiştir] Yeni kod (14.10·2; kod bulunamadı 14.10·3) → [Koçu Değiştir] Değiştiriliyor (14.10·4) ⇢ Yeni koç (14.10·5)
+G · Koçun koçluk kodu (13.11 Koç · Hesap): Hesap · Koçluk kodun (14.11·1) → [satıra dokun] Kod sheet'i (14.11·2; yükleniyor 14.11·4, hata 14.11·5, çevrimdışı 14.11·6, koyu 14.12·4) → [Kopyala] Kopyalandı (14.11·3)

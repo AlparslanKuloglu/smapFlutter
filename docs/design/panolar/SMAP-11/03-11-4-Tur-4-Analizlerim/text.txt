@@ -1,0 +1,113 @@
+11.4 · Notlar · Tur 4 Notları
+
+11.4 · Notlar · Tur 4
+
+Tur 4 · Analizlerim
+
+"6 · Analizlerim"e 4 pano (6.1–6.4) kondu: Genel (TYT, AYT, süzgeç), Denemelerim (liste, süz ve sırala, boş), durumlar ve koyu Genel.
+
+Ne değişti, neden
+
+# Değişiklik Çözdüğü sorun Görüntü Pano
+
+1 Kök bantta iki sekme: Genel, Denemelerim; Analiz ve Harita kalktı Dört "sekme"den ikisi "Yakında" diyaloğuna çıkıyordu 19, 22, 23 6.1
+
+2 Süzgeç tek satır, sheet'te sınav, alan, ders Süzgeç sekmelerle aynı biçimde ve satırda; panel çift gölgeli; AYT alanı koda sabitlenmişti 19, 20 6.1
+
+3 Grafik: noktalı çizgi, açık alan, son nokta vurgulu, dokununca balon Eğri çizgi, nokta ve alan yok; ilk yüklemede boş ya da tek nokta 19 6.1
+
+4 Kutularda değişim yalnız son iki denemeden Dört kutuda sabit "+18.2% gecen ay" 19 6.1
+
+5 Türkçe biçimler: 67,79 · 381,40 · 182.430 "118.30", "72.154", "549.81" karışık 19 6.1
+
+6 Veri yoksa kutu yok (AYT ortalama puan ve sıralama) Kutular her zaman doluymuş gibi 19 6.1
+
+7 Denemelerim liste: net en belirgin, D/Y/B küçük, ad kesilmez İki sütunlu ızgara, "67.5 net" ham metin, "Deneme: 1" hapı, "(Test)" eki 21 6.2
+
+8 Tür segmenti, tarih ve sıralama Filtre yoktu (API destekliyordu) 21 6.2
+
+9 Boş, tek deneme, hata, çevrimdışı durumları Yükleme, boş ve hata durumu yoktu; hata yalnız debugPrint envanter 6.2, 6.3
+
+Önceki turların bileşenlerinde genişletmeler
+
+G1
+NetChart (1.4 grafiği) bileşen oldu: değişken nokta sayısı, sınav türüne göre Y ekseni (TYT 0–120, AYT 0–160), balon, son nokta vurgusu.
+
+G2
+ExamRow (1.16 deneme kartının liste hâli): kapak 40 × 54, ad, tür + tarih + yayınevi, küçük D/Y/B, sağda net, favori.
+
+G3
+StatBox (1.16) değişim satırı: ok ikonu + "+3,25 son denemede".
+
+Varsayımlar
+
+Ek D'de karşılığı olmayan ve bu turda verdiğim kararlar. Hiçbiri bir ekranın çizimini engellemiyor.
+
+1
+"AYT · Genel" bütün AYT testlerinin toplam netini gösterir (Ek C geçmişi bu); alan seçimi yalnız ders listesini değiştirir.
+
+2
+AYT ortalama neti Ek C'den hesaplandı: (48,5 + 55 + 59,25 + 67,5) ÷ 4 = 57,56. TYT 67,79 Ek C ile aynı.
+
+3
+Tek ders seçili kutular (toplam D, Y, B, ortalama net) Ek C'de ders bazında geçmiş olmadığı için ayrı kare olarak çizilmedi; düzen aynı, değerler sunucudan.
+
+4
+EA ders listesine Matematik eklendi; eski listede yoktu.
+
+5
+Denemelerim'de adı Ek C'de olmayan denemelerin başlığı tür + "denemesi"; yayınevi ve D/Y/B çizilmedi.
+
+6
+Liste seçildi (ızgara değil): uzun adlar, benzer kapaklar, tarihle tarama.
+
+7
+Tarih süzgeci hazır aralıklar (Tüm tarihler, Son 30 gün, Son 3 ay, Bu eğitim yılı); özel tarih aralığı yok.
+
+8
+Favori yalnız cihazda (Ek D-25); favoriye göre süzme yok.
+
+9
+Tek deneme durumu örnek: yalnız TYT Genel Deneme 9 okunmuşken.
+
+Geliştirici notları
+
+Ekranlar
+
+AnalyticsScreen (RootBand + TabBar: Genel, Denemelerim) · FilterSheet · NetChart (fl_chart LineChart; dotData açık, belowBarData %10, lineTouchData balon) · StatGrid · ExamList (PagedListView, 8'er).
+
+Veri
+
+Süzgeç durumu: sınav, alan (profilden), ders; değişince grafik ve kutular aynı istekten. aimType sabit 2 kaldırılır, kullanıcının alanı kullanılır. Denemelerim: types/nets/dates parametreleri, sort=newest|net.
+
+Hesap
+
+Değişim = son − sondan bir önceki (aynı süzgeçte); iki deneme yoksa satır yok. Ortalama sunucudan.
+
+Erişilebilirlik
+
+Grafiğin tek okunuşu: "TYT net grafiği, 22 Nisan 61,5 netten 28 Eylül 74,75 nete, 6 deneme"; noktalar odaklanabilir, her biri "TYT Genel Deneme 9, 28 Eylül, 74,75 net".
+
+Bölüm 6 denetimi
+
+✓
+Grafikte eksen ve etiket var; hedef çizgisi yok.
+
+✓
+"Geçen ay" hiçbir yerde yok.
+
+✓
+Elmas, coin, seri yok.
+
+✓
+Turuncu yalnız sekme göstergesi, son nokta ve kamera.
+
+✓
+13 pt altı metin yok (alt çubuk etiketi hariç).
+
+✓
+Koyu tema ayrı roller (6.4).
+
+Sıradaki tur
+
+Tur 5: Derslerim, konular ve bilgi kartları ("7 · Derslerim ve Konular", "8 · Bilgi Kartları").

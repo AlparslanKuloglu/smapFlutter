@@ -1,0 +1,49 @@
+Hareket ve Haptik Tablosu
+
+11.15 · Geliştirici Teslimi
+
+Hareket ve Haptik Tablosu
+
+Bütün turlardaki hareket ve haptik notlarının tek tablosu. Süre ve eğri token'ları 11.12'de; haptik sözlüğü: selectionClick, mediumImpact, success, error (iOS UINotificationFeedbackGenerator, Android CONFIRM/REJECT için küçük köprü).
+
+Etkileşimler
+
+Etkileşim Süre Eğri Haptik Hareketi azalt
+
+Düğme basılı 100 ms standard — aynı
+
+Segment, sekme, alt çubuk 250 ms standard selectionClick opaklık 150 ms
+
+Çip, anahtar, onay kutusu, radyo 150 ms standard selectionClick aynı
+
+Akordeon (7.3) 250 ms standard — anında
+
+Sheet açılış / kapanış 350 / 250 ms enter / exit — opaklık 150 ms
+
+Toast 250 ms; 4 sn ya da Geri Al ile 6 sn enter / exit hata türünde error opaklık
+
+Küçülen bant / bar kaydırmaya bağlı (56 pt) linear — aynı
+
+İskelet 1200 ms döngü; 15 sn sonra hata linear — durağan gri
+
+Kamera deklanşörü (4.3) 100 ms, 0,92 ölçek standard mediumImpact ölçek yok
+
+Okuma başarılı / sonuç anı (5.1) anında, sayaç dönmez — success, bir kez aynı
+
+Form ve giriş hatası 150 ms kenar; kod kutuları sallanır (2.4) standard error sallanma yok
+
+İlk eksiğe kaydırma (7.3) 350 ms standard — doğrudan konum
+
+Kart kaydırma (8.1) parmağı izler; eşik %30 ya da 800 px/sn standard — çapraz geçiş
+
+Öğrendim (8.1) 250 ms sağa çıkış exit success opaklık
+
+Program bloğu ekleme / çıkarma (3.5–3.6) 250 ms enter / exit selectionClick opaklık
+
+Günü Sıfırla (3.6) satırlar 150 ms aralıkla söner exit selectionClick anında
+
+Çevrimdışı şeridi 250 ms iner; bağlanınca 2 sn "Bağlandın" enter — opaklık
+
+Sayfa geçişi 350 ms platform platform — opaklık
+
+Hesabı Sil (9.4) tam ekran spinner; geri kapalı linear — aynı

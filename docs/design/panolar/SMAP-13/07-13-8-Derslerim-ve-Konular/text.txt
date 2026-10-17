@@ -1,0 +1,89 @@
+13.8 Derslerim ve Konular
+
+13.8 · Ekran Akışı
+
+Derslerim ve Konular
+
+TYT ve AYT dersleri, ders detayı ve Eksiklerim süzgeci, konu detayı ve kart sheet'i; AYT'de Edebiyat yazarları.
+
+Okun üstü: dokunulan yer Kesikli ok: kendiliğinden geçiş Üst sıra ana yol; altında o ekranın durumları ve koyu teması Kod: kaynak pano ve kare
+
+TYT · konu çalışma
+
+Buradan Alt çubuk · Derslerim
+
+1 Derslerim · TYT
+
+7.1 · kare 1
+
+Durumlar · 3
+
+Web'de sheet'i 7.1 · kare 3
+
+İskelet 7.5 · kare 1
+
+Çevrimdışı 7.5 · kare 4
+
+Türkçe
+
+2 Ders detayı · Türkçe
+
+7.2 · kare 1
+
+Durumlar · 2
+
+Tarih, SOS-2 7.2 · kare 3
+
+Süzgeç boş 7.5 · kare 2
+
+Eksiklerim (31)
+
+3 Eksiklerim süzgeci
+
+7.2 · kare 2
+
+konuya dokun
+
+4 Konu detayı
+
+7.3 · kare 1
+
+Durumlar ve koyu tema · 2
+
+Konu yüklenemedi 7.5 · kare 3
+
+Konu detayı · koyu 7.6 · kare 1
+
+aşağı kaydır
+
+5 Okuma · kaydırılmış
+
+7.3 · kare 2
+
+Kartı Aç
+
+6 Kart sheet'i
+
+7.3 · kare 3
+
+Sonra Kartlarım: 13.9 Bilgi Kartları
+
+AYT · Edebiyat
+
+Buradan Derslerim · AYT segmenti
+
+1 Derslerim · AYT
+
+7.1 · kare 2
+
+Türk Dili ve Edebiyatı
+
+2 Yazar ve Eserler
+
+7.4 · kare 1
+
+Namık Kemal
+
+3 Yazar sheet'i
+
+7.4 · kare 2

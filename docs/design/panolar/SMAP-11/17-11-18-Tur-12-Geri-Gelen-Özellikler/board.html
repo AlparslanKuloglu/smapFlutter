@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="tr"><head><style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  </style>
+<meta charset="utf-8">
+<title>11.18 · Notlar · Tur 12 Notları</title>
+<style>x-dc{display:none!important}</style>
+<style data-dc-tpl="1">/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style><style data-dc-tpl="2">
+body{margin:0}
+*{box-sizing:border-box}
+h2{margin:0;font-size:28px;line-height:36px;font-weight:800;letter-spacing:-0.3px}
+h3{margin:0;font-size:20px;line-height:28px;font-weight:700}
+.ld{margin:8px 0 0;font-size:16px;line-height:26px;color:#556173;max-width:1100px}
+.nt{width:100%;border-collapse:collapse;table-layout:fixed}
+.nt th{font-size:13px;line-height:20px;font-weight:600;color:#556173;text-align:left;padding:10px 12px;border-bottom:1px solid #C3CBD6}
+.nt td{font-size:14px;line-height:21px;padding:10px 12px;border-bottom:1px solid #E8ECF1;vertical-align:top;color:#1B2232}
+.nt td.n{font-weight:700;color:#556173}
+.nt td.m{color:#556173}
+.nt td.b{font-weight:600}
+.ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0}
+.ol li{display:grid;grid-template-columns:40px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #E8ECF1;font-size:14px;line-height:21px}
+.ol li span{font-weight:700;color:#556173}
+pre{margin:0;padding:20px 24px;border-radius:16px;background:#0F1420;color:#EDF1F6;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:13px;line-height:20px;white-space:pre-wrap;overflow:hidden}
+pre .c{color:#8B9AAF}
+.kv{display:grid;grid-template-columns:260px 1fr;font-size:14px;line-height:21px}
+.kv div{padding:8px 0;border-bottom:1px solid #E8ECF1}
+.kv div:nth-child(odd){font-weight:700}
+.ck{display:grid;grid-template-columns:28px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #E8ECF1;font-size:14px;line-height:21px}
+.ok{color:#0B6E3E;font-weight:800}
+.c2{column-count:2;column-gap:48px}
+.c2 > *{break-inside:avoid}
+.ol.c2{display:block}
+</style></head>
+<body>
+<div id="dc-root"><div class="sc-host" data-sc-name="board17"><div data-dc-tpl="3" style="width: 1440px; height: 4080px; background: rgb(255, 255, 255); color: rgb(27, 34, 50); font-family: &quot;Plus Jakarta Sans&quot;, system-ui, sans-serif; padding: 64px; display: flex; flex-direction: column; gap: 48px; font-variant-numeric: tabular-nums;"><header data-dc-tpl="4" style="display: flex; flex-direction: column; gap: 8px;"><div data-dc-tpl="5" style="font-size: 15px; line-height: 20px; font-weight: 600; color: rgb(85, 97, 115);">11.18 · Notlar · Tur 12</div><h1 data-dc-tpl="6" style="margin: 0px; font-size: 36px; line-height: 44px; font-weight: 800; letter-spacing: -0.5px;">Tur 12 · Geri Gelen Özellikler</h1><p data-dc-tpl="7" class="ld">Bugünkü uygulamada çalışan ama yeni tasarımda olmayan yedi özellik mevcut dille geri geldi: koçun öğrencinin programını yönetmesi (A), ham puan (B), Edebiyat'ta eser başına durum (C), öğrenci eklerken avatar (D), doğrulamasız e-posta değişikliği (E), koçu kodla değiştirme (F) ve koçun koçluk kodu sheet'i (G). Eski panolar değişmedi; değişen kareler 14. sayfada "Yerine geçtiği kare" etiketiyle.</p></header><section data-dc-tpl="8" style="display: flex; flex-direction: column; gap: 16px;"><h2 data-dc-tpl="9">Ne değişti, neden</h2><table data-dc-tpl="10" class="nt"><thead data-dc-tpl="11"><tr data-dc-tpl="12"><th data-dc-tpl="13" style="width: 44px;">#</th><th data-dc-tpl="14" style="width: 470px;">Değişiklik</th><th data-dc-tpl="15">Çözdüğü sorun</th><th data-dc-tpl="16" style="width: 120px;">Görüntü</th><th data-dc-tpl="17" style="width: 110px;">Pano</th></tr></thead><tbody data-dc-tpl="18"><tr data-dc-tpl="19"><td data-dc-tpl="20" class="n">1</td><td data-dc-tpl="21" class="b">Koç, öğrencinin Program sekmesinde "Düzenle", Gün | Hafta, satırlar, bilgi kutusu ve Programlar satırını görür; düzenleme 3.6 diliyle</td><td data-dc-tpl="22">10.4·3 salt okunurdu; bugünkü uygulamada koç öğrencinin programını açıp düzenliyor</td><td data-dc-tpl="23" class="m">envanter</td><td data-dc-tpl="24" class="m">14.1, 14.3</td></tr><tr data-dc-tpl="25"><td data-dc-tpl="26" class="n">2</td><td data-dc-tpl="27" class="b">Koç öğrenci için yeni program kurar; dört adımda bağlam şeridi, kayıtta "Program Alparslan'ın hesabına kaydedildi."</td><td data-dc-tpl="28">Yeni tasarımda koçun öğrenciye program kurma yolu yoktu</td><td data-dc-tpl="29" class="m">envanter</td><td data-dc-tpl="30" class="m">14.2</td></tr><tr data-dc-tpl="31"><td data-dc-tpl="32" class="n">3</td><td data-dc-tpl="33" class="b">Çanta satırında eksik sayısı ve "Son denemede…" satırı kalktı; koçta ve öğrencide aynı satır</td><td data-dc-tpl="34">Çanta verisinde bu alanlar yok; 3.5·3 olmayan veriyi gösteriyordu</td><td data-dc-tpl="35" class="m">—</td><td data-dc-tpl="36" class="m">14.2</td></tr><tr data-dc-tpl="37"><td data-dc-tpl="38" class="n">4</td><td data-dc-tpl="39" class="b">Puan kartına ham puan ve ham puan sırası; ince ayraçla ikinci satır</td><td data-dc-tpl="40">Deneme satırında ham puan ve sırası geliyordu, ekranda yoktu</td><td data-dc-tpl="41" class="m">24, 25</td><td data-dc-tpl="42" class="m">14.4</td></tr><tr data-dc-tpl="43"><td data-dc-tpl="44" class="n">5</td><td data-dc-tpl="45" class="b">Edebiyat: dönem → alt başlık → yazar → eser; eser başına Eksik, Öğrendim ve Biliyorsun</td><td data-dc-tpl="46">7.4'te yazar düzeyinde tek "Öğrendim" vardı; bugünkü uygulama eser başına durum tutuyor</td><td data-dc-tpl="47" class="m">envanter</td><td data-dc-tpl="48" class="m">14.5–14.7</td></tr><tr data-dc-tpl="49"><td data-dc-tpl="50" class="n">6</td><td data-dc-tpl="51" class="b">Öğrenci eklerken 7 avatardan biri seçilir; öğrenci listede bu avatarla görünür</td><td data-dc-tpl="52">Bugünkü öğrenci ekleme diyaloğunda avatar seçici var, 10.3'te yoktu</td><td data-dc-tpl="53" class="m">envanter</td><td data-dc-tpl="54" class="m">14.8</td></tr><tr data-dc-tpl="55"><td data-dc-tpl="56" class="n">7</td><td data-dc-tpl="57" class="b">E-posta Kaydet'le hemen değişir; doğrulama kodu adımı kalktı</td><td data-dc-tpl="58">9.2 sunucuda olmayan bir doğrulama kodu varsayıyordu; bugünkü uygulama doğrudan kaydediyor</td><td data-dc-tpl="59" class="m">32</td><td data-dc-tpl="60" class="m">14.9</td></tr><tr data-dc-tpl="61"><td data-dc-tpl="62" class="n">8</td><td data-dc-tpl="63" class="b">"Koçu Değiştir": yeni kodla tek adımda koç değişir; kaldırma tehlikeli onayla kalır</td><td data-dc-tpl="64">Bugünkü Hesap Bilgileri'ndeki "Değiştir" yeni tasarımda yoktu; yalnız kaldırma vardı</td><td data-dc-tpl="65" class="m">32</td><td data-dc-tpl="66" class="m">14.10</td></tr><tr data-dc-tpl="67"><td data-dc-tpl="68" class="n">9</td><td data-dc-tpl="69" class="b">Koçun Hesap'ındaki kod satırı sheet açar: kod, koça göre açıklama, Kopyala ve Paylaş; iskelet, hata ve çevrimdışı</td><td data-dc-tpl="70">Bugünkü "Koçluk Kodu Nedir?" diyaloğunun koç metni yeni tasarımda yoktu</td><td data-dc-tpl="71" class="m">envanter</td><td data-dc-tpl="72" class="m">14.11</td></tr><tr data-dc-tpl="73"><td data-dc-tpl="74" class="n">10</td><td data-dc-tpl="75" class="b">D–G ana ekranlarının koyu teması; Tur 12'nin 55 karesi iki akış panosunda</td><td data-dc-tpl="76">Her özelliğin koyu karesi ve akıştaki yeri görünsün</td><td data-dc-tpl="77" class="m">—</td><td data-dc-tpl="78" class="m">14.12, 13.13–13.14</td></tr></tbody></table></section><section data-dc-tpl="79" style="display: flex; flex-direction: column; gap: 12px;"><h2 data-dc-tpl="80">Önceki turların bileşenlerinde genişletmeler</h2><ol data-dc-tpl="81" class="ol"><li data-dc-tpl="82"><span data-dc-tpl="83">G1</span><div data-dc-tpl="84"><b data-dc-tpl="85">BarAction</b> içerik içi varyant: 40 pt çerçeveli, başlık satırında ("Düzenle"); koçta Program başlığında (14.1).</div></li><li data-dc-tpl="86"><span data-dc-tpl="87">G2</span><div data-dc-tpl="88"><b data-dc-tpl="89">ContextStrip</b> tam ekran akışlarda barın hemen altında (14.2); çevrimdışı şeridi onun üstünde (14.3).</div></li><li data-dc-tpl="90"><span data-dc-tpl="91">G3</span><div data-dc-tpl="92"><b data-dc-tpl="93">ExamHeader</b> puan bloğu: ince ayraç ve ham puan satırı <span data-dc-tpl="94" class="tk">metric-sm</span>, yalnız değer varsa (14.4).</div></li><li data-dc-tpl="95"><span data-dc-tpl="96">G4</span><div data-dc-tpl="97"><b data-dc-tpl="98">AuthorSheet</b> eser satırı durumlu: EksikTag ve "Öğrendim" metin düğmesi ya da ✓ "Biliyorsun"; durum yoksa yalnız ad (14.6).</div></li><li data-dc-tpl="99"><span data-dc-tpl="100">G5</span><div data-dc-tpl="101"><b data-dc-tpl="102">Accordion</b> açılınca yükler: içeride satır iskeleti ve bölüm hatası (14.5, 14.7).</div></li><li data-dc-tpl="103"><span data-dc-tpl="104">G6</span><div data-dc-tpl="105"><b data-dc-tpl="106">AvatarPicker</b> satır varyantı: form içinde 7 × 44 pt, sayaç "4 / 7" (14.8).</div></li><li data-dc-tpl="107"><span data-dc-tpl="108">G7</span><div data-dc-tpl="109"><b data-dc-tpl="110">CoachCard</b> altında "Koçu Değiştir" çerçeveli düğmesi; görüşme yoksa satır çizilmez (14.10).</div></li><li data-dc-tpl="111"><span data-dc-tpl="112">G8</span><div data-dc-tpl="113"><b data-dc-tpl="114">CodeCard</b> sheet hâli: kod <span data-dc-tpl="115" class="tk">metric-md</span>, koça göre açıklama, Kopyala ve Paylaş (14.11).</div></li><li data-dc-tpl="116"><span data-dc-tpl="117">G9</span><div data-dc-tpl="118"><b data-dc-tpl="119">SettingsRow</b> değer varyantı: "Programlar · 3 program" ve "Koçluk kodun · MOZK-4821" (14.1, 14.11).</div></li><li data-dc-tpl="120"><span data-dc-tpl="121">G10</span><div data-dc-tpl="122"><b data-dc-tpl="123">Toast</b> 1.22 kalıbı birebir: tür ikonu, "Geri Al" beyaz kalın ve ayraçlı (14.2, 14.6, 14.8–14.11).</div></li></ol></section><section data-dc-tpl="124" style="display: flex; flex-direction: column; gap: 12px;"><h2 data-dc-tpl="125">Varsayımlar</h2><p data-dc-tpl="126" class="ld" style="margin: 0px;">Ek D'de karşılığı olmayan ve bu turda verdiğim kararlar. Hiçbiri bir ekranın çizimini engellemiyor.</p><ol data-dc-tpl="127" class="ol"><li data-dc-tpl="128"><span data-dc-tpl="129">1</span><div data-dc-tpl="130">Tam ekran akışlarda bağlam şeridi barın hemen altında, ekran başlığının üstünde (10.4 düzeni).</div></li><li data-dc-tpl="131"><span data-dc-tpl="132">2</span><div data-dc-tpl="133">14.1·1 kaydırılmış hâlde çizildi: ad bara iner, şerit ve sekmeler yapışır; InfoBox ve Programlar satırı aynı karede görünsün diye.</div></li><li data-dc-tpl="134"><span data-dc-tpl="135">3</span><div data-dc-tpl="136">Programlar satırı SettingsRow değer varyantı (tek satır, 56 pt); yalnız program varsa çizilir.</div></li><li data-dc-tpl="137"><span data-dc-tpl="138">4</span><div data-dc-tpl="139">Program listesi yeniden eskiye; bu haftanın programı "Bu hafta" etiketli.</div></li><li data-dc-tpl="140"><span data-dc-tpl="141">5</span><div data-dc-tpl="142">Yeni program örneği "Ekim 3. Hafta" / "Az ama her gün", 12–17 Ekim; konu sheet'inin açıldığı saat Pazartesi 15:00. Ek C'de yok.</div></li><li data-dc-tpl="143"><span data-dc-tpl="144">6</span><div data-dc-tpl="145">Kayıttan sonra Program sekmesine dönülür; sekme bu haftanın programında kalır.</div></li><li data-dc-tpl="146"><span data-dc-tpl="147">7</span><div data-dc-tpl="148">Çevrimdışı şeridi bağlam şeridinin üstünde. "Görüşme Planla" çevrimdışında da açık: formu açar, kayıt kendi akışında.</div></li><li data-dc-tpl="149"><span data-dc-tpl="150">8</span><div data-dc-tpl="151">Sunucu, koç oturumundaki program yazmasını öğrencinin hesabına işler (açık soru). İşlemiyorsa 14.1–14.3 bayrakla kapanır, 10.4·3 geçerli kalır.</div></li><li data-dc-tpl="152"><span data-dc-tpl="153">9</span><div data-dc-tpl="154">Öğrenci ve koç aynı anda düzenlerse son kayıt geçerli; çakışma ekranı yok (açık soru).</div></li><li data-dc-tpl="155"><span data-dc-tpl="156">10</span><div data-dc-tpl="157">Öğrenciye bildirim gitmez; metinlerde "bildirildi" yok (açık soru).</div></li><li data-dc-tpl="158"><span data-dc-tpl="159">11</span><div data-dc-tpl="160">Puan kartı hiyerarşisi: yerleştirme puanı metric-md, ham puan metric-sm; ham satır yalnız değer varsa.</div></li><li data-dc-tpl="161"><span data-dc-tpl="162">12</span><div data-dc-tpl="163">TYT puan ve sıraları (384,05 · 176.320. ve 371,90 · 189.004.) Tur 12 örnek verisinden; Ek C'de TYT puanı yok.</div></li><li data-dc-tpl="164"><span data-dc-tpl="165">13</span><div data-dc-tpl="166">Şinasi 3, Ziya Paşa 6 eser ve "Hakkında" metinleri örnek. Yazar fotoğrafı yoksa baş harf, Edebiyat tonlarında.</div></li><li data-dc-tpl="167"><span data-dc-tpl="168">14</span><div data-dc-tpl="169">"Biliyorsun" ✓ ile success renginde. Durumu gelmeyen eserde yalnız ad; sayaçta yalnız "N eser".</div></li><li data-dc-tpl="170"><span data-dc-tpl="171">15</span><div data-dc-tpl="172">"Öğrendim" isteği 6 sn sonra gider; "Geri Al" istemcide (geri alma ucu yok).</div></li><li data-dc-tpl="173"><span data-dc-tpl="174">16</span><div data-dc-tpl="175">Bölüm düzeyi boş durumlarda illüstrasyon yok. Dönem listesinin boş hâli çizilmedi: dönemler müfredattan gelir.</div></li><li data-dc-tpl="176"><span data-dc-tpl="177">17</span><div data-dc-tpl="178">Öğrenci eklerken avatar seçimi zorunlu değil: ilk avatar seçili gelir (bugünkü seçici de böyle).</div></li><li data-dc-tpl="179"><span data-dc-tpl="180">18</span><div data-dc-tpl="181">§7: Zeynep Kaya'nın avatarı 7'den 4. 10.2'de 5 çizilmişti; 14.8·3 10.2·1'in yerine geçer.</div></li><li data-dc-tpl="182"><span data-dc-tpl="183">19</span><div data-dc-tpl="184">E-posta doğrulaması sunucuda yok; adres Kaydet'le hemen değişir (bugünkü uygulama gibi). 9.2 notundaki 6 haneli kod maddesi kalktı; doğrulama gelirse 2.4'ün kod kutuları kullanılır.</div></li><li data-dc-tpl="185"><span data-dc-tpl="186">20</span><div data-dc-tpl="187">Yeni adres örneği alparslan.kuloglu@ornek.com (§7); hatalı örnek "alparslan.kuloglu@ornek".</div></li><li data-dc-tpl="188"><span data-dc-tpl="189">21</span><div data-dc-tpl="190">Koç değişikliği ayrı onay sormaz: kodu yazmak ve "Koçu Değiştir" yeterli, sonucu bilgi kutusu söyler. Kaldırma (9.5·2) tehlikeli onayla kalır.</div></li><li data-dc-tpl="191"><span data-dc-tpl="192">22</span><div data-dc-tpl="193">Ayşe Demir'in avatarı 6 (örnek). Henüz görüşmesi olmadığı için görüşme satırı çizilmedi.</div></li><li data-dc-tpl="194"><span data-dc-tpl="195">23</span><div data-dc-tpl="196">Hatalı kod örneği AYDM-3370 (rakamları yer değiştirmiş AYDM-3307).</div></li><li data-dc-tpl="197"><span data-dc-tpl="198">24</span><div data-dc-tpl="199">Açık soru: addCoach yeni kodla eski bağlantıyı kendisi kaldırıyor mu? Kaldırmıyorsa istemci önce deleteCoach çağırır; ekran aynı kalır.</div></li><li data-dc-tpl="200"><span data-dc-tpl="201">25</span><div data-dc-tpl="202">Koçun Hesap'ındaki kod satırı değerli SettingsRow oldu; Kopyala ve Paylaş ikonları sheet'e taşındı, satır tek dokunma alanı.</div></li><li data-dc-tpl="203"><span data-dc-tpl="204">26</span><div data-dc-tpl="205">Kod yenileme yok; bugünkü uygulamada da yok. Kod refCode olarak oturum yanıtıyla gelir ve cihazda saklanır.</div></li><li data-dc-tpl="206"><span data-dc-tpl="207">27</span><div data-dc-tpl="208">Tur 12 notları 11.18 numarasıyla: 11.17, Ek · Ekran Akışı panosunda kullanılıyor.</div></li><li data-dc-tpl="209"><span data-dc-tpl="210">28</span><div data-dc-tpl="211">Akış iki panoya bölündü (13.13 A–C, 13.14 D–G): tek panoda yükseklik 8000 pt sınırını aşıyordu. İkisi de 14. sayfanın sonunda.</div></li><li data-dc-tpl="212"><span data-dc-tpl="213">29</span><div data-dc-tpl="214">Ek panolar (11.13 ek, 11.14 ek, 11.16 ek) eski panolara dokunmadan 11. sayfada, Tur 12 notlarının yanında.</div></li><li data-dc-tpl="215"><span data-dc-tpl="216">30</span><div data-dc-tpl="217">14.4 beş kare: puan kartının yüksekliği değiştiği için iskelet (5.8·1) ve koç karesi (10.4·4) de yeniden çizildi.</div></li></ol></section><section data-dc-tpl="218" style="display: flex; flex-direction: column; gap: 20px;"><h2 data-dc-tpl="219">Geliştirici notları</h2><div data-dc-tpl="220" style="display: flex; flex-direction: column; gap: 6px;"><h3 data-dc-tpl="221">Kapsam</h3><p data-dc-tpl="222" style="margin: 0px; font-size: 14px; line-height: 22px; color: rgb(27, 34, 50);">Yeni bileşen adı yok; bütün değişiklikler 11.13'teki adların varyantı (11.13 ek). Eski panolar değişmedi; yerine geçen kareler 14. sayfada etiketli: 10.4·3, 10.4·4, 3.5·3, 5.3·1, 5.8·1, 5.9·1, 7.4·1, 7.4·2, 10.3·1, 10.3·3, 10.2·1, 9.2·1, 9.2·2, 9.5·1, 9.1·4.</p></div><div data-dc-tpl="223" style="display: flex; flex-direction: column; gap: 6px;"><h3 data-dc-tpl="224">Uçlar</h3><p data-dc-tpl="225" style="margin: 0px; font-size: 14px; line-height: 22px; color: rgb(27, 34, 50);">Program: <code data-dc-tpl="226">POST /student/addNewProgram?studentId=</code>, Çanta <code data-dc-tpl="227">POST /student/getMyWeeklies?studentId=</code>, Dersler <code data-dc-tpl="228">GET /student/getAllMainSubjects?studentId=</code>. Puan: <code data-dc-tpl="229">points[]</code>, <code data-dc-tpl="230">ranks[]</code>, <code data-dc-tpl="231">pointsHam[]</code>, <code data-dc-tpl="232">ranksHam[]</code>. Edebiyat: <code data-dc-tpl="233">yazarEserMainSubjects</code>, <code data-dc-tpl="234">getSubSubjects</code>, <code data-dc-tpl="235">getSubjectAuthors</code>, <code data-dc-tpl="236">learnedItem</code>. Koç: <code data-dc-tpl="237">addCoach?code=</code>, <code data-dc-tpl="238">deleteCoach</code>, <code data-dc-tpl="239">getStudentsCoach</code>; kod <code data-dc-tpl="240">refCode</code>. Öğrenci kaydında avatar <code data-dc-tpl="241">photo</code>.</p></div><div data-dc-tpl="242" style="display: flex; flex-direction: column; gap: 6px;"><h3 data-dc-tpl="243">Kil görseller</h3><p data-dc-tpl="244" style="margin: 0px; font-size: 14px; line-height: 22px; color: rgb(27, 34, 50);">Paylaştığın kaynak görsel 950 × 560 px; her kil 140 × 140 px. Bu 1x (128–160 pt) için yeter; 2x ve 3x için kaynakta piksel yok, büyütmek bulanıklığı gidermez. Gerekli olan: 11 görselin özgün çıktısı, en az 480 × 480 px (L 160 pt × 3), köşeleri saydam PNG ya da WebP. Adlar: kitap, islemler, piramit, atom, erlenmeyer, yaprak, sutun, kure, hokka, ampul, harita. Flutter yerleşimi: <code data-dc-tpl="245">assets/illustrations/clay/</code> altında 1x, <code data-dc-tpl="246">2.0x/</code> ve <code data-dc-tpl="247">3.0x/</code> klasörleri. 1x dosyaları bu turla teslim edildi.</p></div><div data-dc-tpl="248" style="display: flex; flex-direction: column; gap: 6px;"><h3 data-dc-tpl="249">Akış</h3><p data-dc-tpl="250" style="margin: 0px; font-size: 14px; line-height: 22px; color: rgb(27, 34, 50);">13.13 (A–C) ve 13.14 (D–G) 14. sayfanın sonunda; 55 karenin her biri bir kez yer alır. Kod satırı kaynak pano ve kare; 13.x ile aynı FlowStep, FlowArrow ve FlowChip.</p></div></section><section data-dc-tpl="251" style="display: flex; flex-direction: column; gap: 12px;"><h2 data-dc-tpl="252">Bölüm 6 denetimi</h2><div data-dc-tpl="253" class="ck"><span data-dc-tpl="254" class="ok">✓</span><div data-dc-tpl="255">Emoji, büyük harfli düğme ve iç kod yok; metinler "sen" diliyle, "İptal" yerine "Vazgeç".</div></div><div data-dc-tpl="256" class="ck"><span data-dc-tpl="257" class="ok">✓</span><div data-dc-tpl="258">Hata metni her yerde "Bağlantını kontrol edip tekrar dene."; yükleme hatalarında "Tekrar Dene".</div></div><div data-dc-tpl="259" class="ck"><span data-dc-tpl="260" class="ok">✓</span><div data-dc-tpl="261">Her yeni ekran ve bölümde iskelet, boş, hata ve çevrimdışı durumu ya da neden olmadığını söyleyen not var.</div></div><div data-dc-tpl="262" class="ck"><span data-dc-tpl="263" class="ok">✓</span><div data-dc-tpl="264">Koç ekranlarında bağlam şeridi; tam ekran akışlarda barın altında.</div></div><div data-dc-tpl="265" class="ck"><span data-dc-tpl="266" class="ok">✓</span><div data-dc-tpl="267">Ekranda tek birincil eylem; Kopyala ve Paylaş gibi eşit eylemler çerçeveli.</div></div><div data-dc-tpl="268" class="ck"><span data-dc-tpl="269" class="ok">✓</span><div data-dc-tpl="270">Sayılar Türkçe biçimde (412,63 · 48.215.); Ek C dışı değerler T12 varsayımlarında.</div></div><div data-dc-tpl="271" class="ck"><span data-dc-tpl="272" class="ok">✓</span><div data-dc-tpl="273">13 pt altı metin yok; yalnız alt çubuk etiketi 12 pt (kit, 1.19).</div></div><div data-dc-tpl="274" class="ck"><span data-dc-tpl="275" class="ok">✓</span><div data-dc-tpl="276">Blur yalnız alt çubukta ve perdede.</div></div><div data-dc-tpl="277" class="ck"><span data-dc-tpl="278" class="ok" style="color: rgb(138, 90, 0);">!</span><div data-dc-tpl="279">Tur 12 panoları (SMAP-14): o gelene kadar A–G özellikleri mevcut kitle en sade hâliyle yapıldı.</div></div><div data-dc-tpl="280" class="ck"><span data-dc-tpl="281" class="ok" style="color: rgb(138, 90, 0);">!</span><div data-dc-tpl="282">Kil illüstrasyonların 2x/3x dosyaları: şu an bulanık görünüyorlar; özgün çıktılar gelince değişir (Geliştirici notları).</div></div><div data-dc-tpl="283" class="ck"><span data-dc-tpl="284" class="ok" style="color: rgb(138, 90, 0);">!</span><div data-dc-tpl="285">Açık sorular: koçun yazmasının öğrenci hesabına işlenmesi (T12.8), eş zamanlı düzenleme (T12.9), addCoach'un eski bağlantıyı kaldırması (T12.24), AYT sırasının hangi puan türüne ait olduğu (14.4).</div></div></section></div></div></div>
+
+
+
+
+
+</body></html>

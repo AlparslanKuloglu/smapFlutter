@@ -1,0 +1,204 @@
+14.10 Koçluk Koçu Değiştir
+
+14.10 · Tur 12 · Geri Gelen Özellikler
+
+Koçluk · Koçu Değiştir · 6 Kare
+
+Bugünkü uygulamadaki "Değiştir" geri geldi: öğrenci yeni koçunun kodunu girer, bağlantı tek adımda yeni koça geçer.
+
+Koçluk
+
+Mehmet Özkan
+
+Koçun
+
+Sıradaki görüşme
+
+12 Ekim 2026 Pazartesi, 16:00
+
+Mehmet Özkan denemelerini, analizlerini ve programını görebilir.
+
+Koçu Değiştir
+Bağlantıyı Kaldır
+
+Anasayfa Analizlerim
+Okut
+Derslerim Hesap
+
+1 · Koçun var Kartın altında "Koçu Değiştir" (çerçeveli, ArrowsLeftRight) ve tehlikeli metin düğmesi "Bağlantıyı Kaldır". Yerine geçtiği kare: 9.5·1
+
+Koçluk
+
+Mehmet Özkan
+
+Koçun
+
+Sıradaki görüşme
+
+12 Ekim 2026 Pazartesi, 16:00
+
+Mehmet Özkan denemelerini, analizlerini ve programını görebilir.
+
+Koçu Değiştir
+Bağlantıyı Kaldır
+
+Anasayfa Analizlerim
+Okut
+Derslerim Hesap
+
+Koçunu değiştir
+
+Yeni koçunun verdiği kodu gir.
+
+Koçluk kodu
+AYDM-3307
+
+4 harf ve 4 rakam; tire kendiliğinden gelir.
+
+Mehmet Özkan'la bağlantın kalkar; gelişimini artık göremez. Yeni koçun denemelerini, analizlerini ve programını görür.
+
+Koçu Değiştir
+
+2 · Yeni kod Sheet: kod alanı 9.5·3'teki maskeyle (AAAA-0000). Sonuç bilgi kutusunda; ayrı onay sorulmaz, düğme eylemi söyler.
+
+Koçluk
+
+Mehmet Özkan
+
+Koçun
+
+Sıradaki görüşme
+
+12 Ekim 2026 Pazartesi, 16:00
+
+Mehmet Özkan denemelerini, analizlerini ve programını görebilir.
+
+Koçu Değiştir
+Bağlantıyı Kaldır
+
+Anasayfa Analizlerim
+Okut
+Derslerim Hesap
+
+Koçunu değiştir
+
+Yeni koçunun verdiği kodu gir.
+
+Koçluk kodu
+AYDM-3370
+
+Bu kodla bir koç bulunamadı. Kodu koçundan yeniden iste.
+
+Mehmet Özkan'la bağlantın kalkar; gelişimini artık göremez. Yeni koçun denemelerini, analizlerini ve programını görür.
+
+Koçu Değiştir
+
+3 · Kod bulunamadı Hata alanın altında, çözüm söyler; kod korunur, odak alanda.
+
+Koçluk
+
+Mehmet Özkan
+
+Koçun
+
+Sıradaki görüşme
+
+12 Ekim 2026 Pazartesi, 16:00
+
+Mehmet Özkan denemelerini, analizlerini ve programını görebilir.
+
+Koçu Değiştir
+Bağlantıyı Kaldır
+
+Anasayfa Analizlerim
+Okut
+Derslerim Hesap
+
+Koçunu değiştir
+
+Yeni koçunun verdiği kodu gir.
+
+Koçluk kodu
+AYDM-3307
+
+4 harf ve 4 rakam; tire kendiliğinden gelir.
+
+Mehmet Özkan'la bağlantın kalkar; gelişimini artık göremez. Yeni koçun denemelerini, analizlerini ve programını görür.
+
+4 · Değiştiriliyor Düğmede spinner; alan salt okunur, sheet kapanmaz (1.20 meşgul).
+
+Koçluk
+
+Ayşe Demir
+
+Koçun
+
+Ayşe Demir denemelerini, analizlerini ve programını görebilir.
+
+Koçu Değiştir
+Bağlantıyı Kaldır
+
+Ayşe Demir'e bağlandın.
+
+Anasayfa Analizlerim
+Okut
+Derslerim Hesap
+
+5 · Yeni koç Koç kartı Ayşe Demir; görüşme olmadığı için görüşme satırı yok. Toast "Ayşe Demir'e bağlandın."
+
+Çevrimdışısın. Son kaydedilen veriler gösteriliyor.
+
+Koçluk
+
+Mehmet Özkan
+
+Koçun
+
+Sıradaki görüşme
+
+12 Ekim 2026 Pazartesi, 16:00
+
+Mehmet Özkan denemelerini, analizlerini ve programını görebilir.
+
+Koçu Değiştir
+Bağlantıyı Kaldır
+
+Koçunu değiştirmek ya da bağlantıyı kaldırmak için bağlantı gerekiyor.
+
+Anasayfa Analizlerim
+Okut
+Derslerim Hesap
+
+6 · Çevrimdışı İki eylem de pasif; neden tek satırda. Koç kartı önbellekten.
+
+Kural
+
+Değiştirme tek adım: yeni kod eski bağlantının yerine geçer. Kaldırma (9.5·2) tehlikeli onayla kalır.
+
+Kod alanı büyük harfe çevirir, tireyi koyar; 8 karakter dolmadan düğme pasif.
+
+Eski koçun listesinden öğrenci düşer (Tur 9); koça bildirim gitmez.
+
+Veri
+
+Bugünkü "Değiştir" ile aynı uç: addCoach?code= ; ardından getStudentsCoach kartı yeniler.
+
+Hatalı kodda sunucu yanıtı "Bu kodla bir koç bulunamadı." metnine eşlenir.
+
+Erişilebilirlik ve hareket
+
+Kod alanı: "Koçluk kodu, 4 harf ve 4 rakam".
+
+Başarıda odak koç kartına; success haptiği. Hatada error .
+
+Sheet 350 ms; meşgulken kapatma hareketleri kapalı.
+
+Varsayımlar (T12)
+
+T12.21 Koç değişikliği ayrı onay sormaz: kodu yazmak ve "Koçu Değiştir" yeterli, sonucu bilgi kutusu söyler. Kaldırma (9.5·2) tehlikeli onayla kalır.
+
+T12.22 Ayşe Demir'in avatarı 6 (örnek). Henüz görüşmesi olmadığı için görüşme satırı çizilmedi.
+
+T12.23 Hatalı kod örneği AYDM-3370 (rakamları yer değiştirmiş AYDM-3307).
+
+T12.24 Açık soru: addCoach yeni kodla eski bağlantıyı kendisi kaldırıyor mu? Kaldırmıyorsa istemci önce deleteCoach çağırır; ekran aynı kalır.

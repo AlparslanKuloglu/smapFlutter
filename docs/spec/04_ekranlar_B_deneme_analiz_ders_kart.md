@@ -1090,7 +1090,7 @@ Bu paket önerisi pano notlarından türetilmiştir; panolarda doğrudan bir iş
 
 **Okunan dosyalar:**
 - docs/design/panolar/SMAP-05/*, SMAP-06/*, SMAP-07/*, SMAP-08/*
-- docs/design/panolar/SMAP-11/13-11-14-Teslim-Ekran-Bileşen-Eşlemesi
+- docs/design/panolar/SMAP-11/13-11-14-Ekran-Bileşen-Eşlemesi
 - Bağlam: SMAP-11 11.3, 11.4, 11.5, 11.10, 11.12, 11.13, 11.15, 11.16; SMAP-00 0.1, 0.2
 - lib (repository/analysis_repository.dart, repository/cards_repository.dart, repository/home_repository.dart, features/analytics/**, features/my_card/**, features/root/**, main.dart)
 - mihr_ui paketi (pub) — lib (components/buttons/**, core/widgets/frosted_container.dart, core/theme/shadows/mihr_backdrop_blurs.dart)

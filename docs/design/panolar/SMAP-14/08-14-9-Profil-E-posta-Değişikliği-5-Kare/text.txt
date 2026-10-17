@@ -1,0 +1,214 @@
+14.9 Profil E-posta
+
+14.9 · Tur 12 · Geri Gelen Özellikler
+
+Profil · E-posta Değişikliği · 5 Kare
+
+Bugünkü uygulamadaki gibi e-posta Kaydet'le hemen değişir. 9.2'deki doğrulama kodu varsayımı kalktı: sunucuda karşılığı yok.
+
+Vazgeç
+
+Kaydet
+
+Profil
+
+Avatarı Değiştir
+
+Ad Soyad
+Alparslan Kuloğlu
+
+Kullanıcı adı
+
+alparslan.k
+
+Kullanıcı adı değiştirilemez.
+
+E-posta
+alparslan.kuloglu@ornek.com
+
+Kaydedince hemen değişir; doğru yazdığından emin ol.
+
+Telefon
++90 5XX XXX XX XX
+
+Sınıf 12. Sınıf
+
+Alan Eşit Ağırlık
+
+Anasayfa Analizlerim
+Okut
+Derslerim Hesap
+
+1 · Yeni adres Düzenlemede e-posta alanı odakta; yardım satırı doğrulama olmadığını sezdirmeden uyarır. Kaydet etkin. Yerine geçtiği kare: 9.2·2
+
+Vazgeç
+
+Kaydet
+
+Profil
+
+Avatarı Değiştir
+
+Ad Soyad
+Alparslan Kuloğlu
+
+Kullanıcı adı
+
+alparslan.k
+
+Kullanıcı adı değiştirilemez.
+
+E-posta
+alparslan.kuloglu@ornek
+
+Geçerli bir e-posta adresi gir.
+
+Telefon
++90 5XX XXX XX XX
+
+Sınıf 12. Sınıf
+
+Alan Eşit Ağırlık
+
+Anasayfa Analizlerim
+Okut
+Derslerim Hesap
+
+2 · Geçersiz adres Biçim yanlışsa hata alanın altında; Kaydet pasif. Denetim alandan çıkınca ya da Kaydet'e basınca.
+
+Düzenle
+
+Profil
+
+Avatarı Değiştir
+
+Ad Soyad
+Alparslan Kuloğlu
+
+Kullanıcı adı
+
+alparslan.k
+
+E-posta
+alparslan.kuloglu@ornek.com
+
+Telefon
++90 5XX XXX XX XX
+
+Sınıf
+12. Sınıf
+
+Alan
+Eşit Ağırlık
+
+Profilin güncellendi.
+
+Anasayfa Analizlerim
+Okut
+Derslerim Hesap
+
+3 · Kaydedildi Görüntülemeye döner; yeni adres alanda. Toast "Profilin güncellendi." (4 sn). Yerine geçtiği kare: 9.2·1
+
+Çevrimdışısın. Son kaydedilen veriler gösteriliyor.
+
+Vazgeç
+
+Kaydet
+
+Profil
+
+Kaydetmek için bağlantı gerekiyor; girdiklerin korunuyor.
+
+Avatarı Değiştir
+
+Ad Soyad
+Alparslan Kuloğlu
+
+Kullanıcı adı
+
+alparslan.k
+
+Kullanıcı adı değiştirilemez.
+
+E-posta
+alparslan.kuloglu@ornek.com
+
+Kaydedince hemen değişir; doğru yazdığından emin ol.
+
+Telefon
++90 5XX XXX XX XX
+
+Sınıf 12. Sınıf
+
+Alan Eşit Ağırlık
+
+Anasayfa Analizlerim
+Okut
+Derslerim Hesap
+
+4 · Çevrimdışı Girilenler korunur; Kaydet pasif, neden başlığın altında. Bağlantı gelince Kaydet kendiliğinden etkinleşir.
+
+Vazgeç
+
+Kaydet
+
+Profil
+
+Avatarı Değiştir
+
+Ad Soyad
+Alparslan Kuloğlu
+
+Kullanıcı adı
+
+alparslan.k
+
+Kullanıcı adı değiştirilemez.
+
+E-posta
+alparslan.kuloglu@ornek.com
+
+Kaydedince hemen değişir; doğru yazdığından emin ol.
+
+Telefon
++90 5XX XXX XX XX
+
+Sınıf 12. Sınıf
+
+Alan Eşit Ağırlık
+
+Kaydedilemedi. Bağlantını kontrol edip tekrar dene.
+
+Anasayfa Analizlerim
+Okut
+Derslerim Hesap
+
+5 · Kaydetme hatası Form korunur; hata toast'ı. Sunucu adresi reddederse de aynı genel hata.
+
+Kural
+
+Doğrulama kodu yok: 9.2 notundaki "yeni adrese 6 haneli kod gider" maddesi bu panoyla geçersiz.
+
+Biçim denetimi istemcide: @, alan adı ve uzantı; boşluklar kırpılır, adres küçük harfe çevrilir.
+
+E-posta, diğer profil alanlarıyla aynı Kaydet'te gider; yalnız e-posta değiştiyse de Kaydet etkin.
+
+Veri
+
+Bugünkü Hesap Bilgileri kaydıyla aynı istek; ek uç gerekmez.
+
+Kullanıcı adı ve giriş bu değişiklikten etkilenmez.
+
+Erişilebilirlik
+
+Hata metni alana bağlı okunur; odak hatalı alana gider.
+
+Yardım satırı 13 pt, text-secondary ; hata error ve uyarı ikonu.
+
+Toast canlı bölge; başarıda success haptiği yok, yalnız metin (9.2 ile aynı).
+
+Varsayımlar (T12)
+
+T12.19 E-posta doğrulaması sunucuda yok; adres Kaydet'le hemen değişir (bugünkü uygulama gibi). 9.2 notundaki 6 haneli kod maddesi kalktı; doğrulama gelirse 2.4'ün kod kutuları kullanılır.
+
+T12.20 Yeni adres örneği alparslan.kuloglu@ornek.com (§7); hatalı örnek "alparslan.kuloglu@ornek".

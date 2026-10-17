@@ -3,7 +3,7 @@
 ## 0. Kaynaklar, öncelik sırası ve okuma notları
 
 **Okunan kaynaklar**
-- Teslim panoları: `SMAP-11/12-11-13-Teslim-Bileşen-Listesi` (asıl liste), `SMAP-11/13-11-14-Teslim-Ekran-Bileşen-Eşlemesi`
+- Teslim panoları: `SMAP-11/12-11-13-Bileşen-Listesi` (asıl liste), `SMAP-11/13-11-14-Ekran-Bileşen-Eşlemesi`
 - Tur notları: 11.1–11.11, 11.12 token tablosu, 11.15 hareket/haptik tablosu
 - Kit panoları: `SMAP-01` 1.9–1.26
 - Tur'larda genişleyen bileşenlerin ölçüleri için ekran panolarının markup'ı: SMAP-02…10
@@ -2181,8 +2181,8 @@ Okları "önce bu, sonra şu" diye okuyun. Her katman bir öncekine bağlıdır.
 - §4.5 temizlik.
 
 **Kaynak klasörler:**
-- `docs/design/panolar/SMAP-11/12-11-13-Teslim-Bileşen-Listesi`
-- `docs/design/panolar/SMAP-11/13-11-14-Teslim-Ekran-Bileşen-Eşlemesi`
+- `docs/design/panolar/SMAP-11/12-11-13-Bileşen-Listesi`
+- `docs/design/panolar/SMAP-11/13-11-14-Ekran-Bileşen-Eşlemesi`
 - `docs/design/panolar/SMAP-01/08…25`
 - mihr_ui: `mihr_ui paketi (pub) — lib/components/buttons/`, `mihr_ui paketi (pub) — lib/core/widgets/frosted_container.dart`
 - Avatar listesi: `lib/core/theme/app_colors.dart`

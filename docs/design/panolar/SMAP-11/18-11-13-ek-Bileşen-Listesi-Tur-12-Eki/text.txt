@@ -1,0 +1,33 @@
+Bileşen Listesi · Tur 12 Eki
+
+11.13 ek · Geliştirici Teslimi · Tur 12
+
+Bileşen Listesi · Tur 12 Eki
+
+Tur 12 yeni bileşen adı eklemedi; aşağıdakiler 11.13'teki bileşenlerin bu turda eklenen varyantları (11.18'deki G maddeleri). 11.13 değişmedi; bu tablo onun ekidir.
+
+Varyantlar
+
+Bileşen Kit Tur 12 varyantı Pano
+
+BarAction 1.18 İçerik içi: başlık satırında 40 pt çerçeveli "Düzenle"; pasifte #DCE2E9 / #9AA5B4 14.1, 14.3
+
+ContextStrip 1.18 · Tur 9 Tam ekran akışta barın hemen altında; çevrimdışı şeridi üstünde 14.2, 14.3
+
+ExamHeader Tur 3 Puan bloğu iki satır: yerleştirme metric-md , ince ayraç, ham puan metric-sm 14.4
+
+AuthorSheet · AuthorRow Tur 5 Eser satırı durumlu (EksikTag + "Öğrendim" ya da ✓ "Biliyorsun"); yazar satırında EksikTag 14.5, 14.6
+
+Accordion 1.13 · Tur 5 Açılınca yükleme: satır iskeleti; bölüm hatası akordeonun içinde 14.5, 14.7
+
+AvatarPicker Tur 7–8 Satır varyantı: 7 × 44 pt, sayaç "4 / 7", radyo grubu 14.8
+
+CoachCard Tur 8 Altında "Koçu Değiştir" çerçeveli düğmesi; görüşme yoksa satır yok 14.10
+
+CodeCard Tur 9 Sheet hâli: kod ortada, koça göre açıklama, Kopyala ve Paylaş; iskelet, hata, çevrimdışı 14.11
+
+SettingsRow 1.13 Değer varyantı yeni yerlerde: "Programlar · 3 program", "Koçluk kodun · MOZK-4821" 14.1, 14.11
+
+Toast 1.22 Kalıp birebir: tür ikonu; "Geri Al" beyaz kalın, ayraçlı; sheet açıkken düğmelerin üstünde 14.2, 14.6, 14.8–14.11
+
+Button 1.9 Pasif çerçeveli düğme (#DCE2E9 zemin); yükleniyor hâli birincilde spinner 14.8–14.11

@@ -4,8 +4,8 @@
 
 - **Ana kaynak:** SMAP-11 panoları 00–10 (11.1–11.11, Tur 1–11 notları), 15 (11.16 "Bütün Varsayımlar", toplam 134 varsayım) ve SMAP-12 (12.1–12.3, mağaza görselleri).
 - **Salt okunur çapraz kontroller:**
-  - Brifteki Ek D tablosu: `docs/history/tasarim-paketi/SMAP_Claude_Design_Brifi.md`, satır 917–953. Panolardaki "D-n" atıflarının tam metni burada.
-  - Ekran envanteri: `docs/history/tasarim-paketi/SMAP_Ekran_Envanteri.md`.
+  - Brifteki Ek D tablosu: `docs/design/tasarim-paketi/SMAP_Claude_Design_Brifi.md`, satır 917–953. Panolardaki "D-n" atıflarının tam metni burada.
+  - Ekran envanteri: `docs/design/tasarim-paketi/SMAP_Ekran_Envanteri.md`.
   - 11.15 hareket ve haptik tablosu ile 3.1/3.2 panolarındaki pull-to-refresh notu.
   - `smapFlutter/lib` için endpoint grep'i ve `pubspec.yaml`.
 - **Kod biçimleri:**

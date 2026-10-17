@@ -11,7 +11,7 @@ Derleme: 11 Ekim 2026. Kaynak: SMAP-00…SMAP-12 panoları ve altı çıkarım r
 - **Pano kökü:** `docs/design/panolar/SMAP-NN/<sıra>-<pano-adı>/`. Her klasörde `board.html` (satır içi stiller, asıl ölçü kaynağı), `styles.css` (sınıf kütüphanesi), `text.txt` (metinler ve pano notları), `res/` (woff2 fontlar, js). Aynı adlı tek dosya sürümü: `unpacked/SMAP-NN/<sıra>-<pano-adı>.html`.
 - **PNG:** `docs/design/panolar/png/SMAP-NN_<sıra>-<pano-adı>.png` (108 adet, pano başına bir). Örnek: `png/SMAP-05_00-5-1-Sonuç-Anı-3-kare.png`.
 - **Grup tek dosyası:** `docs/design/SMAP-NN.html`.
-- **Brif ve envanter (salt okunur):** `docs/history/tasarim-paketi/SMAP_Claude_Design_Brifi.md` (Ek D kararları satır 917–953), `.../tasarim-paketi/SMAP_Ekran_Envanteri.md`, `SMAP_Gorsel_Dil.md`, `SMAP_Ekran_Goruntuleri.md`, `ekranlar/`, `magaza/`.
+- **Brif ve envanter (salt okunur):** `docs/design/tasarim-paketi/SMAP_Claude_Design_Brifi.md` (Ek D kararları satır 917–953), `.../tasarim-paketi/SMAP_Ekran_Envanteri.md`, `SMAP_Gorsel_Dil.md`, `SMAP_Ekran_Goruntuleri.md`, `ekranlar/`, `magaza/`.
 - **Kod:** `` (`lib/`, `pubspec.yaml`); mihr_ui `mihr_ui paketi (pub) — lib/` (`components/buttons/`, `core/widgets/frosted_container.dart`, `core/theme/shadows/mihr_backdrop_blurs.dart`).
 - **Geçici markup ağaçları (ikon adları işaretli):** `/private/tmp/claude-501/-Users-rasityilmaz-Desktop-WORK-smap/b90975f6-b800-481f-9352-bfe5ae28f159/scratchpad/out/t_SMAP-0*.txt`.
 
@@ -30,8 +30,10 @@ Derleme: 11 Ekim 2026. Kaynak: SMAP-00…SMAP-12 panoları ve altı çıkarım r
 | SMAP-08 Kartlar | `00-8-1-Kart-Destesi-4-kare`, `01-8-2-Kart-Destesi-Koyu-1-kare` |
 | SMAP-09 Hesap | `00-9-1-Hesap-4-kare`, `01-9-2-Profil-4-kare`, `02-9-3-Şifre-3-kare`, `03-9-4-Hesabı-Sil-5-kare`, `04-9-5-Koçluk-4-kare`, `05-9-6-Bildirimler-3-kare`, `06-9-7-Sözleşmeler-2-kare` |
 | SMAP-10 Koç | `00-10-1-Koç-Anasayfa-4-kare`, `01-10-2-Öğrencilerim-4-kare`, `02-10-3-Öğrenci-Ekle-3-kare`, `03-10-4-Öğrenci-Profili-Koç-Bağlamında-4-kare`, `04-10-5-Görüşmelerim-4-kare`, `05-10-6-Görüşme-Notları-4-kare` |
-| SMAP-11 Teslim | `00`…`10-11-N-Tur-N-Ne-değişti-…` (Tur 1–11 notları), `11-11-12-Teslim-Token-Tablosu`, `12-11-13-Teslim-Bileşen-Listesi`, `13-11-14-Teslim-Ekran-Bileşen-Eşlemesi`, `14-11-15-Teslim-Hareket-ve-Haptik`, `15-11-16-Teslim-Bütün-Varsayımlar` |
+| SMAP-11 Teslim | `00`…`10-11-N-Tur-N-…` (Tur 1–11 notları), `11-11-12-Token-Tablosu-Son-Hâl`, `12-11-13-Bileşen-Listesi`, `13-11-14-Ekran-Bileşen-Eşlemesi`, `14-11-15-Hareket-ve-Haptik-Tablosu`, `15-11-16-Bütün-Varsayımlar`, `16-11-17-Ek-Ekran-Akışı-ve-Onarımlar`, `17-11-18-Tur-12-Geri-Gelen-Özellikler`, `18-11-13-ek-…`, `19-11-14-ek-…`, `20-11-16-ek-Varsayımlar-Tur-12-Eki` (Tur 12 ekleri, T12.1–T12.30) |
 | SMAP-12 Mağaza | `00-12-1-Panorama-7-kare`, `01-12-2-Kesimler-ve-Formatlar-App-Store-ve-Play`, `02-12-3-Önizleme-Şeridi-2-kare` |
+| SMAP-13 Akışlar | `00-13-1-İlk-Açılış-ve-Kayıt` … `11-13-12-Genel-Ekranlar` (ekranlar arası geçişler; metni `panolar/AKIS.md`) |
+| SMAP-14 Tur 12 | `00-14-1-…` … `11-14-12-Koyu-Kareler-D-G-4-Kare`, akışlar `12-13-13-…` (A–C) ve `13-13-14-…` (D–G). "Yerine geçtiği kare" etiketiyle eski kareleri geçersiz kılar |
 
 ### 0.2 Öncelik kuralı (çelişkide üstteki geçerli)
 

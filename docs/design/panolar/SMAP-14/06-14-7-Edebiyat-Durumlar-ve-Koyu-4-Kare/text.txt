@@ -1,155 +1,202 @@
+14.7 Edebiyat Durumlar ve Koyu
+
 14.7 · Tur 12 · Geri Gelen Özellikler
+
 Edebiyat · Durumlar ve Koyu · 4 Kare
+
 İskelet, bölüm hatası, çevrimdışı ve yazar sheet'inin koyu teması.
-Türk Dili ve Edebiyatı 
-Konular
-Yazar ve Eserler 
-Anasayfa
-Analizlerim
+
+Türk Dili ve Edebiyatı
+
+Konular Yazar ve Eserler
+
+Anasayfa Analizlerim
 Okut
-Derslerim
-Hesap
-1 · İskelet
-Başlık ve segment hemen; segment sayacı veri gelince. Satırlar 
-iskelet.
-Tanzimat Dönemi 
-2 eksik eser 
-Birinci Dönem Sanatçıları 
-2 eksik 
-Yazarlar yüklenemedi. 
-Bağlantını kontrol edip tekrar dene. 
-Tekrar Dene 
-İkinci Dönem Sanatçıları 
-Anasayfa
-Analizlerim
+Derslerim Hesap
+
+1 · İskelet Başlık ve segment hemen; segment sayacı veri gelince. Satırlar iskelet.
+
+Tanzimat Dönemi
+
+2 eksik eser
+
+Birinci Dönem Sanatçıları
+
+2 eksik
+
+Yazarlar yüklenemedi.
+
+Bağlantını kontrol edip tekrar dene.
+Tekrar Dene
+
+İkinci Dönem Sanatçıları
+
+Anasayfa Analizlerim
 Okut
-Derslerim
-Hesap
-2 · Bölüm hatası
-Akordeon içinde: "Yazarlar yüklenemedi." ve "Tekrar Dene"; diğer 
-akordeonlar çalışır.
-Çevrimdışısın. Son kaydedilen veriler gösteriliyor. 
-Tanzimat Dönemi 
-2 eksik eser 
-Birinci Dönem Sanatçıları 
-2 eksik 
-Ş 
-Şinasi 
-3 eser 
-NK 
-Namık Kemal 
-8 eser 
-2 eksik 
-ZP 
-Ziya Paşa 
-6 eser 
-İkinci Dönem Sanatçıları 
-Anasayfa
-Analizlerim
-Okut
-Derslerim
-Hesap 
+Derslerim Hesap
+
+2 · Bölüm hatası Akordeon içinde: "Yazarlar yüklenemedi." ve "Tekrar Dene"; diğer akordeonlar çalışır.
+
+Çevrimdışısın. Son kaydedilen veriler gösteriliyor.
+
+Tanzimat Dönemi
+
+2 eksik eser
+
+Birinci Dönem Sanatçıları
+
+2 eksik
+
+Ş
+
+Şinasi
+
+3 eser
+
 NK
-Namık Kemal 
-Tanzimat Dönemi 
-Hakkında 
-Tanzimat Dönemi'nin şair ve yazarı; "vatan şairi" 
-olarak bilinir. Edebiyatı toplumu eğitmenin aracı 
-olarak gördü. 
-Vatan yahut Silistre oyunu sahnelendiğinde 
-büyük ilgi gördü. 
-Eserleri
-8 eser · 2 eksik 
-Roman · 2 
-İntibah
-Eksik
-Öğrendim 
-Öğrendim'i kaydetmek için bağlantı gerekiyor. 
-Cezmi
-Biliyorsun 
-Tiyatro · 6 
-Vatan yahut Silistre
-Eksik
-Öğrendim 
-Gülnihal
-Biliyorsun 
-Akif Bey
-Biliyorsun 
-Zavallı Çocuk
-Biliyorsun 
-Kara Bela
-Biliyorsun 
-Celaleddin Harzemşah
-Biliyorsun
-3 · Çevrimdışı
-Önbellekteki liste; "Öğrendim" pasif ve nedeni ilk eksik eserin 
-altında. OfflineStrip sheet açıkken de görünür.
-Tanzimat Dönemi 
-2 eksik eser 
-Birinci Dönem Sanatçıları 
-2 eksik 
-Ş 
-Şinasi 
-3 eser 
-NK 
-Namık Kemal 
-8 eser 
-2 eksik 
-ZP 
-Ziya Paşa 
-6 eser 
-İkinci Dönem Sanatçıları 
-Anasayfa
-Analizlerim
+
+Namık Kemal
+
+8 eser
+
+2 eksik ZP
+
+Ziya Paşa
+
+6 eser
+
+İkinci Dönem Sanatçıları
+
+Anasayfa Analizlerim
 Okut
-Derslerim
-Hesap 
+Derslerim Hesap
+
 NK
-Namık Kemal 
-Tanzimat Dönemi 
-Hakkında 
-Tanzimat Dönemi'nin şair ve yazarı; "vatan şairi" 
-olarak bilinir. Edebiyatı toplumu eğitmenin aracı 
-olarak gördü. 
-Vatan yahut Silistre oyunu sahnelendiğinde 
-büyük ilgi gördü. 
+
+Namık Kemal
+
+Tanzimat Dönemi
+
+Hakkında
+
+Tanzimat Dönemi'nin şair ve yazarı; "vatan şairi" olarak bilinir. Edebiyatı toplumu eğitmenin aracı olarak gördü.
+
+Vatan yahut Silistre oyunu sahnelendiğinde büyük ilgi gördü.
+
 Eserleri
-8 eser · 2 eksik 
-Roman · 2 
-İntibah
-Eksik
-Öğrendim 
-Cezmi
-Biliyorsun 
-Tiyatro · 6 
-Vatan yahut Silistre
-Eksik
-Öğrendim 
-Gülnihal
-Biliyorsun 
-Akif Bey
-Biliyorsun 
-Zavallı Çocuk
-Biliyorsun 
-Kara Bela
-Biliyorsun 
-Celaleddin Harzemşah
-Biliyorsun
-4 · Koyu
-AuthorSheet koyu: sheet #18263D, Edebiyat koyu tonları 
-(#301A27 / #E494BE), eksik etiketi #F2C46D / #33270F, ✓ 
-#52CC8E.
+8 eser · 2 eksik
+
+Roman · 2
+
+İntibah Eksik Öğrendim
+
+Öğrendim'i kaydetmek için bağlantı gerekiyor.
+
+Cezmi Biliyorsun
+
+Tiyatro · 6
+
+Vatan yahut Silistre Eksik Öğrendim
+
+Gülnihal Biliyorsun
+
+Akif Bey Biliyorsun
+
+Zavallı Çocuk Biliyorsun
+
+Kara Bela Biliyorsun
+
+Celaleddin Harzemşah Biliyorsun
+
+3 · Çevrimdışı Önbellekteki liste; "Öğrendim" pasif ve nedeni ilk eksik eserin altında. OfflineStrip sheet açıkken de görünür.
+
+Tanzimat Dönemi
+
+2 eksik eser
+
+Birinci Dönem Sanatçıları
+
+2 eksik
+
+Ş
+
+Şinasi
+
+3 eser
+
+NK
+
+Namık Kemal
+
+8 eser
+
+2 eksik ZP
+
+Ziya Paşa
+
+6 eser
+
+İkinci Dönem Sanatçıları
+
+Anasayfa Analizlerim
+Okut
+Derslerim Hesap
+
+NK
+
+Namık Kemal
+
+Tanzimat Dönemi
+
+Hakkında
+
+Tanzimat Dönemi'nin şair ve yazarı; "vatan şairi" olarak bilinir. Edebiyatı toplumu eğitmenin aracı olarak gördü.
+
+Vatan yahut Silistre oyunu sahnelendiğinde büyük ilgi gördü.
+
+Eserleri
+8 eser · 2 eksik
+
+Roman · 2
+
+İntibah Eksik Öğrendim
+
+Cezmi Biliyorsun
+
+Tiyatro · 6
+
+Vatan yahut Silistre Eksik Öğrendim
+
+Gülnihal Biliyorsun
+
+Akif Bey Biliyorsun
+
+Zavallı Çocuk Biliyorsun
+
+Kara Bela Biliyorsun
+
+Celaleddin Harzemşah Biliyorsun
+
+4 · Koyu AuthorSheet koyu: sheet #18263D, Edebiyat koyu tonları (#301A27 / #E494BE), eksik etiketi #F2C46D / #33270F, ✓ #52CC8E.
+
 Durum metinleri
-Bölüm hatası: "Yazarlar yüklenemedi." + "Tekrar Dene". Dönem listesi gelmezse 
-segmentin altında "Dönemler yüklenemedi." ve aynı düğme (14.3·2 düzeni).
+
+Bölüm hatası: "Yazarlar yüklenemedi." + "Tekrar Dene". Dönem listesi gelmezse segmentin altında "Dönemler yüklenemedi." ve aynı düğme (14.3·2 düzeni).
+
 Çevrimdışı: "Öğrendim'i kaydetmek için bağlantı gerekiyor."
-Kaydetme hatası (kare yok): satır eksiğe döner, toast "Kaydedilemedi. Bağlantını 
-kontrol edip tekrar dene."
+
+Kaydetme hatası (kare yok): satır eksiğe döner, toast "Kaydedilemedi. Bağlantını kontrol edip tekrar dene."
+
 Eser yok: "Bu yazarın eser listesi henüz yok."
+
 Boş durum
-Dönem listesinin boş hâli anlamsız: dönemler müfredattan gelir. Veri gelmezse 
-hata gösterilir (T12.16).
+
+Dönem listesinin boş hâli anlamsız: dönemler müfredattan gelir. Veri gelmezse hata gösterilir (T12.16).
+
 Alt başlıkta yazar yoksa akordeon içinde "Bu bölümde yazar yok."
+
 Koyu tema
+
 Edebiyat koyu: zemin #301A27, vurgu #E494BE (1.5).
+
 Metin düğmesi #9BB3D3; pasif #56657C.

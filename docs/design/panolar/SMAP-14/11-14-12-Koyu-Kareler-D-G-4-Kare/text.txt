@@ -1,0 +1,191 @@
+14.12 Koyu Kareler D–G
+
+14.12 · Tur 12 · Geri Gelen Özellikler
+
+Koyu Kareler · D–G · 4 Kare
+
+Öğrenci Ekle avatarı, e-posta, Koçu Değiştir ve koçluk kodu sheet'inin koyu teması.
+
+Öğrencilerim
+
+Öğrenci ara
+
+4 öğrenci
+
+Alparslan Kuloğlu
+
+12. Sınıf · Eşit Ağırlık · 10 deneme
+
+67,5
+
+son net
+
+Elif Şahin
+
+11. Sınıf · Sayısal
+
+Kerem Aydın
+
+Mezun · Sözel
+
+Mert Yıldız
+
+10. Sınıf
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+Öğrenci ekle
+
+Hesabını sen aç ya da kodunu paylaş.
+
+Avatar 4 / 7
+
+Ad
+Zeynep
+
+Soyad
+Kaya
+
+Kullanıcı adı
+
+zeynep.kaya
+
+Kontrol Et
+
+Bu kullanıcı adı boşta.
+
+Şifre
+
+••••••••••
+
+Oluştur
+
+Öğrencine ilet; ilk girişte değiştirmesi önerilir.
+
+Sınıf 12. Sınıf
+
+Alan Eşit Ağırlık
+
+Öğrenciyi Kaydet
+
+1 · Öğrenci Ekle · avatar 14.8·1'in koyu teması: sheet #18263D, girdi #121D31, seçili avatar halkası #C5D4E8.
+
+Vazgeç
+
+Kaydet
+
+Profil
+
+Avatarı Değiştir
+
+Ad Soyad
+Alparslan Kuloğlu
+
+Kullanıcı adı
+
+alparslan.k
+
+Kullanıcı adı değiştirilemez.
+
+E-posta
+alparslan.kuloglu@ornek.com
+
+Kaydedince hemen değişir; doğru yazdığından emin ol.
+
+Telefon
++90 5XX XXX XX XX
+
+Sınıf 12. Sınıf
+
+Alan Eşit Ağırlık
+
+Anasayfa Analizlerim
+Okut
+Derslerim Hesap
+
+2 · Profil · e-posta 14.9·1'in koyu teması: odak kenarı #9BB3D3, salt okunur alan #213049.
+
+Koçluk
+
+Mehmet Özkan
+
+Koçun
+
+Sıradaki görüşme
+
+12 Ekim 2026 Pazartesi, 16:00
+
+Mehmet Özkan denemelerini, analizlerini ve programını görebilir.
+
+Koçu Değiştir
+Bağlantıyı Kaldır
+
+Anasayfa Analizlerim
+Okut
+Derslerim Hesap
+
+3 · Koçluk · Koçu Değiştir 14.10·1'in koyu teması: kart #121D31, bilgi kutusu #1A2B45, çerçeveli düğme #C5D4E8.
+
+Hesap
+
+Mehmet Özkan
+
+Öğrenci koçu
+
+Koçluk kodun: MOZK-4821
+
+Hesap
+
+Profil Ad, e-posta, telefon Şifre
+
+Koçluk
+
+Koçluk kodun MOZK-4821
+
+Bildirimler
+
+Bildirimler Görüşme, öğrenci ve hatırlatıcı
+
+Yasal
+
+Sözleşmeler Kullanım Koşulları, KVKK, Gizlilik
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+Koçluk kodun
+
+MOZK-4821
+
+Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır; denemelerini, analizlerini ve programını görürsün.
+
+Bağlantıyı öğrencin istediği an kaldırabilir. Öğrenci hesabını sen açmak istersen: Öğrencilerim › +.
+
+Kopyala Paylaş
+
+4 · Koçluk kodu sheet'i 14.11·2'nin koyu teması: kod kartı kenarı #26354D, perde koyu (#02060E %64).
+
+Koyu tema
+
+Kanvas #0A1424, kart ve girdi #121D31, sheet #18263D, ayraç #26354D.
+
+Metin #EDF1F6; ikincil #A9B5C6; yer tutucu #8B9AAF; pasif #56657C üstünde #213049.
+
+Birincil düğme #C5D4E8 üstünde #091A31; metin düğmesi #9BB3D3; tehlike #FF8F8F.
+
+Kalanlar
+
+Toast ve çevrimdışı şeridi koyuda ters yüzey (varsayım 1.23): açık zemin, koyu metin.
+
+Durum kareleri açık temada; koyuda yalnız renk rolleri değişir, yerleşim aynı.
+
+Kontrast
+
+Seçili avatar halkası #C5D4E8 / #18263D 10,09:1.
+
+Hata metni #FF8F8F / #18263D 6,92:1; başarı #52CC8E / #18263D 7,51:1.
+
+Odak kenarı #9BB3D3 / #121D31 7,85:1; ikincil metin #A9B5C6 / #18263D 7,31:1.

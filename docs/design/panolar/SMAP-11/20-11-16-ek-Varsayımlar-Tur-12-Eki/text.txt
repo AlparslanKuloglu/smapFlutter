@@ -1,0 +1,117 @@
+Varsayımlar · Tur 12 Eki
+
+11.16 ek · Geliştirici Teslimi · Tur 12
+
+Varsayımlar · Tur 12 Eki
+
+Tur 12'de verilen kararlar ve bu turla değişen eski varsayımlar. Numara biçimi T12.sıra; kaynak 11.18 ve 14. sayfadaki panoların notları. Toplam 30 varsayım.
+
+Tur 12 · 30 varsayım
+
+T12.1
+Tam ekran akışlarda bağlam şeridi barın hemen altında, ekran başlığının üstünde (10.4 düzeni).
+
+T12.2
+14.1·1 kaydırılmış hâlde çizildi: ad bara iner, şerit ve sekmeler yapışır; InfoBox ve Programlar satırı aynı karede görünsün diye.
+
+T12.3
+Programlar satırı SettingsRow değer varyantı (tek satır, 56 pt); yalnız program varsa çizilir.
+
+T12.4
+Program listesi yeniden eskiye; bu haftanın programı "Bu hafta" etiketli.
+
+T12.5
+Yeni program örneği "Ekim 3. Hafta" / "Az ama her gün", 12–17 Ekim; konu sheet'inin açıldığı saat Pazartesi 15:00. Ek C'de yok.
+
+T12.6
+Kayıttan sonra Program sekmesine dönülür; sekme bu haftanın programında kalır.
+
+T12.7
+Çevrimdışı şeridi bağlam şeridinin üstünde. "Görüşme Planla" çevrimdışında da açık: formu açar, kayıt kendi akışında.
+
+T12.8
+Sunucu, koç oturumundaki program yazmasını öğrencinin hesabına işler (açık soru). İşlemiyorsa 14.1–14.3 bayrakla kapanır, 10.4·3 geçerli kalır.
+
+T12.9
+Öğrenci ve koç aynı anda düzenlerse son kayıt geçerli; çakışma ekranı yok (açık soru).
+
+T12.10
+Öğrenciye bildirim gitmez; metinlerde "bildirildi" yok (açık soru).
+
+T12.11
+Puan kartı hiyerarşisi: yerleştirme puanı metric-md, ham puan metric-sm; ham satır yalnız değer varsa.
+
+T12.12
+TYT puan ve sıraları (384,05 · 176.320. ve 371,90 · 189.004.) Tur 12 örnek verisinden; Ek C'de TYT puanı yok.
+
+T12.13
+Şinasi 3, Ziya Paşa 6 eser ve "Hakkında" metinleri örnek. Yazar fotoğrafı yoksa baş harf, Edebiyat tonlarında.
+
+T12.14
+"Biliyorsun" ✓ ile success renginde. Durumu gelmeyen eserde yalnız ad; sayaçta yalnız "N eser".
+
+T12.15
+"Öğrendim" isteği 6 sn sonra gider; "Geri Al" istemcide (geri alma ucu yok).
+
+T12.16
+Bölüm düzeyi boş durumlarda illüstrasyon yok. Dönem listesinin boş hâli çizilmedi: dönemler müfredattan gelir.
+
+T12.17
+Öğrenci eklerken avatar seçimi zorunlu değil: ilk avatar seçili gelir (bugünkü seçici de böyle).
+
+T12.18
+§7: Zeynep Kaya'nın avatarı 7'den 4. 10.2'de 5 çizilmişti; 14.8·3 10.2·1'in yerine geçer.
+
+T12.19
+E-posta doğrulaması sunucuda yok; adres Kaydet'le hemen değişir (bugünkü uygulama gibi). 9.2 notundaki 6 haneli kod maddesi kalktı; doğrulama gelirse 2.4'ün kod kutuları kullanılır.
+
+T12.20
+Yeni adres örneği alparslan.kuloglu@ornek.com (§7); hatalı örnek "alparslan.kuloglu@ornek".
+
+T12.21
+Koç değişikliği ayrı onay sormaz: kodu yazmak ve "Koçu Değiştir" yeterli, sonucu bilgi kutusu söyler. Kaldırma (9.5·2) tehlikeli onayla kalır.
+
+T12.22
+Ayşe Demir'in avatarı 6 (örnek). Henüz görüşmesi olmadığı için görüşme satırı çizilmedi.
+
+T12.23
+Hatalı kod örneği AYDM-3370 (rakamları yer değiştirmiş AYDM-3307).
+
+T12.24
+Açık soru: addCoach yeni kodla eski bağlantıyı kendisi kaldırıyor mu? Kaldırmıyorsa istemci önce deleteCoach çağırır; ekran aynı kalır.
+
+T12.25
+Koçun Hesap'ındaki kod satırı değerli SettingsRow oldu; Kopyala ve Paylaş ikonları sheet'e taşındı, satır tek dokunma alanı.
+
+T12.26
+Kod yenileme yok; bugünkü uygulamada da yok. Kod refCode olarak oturum yanıtıyla gelir ve cihazda saklanır.
+
+T12.27
+Tur 12 notları 11.18 numarasıyla: 11.17, Ek · Ekran Akışı panosunda kullanılıyor.
+
+T12.28
+Akış iki panoya bölündü (13.13 A–C, 13.14 D–G): tek panoda yükseklik 8000 pt sınırını aşıyordu. İkisi de 14. sayfanın sonunda.
+
+T12.29
+Ek panolar (11.13 ek, 11.14 ek, 11.16 ek) eski panolara dokunmadan 11. sayfada, Tur 12 notlarının yanında.
+
+T12.30
+14.4 beş kare: puan kartının yüksekliği değiştiği için iskelet (5.8·1) ve koç karesi (10.4·4) de yeniden çizildi.
+
+Bu turla değişen varsayımlar
+
+No Eskisi Yenisi Pano
+
+1.31 Örnek kişilerin avatarları: … Zeynep 5 … Zeynep Kaya'nın avatarı 4 (Tur 12 örnek verisi); öğrenci eklerken seçilir. 14.8
+
+3.2 Puan bloğu yalnız öğrencinin alanı için (Eşit Ağırlık); ham puan Ek C'de yok, çizilmedi. Ham puan ve ham puan sırası çizilir (Tur 12 örnek verisi); alan kuralı aynı. 14.4
+
+5.7 Yazar listesi ve Namık Kemal metni Ek C'de yok; müfredattan örnek. Fotoğraf yoksa Edebiyat tonlarında baş harf. Dönem, alt başlık, yazar ve eser durumları Tur 12 örnek verisinden; Şinasi ve Ziya Paşa'nın eser sayıları ile Hakkında metinleri örnek (T12.13). 14.5–14.7
+
+6.8 Çantam = eksik konular. … Kurtuluş Savaşı Hazırlık Dönemi'nin eksik sayısı yok, yerine son deneme bilgisi yazıldı. Çanta satırı yalnız konu ve ders adı; eksik sayısı ve son deneme bilgisi yok, veride yok. 14.2
+
+9.6 Koç öğrencinin programını yalnız görüntüler; atama ve düzenleme v1'de yok. Koç öğrencinin programını görür, düzenler ve yenisini kurar; yazma öğrencinin hesabına (T12.8). 14.1–14.3
+
+Bölüm 6.8 · #36 Koç bağlamında yazma eylemleri çizilmez (salt okunur). Program istisna: koç programı düzenler ve kurar. Favori, "Öğrendim", "Bu Konuyu Çalış" ve "Kartları Çalış" koçta yine yok. 14.1
+
+9.2 notu E-posta değişirse yeni adrese 6 haneli doğrulama kodu gider. Doğrulama yok; adres Kaydet'le hemen değişir (T12.19). 14.9

@@ -1,0 +1,147 @@
+13.11 Koç
+
+13.11 · Ekran Akışı
+
+Koç
+
+Koçun sekmeleri: Anasayfa, Öğrencilerim, Görüşmelerim ve Hesap. Öğrenci ekranları koça aynı bileşenlerle, öğrencinin adını taşıyan bağlam şeridiyle gelir.
+
+Okun üstü: dokunulan yer Kesikli ok: kendiliğinden geçiş Üst sıra ana yol; altında o ekranın durumları ve koyu teması Kod: kaynak pano ve kare
+
+Öğrenciler
+
+Buradan 13.2 Giriş Yap · koç hesabı
+
+1 Koç Anasayfa
+
+10.1 · kare 1
+
+Durumlar · 3
+
+Dikkat gerektirenler 10.1 · kare 2
+
+Öğrenci yok 10.1 · kare 3
+
+İskelet 10.1 · kare 4
+
+Öğrencilerim
+
+2 Öğrencilerim
+
+10.2 · kare 1
+
+Durumlar · 2
+
+Arama, sonuç yok 10.2 · kare 3
+
+Öğrenci yok 10.2 · kare 4
+
+ara
+
+3 Arama · I/ı/İ/i
+
+10.2 · kare 2
+
+öğrenciye dokun
+
+4 Öğrenci profili · Analiz
+
+10.4 · kare 1
+
+Program
+
+5 Program · salt okunur
+
+10.4 · kare 3
+
+Denemeler
+
+6 Denemeler
+
+10.4 · kare 2
+
+satıra dokun
+
+7 Deneme Detay · koç bağlamı
+
+10.4 · kare 4
+
+Öğrenci ekle
+
+Buradan Öğrencilerim + ya da Koç Anasayfa · Öğrenci Ekle
+
+1 Öğrenci ekle · form
+
+10.3 · kare 1
+
+aşağı kaydır
+
+2 Kod kartı
+
+10.3 · kare 2
+
+Öğrenciyi Kaydet
+
+3 Öğrenci eklendi
+
+10.3 · kare 3
+
+Sonra Tamam: Öğrencilerim
+
+Görüşmeler
+
+Buradan Alt çubuk · Görüşmelerim ya da profilde Görüşme Planla
+
+1 Görüşmelerim
+
+10.5 · kare 1
+
+Durumlar · 1
+
+Görüşme yok 10.5 · kare 4
+
+Yeni görüşme
+
+2 Yeni görüşme
+
+10.5 · kare 2
+
+Görüşmeyi Kaydet
+
+3 Görüşme detayı
+
+10.5 · kare 3
+
+Not Ekle
+
+4 Not ekle
+
+10.6 · kare 1
+
+Notu Kaydet, Düzenle
+
+5 Not düzenle
+
+10.6 · kare 2
+
+Sil
+
+6 Not sil · onay
+
+10.6 · kare 3
+
+Notu Sil
+
+7 Not silindi
+
+10.6 · kare 4
+
+Koçun hesabı
+
+Buradan Alt çubuk · Hesap
+
+1 Hesap · koç
+
+9.1 · kare 4
+
+Koçluk kodu: Kopyala, Paylaş

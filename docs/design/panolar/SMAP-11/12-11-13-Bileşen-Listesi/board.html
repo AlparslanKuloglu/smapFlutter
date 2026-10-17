@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="tr"><head><style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  </style>
+<meta charset="utf-8">
+<title>Bileşen Listesi</title>
+<style>x-dc{display:none!important}</style>
+<style data-dc-tpl="1">/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style><style data-dc-tpl="2">
+body{margin:0}
+*{box-sizing:border-box}
+h2{margin:0;font-size:28px;line-height:36px;font-weight:800;letter-spacing:-0.3px}
+h3{margin:0;font-size:20px;line-height:28px;font-weight:700}
+.ld{margin:8px 0 0;font-size:16px;line-height:26px;color:#556173;max-width:1100px}
+.nt{width:100%;border-collapse:collapse;table-layout:fixed}
+.nt th{font-size:13px;line-height:20px;font-weight:600;color:#556173;text-align:left;padding:10px 12px;border-bottom:1px solid #C3CBD6}
+.nt td{font-size:14px;line-height:21px;padding:10px 12px;border-bottom:1px solid #E8ECF1;vertical-align:top;color:#1B2232}
+.nt td.n{font-weight:700;color:#556173}
+.nt td.m{color:#556173}
+.nt td.b{font-weight:600}
+.ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0}
+.ol li{display:grid;grid-template-columns:40px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #E8ECF1;font-size:14px;line-height:21px}
+.ol li span{font-weight:700;color:#556173}
+pre{margin:0;padding:20px 24px;border-radius:16px;background:#0F1420;color:#EDF1F6;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:13px;line-height:20px;white-space:pre-wrap;overflow:hidden}
+pre .c{color:#8B9AAF}
+.kv{display:grid;grid-template-columns:260px 1fr;font-size:14px;line-height:21px}
+.kv div{padding:8px 0;border-bottom:1px solid #E8ECF1}
+.kv div:nth-child(odd){font-weight:700}
+.ck{display:grid;grid-template-columns:28px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #E8ECF1;font-size:14px;line-height:21px}
+.ok{color:#0B6E3E;font-weight:800}
+.sw2{display:inline-block;width:18px;height:18px;border-radius:5px;vertical-align:-4px;margin-right:8px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.12)}
+.tk{font-weight:600;color:#264066}
+</style></head>
+<body>
+<div id="dc-root"><div class="sc-host" data-sc-name="board12"><div data-dc-tpl="3" style="width: 1440px; height: 1940px; background: rgb(255, 255, 255); color: rgb(27, 34, 50); font-family: &quot;Plus Jakarta Sans&quot;, system-ui, sans-serif; padding: 64px; display: flex; flex-direction: column; gap: 44px; font-variant-numeric: tabular-nums;"><header data-dc-tpl="4" style="display: flex; flex-direction: column; gap: 8px;"><div data-dc-tpl="5" style="font-size: 15px; line-height: 20px; font-weight: 600; color: rgb(85, 97, 115);">11.13 · Geliştirici Teslimi</div><h1 data-dc-tpl="6" style="margin: 0px; font-size: 36px; line-height: 44px; font-weight: 800; letter-spacing: -0.5px;">Bileşen Listesi</h1><p data-dc-tpl="7" class="ld">Kitte tanımlı ve turlarda genişleyen bileşenler. "Kit" sütunu tanımın çizildiği panoyu, "Örnek" sütunu kullanıldığı başlıca ekranları gösterir.</p></header><section data-dc-tpl="8" style="display: flex; flex-direction: column; gap: 14px;"><h2 data-dc-tpl="9">Bileşenler</h2><table data-dc-tpl="10" class="nt"><thead data-dc-tpl="11"><tr data-dc-tpl="12"><th data-dc-tpl="13" style="width: 330px;">Bileşen</th><th data-dc-tpl="14" style="width: 160px;">Kit</th><th data-dc-tpl="15" style="width: auto;">Varyant ve durumlar</th><th data-dc-tpl="16" style="width: 220px;">Örnek</th></tr></thead><tbody data-dc-tpl="17"><tr data-dc-tpl="18"><td data-dc-tpl="19" class="b">Button</td><td data-dc-tpl="20">1.9</td><td data-dc-tpl="21">primary, outline, quiet, text, danger; 48 ve 40 pt; basılı, odak, pasif, yükleniyor</td><td data-dc-tpl="22">2.x–10.x</td></tr><tr data-dc-tpl="23"><td data-dc-tpl="24" class="b">BarAction</td><td data-dc-tpl="25">1.18</td><td data-dc-tpl="26">40 pt çerçeveli ("Düzenle", "Yeni Program") ve dolu ("Kaydet") ikincil bar düğmesi</td><td data-dc-tpl="27">3.4, 9.2, 10.4</td></tr><tr data-dc-tpl="28"><td data-dc-tpl="29" class="b">Segment</td><td data-dc-tpl="30">1.10</td><td data-dc-tpl="31">düz; sayaçlı (eksik sayısı, boş sayaç çizilmez); bant içi</td><td data-dc-tpl="32">3.4, 7.1, 7.2, 8.1</td></tr><tr data-dc-tpl="33"><td data-dc-tpl="34" class="b">InScreenTabs</td><td data-dc-tpl="35">1.10</td><td data-dc-tpl="36">alt çizgi göstergesi orange-600</td><td data-dc-tpl="37">5.3, 10.4</td></tr><tr data-dc-tpl="38"><td data-dc-tpl="39" class="b">Chip</td><td data-dc-tpl="40">1.11</td><td data-dc-tpl="41">hap (süzgeç, alan), kare (sınıf), etiket (.tg), Web'de etiketi</td><td data-dc-tpl="42">2.2, 6.1, 10.5</td></tr><tr data-dc-tpl="43"><td data-dc-tpl="44" class="b">TextField</td><td data-dc-tpl="45">1.12</td><td data-dc-tpl="46">metin, şifre (göster/gizle), salt okunur (kilit), canlı kontrol, hata, odak</td><td data-dc-tpl="47">2.3–2.6, 9.2–9.5, 10.3</td></tr><tr data-dc-tpl="48"><td data-dc-tpl="49" class="b">SearchField</td><td data-dc-tpl="50">1.12</td><td data-dc-tpl="51">tr-TR katlama (I/ı/İ/i), temizle düğmesi, eşleşme vurgusu</td><td data-dc-tpl="52">3.4, 10.2, 10.5</td></tr><tr data-dc-tpl="53"><td data-dc-tpl="54" class="b">CodeInput</td><td data-dc-tpl="55">1.12</td><td data-dc-tpl="56">6 kutu, tek kullanımlık kod, yapıştırma</td><td data-dc-tpl="57">2.4</td></tr><tr data-dc-tpl="58"><td data-dc-tpl="59" class="b">SelectField</td><td data-dc-tpl="60">1.12</td><td data-dc-tpl="61">alttan sheet açar; pasif (Alan: Seçilmez)</td><td data-dc-tpl="62">2.5, 9.2, 10.3, 10.5</td></tr><tr data-dc-tpl="63"><td data-dc-tpl="64" class="b">Checkbox · Radio · Switch</td><td data-dc-tpl="65">1.13</td><td data-dc-tpl="66">anahtar 52 × 32 onaylı başlı; radyo sheet içinde</td><td data-dc-tpl="67">2.5, 3.5, 9.6</td></tr><tr data-dc-tpl="68"><td data-dc-tpl="69" class="b">SettingsRow · ListGroup</td><td data-dc-tpl="70">1.13</td><td data-dc-tpl="71">ok, değer, anahtar, dış bağlantı; tehlikeli satır</td><td data-dc-tpl="72">9.1, 9.6, 9.7</td></tr><tr data-dc-tpl="73"><td data-dc-tpl="74" class="b">SubjectRow · SubjectTile</td><td data-dc-tpl="75">1.16 · Tur 5–6</td><td data-dc-tpl="76">glif karosu, EksikTag, kart ilerlemesi, Web'de</td><td data-dc-tpl="77">3.1, 7.1</td></tr><tr data-dc-tpl="78"><td data-dc-tpl="79" class="b">TopicRow</td><td data-dc-tpl="80">1.16 · Tur 5</td><td data-dc-tpl="81">kesintisiz numara, iki satır ad, EksikTag</td><td data-dc-tpl="82">7.2</td></tr><tr data-dc-tpl="83"><td data-dc-tpl="84" class="b">ExamRow · ExamCard</td><td data-dc-tpl="85">1.16 · Tur 4</td><td data-dc-tpl="86">kapak, ad, tür, tarih, yayınevi, küçük D/Y/B, net</td><td data-dc-tpl="87">6.2, 10.4</td></tr><tr data-dc-tpl="88"><td data-dc-tpl="89" class="b">StatBox</td><td data-dc-tpl="90">1.16 · Tur 4</td><td data-dc-tpl="91">değer, etiket, delta satırı (delta token)</td><td data-dc-tpl="92">6.1, 10.4</td></tr><tr data-dc-tpl="93"><td data-dc-tpl="94" class="b">NetChart</td><td data-dc-tpl="95">1.4 · Tur 4</td><td data-dc-tpl="96">eksenli, son nokta vurgulu, balon; TYT 0–120, AYT 0–160</td><td data-dc-tpl="97">6.1, 10.4</td></tr><tr data-dc-tpl="98"><td data-dc-tpl="99" class="b">DybLarge · DybSmall</td><td data-dc-tpl="100">1.14</td><td data-dc-tpl="101">çipte ✓ ✕ –, harf ya da kelime etiketi</td><td data-dc-tpl="102">5.1, 5.3, 3.1</td></tr><tr data-dc-tpl="103"><td data-dc-tpl="104" class="b">StackedBar</td><td data-dc-tpl="105">1.14</td><td data-dc-tpl="106">test başına, 2 pt ayrım</td><td data-dc-tpl="107">5.3</td></tr><tr data-dc-tpl="108"><td data-dc-tpl="109" class="b">QuestionCell</td><td data-dc-tpl="110">1.14 · Tur 3</td><td data-dc-tpl="111">numara, durum çipi, işaret, "Doğru A"</td><td data-dc-tpl="112">5.4, 5.7</td></tr><tr data-dc-tpl="113"><td data-dc-tpl="114" class="b">TopicResultRow</td><td data-dc-tpl="115">1.15 · Tur 3</td><td data-dc-tpl="116">yüzde halkası tek renk, az soru etiketi</td><td data-dc-tpl="117">5.5, 5.10</td></tr><tr data-dc-tpl="118"><td data-dc-tpl="119" class="b">Accordion · ExampleBox</td><td data-dc-tpl="120">1.13 · Tur 5</td><td data-dc-tpl="121">alt başlık ve madde; örnek kutusu</td><td data-dc-tpl="122">7.3</td></tr><tr data-dc-tpl="123"><td data-dc-tpl="124" class="b">EksikTag</td><td data-dc-tpl="125">Tur 5</td><td data-dc-tpl="126">bayrak + "N eksik", warning tonları</td><td data-dc-tpl="127">3.1, 3.5, 7.x</td></tr><tr data-dc-tpl="128"><td data-dc-tpl="129" class="b">CardDeck · CardSheet</td><td data-dc-tpl="130">Tur 5</td><td data-dc-tpl="131">kaydırma, Öğrendim (bir kez onay), Geri Al</td><td data-dc-tpl="132">8.1, 7.3</td></tr><tr data-dc-tpl="133"><td data-dc-tpl="134" class="b">BottomSheet</td><td data-dc-tpl="135">1.20</td><td data-dc-tpl="136">başlık, kapat, alt düğme bandı; uzun boy</td><td data-dc-tpl="137">her tur</td></tr><tr data-dc-tpl="138"><td data-dc-tpl="139" class="b">ConfirmSheet</td><td data-dc-tpl="140">1.21</td><td data-dc-tpl="141">normal ve tehlikeli; odak Vazgeç'te</td><td data-dc-tpl="142">3.6, 9.1, 9.4, 9.5, 10.6</td></tr><tr data-dc-tpl="143"><td data-dc-tpl="144" class="b">Toast</td><td data-dc-tpl="145">1.22</td><td data-dc-tpl="146">4 sn; Geri Al ile 6 sn</td><td data-dc-tpl="147">3.6, 8.1, 9.3, 10.6</td></tr><tr data-dc-tpl="148"><td data-dc-tpl="149" class="b">OfflineStrip · Skeleton · EmptyState · ErrorState</td><td data-dc-tpl="150">1.22</td><td data-dc-tpl="151">bölüm ve ekran düzeyi; 15 sn kuralı</td><td data-dc-tpl="152">her tur</td></tr><tr data-dc-tpl="153"><td data-dc-tpl="154" class="b">RootBand · HomeBand</td><td data-dc-tpl="155">1.18 · Tur 6</td><td data-dc-tpl="156">başlık, sağ eylem, bant içi segment; Anasayfa selam + sayaç; 110 pt küçülme</td><td data-dc-tpl="157">3.1, 6.1, 7.1, 9.1, 10.x</td></tr><tr data-dc-tpl="158"><td data-dc-tpl="159" class="b">DetailBar</td><td data-dc-tpl="160">1.18</td><td data-dc-tpl="161">geri + en çok bir eylem; başlık içerikte, kaydırınca bara iner</td><td data-dc-tpl="162">2.x–10.x</td></tr><tr data-dc-tpl="163"><td data-dc-tpl="164" class="b">ContextStrip</td><td data-dc-tpl="165">1.18 · Tur 9</td><td data-dc-tpl="166">40 pt, "Ad Soyad'ın verileri"</td><td data-dc-tpl="167">10.4</td></tr><tr data-dc-tpl="168"><td data-dc-tpl="169" class="b">BottomBar</td><td data-dc-tpl="170">1.19</td><td data-dc-tpl="171">öğrenci ve koç (nav_coach); kamera düğmesi</td><td data-dc-tpl="172">kök sekmeler</td></tr><tr data-dc-tpl="173"><td data-dc-tpl="174" class="b">DayChip · WeekGrid · HourSlot · Calendar · TimeWheel</td><td data-dc-tpl="175">Tur 6–8</td><td data-dc-tpl="176">program ve sessiz saat seçimleri</td><td data-dc-tpl="177">3.4–3.8, 9.6</td></tr><tr data-dc-tpl="178"><td data-dc-tpl="179" class="b">RoleOption · Lockup · OnboardingPage</td><td data-dc-tpl="180">Tur 7</td><td data-dc-tpl="181">rol kartı, S-rota kilidi, tanıtım sayfası</td><td data-dc-tpl="182">2.1, 2.2</td></tr><tr data-dc-tpl="183"><td data-dc-tpl="184" class="b">ProfileSummary · AvatarPicker</td><td data-dc-tpl="185">Tur 7–8</td><td data-dc-tpl="186">7 avatar, sayısı yazılı</td><td data-dc-tpl="187">2.5, 9.1, 9.2</td></tr><tr data-dc-tpl="188"><td data-dc-tpl="189" class="b">AttentionRow · MeetingRow · StudentTile · CodeCard</td><td data-dc-tpl="190">Tur 9</td><td data-dc-tpl="191">koç bileşenleri</td><td data-dc-tpl="192">10.1–10.6</td></tr></tbody></table></section></div></div></div>
+
+
+
+
+
+</body></html>

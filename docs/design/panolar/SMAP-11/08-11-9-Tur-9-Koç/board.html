@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="tr"><head><style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  </style>
+<meta charset="utf-8">
+<title>11.9 · Notlar · Tur 9 Notları</title>
+<style>x-dc{display:none!important}</style>
+<style data-dc-tpl="1">/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style><style data-dc-tpl="2">
+body{margin:0}
+*{box-sizing:border-box}
+h2{margin:0;font-size:28px;line-height:36px;font-weight:800;letter-spacing:-0.3px}
+h3{margin:0;font-size:20px;line-height:28px;font-weight:700}
+.ld{margin:8px 0 0;font-size:16px;line-height:26px;color:#556173;max-width:1100px}
+.nt{width:100%;border-collapse:collapse;table-layout:fixed}
+.nt th{font-size:13px;line-height:20px;font-weight:600;color:#556173;text-align:left;padding:10px 12px;border-bottom:1px solid #C3CBD6}
+.nt td{font-size:14px;line-height:21px;padding:10px 12px;border-bottom:1px solid #E8ECF1;vertical-align:top;color:#1B2232}
+.nt td.n{font-weight:700;color:#556173}
+.nt td.m{color:#556173}
+.nt td.b{font-weight:600}
+.ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0}
+.ol li{display:grid;grid-template-columns:40px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #E8ECF1;font-size:14px;line-height:21px}
+.ol li span{font-weight:700;color:#556173}
+pre{margin:0;padding:20px 24px;border-radius:16px;background:#0F1420;color:#EDF1F6;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:13px;line-height:20px;white-space:pre-wrap;overflow:hidden}
+pre .c{color:#8B9AAF}
+.kv{display:grid;grid-template-columns:260px 1fr;font-size:14px;line-height:21px}
+.kv div{padding:8px 0;border-bottom:1px solid #E8ECF1}
+.kv div:nth-child(odd){font-weight:700}
+.ck{display:grid;grid-template-columns:28px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #E8ECF1;font-size:14px;line-height:21px}
+.ok{color:#0B6E3E;font-weight:800}
+</style></head>
+<body>
+<div id="dc-root"><div class="sc-host" data-sc-name="board08"><div data-dc-tpl="3" style="width: 1440px; height: 3020px; background: rgb(255, 255, 255); color: rgb(27, 34, 50); font-family: &quot;Plus Jakarta Sans&quot;, system-ui, sans-serif; padding: 64px; display: flex; flex-direction: column; gap: 48px; font-variant-numeric: tabular-nums;"><header data-dc-tpl="4" style="display: flex; flex-direction: column; gap: 8px;"><div data-dc-tpl="5" style="font-size: 15px; line-height: 20px; font-weight: 600; color: rgb(85, 97, 115);">11.9 · Notlar · Tur 9</div><h1 data-dc-tpl="6" style="margin: 0px; font-size: 36px; line-height: 44px; font-weight: 800; letter-spacing: -0.5px;">Tur 9 · Koç</h1><p data-dc-tpl="7" class="ld">"10 · Koç"a 6 pano (10.1–10.6) kondu: Koç Anasayfa, Öğrencilerim, Öğrenci Ekle, koç bağlamında öğrenci profili, Görüşmelerim ve görüşme notları.</p></header><section data-dc-tpl="8" style="display: flex; flex-direction: column; gap: 16px;"><h2 data-dc-tpl="9">Ne değişti, neden</h2><table data-dc-tpl="10" class="nt"><thead data-dc-tpl="11"><tr data-dc-tpl="12"><th data-dc-tpl="13" style="width: 44px;">#</th><th data-dc-tpl="14" style="width: 470px;">Değişiklik</th><th data-dc-tpl="15">Çözdüğü sorun</th><th data-dc-tpl="16" style="width: 120px;">Görüntü</th><th data-dc-tpl="17" style="width: 110px;">Pano</th></tr></thead><tbody data-dc-tpl="18"><tr data-dc-tpl="19"><td data-dc-tpl="20" class="n">1</td><td data-dc-tpl="21" class="b">Koç Anasayfa: öğrenci şeridi, dikkat gerektirenler, yaklaşan görüşmeler; "Öğrenci Ekle"</td><td data-dc-tpl="22">Koçun ilk ekranı öğrencininkinden farklı bir dille ve görevsiz bir panoyla açılıyordu</td><td data-dc-tpl="23" class="m">envanter §2.3</td><td data-dc-tpl="24" class="m">10.1</td></tr><tr data-dc-tpl="25"><td data-dc-tpl="26" class="n">2</td><td data-dc-tpl="27" class="b">Dikkat listesi yalnız iki kurala dayanır (D-27): 14 gün deneme yok, son iki denemede net düşüşü</td><td data-dc-tpl="28">Hedef, yüzde ve tamamlama gibi D-3'te yasak sinyaller</td><td data-dc-tpl="29" class="m">envanter §2.3</td><td data-dc-tpl="30" class="m">10.1</td></tr><tr data-dc-tpl="31"><td data-dc-tpl="32" class="n">3</td><td data-dc-tpl="33" class="b">Her dikkat satırı kanıtını yazar: gün sayısı ve son tarih; iki net ve tarihleri</td><td data-dc-tpl="34">Neden dikkat gerektiği söylenmiyordu</td><td data-dc-tpl="35" class="m">envanter §2.3</td><td data-dc-tpl="36" class="m">10.1</td></tr><tr data-dc-tpl="37"><td data-dc-tpl="38" class="n">4</td><td data-dc-tpl="39" class="b">Öğrencisi olmayan koç: üç avatar, "İlk öğrencini ekle", kod kartı (Kopyala, Paylaş)</td><td data-dc-tpl="40">Boş durum yoktu</td><td data-dc-tpl="41" class="m">envanter §2.3</td><td data-dc-tpl="42" class="m">10.1, 10.2</td></tr><tr data-dc-tpl="43"><td data-dc-tpl="44" class="n">5</td><td data-dc-tpl="45" class="b">Öğrencilerim: avatar, ad, sınıf · alan; verisi olanda deneme sayısı ve son net</td><td data-dc-tpl="46">Satırda bağlam yoktu</td><td data-dc-tpl="47" class="m">envanter §2.3</td><td data-dc-tpl="48" class="m">10.2</td></tr><tr data-dc-tpl="49"><td data-dc-tpl="50" class="n">6</td><td data-dc-tpl="51" class="b">Türkçe harf duyarsız arama (I/ı/İ/i), eşleşen kısım işaretli</td><td data-dc-tpl="52">Arama Türkçe harflerde eşleşmiyordu</td><td data-dc-tpl="53" class="m">envanter §2.3</td><td data-dc-tpl="54" class="m">10.2</td></tr><tr data-dc-tpl="55"><td data-dc-tpl="56" class="n">7</td><td data-dc-tpl="57" class="b">Öğrenci Ekle sheet'i: ad, soyad, kullanıcı adı (Kontrol Et), şifre (Oluştur + göster), sınıf, alan; altında kod kartı</td><td data-dc-tpl="58">Hesap açma ve kodla bağlanma ayrı yerlerdeydi</td><td data-dc-tpl="59" class="m">envanter §2.9</td><td data-dc-tpl="60" class="m">10.3</td></tr><tr data-dc-tpl="61"><td data-dc-tpl="62" class="n">8</td><td data-dc-tpl="63" class="b">Giriş bilgileri kayıttan sonra bir kez gösterilir, paylaşılır</td><td data-dc-tpl="64">Şifrenin öğrenciye nasıl iletileceği tanımsızdı</td><td data-dc-tpl="65" class="m">envanter §2.9</td><td data-dc-tpl="66" class="m">10.3</td></tr><tr data-dc-tpl="67"><td data-dc-tpl="68" class="n">9</td><td data-dc-tpl="69" class="b">Öğrenci profili koç bağlamında: bağlam şeridi, Analiz · Denemeler · Program</td><td data-dc-tpl="70">Koç öğrencinin ekranında kimin verisine baktığını görmüyordu</td><td data-dc-tpl="71" class="m">envanter §2.3</td><td data-dc-tpl="72" class="m">10.4</td></tr><tr data-dc-tpl="73"><td data-dc-tpl="74" class="n">10</td><td data-dc-tpl="75" class="b">Öğrenci ekranları aynen taşınır (6.1, 6.2, 3.4, 5.3); düzenleme ve öğrenciye özel eylemler yok</td><td data-dc-tpl="76">Koç ekranları ayrı yazılmış kopyalardı</td><td data-dc-tpl="77" class="m">envanter §2.3</td><td data-dc-tpl="78" class="m">10.4</td></tr><tr data-dc-tpl="79"><td data-dc-tpl="80" class="n">11</td><td data-dc-tpl="81" class="b">Görüşmelerim: arama, Kiminle süzgeci, yıllı tarih, Öğrenci/Veli etiketi</td><td data-dc-tpl="82">Tarihte yıl yoktu; arama ve süzgeç yoktu</td><td data-dc-tpl="83" class="m">envanter §2.9</td><td data-dc-tpl="84" class="m">10.5</td></tr><tr data-dc-tpl="85"><td data-dc-tpl="86" class="n">12</td><td data-dc-tpl="87" class="b">Yeni Görüşme sheet'i; Görüşme Detayı'nda notlar: ekle, düzenle, onaylı sil, 6 sn geri al</td><td data-dc-tpl="88">Not silme onaysızdı</td><td data-dc-tpl="89" class="m">envanter §2.9</td><td data-dc-tpl="90" class="m">10.5, 10.6</td></tr><tr data-dc-tpl="91"><td data-dc-tpl="92" class="n">13</td><td data-dc-tpl="93" class="b">Görüşme yok boş durumu: kil Hokka M 128</td><td data-dc-tpl="94">Boş liste</td><td data-dc-tpl="95" class="m">envanter §2.9</td><td data-dc-tpl="96" class="m">10.5</td></tr></tbody></table></section><section data-dc-tpl="97" style="display: flex; flex-direction: column; gap: 12px;"><h2 data-dc-tpl="98">Önceki turların bileşenlerinde genişletmeler</h2><ol data-dc-tpl="99" class="ol"><li data-dc-tpl="100"><span data-dc-tpl="101">G1</span><div data-dc-tpl="102"><b data-dc-tpl="103">nav_coach</b> (1.19): Anasayfa · Öğrencilerim · Okut · Görüşmelerim · Hesap; Users ve Chats ikonları.</div></li><li data-dc-tpl="104"><span data-dc-tpl="105">G2</span><div data-dc-tpl="106"><b data-dc-tpl="107">ContextStrip</b> 1.18 kare 6 aynen: 40 pt, navy-50, avatar 24, "Ad Soyad'ın verileri", sınıf · alan.</div></li><li data-dc-tpl="108"><span data-dc-tpl="109">G3</span><div data-dc-tpl="110"><b data-dc-tpl="111">StudentTile</b> (Tur 6 SubjectTile'ın kişi hâli): 108 pt, avatar 48, ad 2 satıra kadar, varsa son deneme tarihi.</div></li><li data-dc-tpl="112"><span data-dc-tpl="113">G4</span><div data-dc-tpl="114"><b data-dc-tpl="115">AttentionRow</b> yeni: avatar + kural rozeti (Clock / TrendDown, <span data-dc-tpl="116" class="tk">warning</span>), kural cümlesi, kanıt satırı.</div></li><li data-dc-tpl="117"><span data-dc-tpl="118">G5</span><div data-dc-tpl="119"><b data-dc-tpl="120">MeetingRow</b> (1.16): tarih bloğu ya da avatar; yıllı tarih, saat, Öğrenci/Veli etiketi.</div></li><li data-dc-tpl="121"><span data-dc-tpl="122">G6</span><div data-dc-tpl="123"><b data-dc-tpl="124">CodeCard</b> yeni: koçluk kodu 24/800, açıklama, Kopyala ve Paylaş eşit.</div></li><li data-dc-tpl="125"><span data-dc-tpl="126">G7</span><div data-dc-tpl="127">Çok satırlı alan (1.12) not sheet'inde; karakter sayacı.</div></li></ol></section><section data-dc-tpl="128" style="display: flex; flex-direction: column; gap: 12px;"><h2 data-dc-tpl="129">Varsayımlar</h2><p data-dc-tpl="130" class="ld" style="margin: 0px;">Ek D'de karşılığı olmayan ve bu turda verdiğim kararlar. Hiçbiri bir ekranın çizimini engellemiyor.</p><ol data-dc-tpl="131" class="ol"><li data-dc-tpl="132"><span data-dc-tpl="133">1</span><div data-dc-tpl="134">Bugünkü Ek C verisinde iki dikkat kuralı da tetiklenmiyor (son deneme 5 Ekim; son iki TYT ve AYT yükseliyor). 10.1 kare 1'de bölüm boş; kare 2 aynı öğrencinin geçmişinden iki ayrı günün (1 ve 5 Ağustos) görünümünü örnek olarak gösterir.</div></li><li data-dc-tpl="135"><span data-dc-tpl="136">2</span><div data-dc-tpl="137">Diğer öğrencilerin deneme verisi Ek C'de yok; satırlarında deneme sayısı ve net çizilmedi.</div></li><li data-dc-tpl="138"><span data-dc-tpl="139">3</span><div data-dc-tpl="140">Öğrenci sıralaması alfabetik (Türkçe karşılaştırma).</div></li><li data-dc-tpl="141"><span data-dc-tpl="142">4</span><div data-dc-tpl="143">Öğrenci Ekle örneği Zeynep Kaya (12, EA); kullanıcı adı "zeynep.kaya" koçun yazdığı örnek değer.</div></li><li data-dc-tpl="144"><span data-dc-tpl="145">5</span><div data-dc-tpl="146">Mert Yıldız'ın avatarı (av-2) Tur 1'deki atamayla aynı; koçla aynı görsel.</div></li><li data-dc-tpl="147"><span data-dc-tpl="148">6</span><div data-dc-tpl="149">Koç öğrencinin programını yalnız görüntüler; atama ve düzenleme v1'de yok.</div></li><li data-dc-tpl="150"><span data-dc-tpl="151">7</span><div data-dc-tpl="152">Görüşme notları yalnız koça görünür.</div></li><li data-dc-tpl="153"><span data-dc-tpl="154">8</span><div data-dc-tpl="155">Görüşmeden 1 saat önce koça hatırlatma; koçun bildirim tercihine bağlı.</div></li><li data-dc-tpl="156"><span data-dc-tpl="157">9</span><div data-dc-tpl="158">Koçta da kamera var: okutulan form, seçilen öğrenciye yazılır (öğrenci seçimi sheet'i Tur 2 akışının başına eklenir).</div></li></ol></section><section data-dc-tpl="159" style="display: flex; flex-direction: column; gap: 20px;"><h2 data-dc-tpl="160">Geliştirici notları</h2><div data-dc-tpl="161" style="display: flex; flex-direction: column; gap: 6px;"><h3 data-dc-tpl="162">Ekranlar</h3><p data-dc-tpl="163" style="margin: 0px; font-size: 14px; line-height: 22px; color: rgb(27, 34, 50);">CoachHomeScreen (HomeBand + StudentStrip + AttentionSection + MeetingsSection) · StudentsScreen (RootBand + SearchField + StudentRow) · AddStudentSheet (+ CredentialsSheet) · StudentProfileScreen (ContextStrip + TabBar: Analiz/Denemeler/Program, öğrenci ekranları readOnly) · MeetingsScreen · NewMeetingSheet · MeetingDetailScreen · NoteSheet.</p></div><div data-dc-tpl="164" style="display: flex; flex-direction: column; gap: 6px;"><h3 data-dc-tpl="165">Bağlam</h3><p data-dc-tpl="166" style="margin: 0px; font-size: 14px; line-height: 22px; color: rgb(27, 34, 50);">Öğrenci ekranları bir StudentScope ile sarılır: scope.coachView true ise ContextStrip eklenir, düzenleme eylemleri ve öğrenciye özel öğeler (favori, "Öğrendim", Günü Sıfırla) gizlenir. Aynı widget'lar, iki rol.</p></div><div data-dc-tpl="167" style="display: flex; flex-direction: column; gap: 6px;"><h3 data-dc-tpl="168">Dikkat kuralları</h3><p data-dc-tpl="169" style="margin: 0px; font-size: 14px; line-height: 22px; color: rgb(27, 34, 50);">Sunucuda hesaplanır: last_exam_at ≤ now − 14 gün; aynı türde son iki denemenin neti azalmışsa. Her satır kanıt alanlarıyla gelir (gün sayısı, iki net, tarihler).</p></div><div data-dc-tpl="170" style="display: flex; flex-direction: column; gap: 6px;"><h3 data-dc-tpl="171">Arama</h3><p data-dc-tpl="172" style="margin: 0px; font-size: 14px; line-height: 22px; color: rgb(27, 34, 50);">tr-TR katlama: toLowerCase(tr) sonra ı→i; ad ve soyad token'ları önek eşleşmesi. Vurgulama özgün metin aralığında.</p></div><div data-dc-tpl="173" style="display: flex; flex-direction: column; gap: 6px;"><h3 data-dc-tpl="174">Erişilebilirlik</h3><p data-dc-tpl="175" style="margin: 0px; font-size: 14px; line-height: 22px; color: rgb(27, 34, 50);">Şerit "Alparslan Kuloğlu'nun verileri" ilk okunur. Dikkat satırı "Alparslan Kuloğlu, 45 gündür deneme okutmadı, son deneme 17 Haziran". Görüşme satırı "Alparslan Kuloğlu, 12 Ekim 2026 Pazartesi, 16:00, öğrenci görüşmesi".</p></div></section><section data-dc-tpl="176" style="display: flex; flex-direction: column; gap: 12px;"><h2 data-dc-tpl="177">Bölüm 6 denetimi</h2><div data-dc-tpl="178" class="ck"><span data-dc-tpl="179" class="ok">✓</span><div data-dc-tpl="180">Dikkat listesinde yalnız iki kural; puan, hedef, tamamlama yok (D-3, D-27).</div></div><div data-dc-tpl="181" class="ck"><span data-dc-tpl="182" class="ok">✓</span><div data-dc-tpl="183">Turuncu yalnız alt çubuk, kamera, sekme göstergesi ve bugün noktası.</div></div><div data-dc-tpl="184" class="ck"><span data-dc-tpl="185" class="ok">✓</span><div data-dc-tpl="186">Emoji yok; uzun adlar kesilmiyor.</div></div><div data-dc-tpl="187" class="ck"><span data-dc-tpl="188" class="ok">✓</span><div data-dc-tpl="189">13 pt altı metin yok (alt çubuk etiketi hariç).</div></div><div data-dc-tpl="190" class="ck"><span data-dc-tpl="191" class="ok">✓</span><div data-dc-tpl="192">Kırmızı yalnız not silme onayında ve Sil metin düğmesinde.</div></div></section><section data-dc-tpl="193" style="display: flex; flex-direction: column; gap: 10px;"><h2 data-dc-tpl="194">Sıradaki tur</h2><p data-dc-tpl="195" class="ld" style="margin: 0px;">Tur 10: Tutarlılık denetimi, akış haritası ve geliştirici teslimi ("0 · Akış Haritası", "11 · Notlar").</p></section></div></div></div>
+
+
+
+
+
+</body></html>

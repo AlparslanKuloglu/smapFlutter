@@ -1,0 +1,272 @@
+14.11 Koç Koçluk Kodu
+
+14.11 · Tur 12 · Geri Gelen Özellikler
+
+Koç · Koçluk Kodu Sheet'i · 6 Kare
+
+Bugünkü uygulamada koç, Hesap'ta kendi kodunu ve koça özel açıklamayı görür. 9.1·4'teki satır bu sheet'i açar.
+
+Hesap
+
+Mehmet Özkan
+
+Öğrenci koçu
+
+Koçluk kodun: MOZK-4821
+
+Hesap
+
+Profil Ad, e-posta, telefon Şifre
+
+Koçluk
+
+Koçluk kodun MOZK-4821
+
+Bildirimler
+
+Bildirimler Görüşme, öğrenci ve hatırlatıcı
+
+Yasal
+
+Sözleşmeler Kullanım Koşulları, KVKK, Gizlilik
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+1 · Hesap · Koçluk kodun Koçluk grubundaki satır değerli SettingsRow: kod değer olarak, sağda ok. Kopyala ve Paylaş sheet'e taşındı. Yerine geçtiği kare: 9.1·4
+
+Hesap
+
+Mehmet Özkan
+
+Öğrenci koçu
+
+Koçluk kodun: MOZK-4821
+
+Hesap
+
+Profil Ad, e-posta, telefon Şifre
+
+Koçluk
+
+Koçluk kodun MOZK-4821
+
+Bildirimler
+
+Bildirimler Görüşme, öğrenci ve hatırlatıcı
+
+Yasal
+
+Sözleşmeler Kullanım Koşulları, KVKK, Gizlilik
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+Koçluk kodun
+
+MOZK-4821
+
+Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır; denemelerini, analizlerini ve programını görürsün.
+
+Bağlantıyı öğrencin istediği an kaldırabilir. Öğrenci hesabını sen açmak istersen: Öğrencilerim › +.
+
+Kopyala Paylaş
+
+2 · Kod sheet'i Kod metric-md (24/32); açıklama koça göre. Kopyala ve Paylaş eşit ağırlıkta, 10.3 kod kartıyla aynı dil.
+
+Hesap
+
+Mehmet Özkan
+
+Öğrenci koçu
+
+Koçluk kodun: MOZK-4821
+
+Hesap
+
+Profil Ad, e-posta, telefon Şifre
+
+Koçluk
+
+Koçluk kodun MOZK-4821
+
+Bildirimler
+
+Bildirimler Görüşme, öğrenci ve hatırlatıcı
+
+Yasal
+
+Sözleşmeler Kullanım Koşulları, KVKK, Gizlilik
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+Koçluk kodun
+
+MOZK-4821
+
+Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır; denemelerini, analizlerini ve programını görürsün.
+
+Bağlantıyı öğrencin istediği an kaldırabilir. Öğrenci hesabını sen açmak istersen: Öğrencilerim › +.
+
+Kopyala Paylaş
+
+Kod kopyalandı.
+
+3 · Kopyalandı Toast düğmelerin üstünde, 4 sn; sheet açık kalır.
+
+Hesap
+
+Mehmet Özkan
+
+Öğrenci koçu
+
+Koçluk kodun: MOZK-4821
+
+Hesap
+
+Profil Ad, e-posta, telefon Şifre
+
+Koçluk
+
+Koçluk kodun MOZK-4821
+
+Bildirimler
+
+Bildirimler Görüşme, öğrenci ve hatırlatıcı
+
+Yasal
+
+Sözleşmeler Kullanım Koşulları, KVKK, Gizlilik
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+Koçluk kodun
+
+Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır; denemelerini, analizlerini ve programını görürsün.
+
+Bağlantıyı öğrencin istediği an kaldırabilir. Öğrenci hesabını sen açmak istersen: Öğrencilerim › +.
+
+Kopyala Paylaş
+
+4 · Yükleniyor Kod iskeleti; düğmeler pasif. 15 sn içinde gelmezse hata.
+
+Hesap
+
+Mehmet Özkan
+
+Öğrenci koçu
+
+Koçluk kodun: MOZK-4821
+
+Hesap
+
+Profil Ad, e-posta, telefon Şifre
+
+Koçluk
+
+Koçluk kodun MOZK-4821
+
+Bildirimler
+
+Bildirimler Görüşme, öğrenci ve hatırlatıcı
+
+Yasal
+
+Sözleşmeler Kullanım Koşulları, KVKK, Gizlilik
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+Koçluk kodun
+
+Kodun yüklenemedi.
+
+Bağlantını kontrol edip tekrar dene.
+Tekrar Dene
+
+Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır; denemelerini, analizlerini ve programını görürsün.
+
+Bağlantıyı öğrencin istediği an kaldırabilir. Öğrenci hesabını sen açmak istersen: Öğrencilerim › +.
+
+Kopyala Paylaş
+
+5 · Hata Bölüm hatası kartın içinde: neden ve "Tekrar Dene". Düğmeler pasif.
+
+Hesap
+
+Mehmet Özkan
+
+Öğrenci koçu
+
+Koçluk kodun: MOZK-4821
+
+Hesap
+
+Profil Ad, e-posta, telefon Şifre
+
+Koçluk
+
+Koçluk kodun MOZK-4821
+
+Bildirimler
+
+Bildirimler Görüşme, öğrenci ve hatırlatıcı
+
+Yasal
+
+Sözleşmeler Kullanım Koşulları, KVKK, Gizlilik
+
+Anasayfa Öğrencilerim
+Okut
+Görüşmelerim Hesap
+
+Çevrimdışısın. Son kaydedilen veriler gösteriliyor.
+
+Koçluk kodun
+
+MOZK-4821
+
+Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır; denemelerini, analizlerini ve programını görürsün.
+
+Bağlantıyı öğrencin istediği an kaldırabilir. Öğrenci hesabını sen açmak istersen: Öğrencilerim › +.
+
+Kod cihazında saklı; çevrimdışında da kopyalayıp paylaşabilirsin.
+
+Kopyala Paylaş
+
+6 · Çevrimdışı Kod cihazda saklı; kopyalama ve paylaşma çalışır. Şerit sheet açıkken de görünür.
+
+Bileşenler
+
+BottomSheet (1.20) + CodeCard (Tur 9) büyük hâli; iki çerçeveli Button.
+
+SettingsRow değer varyantı (1.13).
+
+Bölüm hatası ve iskelet 1.22 kalıbında.
+
+Veri
+
+Kod refCode ; oturum yanıtıyla gelir ve cihazda saklanır. Ayrı istek yalnız önbellek boşsa.
+
+Paylaş metni: "SMAP koçluk kodum: MOZK-4821. Hesap › Koçluk'a girerek bana bağlanabilirsin."
+
+Erişilebilirlik ve hareket
+
+Kod harf harf okunur: "M O Z K tire 4 8 2 1".
+
+Kopyala selectionClick ; toast canlı bölge.
+
+Satır okunuşu: "Koçluk kodun, MOZK-4821, aç".
+
+Varsayımlar (T12)
+
+T12.25 Koçun Hesap'ındaki kod satırı değerli SettingsRow oldu; Kopyala ve Paylaş ikonları sheet'e taşındı, satır tek dokunma alanı.
+
+T12.26 Kod yenileme yok; bugünkü uygulamada da yok. Kod refCode olarak oturum yanıtıyla gelir ve cihazda saklanır.

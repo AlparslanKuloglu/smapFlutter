@@ -1,0 +1,143 @@
+13.13 Tur 12 · Koç Programı, Puan Kartı, Edebiyat
+
+13.13 · Ekran Akışı
+
+Tur 12 · Koç Programı, Puan Kartı, Edebiyat
+
+Tur 12'de geri gelen A, B ve C özelliklerinin yolu: koçun öğrencinin programını görmesi, düzenlemesi ve yenisini kurması; puan kartındaki ham puan; Edebiyat'ta dönemden esere. Durumlar ve koyu tema ilgili ekranın altında.
+
+Okun üstü: dokunulan yer Kesikli ok: kendiliğinden geçiş Üst sıra ana yol; altında o ekranın durumları ve koyu teması Kod: kaynak pano ve kare
+
+A · Programı görmek ve düzenlemek
+
+Buradan 13.11 Öğrenci profili · Program
+
+1 Program sekmesi
+
+14.1 · kare 1
+
+Durumlar ve koyu tema · 5
+
+Programı yok 14.1 · kare 4
+
+İskelet 14.3 · kare 1
+
+Hata 14.3 · kare 2
+
+Çevrimdışı 14.3 · kare 3
+
+Koyu 14.3 · kare 4
+
+Düzenle
+
+2 Düzenleme modu
+
+14.1 · kare 3
+
+Bitti
+
+Sonra Program sekmesine döner (1)
+
+A · Programlar ve yeni program
+
+Buradan Program sekmesi · Programlar satırı
+
+1 Programlar
+
+14.1 · kare 2
+
+Yeni Program
+
+2 Günler
+
+14.2 · kare 1
+
+Devam Et
+
+3 Izgara
+
+14.2 · kare 2
+
+boş saate dokun
+
+4 Konu seç · Çanta
+
+14.2 · kare 3
+
+Durumlar · 1
+
+Öğrencide Çantam 14.2 · kare 6
+
+Ekle, sonra Devam Et
+
+5 Ad ve motto
+
+14.2 · kare 4
+
+Programı Kaydet
+
+6 Kaydedildi
+
+14.2 · kare 5
+
+B · Puan kartında ham puan
+
+Buradan 13.6 Deneme Detay · Genel
+
+1 Genel · AYT
+
+14.4 · kare 1
+
+Durumlar ve koyu tema · 4
+
+TYT 14.4 · kare 2
+
+Koyu 14.4 · kare 3
+
+İskelet 14.4 · kare 4
+
+Koç bağlamı 14.4 · kare 5
+
+C · Edebiyat: dönemden esere
+
+Buradan 13.8 Derslerim › Türk Dili ve Edebiyatı
+
+1 Dönemler
+
+14.5 · kare 1
+
+Durumlar · 1
+
+İskelet 14.7 · kare 1
+
+dönem satırı
+
+2 Dönem detayı
+
+14.5 · kare 2
+
+Durumlar · 2
+
+Akordeon yükleniyor 14.5 · kare 3
+
+Bölüm hatası 14.7 · kare 2
+
+yazar satırı
+
+3 Yazar sheet'i
+
+14.6 · kare 1
+
+Durumlar ve koyu tema · 3
+
+Durum bilinmiyor 14.6 · kare 3
+
+Çevrimdışı 14.7 · kare 3
+
+Koyu 14.7 · kare 4
+
+Öğrendim
+
+4 Öğrendim sonrası
+
+14.6 · kare 2
