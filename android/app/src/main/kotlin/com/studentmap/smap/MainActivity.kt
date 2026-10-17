@@ -1,4 +1,4 @@
-package com.smap.smap
+package com.studentmap.smap
 
 import android.os.Build
 import android.view.HapticFeedbackConstants

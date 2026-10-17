@@ -16,7 +16,9 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+# The old app went to the stores as com.studentmap.smap with builds +1 and +2;
+# every upload needs a higher build number than the store's latest.
+version: 1.0.0+3
 
 environment:
   sdk: ^3.10.7
@@ -54,8 +56,7 @@ dependencies:
   stacked: ^3.5.0
   get_it: ^8.0.3
   # Pinned to 11.1.0: 11.2.0 uses `Viewport.scrollCacheExtent` (Flutter 3.41+)
-  # and does not compile on the pinned Flutter 3.38.6 (K16). Same as Sepello
-  # and Memora.
+  # and does not compile on the pinned Flutter 3.38.6 (K16).
   auto_route: 11.1.0
   dart_mappable: ^4.7.0
 

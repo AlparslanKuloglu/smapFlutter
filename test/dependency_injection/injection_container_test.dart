@@ -249,7 +249,7 @@ void main() {
         ],
       );
 
-      expect(locator<_Probe>().name, 'com.smap.smap');
+      expect(locator<_Probe>().name, 'com.studentmap.smap');
     });
 
     test('the shipped module lists are well formed', () {

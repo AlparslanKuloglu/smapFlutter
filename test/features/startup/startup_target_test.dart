@@ -89,7 +89,7 @@ void main() {
 
       expect(ok, isTrue);
       expect(opened.single.host, 'play.google.com');
-      expect(opened.single.queryParameters['id'], 'com.smap.smap');
+      expect(opened.single.queryParameters['id'], 'com.studentmap.smap');
     });
 
     test('opens the App Store page on iOS once an id is configured', () async {

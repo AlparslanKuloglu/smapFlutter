@@ -11,14 +11,17 @@ import 'package:smap/features/account/domain/study_track.dart';
 ///
 /// ```json
 /// { "userType": 1,
-///   "data": { "name": "", "surname": "", "userName": "", "email": "",
+///   "data": { "name": "", "firstName": "", "surname": "", "userName": "",
+///             "email": "",
 ///             "password": "", "password2": "", "seasonType": 12,
 ///             "aimType": 2, "photo": "1avatarN3.png" } }
 /// ```
 ///
 /// `userType` is 1 for a student and 2 for a coach. The form has one "Ad
-/// Soyad" field; the last word is the `surname`, the rest the `name` (the
-/// legacy rule). A coach sends `seasonType: 0` and `aimType: null`, a student
+/// Soyad" field: `name` is the whole of it, `firstName` all but the last word
+/// and `surname` the last word ("Ayşe Nur Kaya" → "Ayşe Nur Kaya", "Ayşe Nur",
+/// "Kaya"), as the owner's app sends it since October 2026 (upstream
+/// e615595); before that `name` carried only the first name. A coach sends `seasonType: 0` and `aimType: null`, a student
 /// below grade 11 `aimType: null`. The password goes out as typed and is never
 /// kept: [toString] leaves it out.
 @immutable
@@ -75,13 +78,20 @@ class NewRegistration {
 
   bool get isCoach => role == UserRole.coach;
 
-  /// The legacy split of "Ad Soyad": one word is a `name` with an empty
-  /// `surname`; otherwise the last word is the `surname`.
-  static ({String name, String surname}) splitFullName(String fullName) {
+  /// The split of "Ad Soyad": one word is a `firstName` with an empty
+  /// `surname`; otherwise the last word is the `surname`. [whole] is the name
+  /// with its spaces tidied ("  Ayşe   Nur  Kaya " → "Ayşe Nur Kaya").
+  static ({String whole, String firstName, String surname}) splitFullName(
+    String fullName,
+  ) {
     final words = fullName.trim().split(RegExp(r'\s+'));
-    if (words.length < 2) return (name: words.first, surname: '');
+    final whole = words.join(' ');
+    if (words.length < 2) {
+      return (whole: whole, firstName: words.first, surname: '');
+    }
     return (
-      name: words.sublist(0, words.length - 1).join(' '),
+      whole: whole,
+      firstName: words.sublist(0, words.length - 1).join(' '),
       surname: words.last,
     );
   }
@@ -105,11 +115,12 @@ class NewRegistration {
   /// when they are known (the legacy `RegisterNotifier` put them there; its
   /// data source dropped them, see `RegisterRequests.sendAcceptedVersions`).
   Map<String, Object?> toBody({bool withAcceptedVersions = true}) {
-    final (:name, :surname) = splitFullName(fullName);
+    final (:whole, :firstName, :surname) = splitFullName(fullName);
     return <String, Object?>{
       'userType': isCoach ? 2 : 1,
       'data': <String, Object?>{
-        'name': name,
+        'name': whole,
+        'firstName': firstName,
         'surname': surname,
         'userName': userName.trim(),
         'email': email.trim(),

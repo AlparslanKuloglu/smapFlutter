@@ -73,9 +73,10 @@ final class AppConfig {
   /// `YKS_DATE`.
   static final DateTime defaultYksDate = DateTime(2027, 6, 19);
 
-  /// Current template application id (`android/app/build.gradle.kts`); the
-  /// owner still has to pick the permanent one (FIN5).
-  static const String defaultPlayPackage = 'com.smap.smap';
+  /// The published app's id (`applicationId` in
+  /// `android/app/build.gradle.kts`, the same bundle id on iOS); the store
+  /// page the "Güncelle" button opens on Android.
+  static const String defaultPlayPackage = 'com.studentmap.smap';
 
   static const _apiBaseUrlDefine = String.fromEnvironment('API_BASE_URL');
   static const _omrBaseUrlDefine = String.fromEnvironment('OMR_BASE_URL');

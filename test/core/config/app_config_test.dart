@@ -15,7 +15,7 @@ void main() {
       expect(config.supportEmail, isNull);
       expect(config.yksDate, DateTime(2027, 6, 19));
       expect(config.appStoreId, isNull);
-      expect(config.playPackage, 'com.smap.smap');
+      expect(config.playPackage, 'com.studentmap.smap');
     });
 
     test('blank and whitespace values count as missing', () {

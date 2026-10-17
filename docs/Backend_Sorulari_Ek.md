@@ -44,4 +44,4 @@ Ana liste: `spec/SMAP_Flutter_Spec.md` §6.3 (41 madde) ve `SMAP_Ana_Plan.md` §
 - Kullanılmayan 90 görselin silinmesi (14,4 MB): `gorevler/fin3_kullanilmayan_gorseller.txt`.
 - Kil illüstrasyonların (Harita, Ampul, Hokka) 2x/3x dosyaları; şu an 140 px ve ekranda bulanık.
 - Programım hafta ızgarası blokları panoda 36 dp, erişilebilirlik kuralının (48 dp) altında: dokunma alanı görünmez biçimde genişletilsin mi?
-- Uygulama kimliği (`com.smap.smap`), imza, sürüm numarası, destek e-postası, App Store kimliği.
+- Uygulama kimliği `com.studentmap.smap` (karar verildi, eski uygulamayla aynı); imza anahtarı sahibinde; sürüm numarası (mağazadaki son build), destek e-postası, App Store kimliği.

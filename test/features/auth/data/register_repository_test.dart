@@ -44,13 +44,14 @@ void main() {
   }
 
   group('NewRegistration body', () {
-    test('a student: the legacy form body, field by field', () {
+    test('a student: the form body, field by field', () {
       final body = _student().toBody(withAcceptedVersions: false);
 
       expect(body, {
         'userType': 1,
         'data': {
-          'name': 'Alparslan',
+          'name': 'Alparslan Kuloğlu',
+          'firstName': 'Alparslan',
           'surname': 'Kuloğlu',
           'userName': 'alparslan.k',
           'email': 'alparslan@ornek.com',
@@ -92,13 +93,15 @@ void main() {
       expect(_student(grade: SchoolGrade.graduate).aimType, 2);
     });
 
-    test('one word is a name; the last of several is the surname', () {
+    test('one word is a first name; the last of several is the surname', () {
       expect(NewRegistration.splitFullName('Ayşe'), (
-        name: 'Ayşe',
+        whole: 'Ayşe',
+        firstName: 'Ayşe',
         surname: '',
       ));
       expect(NewRegistration.splitFullName('  Ayşe   Nur  Kaya '), (
-        name: 'Ayşe Nur',
+        whole: 'Ayşe Nur Kaya',
+        firstName: 'Ayşe Nur',
         surname: 'Kaya',
       ));
     });
