@@ -5,8 +5,8 @@
 /// layer maps `code → AppLocalizations` getter with one exhaustive `switch`.
 ///
 /// [offline] and [server] are separate on purpose: a server that answers 5xx
-/// is not "no connection" (Sepello 633a0e2 showed an offline banner for a
-/// backend failure).
+/// is not "no connection" (an offline banner for a backend failure sends the
+/// user to check a connection that works).
 enum AppErrorCode {
   /// The request left the device but the connection broke or was refused.
   network('errors_network'),

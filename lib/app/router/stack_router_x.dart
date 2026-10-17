@@ -1,8 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
 
-/// Helpers on the stack of a router (pattern of Sepello's
-/// `stack_router_x.dart`).
+/// Helpers on the stack of a router.
 extension StackRouterX on StackRouter {
   /// The name of the page under the top one, if any.
   String? get belowName =>

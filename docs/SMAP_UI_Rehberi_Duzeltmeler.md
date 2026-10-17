@@ -1,3 +1,5 @@
+> **Tarihçe notu (teslim, 2026-10-18):** Bu belge planlama döneminde yazıldı. İçindeki `SHP/`, `SLP/`, `MEM/` kısaltmaları ve Sepello, Memora, Sleepia adları repo dışındaki referans uygulamalardır; `TSR/`, `tasarim-html/` ve `unpacked/` o günkü tasarım klasörüdür. Bunlar ekibin elinde değildir ve gerekmez: kalıpların bu repoda uygulanmış hâli `docs/dev/` bölümlerinde, tasarım `docs/design/` altında, bağlayıcı kurallar `AGENTS.md`'dedir. Belgedeki kararlar (K1–K16) ve gerekçeler geçerlidir.
+
 **SMAP UI Uygulama Rehberi incelemesi**
 
 Rehberde atıf yapılan yolların çoğu var ve iddia edileni söylüyor. mihr_ui yayımlanmış dev.3 kopyasından kontrol edildi: `MihrThemeConfig` alanları (`materialOverrides` dahil), `MihrTypography.fromFontFamily`, `MihrButtonShadows.flat`, `MihrSpacing` ve `MihrRadius` değerleri, düğme boyları (md 40/14, xl 48/16) doğru. Sepello commit ve PR eşlemesi, SMAP satır atıfları ve uç adları da doğru. SMAP'teki eski dosyaların satır sayıları birebir tutuyor (2.652, 1.663, 829, 1.088). Aşağıdakiler düzeltilmeli.

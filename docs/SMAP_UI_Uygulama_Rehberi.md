@@ -1,5 +1,7 @@
 # SMAP UI Uygulama Rehberi
 
+> **Tarihçe notu (teslim, 2026-10-18):** Bu belge planlama döneminde yazıldı. İçindeki `SHP/`, `SLP/`, `MEM/` kısaltmaları ve Sepello, Memora, Sleepia adları repo dışındaki referans uygulamalardır; `TSR/`, `tasarim-html/` ve `unpacked/` o günkü tasarım klasörüdür. Bunlar ekibin elinde değildir ve gerekmez: kalıpların bu repoda uygulanmış hâli `docs/dev/` bölümlerinde, tasarım `docs/design/` altında, bağlayıcı kurallar `AGENTS.md`'dedir. Belgedeki kararlar (K1–K16) ve gerekçeler geçerlidir.
+
 Tarih: 2026-10-11 · Kapsam: Claude Design yeniden tasarımının (Tur 1–11) `smapFlutter`'a uygulanması · Bu rehber `SMAP_Gelistirme_Plani.md`'yi tekrar etmez, onu UI tarafında ayrıntılandırır.
 
 **Kısaltmalar**

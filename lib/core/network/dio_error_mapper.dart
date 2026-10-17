@@ -13,8 +13,8 @@ const Set<int> kDefaultSessionExpiredStatuses = {401, 403};
 /// [requiresSession] is the request's flag (`BaseRequest.requiresSession`).
 /// [deviceOnline] is the connectivity reading, `null` when unknown; it only
 /// decides ambiguous connection failures, never an answered request, so a 5xx
-/// is a `server` error even when the device just went offline (Sepello
-/// 633a0e2: a backend failure must not look like "no connection").
+/// is a `server` error even when the device just went offline: a backend
+/// failure must not look like "no connection".
 AppException mapDioException(
   DioException error, {
   bool requiresSession = true,

@@ -22,8 +22,8 @@ import 'package:smap/app/router/app_router.dart';
 /// ),
 /// ```
 ///
-/// The tab shows its own band, so its `ShellTabSpec` in `CoachShellView` is
-/// `content: ShellTabContent.screen`.
+/// The tab's root screen (`StudentsView`) draws its own band; the shell only
+/// holds the tab's navigator (`ShellTabSpec.route`).
 List<AutoRoute> get coachStudentsTabRoutes => [
   AutoRoute(page: StudentsRoute.page, initial: true),
 ];

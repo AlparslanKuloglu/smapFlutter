@@ -114,8 +114,8 @@ extension MotionContext on BuildContext {
 
   /// [duration], or [reduced] when reduce motion is on.
   ///
-  /// [reduced] is required on purpose (Düzeltmeler #18): the Sepello helper
-  /// defaulted to `Duration.zero`, which turns an opacity fade into a jump.
+  /// [reduced] is required on purpose (Düzeltmeler #18): a helper that
+  /// defaults to `Duration.zero` turns an opacity fade into a jump.
   /// A slide or scale passes `AppMotion.reducedFade` (150 ms fade); a change
   /// that must be instant passes `Duration.zero`.
   Duration motion(Duration duration, {required Duration reduced}) =>
