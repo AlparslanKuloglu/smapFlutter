@@ -20,6 +20,7 @@ import 'package:smap/shared/ui/buttons/app_button.dart';
 import 'package:smap/shared/ui/feedback/app_empty_state.dart';
 import 'package:smap/shared/ui/feedback/app_error_state.dart';
 import 'package:smap/shared/ui/feedback/app_skeleton.dart';
+import 'package:smap/shared/ui/illustrations/app_clay.dart';
 import 'package:smap/shared/ui/inputs/app_search_field.dart';
 import 'package:smap/shared/ui/navigation/app_bottom_bar.dart';
 import 'package:smap/shared/ui/navigation/app_context_strip.dart';

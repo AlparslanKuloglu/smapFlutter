@@ -9,9 +9,10 @@ import 'package:smap/shared/ui/surfaces/app_card.dart';
 /// #29), at two levels.
 ///
 /// **screen** ("Henüz deneme yok"): centered, 32 pt side padding, an optional
-/// 128 pt [illustration] (a clay picture of the 1.25 set: Harita, Ampul,
-/// Hokka, the subject's picture; at most one per screen, skipped by the
-/// screen reader), the [title] 20/28 · 700 24 pt under it, one [message]
+/// 128 pt [illustration] (`AppClay.medium` with a clay picture of the 1.25
+/// set: Harita, Ampul, Hokka, the lesson's picture; only here, in onboarding
+/// and in the store, never in a section-level card; at most one per screen,
+/// skipped by the screen reader; the tile is the same in the dark theme), the [title] 20/28 · 700 24 pt under it, one [message]
 /// sentence 15/24 `textSecondary` 8 under the title, and at most one primary
 /// action ("İlk Denemeni Okut"), 24 under the text. Without an
 /// [illustration] nothing is drawn in its place and the block starts with the
@@ -75,8 +76,8 @@ class AppEmptyState extends StatelessWidget {
   /// button.
   final bool primaryAction;
 
-  /// The clay picture, drawn 128 x 128 (screen level). Null leaves the area
-  /// empty.
+  /// The clay picture, drawn 128 x 128 (screen level): an `AppClay.medium`.
+  /// Null leaves the area empty.
   final Widget? illustration;
 
   /// Space above the block: 64 in a tab, 88 on a full screen (1.25).

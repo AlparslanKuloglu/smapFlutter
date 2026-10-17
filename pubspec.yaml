@@ -153,6 +153,7 @@ flutter:
     - assets/authors/t2/
     - assets/brand/
     - assets/illustrations/
+    - assets/illustrations/clay/
 
   fonts:
     - family: PlusJakartaSans

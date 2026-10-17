@@ -69,17 +69,11 @@ class _MeetingsSkeleton extends StatelessWidget {
   }
 }
 
-/// No meeting at all (pano 10.5 kare 4): the clay "Hokka" 128 pt, "Henüz
+/// No meeting at all (pano 10.5 kare 4): the clay "Hokka" (M 128 pt), "Henüz
 /// görüşme yok", one sentence and the one action "Yeni Görüşme". The picture
 /// is decoration (empty alt text).
 class _MeetingsEmpty extends StatelessWidget {
   const _MeetingsEmpty();
-
-  /// The clay picture of the board (1.25), with its own tile; not yet in the
-  /// generated asset list.
-  static const AssetGenImage _picture = AssetGenImage(
-    'assets/illustrations/clay_inkwell.webp',
-  );
 
   @override
   Widget build(BuildContext context) {
@@ -95,12 +89,7 @@ class _MeetingsEmpty extends StatelessWidget {
         actionLabel: l10n.coachMeetings_emptyAction,
         actionIcon: PhosphorIconsRegular.plus,
         onAction: () => unawaited(viewModel.newMeeting()),
-        illustration: _picture.image(
-          width: AppEmptyState.illustrationSize,
-          height: AppEmptyState.illustrationSize,
-          fit: BoxFit.contain,
-          errorBuilder: (context, error, stack) => const SizedBox.shrink(),
-        ),
+        illustration: const AppClay.medium(ClayPicture.hokka),
       ),
     );
   }

@@ -20,7 +20,6 @@ import 'package:smap/features/coach/presentation/meetings/meetings_viewmodel.dar
 import 'package:smap/features/coach/presentation/meetings/sheet_meetings_dialogs.dart';
 import 'package:smap/features/coach/presentation/meetings/stack_meetings_navigator.dart';
 import 'package:smap/features/home/application/avatar_asset.dart';
-import 'package:smap/gen/assets.gen.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/shared/ui/controls/app_chip.dart';
 import 'package:smap/shared/ui/controls/app_chip_group.dart';
@@ -29,6 +28,7 @@ import 'package:smap/shared/ui/feedback/app_error_state.dart';
 import 'package:smap/shared/ui/feedback/app_skeleton.dart';
 import 'package:smap/shared/ui/feedback/section_state.dart';
 import 'package:smap/shared/ui/identity/app_avatar.dart';
+import 'package:smap/shared/ui/illustrations/app_clay.dart';
 import 'package:smap/shared/ui/indicators/app_spinner.dart';
 import 'package:smap/shared/ui/inputs/app_search_field.dart';
 import 'package:smap/shared/ui/navigation/app_bottom_bar.dart';

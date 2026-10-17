@@ -20,6 +20,7 @@ import 'package:smap/features/cards/presentation/deck/card_deck_state.dart';
 import 'package:smap/features/cards/presentation/deck/sheets/deck_prompts.dart';
 import 'package:smap/features/cards/presentation/widgets/card_deck.dart';
 import 'package:smap/shared/ui/feedback/section_state.dart';
+import 'package:smap/shared/ui/illustrations/app_clay.dart';
 
 /// The logic of the card deck (pano 8.1 "Kart Destesi · 4 Kare", 8.2 koyu; spec
 /// §4.G; route `/lessons/deck?lessonId=&examId=&group=`).
@@ -130,6 +131,7 @@ class CardDeckViewModel extends BaseViewModel {
         state: _state,
         group: _group,
         isExam: examId != null,
+        picture: _picture,
         empty: _state == SectionState.empty ? DeckEmptyKind.noCards : null,
       );
     }
@@ -144,8 +146,14 @@ class CardDeckViewModel extends BaseViewModel {
       empty: front == null ? _emptyKind : null,
       knownCount: _library.counts.known,
       isExam: examId != null,
+      picture: _picture,
     );
   }
+
+  /// The clay picture of the empty states: Harita for an exam's deck, the
+  /// lesson's own picture for a lesson deck (board 1.25).
+  ClayPicture? get _picture =>
+      examId != null ? ClayPicture.harita : DeckLessons.pictureOf(lessonId);
 
   DeckEmptyKind get _emptyKind => switch (_group) {
     DeckGroup.missing => DeckEmptyKind.missingDone,

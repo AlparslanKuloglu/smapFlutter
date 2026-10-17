@@ -38,7 +38,7 @@ class _ListSkeleton extends StatelessWidget {
   }
 }
 
-/// No program yet (pano 3.7 kare 1): the clay bulb, "Henüz programın yok", the
+/// No program yet (pano 3.7 kare 1): the clay bulb (Ampul, M 128), "Henüz programın yok", the
 /// sentence and "Haftalık Programını Kur". The bar has no "Yeni Program" and
 /// there is no search field. A coach sees the student's name instead (Tur 12
 /// A, brief 14.1 kare 4): "Alparslan'ın programı yok", "Onun için bir hafta
@@ -58,10 +58,6 @@ class _ListEmpty extends StatelessWidget {
 
   /// The student's first name in a coach's view; null for the user's own.
   final String? studentFirstName;
-
-  /// The clay "Ampul" picture of board 1.25 (a crop of the board, like the
-  /// welcome screen's map); nothing is drawn while the file is missing.
-  static const String _bulbAsset = 'assets/illustrations/clay_bulb.webp';
 
   @override
   Widget build(BuildContext context) {
@@ -86,11 +82,7 @@ class _ListEmpty extends StatelessWidget {
             : null,
         onAction: onSetUp,
         topPadding: AppSpacing.s64,
-        illustration: Image.asset(
-          _bulbAsset,
-          fit: BoxFit.contain,
-          errorBuilder: (context, error, stack) => const SizedBox.shrink(),
-        ),
+        illustration: const AppClay.medium(ClayPicture.ampul),
       ),
     );
   }

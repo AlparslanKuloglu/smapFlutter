@@ -27,7 +27,7 @@ class _WelcomeHero extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const ClayIllustration.map(),
+          const AppClay.large(ClayPicture.harita),
           const SizedBox(height: _pictureGap),
           Semantics(
             header: true,

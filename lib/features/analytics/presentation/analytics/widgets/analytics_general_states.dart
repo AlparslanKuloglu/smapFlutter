@@ -119,15 +119,12 @@ class _GeneralError extends StatelessWidget {
 }
 
 /// The student has no exam at all (pano 6.2 kare 3; "Genel sekmesi de aynı
-/// boş durumu gösterir"): the clay map, "Henüz deneme yok", one sentence and
+/// boş durumu gösterir"): the clay map (Harita, M 128), "Henüz deneme yok", one sentence and
 /// "İlk Denemeni Okut", which opens the camera. A coach's view has the same
 /// picture and title, a sentence about the student and no action (the camera
 /// reads the coach's own forms, not the student's).
 class _NoExamsEmpty extends StatelessWidget {
   const _NoExamsEmpty();
-
-  /// The clay picture's edge (pano 6.2 kare 3: 128).
-  static const double _picture = AppEmptyState.illustrationSize;
 
   @override
   Widget build(BuildContext context) {
@@ -148,12 +145,7 @@ class _NoExamsEmpty extends StatelessWidget {
         actionLabel: coach ? null : l10n.analytics_emptyAction,
         actionIcon: coach ? null : PhosphorIconsRegular.camera,
         onAction: coach ? null : viewModel.openCamera,
-        illustration: Assets.illustrations.clayMap.image(
-          width: _picture,
-          height: _picture,
-          fit: BoxFit.contain,
-          errorBuilder: (context, error, stack) => const SizedBox.shrink(),
-        ),
+        illustration: const AppClay.medium(ClayPicture.harita),
       ),
     );
   }

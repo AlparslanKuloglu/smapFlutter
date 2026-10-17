@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:smap/features/cards/application/deck_card.dart';
 import 'package:smap/features/cards/application/deck_group.dart';
 import 'package:smap/features/cards/application/deck_library.dart';
+import 'package:smap/shared/ui/illustrations/app_clay.dart';
 import 'package:smap/shared/ui/feedback/section_state.dart';
 
 /// The title block of the deck screen (pano 8.1: "Tarih Kartları"): the lesson
@@ -109,6 +110,7 @@ class DeckStageData {
     this.empty,
     this.knownCount = 0,
     this.isExam = false,
+    this.picture,
   });
 
   /// `loading`, `error`/`offline`, `empty` (no card anywhere) or `ready`.
@@ -132,6 +134,11 @@ class DeckStageData {
   final int knownCount;
   final bool isExam;
 
+  /// The clay picture of the "eksik kalmadı" state (board 1.25): the lesson's
+  /// own picture in a lesson deck, Harita in an exam's deck; `null` for a
+  /// lesson without one (nothing is drawn then).
+  final ClayPicture? picture;
+
   @override
   bool operator ==(Object other) =>
       other is DeckStageData &&
@@ -143,7 +150,8 @@ class DeckStageData {
       other.canSwipe == canSwipe &&
       other.empty == empty &&
       other.knownCount == knownCount &&
-      other.isExam == isExam;
+      other.isExam == isExam &&
+      other.picture == picture;
 
   @override
   int get hashCode => Object.hash(
@@ -156,5 +164,6 @@ class DeckStageData {
     empty,
     knownCount,
     isExam,
+    picture,
   );
 }

@@ -435,20 +435,11 @@ class $AssetsIllustrationsGen {
   /// File path: assets/illustrations/.gitkeep
   String get aGitkeep => 'assets/illustrations/.gitkeep';
 
-  /// File path: assets/illustrations/clay_bulb.webp
-  AssetGenImage get clayBulb =>
-      const AssetGenImage('assets/illustrations/clay_bulb.webp');
-
-  /// File path: assets/illustrations/clay_inkwell.webp
-  AssetGenImage get clayInkwell =>
-      const AssetGenImage('assets/illustrations/clay_inkwell.webp');
-
-  /// File path: assets/illustrations/clay_map.webp
-  AssetGenImage get clayMap =>
-      const AssetGenImage('assets/illustrations/clay_map.webp');
+  /// Directory path: assets/illustrations/clay
+  $AssetsIllustrationsClayGen get clay => const $AssetsIllustrationsClayGen();
 
   /// List of all assets
-  List<dynamic> get values => [aGitkeep, clayBulb, clayInkwell, clayMap];
+  List<String> get values => [aGitkeep];
 }
 
 class $AssetsMenuIconsGen {
@@ -3003,6 +2994,69 @@ class $AssetsAuthorsT2Gen {
     nabizadenazim,
     recaizademahmudekrem,
     samipasazadesezai,
+  ];
+}
+
+class $AssetsIllustrationsClayGen {
+  const $AssetsIllustrationsClayGen();
+
+  /// File path: assets/illustrations/clay/ampul.png
+  AssetGenImage get ampul =>
+      const AssetGenImage('assets/illustrations/clay/ampul.png');
+
+  /// File path: assets/illustrations/clay/atom.png
+  AssetGenImage get atom =>
+      const AssetGenImage('assets/illustrations/clay/atom.png');
+
+  /// File path: assets/illustrations/clay/erlenmeyer.png
+  AssetGenImage get erlenmeyer =>
+      const AssetGenImage('assets/illustrations/clay/erlenmeyer.png');
+
+  /// File path: assets/illustrations/clay/harita.png
+  AssetGenImage get harita =>
+      const AssetGenImage('assets/illustrations/clay/harita.png');
+
+  /// File path: assets/illustrations/clay/hokka.png
+  AssetGenImage get hokka =>
+      const AssetGenImage('assets/illustrations/clay/hokka.png');
+
+  /// File path: assets/illustrations/clay/islemler.png
+  AssetGenImage get islemler =>
+      const AssetGenImage('assets/illustrations/clay/islemler.png');
+
+  /// File path: assets/illustrations/clay/kitap.png
+  AssetGenImage get kitap =>
+      const AssetGenImage('assets/illustrations/clay/kitap.png');
+
+  /// File path: assets/illustrations/clay/kure.png
+  AssetGenImage get kure =>
+      const AssetGenImage('assets/illustrations/clay/kure.png');
+
+  /// File path: assets/illustrations/clay/piramit.png
+  AssetGenImage get piramit =>
+      const AssetGenImage('assets/illustrations/clay/piramit.png');
+
+  /// File path: assets/illustrations/clay/sutun.png
+  AssetGenImage get sutun =>
+      const AssetGenImage('assets/illustrations/clay/sutun.png');
+
+  /// File path: assets/illustrations/clay/yaprak.png
+  AssetGenImage get yaprak =>
+      const AssetGenImage('assets/illustrations/clay/yaprak.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+    ampul,
+    atom,
+    erlenmeyer,
+    harita,
+    hokka,
+    islemler,
+    kitap,
+    kure,
+    piramit,
+    sutun,
+    yaprak,
   ];
 }
 

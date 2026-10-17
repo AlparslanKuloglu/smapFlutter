@@ -12,10 +12,14 @@ import 'package:smap/features/cards/presentation/deck/card_deck_state.dart';
 import 'package:smap/features/cards/presentation/deck/card_deck_viewmodel.dart';
 import 'package:smap/features/lessons/presentation/topic_detail/sheets/card_sheet.dart';
 import 'package:smap/shared/ui/feedback/section_state.dart';
+import 'package:smap/shared/ui/illustrations/app_clay.dart';
 import 'package:smap/shared/ui/sheets/app_confirm_sheet.dart';
 
 import '../../application/deck_fixtures.dart';
 import 'deck_harness.dart';
+
+/// TYT Matematik, a lesson with no clay picture (web-only in v1).
+const tytMatematik = '663e387c4fb443839593141c';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -449,6 +453,23 @@ void main() {
       expect(stage.knownCount, 65, reason: '"Bildiklerim\'deki 65 kartı..."');
       expect(model.segments.counts.missing, 0, reason: '"kart yok"');
       expect(model.progress.visible, isFalse);
+      expect(
+        stage.picture,
+        ClayPicture.sutun,
+        reason: 'a lesson deck draws its own lesson picture (board 1.25)',
+      );
+    });
+
+    test('a lesson without a picture draws none (Matematik)', () async {
+      harness.backend.decks[tytMatematik] = LessonCardDecks(
+        missing: [card('only', 'Tek kart', text: 'Metin.')],
+        known: knownCards(3),
+      );
+      final model = await open(lessonId: tytMatematik);
+      await model.requestLearn();
+
+      expect(model.stage.empty, DeckEmptyKind.missingDone);
+      expect(model.stage.picture, isNull);
     });
 
     test('"Bildiklerime Geç" opens Bildiklerim', () async {
@@ -609,6 +630,7 @@ void main() {
       expect(model.header.isExam, isTrue, reason: '"Deneme Kartları"');
       expect(model.stage.state, SectionState.ready);
       expect(model.segments.counts.missing, 3);
+      expect(model.stage.picture, ClayPicture.harita, reason: 'exam deck: map');
       expect(model.progress.total, 3);
       expect(model.stage.front!.key, 'edirne');
       expect(model.stage.front!.lessonId, tarihLesson);
@@ -626,6 +648,11 @@ void main() {
       final model = await open(examId: 'exam-1');
       expect(model.segments.counts.missing, 2);
       expect(model.header.lessonName, 'Tarih');
+      expect(
+        model.stage.picture,
+        ClayPicture.harita,
+        reason: 'an exam deck keeps the map even when narrowed to a lesson',
+      );
     });
 
     test('an exam that earned no card is the empty state', () async {

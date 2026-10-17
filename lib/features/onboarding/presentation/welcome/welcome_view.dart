@@ -10,9 +10,9 @@ import 'package:smap/dependency_injection/injection_container.dart';
 import 'package:smap/features/onboarding/application/onboarding_draft.dart';
 import 'package:smap/features/onboarding/onboarding_navigation.dart';
 import 'package:smap/features/onboarding/presentation/welcome/welcome_viewmodel.dart';
-import 'package:smap/features/onboarding/presentation/widgets/clay_illustration.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/shared/ui/buttons/app_button.dart';
+import 'package:smap/shared/ui/illustrations/app_clay.dart';
 import 'package:smap/shared/ui/navigation/app_system_overlay.dart';
 
 part 'widgets/welcome_content.dart';
