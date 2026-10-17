@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:studentmap/core/theme/app_colors.dart';
 import 'package:studentmap/domain/models/general_lessons.dart';
 import 'package:studentmap/core/constants/lesson_constants.dart';
 import 'package:studentmap/features/analytics/presentation/screens/lesson_detail_page.dart';
@@ -236,28 +237,22 @@ class LessonNavigationHelper {
             right: -6,
             top: -6,
             child: Container(
-              padding: const EdgeInsets.all(4),
-              constraints: const BoxConstraints(minWidth: 24, minHeight: 24),
+              width: 24,
+              height: 24,
+              alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
-                border: Border.all(color: Colors.grey.shade300, width: 1.5),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.black12,
-                    blurRadius: 4,
-                    offset: Offset(0, 2),
-                  ),
-                ],
+                border: Border.all(color: const Color(0xFFE8ECF1), width: 1),
               ),
-              child: Center(
-                child: Text(
-                  '$count',
-                  style: const TextStyle(
-                    color: Colors.redAccent,
-                    fontSize: 10,
-                    fontWeight: FontWeight.bold,
-                  ),
+              child: Text(
+                '$count',
+                style: const TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.primaryOrange,
+                  height: 1,
+                  fontFeatures: [FontFeature.tabularFigures()],
                 ),
               ),
             ),
