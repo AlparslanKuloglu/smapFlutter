@@ -284,16 +284,29 @@
   "@exams_rank": {
     "description": "Exam header score card: label under the rank (C26)."
   },
-  "exams_scoreColumnA11y": "{label}, {value}",
-  "@exams_scoreColumnA11y": {
-    "description": "Screen reader sentence of one score card column (C26): \"Sıra, 48.215.\".",
+  "exams_scoreRowA11y": "{label} {value}, sıra {rank}",
+  "@exams_scoreRowA11y": {
+    "description": "Screen reader sentence of one score card row (Tur 12 B, 14.4): \"Yerleştirme puanı 412,63, sıra 48.215\". The rank has no ordinal dot.",
     "placeholders": {
-      "label": {
-        "type": "String"
-      },
-      "value": {
-        "type": "String"
-      }
+      "label": {"type": "String"},
+      "value": {"type": "String"},
+      "rank": {"type": "String"}
+    }
+  },
+  "exams_scoreRowPointsA11y": "{label} {value}",
+  "@exams_scoreRowPointsA11y": {
+    "description": "Score card row with points but no rank: \"Ham puan 398,12\".",
+    "placeholders": {
+      "label": {"type": "String"},
+      "value": {"type": "String"}
+    }
+  },
+  "exams_scoreRowRankA11y": "{label} sırası {rank}",
+  "@exams_scoreRowRankA11y": {
+    "description": "Score card row with a rank but no points: \"Ham puan sırası 52.904\".",
+    "placeholders": {
+      "label": {"type": "String"},
+      "rank": {"type": "String"}
     }
   },
   "exams_momentA11y": "{name}, {net} net, {correct} doğru, {wrong} yanlış, {blank} boş",

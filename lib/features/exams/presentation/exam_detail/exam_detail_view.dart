@@ -24,6 +24,7 @@ import 'package:smap/features/exams/presentation/exam_detail/exam_detail_viewmod
 import 'package:smap/features/exams/presentation/exam_detail/stack_exam_detail_navigator.dart';
 import 'package:smap/features/exams/presentation/widgets/dyb_counter.dart';
 import 'package:smap/features/exams/presentation/widgets/exam_header.dart';
+import 'package:smap/features/exams/presentation/widgets/exam_score_card.dart';
 import 'package:smap/features/exams/presentation/widgets/exam_test_name.dart';
 import 'package:smap/features/exams/presentation/widgets/question_cell.dart';
 import 'package:smap/features/exams/presentation/widgets/test_bar_row.dart';

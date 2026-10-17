@@ -128,8 +128,8 @@ String _fieldName(AppLocalizations l10n, AytField field) => switch (field) {
 };
 
 /// The header while the result loads (pano 5.8 kare 1): the cover, three text
-/// lines, the net, the three counters and the score block; the sizes are the
-/// board's.
+/// lines, the net, the three counters and the score card at its full height
+/// (163 pt, pano 14.4 kare 4); the sizes are the board's.
 class _HeaderSkeleton extends StatelessWidget {
   const _HeaderSkeleton({required this.anchorKey});
 
@@ -185,7 +185,10 @@ class _HeaderSkeleton extends StatelessWidget {
               SizedBox(height: AppSpacing.s16),
               SizedBox(
                 width: double.infinity,
-                child: SkeletonBox(height: 96, radius: AppRadius.lg),
+                child: SkeletonBox(
+                  height: ExamScoreCard.fullHeight,
+                  radius: AppRadius.lg,
+                ),
               ),
             ],
           ),
