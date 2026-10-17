@@ -68,11 +68,14 @@ void main() {
     navigator = _FakeNavigator();
   }
 
-  OnboardingViewModel viewModel() => OnboardingViewModel(
+  /// The groups below this one are the flow with the role step open (the
+  /// boards of pano 2.2); [open] false is the shipped flag value.
+  OnboardingViewModel viewModel({bool open = true}) => OnboardingViewModel(
     draft: draft,
     preferences: device,
     camera: camera,
     navigator: navigator,
+    coachSignUpEnabled: open,
   );
 
   bool? seen() => device.getBool(DevicePreferences.onboardingCompletedKey);
@@ -209,6 +212,123 @@ void main() {
       expect(vm.step, OnboardingStep.intro);
       expect(vm.introPage.value, 0, reason: 'where "Geç" was tapped');
       expect(vm.back(), isFalse);
+    });
+  });
+
+  group('role step closed (FeatureFlags.coachSignUpEnabled false)', () {
+    OnboardingViewModel closed() => viewModel(open: false);
+
+    test('the shipped flag is closed, so the default view model is too', () {
+      expect(
+        OnboardingViewModel(
+          draft: draft,
+          preferences: device,
+          camera: camera,
+          navigator: navigator,
+        ).coachSignUpEnabled,
+        isFalse,
+      );
+    });
+
+    test('"Başla" on the last page opens the grade question', () {
+      final vm = closed()
+        ..next()
+        ..next()
+        ..next();
+
+      expect(vm.step, OnboardingStep.grade);
+      expect(vm.selections.role, UserRole.student);
+    });
+
+    test('"Geç" opens the grade question', () {
+      final vm = closed()..skipIntro();
+
+      expect(vm.step, OnboardingStep.grade);
+    });
+
+    test('a coach cannot be picked', () {
+      final vm = closed()
+        ..skipIntro()
+        ..selectRole(UserRole.coach);
+
+      expect(vm.selections.role, UserRole.student);
+    });
+
+    test('grade, track and camera work as for a student', () {
+      final vm = closed()
+        ..skipIntro()
+        ..selectGrade(SchoolGrade.grade12)
+        ..next();
+      expect(vm.step, OnboardingStep.grade);
+      expect(vm.trackError, isTrue);
+
+      vm
+        ..selectTrack(StudyTrack.sayisal)
+        ..next();
+      expect(vm.step, OnboardingStep.camera);
+    });
+
+    test('Back goes camera, grade, intro and then has nowhere to go', () {
+      final vm = closed()
+        ..setIntroPage(2)
+        ..next()
+        ..selectGrade(SchoolGrade.grade10)
+        ..next();
+      expect(vm.step, OnboardingStep.camera);
+
+      expect(vm.back(), isTrue);
+      expect(vm.step, OnboardingStep.grade);
+      expect(vm.back(), isTrue);
+      expect(vm.step, OnboardingStep.intro);
+      expect(vm.introPage.value, 2);
+      expect(vm.back(), isTrue);
+      expect(vm.introPage.value, 1);
+    });
+
+    test('the stored state is a student on the grade step', () async {
+      closed()
+        ..skipIntro()
+        ..selectGrade(SchoolGrade.grade11);
+      await settle();
+
+      final stored = draft.read(coachSignUpEnabled: false);
+
+      expect(stored.step, OnboardingStep.grade);
+      expect(stored.selections.role, UserRole.student);
+    });
+
+    test('a coach draft of an older build opens as a student on the grade '
+        'step', () async {
+      await draft.write(
+        const OnboardingFlowState(
+          step: OnboardingStep.camera,
+          selections: OnboardingSelections(role: UserRole.coach),
+          coachSignUpEnabled: true,
+        ),
+      );
+
+      final vm = closed();
+
+      expect(vm.step, OnboardingStep.grade);
+      expect(vm.selections.role, UserRole.student);
+    });
+
+    test('a draft on the role step opens on the grade step', () async {
+      await draft.write(const OnboardingFlowState(step: OnboardingStep.role));
+
+      expect(closed().step, OnboardingStep.grade);
+    });
+
+    test('the flow still ends with the flag set and welcome open', () async {
+      final vm = closed()
+        ..skipIntro()
+        ..selectGrade(SchoolGrade.grade9)
+        ..next();
+
+      await vm.later();
+
+      expect(seen(), isTrue);
+      expect(navigator.calls, ['welcome']);
     });
   });
 
@@ -377,8 +497,11 @@ void main() {
   });
 
   group('WelcomeViewModel', () {
-    WelcomeViewModel welcome() =>
-        WelcomeViewModel(draft: draft, navigator: navigator);
+    WelcomeViewModel welcome({bool open = true}) => WelcomeViewModel(
+      draft: draft,
+      navigator: navigator,
+      coachSignUpEnabled: open,
+    );
 
     test('"Kayıt Ol" hands the picks to the sign-up form', () async {
       await draft.write(
@@ -415,6 +538,26 @@ void main() {
       expect(navigator.registered?.role, UserRole.coach);
       expect(navigator.registered?.grade, isNull);
     });
+
+    test(
+      'closed: a coach left in the draft is handed over as a student',
+      () async {
+        await draft.write(
+          const OnboardingFlowState(
+            step: OnboardingStep.camera,
+            selections: OnboardingSelections(
+              role: UserRole.coach,
+              grade: SchoolGrade.grade12,
+            ),
+            coachSignUpEnabled: true,
+          ),
+        );
+
+        await welcome(open: false).register();
+
+        expect(navigator.registered?.role, UserRole.student);
+      },
+    );
 
     test('with no draft on the device nothing is handed over', () async {
       await welcome().register();

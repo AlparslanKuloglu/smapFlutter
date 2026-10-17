@@ -71,16 +71,45 @@ void main() {
       expect(store.read(), const OnboardingFlowState());
     });
 
-    test('a coach draft is read as a coach', () async {
+    test(
+      'a coach draft is read as a coach while the role step is open',
+      () async {
+        await start();
+        const coach = OnboardingFlowState(
+          step: OnboardingStep.camera,
+          selections: OnboardingSelections(role: UserRole.coach),
+          coachSignUpEnabled: true,
+        );
+
+        await store.write(coach);
+
+        expect(store.read(coachSignUpEnabled: true), coach);
+      },
+    );
+
+    test('a coach draft is read as a student on the grade step when the '
+        'role step is closed', () async {
       await start();
-      const coach = OnboardingFlowState(
-        step: OnboardingStep.camera,
-        selections: OnboardingSelections(role: UserRole.coach),
+      await store.write(
+        const OnboardingFlowState(
+          step: OnboardingStep.camera,
+          selections: OnboardingSelections(role: UserRole.coach),
+          coachSignUpEnabled: true,
+        ),
       );
 
-      await store.write(coach);
+      final read = store.read();
 
-      expect(store.read().selections.role, UserRole.coach);
+      expect(read.selections.role, UserRole.student);
+      expect(read.step, OnboardingStep.grade);
+      expect(read.coachSignUpEnabled, isFalse);
+    });
+
+    test('with no draft the flow starts with the flag it is given', () async {
+      await start();
+
+      expect(store.read(coachSignUpEnabled: true).coachSignUpEnabled, isTrue);
+      expect(store.read().coachSignUpEnabled, isFalse);
     });
   });
 
@@ -99,6 +128,7 @@ void main() {
       final state = OnboardingDraftStore.decode(
         '{"step":"party","introPage":9,"role":"teacher","grade":99,'
         '"track":"astro"}',
+        coachSignUpEnabled: true,
       );
 
       // "teacher" is read as a coach by UserRole.fromLegacy; the rest is
@@ -130,9 +160,28 @@ void main() {
     test('the grade step of a coach is moved back to the role step', () {
       final state = OnboardingDraftStore.decode(
         '{"step":"grade","role":"coach"}',
+        coachSignUpEnabled: true,
       );
 
       expect(state.step, OnboardingStep.role);
+    });
+
+    test('closed: the role step, and a coach on any step, move on as a '
+        'student', () {
+      final onRole = OnboardingDraftStore.decode('{"step":"role"}');
+      final coachGrade = OnboardingDraftStore.decode(
+        '{"step":"grade","role":"coach"}',
+      );
+      final coachIntro = OnboardingDraftStore.decode(
+        '{"step":"intro","introPage":1,"role":"coach"}',
+      );
+
+      expect(onRole.step, OnboardingStep.grade);
+      expect(coachGrade.step, OnboardingStep.grade);
+      expect(coachGrade.selections.role, UserRole.student);
+      expect(coachIntro.step, OnboardingStep.intro);
+      expect(coachIntro.introPage, 1);
+      expect(coachIntro.selections.role, UserRole.student);
     });
   });
 }
