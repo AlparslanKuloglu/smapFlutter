@@ -106,7 +106,8 @@ class _NameFields extends SelectorViewModelWidget<NewProgramViewModel, bool> {
 /// The summary card (pano 3.5 kare 4): "Günler · 12–17 Ekim 2026 · 6 gün" and
 /// "Çalışmalar · 3 çalışma, hepsi Pazartesi" with "Salı–Cumartesi henüz boş;
 /// kaydettikten sonra ekleyebilirsin." under it. Built from what the student
-/// chose, never from a sample.
+/// chose, never from a sample. A coach's card opens with "Kimin için ·
+/// Alparslan Kuloğlu" (pano 14.2 kare 4).
 class _SummaryCard
     extends SelectorViewModelWidget<NewProgramViewModel, NewProgramSummary> {
   const _SummaryCard();
@@ -139,6 +140,12 @@ class _SummaryCard
       ],
     );
 
+    final rule = Padding(
+      padding: const EdgeInsets.symmetric(vertical: AppSpacing.s12),
+      child: Divider(height: 1, thickness: 1, color: colors.bgSunken),
+    );
+    final student = StudentScope.studentOf(context);
+
     return AppCard(
       padding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.s16,
@@ -147,6 +154,10 @@ class _SummaryCard
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          if (student != null) ...[
+            row(l10n.coachStudentProfile_summaryWho, student.name),
+            rule,
+          ],
           row(
             l10n.schedule_summaryDays,
             l10n.schedule_summaryDaysValue(
@@ -154,10 +165,7 @@ class _SummaryCard
               TrFormat.sira(summary.dayCount),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: AppSpacing.s12),
-            child: Divider(height: 1, thickness: 1, color: colors.bgSunken),
-          ),
+          rule,
           row(
             l10n.schedule_summaryStudies,
             studies,

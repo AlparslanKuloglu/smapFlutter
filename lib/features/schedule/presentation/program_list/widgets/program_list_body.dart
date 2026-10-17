@@ -34,7 +34,10 @@ class _ListBody
         canCreate: viewModel.canCreate,
         studentFirstName: StudentScope.studentOf(context)?.firstName,
       ),
-      ProgramListPhase.error => _ListError(onRetry: viewModel.retry),
+      ProgramListPhase.error => _ListError(
+        onRetry: viewModel.retry,
+        coach: viewModel.isCoachView,
+      ),
       ProgramListPhase.content => SliverPadding(
         padding: const EdgeInsets.symmetric(horizontal: AppSpacing.gutter),
         sliver: SliverToBoxAdapter(

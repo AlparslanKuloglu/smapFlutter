@@ -16,8 +16,8 @@ import 'package:smap/shared/ui/surfaces/app_row_shell.dart';
 /// (`titleSm` 16/24 · 700) with the "Bu hafta" [AppTag] and its orange dot
 /// beside it when [isThisWeek], the [motto] (15/24 `textSecondary`) and the
 /// [range] (13/20 `textSecondary`). A missing motto or range is not drawn.
-/// Read as one button: "Ekim 2. Hafta, Bu hafta, Her gün biraz daha, 5–11
-/// Ekim 2026".
+/// Read as one button: "Ekim 2. Hafta, Her gün biraz daha, 5–11 Ekim 2026, bu
+/// hafta" (pano 14.1 "Erişilebilirlik").
 class ProgramRow extends StatelessWidget {
   const ProgramRow({
     required this.name,
@@ -56,9 +56,9 @@ class ProgramRow extends StatelessWidget {
     final l10n = AppLocalizations.of(context);
     final reading = [
       name,
-      if (isThisWeek) l10n.schedule_thisWeek,
       if (motto.isNotEmpty) motto,
       ?range,
+      if (isThisWeek) l10n.schedule_thisWeekA11y,
     ].join(', ');
 
     return Semantics(

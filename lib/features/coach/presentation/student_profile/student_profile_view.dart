@@ -22,10 +22,12 @@ import 'package:smap/features/coach/data/interview_repository.dart';
 import 'package:smap/features/coach/presentation/meetings/sheet_meetings_dialogs.dart';
 import 'package:smap/features/coach/presentation/student_profile/student_profile_texts.dart';
 import 'package:smap/features/coach/presentation/student_profile/student_profile_viewmodel.dart';
+import 'package:smap/features/schedule/application/program_edit_link.dart';
 import 'package:smap/features/schedule/application/schedule_service.dart';
 import 'package:smap/features/schedule/presentation/program_detail/program_detail_view.dart';
 import 'package:smap/features/schedule/presentation/program_list/program_list_viewmodel.dart';
 import 'package:smap/features/schedule/presentation/program_navigator.dart';
+import 'package:smap/features/schedule/presentation/widgets/program_section_skeleton.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/shared/ui/buttons/app_bar_action.dart';
 import 'package:smap/shared/ui/controls/app_tab_bar.dart';
@@ -62,9 +64,11 @@ part 'widgets/student_profile_tabs.dart';
 ///   opens the exam detail in the coach's view (`ExamDetailRoute` with the
 ///   student: the strip stays, "Bu Konuyu Çalış" and "Kartları Çalış" do not
 ///   show).
-/// - **Program**: the student's current program with "Düzenle" (Tur 12 A
-///   overrules "salt okunur" of pano 10.4 kare 3), and the list of the
-///   student's programs under it.
+/// - **Program**: the student's current program with "Düzenle" (Tur 12 A,
+///   pano 14.1 to 14.3, overrules "salt okunur" of pano 10.4 kare 3), the
+///   notice that the student sees the changes, and the row "Programlar" that
+///   opens the student's list. In edit mode the bar holds "Bitti" and no back,
+///   and the header and the tabs step aside (pano 14.1 kare 3).
 ///
 /// A tab is built when first opened and kept. The student's own facts come
 /// from the coach's student list; while it loads there is a skeleton, a list
@@ -143,10 +147,28 @@ class _ProfilePageState extends State<_ProfilePage> {
   final ScrollController _scroll = ScrollController();
   final GlobalKey _headerKey = GlobalKey();
 
+  /// The Program tab's edit mode (pano 14.1 kare 3): the bar, the header and
+  /// the tabs follow it.
+  final ProgramEditLink _edit = ProgramEditLink();
+
+  @override
+  void initState() {
+    super.initState();
+    _edit.editing.addListener(_onEditing);
+  }
+
   @override
   void dispose() {
+    _edit.editing.removeListener(_onEditing);
+    _edit.dispose();
     _scroll.dispose();
     super.dispose();
+  }
+
+  /// Edit mode starts: the header and the tabs leave, the page starts at the
+  /// program's title.
+  void _onEditing() {
+    if (_edit.editing.value && _scroll.hasClients) _scroll.jumpTo(0);
   }
 
   /// The tab changed: a page scrolled past the header stays at the pinned
@@ -163,6 +185,7 @@ class _ProfilePageState extends State<_ProfilePage> {
     return _PageAnchors(
       given: widget.given,
       headerKey: _headerKey,
+      edit: _edit,
       settleScroll: _settleScroll,
       child: Scaffold(
         backgroundColor: context.appColors.bgCanvas,
@@ -193,12 +216,16 @@ class _PageAnchors extends InheritedWidget {
   const _PageAnchors({
     required this.given,
     required this.headerKey,
+    required this.edit,
     required this.settleScroll,
     required super.child,
   });
 
   final StudentRef? given;
   final GlobalKey headerKey;
+
+  /// The Program tab's edit mode.
+  final ProgramEditLink edit;
   final VoidCallback settleScroll;
 
   static _PageAnchors of(BuildContext context) =>

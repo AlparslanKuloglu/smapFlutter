@@ -5,11 +5,11 @@ import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/theme_context.dart';
 import 'package:smap/core/utils/tr_format.dart';
 import 'package:smap/core/utils/turkish_text.dart';
-import 'package:smap/features/lessons/presentation/widgets/eksik_tag.dart';
 import 'package:smap/features/schedule/application/program_entry.dart';
 import 'package:smap/features/schedule/application/schedule_service.dart';
 import 'package:smap/features/schedule/application/topic_choice.dart';
 import 'package:smap/features/schedule/application/topic_groups.dart';
+import 'package:smap/features/schedule/application/topic_row_text.dart';
 import 'package:smap/features/schedule/presentation/sheets/topic_picker/topic_picker_viewmodel.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/shared/ui/controls/app_radio.dart';
@@ -27,10 +27,14 @@ part 'widgets/topic_picker_states.dart';
 /// A full sheet titled with the slot, "Pazartesi 12 Ekim · 16:00", and
 /// "Kapat". A segment "Çantam" | "Dersler" with "Çantam: denemelerinden çıkan
 /// eksik konuların." under it; radio rows of at least 56, padding 8 / 24, 12
-/// between the parts, the lesson as a 13/20 · 700 group heading (padding 12 /
-/// 24 / 0). A "Çantam" row ends with the amber "Eksik" tag; a topic already in
-/// the program says "Programda: Pzt 10:00" under its name. "Ekle" (primary)
-/// returns the picked [TopicChoice]; it is off until one is picked.
+/// between the parts. "Çantam" is one flat list: each row is the topic with
+/// its lesson under it ("TYT Türkçe"), no "Eksik" tag and no "Son denemede…"
+/// line (the bag has neither; pano 14.2 kare 3 and 6). "Dersler" has the
+/// lesson as a 13/20 · 700 group heading (padding 12 / 24 / 0). A topic already
+/// in the program says "Programda: Pzt 10:00" under its name ("TYT Türkçe ·
+/// Programda: Pzt 10:00" in "Çantam"). "Ekle" (primary) returns the picked
+/// [TopicChoice]; it is off until one is picked. A coach's sheet reads
+/// "Çanta" and "Çanta: Alparslan'ın denemelerinden çıkan eksik konular."
 ///
 /// Open it with [show]; the sheet owns a [TopicPickerViewModel].
 class TopicPickerSheet extends StatelessWidget {

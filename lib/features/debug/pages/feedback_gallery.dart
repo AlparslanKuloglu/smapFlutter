@@ -278,6 +278,19 @@ class _FeedbackGalleryState extends State<FeedbackGallery> {
                 onAction: _noop,
               ),
             ),
+            const GalleryState(
+              label: 'Bölüm · başlıklı, birincil eylem · pano 14.1 kare 4',
+              child: AppEmptyState.section(
+                title: "Alparslan'ın programı yok",
+                message:
+                    "Onun için bir hafta kurabilirsin; Alparslan programı "
+                    "kendi Anasayfa'sında görür.",
+                actionLabel: 'Program Kur',
+                actionIcon: PhosphorIconsRegular.plus,
+                primaryAction: true,
+                onAction: _noop,
+              ),
+            ),
           ],
         ),
         GallerySection(
@@ -304,6 +317,14 @@ class _FeedbackGalleryState extends State<FeedbackGallery> {
               label: 'Bölüm',
               child: AppErrorState.section(
                 message: 'Dersler yüklenemedi.',
+                onRetry: () => setState(() => _retries++),
+              ),
+            ),
+            GalleryState(
+              label: 'Bölüm · başlıklı · pano 14.3 kare 2',
+              child: AppErrorState.section(
+                title: 'Programlar yüklenemedi',
+                message: 'Bağlantını kontrol edip tekrar dene.',
                 onRetry: () => setState(() => _retries++),
               ),
             ),

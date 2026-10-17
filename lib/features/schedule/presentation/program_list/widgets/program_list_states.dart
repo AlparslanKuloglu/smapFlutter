@@ -42,7 +42,8 @@ class _ListSkeleton extends StatelessWidget {
 /// sentence and "Haftalık Programını Kur". The bar has no "Yeni Program" and
 /// there is no search field. A coach sees the student's name instead (Tur 12
 /// A, brief 14.1 kare 4): "Alparslan'ın programı yok", "Onun için bir hafta
-/// kurabilirsin; …" and "Program Kur".
+/// kurabilirsin; …" and "Program Kur" (no action and a plainer sentence while
+/// the coach may not write, `FeatureFlags.coachProgramWriteEnabled`).
 class _ListEmpty extends StatelessWidget {
   const _ListEmpty({
     required this.onSetUp,
@@ -75,7 +76,9 @@ class _ListEmpty extends StatelessWidget {
               ),
         message: name == null
             ? l10n.schedule_emptyBody
-            : l10n.coachStudentProfile_programEmptyBody(name),
+            : canCreate
+            ? l10n.coachStudentProfile_programEmptyBody(name)
+            : l10n.coachStudentProfile_programEmptyBodyReadOnly(name),
         actionLabel: canCreate
             ? (name == null
                   ? l10n.schedule_emptyAction
@@ -96,18 +99,24 @@ class _ListEmpty extends StatelessWidget {
 /// The programs could not be loaded and none is saved (pano 3.7 kare 3): the
 /// full-screen error, "Programların yüklenemedi", "Bağlantını kontrol edip
 /// tekrar dene.", "Tekrar Dene" (back to the skeleton). No title is drawn.
+/// A coach's list says "Programlar yüklenemedi" (brief 14.3 kare 2).
 class _ListError extends StatelessWidget {
-  const _ListError({required this.onRetry});
+  const _ListError({required this.onRetry, required this.coach});
 
   final VoidCallback onRetry;
+  final bool coach;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     return SliverToBoxAdapter(
       child: AppErrorState.screen(
-        title: l10n.schedule_loadError,
-        message: l10n.schedule_loadErrorBody,
+        title: coach
+            ? l10n.coachStudentProfile_programLoadErrorTitle
+            : l10n.schedule_loadError,
+        message: coach
+            ? l10n.coachStudentProfile_programLoadErrorBody
+            : l10n.schedule_loadErrorBody,
         onRetry: onRetry,
       ),
     );

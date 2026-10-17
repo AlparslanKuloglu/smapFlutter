@@ -72,9 +72,14 @@ class ProgramList {
   /// Summaries of [weeklies] on [today]: this week's program first, then the
   /// newest span first; programs without topics last; the server's order
   /// breaks ties.
+  ///
+  /// With [thisWeekFirst] `false` the list is plain newest to oldest and this
+  /// week's program only carries its tag (a coach's list of a student's
+  /// programs, brief T12.4: a program just set up for next week is on top).
   factory ProgramList.of(
     Iterable<WeeklyDto> weeklies, {
     required DateTime today,
+    bool thisWeekFirst = true,
   }) {
     final indexed = <(int, ProgramSummary)>[];
     var index = 0;
@@ -86,7 +91,9 @@ class ProgramList {
     indexed.sort((a, b) {
       final x = a.$2;
       final y = b.$2;
-      if (x.isThisWeek != y.isThisWeek) return x.isThisWeek ? -1 : 1;
+      if (thisWeekFirst && x.isThisWeek != y.isThisWeek) {
+        return x.isThisWeek ? -1 : 1;
+      }
       final xs = x.span;
       final ys = y.span;
       if (xs != null && ys != null) {
@@ -103,6 +110,15 @@ class ProgramList {
   final List<ProgramSummary> items;
 
   bool get isEmpty => items.isEmpty;
+
+  /// The program that matters now: this week's, else the first of the list
+  /// (the newest); `null` for an empty list. The coach's Program tab shows it.
+  ProgramSummary? get current {
+    for (final item in items) {
+      if (item.isThisWeek) return item;
+    }
+    return items.isEmpty ? null : items.first;
+  }
 
   /// The programs whose name or motto holds [query] (Turkish case and mark
   /// folding: "I", "ı", "İ" and "i" meet; pano 3.4 kare 2). A blank query

@@ -67,3 +67,41 @@ extension ProgramEntryTestX on ProgramEntry {
     mainSubjectId: mainSubjectId,
   );
 }
+
+/// A program of one topic per listed day, for the lists' ordering tests.
+Map<String, Object?> weeklyJsonOnDays(
+  String id,
+  String name,
+  String motto,
+  List<String> days,
+) => {
+  '_id': id,
+  'name': name,
+  'motto': motto,
+  'content': [
+    for (final (i, day) in days.indexed)
+      {
+        'id': '$id-t$i',
+        'day': day,
+        'hour': 10,
+        'minute': 0,
+        'lesson': kTurkceId,
+        'lessonName': 'TYT Türkçe',
+        'mainSubject': 'm-turkce',
+        'title': 'Fiilde Çatı',
+      },
+  ],
+};
+
+/// The three programs of pano 14.1 kare 2 (Ek C and the brief's §7), in the
+/// order the server may send them: "Ekim 2. Hafta" (5–11 Ekim, this week on
+/// Cumartesi 10 Ekim), "Deneme haftası" (28 Eylül–4 Ekim) and "Yaz tekrarı"
+/// (17–23 Ağustos).
+List<Map<String, Object?>> alparslanProgramsJson() => [
+  ekimIkinciHaftaJson(),
+  weeklyJsonOnDays('w-deneme', 'Deneme haftası', 'Az ama her gün', [
+    '2026-09-28',
+    '2026-10-04',
+  ]),
+  weeklyJsonOnDays('w-yaz', 'Yaz tekrarı', '', ['2026-08-17', '2026-08-23']),
+];

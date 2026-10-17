@@ -1,10 +1,11 @@
 part of '../student_profile_view.dart';
 
-/// The Program tab (Tur 12 A, brief 14.1 kare 1; pano 10.4 kare 3): the
-/// student's programs are read with `ProgramListViewModel` (the student's id
-/// goes with the request; the coach may set up and edit), and the one that
-/// matters now (this week's, else the newest) is shown as a section of
-/// `ProgramDetailView` with its own ViewModel.
+/// The Program tab (Tur 12 A, pano 14.1 kare 1, 3 and 4; 14.3; it replaces
+/// pano 10.4 kare 3): the student's programs are read with
+/// `ProgramListViewModel` (the student's id goes with the request; the coach
+/// may set up and edit while `FeatureFlags.coachProgramWriteEnabled` is on),
+/// and the one that matters now (this week's, else the newest) is shown as a
+/// section of `ProgramDetailView` with its own ViewModel.
 class _ProgramTab extends StatelessWidget {
   const _ProgramTab({required this.student});
 
@@ -33,6 +34,8 @@ typedef _ProgramData = ({
   String? currentId,
   int count,
   bool online,
+  bool canWrite,
+  int revision,
 });
 
 /// Skeleton, section error, empty state or the current program with the
@@ -48,9 +51,11 @@ class _ProgramTabBody
     final all = viewModel.all;
     return (
       phase: viewModel.phase,
-      currentId: all.isEmpty ? null : all.items.first.id,
+      currentId: all.current?.id,
       count: all.items.length,
       online: viewModel.online,
+      canWrite: viewModel.canCreate,
+      revision: viewModel.revision,
     );
   }
 
@@ -64,7 +69,9 @@ class _ProgramTabBody
     final first = student.firstName;
     final id = data.currentId;
     return switch (data.phase) {
-      ProgramListPhase.loading => const _ProgramSkeleton(),
+      ProgramListPhase.loading => const SliverToBoxAdapter(
+        child: ProgramSectionSkeleton(),
+      ),
       ProgramListPhase.error => SliverPadding(
         padding: const EdgeInsets.fromLTRB(
           AppSpacing.gutter,
@@ -74,36 +81,55 @@ class _ProgramTabBody
         ),
         sliver: SliverToBoxAdapter(
           child: AppErrorState.section(
-            message: l10n.coachStudentProfile_programLoadError,
+            title: l10n.coachStudentProfile_programLoadErrorTitle,
+            message: l10n.coachStudentProfile_programLoadErrorBody,
             onRetry: viewModel.retry,
           ),
         ),
       ),
-      ProgramListPhase.empty => SliverToBoxAdapter(
-        child: AppEmptyState.screen(
-          title: l10n.coachStudentProfile_programEmptyTitle(
-            TurkishSuffix.genitive(first),
+      ProgramListPhase.empty => SliverPadding(
+        padding: const EdgeInsets.fromLTRB(
+          AppSpacing.gutter,
+          AppSpacing.s16,
+          AppSpacing.gutter,
+          0,
+        ),
+        sliver: SliverToBoxAdapter(
+          child: AppEmptyState.section(
+            title: l10n.coachStudentProfile_programEmptyTitle(
+              TurkishSuffix.genitive(first),
+            ),
+            message: data.canWrite
+                ? l10n.coachStudentProfile_programEmptyBody(first)
+                : l10n.coachStudentProfile_programEmptyBodyReadOnly(first),
+            actionLabel: data.canWrite
+                ? l10n.coachStudentProfile_programSetUp
+                : null,
+            actionIcon: PhosphorIconsRegular.plus,
+            primaryAction: true,
+            onAction: viewModel.canCreateNow ? viewModel.startNewProgram : null,
           ),
-          message: l10n.coachStudentProfile_programEmptyBody(first),
-          actionLabel: l10n.coachStudentProfile_programSetUp,
-          actionIcon: PhosphorIconsRegular.plus,
-          onAction: viewModel.canCreateNow ? viewModel.startNewProgram : null,
-          topPadding: AppSpacing.s24,
         ),
       ),
       ProgramListPhase.content when id != null => SliverMainAxisGroup(
         slivers: [
           ProgramDetailSection(
-            key: ValueKey<String>(id),
+            // A new key after the list was visited: the program may have been
+            // changed there.
+            key: ValueKey<String>('$id/${data.revision}'),
             programId: id,
             student: student,
+            link: _PageAnchors.of(context).edit,
           ),
           _ProgramFooter(
             first: first,
             count: data.count,
             online: data.online,
+            canWrite: data.canWrite,
             onOpenList: () => unawaited(
-              context.router.push(ProgramListRoute(student: student)),
+              context.router
+                  .push(ProgramListRoute(student: student))
+                  .then((_) => viewModel.refreshView()),
             ),
           ),
         ],
@@ -114,117 +140,82 @@ class _ProgramTabBody
 }
 
 /// Under the program: the notice "Bu programı Alparslan da görür ve
-/// düzenleyebilir. Yaptığın değişiklik onun programına hemen yansır.", the
-/// row "Programlar" with "3 program" that opens the student's list (brief
-/// 14.1 kare 1) and, while offline, the note that saving needs a connection
-/// (brief 14.3 kare 3).
+/// düzenleyebilir. Yaptığın değişiklik onun programına hemen yansır." (online;
+/// pano 14.1 kare 1) or, offline, the one line "Program kurmak ve düzenlemek
+/// için bağlantı gerekiyor. Kayıtlı programı görebilirsin." in its place (pano
+/// 14.3 kare 3), then the row "Programlar" with the value "3 program" that
+/// opens the student's list. A coach who may not write has neither the notice
+/// nor the line. Gone while the program is being edited.
 class _ProgramFooter extends StatelessWidget {
   const _ProgramFooter({
     required this.first,
     required this.count,
     required this.online,
+    required this.canWrite,
     required this.onOpenList,
   });
 
   final String first;
   final int count;
   final bool online;
+  final bool canWrite;
   final VoidCallback onOpenList;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final text = context.appText;
-    return SliverPadding(
-      padding: const EdgeInsets.fromLTRB(
-        AppSpacing.gutter,
-        AppSpacing.s16,
-        AppSpacing.gutter,
-        0,
-      ),
-      sliver: SliverToBoxAdapter(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            AppNoticeBox(message: l10n.coachStudentProfile_programInfo(first)),
-            const SizedBox(height: AppSpacing.s16),
-            AppRowGroup(
+    return ValueListenableBuilder<bool>(
+      valueListenable: _PageAnchors.of(context).edit.editing,
+      builder: (context, editing, _) {
+        if (editing) return _noSliver;
+        return SliverPadding(
+          padding: const EdgeInsets.fromLTRB(
+            AppSpacing.gutter,
+            AppSpacing.s16,
+            AppSpacing.gutter,
+            0,
+          ),
+          sliver: SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                AppRow(
-                  icon: PhosphorIconsRegular.calendarBlank,
-                  title: l10n.coachStudentProfile_programsRow,
-                  subtitle: l10n.coachStudentProfile_programsCount(
-                    TrFormat.sira(count),
+                if (canWrite && online) ...[
+                  AppNoticeBox(
+                    message: l10n.coachStudentProfile_programInfo(first),
                   ),
-                  onTap: onOpenList,
+                  const SizedBox(height: AppSpacing.s16),
+                ] else if (canWrite) ...[
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.s4,
+                    ),
+                    child: Text(
+                      l10n.coachStudentProfile_programOfflineNote,
+                      style: text.caption.copyWith(
+                        color: context.appColors.textSecondary,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.s12),
+                ],
+                AppRowGroup(
+                  children: [
+                    AppRow(
+                      icon: PhosphorIconsRegular.calendarBlank,
+                      title: l10n.coachStudentProfile_programsRow,
+                      value: l10n.coachStudentProfile_programsCount(
+                        TrFormat.sira(count),
+                      ),
+                      onTap: onOpenList,
+                    ),
+                  ],
                 ),
               ],
             ),
-            if (!online)
-              Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSpacing.s4,
-                  AppSpacing.s12,
-                  AppSpacing.s4,
-                  0,
-                ),
-                child: Text(
-                  l10n.coachStudentProfile_programOfflineNote,
-                  style: text.caption.copyWith(
-                    color: context.appColors.textSecondary,
-                  ),
-                ),
-              ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-/// The program as a skeleton, in the tab (brief 14.3 kare 1; the rows are
-/// those of pano 3.7 kare 2): the title row, the day strip and three rows.
-class _ProgramSkeleton extends StatelessWidget {
-  const _ProgramSkeleton();
-
-  @override
-  Widget build(BuildContext context) {
-    return SliverPadding(
-      padding: const EdgeInsets.fromLTRB(
-        AppSpacing.gutter,
-        AppSpacing.s16,
-        AppSpacing.gutter,
-        0,
-      ),
-      sliver: SliverToBoxAdapter(
-        child: AppSkeleton(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SkeletonBox(width: 180, height: 24),
-              const SizedBox(height: AppSpacing.s8),
-              const SkeletonBox(width: 140, height: 14),
-              const SizedBox(height: AppSpacing.s16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  for (var i = 0; i < 7; i++)
-                    const SkeletonBox(
-                      width: 48,
-                      height: 64,
-                      radius: AppRadius.md,
-                    ),
-                ],
-              ),
-              const SizedBox(height: AppSpacing.s24),
-              for (var i = 0; i < 3; i++) ...[
-                const SkeletonBox(height: 64, radius: AppRadius.lg),
-                const SizedBox(height: AppSpacing.s8),
-              ],
-            ],
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

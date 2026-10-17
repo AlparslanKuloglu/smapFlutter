@@ -78,4 +78,18 @@ abstract final class FeatureFlags {
   /// has checked. Opening it also needs an `AttentionRepository` registered in
   /// the locator.
   static const bool attentionListEnabled = false;
+
+  /// A coach sets up and edits a student's program (Tur 12 A, pano 14.1 to
+  /// 14.3; "Düzenle", "Yeni Program", "Program Kur" and the notice "Bu
+  /// programı Alparslan da görür ve düzenleyebilir.").
+  ///
+  /// Open (`true`) on the assumption that the server writes what a coach
+  /// sends with `?studentId=` into the student's own account (T12.8, an open
+  /// question to the backend). Set it to `false` if it does not: the Program
+  /// tab then goes back to the read-only behavior of pano 10.4 kare 3 (no
+  /// "Düzenle", no "Yeni Program", no "Program Kur", no notice; the programs
+  /// and the "Programlar" row stay) and `NewProgramRoute` is no longer
+  /// reachable with a student. The two ViewModels take the value through a
+  /// constructor argument (`coachWriteEnabled`), so both states are tested.
+  static const bool coachProgramWriteEnabled = true;
 }

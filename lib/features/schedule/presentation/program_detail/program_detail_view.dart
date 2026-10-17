@@ -15,6 +15,7 @@ import 'package:smap/core/utils/tr_format.dart';
 import 'package:smap/core/utils/turkish_text.dart';
 import 'package:smap/dependency_injection/injection_container.dart';
 import 'package:smap/features/schedule/application/program_detail.dart';
+import 'package:smap/features/schedule/application/program_edit_link.dart';
 import 'package:smap/features/schedule/application/program_entry.dart';
 import 'package:smap/features/schedule/application/program_span.dart';
 import 'package:smap/features/schedule/application/program_view_preference.dart';
@@ -23,6 +24,7 @@ import 'package:smap/features/schedule/presentation/program_detail/program_detai
 import 'package:smap/features/schedule/presentation/program_navigator.dart';
 import 'package:smap/features/schedule/presentation/sheets/sheet_program_dialogs.dart';
 import 'package:smap/features/schedule/presentation/widgets/program_item_row.dart';
+import 'package:smap/features/schedule/presentation/widgets/program_section_skeleton.dart';
 import 'package:smap/features/schedule/presentation/widgets/week_grid.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/shared/ui/buttons/app_bar_action.dart';
@@ -44,6 +46,7 @@ part 'widgets/program_detail_header.dart';
 part 'widgets/program_detail_actions.dart';
 part 'widgets/program_detail_day.dart';
 part 'widgets/program_detail_embedded.dart';
+part 'widgets/program_detail_helpers.dart';
 part 'widgets/program_detail_week.dart';
 part 'widgets/program_detail_states.dart';
 
@@ -113,28 +116,39 @@ class ProgramDetailView extends StackedView<ProgramDetailViewModel> {
 }
 
 /// The program as a section of a coach's student profile, the Program tab
-/// (Tur 12 A, brief 14.1 kare 1; pano 10.4 kare 3): the title row with the
-/// inline "Düzenle", the motto and dates, "Gün | Hafta", the day strip and the
-/// day's topics, as slivers for the profile's scroll view. Same ViewModel as
-/// [ProgramDetailView]; it has no bar and no context strip (the profile has
-/// them). Its states are the section's own: skeleton, a section error with
-/// "Tekrar Dene".
+/// (Tur 12 A, pano 14.1 kare 1 and 3; replaces pano 10.4 kare 3): the title row
+/// with the inline "Düzenle", the motto and dates, "Gün | Hafta", the day strip
+/// and the day's topics, as slivers for the profile's scroll view. Same
+/// ViewModel as [ProgramDetailView]; it has no bar and no context strip (the
+/// profile has them), and in edit mode the profile's bar holds "Bitti" ([link]).
+/// Its states are the section's own: skeleton, a section error with "Tekrar
+/// Dene".
 class ProgramDetailSection extends StackedView<ProgramDetailViewModel> {
   const ProgramDetailSection({
     required this.programId,
     required this.student,
+    this.link,
     super.key,
   });
 
   final String programId;
   final StudentRef student;
 
+  /// Tells the hosting profile about edit mode (its bar, header and tabs
+  /// follow it, pano 14.1 kare 3).
+  final ProgramEditLink? link;
+
   @override
   bool get reactive => false;
 
   @override
   ProgramDetailViewModel viewModelBuilder(BuildContext context) =>
-      _detailViewModel(context, programId: programId, student: student);
+      _detailViewModel(
+        context,
+        programId: programId,
+        student: student,
+        link: link,
+      );
 
   @override
   void onViewModelReady(ProgramDetailViewModel viewModel) => viewModel.load();
@@ -153,6 +167,7 @@ ProgramDetailViewModel _detailViewModel(
   StudentRef? student,
   String? view,
   String? date,
+  ProgramEditLink? link,
 }) {
   final schedule = locator<ScheduleService>();
   return ProgramDetailViewModel(
@@ -171,40 +186,7 @@ ProgramDetailViewModel _detailViewModel(
     preference: ProgramViewPreference(locator<DevicePreferences>()),
     requestedDay: _parseDay(date),
     requestedMode: ProgramViewMode.parse(view),
-  );
-}
-
-/// `yyyy-MM-dd` as a calendar day; `null` for anything else.
-DateTime? _parseDay(String? text) {
-  if (text == null) return null;
-  final match = RegExp(r'^(\d{4})-(\d{2})-(\d{2})$').firstMatch(text.trim());
-  if (match == null) return null;
-  final day = DateTime(
-    int.parse(match.group(1)!),
-    int.parse(match.group(2)!),
-    int.parse(match.group(3)!),
-  );
-  return day.month == int.parse(match.group(2)!) ? day : null;
-}
-
-/// Opens the topic detail of [entry] (pano 3.4 "Bloğa ya da satıra dokununca
-/// konu detayı", pano 7.3).
-void _openTopic(BuildContext context, ProgramEntry entry) {
-  if (getParentViewModel<ProgramDetailViewModel>(
-    context,
-    listen: false,
-  ).isCoachView) {
-    return;
-  }
-  final subject = entry.mainSubjectId;
-  if (subject == null || subject.isEmpty || entry.lessonId.isEmpty) return;
-  context.navigateTo(
-    LessonsTabRoute(
-      children: [
-        const LessonsRoute(),
-        TopicDetailRoute(lessonId: entry.lessonId, topicId: subject),
-      ],
-    ),
+    link: link,
   );
 }
 

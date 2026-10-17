@@ -10,6 +10,7 @@ import 'package:smap/core/services/app_haptics.dart';
 import 'package:smap/core/services/toast_service.dart';
 import 'package:smap/core/utils/tr_format.dart';
 import 'package:smap/features/schedule/application/program_detail.dart';
+import 'package:smap/features/schedule/application/program_edit_link.dart';
 import 'package:smap/features/schedule/application/program_entry.dart';
 import 'package:smap/features/schedule/application/program_span.dart';
 import 'package:smap/features/schedule/application/program_view_preference.dart';
@@ -30,23 +31,22 @@ import 'package:smap/shared/ui/pickers/calendar_math.dart';
 /// "Tekrar Dene".
 ///
 /// **Instant save** (spec §6.2 6.9; "Bitti yalnız modu kapatır"). The server
-/// has no partial update, so every change replaces the whole program: the
-/// change is applied to the screen's draft at once and the whole draft is sent
-/// ([ScheduleService.updateWeekly], which keeps writes in order). Changes made
-/// while a save runs are sent in the next one. If a save fails the screen goes
-/// back to the last saved state and a toast says so. Removing a topic and
-/// "Günü Sıfırla" show a "Geri Al" toast for 6 s that puts the topics back
-/// (the server has no reset or undo endpoint: the reset is a local edit that
-/// is saved like any other).
+/// has no partial update, so every change replaces the whole program: it is
+/// applied to the screen's draft at once and the whole draft is sent
+/// ([ScheduleService.updateWeekly], in order). Changes made while a save runs
+/// go in the next one. A failed save returns the screen to the last saved
+/// state and a toast says so. Removing a topic and "Günü Sıfırla" offer "Geri
+/// Al" for 6 s (a local edit saved like any other).
 ///
 /// **Offline.** The saved program can be read; "Düzenle", the edit actions and
 /// "Günü Sıfırla" need a connection and are off without one.
 ///
 /// **Coach.** [studentId] reads and writes that student's program (every
-/// request carries it): Tur 12 A lets the coach set up and edit the student's
-/// program, so the coach's view is not [readOnly]. [readOnly] hides the edit
-/// actions for a screen that only reads. A coach's view has no way to the
-/// lessons (the topics do not open).
+/// request carries it; Tur 12 A, so the coach's view is not [readOnly]).
+/// [readOnly] and a closed `FeatureFlags.coachProgramWriteEnabled`
+/// ([coachWriteEnabled]) hide the edit actions. A coach's topics do not open
+/// (no lessons), a failed save toasts "Program kaydedilemedi. …" (pano 14.3)
+/// and [link] tells the hosting profile about edit mode.
 class ProgramDetailViewModel extends BaseViewModel {
   ProgramDetailViewModel({
     required this.programId,
@@ -58,6 +58,8 @@ class ProgramDetailViewModel extends BaseViewModel {
     required ProgramViewPreference preference,
     this.studentId,
     this.readOnly = false,
+    this.coachWriteEnabled = FeatureFlags.coachProgramWriteEnabled,
+    this.link,
     this.requestedDay,
     this.requestedMode,
     this.deleteProgram,
@@ -71,6 +73,7 @@ class ProgramDetailViewModel extends BaseViewModel {
        _clock = clock ?? DateTime.now,
        _mode = requestedMode ?? preference.read() {
     _online.addListener(_onConnectivity);
+    link?.attach(finishEditing);
   }
 
   /// The program's id.
@@ -82,18 +85,21 @@ class ProgramDetailViewModel extends BaseViewModel {
   /// No edit actions.
   final bool readOnly;
 
+  /// A coach may write (`FeatureFlags.coachProgramWriteEnabled`).
+  final bool coachWriteEnabled;
+
+  /// The hosting profile's view of edit mode; `null` for a screen of its own.
+  final ProgramEditLink? link;
+
   /// A coach looks at a student's program.
   bool get isCoachView => studentId != null;
 
-  /// The day the route asked to open on.
+  /// The day and the view the route asked to open on.
   final DateTime? requestedDay;
-
-  /// The view the route asked for.
   final ProgramViewMode? requestedMode;
 
-  /// Deletes a program on the server. The backend has no such endpoint yet
-  /// (spec §6.3 #25), so nothing is given today and "Programı İptal Et" is
-  /// not drawn; see [canCancel].
+  /// Deletes a program on the server; the backend has no such endpoint yet
+  /// (spec §6.3 #25), so "Programı İptal Et" is not drawn ([canCancel]).
   final Future<AppResult<void>> Function(String programId)? deleteProgram;
 
   final ScheduleService _schedule;
@@ -117,8 +123,7 @@ class ProgramDetailViewModel extends BaseViewModel {
   bool _dirty = false;
   bool _disposed = false;
 
-  /// The loaded program as the screen shows it, with the changes the server
-  /// has not confirmed yet.
+  /// The program as shown, with the changes not confirmed yet.
   AsyncSection<ProgramDetail> get section => _section;
 
   /// The program; `null` until it is loaded.
@@ -139,7 +144,7 @@ class ProgramDetailViewModel extends BaseViewModel {
   DateTime get selectedDay => _selected ?? today;
 
   /// The student may change this program at all.
-  bool get canEdit => !readOnly;
+  bool get canEdit => !readOnly && (!isCoachView || coachWriteEnabled);
 
   /// The student may change it now: not read only and online.
   bool get canEditNow => canEdit && online && detail != null;
@@ -190,12 +195,11 @@ class ProgramDetailViewModel extends BaseViewModel {
   /// "Tekrar Dene": back to the skeleton and a new request.
   Future<void> retry() => load(force: true);
 
-  /// The Gün / Hafta segment. The week grid has no edit mode, so switching to
-  /// it closes edit mode.
+  /// The Gün / Hafta segment; the week grid has no edit mode.
   void setMode(ProgramViewMode value) {
     if (value == _mode) return;
     _mode = value;
-    if (value == ProgramViewMode.week) _editing = false;
+    if (value == ProgramViewMode.week) _setEditing(false);
     unawaited(_preference.write(value));
     notifyListeners();
   }
@@ -211,7 +215,7 @@ class ProgramDetailViewModel extends BaseViewModel {
   /// "Düzenle": edit mode works on the Gün view.
   void startEditing() {
     if (!canEditNow || _editing) return;
-    _editing = true;
+    _setEditing(true);
     _mode = ProgramViewMode.day;
     notifyListeners();
   }
@@ -219,8 +223,18 @@ class ProgramDetailViewModel extends BaseViewModel {
   /// "Bitti": only closes edit mode; everything is already saved.
   void finishEditing() {
     if (!_editing) return;
-    _editing = false;
+    _setEditing(false);
     notifyListeners();
+  }
+
+  /// A failed save's toast: "Program kaydedilemedi. …" for a coach (14.3).
+  ToastText get _saveFailed => isCoachView
+      ? (l) => l.coachStudentProfile_programSaveFailed
+      : (l) => l.schedule_saveFailed;
+
+  void _setEditing(bool value) {
+    _editing = value;
+    link?.report(editing: value, title: detail?.name ?? '');
   }
 
   /// The X of an item: takes the topic out and offers "Geri Al" for 6 s.
@@ -237,8 +251,7 @@ class ProgramDetailViewModel extends BaseViewModel {
     );
   }
 
-  /// The underlined time of an item: the time wheel, then the new time is
-  /// saved.
+  /// The underlined time of an item: the time wheel, then it is saved.
   Future<void> changeTime(ProgramEntry entry) async {
     if (!canEditNow) return;
     final picked = await _dialogs.pickTime(
@@ -253,8 +266,7 @@ class ProgramDetailViewModel extends BaseViewModel {
     );
   }
 
-  /// "Konu Ekle": the hour grid of the selected day, a topic for an empty hour,
-  /// and the topic is saved.
+  /// "Konu Ekle": the hour grid of the selected day; the topic is saved.
   Future<void> addTopic() async {
     final current = detail;
     if (!canEditNow || current == null) return;
@@ -270,8 +282,7 @@ class ProgramDetailViewModel extends BaseViewModel {
     _apply(draft.withTask(placed.choice.toTask(day: day, hour: placed.hour)));
   }
 
-  /// "Günü Sıfırla": asks, then takes every topic of the selected day out and
-  /// offers "Geri Al" for 6 s. Nothing happens on an empty day.
+  /// "Günü Sıfırla": asks, empties the selected day, offers "Geri Al" (6 s).
   Future<void> resetDay() async {
     final draft = _draft;
     if (!canEditNow || draft == null) return;
@@ -292,8 +303,7 @@ class ProgramDetailViewModel extends BaseViewModel {
     );
   }
 
-  /// "Programı İptal Et" (only while [canCancel]): asks, deletes, goes back to
-  /// the list.
+  /// "Programı İptal Et" (only while [canCancel]): asks, deletes, goes back.
   Future<void> cancelProgram() async {
     final delete = deleteProgram;
     final current = detail;
@@ -365,7 +375,7 @@ class ProgramDetailViewModel extends BaseViewModel {
           _dirty = false;
           _rebuild();
           notifyListeners();
-          _toast.error((l) => l.schedule_saveFailed);
+          _toast.error(_saveFailed);
         } else {
           _confirmed = sending;
         }
@@ -384,6 +394,7 @@ class ProgramDetailViewModel extends BaseViewModel {
   void dispose() {
     _disposed = true;
     _online.removeListener(_onConnectivity);
+    link?.detach();
     super.dispose();
   }
 }

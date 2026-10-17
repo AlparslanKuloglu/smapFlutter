@@ -26,22 +26,25 @@ class _TopicListSection
       SectionState.loading => const _TopicListSkeleton(),
       SectionState.error ||
       SectionState.offline => _TopicListError(onRetry: viewModel.retry),
-      SectionState.empty => const _TopicListEmpty(),
+      SectionState.empty => _TopicListEmpty(name: viewModel.studentFirstName),
       SectionState.ready => _TopicGroups(
         groups: section.data ?? const [],
-        // The bag has no "eksik" field for a coach's student (Tur 12 A).
-        bag: data.source == TopicSource.bag && !viewModel.isCoachView,
+        // The bag is one list of topics with the lesson under each name, for
+        // the student and for the coach alike (pano 14.2 kare 3 and 6).
+        flat: data.source == TopicSource.bag,
       ),
     };
   }
 }
 
-/// The groups: a lesson heading over its radio rows.
+/// The rows. "Çanta" ([flat]) has no group headings: each row carries its
+/// lesson as the line under the topic ("TYT Türkçe"); "Dersler" keeps a lesson
+/// heading over its radio rows (hundreds of topics need it to be browsed).
 class _TopicGroups extends StatelessWidget {
-  const _TopicGroups({required this.groups, required this.bag});
+  const _TopicGroups({required this.groups, required this.flat});
 
   final List<TopicGroup> groups;
-  final bool bag;
+  final bool flat;
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +52,12 @@ class _TopicGroups extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         for (final group in groups) ...[
-          _GroupHeading(name: group.lessonName),
+          if (!flat) _GroupHeading(name: group.lessonName),
           for (final choice in group.choices)
             _TopicRow(
               key: ValueKey<String>(choice.key),
               choice: choice,
-              showEksik: bag,
+              showLesson: flat,
             ),
         ],
       ],
@@ -92,14 +95,17 @@ class _GroupHeading extends StatelessWidget {
   }
 }
 
-/// One radio row (pano 3.5 kare 3): the radio, the topic with "Programda: Pzt
-/// 10:00" under it, and the "Eksik" tag of a bag topic. At least 56 high,
+/// One radio row (pano 3.5 kare 3, 14.2 kare 3 and 6): the radio and the topic
+/// with one line under it, "TYT Türkçe · Programda: Pzt 10:00" in "Çanta"
+/// ([showLesson]: the lesson, then where the topic already sits in the
+/// program), "Programda: Pzt 10:00" in "Dersler". There is no "Eksik" tag and
+/// no "Son denemede…" line: the bag has no such fields. At least 56 high,
 /// padding 8 / 24, 12 between the parts; the whole row is the target.
 class _TopicRow extends SelectorViewModelWidget<TopicPickerViewModel, bool> {
-  const _TopicRow({required this.choice, required this.showEksik, super.key});
+  const _TopicRow({required this.choice, required this.showLesson, super.key});
 
   final TopicChoice choice;
-  final bool showEksik;
+  final bool showLesson;
 
   /// The radio's 48 pt box starts 12 in so its 24 pt mark is 24 from the
   /// edge, as in the board.
@@ -122,16 +128,17 @@ class _TopicRow extends SelectorViewModelWidget<TopicPickerViewModel, bool> {
     void pick() => viewModel.select(choice);
     final placedLine = placed == null
         ? null
-        : l10n.schedule_inProgramAt(
-            TrFormat.gunKisa(placed.day),
-            placed.timeLabel,
-          );
+        : TopicRowText.placedLine(placed, l10n.schedule_inProgramAt);
     final reading = [
       l10n.schedule_topicRowA11y(choice.title, choice.lessonName),
       ?placedLine,
-      // The tag is part of this reading (the row hides its own nodes).
-      if (showEksik) l10n.lessons_missingItem,
     ].join(', ');
+    final subline = TopicRowText.subline(
+      choice: choice,
+      showLesson: showLesson,
+      placed: placed,
+      inProgramAt: l10n.schedule_inProgramAt,
+    );
 
     return Semantics(
       inMutuallyExclusiveGroup: true,
@@ -170,9 +177,9 @@ class _TopicRow extends SelectorViewModelWidget<TopicPickerViewModel, bool> {
                           color: colors.textPrimary,
                         ),
                       ),
-                      if (placedLine case final line?)
+                      if (subline != null)
                         Text(
-                          line,
+                          subline,
                           style: text.caption.copyWith(
                             color: colors.textSecondary,
                           ),
@@ -180,10 +187,6 @@ class _TopicRow extends SelectorViewModelWidget<TopicPickerViewModel, bool> {
                     ],
                   ),
                 ),
-                if (showEksik) ...[
-                  const SizedBox(width: AppSpacing.s12),
-                  const EksikTag(),
-                ],
               ],
             ),
           ),

@@ -14,9 +14,14 @@ typedef _ActionsData = ({
 /// "Günü Sıfırla" with ArrowCounterClockwise and, in edit mode and only while
 /// the cancel flag is open, "Programı İptal Et" with a Trash at the right.
 /// Both are off without a connection; "Günü Sıfırla" is off on an empty day.
+///
+/// In the coach's Program tab ([embedded]) they belong to edit mode alone: the
+/// reading frame of pano 14.1 kare 1 ends with the rows and the notice.
 class _DayActions
     extends SelectorViewModelWidget<ProgramDetailViewModel, _ActionsData> {
-  const _DayActions();
+  const _DayActions({this.embedded = false});
+
+  final bool embedded;
 
   @override
   _ActionsData selector(ProgramDetailViewModel viewModel) => (
@@ -33,7 +38,8 @@ class _DayActions
   Widget build(BuildContext context, _ActionsData data) {
     if (data.state != SectionState.ready ||
         data.mode != ProgramViewMode.day ||
-        !data.canEdit) {
+        !data.canEdit ||
+        (embedded && !data.editing)) {
       return const SliverToBoxAdapter(child: SizedBox.shrink());
     }
     final l10n = AppLocalizations.of(context);

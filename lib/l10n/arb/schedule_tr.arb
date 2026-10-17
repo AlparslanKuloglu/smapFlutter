@@ -63,6 +63,10 @@
   "@schedule_thisWeek": {
     "description": "Tag of the program of the current week (pano 3.4 kare 1)."
   },
+  "schedule_thisWeekA11y": "bu hafta",
+  "@schedule_thisWeekA11y": {
+    "description": "Last word of a program row's reading: \"Ekim 2. Hafta, Her gün biraz daha, 5–11 Ekim 2026, bu hafta\" (brief 14.1 \"Erişilebilirlik\")."
+  },
   "schedule_searchNoMatch": "“{query}” ile eşleşen program yok",
   "@schedule_searchNoMatch": {
     "description": "Search with no result, title (pano 3.4 kare 2).",

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:stacked/stacked.dart';
 
+import 'package:smap/core/config/feature_flags.dart';
 import 'package:smap/features/schedule/application/program_summary.dart';
 import 'package:smap/features/schedule/application/schedule_service.dart';
 import 'package:smap/features/schedule/application/schedule_snapshot.dart';
@@ -34,6 +35,15 @@ enum ProgramListPhase {
 /// "Tekrar Dene" returns to the skeleton. When the connection comes back
 /// while the list shows an error, it loads again by itself.
 ///
+/// **Coach.** With a [studentId] the list is the student's: every request
+/// carries the id, the list runs newest to oldest (this week's program only
+/// carries its "Bu hafta" tag, brief T12.4) and the coach may set up a new
+/// program while `FeatureFlags.coachProgramWriteEnabled` is on
+/// ([coachWriteEnabled]). After a program was saved the coach comes back to
+/// the Program tab (brief T12.6): a list that is itself the tab stays on it,
+/// a list pushed from it closes ([leaveAfterCreate]); a student's own list
+/// opens the new program.
+///
 /// The search field reports its query (debounced by the field);
 /// [visible] is the match list: name and motto, case and Turkish letters
 /// folded.
@@ -44,6 +54,8 @@ class ProgramListViewModel extends ReactiveViewModel {
     required ValueListenable<bool> online,
     this.studentId,
     this.readOnly = false,
+    this.leaveAfterCreate = false,
+    this.coachWriteEnabled = FeatureFlags.coachProgramWriteEnabled,
     DateTime Function()? clock,
   }) : _schedule = schedule,
        _navigator = navigator,
@@ -66,9 +78,18 @@ class ProgramListViewModel extends ReactiveViewModel {
   /// up and edits the student's programs.
   final bool readOnly;
 
+  /// A coach's list that was pushed over the Program tab: it closes after a
+  /// program was saved, which is the way back to the tab (brief T12.6).
+  final bool leaveAfterCreate;
+
+  /// A coach may write a student's program (`FeatureFlags
+  /// .coachProgramWriteEnabled`); off, the list only reads.
+  final bool coachWriteEnabled;
+
   /// A coach looks at a student's programs.
   bool get isCoachView => studentId != null;
 
+  int _revision = 0;
   AsyncSection<ScheduleSnapshot> _load =
       const AsyncSection<ScheduleSnapshot>.loading();
   bool _loading = false;
@@ -85,11 +106,22 @@ class ProgramListViewModel extends ReactiveViewModel {
   /// `true` while the device has a link.
   bool get online => _online.value;
 
+  /// Counts the times the screen that owns this list asked to be shown anew
+  /// ([refreshView]); the Program tab keys its program section by it.
+  int get revision => _revision;
+
+  /// The screen came back from one that may have changed the programs (the
+  /// list pushed over the Program tab): whoever keys by [revision] rebuilds.
+  void refreshView() {
+    _revision++;
+    notifyListeners();
+  }
+
   /// The query the list is filtered with (trimmed).
   String get query => _query;
 
   /// "Yeni Program" and the empty state's action exist.
-  bool get canCreate => !readOnly;
+  bool get canCreate => !readOnly && (!isCoachView || coachWriteEnabled);
 
   /// "Yeni Program" can be pressed: it needs a connection to save.
   bool get canCreateNow => canCreate && online;
@@ -104,14 +136,19 @@ class ProgramListViewModel extends ReactiveViewModel {
     };
   }
 
-  /// Every program, this week's first.
+  /// Every program: this week's first, then the newest (a coach's list is
+  /// plain newest to oldest).
   ProgramList get all {
     final snapshot = _schedule.snapshot(studentId: studentId);
     if (snapshot == null) return const ProgramList([]);
     final today = _clock();
     final day = DateTime(today.year, today.month, today.day);
     if (!identical(snapshot, _listedFrom) || _listedOn != day) {
-      _listed = ProgramList.of(snapshot.weeklies, today: day);
+      _listed = ProgramList.of(
+        snapshot.weeklies,
+        today: day,
+        thisWeekFirst: !isCoachView,
+      );
       _listedFrom = snapshot;
       _listedOn = day;
     }
@@ -157,12 +194,19 @@ class ProgramListViewModel extends ReactiveViewModel {
   /// A row was tapped: the program opens on today (or its first day).
   void openProgram(ProgramSummary program) => _navigator.openDetail(program.id);
 
-  /// "Yeni Program": the full-screen flow; the saved program opens when the
-  /// flow returns it (pano 13.3: "Programı Kaydet" → Program · gün).
+  /// "Yeni Program": the full-screen flow. A student's saved program opens
+  /// when the flow returns it (pano 13.3: "Programı Kaydet" → Program · gün);
+  /// a coach goes back to the Program tab (brief T12.6), where the new
+  /// program is in the list.
   Future<void> startNewProgram() async {
     if (!canCreateNow) return;
     final created = await _navigator.openNewProgram();
-    if (created != null && !_disposed) _navigator.openDetail(created);
+    if (created == null || _disposed) return;
+    if (!isCoachView) {
+      _navigator.openDetail(created);
+    } else if (leaveAfterCreate) {
+      _navigator.close();
+    }
   }
 
   void _onConnectivity() {

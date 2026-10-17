@@ -82,6 +82,9 @@ class AppRow extends StatelessWidget {
   /// + 12 gap (C17 "soldan 52").
   static const double textInset = AppSpacing.s16 + 24 + AppSpacing.s12;
 
+  /// The widest share of the row a [value] may take.
+  static const double _valueShare = 0.5;
+
   bool get _arrow =>
       showArrow ?? (onTap != null && trailing == null && !external && !danger);
 
@@ -103,64 +106,74 @@ class AppRow extends StatelessWidget {
           horizontal: AppSpacing.s16,
           vertical: AppSpacing.s12,
         ),
-        child: Row(
-          children: [
-            if (leading case final lead?) ...[
-              lead,
-              const SizedBox(width: AppSpacing.s12),
-            ] else if (icon case final glyph?) ...[
-              PhosphorIcon(glyph, size: AppSize.icon, color: soft),
-              const SizedBox(width: AppSpacing.s12),
-            ],
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(title, style: text.titleSm.copyWith(color: ink)),
-                  if (subtitle case final sub?)
-                    Text(
-                      sub,
-                      style: text.caption.copyWith(color: colors.textSecondary),
-                    ),
-                ],
-              ),
-            ),
-            if (value case final current?) ...[
-              const SizedBox(width: AppSpacing.s12),
-              Flexible(
-                child: Text(
-                  current,
-                  textAlign: TextAlign.end,
-                  style: text.body.copyWith(color: colors.textSecondary),
+        child: LayoutBuilder(
+          builder: (context, box) => Row(
+            children: [
+              if (leading case final lead?) ...[
+                lead,
+                const SizedBox(width: AppSpacing.s12),
+              ] else if (icon case final glyph?) ...[
+                PhosphorIcon(glyph, size: AppSize.icon, color: soft),
+                const SizedBox(width: AppSpacing.s12),
+              ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(title, style: text.titleSm.copyWith(color: ink)),
+                    if (subtitle case final sub?)
+                      Text(
+                        sub,
+                        style: text.caption.copyWith(
+                          color: colors.textSecondary,
+                        ),
+                      ),
+                  ],
                 ),
               ),
+              if (value case final current?) ...[
+                const SizedBox(width: AppSpacing.s12),
+                // At most half of the row, never the "Flexible" half of the free
+                // space: the value then sits at the right edge, next to the
+                // arrow, whatever the title's length.
+                ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxWidth: box.maxWidth * _valueShare,
+                  ),
+                  child: Text(
+                    current,
+                    textAlign: TextAlign.end,
+                    style: text.body.copyWith(color: colors.textSecondary),
+                  ),
+                ),
+              ],
+              if (tag case final label?) ...[
+                const SizedBox(width: AppSpacing.s12),
+                AppTag(label: label),
+              ],
+              if (trailing case final control?) ...[
+                const SizedBox(width: AppSpacing.s12),
+                control,
+              ],
+              if (external) ...[
+                const SizedBox(width: AppSpacing.s12),
+                PhosphorIcon(
+                  PhosphorIconsRegular.arrowSquareOut,
+                  size: AppSize.iconInButton,
+                  color: colors.textSecondary,
+                ),
+              ],
+              if (_arrow) ...[
+                const SizedBox(width: AppSpacing.s8),
+                PhosphorIcon(
+                  PhosphorIconsRegular.caretRight,
+                  size: AppSize.iconInButton,
+                  color: colors.textSecondary,
+                ),
+              ],
             ],
-            if (tag case final label?) ...[
-              const SizedBox(width: AppSpacing.s12),
-              AppTag(label: label),
-            ],
-            if (trailing case final control?) ...[
-              const SizedBox(width: AppSpacing.s12),
-              control,
-            ],
-            if (external) ...[
-              const SizedBox(width: AppSpacing.s12),
-              PhosphorIcon(
-                PhosphorIconsRegular.arrowSquareOut,
-                size: AppSize.iconInButton,
-                color: colors.textSecondary,
-              ),
-            ],
-            if (_arrow) ...[
-              const SizedBox(width: AppSpacing.s8),
-              PhosphorIcon(
-                PhosphorIconsRegular.caretRight,
-                size: AppSize.iconInButton,
-                color: colors.textSecondary,
-              ),
-            ],
-          ],
+          ),
         ),
       ),
     );

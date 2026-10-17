@@ -20,7 +20,10 @@ import 'package:smap/shared/ui/surfaces/app_card.dart';
 ///
 /// **section** ("Bugün için programında konu yok."): a card with 16 padding
 /// holding one [message] sentence and a text button ("Haftalık Programını
-/// Kur"); the rest of the screen keeps working.
+/// Kur"); the rest of the screen keeps working. With a [title] ("Alparslan'ın
+/// programı yok", board 14.1 kare 4) the card opens with the title 16/24 ·
+/// 700, and with [primaryAction] the action is the one full-width primary
+/// button ("Program Kur" with a Plus) instead of the text button.
 ///
 /// Empty means the answer was empty, never "not loaded" (that is the
 /// skeleton) and never "failed" (that is `AppErrorState`).
@@ -35,23 +38,26 @@ class AppEmptyState extends StatelessWidget {
     this.illustration,
     this.topPadding = AppSpacing.s64,
     super.key,
-  }) : level = AppStateLevel.screen;
+  }) : level = AppStateLevel.screen,
+       primaryAction = false;
 
   /// The section-level card.
   const AppEmptyState.section({
     required this.message,
+    this.title,
     this.actionLabel,
     this.onAction,
+    this.actionIcon,
+    this.primaryAction = false,
     super.key,
   }) : level = AppStateLevel.section,
-       title = null,
-       actionIcon = null,
        illustration = null,
        topPadding = 0;
 
   final AppStateLevel level;
 
-  /// "Henüz deneme yok" (screen level only).
+  /// "Henüz deneme yok" (screen level); the optional bold first line of the
+  /// section card ("Alparslan'ın programı yok").
   final String? title;
 
   /// One sentence: what is missing and what will fill it.
@@ -61,8 +67,13 @@ class AppEmptyState extends StatelessWidget {
   final String? actionLabel;
   final VoidCallback? onAction;
 
-  /// A Phosphor icon in front of the primary label (screen level).
+  /// A Phosphor icon in front of the primary label (screen level, or the
+  /// section's [primaryAction]).
   final IconData? actionIcon;
+
+  /// Section level: the action is a full-width primary button, not a text
+  /// button.
+  final bool primaryAction;
 
   /// The clay picture, drawn 128 x 128 (screen level). Null leaves the area
   /// empty.
@@ -156,6 +167,8 @@ class _SectionEmpty extends StatelessWidget {
     final colors = context.appColors;
     final text = context.appText;
     final action = state.actionLabel;
+    final title = state.title;
+    final primary = state.primaryAction;
     return SizedBox(
       width: double.infinity,
       child: AppCard(
@@ -163,7 +176,7 @@ class _SectionEmpty extends StatelessWidget {
           AppSpacing.s16,
           AppSpacing.s16,
           AppSpacing.s16,
-          action == null ? AppSpacing.s16 : _bottom,
+          action == null || primary ? AppSpacing.s16 : _bottom,
         ),
         child: Semantics(
           container: true,
@@ -171,11 +184,29 @@ class _SectionEmpty extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              if (title != null) ...[
+                Semantics(
+                  header: true,
+                  child: Text(
+                    title,
+                    style: text.titleSm.copyWith(color: colors.textPrimary),
+                  ),
+                ),
+                const SizedBox(height: AppSpacing.s4),
+              ],
               Text(
                 state.message,
                 style: text.body.copyWith(color: colors.textSecondary),
               ),
-              if (action != null) ...[
+              if (action != null && primary) ...[
+                const SizedBox(height: AppSpacing.s16),
+                AppButton(
+                  label: action,
+                  icon: state.actionIcon,
+                  expand: true,
+                  onPressed: state.onAction,
+                ),
+              ] else if (action != null) ...[
                 const SizedBox(height: AppSpacing.s4),
                 Align(
                   alignment: AlignmentDirectional.centerStart,
