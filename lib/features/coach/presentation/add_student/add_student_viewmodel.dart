@@ -4,10 +4,10 @@ import 'dart:ui' show Rect;
 import 'package:flutter/foundation.dart';
 import 'package:stacked/stacked.dart';
 
-import 'package:smap/core/errors/app_exception.dart';
 import 'package:smap/core/errors/app_result.dart';
 import 'package:smap/core/extensions/either_extensions.dart';
 import 'package:smap/core/services/app_haptics.dart';
+import 'package:smap/core/services/toast_service.dart';
 import 'package:smap/core/theme/app_motion.dart';
 import 'package:smap/features/account/domain/school_grade.dart';
 import 'package:smap/features/account/domain/study_track.dart';
@@ -19,6 +19,7 @@ import 'package:smap/features/coach/application/password_generator.dart';
 import 'package:smap/features/coach/application/student_avatars.dart';
 import 'package:smap/features/coach/data/add_student_outcome.dart';
 import 'package:smap/features/coach/domain/new_student.dart';
+import 'package:smap/features/coach/presentation/add_student/add_student_texts.dart';
 import 'package:smap/l10n/app_localizations.dart';
 
 /// `CoachStudentsService.addStudent`: creates the student and puts the created
@@ -42,7 +43,7 @@ class AddStudentFocusRequest {
 const Duration kAddStudentUsernameDebounce = SmapDurations.usernameDebounce;
 
 /// The form of "Öğrenci ekle" (pano 10.3 kare 1 and 2; spec §4.I 10.3; Tur 12
-/// D for the avatar).
+/// D, pano 14.8 for the avatar, the offline state and the failure toast).
 ///
 /// Holds the form's values and what the rules and the server say about them;
 /// the text controllers and focus nodes stay in the view. A field shows its
@@ -58,28 +59,39 @@ const Duration kAddStudentUsernameDebounce = SmapDurations.usernameDebounce;
 /// - "Oluştur" makes a readable 10-character password ([PasswordGenerator]);
 ///   it is returned so the view can write it into its field.
 /// - A student of 9th or 10th grade has no track (the field turns passive).
-///   The avatar starts on the first of the seven and need not be chosen.
+///   The avatar starts on the first of the seven and need not be chosen
+///   (T12.17); it is sent as `photo`.
+/// - Offline the form and the avatar stay as they are but saving is off
+///   ([canSubmit]; pano 14.8 kare 4: "Öğrenci eklemek için bağlantı
+///   gerekiyor."); the coaching code card keeps working.
 ///
 /// **Submit.** Validates; on issues, focus goes to the first one
 /// ([focusRequest]). Otherwise the student is created: the sheet is busy
 /// meanwhile ([submitting]); a "user name in use" answer becomes the field
-/// error with a free suggestion; every other failure stays as [failure] above
-/// the button and the sheet keeps what was typed. A saved student comes back
+/// error with a free suggestion; every other failure is the error toast
+/// "Öğrenci kaydedilemedi. Bağlantını kontrol edip tekrar dene." (pano 14.8
+/// kare 5; error haptic, announced) and the sheet keeps what was typed,
+/// the chosen avatar included. A saved student comes back
 /// as an [AddedStudent], carrying the password the coach has to pass on (the
 /// server never sends it back).
 ///
 /// The ViewModel holds no `BuildContext`: copying and sharing the coaching
-/// code go through the injected [CoachCodeActions].
+/// code go through the injected [CoachCodeActions], the failure toast through
+/// the [ToastService].
 class AddStudentViewModel extends BaseViewModel {
   AddStudentViewModel({
     required UsernameChecker checkUsername,
     required AddStudentSubmit addStudent,
     required CoachCodeActions codeActions,
+    required ToastService toast,
+    required ValueListenable<bool> online,
     String? coachCode,
     Random? random,
     Duration usernameDebounce = kAddStudentUsernameDebounce,
   }) : _addStudent = addStudent,
        _codeActions = codeActions,
+       _toast = toast,
+       _online = online,
        _coachCode = coachCode?.trim(),
        _random = random ?? Random.secure() {
     _check = UsernameLiveCheck(
@@ -87,10 +99,13 @@ class AddStudentViewModel extends BaseViewModel {
       onChanged: _notify,
       debounce: usernameDebounce,
     );
+    _online.addListener(_notify);
   }
 
   final AddStudentSubmit _addStudent;
   final CoachCodeActions _codeActions;
+  final ToastService _toast;
+  final ValueListenable<bool> _online;
   final String? _coachCode;
   final Random _random;
   late final UsernameLiveCheck _check;
@@ -110,7 +125,6 @@ class AddStudentViewModel extends BaseViewModel {
   final Set<AddStudentField> _shown = {};
 
   bool _submitting = false;
-  AppException? _failure;
   bool _disposed = false;
 
   // ── Values the sections select on ────────────────────────────────────
@@ -120,9 +134,15 @@ class AddStudentViewModel extends BaseViewModel {
   StudyTrack? get track => _track;
   bool get submitting => _submitting;
 
-  /// Why the last save failed, shown above "Öğrenciyi Kaydet"; `null` while
-  /// nothing failed.
-  AppException? get failure => _failure;
+  /// Whether the device is online; saving needs it (pano 14.8 kare 4).
+  bool get online => _online.value;
+
+  /// "Öğrenciyi Kaydet" works: online (a save already running is the busy
+  /// state, not this). Offline the button is passive with its reason under it.
+  bool get canSubmit => online;
+
+  /// How many avatars there are, for the "4 / 7" counter.
+  int get avatarCount => StudentAvatars.files.length;
 
   /// Where the live check of the user name stands.
   UsernameCheckState get usernameCheck => _check.state;
@@ -235,8 +255,7 @@ class AddStudentViewModel extends BaseViewModel {
   /// "Öğrenciyi Kaydet". Completes with the saved student, or `null` when the
   /// form has an issue, the save failed or one is already running.
   Future<AddedStudent?> submit() async {
-    if (_submitting) return null;
-    _failure = null;
+    if (_submitting || !online) return null;
     _shown.addAll(AddStudentField.values);
     await _check.settle(_username, fullName: _fullName);
     final issues = AddStudentRules.validate(_values);
@@ -254,8 +273,8 @@ class AddStudentViewModel extends BaseViewModel {
     _submitting = false;
     final outcome = result.rightOrNull;
     if (outcome == null) {
-      _failure = result.leftOrNull;
-      AppHaptics.error();
+      final failure = result.leftOrNull;
+      _toast.error((l) => addStudentFailureText(l, failure));
       _notify();
       return null;
     }
@@ -309,6 +328,7 @@ class AddStudentViewModel extends BaseViewModel {
   @override
   void dispose() {
     _disposed = true;
+    _online.removeListener(_notify);
     _check.dispose();
     focusRequest.dispose();
     super.dispose();

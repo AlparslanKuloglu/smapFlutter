@@ -21,6 +21,12 @@ import 'package:smap/shared/ui/identity/app_avatar.dart';
 ///
 /// A tap plays `AppHaptics.selection()` and reports the index. Each reads as
 /// "Avatar 3, seçili".
+///
+/// **Radio variant** (Tur 12 D, pano 14.8 kare 1): pass [groupLabel] ("Avatar,
+/// 7 seçenek") and [optionLabelOf] ("Avatar 4 / 7") and the picker reads as a
+/// radio group whose options are mutually exclusive radios ("Avatar 4 / 7,
+/// seçili"); the selected ring fades in over 150 ms (`context.motion`). The
+/// count then lives in the form's label row ("4 / 7"), so [showCount] is off.
 class AppAvatarPicker extends StatelessWidget {
   const AppAvatarPicker({
     required this.avatars,
@@ -29,6 +35,8 @@ class AppAvatarPicker extends StatelessWidget {
     this.size = 46,
     this.showCount = true,
     this.gapColor,
+    this.groupLabel,
+    this.optionLabelOf,
     super.key,
   });
 
@@ -48,6 +56,13 @@ class AppAvatarPicker extends StatelessWidget {
   /// The color of the gap between an avatar and its ring.
   final Color? gapColor;
 
+  /// Turns the picker into a radio group read as this ("Avatar, 7 seçenek").
+  final String? groupLabel;
+
+  /// The reading of the avatar at an index without the "seçili" suffix
+  /// ("Avatar 4 / 7"); the kit's "Avatar 4" when null.
+  final String Function(int index)? optionLabelOf;
+
   /// Gap and ring widths of the selection (C57: 2 + 2).
   static const double selectionGap = 2;
   static const double selectionRing = 2;
@@ -57,7 +72,8 @@ class AppAvatarPicker extends StatelessWidget {
     final colors = context.appColors;
     final l10n = AppLocalizations.of(context);
     final slot = size < AppSize.touch ? AppSize.touch : size;
-    return Column(
+    final group = groupLabel;
+    final picker = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -74,8 +90,10 @@ class AppAvatarPicker extends StatelessWidget {
                 selected: i == selectedIndex,
                 gapColor: gapColor ?? colors.bgCanvas,
                 onTap: onChanged == null ? null : () => onChanged!(i),
-                label: l10n.kit_a11yAvatarOption(i + 1),
+                label:
+                    optionLabelOf?.call(i) ?? l10n.kit_a11yAvatarOption(i + 1),
                 selectedLabel: l10n.kit_a11ySelected,
+                radio: group != null,
               ),
           ],
         ),
@@ -90,6 +108,8 @@ class AppAvatarPicker extends StatelessWidget {
         ],
       ],
     );
+    if (group == null) return picker;
+    return Semantics(container: true, label: group, child: picker);
   }
 }
 
@@ -104,6 +124,7 @@ class _AvatarOption extends StatelessWidget {
     required this.onTap,
     required this.label,
     required this.selectedLabel,
+    required this.radio,
   });
 
   final int index;
@@ -116,6 +137,9 @@ class _AvatarOption extends StatelessWidget {
   final String label;
   final String selectedLabel;
 
+  /// Read as a radio of a mutually exclusive group, not as a button.
+  final bool radio;
+
   @override
   Widget build(BuildContext context) {
     final colors = context.appColors;
@@ -123,7 +147,9 @@ class _AvatarOption extends StatelessWidget {
     const out = AppAvatarPicker.selectionGap + AppAvatarPicker.selectionRing;
     return Semantics(
       label: selected ? '$label, $selectedLabel' : label,
-      button: true,
+      button: !radio,
+      inMutuallyExclusiveGroup: radio,
+      checked: radio ? selected : null,
       selected: selected,
       enabled: onTap != null,
       excludeSemantics: true,

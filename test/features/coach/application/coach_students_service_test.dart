@@ -30,6 +30,9 @@ class _Server {
   bool usernameTaken = false;
   bool failList = false;
 
+  /// The answer to "add" carries no `photo` (an older server).
+  bool omitPhoto = false;
+
   FakeAdapter get adapter => FakeAdapter((options) async {
     switch (options.path) {
       case '/coach/getMyStudents':
@@ -40,10 +43,9 @@ class _Server {
         if (usernameTaken) {
           return jsonResponse({'success': true, 'userNameUsing': true});
         }
-        return jsonResponse({
-          'success': true,
-          'student': studentJson(id: 's3', name: 'Yeni', surname: 'Öğrenci'),
-        });
+        final created = studentJson(id: 's3', name: 'Yeni', surname: 'Öğrenci');
+        if (omitPhoto) created.remove('photo');
+        return jsonResponse({'success': true, 'student': created});
       case '/ajax/checkUsername':
         return jsonResponse({'success': true, 'available': !usernameTaken});
     }
@@ -190,6 +192,52 @@ void main() {
       expect(result.rightOrNull, isA<StudentAdded>());
       expect(service.students.map((s) => s.id), ['s2', 's1', 's3']);
       expect(server.listCalls, 1);
+    });
+
+    test('the avatar that was sent shows when the answer has none', () async {
+      await service.load();
+      server.omitPhoto = true;
+
+      final result = await service.addStudent(
+        NewStudent(
+          firstName: _input.firstName,
+          lastName: _input.lastName,
+          userName: _input.userName,
+          password: _input.password,
+          grade: _input.grade,
+          photo: 'assets/avatars/5avatarN3.png',
+        ),
+      );
+
+      expect(service.byId('s3')?.photo, '5avatarN3.png');
+      final outcome = result.rightOrNull! as StudentAdded;
+      expect(outcome.student.photo, '5avatarN3.png');
+    });
+
+    test('the server\'s own photo is kept', () async {
+      await service.load();
+
+      await service.addStudent(
+        NewStudent(
+          firstName: _input.firstName,
+          lastName: _input.lastName,
+          userName: _input.userName,
+          password: _input.password,
+          grade: _input.grade,
+          photo: '5avatarN3.png',
+        ),
+      );
+
+      expect(service.byId('s3')?.photo, 'avatars/1avatarN3.png');
+    });
+
+    test('a student without an avatar stays without one', () async {
+      await service.load();
+      server.omitPhoto = true;
+
+      await service.addStudent(_input);
+
+      expect(service.byId('s3')?.photo, isNull);
     });
 
     test('a taken login name changes nothing', () async {

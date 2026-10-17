@@ -5,6 +5,7 @@ import 'dart:ui' show Rect;
 import 'package:dartz/dartz.dart';
 // ignore: depend_on_referenced_packages
 import 'package:fake_async/fake_async.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:smap/core/errors/app_error_code.dart';
 import 'package:smap/core/errors/app_exception.dart';
@@ -68,6 +69,7 @@ void main() {
   late ToastProbe toast;
   late List<String> copied;
   late List<(String, Rect?)> shared;
+  late ValueNotifier<bool> online;
   late AddStudentViewModel viewModel;
 
   AddStudentViewModel build({
@@ -81,6 +83,8 @@ void main() {
       shareText: (text, {origin}) async => shared.add((text, origin)),
       toast: toast.service,
     ),
+    toast: toast.service,
+    online: online,
     coachCode: coachCode,
     random: Random(11),
     usernameDebounce: debounce,
@@ -107,12 +111,14 @@ void main() {
     toast = ToastProbe();
     copied = [];
     shared = [];
+    online = ValueNotifier<bool>(true);
     viewModel = build();
   });
 
   tearDown(() {
     viewModel.dispose();
     toast.dispose();
+    online.dispose();
   });
 
   group('the form at the start (pano 10.3 kare 1)', () {
@@ -122,7 +128,8 @@ void main() {
         expect(viewModel.issueFor(field), isNull);
       }
       expect(viewModel.submitting, isFalse);
-      expect(viewModel.failure, isNull);
+      expect(toast.text, isNull);
+      expect(viewModel.avatarCount, 7);
     });
 
     test('an avatar can be chosen; an index outside the seven cannot', () {
@@ -137,6 +144,108 @@ void main() {
       expect(viewModel.coachCode, 'MOZK-4821');
       expect(build(coachCode: null).coachCode, isNull);
       expect(build(coachCode: '  ').coachCode, isNull);
+    });
+  });
+
+  group('avatar (pano 14.8 kare 1)', () {
+    test('the counter is the chosen position over the total', () {
+      final l10n = AppLocalizationsTr();
+      String counter() =>
+          l10n.addStudent_avatarCounter(viewModel.avatarIndex + 1, 7);
+
+      expect(counter(), '1 / 7');
+      viewModel.setAvatar(3);
+      expect(counter(), '4 / 7', reason: 'the board\'s Zeynep Kaya');
+      viewModel.setAvatar(6);
+      expect(counter(), '7 / 7');
+    });
+
+    test('is read as the board says (pure texts)', () {
+      final l10n = AppLocalizationsTr();
+      expect(l10n.addStudent_avatarGroupA11y(7), 'Avatar, 7 seçenek');
+      expect(l10n.addStudent_avatarOptionA11y(4, 7), 'Avatar 4 / 7');
+      expect(l10n.addStudent_avatarLabel, 'Avatar');
+    });
+
+    test('choosing the same avatar again changes nothing', () {
+      var notified = 0;
+      viewModel.addListener(() => notified++);
+      viewModel.setAvatar(0);
+      expect(notified, 0);
+      viewModel.setAvatar(1);
+      expect(notified, 1);
+    });
+
+    test('the chosen avatar goes to the server as photo', () async {
+      await fillBoardForm();
+      viewModel.setAvatar(3);
+
+      await viewModel.submit();
+
+      expect(backend.saved.single.photo, '5avatarN3.png');
+      expect(backend.saved.single.toDataObj()['photo'], '5avatarN3.png');
+    });
+
+    test('the first avatar is sent when none was chosen (T12.17)', () async {
+      await fillBoardForm();
+
+      final added = await viewModel.submit();
+
+      expect(backend.saved.single.photo, '1avatarN3.png');
+      expect(added?.avatarIndex, 0);
+    });
+
+    test('the saved student carries the chosen avatar', () async {
+      await fillBoardForm();
+      viewModel.setAvatar(3);
+
+      final added = await viewModel.submit();
+
+      expect(added?.avatarIndex, 3);
+    });
+  });
+
+  group('offline (pano 14.8 kare 4)', () {
+    test('saving is off with the form and the avatar kept', () async {
+      await fillBoardForm();
+      viewModel.setAvatar(3);
+      expect(viewModel.canSubmit, isTrue);
+
+      online.value = false;
+
+      expect(viewModel.online, isFalse);
+      expect(viewModel.canSubmit, isFalse);
+      expect(viewModel.avatarIndex, 3);
+      expect(await viewModel.submit(), isNull);
+      expect(backend.saved, isEmpty, reason: 'nothing is sent offline');
+      expect(viewModel.issueFor(AddStudentField.firstName), isNull);
+    });
+
+    test('the view is told when the connection goes and comes back', () {
+      var notified = 0;
+      viewModel.addListener(() => notified++);
+
+      online.value = false;
+      online.value = true;
+
+      expect(notified, 2);
+      expect(viewModel.canSubmit, isTrue);
+    });
+
+    test('the code card keeps working', () async {
+      online.value = false;
+
+      await viewModel.copyCode();
+
+      expect(copied, ['MOZK-4821']);
+    });
+
+    test('says why, in the board\'s words', () {
+      expect(
+        AppLocalizationsTr().addStudent_saveOfflineReason,
+        'Öğrenci eklemek için bağlantı gerekiyor. '
+        'Kod kartı çevrimdışında da çalışır.',
+      );
     });
   });
 
@@ -452,7 +561,7 @@ void main() {
         await pause();
 
         expect(added, isNull);
-        expect(viewModel.failure, isNull);
+        expect(toast.text, isNull, reason: 'a taken name is a field error');
         expect(
           viewModel.issueFor(AddStudentField.username),
           AddStudentIssue.usernameTaken,
@@ -471,34 +580,44 @@ void main() {
           AppException(code: AppErrorCode.server, statusCode: 500),
         );
 
+        viewModel.setAvatar(3);
+
         expect(await viewModel.submit(), isNull);
-        expect(viewModel.failure?.code, AppErrorCode.server);
+        expect(toast.isError, isTrue);
+        expect(
+          toast.text,
+          'Öğrenci kaydedilemedi. Bağlantını kontrol edip tekrar dene.',
+        );
         expect(viewModel.submitting, isFalse);
         expect(viewModel.issueFor(AddStudentField.firstName), isNull);
+        expect(viewModel.avatarIndex, 3, reason: 'the avatar is kept');
 
         backend.saveAnswer = null;
         final added = await viewModel.submit();
         expect(added, isNotNull);
-        expect(viewModel.failure, isNull);
         expect(backend.saved, hasLength(2));
+        expect(backend.saved.last.photo, '5avatarN3.png');
       },
     );
 
-    test('the notice for a failure never carries a server code', () async {
+    test('the toast for a failure never carries a server code', () async {
       final l10n = AppLocalizationsTr();
       String text(AppException failure) => addStudentFailureText(l10n, failure);
 
+      const board =
+          'Öğrenci kaydedilemedi. Bağlantını kontrol edip tekrar dene.';
+      for (final code in [
+        AppErrorCode.offline,
+        AppErrorCode.network,
+        AppErrorCode.timeout,
+        AppErrorCode.server,
+        AppErrorCode.unknown,
+      ]) {
+        expect(text(AppException(code: code)), board, reason: '$code');
+      }
       expect(
-        text(const AppException(code: AppErrorCode.offline)),
-        l10n.errors_offline,
-      );
-      expect(
-        text(const AppException(code: AppErrorCode.server)),
-        l10n.errors_server,
-      );
-      expect(
-        text(const AppException(code: AppErrorCode.unknown)),
-        'Öğrenci eklenemedi. Bağlantını kontrol edip tekrar dene.',
+        text(const AppException(code: AppErrorCode.maintenance)),
+        l10n.errors_maintenance,
       );
       expect(
         text(

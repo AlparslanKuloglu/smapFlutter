@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-import 'package:smap/core/errors/app_exception.dart';
+import 'package:smap/core/services/connectivity_service.dart';
 import 'package:smap/core/services/toast_service.dart';
 import 'package:smap/core/theme/app_motion.dart';
 import 'package:smap/core/theme/app_spacing.dart';
@@ -34,7 +34,6 @@ import 'package:smap/shared/ui/identity/app_avatar_picker.dart';
 import 'package:smap/shared/ui/inputs/app_select_field.dart';
 import 'package:smap/shared/ui/inputs/app_text_field.dart';
 import 'package:smap/shared/ui/sheets/app_sheet.dart';
-import 'package:smap/shared/ui/surfaces/app_notice_box.dart';
 
 part 'widgets/add_student_avatar.dart';
 part 'widgets/add_student_code.dart';
@@ -48,7 +47,8 @@ part 'widgets/add_student_submit.dart';
 /// "Öğrenci Ekle" of the coach home open.
 ///
 /// Title "Öğrenci ekle", subtitle "Hesabını sen aç ya da kodunu paylaş." and
-/// "Kapat". The form (kare 1): the seven avatars (the first is chosen), "Ad"
+/// "Kapat". The form (kare 1): "Avatar" with its "4 / 7" counter and the seven
+/// avatars (the first is chosen; pano 14.8 kare 1), "Ad"
 /// and "Soyad" side by side, "Kullanıcı adı" with "Kontrol Et" and its live
 /// answer, "Şifre" with "Oluştur" and the eye, "Sınıf" and "Alan" side by side
 /// (the track is passive in the 9th and 10th grade), the primary "Öğrenciyi
@@ -56,7 +56,9 @@ part 'widgets/add_student_submit.dart';
 /// 2), for the student who links with the code; it is there only when the coach
 /// has a code. While the student is saved the sheet is busy (the close button
 /// hides, drag and scrim do not close it, the fields are read only); a failure
-/// keeps the sheet open with what was typed.
+/// keeps the sheet open with what was typed and the avatar chosen, and says so
+/// in a toast (pano 14.8 kare 5). Offline the form stays but "Öğrenciyi
+/// Kaydet" is passive with its reason (kare 4); the code card still works.
 ///
 /// [show] runs the whole flow: the form, then the credentials sheet of kare 3
 /// ([CredentialsSheet]); "Tamam" ends it with the toast "Zeynep Kaya eklendi."
@@ -97,6 +99,8 @@ class AddStudentSheet extends StatelessWidget {
             locator<CoachStudentRepository>().checkUsername(name),
         addStudent: locator<CoachStudentsService>().addStudent,
         codeActions: CoachCodeActions.system(toast: locator<ToastService>()),
+        toast: locator<ToastService>(),
+        online: locator<ConnectivityService>().online,
         coachCode: _coachCode(),
       ),
       builder: (context, viewModel, _) => _AddStudentHost(viewModel: viewModel),
