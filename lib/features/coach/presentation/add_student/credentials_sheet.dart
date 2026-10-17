@@ -151,8 +151,13 @@ class _CredentialsBodyState extends State<_CredentialsBody> {
     text: widget.added.password,
   );
 
-  /// The password field shows its eye but is never edited: it cannot take the
-  /// focus, so no keyboard opens over the sheet.
+  /// The two fields are never edited: they cannot take the focus, so no
+  /// keyboard opens over the sheet. The user name is drawn as an ordinary
+  /// field, not as the read-only one with its lock (pano 14.8 kare 2).
+  final FocusNode _inertName = FocusNode(
+    canRequestFocus: false,
+    skipTraversal: true,
+  );
   final FocusNode _inert = FocusNode(
     canRequestFocus: false,
     skipTraversal: true,
@@ -162,6 +167,7 @@ class _CredentialsBodyState extends State<_CredentialsBody> {
   void dispose() {
     _userName.dispose();
     _password.dispose();
+    _inertName.dispose();
     _inert.dispose();
     super.dispose();
   }
@@ -182,7 +188,7 @@ class _CredentialsBodyState extends State<_CredentialsBody> {
         AppTextField(
           label: l10n.addStudent_username,
           controller: _userName,
-          readOnly: true,
+          focusNode: _inertName,
         ),
         const SizedBox(height: AppSpacing.s16),
         AppTextField(
