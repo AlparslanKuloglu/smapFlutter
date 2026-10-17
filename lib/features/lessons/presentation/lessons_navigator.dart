@@ -19,6 +19,10 @@ abstract interface class LessonsNavigator {
     LessonCat? cat,
   });
 
+  /// Dönem detayı of the era [eraId] of Yazar ve Eserler (pano 14.5 kare 2);
+  /// [lessonId] is Türk Dili ve Edebiyatı.
+  Future<void> openEra({required String lessonId, required String eraId});
+
   /// The card deck of an exam lesson ("Kartlarım"; E13's screen, today the
   /// legacy one).
   Future<void> openCardDeck({

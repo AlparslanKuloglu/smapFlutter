@@ -19,12 +19,18 @@ import 'package:smap/l10n/app_localizations.dart';
 /// nothing: "0 eksik" is never written. A count above zero is read "3 eksik"
 /// (the flag is decoration). At text scale 1,3 the tag grows and does not cut
 /// its text.
+///
+/// [works] words the count for the works of Yazar ve Eserler: "2 eksik eser"
+/// on an era (pano 14.5 kare 1 and 2) instead of "2 eksik".
 class EksikTag extends StatelessWidget {
-  const EksikTag({this.count, super.key});
+  const EksikTag({this.count, this.works = false, super.key});
 
   /// How many items are missing; null is the item-level tag "Eksik", zero
   /// draws nothing.
   final int? count;
+
+  /// The count is of works: "2 eksik eser".
+  final bool works;
 
   /// Visible height.
   static const double height = 24;
@@ -40,6 +46,8 @@ class EksikTag extends StatelessWidget {
     final l10n = AppLocalizations.of(context);
     final label = amount == null
         ? l10n.lessons_missingItem
+        : works
+        ? l10n.literature_eraMissing(TrFormat.sira(amount))
         : l10n.lessons_missingCount(TrFormat.sira(amount));
     return Semantics(
       label: label,

@@ -4,7 +4,6 @@ import 'package:smap/core/theme/subject_tone.dart';
 import 'package:smap/features/lessons/application/lesson_category.dart';
 import 'package:smap/features/lessons/application/lesson_rows.dart';
 import 'package:smap/features/lessons/application/lesson_segments.dart';
-import 'package:smap/features/lessons/application/literature_authors.dart';
 import 'package:smap/shared/ui/feedback/section_state.dart';
 
 /// The title block of Ders Detayı: the glyph and the name (pano 7.2, 7.4).
@@ -136,39 +135,74 @@ class LessonTopicsData {
   );
 }
 
-/// The author list section of the Edebiyat detail (pano 7.4 kare 1).
+/// One era row of Yazar ve Eserler (pano 14.5 kare 1): the number, the name
+/// and the missing works.
 @immutable
-class LessonAuthorsData {
-  const LessonAuthorsData({
-    required this.state,
-    this.authors = const LiteratureAuthors([]),
+class EraRowData {
+  const EraRowData({
+    required this.id,
+    required this.number,
+    required this.name,
+    this.missing,
   });
 
-  final SectionState state;
-  final LiteratureAuthors authors;
+  final String id;
+
+  /// 1 to n in the server's order.
+  final int number;
+  final String name;
+
+  /// Missing works; `null` or zero draws no tag.
+  final int? missing;
 
   @override
   bool operator ==(Object other) =>
-      other is LessonAuthorsData &&
-      other.state == state &&
-      other.authors == authors;
+      other is EraRowData &&
+      other.id == id &&
+      other.number == number &&
+      other.name == name &&
+      other.missing == missing;
 
   @override
-  int get hashCode => Object.hash(state, authors);
+  int get hashCode => Object.hash(id, number, name, missing);
 }
 
-/// What the Edebiyat section segment shows: its choice; `null` for a lesson
+/// The era list section of the Edebiyat detail (pano 14.5 kare 1, 14.7 kare 1).
+@immutable
+class LessonErasData {
+  const LessonErasData({required this.state, this.eras = const []});
+
+  final SectionState state;
+  final List<EraRowData> eras;
+
+  @override
+  bool operator ==(Object other) =>
+      other is LessonErasData &&
+      other.state == state &&
+      listEquals(other.eras, eras);
+
+  @override
+  int get hashCode => Object.hash(state, Object.hashAll(eras));
+}
+
+/// What the Edebiyat section segment shows: its choice, and the missing works
+/// of Yazar ve Eserler for the counter "3 eksik"; `null` section for a lesson
 /// that has no sections.
 @immutable
 class LessonSectionData {
-  const LessonSectionData(this.section);
+  const LessonSectionData(this.section, {this.authorsMissing});
 
   final LiteratureSection? section;
 
-  @override
-  bool operator ==(Object other) =>
-      other is LessonSectionData && other.section == section;
+  /// Missing works over all eras; `null` while unknown (no counter).
+  final int? authorsMissing;
 
   @override
-  int get hashCode => section.hashCode;
+  bool operator ==(Object other) =>
+      other is LessonSectionData &&
+      other.section == section &&
+      other.authorsMissing == authorsMissing;
+
+  @override
+  int get hashCode => Object.hash(section, authorsMissing);
 }

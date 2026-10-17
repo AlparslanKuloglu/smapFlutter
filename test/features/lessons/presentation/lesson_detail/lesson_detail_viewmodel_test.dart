@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:smap/core/services/device_preferences.dart';
 import 'package:smap/features/lessons/application/lesson_category.dart';
-import 'package:smap/features/lessons/application/topic_outline.dart';
 import 'package:smap/features/lessons/presentation/lesson_detail/lesson_detail_viewmodel.dart';
 import 'package:smap/shared/ui/feedback/section_state.dart';
 
@@ -28,7 +27,7 @@ void main() {
       cards: harness.cards,
       preferences: harness.preferences,
       navigator: harness.navigator,
-      toast: harness.toast,
+      literature: harness.literature,
       cat: cat,
       onlyMissing: onlyMissing,
       section: section,
@@ -267,7 +266,7 @@ void main() {
         cards: harness.cards,
         preferences: harness.preferences,
         navigator: harness.navigator,
-        toast: harness.toast,
+        literature: harness.literature,
       );
       viewModel = model;
       await model.init();
@@ -282,143 +281,151 @@ void main() {
     });
   });
 
-  group('Edebiyat (pano 7.4)', () {
-    LiteratureBackendHooks hooks() => LiteratureBackendHooks(harness);
-
+  group('Edebiyat · Yazar ve Eserler (pano 14.5 kare 1, 14.7 kare 1)', () {
     test(
-      'opens on the topics by default and does not read the authors',
+      'opens on the topics by default, with the counter already there',
       () async {
         final model = await open('Edebiyat', cat: LessonCat.ayt);
 
         expect(model.isLiterature, isTrue);
         expect(model.sectionData.section, LiteratureSection.topics);
-        expect(model.showsAuthors, isFalse);
-        expect(harness.backend.count('/student/yazarEserMainSubjects'), 0);
+        expect(model.showsEras, isFalse);
+        expect(
+          model.sectionData.authorsMissing,
+          3,
+          reason: '"Yazar ve Eserler · 3 eksik" even on Konular',
+        );
       },
     );
-
-    test('a link to the authors, or the device choice, opens them', () async {
-      hooks().install();
-      final model = await open('Edebiyat', section: LiteratureSection.authors);
-
-      expect(model.showsAuthors, isTrue);
-      expect(model.authors.state, SectionState.ready);
-      expect(model.authors.authors.authors.map((a) => a.name), [
-        'Namık Kemal',
-        'Şinasi',
-      ]);
-      expect(
-        model.segmentBar.visible,
-        isFalse,
-        reason: 'no segment over authors',
-      );
-      expect(model.filterBar.visible, isFalse);
-    });
 
     test(
-      'the section choice is kept and loads the authors the first time',
+      'a link to the authors, or the device choice, shows the eras',
       () async {
-        hooks().install();
-        final model = await open('Edebiyat', cat: LessonCat.ayt);
-
-        await model.selectSection(LiteratureSection.authors);
-
-        expect(model.authors.state, SectionState.ready);
-        expect(
-          harness.preferences.getString(
-            DevicePreferences.lessonsLiteratureSectionKey,
-          ),
-          'authors',
+        final model = await open(
+          'Edebiyat',
+          section: LiteratureSection.authors,
         );
-        final asked = harness.backend.count('/student/yazarEserMainSubjects');
-        await model.selectSection(LiteratureSection.topics);
-        await model.selectSection(LiteratureSection.authors);
+
+        expect(model.showsEras, isTrue);
+        expect(model.eras.state, SectionState.ready);
         expect(
-          harness.backend.count('/student/yazarEserMainSubjects'),
-          asked,
-          reason: 'the list is kept',
+          model.eras.eras.map((e) => (e.number, e.name, e.missing)),
+          [
+            (1, 'Tanzimat Dönemi', 2),
+            (2, 'Servet-i Fünun Dönemi', 1),
+            (3, 'Fecr-i Âti', null),
+            (4, 'Millî Edebiyat Dönemi', null),
+            (5, 'Cumhuriyet Dönemi', null),
+          ],
+          reason: 'the server order, numbered 1 to 5, no author count',
         );
+        expect(model.segmentBar.visible, isFalse, reason: 'no track segment');
+        expect(model.filterBar.visible, isFalse);
       },
     );
 
-    test('another lesson has no sections', () async {
-      final model = await open('Türkçe', cat: LessonCat.tyt);
-      expect(model.sectionData.section, isNull);
+    test('the section choice is kept and the era list is read once', () async {
+      final model = await open('Edebiyat', cat: LessonCat.ayt);
+      expect(
+        harness.backend.literature.count('/student/yazarEserMainSubjects'),
+        1,
+      );
+
       await model.selectSection(LiteratureSection.authors);
-      expect(model.showsAuthors, isFalse);
-    });
 
-    test(
-      '"Öğrendim" marks the missing works learned and the list follows',
-      () async {
-        hooks().install();
-        final model = await open(
-          'Edebiyat',
-          section: LiteratureSection.authors,
-        );
-        final kemal = model.authors.authors.authors.first;
-        expect(kemal.missingCount, 2);
-
-        await model.learnAuthor(kemal.key);
-
-        expect(model.authors.authors.authors.first.missingCount, 0);
-        expect(harness.backend.learned, unorderedEquals(['w-3', 'w-4']));
-      },
-    );
-
-    test(
-      'a work that was not sent goes back to missing, with a toast',
-      () async {
-        hooks().install();
-        final model = await open(
-          'Edebiyat',
-          section: LiteratureSection.authors,
-        );
-        harness.backend.learnFail = true;
-        final kemal = model.authors.authors.authors.first;
-
-        await model.learnAuthor(kemal.key);
-
-        expect(model.authors.authors.authors.first.missingCount, 2);
-        expect(
-          toastText(harness.toast),
-          'Gönderilemedi. Bağlantını kontrol edip tekrar dene.',
-        );
-      },
-    );
-
-    test('the authors failing show the error state; retry reloads', () async {
-      hooks().install();
-      harness.backend.authorsFail = true;
-      final model = await open('Edebiyat', section: LiteratureSection.authors);
-      expect(model.authors.state, SectionState.error);
-
-      harness.backend.authorsFail = false;
-      await model.retryAuthors();
-
-      expect(model.authors.state, SectionState.ready);
-    });
-
-    test('an author learned with nothing missing sends nothing', () async {
-      hooks().install();
-      final model = await open('Edebiyat', section: LiteratureSection.authors);
-      final sinasi = model.authors.authors.authors[1];
-
-      await model.learnAuthor(sinasi.key);
-
-      expect(harness.backend.learned, isEmpty);
-    });
-
-    test('items are not confused: the card state of a missing work', () async {
-      hooks().install();
-      final model = await open('Edebiyat', section: LiteratureSection.authors);
-      final kemal = model.authors.authors.authors.first;
+      expect(model.eras.state, SectionState.ready);
       expect(
-        kemal.groups
-            .expand((g) => g.works)
-            .where((w) => w.card == ItemCardState.missing),
-        hasLength(2),
+        harness.preferences.getString(
+          DevicePreferences.lessonsLiteratureSectionKey,
+        ),
+        'authors',
+      );
+      await model.selectSection(LiteratureSection.topics);
+      await model.selectSection(LiteratureSection.authors);
+      expect(
+        harness.backend.literature.count('/student/yazarEserMainSubjects'),
+        1,
       );
     });
+
+    test('another lesson has no sections and reads no era', () async {
+      final model = await open('Türkçe', cat: LessonCat.tyt);
+
+      expect(model.sectionData.section, isNull);
+      expect(model.sectionData.authorsMissing, isNull);
+      await model.selectSection(LiteratureSection.authors);
+      expect(model.showsEras, isFalse);
+      expect(
+        harness.backend.literature.count('/student/yazarEserMainSubjects'),
+        0,
+      );
+    });
+
+    test(
+      'a failed era list is the error under the segment; "Tekrar Dene" reads it again',
+      () async {
+        harness.backend.literature.failEras = true;
+        final model = await open(
+          'Edebiyat',
+          section: LiteratureSection.authors,
+        );
+        expect(model.eras.state, SectionState.error);
+        expect(model.sectionData.authorsMissing, isNull, reason: 'no counter');
+
+        harness.backend.literature.failEras = false;
+        await model.retryEras();
+        await pumpEventQueue();
+
+        expect(model.eras.state, SectionState.ready);
+        expect(model.sectionData.authorsMissing, 3);
+      },
+    );
+
+    test(
+      'an empty era list is an error, not an empty state (T12.16)',
+      () async {
+        harness.backend.literature.emptyEras = true;
+
+        final model = await open(
+          'Edebiyat',
+          section: LiteratureSection.authors,
+        );
+
+        expect(model.eras.state, SectionState.error);
+      },
+    );
+
+    test('an era row opens the era detail', () async {
+      final model = await open('Edebiyat', section: LiteratureSection.authors);
+
+      await model.openEra('m-tanzimat');
+
+      expect(harness.navigator.calls, [
+        'era:${generalLesson('Edebiyat').id}:m-tanzimat',
+      ]);
+    });
+
+    test(
+      '"Öğrendim" lowers the counter and the era row behind the sheet',
+      () async {
+        final model = await open(
+          'Edebiyat',
+          section: LiteratureSection.authors,
+        );
+        await harness.literature.loadSubs('m-tanzimat');
+        await harness.literature.loadAuthors('m-tanzimat', 'ss-1');
+
+        harness.literature.learn(
+          eraId: 'm-tanzimat',
+          subId: 'ss-1',
+          authorKey: 'au-nk',
+          progressId: 'w-1',
+        );
+        await pumpEventQueue();
+
+        expect(model.sectionData.authorsMissing, 2);
+        expect(model.eras.eras.first.missing, 1);
+      },
+    );
   });
 }

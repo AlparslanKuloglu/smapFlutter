@@ -1,10 +1,12 @@
 import 'dart:ui' show ImageFilter;
 
+import 'package:flutter/foundation.dart' show ValueListenable;
 import 'package:flutter/material.dart';
 import 'package:smap/core/theme/app_motion.dart';
 import 'package:smap/core/theme/app_shadows.dart';
 import 'package:smap/core/theme/theme_context.dart';
 import 'package:smap/l10n/app_localizations.dart';
+import 'package:smap/shared/ui/feedback/app_offline_strip.dart';
 import 'package:smap/shared/ui/sheets/sheet_layout.dart';
 import 'package:smooth_sheets/smooth_sheets.dart';
 
@@ -21,7 +23,10 @@ import 'package:smooth_sheets/smooth_sheets.dart';
 /// the drag off.
 ///
 /// The viewport leaves the safe area plus 8 pt above the sheet; `medium`
-/// leaves more ([SheetLayoutMath.topInset]). Use `AppSheet.show`.
+/// leaves more ([SheetLayoutMath.topInset]). With [online] the kit's
+/// [AppOfflineStrip] sits there, on the scrim, and pushes the sheet down while
+/// the link is gone (pano 14.7 kare 3 "OfflineStrip sheet açıkken de
+/// görünür"). Use `AppSheet.show`.
 class AppSheetRoute<T> extends ModalSheetRoute<T> {
   AppSheetRoute({
     required super.builder,
@@ -29,6 +34,7 @@ class AppSheetRoute<T> extends ModalSheetRoute<T> {
     required AppSheetSize size,
     required double viewportHeight,
     bool dismissible = true,
+    ValueListenable<bool>? online,
     super.settings,
   }) : super(
          swipeDismissible: dismissible,
@@ -43,7 +49,8 @@ class AppSheetRoute<T> extends ModalSheetRoute<T> {
            ),
            dismissalOffset: const SheetOffset(SheetLayoutMath.keepOpenFraction),
          ),
-         viewportBuilder: (context, child) => _viewport(context, child, size),
+         viewportBuilder: (context, child) =>
+             _viewport(context, child, size, online),
        );
 
   final bool reduceMotion;
@@ -56,6 +63,7 @@ class AppSheetRoute<T> extends ModalSheetRoute<T> {
     BuildContext context,
     Widget child,
     AppSheetSize size,
+    ValueListenable<bool>? online,
   ) {
     final media = MediaQuery.of(context);
     final top = SheetLayoutMath.topInset(
@@ -63,6 +71,20 @@ class AppSheetRoute<T> extends ModalSheetRoute<T> {
       viewportHeight: media.size.height,
       safeTop: media.viewPadding.top,
     );
+    if (online != null) {
+      return Column(
+        children: [
+          SizedBox(height: top),
+          // The strip sits outside any Material: its text needs a default
+          // style or it draws the debug underline.
+          Material(
+            type: MaterialType.transparency,
+            child: AppOfflineStrip(online: online),
+          ),
+          Expanded(child: SheetViewport(child: child)),
+        ],
+      );
+    }
     return SheetViewport(
       padding: EdgeInsets.only(top: top),
       child: child,

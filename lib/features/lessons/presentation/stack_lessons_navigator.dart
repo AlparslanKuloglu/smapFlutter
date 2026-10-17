@@ -36,6 +36,10 @@ class StackLessonsNavigator implements LessonsNavigator {
   );
 
   @override
+  Future<void> openEra({required String lessonId, required String eraId}) =>
+      _router.push(LiteratureEraRoute(lessonId: lessonId, eraId: eraId));
+
+  @override
   Future<void> openCardDeck({
     required String backendLessonId,
     required String lessonName,

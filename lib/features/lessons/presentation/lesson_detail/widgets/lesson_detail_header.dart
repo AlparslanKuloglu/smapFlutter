@@ -90,9 +90,17 @@ class _LessonSectionBar
               value: LiteratureSection.topics,
               label: l10n.lessonDetail_sectionTopics,
             ),
+            // The counter is the missing works of all eras ("3 eksik"); the
+            // topics option has none.
             AppSegment(
               value: LiteratureSection.authors,
               label: l10n.lessonDetail_sectionAuthors,
+              counter: switch (data.authorsMissing) {
+                final count? when count > 0 => l10n.lessons_missingCount(
+                  TrFormat.sira(count),
+                ),
+                _ => null,
+              },
             ),
           ],
         ),

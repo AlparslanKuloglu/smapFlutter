@@ -16,20 +16,6 @@ class _TopicsSkeleton extends StatelessWidget {
   );
 }
 
-/// The skeleton of the author list: rows of a 48 pt round photo and a line.
-class _AuthorsSkeleton extends StatelessWidget {
-  const _AuthorsSkeleton();
-
-  static const List<double> _lineWidths = [140, 100, 150, 120, 130, 110];
-
-  @override
-  Widget build(BuildContext context) => const _SkeletonCard(
-    rowHeight: AppSize.rowMinTwoLine,
-    leading: SkeletonBox(width: 48, height: 48, circle: true),
-    widths: _lineWidths,
-  );
-}
-
 /// A card of skeleton rows: [leading] and a line [widths] wide, at least
 /// [rowHeight] high.
 class _SkeletonCard extends StatelessWidget {
@@ -127,47 +113,6 @@ class _TopicsError extends StatelessWidget {
         title: l10n.lessonDetail_errorTitle,
         message: l10n.lessons_loadErrorMessage,
         onRetry: viewModel.retryTopics,
-      ),
-    );
-  }
-}
-
-/// No author to list: one sentence in a section card.
-class _AuthorsEmpty extends StatelessWidget {
-  const _AuthorsEmpty();
-
-  @override
-  Widget build(BuildContext context) => SliverPadding(
-    padding: const EdgeInsets.fromLTRB(
-      AppSpacing.gutter,
-      AppSpacing.s16,
-      AppSpacing.gutter,
-      0,
-    ),
-    sliver: SliverToBoxAdapter(
-      child: AppEmptyState.section(
-        message: AppLocalizations.of(context).literature_empty,
-      ),
-    ),
-  );
-}
-
-/// The author list did not load: the screen-level error with "Tekrar Dene".
-class _AuthorsError extends StatelessWidget {
-  const _AuthorsError();
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
-    final viewModel = getParentViewModel<LessonDetailViewModel>(
-      context,
-      listen: false,
-    );
-    return SliverToBoxAdapter(
-      child: AppErrorState.screen(
-        title: l10n.literature_errorTitle,
-        message: l10n.lessons_loadErrorMessage,
-        onRetry: viewModel.retryAuthors,
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show ValueListenable;
 import 'package:flutter/material.dart';
 import 'package:smap/shared/ui/sheets/app_sheet_route.dart';
 import 'package:smap/shared/ui/sheets/sheet_outcome.dart';
@@ -28,6 +29,9 @@ export 'package:smap/shared/ui/sheets/sheet_outcome.dart';
 /// (`AppSheet.navigatorKey = router.navigatorKey`); with neither, nothing
 /// opens and the future completes with `null`. [dismissible] false makes a
 /// sheet that drag and scrim cannot close (session expired, 2.7 kare 2).
+/// [online] shows the offline strip above the sheet while it is `false`
+/// (pano 14.7 kare 3); the strip belongs to the screens' shell otherwise, and
+/// a sheet covers it.
 abstract final class AppSheet {
   /// The root navigator used when [show] gets no context. Set by the app
   /// shell (the router's `navigatorKey`); the kit never imports the router.
@@ -40,6 +44,7 @@ abstract final class AppSheet {
     BuildContext? context,
     AppSheetSize size = AppSheetSize.small,
     bool dismissible = true,
+    ValueListenable<bool>? online,
   }) {
     final NavigatorState? navigator = context != null
         ? Navigator.maybeOf(context, rootNavigator: true)
@@ -56,6 +61,7 @@ abstract final class AppSheet {
         size: size,
         viewportHeight: MediaQuery.maybeSizeOf(navContext)?.height ?? 0,
         dismissible: dismissible,
+        online: online,
       ),
     );
   }

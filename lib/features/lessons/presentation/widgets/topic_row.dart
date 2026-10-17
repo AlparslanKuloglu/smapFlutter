@@ -22,11 +22,16 @@ import 'package:smap/shared/ui/surfaces/app_row_shell.dart';
 /// [number] is made on the device, 1 to n without a gap, and a filtered list
 /// keeps the numbers of the full list (`TopicNumbering`). Read as "9. Fiilde
 /// Çatı, 3 eksik"; the row opens the topic detail.
+///
+/// [missingWorks] makes it the era row of Yazar ve Eserler (pano 14.5 kare 1):
+/// the tag says "2 eksik eser" and the row is read "1, Tanzimat Dönemi, 2
+/// eksik eser".
 class TopicRow extends StatelessWidget {
   const TopicRow({
     required this.number,
     required this.name,
     this.missing,
+    this.missingWorks = false,
     this.onTap,
     super.key,
   });
@@ -37,6 +42,9 @@ class TopicRow extends StatelessWidget {
 
   /// Missing items of the topic; null or zero draws no tag.
   final int? missing;
+
+  /// The missing count is of works ("2 eksik eser"), as on an era row.
+  final bool missingWorks;
   final VoidCallback? onTap;
 
   /// Edge of the number circle.
@@ -63,11 +71,12 @@ class TopicRow extends StatelessWidget {
       child: Semantics(
         button: onTap != null,
         onTap: onTap,
-        label: [
-          l10n.lessons_topicRowA11y(number, name),
-          if (count != null && count > 0)
-            l10n.lessons_missingCount(TrFormat.sira(count)),
-        ].join(', '),
+        label: tagged && missingWorks
+            ? l10n.literature_eraRowA11y(number, name, TrFormat.sira(count))
+            : [
+                l10n.lessons_topicRowA11y(number, name),
+                if (tagged) l10n.lessons_missingCount(TrFormat.sira(count)),
+              ].join(', '),
         child: ExcludeSemantics(
           child: AppRowShell(
             onTap: onTap,
@@ -104,14 +113,14 @@ class TopicRow extends StatelessWidget {
                       ),
                       if (stacked) ...[
                         const SizedBox(height: AppSpacing.s4),
-                        EksikTag(count: count),
+                        EksikTag(count: count, works: missingWorks),
                       ],
                     ],
                   ),
                 ),
                 if (tagged && !stacked) ...[
                   const SizedBox(width: AppSpacing.s12),
-                  EksikTag(count: count),
+                  EksikTag(count: count, works: missingWorks),
                 ],
                 const SizedBox(width: AppSpacing.s8),
                 PhosphorIcon(

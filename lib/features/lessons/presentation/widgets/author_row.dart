@@ -3,24 +3,30 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/subject_tone.dart';
 import 'package:smap/core/theme/theme_context.dart';
+import 'package:smap/core/utils/tr_format.dart';
 import 'package:smap/features/lessons/application/literature_authors.dart';
+import 'package:smap/features/lessons/presentation/widgets/eksik_tag.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/shared/ui/surfaces/app_row_shell.dart';
 
-/// One author of "Yazar ve Eserler" (C28 "AuthorRow"; pano 7.4 kare 1).
+/// One author of an era's sub-subject (C28 "AuthorRow"; pano 14.5 kare 2,
+/// replaces 7.4 kare 1).
 ///
 /// At least 72 high, padding 12 / 16, 12 between the parts. Left: the 48 pt
 /// round photo; an author without a photo (or one whose file is not in the
 /// app) shows the initials in the Edebiyat tones (`bgSurface` tint and
-/// accent, 15 · 700). Middle: the name 16/24 · 600 and the era 13/20
-/// `textSecondary` under it. Right: CaretRight 20. The row opens the author
-/// sheet.
+/// accent, 15 · 700). Middle: the name 16/24 · 600 and the work count "8 eser"
+/// 13/20 `textSecondary` under it (the count is `works.length`; nothing is
+/// written for an author without works). Right: the [EksikTag] "2 eksik" while
+/// works are missing and CaretRight 20. From text scale 1,25 the tag sits
+/// under the count instead, as on `TopicRow`. The row opens the author sheet.
 ///
-/// Read as "Namık Kemal, Tanzimat".
+/// Read as "Namık Kemal, 8 eser, 2 eksik".
 class AuthorRow extends StatelessWidget {
   const AuthorRow({
     required this.name,
-    required this.era,
+    required this.workCount,
+    this.missing = 0,
     this.photo,
     this.onTap,
     super.key,
@@ -29,24 +35,46 @@ class AuthorRow extends StatelessWidget {
   /// "Namık Kemal".
   final String name;
 
-  /// "Tanzimat".
-  final String era;
+  /// The number of works, "8 eser"; zero draws no count.
+  final int workCount;
+
+  /// Works the student is missing; zero draws no tag ("0 eksik" is never
+  /// written).
+  final int missing;
 
   /// The photo's path under `assets` ("/authors/a/namikkemal.png"); `null`
   /// draws the initials.
   final String? photo;
   final VoidCallback? onTap;
 
+  /// Text scale from which the tag drops under the count.
+  static const double _stackScale = 1.25;
+
   @override
   Widget build(BuildContext context) {
     final colors = context.appColors;
     final text = context.appText;
     final l10n = AppLocalizations.of(context);
+    final tagged = missing > 0;
+    final stacked =
+        tagged && MediaQuery.textScalerOf(context).scale(1) >= _stackScale;
+    final works = workCount > 0
+        ? l10n.literature_workCount(TrFormat.sira(workCount))
+        : null;
+    final reading = tagged
+        ? l10n.literature_authorRowMissingA11y(
+            name,
+            works ?? '',
+            TrFormat.sira(missing),
+          )
+        : works == null
+        ? name
+        : l10n.literature_authorRowA11y(name, works);
     return MergeSemantics(
       child: Semantics(
         button: onTap != null,
         onTap: onTap,
-        label: l10n.literature_authorA11y(name, era),
+        label: reading,
         child: ExcludeSemantics(
           child: AppRowShell(
             onTap: onTap,
@@ -63,15 +91,24 @@ class AuthorRow extends StatelessWidget {
                         name,
                         style: text.titleSm.copyWith(color: colors.textPrimary),
                       ),
-                      Text(
-                        era,
-                        style: text.caption.copyWith(
-                          color: colors.textSecondary,
+                      if (works != null)
+                        Text(
+                          works,
+                          style: text.caption.copyWith(
+                            color: colors.textSecondary,
+                          ),
                         ),
-                      ),
+                      if (stacked) ...[
+                        const SizedBox(height: AppSpacing.s4),
+                        EksikTag(count: missing),
+                      ],
                     ],
                   ),
                 ),
+                if (tagged && !stacked) ...[
+                  const SizedBox(width: AppSpacing.s8),
+                  EksikTag(count: missing),
+                ],
                 const SizedBox(width: AppSpacing.s8),
                 PhosphorIcon(
                   PhosphorIconsRegular.caretRight,

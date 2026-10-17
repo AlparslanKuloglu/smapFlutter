@@ -10,6 +10,7 @@ import 'package:smap/app/router/app_router.dart';
 /// | `` (initial) | `LessonsView` (Derslerim) |
 /// | `:lessonId?cat=&eksik=&section=` | `LessonDetailView` |
 /// | `:lessonId/topics/:topicId?cat=&focus=` | `TopicDetailView` |
+/// | `:lessonId/literature/:eraId` | `LiteratureEraView` (Dönem detayı, pano 14.5) |
 ///
 /// The card deck (`/lessons/deck`, E13) must be listed **before**
 /// `:lessonId`, or "deck" is read as a lesson id.
@@ -17,4 +18,5 @@ List<AutoRoute> get lessonsTabRoutes => [
   AutoRoute(page: LessonsRoute.page, initial: true),
   AutoRoute(page: LessonDetailRoute.page, path: ':lessonId'),
   AutoRoute(page: TopicDetailRoute.page, path: ':lessonId/topics/:topicId'),
+  AutoRoute(page: LiteratureEraRoute.page, path: ':lessonId/literature/:eraId'),
 ];

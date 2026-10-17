@@ -4,7 +4,6 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:stacked/stacked.dart' hide StackedRouterExtensions;
 
 import 'package:smap/core/services/device_preferences.dart';
-import 'package:smap/core/services/toast_service.dart';
 import 'package:smap/core/theme/app_radius.dart';
 import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/theme/theme_context.dart';
@@ -14,11 +13,11 @@ import 'package:smap/features/cards/data/card_repository.dart';
 import 'package:smap/features/lessons/application/lesson_category.dart';
 import 'package:smap/features/lessons/application/lesson_rows.dart';
 import 'package:smap/features/lessons/application/lessons_service.dart';
+import 'package:smap/features/lessons/application/literature_service.dart';
 import 'package:smap/features/lessons/data/lesson_content_repository.dart';
 import 'package:smap/features/lessons/presentation/lesson_detail/lesson_detail_state.dart';
 import 'package:smap/features/lessons/presentation/lesson_detail/lesson_detail_viewmodel.dart';
 import 'package:smap/features/lessons/presentation/stack_lessons_navigator.dart';
-import 'package:smap/features/lessons/presentation/widgets/author_row.dart';
 import 'package:smap/features/lessons/presentation/widgets/subject_glyph.dart';
 import 'package:smap/features/lessons/presentation/widgets/topic_row.dart';
 import 'package:smap/l10n/app_localizations.dart';
@@ -34,14 +33,14 @@ import 'package:smap/shared/ui/navigation/app_detail_bar.dart';
 import 'package:smap/shared/ui/surfaces/app_card.dart';
 import 'package:smap/shared/ui/surfaces/app_row_group.dart';
 
-part 'widgets/lesson_detail_authors.dart';
+part 'widgets/lesson_detail_eras.dart';
 part 'widgets/lesson_detail_filters.dart';
 part 'widgets/lesson_detail_header.dart';
 part 'widgets/lesson_detail_states.dart';
 part 'widgets/lesson_detail_topics.dart';
 
-/// Ders Detayı (pano 7.2 "Ders Detayı · 3 kare", 7.4 "Edebiyat · Yazar ve
-/// Eserler", 7.5 kare 2; spec §4.F 7.2 and 7.4; route
+/// Ders Detayı (pano 7.2 "Ders Detayı · 3 kare", 14.5 kare 1 "Edebiyat ·
+/// Dönemler ve Yazarlar", 7.5 kare 2; spec §4.F 7.2 and 7.4; route
 /// `/lessons/:lessonId?cat=&eksik=&section=`).
 ///
 /// The back button, the lesson's glyph and name, the "Eksiklerim (31)" chip
@@ -51,7 +50,9 @@ part 'widgets/lesson_detail_topics.dart';
 /// opens Konu Detayı.
 ///
 /// Türk Dili ve Edebiyatı has a second segment, Konular and Yazar ve Eserler
-/// (kept on the device); the author list opens the author sheet.
+/// "3 eksik" (kept on the device); Yazar ve Eserler lists the eras (pano 14.5
+/// kare 1: number, name, "2 eksik eser", in the server's order) and an era
+/// opens Dönem detayı.
 ///
 /// [lessonId] is the general lesson's id; [cat] (`tyt`, `ayt`, `sos2`, `all`)
 /// opens a segment ("Tarih-2 → SOS-2 seçili"), without it the device's last
@@ -82,9 +83,9 @@ class LessonDetailView extends StackedView<LessonDetailViewModel> {
         lessons: locator<LessonsService>(),
         content: locator<LessonContentRepository>(),
         cards: locator<CardRepository>(),
+        literature: locator<LiteratureService>(),
         preferences: locator<DevicePreferences>(),
         navigator: StackLessonsNavigator(context.router),
-        toast: locator<ToastService>(),
         cat: LessonCat.parse(cat),
         onlyMissing: onlyMissing,
         section: LiteratureSection.parse(section),
@@ -118,7 +119,7 @@ class _LessonDetailPage extends StatelessWidget {
           const _LessonFilterBar(),
           const _LessonSegmentBar(),
           const _LessonTopicsSection(),
-          const _LessonAuthorsSection(),
+          const _LessonErasSection(),
           SliverToBoxAdapter(
             child: SizedBox(
               height: AppBottomBar.heightOf(context) + AppSpacing.s16,

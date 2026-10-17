@@ -9,6 +9,7 @@ import 'package:smap/features/cards/data/card_repository.dart';
 import 'package:smap/features/lessons/application/lesson_catalog.dart';
 import 'package:smap/features/lessons/application/lesson_category.dart';
 import 'package:smap/features/lessons/application/lessons_service.dart';
+import 'package:smap/features/lessons/application/literature_service.dart';
 import 'package:smap/features/lessons/data/lesson_content_repository.dart';
 import 'package:smap/features/lessons/presentation/lessons_navigator.dart';
 import 'package:smap/l10n/app_localizations_tr.dart';
@@ -22,7 +23,9 @@ import 'package:shared_preferences_platform_interface/shared_preferences_async_p
 
 import '../../../core/network/fake_adapter.dart';
 import '../../exams/data/data_harness.dart';
+import '../../../shared/ui/feedback/fake_timers.dart';
 import '../application/lesson_samples.dart';
+import '../application/literature_samples.dart';
 
 /// Records where the screens lead.
 class RecordingNavigator implements LessonsNavigator {
@@ -43,6 +46,12 @@ class RecordingNavigator implements LessonsNavigator {
   }) async => calls.add('topic:$lessonId:$topicId:${cat?.key}');
 
   @override
+  Future<void> openEra({
+    required String lessonId,
+    required String eraId,
+  }) async => calls.add('era:$lessonId:$eraId');
+
+  @override
   Future<void> openCardDeck({
     required String backendLessonId,
     required String lessonName,
@@ -60,6 +69,16 @@ class _Presenter implements ToastPresenter {
 /// The words of the toast on screen, `null` when none.
 String? toastText(ToastService toast) =>
     toast.slot.current.value?.title(AppLocalizationsTr());
+
+/// Presses "Geri Al" on the toast on screen; `false` when it has none.
+bool pressToastUndo(ToastService toast) {
+  final entry = toast.slot.current.value;
+  return entry != null && toast.slot.undo(entry.id);
+}
+
+/// Whether the toast on screen has "Geri Al".
+bool toastHasUndo(ToastService toast) =>
+    toast.slot.current.value?.hasUndo ?? false;
 
 /// The `tytAyt`/`mindMap`/`edebiyat` flags as the server writes them.
 Map<String, Object?> _generalLesson(GeneralLessonSpec spec) => {
@@ -163,8 +182,10 @@ class LessonsBackend {
   bool contentFail = false;
   bool learnFail = false;
   bool favoriteFail = false;
-  bool authorsFail = false;
   bool noItems = false;
+
+  /// The Yazar ve Eserler tree (pano 14.5 to 14.7).
+  final LiteratureServer literature = LiteratureServer();
 
   /// While set, every request waits for it.
   Completer<void>? gate;
@@ -179,6 +200,8 @@ class LessonsBackend {
   late final FakeAdapter adapter = FakeAdapter((options) async {
     final wait = gate;
     if (wait != null) await wait.future;
+    final tree = await literature.handle(options);
+    if (tree != null) return tree;
     final query = options.queryParameters;
     asked.add(
       '${options.path}${query.isEmpty ? '' : '?${query.entries.map((e) => '${e.key}=${e.value}').join('&')}'}',
@@ -268,6 +291,7 @@ class LessonsHarness {
     harness.content = LessonContentRepository(harness.network);
     harness.cards = CardRepository(harness.network);
     harness.lessons = LessonsService(repository: harness.content);
+    harness.literature = harness.newLiterature();
     return harness;
   }
 
@@ -277,113 +301,28 @@ class LessonsHarness {
   late LessonContentRepository content;
   late CardRepository cards;
   late LessonsService lessons;
+
+  /// The session's Yazar ve Eserler tree, its "Geri Al" window driven by
+  /// [timers] and its connection by [online].
+  late LiteratureService literature;
+  final FakeTimers timers = FakeTimers();
+  final ValueNotifier<bool> online = ValueNotifier<bool>(true);
   final RecordingNavigator navigator = RecordingNavigator();
   final ToastService toast = ToastService(presenter: _Presenter());
 
+  LiteratureService newLiterature() => LiteratureService(
+    repository: content,
+    toast: toast,
+    online: online,
+    onSaved: lessons.refresh,
+    timerFactory: timers.create,
+  );
+
   Future<void> dispose() async {
+    literature.dispose();
+    online.dispose();
     lessons.dispose();
     network.dispose();
     toast.dispose();
-  }
-}
-
-/// Teaches a [LessonsBackend] the Yazar ve Eserler tree: one era with
-/// Namık Kemal (two missing works) and Şinasi (no works).
-class LiteratureBackendHooks {
-  LiteratureBackendHooks(this.harness);
-
-  final LessonsHarness harness;
-
-  void install() {
-    final base = harness.backend.adapter;
-    final backend = harness.backend;
-    final adapter = FakeAdapter((options) async {
-      final failAuthors = backend.authorsFail;
-      switch (options.path) {
-        case '/student/yazarEserMainSubjects':
-          if (failAuthors) {
-            return jsonResponse({'success': false}, status: 500);
-          }
-          return jsonResponse({
-            'success': true,
-            'mainSubjects': [
-              {'_id': 'm-1', 'name': 'Edebi Dönemler'},
-            ],
-          });
-        case '/student/getSubSubjects'
-            when options.queryParameters['mainSubjectId'] == 'm-1':
-          return jsonResponse({
-            'success': true,
-            'subSubjects': [
-              {'_id': 'ss-era', 'name': 'Batı Etkisinde Gelişen Edebiyat'},
-            ],
-          });
-        case '/student/getItems'
-            when options.queryParameters['yazarEserMode'] == 'true':
-          return jsonResponse({
-            'success': true,
-            'itemsArray': [
-              [
-                {'_id': 'era-1', 'name': 'Tanzimat'},
-              ],
-            ],
-          });
-        case '/student/getSubjectAuthors':
-          return jsonResponse({
-            'success': true,
-            'authors': [
-              {
-                '_id': 'au-nk',
-                'name': 'Namık Kemal',
-                'itsYazar': 1,
-                'yazarCategory': 'era-1',
-                'works': [
-                  {
-                    'eser': 'İntibah',
-                    'type': '2',
-                    'itemData': {
-                      '_id': 'w-1',
-                      'status': 1,
-                      'statusArray': [1],
-                    },
-                  },
-                  {
-                    'eser': 'Vatan yahut Silistre',
-                    'type': '6',
-                    'itemData': {
-                      '_id': 'w-3',
-                      'status': 0,
-                      'statusArray': [0],
-                    },
-                  },
-                  {
-                    'eser': 'Gülnihal',
-                    'type': '6',
-                    'itemData': {
-                      '_id': 'w-4',
-                      'status': 0,
-                      'statusArray': [0],
-                    },
-                  },
-                ],
-              },
-              {
-                '_id': 'au-s',
-                'name': 'Şinasi',
-                'itsYazar': 1,
-                'yazarCategory': 'era-1',
-                'works': <Object>[],
-              },
-            ],
-          });
-      }
-      return base.handler(options);
-    });
-    harness.network.dispose();
-    harness.network = networkOver(adapter);
-    harness.content = LessonContentRepository(harness.network);
-    harness.cards = CardRepository(harness.network);
-    harness.lessons.dispose();
-    harness.lessons = LessonsService(repository: harness.content);
   }
 }
