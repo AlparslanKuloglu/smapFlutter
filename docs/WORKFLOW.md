@@ -24,10 +24,10 @@ Ajanlarla çalışırken önerilen düzen: koordinatör güçlü bir model (bu p
 
 ## 3. Görev tanımı
 
-Her görev `docs/gorevler/<id>.md` dosyasında yazılır (geçmiş örnekler: `docs/history/gorevler/`). Ortak giriş metni `docs/history/gorevler/_ortak.md`'dedir: çalışma dizini, önce okunacaklar, hazır olanlar, route kuralı, ortak dosyalar, yasaklar, test ve doğrulama, rapor biçimi. Bir görev tanımı şu bölümlerden oluşur:
+Her görev `docs/gorevler/<id>.md` dosyasında yazılır. Ortak giriş metni şablonu `docs/gorevler/_ortak.md`'dedir: çalışma dizini, önce okunacaklar, hazır olanlar, route kuralı, ortak dosyalar, yasaklar, simülatör, test ve doğrulama, rapor biçimi. Bu projenin bütün geçmiş görev tanımları örnek olarak `docs/history/gorevler/`'dedir (en yeni ve en olgun örnekler: `t12a.md`–`t12e.md`, `t12k.md`). Bir görev tanımı şu bölümlerden oluşur:
 
 1. **Başlık ve pano atfı:** `Görev T12C · Edebiyat … — panolar 14.5, 14.6, 14.7. 7.4·1 ve 7.4·2'nin yerine geçer.`
-2. **Ortak metin** (`_ortak.md`, `{ID}` doldurulmuş).
+2. **Ortak metin** (`_ortak.md`, `{ID}` ve `{id}` doldurulmuş).
 3. **SAHİP OLDUĞUN dosyalar:** glob listesi. Uygulayıcı bunların dışına yazmaz. Başka bir görevin dosyasına ihtiyaç varsa "DAR izin" açıkça yazılır ("yalnız `student` parametresi eklemek için").
 4. **Pano kuralları / bilinen farklar:** her kare için beklenen metin, bileşen, davranış; panodaki Türkçe metinler birebir.
 5. **Veri:** kullanılacak uçlar, alanlar, bilinen backend açıkları ve bayraklar.
@@ -45,7 +45,7 @@ tool/wt.sh t15a main       # tabanı başka bir dal olan görev
 
 - Entegrasyon dalı: `redesign/main` (teslimde ana dala alınır; sonra `WT_BASE` ya da ikinci argümanla değiştirin).
 - Uygulayıcı yalnız kendi dalına commit atar (Conventional Commits, Türkçe özet; ör. `feat(coach): …`).
-- Koordinatör birleştirirken `git merge --no-ff task/<id>` kullanır; dal ve çalışma ağacı birleştirmeden sonra silinir (`git worktree remove`, `git branch -D`).
+- Koordinatör birleştirirken `git merge --no-ff task/<id>` kullanır; dal ve çalışma ağacı birleştirmeden sonra silinir (`git worktree remove ../smapFlutter-wt/<id>`, `git branch -d task/<id>`), o çalışma ağacının Xcode DerivedData klasörü de (§8).
 
 ## 5. Ortak dosyalar (yalnız koordinatör)
 
@@ -65,7 +65,7 @@ Uygulayıcı bunlara ihtiyaç duyarsa **yerelde dener, geri alır** ve raporunda
 Her görev için, birleştirmeden önce, sırayla:
 
 1. **Kapsam:** `git diff --stat redesign/main...task/<id>` ve `--name-status`. Yalnız sahip olunan dosyalar mı? Silinenler gerçekten ölü mü (`dart run tool/unreachable_files.dart`, `grep`)?
-2. **Kural taraması:** `tool/ui_rules.sh` (ham renk, `TextStyle(`, Material ikon, diyalog, `Navigator.push`, `print(`) ve dosya boyları (view ≤ 250, part ≤ 300, VM ≤ 500, sunumda hiçbir dosya > 400 satır).
+2. **Kural taraması:** `tool/ui_rules.sh`: ham renk, `TextStyle(`, `fontSize:`, Material ikon, diyalog, `Navigator.push`, `print(`, `Widget _build…`, sunumda ham `Duration(` ve dosya boyları (ekran `_view` ≤ 250, part ≤ 300, ViewModel ≤ 500, diğer sunum/kit dosyaları ≤ 400 satır). Betik bunları kendisi denetler; CI'da da çalışır.
 3. **Kodu okumak:** özellikle VM'ler, navigasyon, sheet'ler, veri eşlemeleri, tarih/saat dilimi, hata ve çevrimdışı yolları. Bu projede inceleme sırasında yakalanan gerçek hatalar için §9'a bakın.
 4. **Birleştir ve bağla:** `git merge --no-ff`, ortak dosyalar (route listeleri, DI, ARB), sonra `dart run tool/merge_arb.dart && flutter gen-l10n && dart run build_runner build -d`.
 5. **Çalıştır:** `flutter analyze` (0 sorun), `flutter test`, `tool/ui_rules.sh`, `flutter build ios --simulator --debug`.
@@ -82,7 +82,9 @@ Her görev için, birleştirmeden önce, sırayla:
 
 ## 8. Simülatör, hesap ve güvenlik kuralları
 
-- **Gerçek oturumun bulunduğu simülatöre ajanlar dokunmaz.** Her ajan kendi simülatörünü oluşturur (`xcrun simctl create "SMAP-<ID>" "iPhone 16 Pro"`), işi bitince yalnız onu siler. Paylaşılan simülatörde ajanlar birbirinin build'ini ezer ve dokunuşları karışır.
+- **Gerçek oturumun bulunduğu simülatöre ajanlar dokunmaz.** Her ajan kendi simülatörünü en yeni iOS ile oluşturur:
+  `xcrun simctl create "SMAP-<ID>" "iPhone 17 Pro" com.apple.CoreSimulator.SimRuntime.iOS-26-2` (eski iOS 18.x çalışma zamanlarını kullanmayın). Paylaşılan simülatörde ajanlar birbirinin build'ini ezer ve dokunuşları karışır.
+- **İş bitince temizlik (disk dolar):** `xcrun simctl shutdown <udid> && xcrun simctl delete <udid>` ile yalnız o görevin simülatörü, ve `~/Library/Developer/Xcode/DerivedData/Runner-*` içinden `info.plist` → `WorkspacePath` değeri o görevin çalışma ağacını gösteren klasör silinir. Her çalışma ağacı ayrı bir DerivedData (birkaç GB) üretir; silinmezse onlarca GB birikir. Kullanıcının kendi simülatörlerine ve başka projelerin DerivedData'sına dokunulmaz.
 - Simülatörde uygulama **silinmez** (oturum gider); yalnız üstüne kurulur. İş bitince dart-define'sız temiz build bırakılır.
 - **Canlı sunucuda hesapla giriş yapılmaz, yazan istek atılmaz.** Veri dolu hâli görmek için geçici sahte repository/ağ adaptörü kullanılır ve commit edilmez. Optik okuma için `OMR_BASE_URL` verilmezse fotoğraf canlı API sunucusuna gider: test ederken yerel bir sahte sunucu kullanın.
 - Kimlik bilgisi dosyaları (`*.jks`, `*.keystore`, `key.properties`, `google-services*.json`, `GoogleService-Info.plist`, `.env*`, `*.p8`) açılmaz, içerikleri hiçbir yere yazılmaz.
@@ -97,11 +99,12 @@ Her görev için, birleştirmeden önce, sırayla:
 | Aynı görüşme iki ekranda 3 saat farklı göründü. | Bir ekran `toLocal()`, diğeri sunucu saatini olduğu gibi gösteriyordu. | Görüşme saatleri tek kuralla okunur (`MeetingMoment.wallClock`); sunucuya dilimsiz yerel saat gider (eski uygulamayla aynı). |
 | Ajanlar aynı simülatörde birbirinin build'ini ezdi, kişisel veri kayıtlara düştü. | Paylaşılan simülatör, gerçek oturum. | §8 kuralları. |
 | Bir uygulayıcı silmek istediği 90 görseli silemedi (izin reddi). | Geri alınamaz işlem. | Toplu silmeleri sorumlu onaylar; uygulayıcı listeyi ve kanıtı raporlar. |
+| Ajanlar eski iOS 18.5 simülatörleri açtı; silinmiş çalışma ağaçlarının DerivedData'sı 22 GB tuttu. | Görev tanımı "mevcut simülatörle aynı çalışma zamanı" diyordu; temizlik adımı yoktu. | §8: iOS 26.x, görev bitince simülatör ve DerivedData silinir; görev tanımı şablonunda yazılı. |
 | "Sade" yazılan Tur 12 özellikleri tasarım gelince yeniden çizildi. | Tasarımsız uygulama geçici çözümdür. | Tasarımı olmayan özellik en sade hâliyle ve bayrakla yapılır; tasarım gelince görev "önce/sonra fark listesi" ile açılır. |
 
 ## 10. Yeni bir tasarım turu geldiğinde
 
-1. Çıktıyı `docs/design/kaynak/` altına koyun, panolara çevirin (`docs/design/README.md`).
+1. Çıktıyı `docs/design/kaynak/SMAP-NN.html` olarak koyun, panolara çevirin: `python3 tool/design/html_to_boards.py docs/design/kaynak/SMAP-NN.html` (ayrıntı `docs/design/README.md`). Görsel varlıklar (kil, mağaza) `docs/design/` altındaki klasörlerine.
 2. Panoları okuyun; her pano için "yerine geçtiği kare"yi ve mevcut koddaki karşılığını bulun.
 3. Özellik alanlarına göre görevlere bölün (bir alan = bir görev; ortak kit ayrı görev).
 4. Görev tanımlarını yazın: "bilinen farklar" listesi kare kare; metinler birebir; veri ve bayraklar.

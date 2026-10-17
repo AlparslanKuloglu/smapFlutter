@@ -1,16 +1,29 @@
-# smap
+# SMAP (Student Map)
 
-A new Flutter project.
+YKS'ye hazırlanan öğrenciler ve öğrenci koçları için Flutter uygulaması: deneme optik formunu okutma, sonuç ve analiz, dersler ve bilgi kartları, haftalık program, koç–öğrenci takibi.
 
-## Getting Started
+## Hızlı başlangıç
 
-This project is a starting point for a Flutter application.
+Flutter 3.38.6 (stable) gerekir.
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+flutter pub get
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+cp config/dev.json.example config/dev.json
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter run --dart-define-from-file=config/dev.json
+```
+
+Hesap açmadan arayüzü görmek için `--dart-define=SHELL_PREVIEW=student` (ya da `coach`); bileşen galerisi için `flutter run -t lib/main_gallery.dart`.
+
+## Belgeler
+
+- [docs/DEVELOPING.md](docs/DEVELOPING.md): geliştirici rehberi (buradan başlayın)
+- [AGENTS.md](AGENTS.md): bağlayıcı kurallar (geliştiriciler ve yapay zekâ ajanları için)
+- [docs/WORKFLOW.md](docs/WORKFLOW.md): çalışma modeli (görev, worktree, inceleme, entegrasyon)
+- [docs/design/README.md](docs/design/README.md): tasarım panoları ve görseller
+- [docs/DURUM.md](docs/DURUM.md): durum ve açık işler
