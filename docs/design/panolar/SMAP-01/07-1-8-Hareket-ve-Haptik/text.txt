@@ -1,0 +1,39 @@
+1.8 Hareket ve Haptik 
+ 1.8 · Temeller · Hareket
+ Hareket ve Haptik
+ Kodda yalnız örtük animasyonlar vardı (çoğu 180–300 ms), haptik ve iskelet animasyonu yoktu. Hareket yalnız bir şeyin nereden gelip nereye gittiğini anlatmak için var: süs animasyonu, sayaç gibi dönen sayılar ve konfeti yok.
+ Süreler
+ duration-instant · 100 ms Basılı durum: renk ve 0,98 ölçek 
+ duration-fast · 150 ms Anahtar, çip, onay kutusu, ikon Regular → Fill 
+ duration-base · 250 ms Segment başparmağı, gösterge, akordeon, toast 
+ duration-slow · 350 ms Sheet açılışı, sayfa geçişi 
+ duration-loop · 1200 ms İskelet parıltısının bir turu 
+ Eğriler
+ ease-standard
+ Cubic(0.2, 0, 0, 1) · yerinde değişim: segment, gösterge, akordeon
+ ease-enter
+ Cubic(0, 0, 0, 1) · ekrana giren: sheet, toast
+ ease-exit
+ Cubic(0.3, 0, 1, 1) · çıkan öğe; süre girişin %70'i
+ linear
+ İskelet parıltısı, gönderim yüzdesi
+ Bileşen davranışları
+ Bileşen Ne hareket eder Süre Eğri Haptik 
+ Düğme Basılıyken bir ton koyulaşır, 0,98'e küçülür 100 ms standard yok 
+ Segment Lacivert başparmak yeni seçeneğe kayar; etiket rengi çapraz geçer 250 ms standard selectionClick 
+ Alt çubuk Turuncu gösterge yeni sekmeye kayar; ikon Regular → Fill 250 · 150 ms standard selectionClick 
+ Ekran içi sekme Alt çizgi kayar, içerik yatay geçer; seçili sekme görünür alana kaydırılır 250 ms standard selectionClick 
+ Çip, anahtar, onay kutusu Dolgu ve işaret belirir; anahtar başı kayar 150 ms standard selectionClick 
+ Akordeon Yükseklik açılır, ok 180° döner 250 ms standard yok 
+ Sheet Alttan kayar, perde %0 → %48. Parmağı izler; %25'ten fazla iniş ya da hızlı fırlatma kapatır. Meşgulken sürükleme kapalı 350 açılış · 250 kapanış enter · exit yok 
+ Toast Alt çubuğun 8 pt üstünde 16 pt yukarı kayarak belirir; 4 sn, "Geri Al" varsa 6 sn kalır 250 ms enter · exit hata türünde error 
+ Küçülen üst bar Başlık 24 → 17 pt, bant 134 → 110; süre yok, kaydırmaya bağlı (56 pt) kaydırmayla linear yok 
+ İskelet Soldan sağa parıltı; 15 sn içinde veri gelmezse hata durumuna geçer, sonsuz iskelet yok 1200 ms döngü linear yok 
+ Kamera deklanşörü 0,92'ye küçülüp geri gelir 100 ms standard mediumImpact 
+ Sonuç anı Sayılar anında görünür (dönen sayaç yok); konfeti yok — — success, bir kez 
+ Form hatası Alan sarsılmaz; kenar kırmızıya döner, hata metni belirir, odak ilk hatalı alana gider 150 ms standard error 
+ Sayfa geçişi Platform varsayılanı: iOS sağdan kayma ve kenardan geri kaydırma; Android sistem geri hareketi 350 ms platform yok 
+ Haptik sözlüğü
+ selectionClick : seçim değişti (segment, sekme, çip, anahtar, şık). mediumImpact : deklanşör. success : sonuç hazır, talep alındı, cevaplar onaylandı. error : gönderim ya da okuma hatası, form hatası. Flutter'ın HapticFeedback'i bildirim haptiklerini içermez: iOS'ta UINotificationFeedbackGenerator, Android'de HapticFeedbackConstants.CONFIRM / REJECT için küçük bir platform köprüsü gerekir.
+ Hareketi azalt
+ Sistem ayarı açıksa (MediaQuery.disableAnimations) bütün kaymalar 150 ms'lik opaklık geçişine döner, iskelet parıltısı durur ve düz gri kalır, sheet perdeye bağlı olmadan belirir. Haptikler değişmez. Hiçbir bilgi yalnız hareketle verilmez.

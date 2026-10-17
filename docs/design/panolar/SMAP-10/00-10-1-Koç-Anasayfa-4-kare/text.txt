@@ -1,0 +1,69 @@
+10.1 Koç Anasayfa 
+ 10.1 · Tur 9 · Koç
+ Koç Anasayfa · 4 Kare
+ Koçun ilk ekranı: öğrenci şeridi, yalnız iki kurala dayanan dikkat listesi, yaklaşan görüşmeler, öğrenci ekleme.
+ Merhaba, Mehmet
+ 5 öğrenci · önümüzdeki 7 günde 2 görüşme
+ Öğrencilerin
+ Öğrenci Ekle 
+ Alparslan Kuloğlu Son deneme 5 Eki. Elif Şahin Kerem Aydın Mert Yıldız Zeynep Kaya 
+ Dikkat gerektirenler
+ Şu an dikkat gerektiren öğrenci yok.
+ 14 gündür deneme okutmayan ya da son iki denemesinde neti düşen öğrenci burada görünür.
+ Yaklaşan görüşmeler
+ 12 Eki. Alparslan Kuloğlu
+ Pazartesi 16:00 · Öğrenci
+ 15 Eki. Elif Şahin
+ Perşembe 19:30 · Veli
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 1 · Koç Anasayfa Bant: ad, avatar, öğrenci ve görüşme sayısı. Öğrenci şeridi (son deneme tarihi olan yazar), dikkat gerektirenler, yaklaşan görüşmeler. 
+ Merhaba, Mehmet
+ 5 öğrenci · önümüzdeki 7 günde 2 görüşme
+ Öğrencilerin
+ Öğrenci Ekle 
+ Alparslan Kuloğlu Son deneme 5 Eki. Elif Şahin Kerem Aydın Mert Yıldız Zeynep Kaya 
+ Dikkat gerektirenler
+ Alparslan Kuloğlu
+ 45 gündür deneme okutmadı
+ Son deneme 17 Haz. 2026 · TYT
+ Alparslan Kuloğlu
+ Son iki TYT denemesinde net düştü
+ 68 → 66,75 · 17 Haz. ve 4 Ağu.
+ Yaklaşan görüşmeler
+ 12 Eki. Alparslan Kuloğlu
+ Pazartesi 16:00 · Öğrenci
+ 15 Eki. Elif Şahin
+ Perşembe 19:30 · Veli
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 2 · Dikkat gerektirenler · durum örneği Yalnız iki kural (D-27). Satırlar Ek C geçmişinden iki ayrı günün görünümü: 1 Ağustos'ta 45 gündür deneme yoktu; 5 Ağustos'ta TYT neti 68'den 66,75'e düştü. 
+ Merhaba, Mehmet
+ Henüz öğrencin yok
+ İlk öğrencini ekle
+ Öğrencin koçluk kodunla kendi hesabından bağlanabilir ya da hesabını sen açabilirsin.
+ Öğrenci Ekle Koçluk kodun
+ MOZK-4821
+ Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır.
+ Kopyala Paylaş 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 3 · Öğrenci yok Üç avatar (1.25 eşlemesi), "İlk öğrencini ekle", tek birincil eylem ve kod kartı: Kopyala, Paylaş. 
+ Merhaba, Mehmet
+ 5 öğrenci · önümüzdeki 7 günde 2 görüşme
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 4 · İskelet Bant hemen; şerit ve bölümler iskelet. Bölüm hataları 3.2'deki gibi kendi yerinde. 
+ Bölümler
+ Öğrencilerin: 108 pt karo, avatar 48, ad iki satıra kadar, varsa son deneme tarihi. "Öğrenci Ekle" bölümün tek bağlantısı.
+ Dikkat gerektirenler: avatar + kural rozeti (Clock ya da TrendDown, warning ), ad, kuralın cümlesi, kanıt satırı.
+ Yaklaşan görüşmeler: tarih bloğu (gün metric-md 24/32 + ay), avatar, ad, gün, saat, Öğrenci/Veli.
+ Kurallar (D-27)
+ 14 gün ve üzeri deneme okutmadı: "N gündür deneme okutmadı" + son deneme tarihi.
+ Son iki denemede net düştü (aynı sınav türünde): "Son iki TYT denemesinde net düştü" + iki net ve tarihleri.
+ Başka kural yok: hedef, ödev tamamlama, giriş sıklığı gösterilmez (D-3).
+ Bugünkü Ek C verisinde iki kural da tetiklenmiyor; bu yüzden 1. karede bölüm boş.
+ Davranış
+ Öğrenci karosu ve dikkat satırı öğrenci profilini açar (10.4).
+ Görüşme satırı görüşme detayını açar (10.5).
+ Dikkat bölümü sunucuda her gece ve deneme okununca yeniden hesaplanır.

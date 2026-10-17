@@ -1,0 +1,62 @@
+9.6 Bildirimler 
+ 9.6 · Tur 8 · Hesap
+ Bildirimler · 3 Kare
+ Dört kategori, sessiz saatler 22:00–08:00, sistem izni kapalıyken uyarı. Değişiklik anında kaydedilir.
+ Bildirimler
+ Bildirimler planlı: tercihlerin şimdiden kaydedilir, bildirimler açıldığında bunlara göre gelir. 
+ Kategoriler
+ Deneme sonucun hazır Okuttuğun denemenin analizi bitince 
+ Koçun deneme ya da ödev atadı Mehmet Özkan yeni bir şey atadığında 
+ Görüşme planlandı Koçun bir görüşme planladığında 
+ Çalışma hatırlatıcısı Programındaki çalışmanın saatinde 
+ Sessiz saatler
+ Sessiz saatler Bu saatlerde bildirim gelmez 
+ Başlangıç 22:00 Bitiş 08:00 
+ Değişiklikler anında kaydedilir.
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Bildirimler Dört kategori, her biri ne zaman geldiğini söyler. Sessiz saatler 22:00–08:00 (D-24). Anahtar anında kaydeder; Kaydet yok (1.13). 
+ Bildirimler
+ Bildirim izni kapalı. Telefonunun ayarlarından SMAP'e izin verirsen bu tercihler geçerli olur.
+ Ayarları Aç 
+ Kategoriler
+ Deneme sonucun hazır Okuttuğun denemenin analizi bitince 
+ Koçun deneme ya da ödev atadı Mehmet Özkan yeni bir şey atadığında 
+ Görüşme planlandı Koçun bir görüşme planladığında 
+ Çalışma hatırlatıcısı Programındaki çalışmanın saatinde 
+ Sessiz saatler
+ Sessiz saatler Bu saatlerde bildirim gelmez 
+ Başlangıç 22:00 Bitiş 08:00 
+ Değişiklikler anında kaydedilir.
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Sistem izni kapalı Uyarı kutusu ve "Ayarları Aç"; anahtarlar pasif ama tercih görünür. Dönüşte izin yeniden okunur. 
+ Bildirimler
+ Bildirimler planlı: tercihlerin şimdiden kaydedilir, bildirimler açıldığında bunlara göre gelir. 
+ Kategoriler
+ Deneme sonucun hazır Okuttuğun denemenin analizi bitince 
+ Koçun deneme ya da ödev atadı Mehmet Özkan yeni bir şey atadığında 
+ Görüşme planlandı Koçun bir görüşme planladığında 
+ Çalışma hatırlatıcısı Programındaki çalışmanın saatinde 
+ Sessiz saatler
+ Sessiz saatler Bu saatlerde bildirim gelmez 
+ Başlangıç 22:00 Bitiş 08:00 
+ Değişiklikler anında kaydedilir.
+ Sessiz saat başlangıcı
+ 20 21 22 23 00 
+ : 50 55 00 05 10 
+ Kaydet 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Saat seçici Başlangıç ya da Bitiş satırı alttan çark açar; 5 dakikalık adım. Kaydet ile kapanır. 
+ Bileşenler
+ Anahtar 52 × 32 (1.13): açık lacivert + onay işareti; pasif border-subtle .
+ Uyarı kutusu warning-bg #FCF1D9, metin 15/22, ikon warning .
+ Bilgi kutusu: bildirimlerin planlı olduğunu söyler.
+ Davranış
+ İzin istemi ilk başarılı okutmadan sonra (D-23, 5.2); burada yalnız durum gösterilir.
+ Anahtar değişince sunucuya hemen yazılır; hata olursa anahtar geri döner ve toast.
+ Sessiz saat kapalıysa Başlangıç ve Bitiş satırları gizlenir.
+ Eskiden
+ "Aktif", "Kullanıcılar Görebilsin", "Varsayılan Bildirim", "Mobilde Göster", "Otomatik Güncellemeleri Aç": öğrenciye anlamsız geliştirici ayarları (37).
+ Tailwind yeşili anahtarlar ve turuncu "Değişiklikleri Kaydet" (37).

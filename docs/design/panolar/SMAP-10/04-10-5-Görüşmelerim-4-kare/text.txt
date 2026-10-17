@@ -1,0 +1,66 @@
+10.5 Görüşmelerim 
+ 10.5 · Tur 9 · Koç
+ Görüşmelerim · 4 Kare
+ Görüşme listesi, arama ve süzgeç, yeni görüşme sheet'i, görüşme detayı ve boş durum.
+ Görüşmelerim 
+ Görüşme ara 
+ Tümü Öğrenci Veli 
+ Yaklaşan · 2
+ Alparslan Kuloğlu
+ 12 Ekim 2026 Pazartesi · 16:00
+ Öğrenci Elif Şahin
+ 15 Ekim 2026 Perşembe · 19:30
+ Veli 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 1 · Liste Bant 1.18 kare 1. Arama ve Kiminle süzgeci (Tümü, Öğrenci, Veli). Satır: avatar, öğrenci, yıllı tarih, saat, Öğrenci/Veli etiketi. 
+ Görüşmelerim 
+ Görüşme ara 
+ Tümü Öğrenci Veli 
+ Yaklaşan · 2
+ Alparslan Kuloğlu
+ 12 Ekim 2026 Pazartesi · 16:00
+ Öğrenci Elif Şahin
+ 15 Ekim 2026 Perşembe · 19:30
+ Veli 
+ Yeni görüşme
+ Öğrenci Alparslan Kuloğlu 
+ Kiminle Öğrenci Veli 
+ Tarih 12 Ekim 2026 Pzt 
+ Saat 16:00 
+ Not (isteğe bağlı) Örn: Deneme sonucunu birlikte inceleyeceğiz. 
+ Görüşmeyi Kaydet 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 2 · Yeni Görüşme Öğrenci (alttan liste), Kiminle segmenti, tarih ve saat, isteğe bağlı not. Örnek: 12 Ekim 16:00, Alparslan. 
+ Düzenle 
+ Alparslan Kuloğlu
+ Öğrenci görüşmesi
+ 12 Ekim 2026 Pazartesi
+ 16:00
+ Öğrencinin verileri
+ Analiz, denemeler, program
+ Notlar
+ Not Ekle 
+ Tarih eksikleri için haftada 3 saat ayrıldı.
+ Düzenle Sil 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 3 · Görüşme Detayı Tarih, saat, öğrencinin verilerine geçiş; notlar: ekle, düzenle, sil. Not Ek C'den. 
+ Görüşmelerim 
+ Henüz görüşme yok
+ Öğrencinle ya da velisiyle görüşme planladığında burada listelenir.
+ Yeni Görüşme 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 4 · Görüşme yok Kil "Hokka" M 128 (1.25), başlık, tek cümle, tek eylem. 
+ Bileşenler
+ Görüşme satırı 1.16 satırı: avatar 40, ad, "12 Ekim 2026 Pazartesi · 16:00", etiket .tg .
+ Süzgeç: hap çipler (1.11), tek seçim.
+ Bölüm başlığı "Yaklaşan · 2"; geçmiş görüşmeler ayrı başlık altında, en yeni önce.
+ Davranış
+ Arama öğrenci adında, 10.2 ile aynı Türkçe katlama.
+ Kaydedince listeye döner, toast "Görüşme kaydedildi."; görüşmeden 1 saat önce bildirim (koçun tercihine bağlı).
+ Öğrenciye "Görüşme planlandı" bildirimi gider (9.6).
+ Eskiden
+ Görüşme tarihlerinde yıl yazmıyordu; arama ve süzgeç yoktu (envanter §2.9).

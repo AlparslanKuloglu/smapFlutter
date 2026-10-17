@@ -1,0 +1,57 @@
+9.5 Koçluk 
+ 9.5 · Tur 8 · Hesap
+ Koçluk · 4 Kare
+ Koçu olan ve olmayan öğrenci: bağlantıyı kaldırma, kodla bağlanma ve "Koçluk Kodu Nedir?".
+ Koçluk
+ Mehmet Özkan
+ Koçun
+ Sıradaki görüşme
+ 12 Ekim 2026 Pazartesi, 16:00
+ Mehmet Özkan denemelerini, analizlerini ve programını görebilir. 
+ Bağlantıyı Kaldır 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Koçun var Avatar, ad ve sıradaki görüşme (Ek C: 12 Ekim, 16:00). Koçun neyi gördüğü tek satır. Kaldırma tehlikeli metin düğmesi. 
+ Koçluk
+ Mehmet Özkan
+ Koçun
+ Sıradaki görüşme
+ 12 Ekim 2026 Pazartesi, 16:00
+ Mehmet Özkan denemelerini, analizlerini ve programını görebilir. 
+ Bağlantıyı Kaldır 
+ Koç bağlantısı kaldırılsın mı?
+ Mehmet Özkan gelişimini artık göremeyecek. Yeniden bağlanmak için koçluk kodunu tekrar girmen gerekir.
+ Bağlantıyı Kaldır Vazgeç 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Bağlantıyı kaldır Tehlikeli onay, metin 1.21 ile aynı. Kaldırınca toast "Koç bağlantın kaldırıldı." 
+ Koçluk
+ Koçunun verdiği kodu gir; koçun denemelerini, analizlerini ve programını görebilsin.
+ Koçluk kodu MOZK-4821
+ 4 harf ve 4 rakam; tire kendiliğinden gelir.
+ Koça Bağlan Koçluk Kodu Nedir? 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Koçun yok Kod alanı büyük harfe çevirir ve tireyi koyar. Hata: "Bu kodla bir koç bulunamadı. Kodu koçundan yeniden iste." 
+ Koçluk
+ Koçunun verdiği kodu gir; koçun denemelerini, analizlerini ve programını görebilsin.
+ Koçluk kodu MOZK-4821
+ 4 harf ve 4 rakam; tire kendiliğinden gelir.
+ Koça Bağlan Koçluk Kodu Nedir? 
+ Koçluk kodu nedir?
+ Koçluk kodu, koçunun SMAP hesabına özel koddur; dört harf ve dört rakamdan oluşur.
+ Kodu koçundan iste. Girdiğinde koçun denemelerini, analizlerini ve programını görebilir. Bağlantıyı istediğin an buradan kaldırabilirsin.
+ Tamam 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 4 · Koçluk Kodu Nedir? Kısa açıklama sheet'i; tek eylem. 
+ Bileşenler
+ Koç kartı: avatar 64, ad 17/700, "Koçun"; ayraç; sıradaki görüşme (varsa).
+ Bilgi kutusu info-bg .
+ Kod alanı 1.12 metin alanı; karakter maskesi AAAA-0000.
+ Davranış
+ Bağlanınca toast "Mehmet Özkan'a bağlandın." ve 1. kare.
+ Görüşme yoksa satır çizilmez.
+ Koç tarafında bağlantı kalkınca öğrenci listesinden düşer (Tur 9).
+ Eskiden
+ Koç yalnız profil sayfasında "Öğrenci Koçluğu" satırıydı; bağlanma ve kaldırma yolu yoktu (32, 33).

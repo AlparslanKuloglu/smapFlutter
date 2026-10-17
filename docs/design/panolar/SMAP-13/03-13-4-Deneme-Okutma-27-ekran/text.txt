@@ -1,0 +1,72 @@
+13.4 Deneme Okutma 
+ 13.4 · Ekran Akışı
+ Deneme Okutma
+ Alt çubuktaki kamera düğmesinden sonuca: izin ve öğretici yalnız ilk sefer, çekim, köşeler, gönderim, Form Kontrol ve sonuç anı. Hatalar ilgili adımın altında.
+ Okun üstü: dokunulan yer Kesikli ok: kendiliğinden geçiş Üst sıra ana yol; altında o ekranın durumları ve koyu teması Kod: kaynak pano ve kare 
+ Buradan Alt çubuk · Okut, her sekmede
+ 1 Kamera izni 
+ 4.1 · kare 1
+ Yalnız ilk sefer
+ Durumlar · 1
+ İzin reddedildi 4.1 · kare 2 
+ Kameraya İzin Ver
+ 2 Öğretici 
+ 4.2 · kare 1
+ Yalnız ilk sefer; sonra ? ile açılır
+ Anladım
+ 3 Çekim · aranıyor 
+ 4.3 · kare 1
+ form bulununca
+ 4 Çekim · form bulundu 
+ 4.3 · kare 2
+ Durumlar ve koyu tema · 1
+ Kamera açılamadı 4.10 · kare 4 
+ Fotoğraf çek
+ 5 Köşeler · ilk kez 
+ 4.4 · kare 1
+ köşeyi sürükle
+ 6 Köşe sürükleniyor 
+ 4.4 · kare 2
+ Devam
+ 7 Gönderim · hazırlanıyor 
+ 4.5 · kare 1
+ kendiliğinden
+ 8 Gönderiliyor · %64 
+ 4.5 · kare 2
+ Durumlar ve koyu tema · 1
+ Gönderiliyor · koyu 4.6 · kare 1 
+ kendiliğinden
+ 9 Okunuyor 
+ 4.5 · kare 3
+ Durumlar ve koyu tema · 5
+ Gönderilemedi 4.5 · kare 4 
+ Gönderilemedi · koyu 4.6 · kare 2 
+ Çevrimdışı, planlı 4.10 · kare 3 
+ Okuma geçici kapalı 4.10 · kare 2 
+ Form bulunamadı 4.10 · kare 1 
+ okuma bitince
+ 10 Form Kontrol 
+ 4.7 · kare 1
+ Düzelt
+ 11 Cevap düzelt · boş liste 
+ 4.7 · kare 2
+ Düzeltmeyi Ekle
+ 12 İki düzeltme 
+ 4.7 · kare 3
+ Cevapları Onayla
+ 13 Düzeltildi · gönderiliyor 
+ 4.7 · kare 4
+ Deneme tanınmazsa: 13.5
+ Durumlar · 2
+ Görüntü yükleniyor 4.8 · kare 1 
+ Gönderilemedi 4.8 · kare 2 
+ deneme tanınınca
+ 14 Sonuç anı · AYT 
+ 5.1 · kare 1
+ Durumlar ve koyu tema · 2
+ TYT, eksik veriyle 5.1 · kare 2 
+ AYT · koyu 5.1 · kare 3 
+ ilk okumada
+ 15 Bildirim izni 
+ 5.2 · kare 1
+ Sonra Detaylı Analiz: 13.6 Deneme Detay

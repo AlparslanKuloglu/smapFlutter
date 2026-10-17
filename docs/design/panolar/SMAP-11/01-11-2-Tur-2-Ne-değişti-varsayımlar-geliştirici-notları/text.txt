@@ -1,0 +1,62 @@
+11.2 Tur 2 Notları 
+ 11.2 · Notlar · Tur 2
+ Tur 2 · Kamera ve Optik Okuma
+ "4 · Kamera ve Optik Okuma"ya 10 pano (4.1–4.10), "5 · Deneme Sonucu ve Detay"a 2 pano (5.1–5.2) kondu. Akış: izin → öğretici → çekim → köşeler → gönderim → Form Kontrol → sonuç anı ya da deneme bulunamadı. Tur 1 bileşenleri yeniden çizilmedi; genişletmeler aşağıda.
+ Ne değişti, neden
+ # Değişiklik Çözdüğü sorun Görüntü Pano 1 Kamera izni ön açıklaması ve "Ayarları Aç" İzin ekranı yoktu; izin reddedilince kamera boş kalıyordu envanter 4.1 2 Öğretici tek ekran: üç adım, fotoğraf yerine çizim Tek sayfalık "sayfa göstergesi"; metin "beyaz noktalar" diyor, noktalar turuncu; büyük harfli "ANLADIM" 38 4.2 3 Çekim: kılavuz çerçeve, kenar bulununca turuncu dörtgen; logo ve "SMAP" yazısı kalktı Kılavuz yoktu; tanımlı ipucu metni hiç gösterilmiyordu; üst çubukta logo ve ad 38, envanter 4.3 4 Köşe düzenleme tek adım, büyüteç ve tek satır ipucu Kırpma ve düzenleme iki sayfa; ardından "Hatırlatma" diyaloğu; "GERİ" kırmızı, "GÖNDER" yalnız devam demek envanter 4.4 5 Gönderim: üç gerçek adım ve yüzde Yalnız "Denemeniz Analiz Ediliyor!" ve çark; ilerleme yok envanter 4.5, 4.6 6 Hata ve zaman aşımında fotoğraf saklanır; "Tekrar Dene" / "Yeni Fotoğraf" Hata SnackBar'da "Hata: …" yazıp sayfayı kapatıyordu, fotoğraf kayboluyordu envanter 4.5, 4.10 7 Form Kontrol: okunan cevapların özeti, sayaçlı kolon segmenti, boş okunan işaretli Yalnız görüntü vardı; neyin okunduğunu görmek için büyütüp aramak gerekiyordu envanter 4.7 8 Tek düzeltme sheet'i; liste aynı yerde, sayı hep görünür; onay diyaloğu kalktı İki ayrı sheet + "Onaylıyor musunuz?" diyaloğu; "LİSTEYE EKLE" büyük harf envanter 4.7 9 Gönderim hatası satır içinde; düzeltmeler korunur "Gönderim hatası 590" iç kodu; sunucu Left dönerse hiç mesaj yok envanter 4.8 10 Deneme bulunamadı: zorunlu alanlar, doğrulama, onay sheet'i Boş alanla talep gönderilebiliyordu; ölü ikinci gönderim metodu envanter 4.9 11 Hata ekranları: form bulunamadı, bakım, çevrimdışı (planlı), kamera açılamadı Eklentinin İngilizce "No Camera" metni; hatada sessiz kapanma envanter 4.10 12 Sonuç anı tek ekran Üç adım; "İlerle" boş; avatar yüklenmiyor (yerel dosya adı NetworkImage ile); kart dokunuşu boş envanter 5.1 13 Sabit "OBP notunuz 85" şeridi kalktı; puan ve sıra yalnız varsa Her AYT sonucunda aynı sabit OBP metni 24, 25 5.1 14 Eksik veri çizilmez (TYT örneği) Kart sayısı yüklenemezse çark süresiz dönüyordu envanter 5.1 15 Bildirim izni ilk başarılı okumadan sonra Bildirim izni bağlamsızdı — 5.2 
+ Tur 1 bileşenlerinde genişletmeler
+ G1 StepRow (yeni): bitti, sürüyor, bekliyor, hata; sürüyor satırı 1.15 ilerleme çubuğunu taşır (4.5).
+ G2 QuestionCell (1.14) iki yeni durum: "boş okundu" ( warning-bg + 2 pt kesikli warning ) ve "düzeltildi" ( navy-100 + 2 pt navy-900 + kalem).
+ G3 Kamera kromu (yeni, yalnız kamera aşaması): 40 pt yarı saydam daire düğme, durum hapı, 76 pt deklanşör, kılavuz çerçeve.
+ G4 İptal sözlüğü (1.21): izin ön açıklamalarında erteleme için "Sonra" eklendi.
+ G5 SmapSegmented (1.10) sayaç metni "1 boş / boş yok" olarak kullanıldı; kural aynı.
+ Varsayımlar
+ Ek D'de karşılığı olmayan ve bu turda verdiğim kararlar. Hiçbiri bir ekranın çizimini engellemiyor.
+ 1 Kamera aşaması (çekim, köşeler, kamera hatası) her temada koyu; önizleme içeriğin kendisi. Ayrı koyu kopya çizilmedi. Gönderim ve sonuç anı açık + koyu.
+ 2 Öğretici kameranın üstünde açık sheet; koyu tema karşılığı ayrıca çizilmedi.
+ 3 Kenar algılama mevcut eklentinin (DocumentScanner) bulduğu kontura dayanır. Deklanşör algılamasız da çalışır; otomatik çekim yok.
+ 4 Kırpmadan sonraki eklenti "düzenleme" adımı kaldırıldı; kırpma tek adım.
+ 5 Fotoğraf hazırlama telefonda: uzun kenar 2400 px, JPEG %85. Sunucu gereksinimi netleşince güncellenir.
+ 6 Zaman aşımı: gönderim 60 sn, okuma 30 sn.
+ 7 Form Kontrol'de kolonlar sıra numarasıyla ("3. kolon"): deneme bu adımda henüz tanınmadığı için ders adı yazılmaz. Her kolon 40 satır.
+ 8 Örnek okumada 160 cevaptan 2'si boş okundu (3. kolon 12, 4. kolon 31) ve düzeltildi. Şıklar örnek, Ek C'de yok; sonuç Ek C ile aynı: 86 D · 74 Y · 0 B.
+ 9 "Cevapları Onayla" ayrıca onay sormaz. Kapat (X), düzeltme varsa "Okutmadan çıkılsın mı?" sheet'ini açar.
+ 10 Alan netleri (EA 40, SAY 37,5, SÖZ 30) sunucudaki aytNets alanından gelir; Ek C test sonuçlarıyla tutarlılığı hesaplandı.
+ 11 Puan ve sıra yalnız öğrencinin alanı için var (EA 412,63 · 48.215.); diğer puan türü sekmelerinde kutular çizilmez.
+ 12 TYT örneğinde yayınevi, puan ve kart sayısı Ek C'de olmadığı için çizilmedi.
+ 13 "Türkiye Geneli Deneme 7" deneme bulunamadı ekranındaki kullanıcı girdisi örneği; Ek C'de yok.
+ 14 Talep alınınca bildirim sözü verilmedi (bildirimler planlı); analiz Denemelerim'de görünür.
+ 15 Çevrimdışı kuyruk planlı; v1'de çevrimdışı gönderim 4.5'teki hata kalıbını kullanır.
+ 16 Bakım bilgisi kamera açılmadan sunucudan okunur ("okuma açık" bayrağı). Bayrak yoksa ilk gönderimde aynı metin gösterilir.
+ 17 Bildirim izni sheet'i, bildirim gönderimi devreye girene kadar kapalı.
+ Geliştirici notları
+ Paketler
+ Mevcut DocumentScanner eklentisi (kamera, kontur) · permission_handler (kamera ve bildirim izni, openAppSettings) · dio (onSendProgress ile yüzde; bugünkü http yerine) · image (isolate'te küçültme) · shared_preferences (omd_tutorial_hidden, omd_corner_hint_hidden, notif_primer_shown).
+ Ekranlar
+ CameraPermissionSheet · OmrTutorialSheet · OmrCaptureScreen · OmrCornerScreen · OmrUploadScreen · FormCheckScreen · AnswerFixSheet · ExamRequestScreen · OmrErrorView · ResultMomentScreen · NotificationPrimerSheet.
+ Durum makinesi
+ preparing → uploading(progress) → reading → formCheck | notDetected | error(network, timeout, server, maintenance). Fotoğraf yolu (geçici dizin) her durumda taşınır, başarıya kadar silinmez. Mesajlar hata türünden üretilir; iç kod gösterilmez.
+ Uç noktalar
+ opticimage, answerArray, examrequest. Taban adres bugün placeholder (envanter 0.9); düzeltilmeden akış çalışmaz.
+ Form Kontrol
+ InteractiveViewer (minScale 1, maxScale 5, çift dokunuş 2,5). Düzeltmeler Map<(kolon, soru), şık>; answerArray'e gönderirken uygulanır. Kapatırken düzeltme varsa onay.
+ Sonuç anı
+ Avatar yok (eski NetworkImage hatası ortadan kalkar). Kart sayısı yanıtta yoksa satır çizilmez; getTotalInfoCard çağrısı PersistCookieJar kullanan istemciye taşınır. Ekran tek istekten beslenir.
+ Haptik
+ mediumImpact: deklanşör · selectionClick: şık, köşe oturması · success: sonuç, talep · error: gönderim, doğrulama, form bulunamadı, kamera açılamadı. Bildirim haptikleri için 1.8'deki platform köprüsü.
+ Erişilebilirlik
+ Kamera ipucu role=status; gönderim aria-live; soru hücresi "12. soru, boş okundu, düzeltmek için dokun". Köşe noktaları sesli etiketli ("Sol alt köşe") ve dört yönlü ayar eylemi (Semantics onIncrease/onDecrease); büyüteç yalnız görsel.
+ Bölüm 6 denetimi
+ ✓ Emoji yok.
+ ✓ Konfeti, sayaç gibi dönen sayı, parlama yok; sonuç anında yalnız success haptiği.
+ ✓ Gradyanlı hero, cam kart, halka üçlüsü yok.
+ ✓ Elmas, coin, seri yok.
+ ✓ Turuncu yalnız D-7 kapsamında: kamera, deklanşör, kenar dörtgeni ve köşe noktaları (konum), ilerleme.
+ ✓ 13 pt altı metin yok (alt çubuk etiketi hariç).
+ ✓ Büyük harfli düğme yok: "ANLADIM", "GÖNDER", "LİSTEYE EKLE" kalktı.
+ ✓ Her ekranda tek birincil eylem; kamera ekranında deklanşör sayılmaz.
+ ✓ Kategori başına renkli hap yok.
+ ✓ Koyu tema ters çevrilmiş değil: 4.6 ve 5.1'de ayrı roller.
+ ! Açık kalan: sonuç anındaki "+8,25" yeşili ile D/Y/B "Doğru" yeşili aynı ton. Anlam ok ikonu ve "önceki AYT denemene göre" metniyle taşınıyor; Tur 10'da yeniden bakılacak.
+ Sıradaki tur
+ Tur 3: Deneme Detay ve Soru Detay, "5 · Deneme Sonucu ve Detay" sayfasında sonuç anının altındaki satırlara. 5.1'deki "Detaylı Analiz" ve kart satırı oraya bağlanacak.

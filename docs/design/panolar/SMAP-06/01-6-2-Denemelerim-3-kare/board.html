@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<title>6.2 Denemelerim</title>
+<script src="res/577ddd11-ebd1-4256-8cda-4a42241427ce.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/f7198b43-795b-41ec-a6e1-5617f958bcd4.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/7e9d4e21-1516-4774-82ce-33107771198c.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/f7198b43-795b-41ec-a6e1-5617f958bcd4.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/7e9d4e21-1516-4774-82ce-33107771198c.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/f7198b43-795b-41ec-a6e1-5617f958bcd4.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/7e9d4e21-1516-4774-82ce-33107771198c.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/f7198b43-795b-41ec-a6e1-5617f958bcd4.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/7e9d4e21-1516-4774-82ce-33107771198c.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/f7198b43-795b-41ec-a6e1-5617f958bcd4.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/7e9d4e21-1516-4774-82ce-33107771198c.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+button{font-family:inherit;border:0;margin:0;cursor:pointer;background:transparent;color:inherit;padding:0}
+input{font-family:inherit;margin:0;outline:none}
+.ph{width:402px;height:874px;border-radius:56px;overflow:hidden;position:relative;background:#F2F4F7;box-shadow:0 0 0 1px #C3CBD6;color:#1B2232;flex:none}
+.ph.dk{background:#0A1424;box-shadow:0 0 0 1px #34445F;color:#EDF1F6}
+.ph.cm{background:#000000;box-shadow:0 0 0 1px #34445F;color:#FFFFFF}
+.di{position:absolute;top:11px;left:138px;width:126px;height:37px;border-radius:19px;background:#000000;z-index:9}
+.hi{position:absolute;bottom:8px;left:134px;width:134px;height:5px;border-radius:3px;background:#1B2232;z-index:9}
+.dk .hi,.cm .hi{background:#EDF1F6}
+.abs{position:absolute}
+.cap{width:402px}
+.cap b{display:block;font-size:15px;line-height:20px;margin-top:16px}
+.cap span{display:block;font-size:13px;line-height:20px;color:#556173;margin-top:2px}
+.t24{margin:0;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.3px}
+.t20{margin:0;font-size:20px;line-height:28px;font-weight:700;letter-spacing:-0.2px}
+.t17{margin:0;font-size:17px;line-height:24px;font-weight:700;letter-spacing:-0.1px}
+.b16{margin:0;font-size:16px;line-height:24px}
+.b15{margin:0;font-size:15px;line-height:24px}
+.c13{margin:0;font-size:13px;line-height:20px}
+.mu{color:#556173}
+.dk .mu,.cm .mu{color:#A9B5C6}
+.bp{height:48px;border-radius:12px;background:#0F294A;color:#FFFFFF;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bp,.cm .bp{background:#C5D4E8;color:#091A31}
+.bp.off{background:#DCE2E9;color:#9AA5B4}
+.dk .bp.off,.cm .bp.off{background:#213049;color:#56657C}
+.bo{height:48px;border-radius:12px;background:#FFFFFF;color:#0F294A;box-shadow:inset 0 0 0 1.5px #0F294A;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bo,.cm .bo{background:transparent;color:#C5D4E8;box-shadow:inset 0 0 0 1.5px #C5D4E8}
+.bq{height:48px;border-radius:12px;background:#E8ECF1;color:#1B2232;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bq,.cm .bq{background:#213049;color:#EDF1F6}
+.bt{height:48px;padding:0 12px;border-radius:12px;color:#1A3357;font-size:16px;line-height:24px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.dk .bt,.cm .bt{color:#9BB3D3}
+.ib{width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;flex:none;border-radius:12px;color:inherit}
+.ibc{width:40px;height:40px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:rgba(10,20,36,0.64);color:#FFFFFF}
+.scrim{position:absolute;inset:0;background:rgba(9,26,49,0.48);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:4}
+.scrim.dk2{background:rgba(2,6,14,0.64)}
+.sh{position:absolute;left:0;right:0;bottom:0;background:#FFFFFF;border-radius:24px 24px 0 0;z-index:5;display:flex;flex-direction:column;color:#1B2232}
+.dk .sh{background:#18263D;color:#EDF1F6}
+.hd{width:36px;height:4px;border-radius:999px;background:#C3CBD6;margin:8px auto 0;flex:none}
+.dk .hd{background:#34445F}
+.shh{display:flex;align-items:flex-start;gap:8px;padding:12px 12px 0 24px}
+.shf{padding:16px 24px 42px;display:flex;flex-direction:column;gap:12px}
+.xi{width:36px;height:36px;border-radius:999px;background:#E8ECF1;color:#1B2232;display:inline-flex;align-items:center;justify-content:center}
+.dk .xi{background:#213049;color:#EDF1F6}
+.fl{display:block;font-size:14px;line-height:20px;font-weight:600;margin-bottom:8px}
+.in{width:100%;height:48px;padding:0 16px;border-radius:12px;border:1px solid #697586;background:#FFFFFF;font-size:16px;line-height:24px;color:#1B2232;display:flex;align-items:center}
+.in.err{border:2px solid #C42D35;padding:0 15px}
+.ph-t{color:#697586}
+.er{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:13px;line-height:20px;font-weight:600;color:#C42D35}
+.hp{font-size:13px;line-height:20px;color:#556173;margin-top:6px}
+.seg{display:flex;gap:4px;padding:4px;background:#E8ECF1;border-radius:12px}
+.dk .seg{background:#213049}
+.seg button{flex:1;min-height:36px;border-radius:8px;color:#556173;font-size:14px;line-height:20px;font-weight:600}
+.dk .seg button{color:#A9B5C6}
+.seg button.on{background:#0F294A;color:#FFFFFF}
+.dk .seg button.on{background:#C5D4E8;color:#091A31}
+.seg.cnt button{min-height:48px;padding:4px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.seg.cnt button b{font-size:14px;line-height:20px;font-weight:700;color:#1B2232}
+.seg.cnt button i{font-style:normal;font-size:13px;line-height:20px;font-weight:500}
+.seg.cnt button.on b{color:#FFFFFF}
+.seg.cnt button.on i{color:#C5D4E8}
+.sq{width:48px;height:48px;border-radius:12px;background:#FFFFFF;color:#1B2232;box-shadow:inset 0 0 0 1px #697586;font-size:16px;line-height:24px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.sq.w{width:64px}
+.sq.on{background:#0F294A;color:#FFFFFF;box-shadow:none}
+.cb{display:flex;align-items:center;gap:12px;min-height:48px;font-size:15px;line-height:24px;text-align:left}
+.cbx{width:24px;height:24px;border-radius:4px;box-shadow:inset 0 0 0 2px #697586;flex:none;display:inline-flex;align-items:center;justify-content:center}
+.dk .cbx{box-shadow:inset 0 0 0 2px #6B7D97}
+.c24{width:24px;height:24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;flex:none}
+.dyl{font-size:15px;line-height:24px;font-weight:600;color:#556173}
+.dk .dyl{color:#A9B5C6}
+.dyv{font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.4px;margin-top:4px}
+.card{background:#FFFFFF;border-radius:16px}
+.dk .card{background:#121D31}
+.toast{display:flex;align-items:center;gap:12px;min-height:48px;padding:12px 16px;border-radius:12px;background:#0F294A;color:#FFFFFF;font-size:15px;line-height:24px;box-shadow:0 8px 24px rgba(15,41,74,0.16)}
+.sk{background:#E8ECF1;border-radius:8px}
+.nts{display:grid;column-gap:48px;row-gap:24px}
+.nts h3{margin:0 0 10px;font-size:17px;line-height:24px;font-weight:700}
+.nts ul{margin:0;padding:0 0 0 18px;font-size:14px;line-height:22px;color:#1B2232}
+.nts li{margin:0 0 6px}
+.nts code{font-family:inherit;font-weight:600;color:#264066}
+.tk{display:inline-block;font-weight:600;color:#264066}
+.cm .sh .bp{background:#0F294A;color:#FFFFFF}
+.cm .sh .bq{background:#E8ECF1;color:#1B2232}
+.cm .sh .mu{color:#556173}
+.cm .sh .bt{color:#1A3357}
+.c16{width:16px;height:16px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;flex:none}
+.dk .c16{color:#0A1424}
+.sm{display:inline-flex;align-items:center;gap:4px;font-size:15px;line-height:20px;font-weight:700}
+.sm i{font-style:normal;font-size:13px;font-weight:500;color:#556173}
+.dk .sm i{color:#A9B5C6}
+.qc{height:76px;border-radius:8px;padding:6px;display:flex;flex-direction:column;justify-content:space-between;position:relative;text-align:center}
+.qn{font-size:13px;line-height:20px;font-weight:600;color:#556173;text-align:left}
+.dk .qn{color:#A9B5C6}
+.qm{font-size:20px;line-height:24px;font-weight:700}
+.qa{font-size:13px;line-height:16px;font-weight:600;color:#0B6E3E}
+.dk .qa{color:#52CC8E}
+.qs{position:absolute;top:8px;right:8px}
+.bar{display:flex;gap:2px;height:12px;border-radius:999px;overflow:hidden}
+.tr{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:72px;width:100%;text-align:left}
+.tr+.tr{border-top:1px solid #E8ECF1}
+.dk .tr+.tr{border-top:1px solid #26354D}
+.tn{font-size:16px;line-height:24px;font-weight:600}
+.tm{font-size:13px;line-height:20px;color:#556173}
+.dk .tm{color:#A9B5C6}
+.tg{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:8px;background:#E8ECF1;color:#1B2232;font-size:13px;line-height:20px;font-weight:600;white-space:nowrap}
+.dk .tg{background:#213049;color:#EDF1F6}
+.tabs{display:flex;height:48px;box-shadow:inset 0 -1px 0 #DCE2E9}
+.dk .tabs{box-shadow:inset 0 -1px 0 #26354D}
+.tabs button{flex:1;position:relative;color:#556173;font-size:15px;line-height:24px;font-weight:600}
+.dk .tabs button{color:#A9B5C6}
+.tabs button.on{color:#1B2232;font-weight:700}
+.dk .tabs button.on{color:#EDF1F6}
+.tabs .u{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:3px;border-radius:999px;background:#E05500}
+.dk .tabs .u{background:#FF8533}
+.sep{border-top:1px solid #E8ECF1}
+.dk .sep{border-top:1px solid #26354D}
+.off{display:flex;align-items:center;gap:10px;min-height:40px;padding:8px 16px;background:#1B2232;color:#FFFFFF;font-size:13px;line-height:20px;font-weight:600}
+.band{background:#0F294A;padding-top:62px;border-radius:0 0 24px 24px}
+.bnt{height:56px;display:flex;align-items:center;padding:0 16px;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.3px;color:#FFFFFF}
+.tabsn{display:flex;height:48px;margin-bottom:8px}
+.tabsn button{flex:1;position:relative;font-size:15px;line-height:24px;font-weight:600;color:#C5D4E8}
+.tabsn button.on{color:#FFFFFF;font-weight:700}
+.tabsn .u{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:3px;border-radius:999px;background:#FF6600}
+.sb{background:#FFFFFF;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:2px}
+.dk .sb{background:#121D31}
+.sv{font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.4px}
+.sl{font-size:13px;line-height:20px;font-weight:600;color:#556173}
+.dk .sl{color:#A9B5C6}
+.ch{height:40px;padding:0 14px;border-radius:999px;background:#FFFFFF;color:#1B2232;font-size:15px;line-height:20px;font-weight:600;box-shadow:inset 0 0 0 1px #697586;display:inline-flex;align-items:center;gap:6px}
+.dk .ch{background:transparent;color:#EDF1F6;box-shadow:inset 0 0 0 1px #6B7D97}
+.ch.on{background:#0F294A;color:#FFFFFF;box-shadow:none}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1500px; background: #FFFFFF; color: #1B2232; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; padding: 64px; display: flex; flex-direction: column; gap: 40px; font-variant-numeric: tabular-nums">
+<header style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 15px; line-height: 20px; font-weight: 600; color: #556173">6.2 · Tur 4 · Analizlerim</div>
+<h1 style="margin: 0; font-size: 36px; line-height: 44px; font-weight: 800; letter-spacing: -0.5px">Denemelerim · 3 Kare</h1>
+<p style="margin: 4px 0 0; font-size: 17px; line-height: 28px; color: #556173; max-width: 1312px">Okutulan bütün denemeler. Tür segmenti, tarih ve sıralama; her satırda net en belirgin öğe. Satır Deneme Detay'ı (5.3) açar.</p>
+</header>
+<div style="display: flex; gap: 48px; align-items: flex-start"><div style="flex: none"><div class="ph" role="img" aria-label="Denemelerim"><div class="di"></div><div class="band"><div class="bnt">Analizlerim</div><div class="tabsn" role="tablist" aria-label="Analizlerim bölümleri"><button role="tab" aria-selected="false">Genel</button><button role="tab" aria-selected="true" class="on">Denemelerim<span class="u" style="width: 98px"></span></button></div></div><div class="abs" style="top: 190px; left: 16px; right: 16px"><div class="seg cnt" role="radiogroup" aria-label="Sınav türü"><button role="radio" aria-checked="true" aria-label="Tümü, 10 deneme" class="on"><b>Tümü</b><i>10 deneme</i></button><button role="radio" aria-checked="false" aria-label="TYT, 6 deneme"><b>TYT</b><i>6 deneme</i></button><button role="radio" aria-checked="false" aria-label="AYT, 4 deneme"><b>AYT</b><i>4 deneme</i></button></div></div><div class="abs" style="top: 254px; left: 16px; right: 16px; display: flex; justify-content: space-between; align-items: center"><span class="c13 mu" style="font-weight: 600">Tüm tarihler · En yeni önce</span><button class="bt" style="margin-right: -12px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="128" y1="120" x2="128" y2="216"></line><line x1="128" y1="40" x2="128" y2="88"></line><line x1="200" y1="184" x2="200" y2="216"></line><line x1="200" y1="40" x2="200" y2="152"></line><line x1="56" y1="152" x2="56" y2="216"></line><line x1="56" y1="40" x2="56" y2="120"></line><line x1="32" y1="120" x2="80" y2="120"></line><line x1="104" y1="88" x2="152" y2="88"></line><line x1="176" y1="152" x2="224" y2="152"></line></svg>Süz ve Sırala</button></div><div class="abs card" style="top: 306px; left: 16px; right: 16px; overflow: hidden"><div class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">Türkiye Geneli Deneme 6</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">AYT</span><span class="c13 mu">5 Eki. 2026</span><span class="c13 mu">· Örnek Yayınları</span></div><div style="margin-top: 6px"><span role="group" aria-label="86 doğru, 74 yanlış, 0 boş" style="display: inline-flex; flex-wrap: wrap; gap: 4px 14px"><span class="sm"><span class="c16" style="background: #0B6E3E"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span>86<i>D</i></span><span class="sm"><span class="c16" style="background: #D8333A"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="196" y1="60" x2="60" y2="196"></line><line x1="196" y1="196" x2="60" y2="60"></line></svg></span>74<i>Y</i></span><span class="sm"><span class="c16" style="background: #7E8A9B"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="128" x2="208" y2="128"></line></svg></span>0<i>B</i></span></span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">67,5</div><div class="c13 mu" style="font-weight: 600">net</div></div><button class="ib" aria-label="Favorilerden çıkar" aria-pressed="true" style="color: #0F294A; margin: -6px -12px 0 0"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="currentColor" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div><div class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">TYT Genel Deneme 9</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">TYT</span><span class="c13 mu">28 Eyl. 2026</span></div><div style="margin-top: 6px"><span role="group" aria-label="80 doğru, 21 yanlış, 19 boş" style="display: inline-flex; flex-wrap: wrap; gap: 4px 14px"><span class="sm"><span class="c16" style="background: #0B6E3E"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span>80<i>D</i></span><span class="sm"><span class="c16" style="background: #D8333A"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="196" y1="60" x2="60" y2="196"></line><line x1="196" y1="196" x2="60" y2="60"></line></svg></span>21<i>Y</i></span><span class="sm"><span class="c16" style="background: #7E8A9B"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="128" x2="208" y2="128"></line></svg></span>19<i>B</i></span></span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">74,75</div><div class="c13 mu" style="font-weight: 600">net</div></div><button class="ib" aria-label="Favorilere ekle" aria-pressed="false" style="color: #697586; margin: -6px -12px 0 0"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div><div class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">AYT denemesi</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">AYT</span><span class="c13 mu">21 Eyl. 2026</span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">59,25</div><div class="c13 mu" style="font-weight: 600">net</div></div><button class="ib" aria-label="Favorilere ekle" aria-pressed="false" style="color: #697586; margin: -6px -12px 0 0"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div><div class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">TYT denemesi</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">TYT</span><span class="c13 mu">15 Eyl. 2026</span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">71,5</div><div class="c13 mu" style="font-weight: 600">net</div></div><button class="ib" aria-label="Favorilere ekle" aria-pressed="false" style="color: #697586; margin: -6px -12px 0 0"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div><div class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">TYT denemesi</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">TYT</span><span class="c13 mu">4 Ağu. 2026</span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">66,75</div><div class="c13 mu" style="font-weight: 600">net</div></div><button class="ib" aria-label="Favorilere ekle" aria-pressed="false" style="color: #697586; margin: -6px -12px 0 0"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div><div class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">AYT denemesi</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">AYT</span><span class="c13 mu">2 Ağu. 2026</span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">55</div><div class="c13 mu" style="font-weight: 600">net</div></div><button class="ib" aria-label="Favorilere ekle" aria-pressed="false" style="color: #697586; margin: -6px -12px 0 0"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="224 208 32 208 32 48"></polyline><polyline points="224 96 160 152 96 104 32 160"></polyline></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Analizlerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M128 88a32 32 0 0 1 32-32h72v144h-72a32 32 0 0 0-32 32"></path><path d="M24 200h72a32 32 0 0 1 32 32V88a32 32 0 0 0-32-32H24Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Derslerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Hesap</span></button></div></nav><div class="hi"></div></div><div class="cap"><b>1 · Liste</b><span>Net en belirgin öğe; D/Y/B küçük. Ad Ek C'de yoksa başlık tür + "denemesi" olur, alan uydurulmaz. Favori yıldızı düşük vurgulu, yalnız cihazda.</span></div></div><div style="flex: none"><div class="ph" role="img" aria-label="Süz ve sırala"><div class="di"></div><div class="band"><div class="bnt">Analizlerim</div><div class="tabsn" role="tablist" aria-label="Analizlerim bölümleri"><button role="tab" aria-selected="false">Genel</button><button role="tab" aria-selected="true" class="on">Denemelerim<span class="u" style="width: 98px"></span></button></div></div><div class="abs" style="top: 190px; left: 16px; right: 16px"><div class="seg cnt" role="radiogroup" aria-label="Sınav türü"><button role="radio" aria-checked="true" aria-label="Tümü, 10 deneme" class="on"><b>Tümü</b><i>10 deneme</i></button><button role="radio" aria-checked="false" aria-label="TYT, 6 deneme"><b>TYT</b><i>6 deneme</i></button><button role="radio" aria-checked="false" aria-label="AYT, 4 deneme"><b>AYT</b><i>4 deneme</i></button></div></div><div class="abs" style="top: 254px; left: 16px; right: 16px; display: flex; justify-content: space-between; align-items: center"><span class="c13 mu" style="font-weight: 600">Tüm tarihler · En yeni önce</span><button class="bt" style="margin-right: -12px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="128" y1="120" x2="128" y2="216"></line><line x1="128" y1="40" x2="128" y2="88"></line><line x1="200" y1="184" x2="200" y2="216"></line><line x1="200" y1="40" x2="200" y2="152"></line><line x1="56" y1="152" x2="56" y2="216"></line><line x1="56" y1="40" x2="56" y2="120"></line><line x1="32" y1="120" x2="80" y2="120"></line><line x1="104" y1="88" x2="152" y2="88"></line><line x1="176" y1="152" x2="224" y2="152"></line></svg>Süz ve Sırala</button></div><div class="abs card" style="top: 306px; left: 16px; right: 16px; overflow: hidden"><div class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">Türkiye Geneli Deneme 6</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">AYT</span><span class="c13 mu">5 Eki. 2026</span><span class="c13 mu">· Örnek Yayınları</span></div><div style="margin-top: 6px"><span role="group" aria-label="86 doğru, 74 yanlış, 0 boş" style="display: inline-flex; flex-wrap: wrap; gap: 4px 14px"><span class="sm"><span class="c16" style="background: #0B6E3E"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span>86<i>D</i></span><span class="sm"><span class="c16" style="background: #D8333A"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="196" y1="60" x2="60" y2="196"></line><line x1="196" y1="196" x2="60" y2="60"></line></svg></span>74<i>Y</i></span><span class="sm"><span class="c16" style="background: #7E8A9B"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="128" x2="208" y2="128"></line></svg></span>0<i>B</i></span></span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">67,5</div><div class="c13 mu" style="font-weight: 600">net</div></div><button class="ib" aria-label="Favorilerden çıkar" aria-pressed="true" style="color: #0F294A; margin: -6px -12px 0 0"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="currentColor" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div><div class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">TYT Genel Deneme 9</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">TYT</span><span class="c13 mu">28 Eyl. 2026</span></div><div style="margin-top: 6px"><span role="group" aria-label="80 doğru, 21 yanlış, 19 boş" style="display: inline-flex; flex-wrap: wrap; gap: 4px 14px"><span class="sm"><span class="c16" style="background: #0B6E3E"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span>80<i>D</i></span><span class="sm"><span class="c16" style="background: #D8333A"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="196" y1="60" x2="60" y2="196"></line><line x1="196" y1="196" x2="60" y2="60"></line></svg></span>21<i>Y</i></span><span class="sm"><span class="c16" style="background: #7E8A9B"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="128" x2="208" y2="128"></line></svg></span>19<i>B</i></span></span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">74,75</div><div class="c13 mu" style="font-weight: 600">net</div></div><button class="ib" aria-label="Favorilere ekle" aria-pressed="false" style="color: #697586; margin: -6px -12px 0 0"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div><div class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">AYT denemesi</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">AYT</span><span class="c13 mu">21 Eyl. 2026</span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">59,25</div><div class="c13 mu" style="font-weight: 600">net</div></div><button class="ib" aria-label="Favorilere ekle" aria-pressed="false" style="color: #697586; margin: -6px -12px 0 0"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div><div class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">TYT denemesi</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">TYT</span><span class="c13 mu">15 Eyl. 2026</span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">71,5</div><div class="c13 mu" style="font-weight: 600">net</div></div><button class="ib" aria-label="Favorilere ekle" aria-pressed="false" style="color: #697586; margin: -6px -12px 0 0"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div><div class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">TYT denemesi</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">TYT</span><span class="c13 mu">4 Ağu. 2026</span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">66,75</div><div class="c13 mu" style="font-weight: 600">net</div></div><button class="ib" aria-label="Favorilere ekle" aria-pressed="false" style="color: #697586; margin: -6px -12px 0 0"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div><div class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">AYT denemesi</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">AYT</span><span class="c13 mu">2 Ağu. 2026</span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">55</div><div class="c13 mu" style="font-weight: 600">net</div></div><button class="ib" aria-label="Favorilere ekle" aria-pressed="false" style="color: #697586; margin: -6px -12px 0 0"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="224 208 32 208 32 48"></polyline><polyline points="224 96 160 152 96 104 32 160"></polyline></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Analizlerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M128 88a32 32 0 0 1 32-32h72v144h-72a32 32 0 0 0-32 32"></path><path d="M24 200h72a32 32 0 0 1 32 32V88a32 32 0 0 0-32-32H24Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Derslerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Hesap</span></button></div></nav><div class="scrim"></div><section class="sh" role="dialog" aria-modal="true" aria-label="Süz ve sırala"><div class="hd"></div><div class="shh"><div style="flex: 1; padding-top: 8px"><h2 class="t20">Süz ve Sırala</h2></div><button class="ib" aria-label="Kapat"><span class="xi"><svg width="18" height="18" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="200" y1="56" x2="56" y2="200"></line><line x1="200" y1="200" x2="56" y2="56"></line></svg></span></button></div><div style="padding: 12px 24px 0; display: flex; flex-direction: column; gap: 20px"><div><span class="fl">Tarih</span><div role="radiogroup" aria-label="Tarih" style="display: flex; flex-wrap: wrap; gap: 8px"><button class="ch on" role="radio" aria-checked="true">Tüm tarihler</button><button class="ch" role="radio" aria-checked="false">Son 30 gün</button><button class="ch" role="radio" aria-checked="false">Son 3 ay</button><button class="ch" role="radio" aria-checked="false">Bu eğitim yılı</button></div></div><div><span class="fl">Sıralama</span><div role="radiogroup" aria-label="Sıralama"><button role="radio" aria-checked="true" class="cb" style="width: 100%"><span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 999px; box-shadow: inset 0 0 0 7px #0F294A; flex: none"></span>En yeni önce</button><button role="radio" aria-checked="false" class="cb" style="width: 100%"><span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 999px; box-shadow: inset 0 0 0 2px #697586; flex: none"></span>En yüksek net önce</button></div></div></div><div class="shf"><button class="bp">Uygula</button></div></section><div class="hi"></div></div><div class="cap"><b>2 · Süz ve Sırala</b><span>Tür ekranda segment olarak; tarih ve sıralama tek sheet'te. Seçim satırın üstündeki özet metinde görünür.</span></div></div><div style="flex: none"><div class="ph" role="img" aria-label="Denemelerim boş"><div class="di"></div><div class="band"><div class="bnt">Analizlerim</div><div class="tabsn" role="tablist" aria-label="Analizlerim bölümleri"><button role="tab" aria-selected="false">Genel</button><button role="tab" aria-selected="true" class="on">Denemelerim<span class="u" style="width: 98px"></span></button></div></div><div class="abs" style="top: 230px; left: 32px; right: 32px; display: flex; flex-direction: column; align-items: center; text-align: center"><img src="data:image/webp;base64,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" alt="" width="128" height="128" style="display: block"><h2 class="t20" style="margin-top: 24px">Henüz deneme yok</h2><p class="b15 mu" style="margin-top: 8px">İlk denemeni okuttuğunda sonuçların, netin ve eksik konuların burada görünür.</p><button class="bp" style="margin-top: 24px; width: auto; padding: 0 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg>İlk Denemeni Okut</button></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="224 208 32 208 32 48"></polyline><polyline points="224 96 160 152 96 104 32 160"></polyline></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Analizlerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M128 88a32 32 0 0 1 32-32h72v144h-72a32 32 0 0 0-32 32"></path><path d="M24 200h72a32 32 0 0 1 32 32V88a32 32 0 0 0-32-32H24Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Derslerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Hesap</span></button></div></nav><div class="hi"></div></div><div class="cap"><b>3 · Boş</b><span>İlk kullanım: kil "Harita" (1.25), başlık, tek cümle, tek eylem; eylem kamerayı açar. Genel sekmesi de aynı boş durumu gösterir.</span></div></div></div><section class="nts" style="grid-template-columns: repeat(3, minmax(0, 1fr))"><div><h3>Neden liste</h3><ul><li>Deneme adları uzun ve kesilmemeli; listede iki satıra kadar sığar, ızgarada kesiliyordu (21).</li><li>Kapaklar birbirine benziyor; ayırt edici olan tarih ve net. Liste tarihe göre taranır.</li><li>Satır 1.16 deneme kartının liste hâli; 6 satır bir ekrana sığıyor (ızgarada 4).</li></ul></div><div><h3>Bileşenler</h3><ul><li>Satır: kapak 40 × 54, ad <span class="tk">title-sm</span>, tür etiketi + kısa tarih + yayınevi, ikonlu küçük D/Y/B; net 24/32 sağda.</li><li>Favori 48 pt hedef, 20 pt yıldız <span class="tk">control</span> (#697586); favoride lacivert dolgu.</li><li>Sonsuz kaydırma 8'erli sayfa; altta küçük çark; liste bitince "Hepsi bu kadar" yazmaz, son satır yeterli.</li></ul></div><div><h3>Eskiden</h3><ul><li>"67.5 net" ham metin; anlamsız "Deneme: 1" hapı; "(Test)" eki (21).</li><li>Filtre yoktu (API destekliyordu); yıldız sunucuya yazılmıyordu ama bunu söyleyen yoktu (envanter).</li></ul></div></section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1500}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+
+
+</body></html>

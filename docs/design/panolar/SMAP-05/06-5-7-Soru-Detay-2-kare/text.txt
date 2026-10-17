@@ -1,0 +1,44 @@
+5.7 Soru Detay 
+ 5.7 · Tur 3 · Deneme Detay
+ Soru Detay · 2 Kare
+ Tek ekran: hangi soru, senin işaretin, doğru cevap, açıklama ve ilgili kartlar. Fotoğraf yerine tek satır telif notu.
+ 31. soru
+ Türk Dili ve Edebiyatı–Sosyal Bilimler 1 · Tarih
+ İşaretin
+ C 
+ Doğru cevap
+ A 
+ Soru Analizi
+ Edirne-Segedin Antlaşması (1444), Haçlılarla Osmanlı Devleti arasında imzalanan ilk antlaşmadır. Tuna sınır kabul edilir ve on yıl savaş yapılmaması kararlaştırılır.
+ İlgili kartlar
+ 2 kart 
+ Edirne-Segedin Antlaşması (1444)
+ Haçlılarla Osmanlı Devleti'nin imzaladığı ilk antlaşma. Tuna sınır olur, on yıl savaş yapılmaz.
+ Otlukbeli Savaşı (1473)
+ Fatih Sultan Mehmet – Uzun Hasan (Akkoyunlu).
+ Kartları Çalış 
+ Sorunun fotoğrafı telif hakları nedeniyle paylaşılamıyor.
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Yanlış soru İşaretin ve doğru cevap yan yana, D/Y/B diliyle. Açıklama ve ilgili kartlar; tek birincil eylem "Kartları Çalış". Soru metni yok, telif notu tek satır. 
+ 6. soru
+ Türk Dili ve Edebiyatı–Sosyal Bilimler 1 · Türk Dili ve Edebiyatı
+ İşaretin
+ B 
+ İşaretin doğru cevap.
+ Soru Analizi
+ Bu soru için çözüm açıklaması yok.
+ Sorunun fotoğrafı telif hakları nedeniyle paylaşılamıyor.
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Doğru soru · açıklama yok Açıklama yoksa bölüm tek cümle; ilgili kart yoksa bölüm hiç çizilmez. "Fotoğraf Çek" ve "Soru Bankam" yok. 
+ Bileşenler
+ Başlık içerikte: soru no title-lg 24/32; test ve ders tam adla, sarar.
+ Cevap kartı: 24 pt D/Y/B çipi + 32/40 harf; yanlışta iki sütun.
+ İlgili kartlar yatay kaydırma, kart 264 pt; ikinci kart kenardan taşar, kaydırılabildiği görünür.
+ Veri
+ Doğru/yanlış dizilimi gerçek (26, 27): 31. soru yanlış, 6. soru doğru. Şıklar örnek (1.14 ile aynı: 6 B, 7 C → A).
+ Açıklama metni Ek C'deki Edirne-Segedin kartından; soru sırası AYT düzeni (1–24 Türk Dili ve Edebiyatı, 25–34 Tarih-1, 35–40 Coğrafya-1).
+ Eskiden
+ İki sekme (Soru Analizi / Soru Fotoğrafı); "Fotoğraf Çek" yalnız print, "Soru Bankam" yok (envanter).
+ "Tekrar Dene" gerçek isteği değil sahte veriyi çağırıyordu; yıldız yalnız SnackBar veriyordu.

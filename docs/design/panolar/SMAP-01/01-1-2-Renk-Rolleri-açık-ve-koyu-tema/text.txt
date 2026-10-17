@@ -1,0 +1,41 @@
+1.2 Renk Rolleri 
+ 1.2 · Temeller · Renk
+ Renk Rolleri · Açık ve Koyu Tema
+ Ekran kodu yalnız rol adlarını kullanır; tema değişince rolün değeri değişir. Kontrast sütunu: zeminlerde birincil metne, metin ve kenarlarda yüzeye (açıkta #FFFFFF, koyuda #121D31) karşıdır. Metin için en az 4,5:1, büyük metin için 3:1, kontrol sınırı ve ikon için 3:1. Flutter sütunundaki "ext." SmapColors tema eklentisidir.
+ Rol Açık Koyu Flutter Kullanım Kontrast açık · koyu 
+ Zeminler 
+ bg-canvas #F2F4F7 n-50 #0A1424 surface Sayfa zemini, kartların arkası 14,42 · 16,26 
+ bg-surface #FFFFFF n-0 #121D31 surfaceContainerLowest Kart, liste grubu, girdi zemini 15,89 · 14,86 
+ bg-raised #FFFFFF n-0 #18263D surfaceContainerLow Sheet; koyuda yüzeyden bir adım açık 15,89 · 13,38 
+ bg-sunken #E8ECF1 n-100 #213049 surfaceContainerHighest Segment ve ilerleme rayı, iskelet, sessiz düğme 13,39 · 11,69 
+ bg-navy #0F294A navy-900 #0F294A ext.navyBand Kök sekme bandı; açık temada toast 14,62 · 14,62 (beyaz) 
+ bg-navy-raised #1A3357 navy-800 #1A3357 ext.navyBandRaised Bant üstündeki segment rayı 12,69 · 12,69 (beyaz) 
+ bg-bar #FFFFFF %92 #121D31 %92 ext.bar Alt çubuk; arkası 20 pt bulanık 15,89 · 14,86 
+ scrim #091A31 %48 #02060E %64 scrim Sheet perdesi; arkası 8 pt bulanık metin taşımaz 
+ Kenarlar 
+ border-subtle #DCE2E9 n-200 #26354D outlineVariant Ayraç, hücre ve kart kenarı (dekoratif) dekoratif 
+ border-strong #C3CBD6 n-300 #34445F ext.borderStrong Pasif kontrolün kenarı pasif, muaf 
+ border-control #697586 n-500 #6B7D97 outline Girdi, çip, onay kutusu, kapalı anahtar 4,68 · 4,02 
+ Metin ve ikon 
+ text-primary #1B2232 n-900 #EDF1F6 onSurface Başlık, gövde, değer; birincil ikon 15,89 · 14,86 
+ text-secondary #556173 n-600 #A9B5C6 onSurfaceVariant Alt metin, etiket, eksen, pasif sekme; ikincil ikon 6,28 · 8,12 
+ text-placeholder #697586 n-500 #8B9AAF ext.textPlaceholder Yalnız girdi içinde "Örn: …" 4,68 · 5,89 
+ text-disabled #9AA5B4 n-400 #56657C ext.textDisabled Pasif kontrol metni muaf (2,50 · 2,85) 
+ text-on-navy #FFFFFF #FFFFFF ext.onNavyBand Bant başlığı ve eylemi 14,62 · 14,62 
+ text-on-navy-2 #C5D4E8 navy-200 #C5D4E8 ext.onNavyBandVariant Bant üstü alt metin, pasif segment etiketi 9,72 · 9,72 
+ text-action #1A3357 navy-800 #9BB3D3 navy-300 ext.textAction Metin düğmesi, satır içi bağlantı (altı çizili) 12,69 · 7,85 
+ text-accent #B34400 orange-700 #FF9A57 ext.textAccent Turuncu metin gerekirse; açıkta asla orange-500 5,61 · 8,04 
+ Etkileşim 
+ primary #0F294A navy-900 #C5D4E8 navy-200 primary Birincil düğme, seçili segment ve çip, açık anahtar 14,62 · 11,59 
+ on-primary #FFFFFF #091A31 navy-950 onPrimary Birincil üstündeki metin ve ikon 14,62 · 11,59 
+ primary-pressed #091A31 navy-950 #9BB3D3 navy-300 ext.primaryPressed Basılı birincil 17,45 · 8,13 
+ accent #FF6600 orange-500 #FF6600 secondary Yalnız kamera düğmesinin dolgusu 4,98 · 4,98 (ikon) 
+ on-accent #0F294A navy-900 #0F294A onSecondary Kamera ikonu (beyaz değil) 4,98 · 4,98 
+ accent-line #E05500 orange-600 #FF8533 orange-400 ext.accentLine Konum göstergesi, ilerleme dolgusu, "bugün", grafikte seçili nokta 3,84 · 6,95 
+ focus-ring #36537C navy-600 #9BB3D3 navy-300 ext.focusRing Odak halkası: 2 pt çizgi, 2 pt boşluk 7,82 · 7,85 
+ Turuncunun yeri
+ Yalnız dört iş: kamera düğmesi, konum göstergesi (alt çubuk ve ekran içi sekme), ilerleme ve "bugün". Segment, çip ve düğme seçimleri lacivert.
+ Kenar ya da gölge
+ Bir yüzeyde ikisinden biri. Kartlar kanvas üstünde kenarlıksız ve gölgesiz durur; ayrımı kanvas/yüzey farkı yapar (1.7).
+ Placeholder kuralı
+ text-placeholder kanvas üstünde 4,25:1'e düşer; bu yüzden yalnız beyaz girdi zemininde kullanılır. Etiket her zaman alanın üstünde.

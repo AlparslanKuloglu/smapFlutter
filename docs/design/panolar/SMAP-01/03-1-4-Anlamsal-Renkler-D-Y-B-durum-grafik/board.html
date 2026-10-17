@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<title>1.4 Anlamsal Renkler</title>
+<script src="res/394ef508-2767-496e-b26b-7ad5787eda9e.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/f2c27b1c-feba-42a1-b67f-768342285b29.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/f100fe65-0f11-4978-80ce-1fff77260059.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/f2c27b1c-feba-42a1-b67f-768342285b29.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/f100fe65-0f11-4978-80ce-1fff77260059.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/f2c27b1c-feba-42a1-b67f-768342285b29.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/f100fe65-0f11-4978-80ce-1fff77260059.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/f2c27b1c-feba-42a1-b67f-768342285b29.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/f100fe65-0f11-4978-80ce-1fff77260059.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/f2c27b1c-feba-42a1-b67f-768342285b29.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/f100fe65-0f11-4978-80ce-1fff77260059.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+.kv{display:grid;grid-template-columns:132px 1fr;row-gap:6px;column-gap:12px;font-size:14px;line-height:20px}
+.kv dt{color:#556173;margin:0}
+.kv dd{margin:0;font-weight:600}
+.sw{display:inline-block;width:16px;height:16px;border-radius:4px;vertical-align:-3px;margin-right:6px;box-shadow:inset 0 0 0 1px rgba(27,34,50,.14)}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1720px; background: #FFFFFF; color: #1B2232; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; padding: 64px; display: flex; flex-direction: column; gap: 40px; font-variant-numeric: tabular-nums">
+
+<header style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 15px; line-height: 20px; font-weight: 600; color: #556173">1.4 · Temeller · Renk</div>
+<h1 style="margin: 0; font-size: 36px; line-height: 44px; font-weight: 800; letter-spacing: -0.5px">Anlamsal Renkler · D/Y/B, Durum, Grafik</h1>
+<p style="margin: 4px 0 0; font-size: 17px; line-height: 28px; color: #556173; max-width: 1060px">Doğru, Yanlış ve Boş her ekranda aynı renk, aynı ikon şekli (✓ ✕ –) ve aynı sırayla görünür. Renk tek başına anlam taşımaz: çipin yanında her zaman etiket ya da harf (D, Y, B) vardır. Sayılar renkli yazılmaz; renk yalnız çipte.</p>
+</header>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-size: 22px; line-height: 28px; font-weight: 700">D/Y/B · tek sözlük</h2>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+
+<div style="border-radius: 16px; background: #F2F4F7; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; gap: 16px">
+<span style="width: 48px; height: 48px; border-radius: 999px; background: #0B6E3E; display: inline-flex; align-items: center; justify-content: center; color: #FFFFFF"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span>
+<div><div style="font-size: 20px; line-height: 28px; font-weight: 700">Doğru · D</div><div style="font-size: 13px; line-height: 20px; color: #556173">Phosphor Check · dyb-correct</div></div>
+</div>
+<dl class="kv" style="margin: 0">
+<dt>Dolgu</dt><dd><span class="sw" style="background: #0B6E3E"></span>#0B6E3E · koyu #52CC8E</dd>
+<dt>Zemin tonu</dt><dd><span class="sw" style="background: #E4F4EA"></span>#E4F4EA · koyu #133325</dd>
+<dt>Glif</dt><dd>beyaz · koyu #0A1424</dd>
+<dt>Glif / dolgu</dt><dd>6,34 · koyu 9,12</dd>
+<dt>Dolgu / yüzey</dt><dd>6,34 · koyu 8,34</dd>
+<dt>Metin olarak</dt><dd>yanlış hücrede doğru şık (5,46)</dd>
+</dl>
+</div>
+
+<div style="border-radius: 16px; background: #F2F4F7; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; gap: 16px">
+<span style="width: 48px; height: 48px; border-radius: 999px; background: #D8333A; display: inline-flex; align-items: center; justify-content: center; color: #FFFFFF"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="196" y1="60" x2="60" y2="196"></line><line x1="196" y1="196" x2="60" y2="60"></line></svg></span>
+<div><div style="font-size: 20px; line-height: 28px; font-weight: 700">Yanlış · Y</div><div style="font-size: 13px; line-height: 20px; color: #556173">Phosphor X · dyb-wrong</div></div>
+</div>
+<dl class="kv" style="margin: 0">
+<dt>Dolgu</dt><dd><span class="sw" style="background: #D8333A"></span>#D8333A · koyu #F07575</dd>
+<dt>Zemin tonu</dt><dd><span class="sw" style="background: #FCEAEA"></span>#FCEAEA · koyu #3B1D22</dd>
+<dt>Glif</dt><dd>beyaz · koyu #0A1424</dd>
+<dt>Glif / dolgu</dt><dd>4,71 · koyu 6,59</dd>
+<dt>Dolgu / yüzey</dt><dd>4,71 · koyu 6,03</dd>
+<dt>Metin olarak</dt><dd>kullanılmaz; hata metni status-error</dd>
+</dl>
+</div>
+
+<div style="border-radius: 16px; background: #F2F4F7; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; gap: 16px">
+<span style="width: 48px; height: 48px; border-radius: 999px; background: #7E8A9B; display: inline-flex; align-items: center; justify-content: center; color: #FFFFFF"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="128" x2="208" y2="128"></line></svg></span>
+<div><div style="font-size: 20px; line-height: 28px; font-weight: 700">Boş · B</div><div style="font-size: 13px; line-height: 20px; color: #556173">Phosphor Minus · dyb-empty</div></div>
+</div>
+<dl class="kv" style="margin: 0">
+<dt>Dolgu</dt><dd><span class="sw" style="background: #7E8A9B"></span>#7E8A9B · koyu #6E7C92</dd>
+<dt>Zemin tonu</dt><dd><span class="sw" style="background: #E8ECF1"></span>#E8ECF1 · koyu #213049</dd>
+<dt>Glif</dt><dd>beyaz · koyu #0A1424</dd>
+<dt>Glif / dolgu</dt><dd>3,50 · koyu 4,36</dd>
+<dt>Dolgu / yüzey</dt><dd>3,50 · koyu 3,98</dd>
+<dt>Metin olarak</dt><dd>kullanılmaz; "Boş" etiketi metin-2</dd>
+</dl>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px">
+<div style="border: 1px solid #DCE2E9; border-radius: 16px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="font-size: 15px; line-height: 24px; font-weight: 700">Açıklık farkı da var</div>
+<div style="display: flex; align-items: center; gap: 24px">
+<div style="display: flex; gap: 8px"><span style="width: 32px; height: 32px; border-radius: 999px; background: #0B6E3E"></span><span style="width: 32px; height: 32px; border-radius: 999px; background: #D8333A"></span><span style="width: 32px; height: 32px; border-radius: 999px; background: #7E8A9B"></span></div>
+<span style="font-size: 14px; color: #556173">gri tonlamada →</span>
+<div style="display: flex; gap: 8px"><span style="width: 32px; height: 32px; border-radius: 999px; background: #606060"></span><span style="width: 32px; height: 32px; border-radius: 999px; background: #747474"></span><span style="width: 32px; height: 32px; border-radius: 999px; background: #898989"></span></div>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #556173">Bağıl parlaklık 0,12 · 0,17 · 0,25. Kırmızı-yeşil renk körlüğünde de üç değer ayrışır; asıl ayrımı yine ikon şekli yapar.</p>
+</div>
+<div style="border: 1px solid #DCE2E9; border-radius: 16px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="font-size: 15px; line-height: 24px; font-weight: 700">Dört eski sözlük → bir</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 28px; font-size: 13px; line-height: 20px; color: #556173">
+<div style="display: flex; align-items: center; gap: 6px"><span class="sw" style="background: #4CAF50"></span><span class="sw" style="background: #F44336"></span><span class="sw" style="background: #000000"></span>Material + siyah</div>
+<div style="display: flex; align-items: center; gap: 6px"><span class="sw" style="background: #10B981"></span><span class="sw" style="background: #EF4444"></span><span class="sw" style="background: #94A3B8"></span>Tailwind</div>
+<div style="display: flex; align-items: center; gap: 6px"><span class="sw" style="background: #3D526D"></span><span class="sw" style="background: #EF4444"></span>Doğru lacivert (24)</div>
+<div style="display: flex; align-items: center; gap: 6px"><span class="sw" style="background: #34C759"></span><span class="sw" style="background: #FF383C"></span>iOS, kart SVG'leri</div>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #556173">Hepsi dyb-correct, dyb-wrong, dyb-empty'ye iner. "Boş" artık hiçbir yerde siyah değil.</p>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 22px; line-height: 28px; font-weight: 700">Durum renkleri · bilgi, başarı, uyarı, hata</h2>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px">
+<div style="display: flex; align-items: center; gap: 12px; background: #E2EAF4; border-radius: 12px; padding: 12px 16px; font-size: 15px; line-height: 24px"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="#36537C" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><path d="M120 120a8 8 0 0 1 8 8v40a8 8 0 0 0 8 8"></path><circle cx="124" cy="84" r="12" fill="#36537C" stroke="none"></circle></svg><span style="color: #1B2232">Sonucun hazır olunca bildirim gelecek.</span><span style="margin-left: auto; font-size: 13px; color: #36537C; font-weight: 600">#36537C / #E2EAF4 · 6,45</span></div>
+<div style="display: flex; align-items: center; gap: 12px; background: #1A2B45; border-radius: 12px; padding: 12px 16px; font-size: 15px; line-height: 24px"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="#9BB3D3" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><path d="M120 120a8 8 0 0 1 8 8v40a8 8 0 0 0 8 8"></path><circle cx="124" cy="84" r="12" fill="#9BB3D3" stroke="none"></circle></svg><span style="color: #EDF1F6">Sonucun hazır olunca bildirim gelecek.</span><span style="margin-left: auto; font-size: 13px; color: #9BB3D3; font-weight: 600">#9BB3D3 / #1A2B45 · 6,63</span></div>
+
+<div style="display: flex; align-items: center; gap: 12px; background: #E4F4EA; border-radius: 12px; padding: 12px 16px; font-size: 15px; line-height: 24px"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="#0B6E3E" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><polyline points="88 136 112 160 168 104"></polyline></svg><span style="color: #1B2232">Talebin alındı. En geç 72 saat içinde hazır.</span><span style="margin-left: auto; font-size: 13px; color: #0B6E3E; font-weight: 600">#0B6E3E / #E4F4EA · 5,56</span></div>
+<div style="display: flex; align-items: center; gap: 12px; background: #133325; border-radius: 12px; padding: 12px 16px; font-size: 15px; line-height: 24px"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="#52CC8E" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><polyline points="88 136 112 160 168 104"></polyline></svg><span style="color: #EDF1F6">Talebin alındı. En geç 72 saat içinde hazır.</span><span style="margin-left: auto; font-size: 13px; color: #52CC8E; font-weight: 600">#52CC8E / #133325 · 6,80</span></div>
+
+<div style="display: flex; align-items: center; gap: 12px; background: #FCF1D9; border-radius: 12px; padding: 12px 16px; font-size: 15px; line-height: 24px"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="#8A5A00" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M142.41 40.22l87.46 151.87C236 202.79 228.08 216 215.46 216H40.54C27.92 216 20 202.79 26.13 192.09L113.59 40.22c6.3-10.96 22.52-10.96 28.82 0Z"></path><line x1="128" y1="104" x2="128" y2="144"></line><circle cx="128" cy="180" r="12" fill="#8A5A00" stroke="none"></circle></svg><span style="color: #1B2232">Bildirim izni kapalı. Ayarlar'dan açabilirsin.</span><span style="margin-left: auto; font-size: 13px; color: #8A5A00; font-weight: 600">#8A5A00 / #FCF1D9 · 5,28</span></div>
+<div style="display: flex; align-items: center; gap: 12px; background: #33280F; border-radius: 12px; padding: 12px 16px; font-size: 15px; line-height: 24px"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="#EBC25B" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M142.41 40.22l87.46 151.87C236 202.79 228.08 216 215.46 216H40.54C27.92 216 20 202.79 26.13 192.09L113.59 40.22c6.3-10.96 22.52-10.96 28.82 0Z"></path><line x1="128" y1="104" x2="128" y2="144"></line><circle cx="128" cy="180" r="12" fill="#EBC25B" stroke="none"></circle></svg><span style="color: #EDF1F6">Bildirim izni kapalı. Ayarlar'dan açabilirsin.</span><span style="margin-left: auto; font-size: 13px; color: #EBC25B; font-weight: 600">#EBC25B / #33280F · 8,54</span></div>
+
+<div style="display: flex; align-items: center; gap: 12px; background: #FCEAEA; border-radius: 12px; padding: 12px 16px; font-size: 15px; line-height: 24px"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="#C42D35" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><line x1="128" y1="80" x2="128" y2="136"></line><circle cx="128" cy="172" r="12" fill="#C42D35" stroke="none"></circle></svg><span style="color: #1B2232">Gönderilemedi. Bağlantını kontrol edip tekrar dene.</span><span style="margin-left: auto; font-size: 13px; color: #C42D35; font-weight: 600">#C42D35 / #FCEAEA · 4,80</span></div>
+<div style="display: flex; align-items: center; gap: 12px; background: #3B1D22; border-radius: 12px; padding: 12px 16px; font-size: 15px; line-height: 24px"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="#FF8F8F" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><line x1="128" y1="80" x2="128" y2="136"></line><circle cx="128" cy="172" r="12" fill="#FF8F8F" stroke="none"></circle></svg><span style="color: #EDF1F6">Gönderilemedi. Bağlantını kontrol edip tekrar dene.</span><span style="margin-left: auto; font-size: 13px; color: #FF8F8F; font-weight: 600">#FF8F8F / #3B1D22 · 6,92</span></div>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #556173">İkonlar: Info, CheckCircle, Warning, WarningCircle. Mesaj metni birincil metin rengindedir; durum rengi ikon ve kısa vurgularda. Uyarı rengi koyu hardaldır, turuncuyla karışmaz. Sol kenar şeridi kullanılmaz.</p>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 22px; line-height: 28px; font-weight: 700">Grafik</h2>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px">
+<figure style="margin: 0; border: 1px solid #DCE2E9; border-radius: 16px; padding: 16px 16px 8px; background: #FFFFFF">
+<svg width="600" height="250" sc-camel-view-box="0 0 600 250" role="img" aria-label="TYT net grafiği, açık tema: 22 Nisan 61,5 netten 28 Eylül 74,75 nete" style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+<g stroke="#DCE2E9" stroke-width="1"><line x1="56" y1="16" x2="588" y2="16"></line><line x1="56" y1="61" x2="588" y2="61"></line><line x1="56" y1="106" x2="588" y2="106"></line><line x1="56" y1="151" x2="588" y2="151"></line><line x1="56" y1="196" x2="588" y2="196"></line></g>
+<g fill="#556173" font-size="13" text-anchor="end"><text x="44" y="20">120</text><text x="44" y="65">90</text><text x="44" y="110">60</text><text x="44" y="155">30</text><text x="44" y="200">0</text></g>
+<path d="M72 103.75 L171.2 99.63 L270.4 94 L369.6 95.88 L468.8 88.75 L568 83.88 L568 196 L72 196 Z" fill="#264066" fill-opacity="0.10"></path>
+<polyline points="72 103.75 171.2 99.63 270.4 94 369.6 95.88 468.8 88.75 568 83.88" fill="none" stroke="#264066" stroke-width="2.5" stroke-linejoin="round"></polyline>
+<g fill="#FFFFFF" stroke="#264066" stroke-width="2"><circle cx="72" cy="103.75" r="4.5"></circle><circle cx="171.2" cy="99.63" r="4.5"></circle><circle cx="270.4" cy="94" r="4.5"></circle><circle cx="369.6" cy="95.88" r="4.5"></circle><circle cx="468.8" cy="88.75" r="4.5"></circle></g>
+<circle cx="568" cy="83.88" r="7" fill="#E05500" stroke="#FFFFFF" stroke-width="2.5"></circle>
+<g fill="#556173" font-size="13" text-anchor="middle"><text x="72" y="222">22 Nis.</text><text x="171.2" y="222">14 May.</text><text x="270.4" y="222">17 Haz.</text><text x="369.6" y="222">4 Ağu.</text><text x="468.8" y="222">15 Eyl.</text><text x="560" y="222">28 Eyl.</text></g>
+<g><rect x="352" y="24" width="224" height="48" rx="8" fill="#0F294A"></rect><text x="366" y="44" fill="#C5D4E8" font-size="13">TYT Genel Deneme 9 · 28 Eyl.</text><text x="366" y="63" fill="#FFFFFF" font-size="15" font-weight="700">74,75 net</text></g>
+<text x="56" y="244" fill="#556173" font-size="13">net · TYT 0–120</text>
+</svg>
+</figure>
+<figure style="margin: 0; border-radius: 16px; padding: 16px 16px 8px; background: #121D31">
+<svg width="600" height="250" sc-camel-view-box="0 0 600 250" role="img" aria-label="TYT net grafiği, koyu tema" style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+<g stroke="#26354D" stroke-width="1"><line x1="56" y1="16" x2="588" y2="16"></line><line x1="56" y1="61" x2="588" y2="61"></line><line x1="56" y1="106" x2="588" y2="106"></line><line x1="56" y1="151" x2="588" y2="151"></line><line x1="56" y1="196" x2="588" y2="196"></line></g>
+<g fill="#A9B5C6" font-size="13" text-anchor="end"><text x="44" y="20">120</text><text x="44" y="65">90</text><text x="44" y="110">60</text><text x="44" y="155">30</text><text x="44" y="200">0</text></g>
+<path d="M72 103.75 L171.2 99.63 L270.4 94 L369.6 95.88 L468.8 88.75 L568 83.88 L568 196 L72 196 Z" fill="#9BB3D3" fill-opacity="0.14"></path>
+<polyline points="72 103.75 171.2 99.63 270.4 94 369.6 95.88 468.8 88.75 568 83.88" fill="none" stroke="#9BB3D3" stroke-width="2.5" stroke-linejoin="round"></polyline>
+<g fill="#121D31" stroke="#9BB3D3" stroke-width="2"><circle cx="72" cy="103.75" r="4.5"></circle><circle cx="171.2" cy="99.63" r="4.5"></circle><circle cx="270.4" cy="94" r="4.5"></circle><circle cx="369.6" cy="95.88" r="4.5"></circle><circle cx="468.8" cy="88.75" r="4.5"></circle></g>
+<circle cx="568" cy="83.88" r="7" fill="#FF8533" stroke="#121D31" stroke-width="2.5"></circle>
+<g fill="#A9B5C6" font-size="13" text-anchor="middle"><text x="72" y="222">22 Nis.</text><text x="171.2" y="222">14 May.</text><text x="270.4" y="222">17 Haz.</text><text x="369.6" y="222">4 Ağu.</text><text x="468.8" y="222">15 Eyl.</text><text x="560" y="222">28 Eyl.</text></g>
+<g><rect x="352" y="24" width="224" height="48" rx="8" fill="#E8ECF1"></rect><text x="366" y="44" fill="#556173" font-size="13">TYT Genel Deneme 9 · 28 Eyl.</text><text x="366" y="63" fill="#1B2232" font-size="15" font-weight="700">74,75 net</text></g>
+<text x="56" y="244" fill="#A9B5C6" font-size="13">net · TYT 0–120</text>
+</svg>
+</figure>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 24px; font-size: 14px; line-height: 20px">
+<div><span class="sw" style="background: #264066"></span><strong>chart-line</strong> #264066 · koyu #9BB3D3 · 2,5 pt, düz</div>
+<div><span class="sw" style="background: rgba(38,64,102,0.10)"></span><strong>chart-area</strong> çizgi rengi %10 · koyu %14</div>
+<div><span class="sw" style="background: #E05500"></span><strong>chart-highlight</strong> #E05500 · koyu #FF8533</div>
+<div><span class="sw" style="background: #DCE2E9"></span><strong>chart-grid</strong> #DCE2E9 · koyu #26354D</div>
+<div><span class="sw" style="background: #264066"></span><span class="sw" style="background: #E05500"></span><span class="sw" style="background: #6C8BB6"></span><span class="sw" style="background: #7E8A9B"></span><strong>Seri 1–4</strong> (karşılaştırma)</div>
+<div style="color: #556173">Eksen metni text-secondary, 13 pt</div>
+<div style="color: #556173">Yığılmış D/Y/B çubuğu dyb renklerini kullanır</div>
+<div style="color: #556173">Ders serileri ders vurgusunu kullanır (1.5)</div>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: #556173">Örnek veri Ek C'deki TYT net geçmişi. Çizgi eğri değil: iki deneme arasında değer uydurmaz. Son deneme vurgulu; dokunulan noktada ad, tarih ve net. Ayrıntılı grafik kuralları Tur 4'te.</p>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1720}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+
+
+</body></html>

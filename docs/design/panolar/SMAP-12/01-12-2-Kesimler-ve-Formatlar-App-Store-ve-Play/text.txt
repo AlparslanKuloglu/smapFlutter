@@ -1,0 +1,33 @@
+12.2 Kesimler ve Formatlar 
+ 12.2 · Tur 11 · Mağaza Görselleri
+ Kesimler ve Formatlar
+ Panoramadan App Store karelerine, Google Play 9:16 karelerine ve öne çıkan görsele.
+ App Store · iPhone 6,9"
+ Panorama kesik çizgilerden kesilir; 1320 × 2868 için kaynak %2,6 büyütülür, yanlardan toplam 3 px kırpılır. Yükleme sırası 1 → 7; ilk üç kare tek başına anlaşılır.
+ 1 · Denemeni okut, eksiğini kapat 1290 × 2796 · 1320 × 2868
+ 2 · Optik formunu kamerayla okut 1290 × 2796 · 1320 × 2868
+ 3 · Netin ve D/Y/B'n tek ekranda 1290 × 2796 · 1320 × 2868
+ 4 · Her soruda ne olduğunu gör 1290 × 2796 · 1320 × 2868
+ 5 · Gelişimini grafikte izle 1290 × 2796 · 1320 × 2868
+ 6 · Eksiklerini konu konu kapat 1290 × 2796 · 1320 × 2868
+ 7 · Haftanı planla, bugüne odaklan 1290 × 2796 · 1320 × 2868
+ Google Play · telefon 9:16
+ Aynı kareler 1080 × 1920; kesim karenin üst %82'si (telefonun altı kesilir, başlık ve ekranın üstü kalır). Play telefon için en az 2, en çok 8 görsel kabul eder; burada ilk 4 kare gösterildi, 5–7 aynı kuralla kesilir.
+ 1 · Play telefon 1080 × 1920, telefonun altı kesilir
+ 2 · Play telefon 1080 × 1920, telefonun altı kesilir
+ 3 · Play telefon 1080 × 1920, telefonun altı kesilir
+ 4 · Play telefon 1080 × 1920, telefonun altı kesilir
+ Google Play · öne çıkan görsel 1024 × 500
+ SMAP Denemeni okut, eksiğini kapat
+ Net, D/Y/B, konu analizi ve bilgi kartları tek uygulamada.
+ Dosyalar
+ appstore-01…07.png 1320 × 2868; 1290 × 2796 aynı kaynaktan.
+ play-phone-01…07.png 1080 × 1920 · play-feature.png 1024 × 500.
+ Hepsi RGB, saydamlıksız PNG.
+ Kesim kuralı
+ Başlık ve alt satır karenin üst %35'inde: Play kesiminde de kalır.
+ Rota kesim çizgisinde kopmaz; karelerin yan yana görünüşü panoramayı tamamlar.
+ Telefonlar kesim çizgisine gerçek boyda 40 px'ten fazla yaklaşmaz; 5 ile 6 arasındaki kil Sütun bilerek iki kareye bölünür.
+ Kontrol
+ Boyutlar App Store Connect ve Play Console'daki güncel listeyle yüklemeden önce doğrulanmalı.
+ Metin %100 ölçekte telefonda okunur: başlık 114 px, alt satır 51 px (gerçek boy).

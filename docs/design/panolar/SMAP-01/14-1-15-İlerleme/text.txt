@@ -1,0 +1,39 @@
+1.15 İlerleme 
+ 1.15 · Temeller · Veri
+ İlerleme
+ Çubuk yalnız gerçek bir oranı gösterir; oran yoksa çizilmez. Eskiden "%0" çubuğu dolu görünüyordu (09), "%60" yazan çubuk boştu (40), her derste sabit %75 vardı (11). "Hiç soru yok" ile "%0" aynı görünüyordu (28); artık ayrı.
+ Ders renginde çubuk · bilgi kartı ilerlemesi 
+ Tarih 60 eksik 
+ 41 / 64 kart biliniyor
+ Ray bg-sunken, dolgu ders vurgusu, 8 pt, radius-full. Etiket sayıyı söyler; yüzde ayrıca yazılmaz (eskiden çubuk + "%75" + "15/20" aynı şeyi üç kez söylüyordu). Kart toplamı olmayan derste çubuk çizilmez.
+ Genel ilerleme · kart oturumu 
+ 12/40 
+ Dolgu accent-line (#E05500, rayda 3,24:1). İnce 4 pt, başlık altında. Turuncu yalnız böyle "nerede olduğun" bilgisinde.
+ Süresi belirsiz bekleme
+ Cevapların okunuyor 
+ Lacivert zeminde 
+ Dönen gösterge yalnız süresi bilinmeyen adımda ve her zaman ne beklendiğini söyleyen bir metinle. Ekran yüklenirken gösterge değil iskelet kullanılır (1.22).
+ Başarı yüzdesi halkası · 48 pt, 5 pt çizgi 
+ %42 5 / 12
+ %100 1 / 1
+ %0 0 / 1
+ Soru yok
+ halka yok
+ Tek renk (chart-line, rayda 8,85:1); eşik renkleri yok. Eski sarı halka beyazda 1,22:1'di. "%0" boş halka ve sayı taşır; soru hiç yoksa halka hiç çizilmez, yerinde "Soru yok" yazar. Yüzde en yakın tam sayı: 5/12 = %41,67 → %42.
+ Konu satırında · AYT Türk Dili ve Edebiyatı, zayıftan güçlüye 
+ İslamiyet Etkisindeki Türk Edebiyatı (Divan-Halk Edebiyatı)
+ 0 doğru · 2 yanlış · 0 boş Az soru 
+ %0 
+ Söz Sanatları
+ 0 doğru · 1 yanlış · 0 boş Az soru 
+ %0 
+ Nazım Bilgisi
+ 0 doğru · 1 yanlış · 0 boş Az soru 
+ %0 
+ Cumhuriyet Edebiyatı
+ 5 doğru · 7 yanlış · 0 boş 
+ %42 
+ Batı Edebiyatı ve Akımları
+ 1 doğru · 0 yanlış · 0 boş Az soru 
+ %100 
+ Sıralama: başarı yüzdesi artan, eşitlikte soru sayısı azalan. 1–2 soruluk konu "Az soru" etiketi taşır. Konu satırının tam hali ve "Bu Konuyu Çalış" Tur 3'te.

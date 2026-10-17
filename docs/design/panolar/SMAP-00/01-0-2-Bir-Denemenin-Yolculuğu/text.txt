@@ -1,0 +1,80 @@
+0.2 Bir Denemenin Yolculuğu 
+ 0.2 · Tur 10 · Akış Haritası
+ Bir Denemenin Yolculuğu
+ Kâğıt formdan sonuca, detaya ve uygulamanın geri kalanına: hangi ekran ne zaman çıkar, okuma bitince neler güncellenir.
+ Kâğıt
+ Optik form
+ Deneme bitti; form elde
+ 4.3
+ Okut
+ Alt çubuktaki kamera, her sekmede
+ 4.1
+ Kamera izni
+ Yalnız ilk sefer; reddedilirse Ayarlar
+ 4.2
+ Öğretici
+ Yalnız ilk sefer
+ 4.3
+ Çekim
+ Formu çerçeveye al, deklanşör
+ 4.4
+ Köşeler
+ Dört köşe cevap alanına oturur
+ 4.5 · 4.6
+ Gönderim
+ Yükleniyor; bağlantı yoksa sırada
+ Sunucu
+ Okuma ve net
+ Net = D − Y ÷ 4, sunucuda (D-1)
+ 4.7 · 4.8
+ Form Kontrol
+ Boş ve çift işaretleri düzelt; Cevapları Onayla
+ Karar
+ Deneme tanındı mı?
+ 5.1
+ Sonuç anı
+ Net, D/Y/B, fark, eklenen kartlar
+ 5.2
+ Bildirim izni
+ İlk başarılı okumada bir kez
+ 5.3–5.6
+ Deneme Detay
+ Genel · Sorular · Konular · Kartlar
+ 4.9
+ Deneme bulunamadı
+ Listeden seç ya da talep gönder → Anasayfa
+ 4.10
+ Hata ekranları
+ Bakım, kamera açılamadı, form bulunamadı, bağlantı yok
+ 5.7
+ Soru Detay
+ Hücreden; işaretin ve doğru cevap
+ 7.3
+ Konu detayı
+ Bu Konuyu Çalış; ilk eksik maddede
+ 8.1
+ Kart destesi
+ Kartları Çalış; Eksiklerim
+ 3.1
+ Anasayfa
+ Son denemen; Derslerin eksikleri
+ 6.1
+ Analizlerim
+ Grafikte yeni nokta, kutular
+ 6.2
+ Denemelerim
+ Listenin başında
+ 7.1
+ Derslerim
+ Eksik sayıları
+ 10.1
+ Koç Anasayfa
+ Dikkat kuralları yeniden hesaplanır
+ 10.4
+ Öğrenci profili
+ Koçun Denemeler sekmesi
+ Sonraki seferlerde
+ Evet
+ Hayır
+ Okuma bitince kendiliğinden güncellenenler
+ Ekran (pano kodu) Kök sekme Kamera Karar Sunucu Uygulama dışı ya da başka akış Kendiliğinden güncellenir

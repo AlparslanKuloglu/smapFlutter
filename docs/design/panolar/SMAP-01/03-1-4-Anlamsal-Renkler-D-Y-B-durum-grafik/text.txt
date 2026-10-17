@@ -1,0 +1,66 @@
+1.4 Anlamsal Renkler 
+ 1.4 · Temeller · Renk
+ Anlamsal Renkler · D/Y/B, Durum, Grafik
+ Doğru, Yanlış ve Boş her ekranda aynı renk, aynı ikon şekli (✓ ✕ –) ve aynı sırayla görünür. Renk tek başına anlam taşımaz: çipin yanında her zaman etiket ya da harf (D, Y, B) vardır. Sayılar renkli yazılmaz; renk yalnız çipte.
+ D/Y/B · tek sözlük
+ Doğru · D
+ Phosphor Check · dyb-correct
+ Dolgu #0B6E3E · koyu #52CC8E 
+ Zemin tonu #E4F4EA · koyu #133325 
+ Glif beyaz · koyu #0A1424 
+ Glif / dolgu 6,34 · koyu 9,12 
+ Dolgu / yüzey 6,34 · koyu 8,34 
+ Metin olarak yanlış hücrede doğru şık (5,46) 
+ Yanlış · Y
+ Phosphor X · dyb-wrong
+ Dolgu #D8333A · koyu #F07575 
+ Zemin tonu #FCEAEA · koyu #3B1D22 
+ Glif beyaz · koyu #0A1424 
+ Glif / dolgu 4,71 · koyu 6,59 
+ Dolgu / yüzey 4,71 · koyu 6,03 
+ Metin olarak kullanılmaz; hata metni status-error 
+ Boş · B
+ Phosphor Minus · dyb-empty
+ Dolgu #7E8A9B · koyu #6E7C92 
+ Zemin tonu #E8ECF1 · koyu #213049 
+ Glif beyaz · koyu #0A1424 
+ Glif / dolgu 3,50 · koyu 4,36 
+ Dolgu / yüzey 3,50 · koyu 3,98 
+ Metin olarak kullanılmaz; "Boş" etiketi metin-2 
+ Açıklık farkı da var
+ gri tonlamada → 
+ Bağıl parlaklık 0,12 · 0,17 · 0,25. Kırmızı-yeşil renk körlüğünde de üç değer ayrışır; asıl ayrımı yine ikon şekli yapar.
+ Dört eski sözlük → bir
+ Material + siyah
+ Tailwind
+ Doğru lacivert (24)
+ iOS, kart SVG'leri
+ Hepsi dyb-correct, dyb-wrong, dyb-empty'ye iner. "Boş" artık hiçbir yerde siyah değil.
+ Durum renkleri · bilgi, başarı, uyarı, hata
+ Sonucun hazır olunca bildirim gelecek. #36537C / #E2EAF4 · 6,45 
+ Sonucun hazır olunca bildirim gelecek. #9BB3D3 / #1A2B45 · 6,63 
+ Talebin alındı. En geç 72 saat içinde hazır. #0B6E3E / #E4F4EA · 5,56 
+ Talebin alındı. En geç 72 saat içinde hazır. #52CC8E / #133325 · 6,80 
+ Bildirim izni kapalı. Ayarlar'dan açabilirsin. #8A5A00 / #FCF1D9 · 5,28 
+ Bildirim izni kapalı. Ayarlar'dan açabilirsin. #EBC25B / #33280F · 8,54 
+ Gönderilemedi. Bağlantını kontrol edip tekrar dene. #C42D35 / #FCEAEA · 4,80 
+ Gönderilemedi. Bağlantını kontrol edip tekrar dene. #FF8F8F / #3B1D22 · 6,92 
+ İkonlar: Info, CheckCircle, Warning, WarningCircle. Mesaj metni birincil metin rengindedir; durum rengi ikon ve kısa vurgularda. Uyarı rengi koyu hardaldır, turuncuyla karışmaz. Sol kenar şeridi kullanılmaz.
+ Grafik
+ 120 90 60 30 0 
+ 22 Nis. 14 May. 17 Haz. 4 Ağu. 15 Eyl. 28 Eyl. 
+ TYT Genel Deneme 9 · 28 Eyl. 74,75 net 
+ net · TYT 0–120 
+ 120 90 60 30 0 
+ 22 Nis. 14 May. 17 Haz. 4 Ağu. 15 Eyl. 28 Eyl. 
+ TYT Genel Deneme 9 · 28 Eyl. 74,75 net 
+ net · TYT 0–120 
+ chart-line #264066 · koyu #9BB3D3 · 2,5 pt, düz
+ chart-area çizgi rengi %10 · koyu %14
+ chart-highlight #E05500 · koyu #FF8533
+ chart-grid #DCE2E9 · koyu #26354D
+ Seri 1–4 (karşılaştırma)
+ Eksen metni text-secondary, 13 pt
+ Yığılmış D/Y/B çubuğu dyb renklerini kullanır
+ Ders serileri ders vurgusunu kullanır (1.5)
+ Örnek veri Ek C'deki TYT net geçmişi. Çizgi eğri değil: iki deneme arasında değer uydurmaz. Son deneme vurgulu; dokunulan noktada ad, tarih ve net. Ayrıntılı grafik kuralları Tur 4'te.

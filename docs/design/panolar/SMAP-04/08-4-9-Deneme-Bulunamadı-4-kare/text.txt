@@ -1,0 +1,49 @@
+4.9 Deneme Bulunamadı 
+ 4.9 · Tur 2 · Kamera ve Optik Okuma
+ Deneme Bulunamadı · 4 Kare
+ Okunan deneme sistemde yoksa: kısa açıklama, iki zorunlu alan, onay, "Talebin alındı. En geç 72 saat içinde hazır." Cevaplar kaybolmaz.
+ Bu deneme henüz sistemde yok
+ Yayınevini ve deneme adını yaz; analizini en geç 72 saat içinde hazırlayalım.
+ Cevapların kaydedildi. Yeniden okutman gerekmez. 
+ Yayınevi Örn: Örnek Yayınları 
+ Deneme adı Örn: Türkiye Geneli Deneme 7 
+ Analizimi Hazırlayın 
+ 1 · Talep formu Form Kontrol'de onaylanan cevaplar sistemde bir denemeyle eşleşmezse. İki alan, ikisi zorunlu; etiket üstte, örnek placeholder'da. 
+ Bu deneme henüz sistemde yok
+ Yayınevini ve deneme adını yaz; analizini en geç 72 saat içinde hazırlayalım.
+ Cevapların kaydedildi. Yeniden okutman gerekmez. 
+ Yayınevi Örn: Örnek Yayınları 
+ Yayınevini yaz. 
+ Deneme adı Örn: Türkiye Geneli Deneme 7 
+ Deneme adını yaz. 
+ Analizimi Hazırlayın 
+ 2 · Doğrulama Boş gönderilemez: hata alanın altında, ikonla ve cümleyle. Odak ilk hatalı alana gider. Eskiden doğrulama hiç yoktu. 
+ Bu deneme henüz sistemde yok
+ Yayınevini ve deneme adını yaz; analizini en geç 72 saat içinde hazırlayalım.
+ Cevapların kaydedildi. Yeniden okutman gerekmez. 
+ Yayınevi Örnek Yayınları 
+ Deneme adı Türkiye Geneli Deneme 7 
+ Analizimi Hazırlayın 
+ Talep oluşturulsun mu?
+ Yayınevi Örnek Yayınları 
+ Deneme adı Türkiye Geneli Deneme 7 
+ Analizin hazır olunca Analizlerim › Denemelerim'de görünür.
+ Talebi Gönder Vazgeç 
+ 3 · Onay Girilen bilgiler tek sheet'te tekrar gösterilir. Eski "Düzenle / Onayla ve Gönder" diyaloğunun yerine "Talebi Gönder / Vazgeç". 
+ Talebin alındı
+ En geç 72 saat içinde hazır. Hazır olunca Analizlerim › Denemelerim'de görünecek.
+ Anasayfa 
+ 4 · Talep alındı Tek düğme. Bildirim sözü verilmez: bildirimler planlı (Tur 8). Örnek deneme adı Ek C'de yok; yalnız kullanıcı girdisi örneği. 
+ Bileşenler
+ Girdi 1.12: 48 pt, etiket 14/600, hata 2 pt error çerçeve + 13/600 mesaj + 16 pt ikon.
+ Bilgi kartı surface , saat ikonu info .
+ Onay sheet'i 1.21 normal onay; özet bg-canvas kutuda tanım listesi.
+ Başarı rozeti 80 pt success-bg daire, 40 pt ikon.
+ Hareket ve haptik
+ Hatalı gönderimde error haptiği; hatalı alan 150 ms'de kırmızıya döner, sallanma yok.
+ Talep gönderilince success haptiği; ekran 250 ms çapraz geçişle değişir.
+ Klavye açıkken birincil düğme klavyenin üstünde kalır.
+ Metin
+ Başlık durumu söyler, suçlamaz: "Bu deneme henüz sistemde yok".
+ "Analizimi Hazırlayın" brifteki adıyla; öğrenci SMAP'e söylüyor.
+ Eskiden: "Denemen Henüz Sistemde Mevcut Değil", "Üzgünüz…", ölü kalmış ikinci gönderim metodu (envanter).

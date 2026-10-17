@@ -1,0 +1,26 @@
+1.21 Onay ve Yakında Sheet'leri 
+ 1.21 · Temeller · Kabuk
+ Onay ve Yakında Sheet'leri · 3 Kare
+ Onay sheet'i tek soruyu sorar ve sonucu açıklar. Başlık soru biçiminde, gövde ne olacağını söyler, düğme eylemin adını taşır ("Evet" değil). İptal her yerde "Vazgeç". Yakında sheet'i kitte durur ama hiçbir ekranda kullanılmaz (Ek D-4); "Haber ver" düğmesi yok, çünkü kayıt tutmuyordu (22, 23).
+ Tarih Kartları
+ Edirne-Segedin Antlaşması (1444)
+ Haçlılarla Osmanlı Devleti'nin imzaladığı ilk antlaşma. Tuna sınır olur, on yıl savaş yapılmaz.
+ Kartı Bildiklerim'e taşıyalım mı?
+ "Edirne-Segedin Antlaşması (1444)" eksiklerinden çıkıp Bildiklerim'e geçecek.
+ Bir daha sorma 
+ Öğrendim 
+ Vazgeç 
+ 1 · Onay · normal Kart destesinde ilk "Öğrendim"de bir kez sorulur (Tur 5). Birincil eylemin adı, sorunun fiili. Perdeye dokunmak Vazgeç'tir. 
+ Koçluk
+ Mehmet Özkan
+ Koçun
+ Koç bağlantısı kaldırılsın mı?
+ Mehmet Özkan gelişimini artık göremeyecek. Yeniden bağlanmak için koçluk kodunu tekrar girmen gerekir.
+ Bağlantıyı Kaldır 
+ Vazgeç 
+ 2 · Onay · tehlikeli Kırmızı düğme yalnız burada. Hata ikonu soruyu işaretler. Açılışta odak Vazgeç'te (halka); yanlışlıkla çift dokunma bir şey silmez. Kelime yazdırma yok (Ek D-28). 
+ Anasayfa
+ Yakında
+ Bu bölüm henüz hazır değil. Hazır olduğunda burada göreceksin.
+ Tamam 
+ 3 · Yakında · yalnız kitte Tek varyant, tek düğme. Hiçbir ekranda kullanılmaz: v1'de görünmeyen özellikler (SmapLab, Gelen Kutusu, Analiz ve Harita sekmeleri…) arayüzden tamamen kalkar. İkon Phosphor Hourglass.

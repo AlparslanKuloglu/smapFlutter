@@ -1,0 +1,45 @@
+4.5 Gönderim 
+ 4.5 · Tur 2 · Kamera ve Optik Okuma
+ Gönderim · 4 Kare
+ Yalnız gerçekten olan üç adım: hazırlanıyor, gönderiliyor (yüzdeyle), okunuyor. Hata ya da zaman aşımında fotoğraf saklanır; tekrar göndermek ya da yeniden çekmek bir dokunuş.
+ Formun okunuyor
+ Birkaç saniye sürebilir.
+ Fotoğraf hazırlanıyor 
+ Gönderilecek 
+ Cevaplar okunacak 
+ Vazgeç 
+ 1 · Hazırlanıyor Fotoğraf küçültülüp sıkıştırılır (telefonda). Süre yazılmaz; yalnız gerçek adım. 
+ Formun okunuyor
+ Birkaç saniye sürebilir.
+ Fotoğraf hazırlandı 
+ Gönderiliyor %64 
+ Cevaplar okunacak 
+ Vazgeç 
+ 2 · Gönderiliyor %64 Yüzde gerçek yükleme ilerlemesi. Bitmiş adım geçmiş zamanla yazılır: "Fotoğraf hazırlandı". 
+ Formun okunuyor
+ Birkaç saniye sürebilir.
+ Fotoğraf hazırlandı 
+ Gönderildi 
+ Cevapların okunuyor 
+ Vazgeç 
+ 3 · Okunuyor Sunucu cevapları okurken belirsiz gösterge. 30 sn içinde yanıt yoksa 4. kare. 
+ Formun gönderilemedi
+ Bağlantı koptu. Fotoğrafın duruyor; tekrar gönderebilir ya da yeniden çekebilirsin.
+ Fotoğraf hazırlandı 
+ Gönderilemedi 
+ Cevaplar okunacak 
+ Tekrar Dene Yeni Fotoğraf 
+ 4 · Gönderilemedi Sayfa kapanmaz, fotoğraf kaybolmaz. Zaman aşımında aynı kalıp, metin: "Sunucu yanıt vermedi." 
+ Bileşenler
+ Adım satırı 56 pt; durum ikonu 24 pt: bitti navy-900 daire + onay, sürüyor çark, bekliyor 2 pt border-strong halka, hata error .
+ İlerleme çubuğu 8 pt, orange-600 dolgu, bg-sunken ray (1.15).
+ Fotoğraf kartı surface , 8 pt iç pay, shadow-raised .
+ Hata kalıbı: "Tekrar Dene" birincil, "Yeni Fotoğraf" sakin düğme (1.9).
+ Hareket ve haptik
+ Adım değişimi 250 ms çapraz geçiş, standard eğri; ilerleme çubuğu değeri anında izler.
+ Çark duration-loop 1200 ms; hareketi azaltta sabit yay + metin.
+ Hata geldiğinde error haptiği; başarıda haptik sonuç anında (5.1), burada değil.
+ Erişilebilirlik ve metin
+ Başlık bölgesi aria-live=polite : adım değişince okunur; yüzde her %10'da bir duyurulur.
+ "Vazgeç" gönderimi durdurur, köşe ekranına (4.4) fotoğrafla döner.
+ Eskiden yalnız "Denemeniz Analiz Ediliyor!" ve çark vardı; hata SnackBar'da "Hata: …" yazıp sayfayı kapatıyordu, fotoğraf kayboluyordu (envanter).

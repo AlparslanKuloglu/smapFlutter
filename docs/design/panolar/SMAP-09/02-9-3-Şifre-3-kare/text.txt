@@ -1,0 +1,49 @@
+9.3 Şifre 
+ 9.3 · Tur 8 · Hesap
+ Şifre · 3 Kare
+ Mevcut, yeni ve tekrar; kural ipucu; hata ve başarı.
+ Şifre
+ Mevcut şifre •••••••••• 
+ Yeni şifre •••••••••• 
+ En az 8 karakter.
+ Yeni şifre (tekrar) •••••••••• 
+ Şifreyi Güncelle 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Şifre Üç etiketli alan, göster/gizle; kural baştan yazılı. Tek birincil düğme. 
+ Şifre
+ Mevcut şifre •••••••••• 
+ Mevcut şifren doğru değil. 
+ Yeni şifre •••••••••• 
+ En az 8 karakter.
+ Yeni şifre (tekrar) •••••••••• 
+ Şifreyi Güncelle 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Mevcut şifre hatalı Hata alanın altında, çözüm söyler; odak mevcut şifrede. Yeni şifreler korunur. 
+ Hesap
+ Alparslan Kuloğlu
+ 12. Sınıf · Eşit Ağırlık
+ Koçun: Mehmet Özkan
+ Hesap
+ Profil Ad, e-posta, telefon, sınıf ve alan Şifre 
+ Koçluk
+ Koçluk Mehmet Özkan 
+ Bildirimler
+ Bildirimler Deneme sonucu, koç, görüşme, hatırlatıcı 
+ Yasal
+ Sözleşmeler Kullanım Koşulları, KVKK, Gizlilik 
+ Şifren güncellendi. 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Güncellendi Hesap'a döner, toast 4 sn. Diğer cihazlardaki oturumlar kapanır (not). 
+ Kurallar
+ Yeni şifre en az 8 karakter (1.12).
+ Yeni şifre mevcutla aynıysa: "Yeni şifre eskisiyle aynı olamaz."
+ Eşleşmezse: "Şifreler aynı değil."
+ Davranış
+ Düğme alanlar doluyken çalışır; gönderirken spinner.
+ Başarıda bu cihazın oturumu açık kalır, diğerleri kapanır.
+ Şifremi unuttum bağlantısı burada yok; çıkış yapmadan sıfırlama 2.4 akışıyla Hesap › Şifre'den değil girişten.
+ Eskiden
+ "Şifre ve Güvenlik" profilin altında, kalemle açılıyordu; alanlar yalnız placeholder ile etiketliydi (33).

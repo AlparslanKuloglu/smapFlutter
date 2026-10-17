@@ -1,0 +1,76 @@
+9.2 Profil 
+ 9.2 · Tur 8 · Hesap
+ Profil · 4 Kare
+ Görüntüleme ve düzenleme; avatar değişimi (7) ve sınıf seçimi alttan sheet.
+ Düzenle 
+ Profil
+ Avatarı Değiştir 
+ Ad Soyad Alparslan Kuloğlu
+ Kullanıcı adı alparslan.k
+ E-posta alparslan@ornek.com
+ Telefon +90 5XX XXX XX XX
+ Sınıf 12. Sınıf
+ Alan Eşit Ağırlık
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Görüntüleme Alanlar salt okunur stilde (1.12): gri zemin, tam kontrast. Kullanıcı adı kilitli. Sağ üstte Düzenle. 
+ Vazgeç 
+ Kaydet 
+ Profil
+ Avatarı Değiştir 
+ Ad Soyad Alparslan Kuloğlu
+ Kullanıcı adı alparslan.k
+ Kullanıcı adı değiştirilemez.
+ E-posta alparslan@ornek.com
+ Telefon +90 5XX XXX XX XX
+ Sınıf 12. Sınıf 
+ Alan Eşit Ağırlık 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Düzenleme Bar: Vazgeç ve Kaydet. Alanlar açılır; telefon +90 5XX XXX XX XX maskesi, sayı klavyesi. Sınıf ve Alan alttan sheet. 
+ Vazgeç 
+ Kaydet 
+ Profil
+ Avatarı Değiştir 
+ Ad Soyad Alparslan Kuloğlu
+ Kullanıcı adı alparslan.k
+ Kullanıcı adı değiştirilemez.
+ E-posta alparslan@ornek.com
+ Telefon +90 5XX XXX XX XX
+ Sınıf 12. Sınıf 
+ Alan Eşit Ağırlık 
+ Avatarını seç
+ 7 avatar
+ Bu Avatarı Kullan 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Avatar 7 avatar tek bakışta, sayısı yazılı; seçili 2 pt halka (1.17). Seçim Kaydet'le kalıcı olur. 
+ Vazgeç 
+ Kaydet 
+ Profil
+ Avatarı Değiştir 
+ Ad Soyad Alparslan Kuloğlu
+ Kullanıcı adı alparslan.k
+ Kullanıcı adı değiştirilemez.
+ E-posta alparslan@ornek.com
+ Telefon +90 5XX XXX XX XX
+ Sınıf 12. Sınıf 
+ Alan Eşit Ağırlık 
+ Sınıf
+ 9. Sınıf 10. Sınıf 11. Sınıf 12. Sınıf Mezun 
+ 9. ya da 10. sınıfı seçersen alan kaldırılır.
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 4 · Sınıf sheet'i Radyo listesi; seçince sheet kapanır, ayrı onay yok (1.13). 9.–10. sınıfta alan kaldırılır. 
+ Alanlar
+ Ad Soyad, Kullanıcı adı (değişmez), E-posta, Telefon, Sınıf, Alan. Koçta Sınıf ve Alan yok.
+ E-posta değişirse yeni adrese 6 haneli doğrulama kodu (2.4 kutuları) gider; doğrulanana kadar eski adres geçerli.
+ Hesabı Sil formun en altında (9.4).
+ Davranış
+ Kaydet: değişen alan yoksa pasif. Kaydedince görüntülemeye döner, toast "Profilin güncellendi." (4 sn).
+ Vazgeç: değişiklik varsa "Değişiklikler kaydedilmesin mi?" normal onayı.
+ Kaydetme hatası: form korunur, toast "Kaydedilemedi. Bağlantını kontrol edip tekrar dene."
+ Eskiden
+ Profil ve şifre tek sayfada; alanlar gri dolgu ve kalem ikonuyla düzenleniyordu (32, 33).
+ Telefon "5XX XXX XX XX" maskesiz; sınıf ve alan profilden değiştirilemiyordu (32).
+ Ad ve avatar üst barda ve sayfada iki kez (32).

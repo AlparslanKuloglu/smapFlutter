@@ -1,0 +1,49 @@
+13.1 İlk Açılış ve Kayıt 
+ 13.1 · Ekran Akışı
+ İlk Açılış ve Kayıt
+ Uygulamayı ilk kez açan öğrencinin yolu: açılış, tanıtım, rol ve sınıf seçimi, kamera ön açıklaması, hoş geldin, kayıt ve ilk Anasayfa. Koçun farkı ve kayıt durumları ilgili ekranın altında.
+ Okun üstü: dokunulan yer Kesikli ok: kendiliğinden geçiş Üst sıra ana yol; altında o ekranın durumları ve koyu teması Kod: kaynak pano ve kare 
+ 1 Açılış 
+ 2.1 · kare 1
+ kendiliğinden
+ 2 Tanıtım 1 · okut 
+ 2.1 · kare 2
+ Devam Et
+ 3 Tanıtım 2 · analiz 
+ 2.1 · kare 3
+ Devam Et
+ 4 Tanıtım 3 · eksikler 
+ 2.1 · kare 4
+ Başla
+ 5 Rol 
+ 2.2 · kare 1
+ Öğrenci Koçuyum seçilirse sınıf sorulmaz; kamera ön açıklamasına geçer.
+ Öğrenciyim, Devam Et
+ 6 Sınıf ve alan 
+ 2.2 · kare 2
+ Durumlar · 1
+ 9.–10. sınıf, alan yok 2.2 · kare 3 
+ Devam Et
+ 7 Kamera ön açıklaması 
+ 2.2 · kare 4
+ İzin Ver ya da Sonra
+ 8 Hoş geldin 
+ 2.2 · kare 5
+ Giriş Yap: 13.2
+ Kayıt Ol
+ 9 Kayıt · üst 
+ 2.5 · kare 1
+ Durumlar · 1
+ Alan hataları 2.6 · kare 1 
+ aşağı kaydır
+ 10 Kayıt · alt 
+ 2.5 · kare 2
+ Durumlar · 4
+ Gönderimde hatalar 2.6 · kare 2 
+ Metinler yüklenemedi 2.6 · kare 3 
+ 10. sınıf 2.6 · kare 4 
+ Koç kaydı · alt 2.5 · kare 3 
+ Kayıt Ol
+ 11 Anasayfa · yeni kullanıcı 
+ 3.1 · kare 3
+ Sonra 13.3 Anasayfa ve Programım

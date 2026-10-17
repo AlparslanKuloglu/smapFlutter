@@ -1,0 +1,54 @@
+3.3 Anasayfa Koyu 
+ 3.3 · Tur 6 · Anasayfa ve Programım
+ Anasayfa · Koyu · 1 Kare
+ Anasayfa'nın koyu tema karşılığı.
+ Merhaba, Alparslan
+ 252 gün kaldı
+ YKS · 19 Haziran 2027 Cumartesi
+ Bugün
+ Cumartesi, 10 Ekim · Ekim 2. Hafta
+ Programım 
+ 10:00 Türkçe
+ Fiilde Çatı
+ 14:00 Tarih
+ Kurtuluş Savaşı Hazırlık Dönemi
+ 20:00 Coğrafya
+ İklim Bilgisi
+ Son denemen
+ Türkiye Geneli Deneme 6
+ Örnek Yayınları · AYT · 5 Eki. 2026
+ 67,5 net +8,25 önceki AYT'ye göre 
+ 86 doğru 74 yanlış 0 boş 
+ En çok kaçırdığın konu
+ Kurtuluş Savaşı Hazırlık Dönemi'nde 13 sorudan 9'unu kaçırdın.
+ Analizi Gör 
+ Derslerin
+ Eksiği en çok olandan başlar
+ Tarih
+ 60 eksik 
+ Coğrafya
+ 44 eksik 
+ Türkçe
+ 31 eksik 
+ Fizik
+ 14 eksik 
+ Biyoloji
+ 11 eksik 
+ Kimya
+ 9 eksik 
+ Türk Dili ve Edebiyatı
+ 3 eksik 
+ Matematik
+ Web'de 
+ Geometri
+ Web'de 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Anasayfa · koyu Yapı açık temayla aynı. 
+ Koyu tema
+ Bant yine navy-900 (1.24); kartlar #121D31, ayraç #26354D.
+ Fark rengi koyuda #9BB3D3 (info); D/Y/B koyu tonlar (1.23).
+ Ders karoları koyu ders tonlarında (1.5); eksik etiketi #F2C46D / #33270F.
+ Birincil düğme #C5D4E8 üstünde #091A31.
+ Neden
+ Ek D-14: Anasayfa koyu listede; akşam çalışmasında ilk açılan ekran.

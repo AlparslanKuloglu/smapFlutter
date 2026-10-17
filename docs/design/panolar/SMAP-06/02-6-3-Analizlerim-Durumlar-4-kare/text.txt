@@ -1,0 +1,52 @@
+6.3 Analizlerim Durumlar 
+ 6.3 · Tur 4 · Analizlerim
+ Analizlerim · Durumlar · 4 Kare
+ İskelet, tek deneme, hata ve çevrimdışı. Boş durum 6.2'de.
+ Analizlerim
+ Genel Denemelerim 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · İskelet Bant ve sekmeler hemen; grafik ve kutular iskelet. 15 sn'de veri yoksa 3. kare. 
+ Analizlerim
+ Genel Denemelerim 
+ TYT · Genel 1 deneme 
+ İlk denemen
+ 74,75 net 
+ TYT Genel Deneme 9 · 28 Eylül 2026
+ İkinci denemenden sonra gelişim grafiğin burada çizilir.
+ 1 Çözülen deneme 
+ 74,75 Ortalama net 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Tek deneme Tek noktalı grafik yerine tek değer ve bir cümle. Değişim satırı yok: karşılaştırılacak ikinci deneme yok. 
+ Analizlerim
+ Genel Denemelerim 
+ Analizlerin yüklenemedi
+ Bağlantını kontrol edip tekrar dene.
+ Tekrar Dene 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Hata Ekran düzeyi hata; sekmeler çalışır, Denemelerim ayrı yüklenir. 
+ Analizlerim
+ Genel Denemelerim 
+ Çevrimdışısın. Son kaydedilen veriler gösteriliyor. 
+ TYT · Genel 6 deneme 
+ Net gelişimi
+ Son 6 deneme 
+ 120 90 60 30 0 22 Nis. 14 May. 17 Haz. 4 Ağu. 15 Eyl. 28 Eyl. 
+ 6 Çözülen deneme 
+ 67,79 Ortalama net +3,25 son denemede 
+ 381,40 Ortalama puan 
+ 182.430 Ortalama sıralama 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 4 · Çevrimdışı Son kaydedilen veri ve şerit; süzgeç yalnız önbellekteki türlerle çalışır. 
+ Kurallar
+ Deneme yoksa iki sekme de boş durumu (6.2, kare 3) gösterir.
+ Tek denemede grafik çizilmez; iki denemeden itibaren çizgi.
+ Değişim satırı yalnız iki deneme varsa; "geçen ay" hiçbir yerde yok.
+ Hareket ve haptik
+ İskelet parıltısı 1200 ms; çevrimdışı şeridi 250 ms'de iner.
+ Hata ve çevrimdışı haptiksiz (kullanıcı eylemi değil).
+ Eskiden
+ Yükleme göstergesi, boş ve hata durumu yoktu; hata yalnız debugPrint'e yazılıyordu; ilk yüklemede grafik boş ya da tek nokta (envanter).

@@ -1,0 +1,35 @@
+3.8 Programım Haftalık Koyu 
+ 3.8 · Tur 6 · Anasayfa ve Programım
+ Programım · Hafta · Koyu · 1 Kare
+ Hafta görünümünün koyu tema karşılığı.
+ Ekim 2. Hafta
+ Düzenle 
+ Gün Hafta 
+ Per 8 
+ Cum 9 
+ Cmt 10 
+ Paz 11 
+ 08:00 
+ 09:00 
+ 10:00 
+ 11:00 
+ 12:00 
+ 13:00 
+ 14:00 
+ 15:00 
+ 16:00 
+ 17:00 
+ 18:00 
+ 19:00 
+ 20:00 
+ 21:00 
+ Türkçe Tarih Coğrafya 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Hafta · koyu Yapı açık temayla aynı (3.4 kare 4). 
+ Koyu tema
+ Izgara çizgileri #26354D, saat etiketi #A9B5C6.
+ Bloklar koyu ders tonlarında (Türkçe #2D211C / #E2A98D, Tarih #2C2513 / #E3B651, Coğrafya #12293C / #7DB9EC).
+ Bugün çizgisi #FF8533; segment koyu (#213049, seçili #C5D4E8).
+ Neden
+ Ek D-14: Programım (haftalık) koyu listede; gece planlama.

@@ -1,0 +1,52 @@
+2.3 Giriş 
+ 2.3 · Tur 7 · Açılış ve Giriş
+ Giriş · 4 Kare
+ Kullanıcı adı ve şifreyle giriş; gönderim ve hata durumları; Apple ve Google ile ayrı varyant.
+ SMAP 
+ Giriş yap
+ Kullanıcı adı 
+ Şifre 
+ Şifremi Unuttum 
+ Giriş Yap 
+ Hesabın yok mu? Kayıt Ol 
+ 1 · Giriş Etiketli alanlar, boş gelir (test bilgileri koddan kalkar). Odak kullanıcı adında. Logo yalnız açılışta ve girişte (1.26). 
+ SMAP 
+ Giriş yap
+ Kullanıcı adı alparslan.k
+ Şifre •••••••••• 
+ Şifremi Unuttum 
+ Giriş yapılıyor 
+ Hesabın yok mu? Kayıt Ol 
+ 2 · Gönderiliyor Düğmede spinner ve "Giriş yapılıyor"; alanlar kilitlenir. 15 sn'de yanıt yoksa bağlantı hatası. 
+ SMAP 
+ Giriş yap
+ Kullanıcı adı alparslan.k
+ Şifre 
+ Şifremi Unuttum 
+ Kullanıcı adı ya da şifre hatalı. Tekrar dene ya da şifreni sıfırla. 
+ Giriş Yap 
+ Hesabın yok mu? Kayıt Ol 
+ 3 · Hatalı bilgi Hangi alanın yanlış olduğu söylenmez (güvenlik); çözüm yazar. Şifre temizlenir, odak şifrede. Haptik: error. 
+ SMAP 
+ Giriş yap
+ Apple ile Devam Et Google ile Devam Et 
+ ya da kullanıcı adınla 
+ Kullanıcı adı 
+ Şifre 
+ Şifremi Unuttum 
+ Giriş Yap 
+ Hesabın yok mu? Kayıt Ol 
+ 4 · Varyant · Apple ve Google Ayrı varyant (D-17). İki düğme eşit ağırlıkta, aynı stil ve boy. Resmî logo varlıkları kullanılır; panoda yer tutucu. 
+ Bileşenler
+ Alanlar 1.12: etiket 14/20 üstte, 48 pt alan, odak 2 pt navy-800 .
+ Şifre göster/gizle ikon düğmesi 48 pt, adı "Şifreyi göster" / "Şifreyi gizle".
+ Hata kutusu: error-bg , Warning ikonu, 15/22 metin.
+ "Beni Hatırla" yok: oturum açık kalır, çıkış Hesap'ta (Tur 8).
+ Davranış
+ Klavye: kullanıcı adında "ileri", şifrede "git" Giriş Yap'ı çalıştırır.
+ Büyük harf ve boşluk kullanıcı adında kırpılır; şifre olduğu gibi.
+ Başarılı girişte rol hesaptan okunur: öğrenci Anasayfa (3.1), koç Koç Anasayfa (Tur 9). Bilinmeyen rol 2.7.
+ Eskiden
+ Etiketsiz alanlar "student" ve şifreyle dolu geliyordu (06).
+ Apple ve Google 40 pt yuvarlak ikon, "veya hesabınızla bağlanın" (06).
+ Gezginler çizimi ve kart içinde form; klavye açılınca düğme kayboluyordu (06).

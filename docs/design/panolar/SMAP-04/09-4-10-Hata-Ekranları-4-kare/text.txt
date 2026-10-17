@@ -1,0 +1,33 @@
+4.10 Hatalar 
+ 4.10 · Tur 2 · Kamera ve Optik Okuma
+ Hata Ekranları · 4 Kare
+ Akışın her yerinden gelebilen hatalar. Eskiden sayfa kapanıp SnackBar çıkıyordu ve fotoğraf kayboluyordu; şimdi her hata nedenini ve sıradaki adımı söylüyor.
+ Formu bulamadık
+ Fotoğrafta cevap alanı seçilemedi. Formun tamamı görünsün, ışık yansımasın, ders adları şeridi dışarıda kalsın.
+ Yeni Fotoğraf Nasıl Çekilir? 
+ 1 · Form bulunamadı Sunucu cevap alanını seçemezse. "Nasıl Çekilir?" öğreticiyi (4.2) açar. 
+ Anasayfa
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ Optik okuma şu an kapalı
+ Kısa bir bakım yapıyoruz. Birazdan tekrar dene.
+ Tamam 
+ 2 · Okuma geçici olarak kapalı Kamera düğmesine basınca, kamera açılmadan. Bilgi sheet'i, tek düğme "Tamam". Tahmini süre sunucu verirse eklenir; uydurulmaz. 
+ Bağlantı yok
+ Fotoğrafın telefonunda saklandı. Bağlantı gelince gönderilecek.
+ Tamam Şimdi Tekrar Dene 
+ 3 · Çevrimdışı · planlı Planlı: v1'de bekleme kuyruğu yok; v1'de çevrimdışıyken 4.5'teki hata kalıbı açılır. Kuyruk gelince bu ekran kullanılır. 
+ Kamera açılamadı
+ Başka bir uygulama kamerayı kullanıyor olabilir. Onu kapatıp tekrar dene.
+ Tekrar Dene 
+ 4 · Kamera açılamadı Kamera aşamasında olduğu için koyu. Eklentinin kendi "No Camera" metni gösterilmez. 
+ Kalıp
+ Tam ekran hata: 80 pt rozet, başlık, tek cümle neden + ne yapmalı, en fazla iki düğme (1.22 ekran düzeyi hata).
+ Rozet renkleri: hata error-bg , bilgi info-bg , çevrimdışı bg-sunken .
+ İç kod, "Hata:" öneki, ham Exception metni yok.
+ Hareket ve haptik
+ Hata ekranları 250 ms çapraz geçişle gelir; error haptiği yalnız 1 ve 4'te (kullanıcının yaptığı bir işlem başarısız).
+ Bakım ve çevrimdışı haptiksiz: kullanıcının hatası değil.
+ Erişilebilirlik
+ Hata metni role=alert , bilgi role=status ile açılışta okunur.
+ Odak birincil düğmede; Kapat her zaman sol üstte.

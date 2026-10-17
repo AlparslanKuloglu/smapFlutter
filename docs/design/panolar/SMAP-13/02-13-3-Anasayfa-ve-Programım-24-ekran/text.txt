@@ -1,0 +1,56 @@
+13.3 Anasayfa ve Programım 
+ 13.3 · Ekran Akışı
+ Anasayfa ve Programım
+ Öğrencinin ana sekmesi ve haftalık programı: program kurmak, gün ve hafta görünümü, düzenleme, onaylı sıfırlama ve iptal.
+ Okun üstü: dokunulan yer Kesikli ok: kendiliğinden geçiş Üst sıra ana yol; altında o ekranın durumları ve koyu teması Kod: kaynak pano ve kare 
+ Buradan Alt çubuk · Anasayfa
+ 1 Anasayfa 
+ 3.1 · kare 1
+ Durumlar ve koyu tema · 6
+ Kaydırılmış 3.1 · kare 2 
+ İskelet 3.2 · kare 1 
+ Bölüm hatası 3.2 · kare 2 
+ Çevrimdışı 3.2 · kare 3 
+ Metin %130 3.2 · kare 4 
+ Koyu 3.3 · kare 1 
+ Programım
+ 2 Programım · liste 
+ 3.4 · kare 1
+ Durumlar · 5
+ Arama, sonuç yok 3.4 · kare 2 
+ Boş 3.7 · kare 1 
+ İskelet 3.7 · kare 2 
+ Hata 3.7 · kare 3 
+ Çevrimdışı 3.7 · kare 4 
+ Yeni Program
+ 3 Yeni program · günler 
+ 3.5 · kare 1
+ Devam Et
+ 4 Izgara 
+ 3.5 · kare 2
+ boş saate dokun
+ 5 Konu seç 
+ 3.5 · kare 3
+ Ekle, Devam Et
+ 6 Ad ve motto 
+ 3.5 · kare 4
+ Programı Kaydet
+ 7 Program · gün 
+ 3.4 · kare 3
+ Hafta
+ 8 Program · hafta 
+ 3.4 · kare 4
+ Durumlar ve koyu tema · 1
+ Hafta · koyu 3.8 · kare 1 
+ Düzenle
+ 9 Düzenleme modu 
+ 3.6 · kare 1
+ Günü Sıfırla
+ 10 Günü sıfırla · onay 
+ 3.6 · kare 2
+ Günü Sıfırla
+ 11 Gün sıfırlandı 
+ 3.6 · kare 3
+ Programı İptal Et
+ 12 Programı iptal · onay 
+ 3.6 · kare 4

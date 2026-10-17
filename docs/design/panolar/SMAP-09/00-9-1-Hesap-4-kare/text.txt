@@ -1,0 +1,73 @@
+9.1 Hesap 
+ 9.1 · Tur 8 · Hesap
+ Hesap · 4 Kare
+ Kök sekme: profil özeti, gruplar (Hesap, Koçluk, Bildirimler, Yasal, Destek), onaylı Çıkış Yap ve sürüm. Koç varyantı.
+ Hesap
+ Alparslan Kuloğlu
+ 12. Sınıf · Eşit Ağırlık
+ Koçun: Mehmet Özkan
+ Hesap
+ Profil Ad, e-posta, telefon, sınıf ve alan Şifre 
+ Koçluk
+ Koçluk Mehmet Özkan 
+ Bildirimler
+ Bildirimler Deneme sonucu, koç, görüşme, hatırlatıcı 
+ Yasal
+ Sözleşmeler Kullanım Koşulları, KVKK, Gizlilik 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Hesap · üst Bant: başlık ve profil özeti (avatar, ad, sınıf · alan, koç); ad ve avatar yalnız burada ve Anasayfa'da (D-9). Gruplar: Hesap, Koçluk, Bildirimler, Yasal, Destek. 
+ Hesap
+ Bildirimler
+ Bildirimler Deneme sonucu, koç, görüşme, hatırlatıcı 
+ Yasal
+ Sözleşmeler Kullanım Koşulları, KVKK, Gizlilik 
+ Destek
+ Bize Yaz E-posta uygulaman açılır 
+ Çıkış Yap 
+ Sürüm 3.0.0 (300)
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Hesap · alt Çıkış Yap ayrı grupta, kırmızı, oksuz (1.13). Altta sürüm. Ödeme, paketler ve kayıtlı kartlar yok (D-4). 
+ Hesap
+ Bildirimler
+ Bildirimler Deneme sonucu, koç, görüşme, hatırlatıcı 
+ Yasal
+ Sözleşmeler Kullanım Koşulları, KVKK, Gizlilik 
+ Destek
+ Bize Yaz E-posta uygulaman açılır 
+ Çıkış Yap 
+ Sürüm 3.0.0 (300)
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ Çıkış yapılsın mı?
+ Tekrar girmek için kullanıcı adın ve şifren gerekecek. Okuttuğun denemeler hesabında kalır.
+ Çıkış Yap Vazgeç 
+ 3 · Çıkış onayı Normal onay (1.21): eylemin adı sorunun fiili. Kırmızı düğme yalnız silmede. 
+ Hesap
+ Mehmet Özkan
+ Öğrenci koçu
+ Koçluk kodun: MOZK-4821
+ Hesap
+ Profil Ad, e-posta, telefon, sınıf ve alan Şifre 
+ Koçluk
+ Koçluk kodun MOZK-4821 
+ Bildirimler
+ Bildirimler Deneme sonucu, koç, görüşme, hatırlatıcı 
+ Yasal
+ Sözleşmeler Kullanım Koşulları, KVKK, Gizlilik 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 4 · Koç · Hesap Koçta Koçluk grubu kodu taşır: Kopyala ve Paylaş. Alt çubuk koç sekmeleriyle (D-29). 
+ Bileşenler
+ Satır 1.13: ikon 24, başlık 16/600, alt metin 13, sağda ok; grup başlığı 13/600, grup yüzeyi 16 pt köşe.
+ Bant 1.18 kök; profil özeti tek dokunma alanı, Profil'i açar.
+ Bize Yaz: dış uygulama ikonu (ArrowSquareOut), e-posta taslağı sürüm ve cihaz bilgisiyle dolar.
+ Davranış
+ Çıkış: onaydan sonra Hoş geldin (2.2 kare 5); bekleyen gönderim varsa onay metni "Gönderilmeyi bekleyen 1 form var; çıkarsan silinir." olur.
+ Koç kodu Kopyala: toast "Kod kopyalandı." (4 sn); Paylaş sistem paylaşımını açar.
+ Sürüm satırına uzun basınca kopyalanır (destek için).
+ Eskiden
+ Ödeme ve Paketler, Kayıtlı Kartlarım menüde (31, 34, 35).
+ Satırlar zeminle aynı tonda (1,05:1); renkli emoji benzeri ikonlar (31).
+ Koçluk ve destek yoktu; sürüm numarası yoktu; Çıkış diğer satırlarla aynı biçimde (31).

@@ -1,0 +1,25 @@
+4.2 Öğretici 
+ 4.2 · Tur 2 · Kamera ve Optik Okuma
+ Öğretici · 1 Kare
+ Tek ekran, üç adım, çizim. Eskisi tek sayfalık bir "sayfa göstergesi", büyük harfli "ANLADIM" ve rengi tutmayan bir metin taşıyordu (38).
+ Optik Form 
+ Formu böyle çek
+ 2 1 3 
+ 1 Cevap alanını çerçeveye al. 
+ 2 Ders adlarının yazdığı yatay şeridi dışarıda bırak. 
+ 3 Turuncu noktaları cevap alanının dört köşesine getir. 
+ Bir daha gösterme 
+ Anladım 
+ 1 · İlk açılış Kamera ilk açıldığında bir kez. Kapanınca çekim ekranı (4.3) aynen kalır; ? ile istendiğinde yeniden açılır. 
+ Ne gösteriyor
+ Fotoğraf yerine çizim: cevap alanı turuncu kesikli çerçevede, ders adları şeridi kırmızı taralı.
+ Üç adım, üç kısa cümle. Eskiden tek paragraf ve "beyaz noktalar" yazıyordu, noktalar turuncuydu (38).
+ Sağ üstteki ? ile açılınca "Bir daha gösterme" görünmez; tek fark bu.
+ Bileşenler
+ Sheet uzun boy, perde koyu ( scrim koyu %64) çünkü arkada kamera var.
+ Adım numarası 28 pt navy-100 daire, navy-900 rakam.
+ Onay kutusu 1.13; "Anladım" birincil, büyük harf yok ("ANLADIM" kalktı).
+ Hareket ve haptik
+ İlk açılışta kamera hazır olunca 350 ms'de sheet gelir.
+ "Anladım" ile sheet 250 ms'de iner; kamera önizlemesi kesilmez.
+ Onay kutusunda selectionClick .

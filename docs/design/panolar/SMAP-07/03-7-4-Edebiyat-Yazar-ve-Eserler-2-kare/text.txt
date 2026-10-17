@@ -1,0 +1,55 @@
+7.4 Edebiyat 
+ 7.4 · Tur 5 · Derslerim ve Konular
+ Edebiyat · Yazar ve Eserler · 2 Kare
+ Edebiyata özgü ikinci bölüm: yazar listesi ve yazar sheet'i.
+ Türk Dili ve Edebiyatı
+ Konular Yazar ve Eserler 
+ NK Namık Kemal
+ Tanzimat
+ Ş Şinasi
+ Tanzimat
+ ZP Ziya Paşa
+ Tanzimat
+ TF Tevfik Fikret
+ Servet-i Fünun
+ HZ Halit Ziya Uşaklıgil
+ Servet-i Fünun
+ MA Mehmet Akif Ersoy
+ Millî Edebiyat Dönemi
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Yazar ve Eserler Edebiyatta segment: Konular / Yazar ve Eserler. Satır: fotoğraf (burada baş harf), ad, dönem. 
+ Türk Dili ve Edebiyatı
+ Konular Yazar ve Eserler 
+ NK Namık Kemal
+ Tanzimat
+ Ş Şinasi
+ Tanzimat
+ ZP Ziya Paşa
+ Tanzimat
+ TF Tevfik Fikret
+ Servet-i Fünun
+ HZ Halit Ziya Uşaklıgil
+ Servet-i Fünun
+ MA Mehmet Akif Ersoy
+ Millî Edebiyat Dönemi
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ NK Namık Kemal
+ Tanzimat
+ Hakkında
+ Tanzimat Dönemi'nin şair ve yazarı; "vatan şairi" olarak bilinir. Edebiyatı toplumu eğitmenin aracı olarak gördü.
+ Eserleri
+ Roman
+ İntibah · Cezmi
+ Tiyatro
+ Vatan yahut Silistre · Gülnihal · Akif Bey · Zavallı Çocuk · Kara Bela · Celaleddin Harzemşah
+ Öğrendim 
+ 2 · Yazar sheet'i Hakkında, türüne göre gruplu eserler, "Öğrendim". Yazar listesi Ek C'de yok; müfredattan örnek. 
+ Bileşenler
+ Segment 2 seçenek; seçim cihazda hatırlanır.
+ Yazar satırı 72 pt; fotoğraf 48 pt daire (yoksa baş harf, Edebiyat tonları).
+ Sheet uzun boy; eserler tür başlığıyla (13/700) gruplu, 16/26 metin.
+ Veri
+ Fotoğraflar assets/authors klasöründen (38 MB, Görsel Dil); panoda baş harf yedeği.
+ Dönem adları müfredattaki gibi; eser listesi tam değil, örnek.

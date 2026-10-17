@@ -1,0 +1,76 @@
+3.4 Programım 
+ 3.4 · Tur 6 · Anasayfa ve Programım
+ Programım · 4 Kare
+ Anasayfa'daki "Programım"dan açılır. Liste ve arama; programın gün ve hafta görünümleri.
+ Programım
+ Yeni Program 
+ Program ara 
+ Ekim 2. Hafta Bu hafta 
+ Her gün biraz daha
+ 5–11 Ekim 2026
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Liste Satır: ad, motto, tarih aralığı. Bu haftanın programı "Bu hafta" etiketli (turuncu nokta = bugün, D-7). Sağ üstte tek eylem. 
+ Programım
+ Yeni Program 
+ kasım 
+ “kasım” ile eşleşen program yok
+ Program adında ve mottosunda arar; büyük-küçük harf ve I/ı farkı gözetmez.
+ Aramayı Temizle 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Arama · sonuç yok Arama ad ve mottoda, harf duyarsız (I/ı/İ/i). Sonuç yoksa tek cümle ve "Aramayı Temizle". 
+ Düzenle 
+ Ekim 2. Hafta
+ Her gün biraz daha
+ 5–11 Ekim 2026
+ Gün Hafta 
+ Pzt 5 Sal 6 Çar 7 Per 8 Cum 9 Cmt 10 Paz 11 
+ Cumartesi, 10 Ekim
+ 3 çalışma 
+ 10:00 Türkçe
+ Fiilde Çatı
+ 14:00 Tarih
+ Kurtuluş Savaşı Hazırlık Dönemi
+ 20:00 Coğrafya
+ İklim Bilgisi
+ Günü Sıfırla 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Gün Gün şeridi: bugün turuncu nokta, seçili gün lacivert. Saat, ders, konu; tamamlama yok (D-26). "Günü Sıfırla" sonda, onaylı (3.6). 
+ Ekim 2. Hafta
+ Düzenle 
+ Gün Hafta 
+ Per 8 
+ Cum 9 
+ Cmt 10 
+ Paz 11 
+ 08:00 
+ 09:00 
+ 10:00 
+ 11:00 
+ 12:00 
+ 13:00 
+ 14:00 
+ 15:00 
+ 16:00 
+ 17:00 
+ 18:00 
+ 19:00 
+ 20:00 
+ 21:00 
+ Türkçe Tarih Coğrafya 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 4 · Hafta Izgara 06:00–23:00, yatay kayar; açılışta bugünün sütunu ve ilk çalışma görünür. Blokta ders; konu dokununca. Başlık bara inmiş. 
+ Bileşenler
+ Detay barı 1.18 kare 4; sağ eylem 40 pt ikincil düğme ( Yeni Program , Düzenle ).
+ Gün şeridi yeni: 48 × 64 gün düğmesi, bugün noktası orange-600 6 pt.
+ Hafta ızgarası: saat sütunu 44, gün sütunu 84, saat 40 pt; blok ders tonlarında (1.5).
+ Davranış
+ Program satırı Gün görünümünde bugünü açar; bugün aralıkta değilse ilk günü.
+ Gün / Hafta seçimi cihazda hatırlanır.
+ Bloğa ya da satıra dokununca konu detayı; uzun basınca saat değiştirme (düzenleme modunda).
+ Eskiden
+ Arama alanı vardı ama doğru süzmüyordu (envanter §2.7).
+ Program yalnız liste olarak; günün ve haftanın görünümü yoktu (envanter §2.7).

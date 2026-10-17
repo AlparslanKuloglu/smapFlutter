@@ -1,0 +1,299 @@
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/885713fb-9d03-4683-a0ab-c9148263ee94.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/b634fd98-b37b-4b09-9a60-f3d232f03c95.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/885713fb-9d03-4683-a0ab-c9148263ee94.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/b634fd98-b37b-4b09-9a60-f3d232f03c95.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/885713fb-9d03-4683-a0ab-c9148263ee94.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/b634fd98-b37b-4b09-9a60-f3d232f03c95.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/885713fb-9d03-4683-a0ab-c9148263ee94.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/b634fd98-b37b-4b09-9a60-f3d232f03c95.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/885713fb-9d03-4683-a0ab-c9148263ee94.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/b634fd98-b37b-4b09-9a60-f3d232f03c95.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+body{margin:0}
+*{box-sizing:border-box}
+button{font-family:inherit;border:0;margin:0;cursor:pointer;background:transparent;color:inherit;padding:0}
+input{font-family:inherit;margin:0;outline:none}
+.ph{width:402px;height:874px;border-radius:56px;overflow:hidden;position:relative;background:#F2F4F7;box-shadow:0 0 0 1px #C3CBD6;color:#1B2232;flex:none}
+.ph.dk{background:#0A1424;box-shadow:0 0 0 1px #34445F;color:#EDF1F6}
+.ph.cm{background:#000000;box-shadow:0 0 0 1px #34445F;color:#FFFFFF}
+.di{position:absolute;top:11px;left:138px;width:126px;height:37px;border-radius:19px;background:#000000;z-index:9}
+.hi{position:absolute;bottom:8px;left:134px;width:134px;height:5px;border-radius:3px;background:#1B2232;z-index:9}
+.dk .hi,.cm .hi{background:#EDF1F6}
+.abs{position:absolute}
+.cap{width:402px}
+.cap b{display:block;font-size:15px;line-height:20px;margin-top:16px}
+.cap span{display:block;font-size:13px;line-height:20px;color:#556173;margin-top:2px}
+.t24{margin:0;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.3px}
+.t20{margin:0;font-size:20px;line-height:28px;font-weight:700;letter-spacing:-0.2px}
+.t17{margin:0;font-size:17px;line-height:24px;font-weight:700;letter-spacing:-0.1px}
+.b16{margin:0;font-size:16px;line-height:24px}
+.b15{margin:0;font-size:15px;line-height:24px}
+.c13{margin:0;font-size:13px;line-height:20px}
+.mu{color:#556173}
+.dk .mu,.cm .mu{color:#A9B5C6}
+.bp{height:48px;border-radius:12px;background:#0F294A;color:#FFFFFF;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bp,.cm .bp{background:#C5D4E8;color:#091A31}
+.bp.off{background:#DCE2E9;color:#9AA5B4}
+.dk .bp.off,.cm .bp.off{background:#213049;color:#56657C}
+.bo{height:48px;border-radius:12px;background:#FFFFFF;color:#0F294A;box-shadow:inset 0 0 0 1.5px #0F294A;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bo,.cm .bo{background:transparent;color:#C5D4E8;box-shadow:inset 0 0 0 1.5px #C5D4E8}
+.bq{height:48px;border-radius:12px;background:#E8ECF1;color:#1B2232;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bq,.cm .bq{background:#213049;color:#EDF1F6}
+.bt{height:48px;padding:0 12px;border-radius:12px;color:#1A3357;font-size:16px;line-height:24px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.dk .bt,.cm .bt{color:#9BB3D3}
+.ib{width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;flex:none;border-radius:12px;color:inherit}
+.ibc{width:40px;height:40px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:rgba(10,20,36,0.64);color:#FFFFFF}
+.scrim{position:absolute;inset:0;background:rgba(9,26,49,0.48);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:4}
+.scrim.dk2{background:rgba(2,6,14,0.64)}
+.sh{position:absolute;left:0;right:0;bottom:0;background:#FFFFFF;border-radius:24px 24px 0 0;z-index:5;display:flex;flex-direction:column;color:#1B2232}
+.dk .sh{background:#18263D;color:#EDF1F6}
+.hd{width:36px;height:4px;border-radius:999px;background:#C3CBD6;margin:8px auto 0;flex:none}
+.dk .hd{background:#34445F}
+.shh{display:flex;align-items:flex-start;gap:8px;padding:12px 12px 0 24px}
+.shf{padding:16px 24px 42px;display:flex;flex-direction:column;gap:12px}
+.xi{width:36px;height:36px;border-radius:999px;background:#E8ECF1;color:#1B2232;display:inline-flex;align-items:center;justify-content:center}
+.dk .xi{background:#213049;color:#EDF1F6}
+.fl{display:block;font-size:14px;line-height:20px;font-weight:600;margin-bottom:8px}
+.in{width:100%;height:48px;padding:0 16px;border-radius:12px;border:1px solid #697586;background:#FFFFFF;font-size:16px;line-height:24px;color:#1B2232;display:flex;align-items:center}
+.in.err{border:2px solid #C42D35;padding:0 15px}
+.ph-t{color:#697586}
+.er{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:13px;line-height:20px;font-weight:600;color:#C42D35}
+.hp{font-size:13px;line-height:20px;color:#556173;margin-top:6px}
+.seg{display:flex;gap:4px;padding:4px;background:#E8ECF1;border-radius:12px}
+.dk .seg{background:#213049}
+.seg button{flex:1;min-height:36px;border-radius:8px;color:#556173;font-size:14px;line-height:20px;font-weight:600}
+.dk .seg button{color:#A9B5C6}
+.seg button.on{background:#0F294A;color:#FFFFFF}
+.dk .seg button.on{background:#C5D4E8;color:#091A31}
+.seg.cnt button{min-height:48px;padding:4px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.seg.cnt button b{font-size:14px;line-height:20px;font-weight:700;color:#1B2232}
+.seg.cnt button i{font-style:normal;font-size:13px;line-height:20px;font-weight:500}
+.seg.cnt button.on b{color:#FFFFFF}
+.seg.cnt button.on i{color:#C5D4E8}
+.sq{width:48px;height:48px;border-radius:12px;background:#FFFFFF;color:#1B2232;box-shadow:inset 0 0 0 1px #697586;font-size:16px;line-height:24px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.sq.w{width:64px}
+.sq.on{background:#0F294A;color:#FFFFFF;box-shadow:none}
+.cb{display:flex;align-items:center;gap:12px;min-height:48px;font-size:15px;line-height:24px;text-align:left}
+.cbx{width:24px;height:24px;border-radius:4px;box-shadow:inset 0 0 0 2px #697586;flex:none;display:inline-flex;align-items:center;justify-content:center}
+.dk .cbx{box-shadow:inset 0 0 0 2px #6B7D97}
+.c24{width:24px;height:24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;flex:none}
+.dyl{font-size:15px;line-height:24px;font-weight:600;color:#556173}
+.dk .dyl{color:#A9B5C6}
+.dyv{font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.4px;margin-top:4px}
+.card{background:#FFFFFF;border-radius:16px}
+.dk .card{background:#121D31}
+.toast{display:flex;align-items:center;gap:12px;min-height:48px;padding:12px 16px;border-radius:12px;background:#0F294A;color:#FFFFFF;font-size:15px;line-height:24px;box-shadow:0 8px 24px rgba(15,41,74,0.16)}
+.sk{background:#E8ECF1;border-radius:8px}
+.nts{display:grid;column-gap:48px;row-gap:24px}
+.nts h3{margin:0 0 10px;font-size:17px;line-height:24px;font-weight:700}
+.nts ul{margin:0;padding:0 0 0 18px;font-size:14px;line-height:22px;color:#1B2232}
+.nts li{margin:0 0 6px}
+.nts code{font-family:inherit;font-weight:600;color:#264066}
+.tk{display:inline-block;font-weight:600;color:#264066}
+.cm .sh .bp{background:#0F294A;color:#FFFFFF}
+.cm .sh .bq{background:#E8ECF1;color:#1B2232}
+.cm .sh .mu{color:#556173}
+.cm .sh .bt{color:#1A3357}
+.c16{width:16px;height:16px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;flex:none}
+.dk .c16{color:#0A1424}
+.sm{display:inline-flex;align-items:center;gap:4px;font-size:15px;line-height:20px;font-weight:700}
+.sm i{font-style:normal;font-size:13px;font-weight:500;color:#556173}
+.dk .sm i{color:#A9B5C6}
+.qc{height:76px;border-radius:8px;padding:6px;display:flex;flex-direction:column;justify-content:space-between;position:relative;text-align:center}
+.qn{font-size:13px;line-height:20px;font-weight:600;color:#556173;text-align:left}
+.dk .qn{color:#A9B5C6}
+.qm{font-size:20px;line-height:24px;font-weight:700}
+.qa{font-size:13px;line-height:16px;font-weight:600;color:#0B6E3E}
+.dk .qa{color:#52CC8E}
+.qs{position:absolute;top:8px;right:8px}
+.bar{display:flex;gap:2px;height:12px;border-radius:999px;overflow:hidden}
+.tr{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:72px;width:100%;text-align:left}
+.tr+.tr{border-top:1px solid #E8ECF1}
+.dk .tr+.tr{border-top:1px solid #26354D}
+.tn{font-size:16px;line-height:24px;font-weight:600}
+.tm{font-size:13px;line-height:20px;color:#556173}
+.dk .tm{color:#A9B5C6}
+.tg{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:8px;background:#E8ECF1;color:#1B2232;font-size:13px;line-height:20px;font-weight:600;white-space:nowrap}
+.dk .tg{background:#213049;color:#EDF1F6}
+.tabs{display:flex;height:48px;box-shadow:inset 0 -1px 0 #DCE2E9}
+.dk .tabs{box-shadow:inset 0 -1px 0 #26354D}
+.tabs button{flex:1;position:relative;color:#556173;font-size:15px;line-height:24px;font-weight:600}
+.dk .tabs button{color:#A9B5C6}
+.tabs button.on{color:#1B2232;font-weight:700}
+.dk .tabs button.on{color:#EDF1F6}
+.tabs .u{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:3px;border-radius:999px;background:#E05500}
+.dk .tabs .u{background:#FF8533}
+.sep{border-top:1px solid #E8ECF1}
+.dk .sep{border-top:1px solid #26354D}
+.off{display:flex;align-items:center;gap:10px;min-height:40px;padding:8px 16px;background:#1B2232;color:#FFFFFF;font-size:13px;line-height:20px;font-weight:600}

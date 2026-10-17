@@ -1,0 +1,105 @@
+10.4 Öğrenci Profili 
+ 10.4 · Tur 9 · Koç
+ Öğrenci Profili · Koç Bağlamında · 4 Kare
+ Koç bir öğrencinin verisindeyken: bağlam şeridi, Analiz · Denemeler · Program sekmeleri ve öğrenci ekranlarının taşınması.
+ Görüşme Planla 
+ Alparslan Kuloğlu'nun verileri 12. Sınıf · EA 
+ Alparslan Kuloğlu
+ alparslan.k · 10 deneme · son 5 Eki. 2026
+ Analiz Denemeler Program 
+ TYT · Genel 6 deneme 
+ Net gelişimi
+ Son 6 deneme 
+ 120 90 60 30 0 22 Nis. 17 Haz. 15 Eyl. 28 Eyl. 
+ 6 Çözülen deneme 
+ 67,79 Ortalama net +3,25 son denemede 
+ 381,40 Ortalama puan 
+ 182.430 Ortalama sıralama 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 1 · Analiz Bağlam şeridi (1.18 kare 6) her ekranda. Analiz sekmesi 6.1'in aynısı: süzgeç, eksenli grafik, dört kutu. 
+ Görüşme Planla 
+ Alparslan Kuloğlu'nun verileri 12. Sınıf · EA 
+ Alparslan Kuloğlu
+ alparslan.k · 10 deneme · son 5 Eki. 2026
+ Analiz Denemeler Program 
+ 10 deneme · en yeni önce
+ Türkiye Geneli Deneme 6
+ AYT 5 Eki. 2026 · Örnek Yayınları 
+ 86 D 74 Y 0 B 
+ 67,5
+ net
+ TYT Genel Deneme 9
+ TYT 28 Eyl. 2026 
+ 80 D 21 Y 19 B 
+ 74,75
+ net
+ AYT denemesi
+ AYT 21 Eyl. 2026 
+ 59,25
+ net
+ TYT denemesi
+ TYT 15 Eyl. 2026 
+ 71,5
+ net
+ TYT denemesi
+ TYT 4 Ağu. 2026 
+ 66,75
+ net
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 2 · Denemeler 6.2 satırları; favori yıldızı yok (öğrencinin cihazına özel, D-25). Satır Deneme Detay'ı açar. 
+ Görüşme Planla 
+ Alparslan Kuloğlu'nun verileri 12. Sınıf · EA 
+ Alparslan Kuloğlu
+ alparslan.k · 10 deneme · son 5 Eki. 2026
+ Analiz Denemeler Program 
+ Ekim 2. Hafta
+ Her gün biraz daha · 5–11 Ekim 2026
+ Pzt 5 Sal 6 Çar 7 Per 8 Cum 9 Cmt 10 Paz 11 
+ 10:00 Türkçe
+ Fiilde Çatı
+ 14:00 Tarih
+ Kurtuluş Savaşı Hazırlık Dönemi
+ 20:00 Coğrafya
+ İklim Bilgisi
+ Programı Alparslan düzenler; sen görüntülersin. 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 3 · Program 3.4 gün görünümü salt okunur: Günü Sıfırla ve Düzenle yok, nedeni tek satır. 
+ Alparslan Kuloğlu'nun verileri 12. Sınıf · EA 
+ Örnek Yayınları
+ Türkiye Geneli Deneme 6
+ AYT 5 Ekim 2026 
+ 67,5 net 
+ Doğru 
+ 86
+ Yanlış 
+ 74
+ Boş 
+ 0
+ Eşit Ağırlık
+ 412,63
+ Yerleştirme puanı
+ 48.215.
+ Sıra
+ Genel Sorular Konular Kartlar 
+ Türk Dili ve Edebiyatı–Sosyal Bilimler 1 18,75 net 
+ 23 D 17 Y 0 B 40 soru 
+ Sosyal Bilimler 2 11,25 net 
+ 17 D 23 Y 0 B 40 soru 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 4 · Deneme Detay · taşınma 5.3 aynen; yalnız barın altına şerit girer, içerik 40 pt aşağı kayar. Sorular, Konular, Kartlar sekmeleri de aynı. 
+ Taşınma kuralı
+ Öğrenci ekranları koça aynı bileşenlerle gelir: 6.1 → Analiz, 6.2 → Denemeler, 3.4 → Program, 5.3–5.7 → deneme ve soru detayı.
+ Fark üç şey: bağlam şeridi, düzenleme eylemlerinin olmaması, öğrenciye özel olanların (favori, kart "Öğrendim") gizlenmesi.
+ Kamera koçta da var: okutulan form koçun seçtiği öğrenciye yazılır (Tur 2 akışı, öğrenci seçimi sheet'iyle).
+ Bileşenler
+ Bağlam şeridi 40 pt, navy-50 #F1F5FA; avatar 24, "Ad Soyad'ın verileri", sağda sınıf · alan kısaltması.
+ Sekmeler 3.x ekran içi sekme (1.10): Analiz · Denemeler · Program; gösterge orange-600 .
+ Bar eylemi: "Görüşme Planla" (yeni görüşme sheet'ini öğrenci seçili açar).
+ Erişilebilirlik
+ Şerit ekran okuyucuda ilk okunan öğe: "Alparslan Kuloğlu'nun verileri, 12. sınıf, Eşit Ağırlık".
+ Sekmeler tablist; seçili sekme bildirilir.
+ Şerit kaydırınca barla birlikte sabit kalır.

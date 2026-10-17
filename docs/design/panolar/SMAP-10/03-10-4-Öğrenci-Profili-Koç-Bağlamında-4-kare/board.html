@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<title>10.4 Öğrenci Profili</title>
+<script src="res/27333161-0bfe-4a65-8c1a-564dbef8a6fe.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/f237ef52-7d3e-4159-a74f-417e7e26f1d9.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/90d85d7f-4787-487e-8fd9-6f27efc0cbd6.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/f237ef52-7d3e-4159-a74f-417e7e26f1d9.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/90d85d7f-4787-487e-8fd9-6f27efc0cbd6.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/f237ef52-7d3e-4159-a74f-417e7e26f1d9.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/90d85d7f-4787-487e-8fd9-6f27efc0cbd6.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/f237ef52-7d3e-4159-a74f-417e7e26f1d9.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/90d85d7f-4787-487e-8fd9-6f27efc0cbd6.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/f237ef52-7d3e-4159-a74f-417e7e26f1d9.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/90d85d7f-4787-487e-8fd9-6f27efc0cbd6.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+button{font-family:inherit;border:0;margin:0;cursor:pointer;background:transparent;color:inherit;padding:0}
+input{font-family:inherit;margin:0;outline:none}
+.ph{width:402px;height:874px;border-radius:56px;overflow:hidden;position:relative;background:#F2F4F7;box-shadow:0 0 0 1px #C3CBD6;color:#1B2232;flex:none}
+.ph.dk{background:#0A1424;box-shadow:0 0 0 1px #34445F;color:#EDF1F6}
+.ph.cm{background:#000000;box-shadow:0 0 0 1px #34445F;color:#FFFFFF}
+.di{position:absolute;top:11px;left:138px;width:126px;height:37px;border-radius:19px;background:#000000;z-index:9}
+.hi{position:absolute;bottom:8px;left:134px;width:134px;height:5px;border-radius:3px;background:#1B2232;z-index:9}
+.dk .hi,.cm .hi{background:#EDF1F6}
+.abs{position:absolute}
+.cap{width:402px}
+.cap b{display:block;font-size:15px;line-height:20px;margin-top:16px}
+.cap span{display:block;font-size:13px;line-height:20px;color:#556173;margin-top:2px}
+.t24{margin:0;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.3px}
+.t20{margin:0;font-size:20px;line-height:28px;font-weight:700;letter-spacing:-0.2px}
+.t17{margin:0;font-size:17px;line-height:24px;font-weight:700;letter-spacing:-0.1px}
+.b16{margin:0;font-size:16px;line-height:24px}
+.b15{margin:0;font-size:15px;line-height:24px}
+.c13{margin:0;font-size:13px;line-height:20px}
+.mu{color:#556173}
+.dk .mu,.cm .mu{color:#A9B5C6}
+.bp{height:48px;border-radius:12px;background:#0F294A;color:#FFFFFF;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bp,.cm .bp{background:#C5D4E8;color:#091A31}
+.bp.off{background:#DCE2E9;color:#9AA5B4}
+.dk .bp.off,.cm .bp.off{background:#213049;color:#56657C}
+.bo{height:48px;border-radius:12px;background:#FFFFFF;color:#0F294A;box-shadow:inset 0 0 0 1.5px #0F294A;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bo,.cm .bo{background:transparent;color:#C5D4E8;box-shadow:inset 0 0 0 1.5px #C5D4E8}
+.bq{height:48px;border-radius:12px;background:#E8ECF1;color:#1B2232;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bq,.cm .bq{background:#213049;color:#EDF1F6}
+.bt{height:48px;padding:0 12px;border-radius:12px;color:#1A3357;font-size:16px;line-height:24px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.dk .bt,.cm .bt{color:#9BB3D3}
+.ib{width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;flex:none;border-radius:12px;color:inherit}
+.ibc{width:40px;height:40px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:rgba(10,20,36,0.64);color:#FFFFFF}
+.scrim{position:absolute;inset:0;background:rgba(9,26,49,0.48);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:4}
+.scrim.dk2{background:rgba(2,6,14,0.64)}
+.sh{position:absolute;left:0;right:0;bottom:0;background:#FFFFFF;border-radius:24px 24px 0 0;z-index:5;display:flex;flex-direction:column;color:#1B2232}
+.dk .sh{background:#18263D;color:#EDF1F6}
+.hd{width:36px;height:4px;border-radius:999px;background:#C3CBD6;margin:8px auto 0;flex:none}
+.dk .hd{background:#34445F}
+.shh{display:flex;align-items:flex-start;gap:8px;padding:12px 12px 0 24px}
+.shf{padding:16px 24px 42px;display:flex;flex-direction:column;gap:12px}
+.xi{width:36px;height:36px;border-radius:999px;background:#E8ECF1;color:#1B2232;display:inline-flex;align-items:center;justify-content:center}
+.dk .xi{background:#213049;color:#EDF1F6}
+.fl{display:block;font-size:14px;line-height:20px;font-weight:600;margin-bottom:8px}
+.in{width:100%;height:48px;padding:0 16px;border-radius:12px;border:1px solid #697586;background:#FFFFFF;font-size:16px;line-height:24px;color:#1B2232;display:flex;align-items:center}
+.in.err{border:2px solid #C42D35;padding:0 15px}
+.ph-t{color:#697586}
+.er{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:13px;line-height:20px;font-weight:600;color:#C42D35}
+.hp{font-size:13px;line-height:20px;color:#556173;margin-top:6px}
+.seg{display:flex;gap:4px;padding:4px;background:#E8ECF1;border-radius:12px}
+.dk .seg{background:#213049}
+.seg button{flex:1;min-height:36px;border-radius:8px;color:#556173;font-size:14px;line-height:20px;font-weight:600}
+.dk .seg button{color:#A9B5C6}
+.seg button.on{background:#0F294A;color:#FFFFFF}
+.dk .seg button.on{background:#C5D4E8;color:#091A31}
+.seg.cnt button{min-height:48px;padding:4px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.seg.cnt button b{font-size:14px;line-height:20px;font-weight:700;color:#1B2232}
+.seg.cnt button i{font-style:normal;font-size:13px;line-height:20px;font-weight:500}
+.seg.cnt button.on b{color:#FFFFFF}
+.seg.cnt button.on i{color:#C5D4E8}
+.dk .seg.cnt button b{color:#EDF1F6}
+.dk .seg.cnt button.on b{color:#091A31}
+.dk .seg.cnt button.on i{color:#1A3357}
+.sq{width:48px;height:48px;border-radius:12px;background:#FFFFFF;color:#1B2232;box-shadow:inset 0 0 0 1px #697586;font-size:16px;line-height:24px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.sq.w{width:64px}
+.sq.on{background:#0F294A;color:#FFFFFF;box-shadow:none}
+.cb{display:flex;align-items:center;gap:12px;min-height:48px;font-size:15px;line-height:24px;text-align:left}
+.cbx{width:24px;height:24px;border-radius:4px;box-shadow:inset 0 0 0 2px #697586;flex:none;display:inline-flex;align-items:center;justify-content:center}
+.dk .cbx{box-shadow:inset 0 0 0 2px #6B7D97}
+.c24{width:24px;height:24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;flex:none}
+.dyl{font-size:15px;line-height:24px;font-weight:600;color:#556173}
+.dk .dyl{color:#A9B5C6}
+.dyv{font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.4px;margin-top:4px}
+.card{background:#FFFFFF;border-radius:16px}
+.dk .card{background:#121D31}
+.toast{display:flex;align-items:center;gap:12px;min-height:48px;padding:12px 16px;border-radius:12px;background:#0F294A;color:#FFFFFF;font-size:15px;line-height:24px;box-shadow:0 8px 24px rgba(15,41,74,0.16)}
+.sk{background:#E8ECF1;border-radius:8px}
+.nts{display:grid;column-gap:48px;row-gap:24px}
+.nts h3{margin:0 0 10px;font-size:17px;line-height:24px;font-weight:700}
+.nts ul{margin:0;padding:0 0 0 18px;font-size:14px;line-height:22px;color:#1B2232}
+.nts li{margin:0 0 6px}
+.nts code{font-family:inherit;font-weight:600;color:#264066}
+.tk{display:inline-block;font-weight:600;color:#264066}
+.cm .sh .bp{background:#0F294A;color:#FFFFFF}
+.cm .sh .bq{background:#E8ECF1;color:#1B2232}
+.cm .sh .mu{color:#556173}
+.cm .sh .bt{color:#1A3357}
+.c16{width:16px;height:16px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;flex:none}
+.dk .c16{color:#0A1424}
+.sm{display:inline-flex;align-items:center;gap:4px;font-size:15px;line-height:20px;font-weight:700}
+.sm i{font-style:normal;font-size:13px;font-weight:500;color:#556173}
+.dk .sm i{color:#A9B5C6}
+.qc{height:76px;border-radius:8px;padding:6px;display:flex;flex-direction:column;justify-content:space-between;position:relative;text-align:center}
+.qn{font-size:13px;line-height:20px;font-weight:600;color:#556173;text-align:left}
+.dk .qn{color:#A9B5C6}
+.qm{font-size:20px;line-height:24px;font-weight:700}
+.qa{font-size:13px;line-height:16px;font-weight:600;color:#0B6E3E}
+.dk .qa{color:#52CC8E}
+.qs{position:absolute;top:8px;right:8px}
+.bar{display:flex;gap:2px;height:12px;border-radius:999px;overflow:hidden}
+.tr{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:72px;width:100%;text-align:left}
+.tr+.tr{border-top:1px solid #E8ECF1}
+.dk .tr+.tr{border-top:1px solid #26354D}
+.tn{font-size:16px;line-height:24px;font-weight:600}
+.tm{font-size:13px;line-height:20px;color:#556173}
+.dk .tm{color:#A9B5C6}
+.tg{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:8px;background:#E8ECF1;color:#1B2232;font-size:13px;line-height:20px;font-weight:600;white-space:nowrap}
+.dk .tg{background:#213049;color:#EDF1F6}
+.tabs{display:flex;height:48px;box-shadow:inset 0 -1px 0 #DCE2E9}
+.dk .tabs{box-shadow:inset 0 -1px 0 #26354D}
+.tabs button{flex:1;position:relative;color:#556173;font-size:15px;line-height:24px;font-weight:600}
+.dk .tabs button{color:#A9B5C6}
+.tabs button.on{color:#1B2232;font-weight:700}
+.dk .tabs button.on{color:#EDF1F6}
+.tabs .u{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:3px;border-radius:999px;background:#E05500}
+.dk .tabs .u{background:#FF8533}
+.sep{border-top:1px solid #E8ECF1}
+.dk .sep{border-top:1px solid #26354D}
+.off{display:flex;align-items:center;gap:10px;min-height:40px;padding:8px 16px;background:#1B2232;color:#FFFFFF;font-size:13px;line-height:20px;font-weight:600}
+.av{display:inline-block;border-radius:999px;overflow:hidden;flex:none;background-size:cover;background-position:center;background-color:#DCE2E9}
+.av-1{background-image:url(data:image/webp;base64,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)}
+.band{background:#0F294A;padding-top:62px;border-radius:0 0 24px 24px}
+.bnt{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 4px 0 16px;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.3px;color:#FFFFFF}
+.hb{background:#0F294A;padding:62px 16px 20px;border-radius:0 0 24px 24px;color:#FFFFFF}
+.hg{margin:0;font-size:20px;line-height:28px;font-weight:700;letter-spacing:-0.2px;color:#FFFFFF}
+.rw{width:100%;display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 16px;position:relative;text-align:left}
+.rw+.rw{border-top:1px solid #E8ECF1}
+.su{font-size:13px;line-height:20px;color:#556173}
+.ctx{position:absolute;top:102px;left:0;right:0;height:40px;display:flex;align-items:center;gap:8px;padding:0 16px;background:#F1F5FA;box-shadow:inset 0 1px 0 #DCE2E9,inset 0 -1px 0 #DCE2E9;z-index:2}
+.s2{height:40px;padding:0 14px;border-radius:12px;background:#FFFFFF;color:#0F294A;box-shadow:inset 0 0 0 1.5px #0F294A;font-size:14px;line-height:20px;font-weight:600;display:inline-flex;align-items:center;gap:6px;flex:none}
+.ch{height:40px;padding:0 14px;border-radius:999px;background:#FFFFFF;color:#1B2232;font-size:15px;line-height:20px;font-weight:600;box-shadow:inset 0 0 0 1px #697586;display:inline-flex;align-items:center;gap:6px}
+.ch.on{background:#0F294A;color:#FFFFFF;box-shadow:none}
+.sb{background:#FFFFFF;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:2px}
+.sv{font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.4px}
+.sl{font-size:13px;line-height:20px;font-weight:600;color:#556173}
+.stt{display:flex;flex-direction:column;align-items:flex-start;gap:8px;width:108px;flex:none;padding:14px;border-radius:16px;background:#FFFFFF;text-align:left}
+.fo{border-color:#1A3357!important;box-shadow:inset 0 0 0 1px #1A3357}
+.wrap{position:relative}
+.wrap .ib{position:absolute;top:0;right:0;color:#556173}
+.ok{display:flex;gap:6px;align-items:center;margin-top:6px;font-size:13px;line-height:20px;font-weight:600;color:#0B6E3E}
+.bdg{height:48px;border-radius:12px;background:#C42D35;color:#FFFFFF;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.fr{box-shadow:0 0 0 2px #FFFFFF,0 0 0 4px #36537C}
+.dn{color:#C42D35}
+.inf{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:#E2EAF4;color:#1B2232;font-size:15px;line-height:22px}
+.mk{background:#FCF1D9;color:#1B2232;border-radius:4px;padding:0 1px}
+.ta{width:100%;min-height:120px;padding:12px 16px;border-radius:12px;border:1px solid #697586;background:#FFFFFF;font-size:16px;line-height:24px;color:#1B2232}
+.code{font-size:24px;line-height:32px;font-weight:700;letter-spacing:1px}
+.tabs3{display:flex;height:48px;box-shadow:inset 0 -1px 0 #DCE2E9}
+.tabs3 button{flex:1;position:relative;color:#556173;font-size:15px;line-height:24px;font-weight:600}
+.tabs3 button.on{color:#1B2232;font-weight:700}
+.tabs3 .u{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:3px;border-radius:999px;background:#E05500}
+.dc{width:48px;height:64px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;background:#FFFFFF}
+.dc i{font-style:normal;font-size:13px;line-height:20px;font-weight:600;color:#556173}
+.dc b{font-size:17px;line-height:24px;font-weight:700}
+.dc.on{background:#0F294A;color:#FFFFFF}
+.dc.on i{color:#C5D4E8}
+.td{position:absolute;bottom:5px;left:50%;transform:translateX(-50%);width:6px;height:6px;border-radius:999px;background:#E05500}
+.dc.on .td{background:#FF6600}
+.pr{display:flex;align-items:center;gap:12px;padding:10px 12px 10px 16px;min-height:64px;width:100%;text-align:left}
+.pr+.pr{border-top:1px solid #E8ECF1}
+.gt{width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+</style>
+</helmet>
+<div style="width: 1880px; height: 1480px; background: #FFFFFF; color: #1B2232; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; padding: 64px; display: flex; flex-direction: column; gap: 40px; font-variant-numeric: tabular-nums">
+<header style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 15px; line-height: 20px; font-weight: 600; color: #556173">10.4 · Tur 9 · Koç</div>
+<h1 style="margin: 0; font-size: 36px; line-height: 44px; font-weight: 800; letter-spacing: -0.5px">Öğrenci Profili · Koç Bağlamında · 4 Kare</h1>
+<p style="margin: 4px 0 0; font-size: 17px; line-height: 28px; color: #556173; max-width: 1500px">Koç bir öğrencinin verisindeyken: bağlam şeridi, Analiz · Denemeler · Program sekmeleri ve öğrenci ekranlarının taşınması.</p>
+</header>
+<div style="display: flex; gap: 48px; align-items: flex-start"><div style="flex: none"><div class="ph" role="img" aria-label="Öğrenci profili, analiz"><div class="di"></div><div class="abs" style="top: 54px; left: 4px"><button class="ib" aria-label="Geri"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="160 208 80 128 160 48"></polyline></svg></button></div><div class="abs" style="top: 58px; right: 16px"><button class="s2"><svg width="18" height="18" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="40" y="40" width="176" height="176" rx="8"></rect><line x1="176" y1="24" x2="176" y2="56"></line><line x1="80" y1="24" x2="80" y2="56"></line><line x1="40" y1="88" x2="216" y2="88"></line></svg>Görüşme Planla</button></div><div class="ctx"><span class="av av-1" style="width: 24px; height: 24px" aria-hidden="true"></span><span style="font-size: 13px; line-height: 20px; font-weight: 600">Alparslan Kuloğlu'nun verileri</span><span style="margin-left: auto; font-size: 13px; line-height: 20px; color: #556173">12. Sınıf · EA</span></div><div class="abs" style="top: 154px; left: 16px; right: 16px"><h1 class="t24">Alparslan Kuloğlu</h1><p class="c13 mu" style="margin-top: 2px">alparslan.k · 10 deneme · son 5 Eki. 2026</p></div><div class="abs tabs3" role="tablist" aria-label="Öğrenci bölümleri" style="top: 214px; left: 0; right: 0"><button role="tab" aria-selected="true" class="on">Analiz<span class="u" style="width: 52px"></span></button><button role="tab" aria-selected="false">Denemeler</button><button role="tab" aria-selected="false">Program</button></div><div class="abs" style="top: 278px; left: 16px; right: 16px; display: flex; align-items: center; justify-content: space-between"><button class="ch" aria-haspopup="dialog">TYT · Genel<svg width="18" height="18" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="208 96 128 176 48 96"></polyline></svg></button><span class="c13 mu" style="font-weight: 600">6 deneme</span></div><div class="abs card" style="top: 330px; left: 16px; right: 16px; padding: 16px"><div style="display: flex; justify-content: space-between; align-items: baseline"><h3 class="t17">Net gelişimi</h3><span class="c13 mu" style="font-weight: 600">Son 6 deneme</span></div><div style="margin-top: 10px"><svg width="338" height="200" sc-camel-view-box="0 0 338 200" role="img" aria-label="TYT net grafiği: 22 Nisan 61,5 netten 28 Eylül 74,75 nete, 6 deneme" style="display: block; font-family: 'Plus Jakarta Sans', system-ui, sans-serif"><g stroke="#DCE2E9" stroke-width="1"><line x1="34" y1="10.0" x2="328" y2="10.0"></line><line x1="34" y1="50.0" x2="328" y2="50.0"></line><line x1="34" y1="90.0" x2="328" y2="90.0"></line><line x1="34" y1="130.0" x2="328" y2="130.0"></line><line x1="34" y1="170.0" x2="328" y2="170.0"></line></g><g fill="#556173" font-size="13" text-anchor="end"><text x="28" y="14.0">120</text><text x="28" y="54.0">90</text><text x="28" y="94.0">60</text><text x="28" y="134.0">30</text><text x="28" y="174.0">0</text></g><path d="M48.0 88.0 101.2 84.3 154.4 79.3 207.6 81.0 260.8 74.7 314.0 70.3 L314.0 170.0 L48.0 170.0 Z" fill="#264066" fill-opacity="0.10"></path><polyline points="48.0 88.0 101.2 84.3 154.4 79.3 207.6 81.0 260.8 74.7 314.0 70.3" fill="none" stroke="#264066" stroke-width="2.5" stroke-linejoin="round"></polyline><g fill="#FFFFFF" stroke="#264066" stroke-width="2"><circle cx="48.0" cy="88.0" r="4.5"></circle><circle cx="101.2" cy="84.3" r="4.5"></circle><circle cx="154.4" cy="79.3" r="4.5"></circle><circle cx="207.6" cy="81.0" r="4.5"></circle><circle cx="260.8" cy="74.7" r="4.5"></circle></g><circle cx="314.0" cy="70.3" r="7" fill="#E05500" stroke="#FFFFFF" stroke-width="2.5"></circle><g fill="#556173" font-size="13" text-anchor="middle"><text x="48.0" y="192">22 Nis.</text><text x="154.4" y="192">17 Haz.</text><text x="260.8" y="192">15 Eyl.</text><text x="314.0" y="192">28 Eyl.</text></g></svg></div></div><div class="abs" style="top: 618px; left: 16px; right: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px"><div class="sb"><span class="sv">6</span><span class="sl">Çözülen deneme</span></div><div class="sb"><span class="sv">67,79</span><span class="sl">Ortalama net</span><span class="c13" style="font-weight: 600; color: #36537C; display: inline-flex; align-items: center; gap: 4px"><svg width="14" height="14" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="128" y1="216" x2="128" y2="40"></line><polyline points="56 112 128 40 200 112"></polyline></svg>+3,25 son denemede</span></div><div class="sb"><span class="sv">381,40</span><span class="sl">Ortalama puan</span></div><div class="sb"><span class="sv">182.430</span><span class="sl">Ortalama sıralama</span></div></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="84" cy="108" r="52"></circle><path d="M10.23 200a88 88 0 0 1 147.54 0"></path><path d="M172 160a87.93 87.93 0 0 1 73.77 40"></path><path d="M152.69 59.7A52 52 0 1 1 172 160"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Öğrencilerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M71.58 144 32 176V48a8 8 0 0 1 8-8h128a8 8 0 0 1 8 8v88a8 8 0 0 1-8 8Z"></path><path d="M80 144v40a8 8 0 0 0 8 8h96.42L224 224V96a8 8 0 0 0-8-8h-40"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Görüşmelerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Hesap</span></button></div></nav><div class="hi"></div></div><div class="cap"><b>1 · Analiz</b><span>Bağlam şeridi (1.18 kare 6) her ekranda. Analiz sekmesi 6.1'in aynısı: süzgeç, eksenli grafik, dört kutu.</span></div></div><div style="flex: none"><div class="ph" role="img" aria-label="Öğrenci profili, denemeler"><div class="di"></div><div class="abs" style="top: 54px; left: 4px"><button class="ib" aria-label="Geri"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="160 208 80 128 160 48"></polyline></svg></button></div><div class="abs" style="top: 58px; right: 16px"><button class="s2"><svg width="18" height="18" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="40" y="40" width="176" height="176" rx="8"></rect><line x1="176" y1="24" x2="176" y2="56"></line><line x1="80" y1="24" x2="80" y2="56"></line><line x1="40" y1="88" x2="216" y2="88"></line></svg>Görüşme Planla</button></div><div class="ctx"><span class="av av-1" style="width: 24px; height: 24px" aria-hidden="true"></span><span style="font-size: 13px; line-height: 20px; font-weight: 600">Alparslan Kuloğlu'nun verileri</span><span style="margin-left: auto; font-size: 13px; line-height: 20px; color: #556173">12. Sınıf · EA</span></div><div class="abs" style="top: 154px; left: 16px; right: 16px"><h1 class="t24">Alparslan Kuloğlu</h1><p class="c13 mu" style="margin-top: 2px">alparslan.k · 10 deneme · son 5 Eki. 2026</p></div><div class="abs tabs3" role="tablist" aria-label="Öğrenci bölümleri" style="top: 214px; left: 0; right: 0"><button role="tab" aria-selected="false">Analiz</button><button role="tab" aria-selected="true" class="on">Denemeler<span class="u" style="width: 84px"></span></button><button role="tab" aria-selected="false">Program</button></div><p class="abs c13 mu" style="top: 276px; left: 20px; font-weight: 600">10 deneme · en yeni önce</p><div class="abs card" style="top: 304px; left: 16px; right: 16px; overflow: hidden"><button class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">Türkiye Geneli Deneme 6</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">AYT</span><span class="c13 mu">5 Eki. 2026</span><span class="c13 mu">· Örnek Yayınları</span></div><div style="margin-top: 6px"><span role="group" aria-label="86 doğru, 74 yanlış, 0 boş" style="display: inline-flex; flex-wrap: wrap; gap: 4px 14px"><span class="sm"><span class="c16" style="background: #0B6E3E"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span>86<i>D</i></span><span class="sm"><span class="c16" style="background: #D8333A"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="196" y1="60" x2="60" y2="196"></line><line x1="196" y1="196" x2="60" y2="60"></line></svg></span>74<i>Y</i></span><span class="sm"><span class="c16" style="background: #7E8A9B"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="128" x2="208" y2="128"></line></svg></span>0<i>B</i></span></span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">67,5</div><div class="c13 mu" style="font-weight: 600">net</div></div></button><button class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">TYT Genel Deneme 9</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">TYT</span><span class="c13 mu">28 Eyl. 2026</span></div><div style="margin-top: 6px"><span role="group" aria-label="80 doğru, 21 yanlış, 19 boş" style="display: inline-flex; flex-wrap: wrap; gap: 4px 14px"><span class="sm"><span class="c16" style="background: #0B6E3E"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span>80<i>D</i></span><span class="sm"><span class="c16" style="background: #D8333A"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="196" y1="60" x2="60" y2="196"></line><line x1="196" y1="196" x2="60" y2="60"></line></svg></span>21<i>Y</i></span><span class="sm"><span class="c16" style="background: #7E8A9B"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="128" x2="208" y2="128"></line></svg></span>19<i>B</i></span></span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">74,75</div><div class="c13 mu" style="font-weight: 600">net</div></div></button><button class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">AYT denemesi</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">AYT</span><span class="c13 mu">21 Eyl. 2026</span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">59,25</div><div class="c13 mu" style="font-weight: 600">net</div></div></button><button class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">TYT denemesi</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">TYT</span><span class="c13 mu">15 Eyl. 2026</span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">71,5</div><div class="c13 mu" style="font-weight: 600">net</div></div></button><button class="tr" style="align-items: flex-start"><span role="img" aria-label="Kapak" style="width: 40px; height: 54px; border-radius: 6px; background: #DCE2E9; flex: none"></span><div style="flex: 1; min-width: 0"><div class="tn">TYT denemesi</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px"><span class="tg">TYT</span><span class="c13 mu">4 Ağu. 2026</span></div></div><div style="text-align: right; flex: none"><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">66,75</div><div class="c13 mu" style="font-weight: 600">net</div></div></button></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="84" cy="108" r="52"></circle><path d="M10.23 200a88 88 0 0 1 147.54 0"></path><path d="M172 160a87.93 87.93 0 0 1 73.77 40"></path><path d="M152.69 59.7A52 52 0 1 1 172 160"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Öğrencilerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M71.58 144 32 176V48a8 8 0 0 1 8-8h128a8 8 0 0 1 8 8v88a8 8 0 0 1-8 8Z"></path><path d="M80 144v40a8 8 0 0 0 8 8h96.42L224 224V96a8 8 0 0 0-8-8h-40"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Görüşmelerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Hesap</span></button></div></nav><div class="hi"></div></div><div class="cap"><b>2 · Denemeler</b><span>6.2 satırları; favori yıldızı yok (öğrencinin cihazına özel, D-25). Satır Deneme Detay'ı açar.</span></div></div><div style="flex: none"><div class="ph" role="img" aria-label="Öğrenci profili, program"><div class="di"></div><div class="abs" style="top: 54px; left: 4px"><button class="ib" aria-label="Geri"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="160 208 80 128 160 48"></polyline></svg></button></div><div class="abs" style="top: 58px; right: 16px"><button class="s2"><svg width="18" height="18" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="40" y="40" width="176" height="176" rx="8"></rect><line x1="176" y1="24" x2="176" y2="56"></line><line x1="80" y1="24" x2="80" y2="56"></line><line x1="40" y1="88" x2="216" y2="88"></line></svg>Görüşme Planla</button></div><div class="ctx"><span class="av av-1" style="width: 24px; height: 24px" aria-hidden="true"></span><span style="font-size: 13px; line-height: 20px; font-weight: 600">Alparslan Kuloğlu'nun verileri</span><span style="margin-left: auto; font-size: 13px; line-height: 20px; color: #556173">12. Sınıf · EA</span></div><div class="abs" style="top: 154px; left: 16px; right: 16px"><h1 class="t24">Alparslan Kuloğlu</h1><p class="c13 mu" style="margin-top: 2px">alparslan.k · 10 deneme · son 5 Eki. 2026</p></div><div class="abs tabs3" role="tablist" aria-label="Öğrenci bölümleri" style="top: 214px; left: 0; right: 0"><button role="tab" aria-selected="false">Analiz</button><button role="tab" aria-selected="false">Denemeler</button><button role="tab" aria-selected="true" class="on">Program<span class="u" style="width: 70px"></span></button></div><div class="abs" style="top: 276px; left: 16px; right: 16px"><h3 class="t17">Ekim 2. Hafta</h3><p class="c13 mu">Her gün biraz daha · 5–11 Ekim 2026</p></div><div class="abs" style="top: 330px; left: 16px; right: 16px; display: flex; justify-content: space-between"><button class="dc" aria-pressed="false" aria-label="5 Ekim"><i>Pzt</i><b>5</b></button><button class="dc" aria-pressed="false" aria-label="6 Ekim"><i>Sal</i><b>6</b></button><button class="dc" aria-pressed="false" aria-label="7 Ekim"><i>Çar</i><b>7</b></button><button class="dc" aria-pressed="false" aria-label="8 Ekim"><i>Per</i><b>8</b></button><button class="dc" aria-pressed="false" aria-label="9 Ekim"><i>Cum</i><b>9</b></button><button class="dc on" aria-pressed="true" aria-label="10 Ekim, bugün"><i>Cmt</i><b>10</b><span class="td"></span></button><button class="dc" aria-pressed="false" aria-label="11 Ekim"><i>Paz</i><b>11</b></button></div><div class="abs card" style="top: 410px; left: 16px; right: 16px; overflow: hidden"><button class="pr" aria-label="10:00, Türkçe, Fiilde Çatı"><span style="font-size: 15px; line-height: 24px; font-weight: 700; min-width: 48px">10:00</span><span class="gt" style="background: #F6ECE6; color: #93573C; width: 36px; height: 36px"><svg width="19" height="19" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="24 192 80 64 136 192"></polyline><line x1="44" y1="148" x2="116" y2="148"></line><circle cx="188" cy="164" r="32"></circle><line x1="220" y1="128" x2="220" y2="196"></line></svg></span><div style="flex: 1; min-width: 0"><div class="tm">Türkçe</div><div class="tn">Fiilde Çatı</div></div><span class="mu" style="display: inline-flex"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button><button class="pr" aria-label="14:00, Tarih, Kurtuluş Savaşı Hazırlık Dönemi"><span style="font-size: 15px; line-height: 24px; font-weight: 700; min-width: 48px">14:00</span><span class="gt" style="background: #FBF1DA; color: #8C6106; width: 36px; height: 36px"><svg width="19" height="19" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="24 96 128 40 232 96"></polyline><line x1="40" y1="96" x2="216" y2="96"></line><line x1="64" y1="104" x2="64" y2="176"></line><line x1="104" y1="104" x2="104" y2="176"></line><line x1="152" y1="104" x2="152" y2="176"></line><line x1="192" y1="104" x2="192" y2="176"></line><line x1="32" y1="208" x2="224" y2="208"></line></svg></span><div style="flex: 1; min-width: 0"><div class="tm">Tarih</div><div class="tn">Kurtuluş Savaşı Hazırlık Dönemi</div></div><span class="mu" style="display: inline-flex"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button><button class="pr" aria-label="20:00, Coğrafya, İklim Bilgisi"><span style="font-size: 15px; line-height: 24px; font-weight: 700; min-width: 48px">20:00</span><span class="gt" style="background: #E1EFFA; color: #1E6FAE; width: 36px; height: 36px"><svg width="19" height="19" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><line x1="32" y1="128" x2="224" y2="128"></line><path d="M128 32c-24 26-36 58-36 96s12 70 36 96c24-26 36-58 36-96s-12-70-36-96Z"></path></svg></span><div style="flex: 1; min-width: 0"><div class="tm">Coğrafya</div><div class="tn">İklim Bilgisi</div></div><span class="mu" style="display: inline-flex"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button></div><div class="abs inf" style="top: 630px; left: 16px; right: 16px"><span style="color: #36537C; display: inline-flex; padding-top: 1px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><line x1="128" y1="120" x2="128" y2="176"></line><circle cx="128" cy="84" r="12" fill="currentColor" stroke="none"></circle></svg></span><span>Programı Alparslan düzenler; sen görüntülersin.</span></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="84" cy="108" r="52"></circle><path d="M10.23 200a88 88 0 0 1 147.54 0"></path><path d="M172 160a87.93 87.93 0 0 1 73.77 40"></path><path d="M152.69 59.7A52 52 0 1 1 172 160"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Öğrencilerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M71.58 144 32 176V48a8 8 0 0 1 8-8h128a8 8 0 0 1 8 8v88a8 8 0 0 1-8 8Z"></path><path d="M80 144v40a8 8 0 0 0 8 8h96.42L224 224V96a8 8 0 0 0-8-8h-40"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Görüşmelerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Hesap</span></button></div></nav><div class="hi"></div></div><div class="cap"><b>3 · Program</b><span>3.4 gün görünümü salt okunur: Günü Sıfırla ve Düzenle yok, nedeni tek satır.</span></div></div><div style="flex: none"><div class="ph" role="img" aria-label="Deneme detay, koç bağlamı"><div class="di"></div><div class="abs" style="top: 54px; left: 4px"><button class="ib" aria-label="Geri"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="160 208 80 128 160 48"></polyline></svg></button></div><div class="ctx"><span class="av av-1" style="width: 24px; height: 24px" aria-hidden="true"></span><span style="font-size: 13px; line-height: 20px; font-weight: 600">Alparslan Kuloğlu'nun verileri</span><span style="margin-left: auto; font-size: 13px; line-height: 20px; color: #556173">12. Sınıf · EA</span></div><div class="abs" style="top: 40px; left: 0; right: 0; bottom: 0"><div class="abs" style="top: 102px; left: 16px; right: 16px; display: flex; gap: 12px; align-items: center"><span role="img" aria-label="Deneme kapağı" style="width: 48px; height: 64px; border-radius: 6px; background: #DCE2E9; color: #697586; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="22" height="22" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="32" y="48" width="192" height="160" rx="8"></rect><circle cx="96" cy="100" r="16"></circle><path d="M32 168l50.34-50.34a8 8 0 0 1 11.32 0L144 168"></path><path d="M128 152l26.34-26.34a8 8 0 0 1 11.32 0L224 184"></path></svg></span><div style="min-width: 0"><p class="c13 mu" style="font-weight: 600">Örnek Yayınları</p><h2 class="t20" style="margin-top: 2px">Türkiye Geneli Deneme 6</h2><div style="display: flex; align-items: center; gap: 8px; margin-top: 4px"><span class="tg" style="background: #E8ECF1">AYT</span><span class="c13 mu">5 Ekim 2026</span></div></div></div><div class="abs" style="top: 182px; left: 16px; display: flex; align-items: baseline; gap: 8px"><span style="font-size: 40px; line-height: 48px; font-weight: 800; letter-spacing: -1px">67,5</span><span class="t17 mu" style="font-weight: 600">net</span></div><div class="abs" style="top: 242px; left: 16px; right: 16px"><div role="group" aria-label="86 doğru, 74 yanlış, 0 boş" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px"><div><div style="display: flex; align-items: center; gap: 8px"><span class="c24" style="background: #0B6E3E; color: #FFFFFF"><svg width="14" height="14" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span><span class="dyl">Doğru</span></div><div class="dyv">86</div></div><div><div style="display: flex; align-items: center; gap: 8px"><span class="c24" style="background: #D8333A; color: #FFFFFF"><svg width="14" height="14" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="196" y1="60" x2="60" y2="196"></line><line x1="196" y1="196" x2="60" y2="60"></line></svg></span><span class="dyl">Yanlış</span></div><div class="dyv">74</div></div><div><div style="display: flex; align-items: center; gap: 8px"><span class="c24" style="background: #7E8A9B; color: #FFFFFF"><svg width="14" height="14" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="128" x2="208" y2="128"></line></svg></span><span class="dyl">Boş</span></div><div class="dyv">0</div></div></div></div><div class="abs card" style="top: 318px; left: 16px; right: 16px; padding: 12px 16px"><p class="c13 mu" style="font-weight: 600">Eşit Ağırlık</p><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 2px"><div><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">412,63</div><div class="c13 mu" style="font-weight: 600">Yerleştirme puanı</div></div><div><div style="font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.4px">48.215.</div><div class="c13 mu" style="font-weight: 600">Sıra</div></div></div></div><div class="abs tabs" role="tablist" aria-label="Deneme bölümleri" style="top: 430px; left: 0; right: 0"><button role="tab" aria-selected="true" class="on">Genel<span class="u" style="width: 46px"></span></button><button role="tab" aria-selected="false">Sorular</button><button role="tab" aria-selected="false">Konular</button><button role="tab" aria-selected="false">Kartlar</button></div><div class="abs card" style="top: 494px; left: 16px; right: 16px; padding: 0 16px"><div style="padding: 14px 0;"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px"><span class="tn">Türk Dili ve Edebiyatı–Sosyal Bilimler 1</span><span style="font-size: 17px; line-height: 24px; font-weight: 700; white-space: nowrap">18,75 <span class="tm" style="font-weight: 500">net</span></span></div><div class="bar" style="margin-top: 10px" role="img" aria-label="40 sorudan 23 doğru, 17 yanlış, 0 boş"><span style="flex: 23; background: #0B6E3E"></span><span style="flex: 17; background: #D8333A"></span></div><div style="display: flex; align-items: center; gap: 12px; margin-top: 8px"><span role="group" aria-label="23 doğru, 17 yanlış, 0 boş" style="display: inline-flex; flex-wrap: wrap; gap: 4px 14px"><span class="sm"><span class="c16" style="background: #0B6E3E"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span>23<i>D</i></span><span class="sm"><span class="c16" style="background: #D8333A"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="196" y1="60" x2="60" y2="196"></line><line x1="196" y1="196" x2="60" y2="60"></line></svg></span>17<i>Y</i></span><span class="sm"><span class="c16" style="background: #7E8A9B"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="128" x2="208" y2="128"></line></svg></span>0<i>B</i></span></span><span class="tm" style="margin-left: auto">40 soru</span></div></div><div style="padding: 14px 0; border-top: 1px solid #E8ECF1;"><div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px"><span class="tn">Sosyal Bilimler 2</span><span style="font-size: 17px; line-height: 24px; font-weight: 700; white-space: nowrap">11,25 <span class="tm" style="font-weight: 500">net</span></span></div><div class="bar" style="margin-top: 10px" role="img" aria-label="40 sorudan 17 doğru, 23 yanlış, 0 boş"><span style="flex: 17; background: #0B6E3E"></span><span style="flex: 23; background: #D8333A"></span></div><div style="display: flex; align-items: center; gap: 12px; margin-top: 8px"><span role="group" aria-label="17 doğru, 23 yanlış, 0 boş" style="display: inline-flex; flex-wrap: wrap; gap: 4px 14px"><span class="sm"><span class="c16" style="background: #0B6E3E"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span>17<i>D</i></span><span class="sm"><span class="c16" style="background: #D8333A"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="196" y1="60" x2="60" y2="196"></line><line x1="196" y1="196" x2="60" y2="60"></line></svg></span>23<i>Y</i></span><span class="sm"><span class="c16" style="background: #7E8A9B"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="128" x2="208" y2="128"></line></svg></span>0<i>B</i></span></span><span class="tm" style="margin-left: auto">40 soru</span></div></div></div></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="84" cy="108" r="52"></circle><path d="M10.23 200a88 88 0 0 1 147.54 0"></path><path d="M172 160a87.93 87.93 0 0 1 73.77 40"></path><path d="M152.69 59.7A52 52 0 1 1 172 160"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Öğrencilerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M71.58 144 32 176V48a8 8 0 0 1 8-8h128a8 8 0 0 1 8 8v88a8 8 0 0 1-8 8Z"></path><path d="M80 144v40a8 8 0 0 0 8 8h96.42L224 224V96a8 8 0 0 0-8-8h-40"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Görüşmelerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Hesap</span></button></div></nav><div class="hi"></div></div><div class="cap"><b>4 · Deneme Detay · taşınma</b><span>5.3 aynen; yalnız barın altına şerit girer, içerik 40 pt aşağı kayar. Sorular, Konular, Kartlar sekmeleri de aynı.</span></div></div></div><section class="nts" style="grid-template-columns: repeat(3, minmax(0, 1fr))"><div><h3>Taşınma kuralı</h3><ul><li>Öğrenci ekranları koça aynı bileşenlerle gelir: 6.1 → Analiz, 6.2 → Denemeler, 3.4 → Program, 5.3–5.7 → deneme ve soru detayı.</li><li>Fark üç şey: bağlam şeridi, düzenleme eylemlerinin olmaması, öğrenciye özel olanların (favori, kart "Öğrendim") gizlenmesi.</li><li>Kamera koçta da var: okutulan form koçun seçtiği öğrenciye yazılır (Tur 2 akışı, öğrenci seçimi sheet'iyle).</li></ul></div><div><h3>Bileşenler</h3><ul><li>Bağlam şeridi 40 pt, <span class="tk">navy-50</span> #F1F5FA; avatar 24, "Ad Soyad'ın verileri", sağda sınıf · alan kısaltması.</li><li>Sekmeler 3.x ekran içi sekme (1.10): Analiz · Denemeler · Program; gösterge <span class="tk">orange-600</span>.</li><li>Bar eylemi: "Görüşme Planla" (yeni görüşme sheet'ini öğrenci seçili açar).</li></ul></div><div><h3>Erişilebilirlik</h3><ul><li>Şerit ekran okuyucuda ilk okunan öğe: "Alparslan Kuloğlu'nun verileri, 12. sınıf, Eşit Ağırlık".</li><li>Sekmeler tablist; seçili sekme bildirilir.</li><li>Şerit kaydırınca barla birlikte sabit kalır.</li></ul></div></section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1880,&quot;height&quot;:1480}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+
+
+</body></html>

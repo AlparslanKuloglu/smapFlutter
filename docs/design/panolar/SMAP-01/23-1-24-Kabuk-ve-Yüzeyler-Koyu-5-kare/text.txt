@@ -1,0 +1,73 @@
+1.24 Kabuk ve Yüzeyler Koyu 
+ 1.24 · Temeller · Koyu tema
+ Kabuk ve Yüzeyler · Koyu · 5 Kare
+ Lacivert bant koyu temada da marka bandı olarak kalır; kanvasın üstünde bir ton açık durur. Alt çubuk yüzey rengi + bulanıklık, gösterge orange-400. Sheet bir adım yükselmiş yüzeyde (#18263D), perde daha koyu (%64). Toast ve çevrimdışı şeridi ters yüzey: açık zemin, koyu metin. Mağaza görselleri bu koyu ekranlardan yapılacak (Tur 11).
+ Analizlerim
+ Genel Denemelerim 
+ TYT · Genel
+ 120 60 0 
+ 22 Nis. 17 Haz. 15 Eyl. 
+ 6 Çözülen deneme 
+ 67,79 Ortalama net son denemede +3,25 
+ Anasayfa 
+ Analizlerim 
+ Okut 
+ Derslerim 
+ Hesap 
+ 1 · Kök sekme Bant navy-900 (kanvasa 1,26:1, dekoratif), üstündeki metin beyaz (14,62). Grafik ve kutular yüzeyde. Ayrıntılı Analizlerim Tur 4'te. 
+ Eksiklerim (31) 
+ Türkçe
+ Tümü 31 eksik 
+ TYT 28 eksik 
+ AYT 3 eksik 
+ 1 Sözcükte Anlam 
+ 2 Cümlede Anlam 
+ 3 Ses Bilgisi 
+ 4 Yazım Kuralları 
+ 5 Anlatım Yöntemleri 
+ 6 Paragraf 
+ 7 Söz Öbekleri 
+ 8 Cümlenin Öğeleri 2 eksik 
+ Anasayfa 
+ Analizlerim 
+ Okut 
+ Derslerim 
+ Hesap 
+ 2 · Detay Açık zeminli barın koyu karşılığı: kanvas üstünde, ikonlar text-primary. Alt çubuk sekme içinde kalır. Ders detayı Tur 5'te; burada yalnız kabuk ve roller. 
+ Analizlerim
+ Filtre
+ Grafik ve istatistikler bu seçime göre.
+ Sınav türü
+ TYT AYT 
+ Ders
+ Genel 
+ Türkçe 
+ Tarih 
+ Coğrafya 
+ Matematik 
+ Geometri 
+ Fizik 
+ Kimya 
+ Biyoloji 
+ Uygula 
+ 3 · Sheet · orta Yüzey #18263D (üst yüzey), tutamaç #34445F, Kapat zemini #213049. Perde #02060E %64 + 8 pt bulanıklık. 
+ Koçluk
+ Mehmet Özkan
+ Koçun
+ Koç bağlantısı kaldırılsın mı?
+ Mehmet Özkan gelişimini artık göremeyecek. Yeniden bağlanmak için koçluk kodunu tekrar girmen gerekir.
+ Bağlantıyı Kaldır 
+ Vazgeç 
+ 4 · Onay · tehlikeli Tehlikeli düğme açık kırmızı zemin, koyu metin (7,74). Odak halkası navy-300. 
+ Analizlerim
+ Genel Denemelerim 
+ Çevrimdışısın. Son kaydedilen veriler gösteriliyor.
+ Türkiye Geneli Deneme 6 Örnek Yayınları AYT 5 Eki. 2026 67,5 net 
+ TYT Genel Deneme 9 TYT 28 Eyl. 2026 74,75 net 
+ Favorilere eklendi. Geri Al 
+ Anasayfa 
+ Analizlerim 
+ Okut 
+ Derslerim 
+ Hesap 
+ 5 · Toast ve çevrimdışı İkisi de ters yüzey (#E8ECF1, metin 13,39). Toast alt çubuğun 8 pt üstünde; şerit barın altında içeriği iter.

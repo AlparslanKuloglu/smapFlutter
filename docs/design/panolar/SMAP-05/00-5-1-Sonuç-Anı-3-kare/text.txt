@@ -1,0 +1,70 @@
+5.1 Sonuç Anı 
+ 5.1 · Tur 2 · Deneme Sonucu
+ Sonuç Anı · 3 Kare
+ Üç adımlık eski akışın (boş "İlerle" düğmesi, yüklenmeyen avatar, sabit OBP, dokunulmayan kartlar) yerine tek ekran: yayınevi, ad, kapak; büyük net ve D/Y/B; varsa puan ve fark; eklenen kartlar; "Detaylı Analiz".
+ Örnek Yayınları
+ Türkiye Geneli Deneme 6
+ AYT 5 Ekim 2026 
+ 67,5 net 
+ +8,25 önceki AYT denemene göre 
+ Doğru 
+ 86
+ Yanlış 
+ 74
+ Boş 
+ 0
+ Eşit Ağırlık Sayısal Sözel 
+ 412,63
+ Yerleştirme puanı
+ 48.215.
+ Sıra
+ Eşit Ağırlık neti 40
+ Türk Dili ve Edebiyatı–Sosyal Bilimler 1 ve Matematik
+ Bu denemeden 23 bilgi kartı eklendi Anasayfa Detaylı Analiz 
+ 1 · AYT · Eşit Ağırlık Net, fark, D/Y/B; puan türü sekmesi öğrencinin alanında açılır. Puan ve sıra yalnız o alan için varsa çizilir. Kart satırı Deneme Detay › Kartlar'ı açar. 
+ TYT Genel Deneme 9
+ TYT 28 Eylül 2026 
+ 74,75 net 
+ +3,25 önceki TYT denemene göre 
+ Doğru 
+ 80
+ Yanlış 
+ 21
+ Boş 
+ 19
+ Anasayfa Detaylı Analiz 
+ 2 · TYT · eksik veriyle Bu denemenin puanı, yayınevi ve kart sayısı Ek C'de yok: alanlar hiç çizilmez ("0" ya da tire yok). TYT'de puan türü sekmesi yok. 
+ Örnek Yayınları
+ Türkiye Geneli Deneme 6
+ AYT 5 Ekim 2026 
+ 67,5 net 
+ +8,25 önceki AYT denemene göre 
+ Doğru 
+ 86
+ Yanlış 
+ 74
+ Boş 
+ 0
+ Eşit Ağırlık Sayısal Sözel 
+ 412,63
+ Yerleştirme puanı
+ 48.215.
+ Sıra
+ Eşit Ağırlık neti 40
+ Türk Dili ve Edebiyatı–Sosyal Bilimler 1 ve Matematik
+ Bu denemeden 23 bilgi kartı eklendi Anasayfa Detaylı Analiz 
+ 3 · AYT · koyu Değişim koyuda #9BB3D3 (info); sayılar metin renginde, renk yalnız işarette. Kartlar surface #121D31. 
+ Veri
+ Net 67,5 = 86 − 74 ÷ 4 (sunucu, Ek D-1). Fark yalnız bir önceki AYT'ye göre: 59,25 → +8,25. "Geçen ay" yok.
+ Alan netleri sunucudaki aytNets'ten; Ek C testleriyle tutarlı: EA 40 (TDE–SB1 + Matematik), SAY 37,5, SÖZ 30.
+ Sayısal ya da Sözel seçilince yalnız o alanın neti görünür; puan ve sıra o alan için yoksa kutular çizilmez.
+ OBP notu yazılmaz: eski sabit "OBP notunuz 85" kalktı.
+ Bileşenler
+ Net metric-xl 56/64 800; fark 15/700 success + ok ikonu, açıklama ikincil.
+ D/Y/B büyük üçlü sayaç (1.14), puan kutuları StatBox (1.16), segment 1.10.
+ Kapak yer tutucu 56 × 76 (sunucudan gelir); yayınevi ve ad ayrı satırda (Ek D-32), "(Test)" eki ve "Deneme: N" yok (Ek D-33).
+ Tek birincil: "Detaylı Analiz" (Deneme Detay, Tur 3). "Anasayfa" sakin düğme.
+ Hareket ve haptik
+ Gelişte success haptiği. Konfeti, sayaç gibi dönen sayı, parlama yok.
+ İçerik 250 ms'de yukarı 8 pt kayarak belirir; hareketi azaltta yalnız opaklık.
+ Ekran okuyucu tek cümle okur: "Türkiye Geneli Deneme 6, 67,5 net, önceki AYT denemene göre 8,25 artış. 86 doğru, 74 yanlış, 0 boş."

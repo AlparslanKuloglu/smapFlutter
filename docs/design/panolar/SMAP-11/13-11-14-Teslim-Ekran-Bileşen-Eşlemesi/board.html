@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<title>Ekran–Bileşen Eşlemesi</title>
+<script src="res/15d594a5-5bb2-4d95-9bff-16b33bf98e9a.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/f7d1ce76-7820-40e6-b8ab-88ec5b3827c2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/13d59695-7147-4f8a-8548-a0fb54c29328.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/f7d1ce76-7820-40e6-b8ab-88ec5b3827c2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/13d59695-7147-4f8a-8548-a0fb54c29328.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/f7d1ce76-7820-40e6-b8ab-88ec5b3827c2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/13d59695-7147-4f8a-8548-a0fb54c29328.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/f7d1ce76-7820-40e6-b8ab-88ec5b3827c2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/13d59695-7147-4f8a-8548-a0fb54c29328.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/f7d1ce76-7820-40e6-b8ab-88ec5b3827c2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/13d59695-7147-4f8a-8548-a0fb54c29328.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+h2{margin:0;font-size:28px;line-height:36px;font-weight:800;letter-spacing:-0.3px}
+h3{margin:0;font-size:20px;line-height:28px;font-weight:700}
+.ld{margin:8px 0 0;font-size:16px;line-height:26px;color:#556173;max-width:1100px}
+.nt{width:100%;border-collapse:collapse;table-layout:fixed}
+.nt th{font-size:13px;line-height:20px;font-weight:600;color:#556173;text-align:left;padding:10px 12px;border-bottom:1px solid #C3CBD6}
+.nt td{font-size:14px;line-height:21px;padding:10px 12px;border-bottom:1px solid #E8ECF1;vertical-align:top;color:#1B2232}
+.nt td.n{font-weight:700;color:#556173}
+.nt td.m{color:#556173}
+.nt td.b{font-weight:600}
+.ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0}
+.ol li{display:grid;grid-template-columns:40px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #E8ECF1;font-size:14px;line-height:21px}
+.ol li span{font-weight:700;color:#556173}
+pre{margin:0;padding:20px 24px;border-radius:16px;background:#0F1420;color:#EDF1F6;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:13px;line-height:20px;white-space:pre-wrap;overflow:hidden}
+pre .c{color:#8B9AAF}
+.kv{display:grid;grid-template-columns:260px 1fr;font-size:14px;line-height:21px}
+.kv div{padding:8px 0;border-bottom:1px solid #E8ECF1}
+.kv div:nth-child(odd){font-weight:700}
+.ck{display:grid;grid-template-columns:28px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #E8ECF1;font-size:14px;line-height:21px}
+.ok{color:#0B6E3E;font-weight:800}
+.sw2{display:inline-block;width:18px;height:18px;border-radius:5px;vertical-align:-4px;margin-right:8px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.12)}
+.tk{font-weight:600;color:#264066}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1700px; background: #FFFFFF; color: #1B2232; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; padding: 64px; display: flex; flex-direction: column; gap: 44px; font-variant-numeric: tabular-nums">
+<header style="display: flex; flex-direction: column; gap: 8px"><div style="font-size: 15px; line-height: 20px; font-weight: 600; color: #556173">11.14 · Geliştirici Teslimi</div><h1 style="margin: 0; font-size: 36px; line-height: 44px; font-weight: 800; letter-spacing: -0.5px">Ekran–Bileşen Eşlemesi</h1><p class="ld">Her pano hangi bileşenlerle kurulur. Liste 11.13'teki adları kullanır; koç ekranları öğrenci ekranlarını StudentScope ile yeniden kullanır (10.4).</p></header>
+<section style="display: flex; flex-direction: column; gap: 14px"><h2>Eşleme</h2><sc-raw-table class="nt"><sc-raw-thead><sc-raw-tr><sc-raw-th>Pano</sc-raw-th><sc-raw-th>Bileşenler</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td class="b">2.1 Açılış ve Tanıtım</sc-raw-td><sc-raw-td>Lockup, OnboardingPage, Button</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">2.2 Rol, Sınıf, Kamera, Hoş Geldin</sc-raw-td><sc-raw-td>RoleOption, Chip (kare, hap), InfoBox, Button, EmptyState görseli</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">2.3 Giriş</sc-raw-td><sc-raw-td>DetailBar, Lockup, TextField (şifre), ErrorBox, Button (yükleniyor)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">2.4 Şifremi Unuttum</sc-raw-td><sc-raw-td>TextField, CodeInput, Button</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">2.5–2.6 Kayıt</sc-raw-td><sc-raw-td>Segment, AvatarPicker, TextField (canlı kontrol), SelectField, Checkbox, ErrorBox, InfoBox</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">2.7 Genel Ekranlar</sc-raw-td><sc-raw-td>ErrorState (ekran), ConfirmSheet, uygulama ikonu</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">3.1–3.3 Anasayfa</sc-raw-td><sc-raw-td>HomeBand, SectionHeader, ProgramItemRow, ExamCard özeti, DybSmall, SubjectTile, EksikTag, BottomBar</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">3.4 Programım</sc-raw-td><sc-raw-td>DetailBar, BarAction, SearchField, Segment, DayChip, WeekGrid</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">3.5 Yeni Program</sc-raw-td><sc-raw-td>Calendar, DayChip, HourSlot, BottomSheet, Radio, TextField</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">3.6 Düzenle</sc-raw-td><sc-raw-td>ProgramItemRow (edit), ConfirmSheet (tehlikeli), Toast</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">3.7–3.8 Durumlar, koyu</sc-raw-td><sc-raw-td>EmptyState (Ampul), Skeleton, ErrorState, OfflineStrip, WeekGrid</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">4.1–4.10 Kamera</sc-raw-td><sc-raw-td>BottomSheet (izin), CameraOverlay, Handles, ProgressSheet, FormCheck, ErrorState</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">5.1–5.2 Sonuç anı</sc-raw-td><sc-raw-td>DybLarge, metric-xl, delta, BottomSheet</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">5.3–5.10 Deneme Detay</sc-raw-td><sc-raw-td>InScreenTabs, StackedBar, Accordion, QuestionCell, TopicResultRow, CardPreview</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">6.1–6.4 Analizlerim</sc-raw-td><sc-raw-td>RootBand (sekmeli), Chip süzgeç, NetChart, StatBox, ExamRow</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">7.1 Derslerim</sc-raw-td><sc-raw-td>RootBand (bant içi segment), SubjectRow, BottomSheet (Web'de)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">7.2 Ders Detayı</sc-raw-td><sc-raw-td>DetailBar, Chip (süzgeç), Segment (sayaçlı), TopicRow, EksikTag</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">7.3 Konu Detayı</sc-raw-td><sc-raw-td>Accordion, ExampleBox, EksikTag, CardSheet</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">7.4 Edebiyat</sc-raw-td><sc-raw-td>Segment, AuthorRow, BottomSheet</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">8.1–8.2 Kart Destesi</sc-raw-td><sc-raw-td>Segment (sayaçlı), SessionProgress, CardDeck, ConfirmSheet, Toast, EmptyState (ders görseli)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">9.1 Hesap</sc-raw-td><sc-raw-td>RootBand + ProfileSummary, SettingsRow, ListGroup, ConfirmSheet</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">9.2–9.3 Profil, Şifre</sc-raw-td><sc-raw-td>TextField (salt okunur, düzenleme), AvatarPicker, SelectField, Toast</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">9.4 Hesabı Sil</sc-raw-td><sc-raw-td>ConfirmSheet (tehlikeli), Spinner, durum ekranı</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">9.5 Koçluk</sc-raw-td><sc-raw-td>CoachCard, InfoBox, TextField (maskeli), ConfirmSheet</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">9.6 Bildirimler</sc-raw-td><sc-raw-td>Switch, SettingsRow, WarningBox, TimeWheel</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">9.7 Sözleşmeler</sc-raw-td><sc-raw-td>SettingsRow, okuma görünümü</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">10.1 Koç Anasayfa</sc-raw-td><sc-raw-td>HomeBand (koç), StudentTile, AttentionRow, MeetingRow, CodeCard</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">10.2 Öğrencilerim</sc-raw-td><sc-raw-td>RootBand, SearchField, StudentRow, EmptyState (üç avatar)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">10.3 Öğrenci Ekle</sc-raw-td><sc-raw-td>BottomSheet (uzun), TextField + BarAction, SelectField, CodeCard</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">10.4 Öğrenci Profili</sc-raw-td><sc-raw-td>ContextStrip, InScreenTabs, NetChart, StatBox, ExamRow, DayChip</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">10.5–10.6 Görüşmeler</sc-raw-td><sc-raw-td>RootBand, SearchField, Chip, MeetingRow, BottomSheet, TextArea, ConfirmSheet, Toast</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1700}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+
+
+</body></html>

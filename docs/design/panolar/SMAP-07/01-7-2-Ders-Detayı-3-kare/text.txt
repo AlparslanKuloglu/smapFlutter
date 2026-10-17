@@ -1,0 +1,37 @@
+7.2 Ders Detayı 
+ 7.2 · Tur 5 · Derslerim ve Konular
+ Ders Detayı · 3 Kare
+ Konu listesi: kesintisiz numara, kesilmeyen ad, etiketli eksik. Kategori segmenti ve "Eksiklerim" süzgeci başlıkta.
+ Türkçe
+ Eksiklerim (31) Kartlarım 
+ Tümü 31 eksik TYT 28 eksik AYT 3 eksik 
+ 1 Sözcükte Anlam 2 Cümlede Anlam 3 Ses Bilgisi 4 Yazım Kuralları 5 Anlatım Yöntemleri 6 Paragraf 7 Söz Öbekleri 8 Cümlenin Öğeleri 2 eksik 9 Fiilde Çatı 3 eksik 10 Cümle Türleri 11 Anlatım Bozuklukları 12 Noktalama İşaretleri 3 eksik 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Türkçe · TYT Numaralar 1'den 12'ye kesintisiz; ad iki satıra kadar. Segment sayaçları etiketli; başlıktaki "Eksiklerim (31)" süzgeç. 
+ Türkçe
+ Eksiklerim (31) Kartlarım 
+ Tümü 31 eksik TYT 28 eksik AYT 3 eksik 
+ 8 Cümlenin Öğeleri 2 eksik 9 Fiilde Çatı 3 eksik 12 Noktalama İşaretleri 3 eksik 
+ Yalnız eksiği olan konular. Numaralar tam listedeki sırayı korur.
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Eksiklerim süzgeci Düğme basılı (lacivert); yalnız eksikli konular. Ek C'de konu bazında 8 eksik var, ders toplamı 31 (varsayım 3). 
+ Tarih
+ Eksiklerim (60) Kartlarım · 41/64 
+ TYT 60 eksik AYT SOS-2 eksik yok 
+ 1 İki Savaş Arasındaki Dönemde Türkiye ve Dünya 2 İkinci Dünya Savaşı Sürecinde Türkiye ve Dünya 3 İkinci Dünya Savaşı Sonrasında Türkiye ve Dünya 4 Toplumsal Devrim Çağında Dünya ve Türkiye 5 21. Yüzyılın Eşiğinde Türkiye ve Dünya 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Tarih · SOS-2 Derslerim AYT'deki "Tarih-2" satırından SOS-2 seçili açılır. Sayaç "eksik yok" der; AYT'de veri yok, sayaç çizilmez. "Kartlarım · 41/64" desteyi açar. 
+ Bileşenler
+ Başlık içerikte: 40 pt glif + title-lg ; altında süzgeç hap düğmesi ve "Kartlarım" metin düğmesi.
+ Segment sayaçlı (1.10); SOS-2 yalnız Tarih ve Coğrafya'da.
+ Konu satırı 64 pt: 28 pt numara rozeti, ad, eksik etiketi (bayrak + "3 eksik", warning tonları), ok.
+ Eksik işareti
+ Tek işaret her yerde: bayrak ikonu + "eksik" sözcüğü, amber ( warning #8A5A00 / #FCF1D9, 5,28:1). Kırmızı yanlış cevaba ayrıldı (D/Y/B).
+ Konu detayında madde üstünde aynı işaret (7.3).
+ Eskiden
+ TYT/AYT/SOS-2 ortada diyalog; başlıkta etiketsiz kırmızı rozet (11, 14).
+ Numaralar 3, 4, 4, 5, 5, 6; adlar üç noktayla kesik (15, 18).
+ Segment rozetleri listeyle çakışıyordu (11).

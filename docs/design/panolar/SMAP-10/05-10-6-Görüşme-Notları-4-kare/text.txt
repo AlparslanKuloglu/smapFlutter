@@ -1,0 +1,81 @@
+10.6 Görüşme Notları 
+ 10.6 · Tur 9 · Koç
+ Görüşme Notları · 4 Kare
+ Not ekleme, düzenleme, onaylı silme ve geri alma.
+ Düzenle 
+ Alparslan Kuloğlu
+ Öğrenci görüşmesi
+ 12 Ekim 2026 Pazartesi
+ 16:00
+ Öğrencinin verileri
+ Analiz, denemeler, program
+ Notlar
+ Not Ekle 
+ Tarih eksikleri için haftada 3 saat ayrıldı.
+ Düzenle Sil 
+ Not ekle
+ 12 Ekim 2026 · Alparslan Kuloğlu
+ Örn: Deneme sonucunu birlikte inceleyeceğiz. 
+ 0/500
+ Notu Kaydet 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 1 · Not ekle Çok satırlı alan (1.12), örnek placeholder, sayaç. Metin yokken düğme pasif. 
+ Düzenle 
+ Alparslan Kuloğlu
+ Öğrenci görüşmesi
+ 12 Ekim 2026 Pazartesi
+ 16:00
+ Öğrencinin verileri
+ Analiz, denemeler, program
+ Notlar
+ Not Ekle 
+ Tarih eksikleri için haftada 3 saat ayrıldı.
+ Düzenle Sil 
+ Notu düzenle
+ Tarih eksikleri için haftada 3 saat ayrıldı. 
+ 44/500
+ Kaydet 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 2 · Not düzenle Aynı sheet, metin dolu; Kaydet değişiklik varsa çalışır. 
+ Düzenle 
+ Alparslan Kuloğlu
+ Öğrenci görüşmesi
+ 12 Ekim 2026 Pazartesi
+ 16:00
+ Öğrencinin verileri
+ Analiz, denemeler, program
+ Notlar
+ Not Ekle 
+ Tarih eksikleri için haftada 3 saat ayrıldı.
+ Düzenle Sil 
+ Not silinsin mi?
+ “Tarih eksikleri için haftada 3 saat ayrıldı.” notu silinecek.
+ Notu Sil Vazgeç 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 3 · Not sil · onay Tehlikeli onay (1.21); notun kendisi alıntılanır, odak Vazgeç'te. 
+ Düzenle 
+ Alparslan Kuloğlu
+ Öğrenci görüşmesi
+ 12 Ekim 2026 Pazartesi
+ 16:00
+ Öğrencinin verileri
+ Analiz, denemeler, program
+ Notlar
+ Not Ekle 
+ Henüz not yok.
+ Not silindi. Geri Al 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 4 · Silindi 6 sn "Geri Al" (D-31); boş not alanı tek cümle. 
+ Bileşenler
+ Not kartı: 16/26 metin, altında Düzenle ve Sil metin düğmeleri (Sil error ).
+ Not sheet'i: başlık, bağlam satırı (tarih · öğrenci), çok satırlı alan, karakter sayacı 500.
+ Davranış
+ Notlar yalnız koça görünür; öğrenci görmez.
+ Silme 6 sn içinde geri alınabilir; sonra kalıcı.
+ Kaydetme hatası: sheet açık kalır, metin korunur, toast.
+ Neden
+ Görüşme notu koçun çalışma kaydı; yanlışlıkla silinmesi bir onay ve geri almayla iki kez korunur.

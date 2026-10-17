@@ -1,0 +1,66 @@
+1.17 Avatar ve İkonlar 
+ 1.17 · Temeller · Veri
+ Avatar ve İkonlar
+ Avatarlar mevcut 3D karikatür setinden gelir (kayıtta seçilen 7 avatar; öğrenci ve koç aynı seti kullanır). Panolarda uygulamadaki 7 avatarın kendisi kullanılıyor. Örnek kişiler sabit: Alparslan 1, Mehmet Özkan 2, Kerem 3, Elif 4, Zeynep 5, Mert 2. İkonlar tek aile: Phosphor, normalde Regular, seçiliyken Fill. Kodda Material'in üç varyantı, dört SVG ailesi ve PNG illüstrasyonlar karışıktı (09, 20).
+ Avatar
+ Boylar · tekli 
+ 24
+ 32
+ 40
+ 56
+ 96
+ 24 bağlam şeridi · 32 liste · 40 kart · 56 Hesap özeti · 96 avatar seçimi. Görsel yüklenemezse baş harfler: AK 
+ Üst üste · koçun öğrencileri 
+ +2 
+ En çok 3 avatar ve "+N". 2 pt beyaz halka, 8 pt bindirme. Tek okunuş: "Elif Şahin, Kerem Aydın, Zeynep Kaya ve 2 öğrenci daha".
+ Rol rozetli · koç 
+ Koç 
+ Mehmet Özkan
+ Koçun
+ Rozet bir kelime, ikon değil; okuyucu "Mehmet Özkan, koç" der. Öğrenci avatarı rozet taşımaz.
+ Avatar seçimi · 7 avatar, kayıt ve profil 
+ Yedisi birden görünür, kaç seçenek olduğu belli (07'de oklarla tek tek geziliyordu). Seçili: 2 pt boşluk + 2 pt lacivert halka. Daire zeminleri setin kendi görsellerinden; arayüz rengi değil.
+ Kullanıcı adı ve avatar yalnız Anasayfa'da (selamın içinde) ve Hesap'ta görünür (Ek D-9). Üst barda ad + avatar tekrarı kalktı (09, 19, 32).
+ İkon ailesi · Phosphor
+ Alt çubuk ikonları · Regular → Fill 
+ House · Anasayfa 
+ ChartLineUp · Analizlerim 
+ BookOpen · Derslerim 
+ UserCircle · Hesap 
+ Users · Öğrencilerim 
+ Chats · Görüşmelerim 
+ Camera · Okut (28) 
+ Eylem ve durum ikonları · aynı eylem her yerde aynı ikon 
+ CaretLeft Geri 
+ X Kapat · Yanlış 
+ CaretRight Satıra git 
+ CaretDown Kapalı · seçim 
+ CaretUp Açık akordeon 
+ MagnifyingGlass Ara 
+ SlidersHorizontal Filtrele 
+ Plus Ekle 
+ Check Doğru · seçili 
+ Minus Boş 
+ Info Bilgi 
+ CheckCircle Başarılı 
+ WarningCircle Hata 
+ Warning Uyarı 
+ WifiSlash Çevrimdışı 
+ ArrowClockwise Tekrar dene 
+ Eye Şifreyi göster 
+ EyeSlash Şifreyi gizle 
+ Star Favori 
+ Bell Bildirim 
+ Trash Sil 
+ SignOut Çıkış 
+ Copy Kopyala 
+ ArrowSquareOut Web'de aç 
+ Cards Bilgi kartı 
+ Question Yardım 
+ Lock Salt okunur 
+ Clock Saat 
+ CalendarBlank Program · tarih 
+ ShareNetwork Paylaş 
+ PencilSimple Düzenle 
+ ArrowUp Artış 
+ Boylar: 16 (çip), 20 (düğme içi, satır oku), 24 (varsayılan), 28 (kamera). Çizgi 24 pt'de 1,5 pt. Renk: birincil ikon text-primary, ikincil text-secondary (6,28:1), seçili lacivert Fill. Eskiden geri oku dört farklı Material ikonuydu. Panolardaki çizimler Phosphor'un elle yeniden çizilmiş yaklaşığıdır; geliştirici phosphor_flutter paketindeki aynı adlı ikonu kullanır.

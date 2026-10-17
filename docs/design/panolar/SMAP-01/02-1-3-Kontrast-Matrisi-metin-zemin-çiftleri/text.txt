@@ -1,0 +1,154 @@
+1.3 Kontrast Matrisi 
+ 1.3 · Temeller · Renk
+ Kontrast Matrisi · Metin/Zemin Çiftleri
+ Her metin rolünün her zemin rolüne karşı oranı. Beyaz hücre: 4,5:1 ve üstü, her boyda kullanılır. Sarı etiket: yalnız büyük metin (24 pt, ya da 19 pt kalın). Gri hücre: kullanılmaz. Örnek kutusu çiftin kendisidir.
+ Açık tema
+ Metin \ Zemin
+ surface
+ #FFFFFF 
+ canvas
+ #F2F4F7 
+ sunken
+ #E8ECF1 
+ navy
+ #0F294A 
+ text-primary #1B2232 
+ Aa 15,89 
+ Aa 14,42 
+ Aa 13,39 
+ Aa 1,09 
+ kullanılmaz 
+ text-secondary #556173 
+ Aa 6,28 
+ Aa 5,70 
+ Aa 5,29 
+ Aa 2,33 
+ kullanılmaz 
+ text-placeholder #697586 
+ Aa 4,68 
+ Aa 4,25 
+ yalnız girdide 
+ Aa 3,94 
+ yalnız girdide 
+ Aa 3,13 
+ kullanılmaz 
+ text-action #1A3357 
+ Aa 12,69 
+ Aa 11,52 
+ Aa 10,69 
+ Aa 1,15 
+ kullanılmaz 
+ text-accent #B34400 
+ Aa 5,61 
+ Aa 5,09 
+ Aa 4,73 
+ Aa 2,61 
+ kullanılmaz 
+ status-error #C42D35 
+ Aa 5,56 
+ Aa 5,05 
+ Aa 4,69 
+ Aa 2,63 
+ kullanılmaz 
+ status-success #0B6E3E 
+ Aa 6,34 
+ Aa 5,75 
+ Aa 5,34 
+ Aa 2,31 
+ kullanılmaz 
+ text-on-navy #FFFFFF 
+ Aa 1,00 
+ kullanılmaz 
+ Aa 1,10 
+ kullanılmaz 
+ Aa 1,19 
+ kullanılmaz 
+ Aa 14,62 
+ text-on-navy-2 #C5D4E8 
+ Aa 1,50 
+ kullanılmaz 
+ Aa 1,37 
+ kullanılmaz 
+ Aa 1,27 
+ kullanılmaz 
+ Aa 9,72 
+ Koyu tema
+ Metin \ Zemin
+ canvas
+ #0A1424 
+ surface
+ #121D31 
+ raised
+ #18263D 
+ sunken
+ #213049 
+ navy
+ #0F294A 
+ text-primary #EDF1F6 
+ Aa 16,26 
+ Aa 14,86 
+ Aa 13,38 
+ Aa 11,69 
+ Aa 12,89 
+ text-secondary #A9B5C6 
+ Aa 8,88 
+ Aa 8,12 
+ Aa 7,31 
+ Aa 6,39 
+ Aa 7,04 
+ text-placeholder #8B9AAF 
+ Aa 6,45 
+ Aa 5,89 
+ Aa 5,30 
+ Aa 4,63 
+ Aa 5,11 
+ text-action #9BB3D3 
+ Aa 8,59 
+ Aa 7,85 
+ Aa 7,07 
+ Aa 6,18 
+ Aa 6,81 
+ text-accent #FF9A57 
+ Aa 8,79 
+ Aa 8,04 
+ Aa 7,24 
+ Aa 6,32 
+ Aa 6,97 
+ status-error #FF8F8F 
+ Aa 8,41 
+ Aa 7,69 
+ Aa 6,92 
+ Aa 6,05 
+ Aa 6,67 
+ status-success #52CC8E 
+ Aa 9,12 
+ Aa 8,34 
+ Aa 7,51 
+ Aa 6,56 
+ Aa 7,23 
+ text-on-navy #FFFFFF 
+ Aa 18,45 
+ Aa 16,86 
+ Aa 15,18 
+ Aa 13,26 
+ Aa 14,62 
+ text-on-navy-2 #C5D4E8 
+ Aa 12,26 
+ Aa 11,20 
+ Aa 10,09 
+ Aa 8,81 
+ Aa 9,72 
+ Bileşene özgü çiftler
+ Birincil düğme · beyaz / navy-900 14,62 · koyu 11,59 
+ Pasif segment · #556173 / #E8ECF1 5,29 · koyu 6,39 
+ Bant üstü pasif segment · navy-200 / navy-800 8,43 
+ Kamera ikonu · navy-900 / #FF6600 (ikon, 3:1) 4,98 
+ D/Y/B çipi glifi · beyaz / #0B6E3E · #D8333A · #7E8A9B 6,34 · 4,71 · 3,50 
+ Yanlış hücrede doğru şık · #0B6E3E / #FCEAEA 5,46 
+ Eski değerler, karşılaştırma için
+ İkincil metin #8A90A6 / beyaz (A-3) 3,17 
+ Pasif sekme etiketi #B2BAC6 / beyaz (09) 1,96 
+ "Kapat" metin düğmesi #9E9E9E / beyaz (22) 2,68 
+ Grafik eksen metni #9AA1AA / beyaz (19) 2,61 
+ Konu analizi sarı halka #FFEB3B / beyaz (28) 1,22 
+ Kamera ikonu açık şeftali / turuncu (09, ölçüm) ~1,8

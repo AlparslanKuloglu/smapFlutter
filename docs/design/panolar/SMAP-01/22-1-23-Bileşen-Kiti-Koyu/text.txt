@@ -1,0 +1,63 @@
+1.23 Bileşen Kiti Koyu 
+ 1.23 · Temeller · Koyu tema
+ Bileşen Kiti · Koyu
+ Aynı bileşenler, koyu rollerle. Açık temanın tersi değil: zemin lacivert tonlu, yükselen yüzey açılır, birincil lacivertin açık tonu (navy-200) olur, D/Y/B renkleri açılır ve glif koyu yazılır. Gölge yerine yüzey farkı. Bütün oranlar 1.2 ve 1.3'te.
+ Düğmeler
+ Detaylı Analiz 
+ Tekrar Çek 
+ Vazgeç 
+ Hesabı Sil 
+ Şifremi Unuttum Pasif 
+ Birincil navy-200 / navy-950 (11,59). Tehlikeli açık kırmızı zemin, koyu metin (7,74). Metin düğmesi navy-300 (7,85).
+ Segment
+ TYT 
+ AYT 
+ Tümü 31 eksik 
+ TYT 28 eksik 
+ AYT 3 eksik 
+ Ekran içi sekme
+ Genel 
+ Sorular 
+ Konular 
+ Kartlar 
+ Çipler ve etiket
+ Yanlışlar 
+ Boşlar 
+ Tarih 
+ Coğrafya 
+ AYT 60 eksik 
+ Girdiler
+ Yayınevi 
+ Deneme adı 
+ E-posta E-posta adresi eksik görünüyor. Örn: ad@alan.com
+ Girdi zemini yüzey (#121D31), kenar #6B7D97 (4,02), placeholder #8B9AAF (5,89), odak navy-300.
+ Satır grubu ve anahtar
+ Profil 
+ Deneme sonucun hazır Okuttuğun denemenin analizi bitince 
+ Çalışma hatırlatıcısı 
+ Çıkış Yap 
+ Onay kutusu ve radyo
+ Bir daha gösterme 
+ 12. Sınıf 
+ D/Y/B
+ Doğru 
+ 86
+ Yanlış 
+ 74
+ Boş 
+ 0
+ 22 D 5 Y 13 B Temel Matematik 
+ 6 B x 
+ 7 C Doğru A 
+ 31 – Doğru D 
+ Koyuda açıklık sırası tersine döner: Doğru en açık (0,47), Yanlış orta (0,33), Boş en koyu (0,20). Glif #0A1424.
+ İlerleme
+ Tarih · 41 / 64 kart biliniyor
+ %42 
+ 12/40 
+ Kart ve satır
+ Türkçe 31 eksik 
+ Türkiye Geneli Deneme 6 Örnek Yayınları · 5 Eki. 2026 67,5 net 
+ Toast · koyuda ters yüzey 
+ Kart Bildiklerim'e taşındı. Geri Al 
+ Açık yüzey, koyu metin (13,39); ikonlar açık temanın durum renkleri.

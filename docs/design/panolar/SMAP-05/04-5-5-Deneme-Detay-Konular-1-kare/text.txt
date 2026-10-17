@@ -1,0 +1,41 @@
+5.5 Deneme Detay Konular 
+ 5.5 · Tur 3 · Deneme Detay
+ Deneme Detay · Konular · 1 Kare
+ Konu analizinin işi "neyi çalışmalıyım" sorusuna cevap vermek: sıralı liste, dürüst yüzde, az soru uyarısı ve tek eylem.
+ Türkiye Geneli Deneme 6
+ Genel Sorular Konular Kartlar 
+ En çok kaçırdığın konu
+ Cumhuriyet Edebiyatı
+ 12 sorudan 7'sini kaçırdın.
+ Bu Konuyu Çalış 
+ Türk Dili ve Edebiyatı
+ zayıftan güçlüye 
+ 12 D 12 Y 0 B 24 soru 
+ İslamiyet Etkisindeki Türk Edebiyatı (Divan-Halk Edebiyatı)
+ 0 doğru 2 yanlış 0 boş Az soru 
+ %0 Nazım Bilgisi
+ 0 doğru 1 yanlış 0 boş Az soru 
+ %0 Söz Sanatları
+ 0 doğru 1 yanlış 0 boş Az soru 
+ %0 Cumhuriyet Edebiyatı
+ 5 doğru 7 yanlış 0 boş 
+ %42 Batı Edebiyatı ve Akımları
+ 1 doğru 0 yanlış 0 boş Az soru 
+ %100 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Konular Önce en çok kaçırılan konu, altında ders ders zayıftan güçlüye konu satırları. 
+ Sıralama ve yüzde
+ Yüzde = doğru ÷ soru, en yakın tam sayı: 5/12 = %42 (eskiden %41, 28).
+ Zayıftan güçlüye; eşitlikte soru sayısı çok olan önce.
+ 1–2 soruluk konu "Az soru" etiketi taşır: yüzdesi tek soruya bağlı.
+ Üstteki kart en çok yanlış yapılan konuyu öne alır ("12 sorudan 7'sini kaçırdın"); tek birincil eylem "Bu Konuyu Çalış" konu detayını açar (Tur 5).
+ Veri
+ Konular ve D/Y/B Ek C'den; ders başlığındaki 12 / 12 / 0 ekran görüntüsü 28'den (aynı deneme).
+ Ek C'de bu denemenin yalnız Türk Dili ve Edebiyatı konuları var; diğer dersler aynı kalıpla altta sıralanır.
+ Bileşenler
+ Konu satırı 1.15: ad sarar, kesilmez; kelimeli ikonlu sayaç (1.14); halka tek renk, eşik rengi yok.
+ Satırın tamamı dokunulur (konu detayı).
+ Eskiden
+ Sarı halka beyazda 1,22:1; %0 ile veri yok aynı halka (28).
+ Sıra soru sırası, zayıf konu önceliği yok; ad üç noktayla kesik; "( Edebi" boşluğu (28).

@@ -1,0 +1,55 @@
+10.2 Öğrencilerim 
+ 10.2 · Tur 9 · Koç
+ Öğrencilerim · 4 Kare
+ Öğrenci listesi, Türkçe harf duyarsız arama, sonuçsuz arama ve boş durum.
+ Öğrencilerim 
+ Öğrenci ara 
+ 5 öğrenci
+ Alparslan Kuloğlu
+ 12. Sınıf · Eşit Ağırlık · 10 deneme
+ 67,5
+ son net
+ Elif Şahin
+ 11. Sınıf · Sayısal
+ Kerem Aydın
+ Mezun · Sözel
+ Mert Yıldız
+ 10. Sınıf
+ Zeynep Kaya
+ 12. Sınıf · Eşit Ağırlık
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 1 · Liste Satır: avatar, ad, sınıf · alan; verisi olanda deneme sayısı ve son net. Alfabetik (Türkçe sıralama). Bantta tek eylem: öğrenci ekle. 
+ Öğrencilerim 
+ aydin 
+ 1 öğrenci
+ Kerem Aydın 
+ Mezun · Sözel
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 2 · Arama · I/ı/İ/i "aydin" yazınca "Aydın" bulunur; "AYDIN", "aydın" da aynı sonucu verir. Eşleşen kısım işaretli. 
+ Öğrencilerim 
+ selin 
+ “selin” ile eşleşen öğrenci yok
+ Ad ve soyadda arar; büyük-küçük harf ve I/ı/İ/i farkı gözetmez.
+ Aramayı Temizle 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 3 · Sonuç yok Tek cümle, nasıl aradığı ve "Aramayı Temizle". 
+ Öğrencilerim 
+ Henüz öğrencin yok
+ Öğrencinin hesabını sen aç ya da koçluk kodunu paylaş; bağlanan öğrenciler burada listelenir.
+ Öğrenci Ekle Kodunu Paylaş 
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ 4 · Öğrenci yok Üç avatar; "Öğrenci Ekle" birincil, "Kodunu Paylaş" ikincil. 
+ Bileşenler
+ Kök bant 1.18 kare 1: başlık + sağda tek ikon eylemi (Plus, "Öğrenci ekle").
+ Arama 1.12; eşleşen kısım warning-bg vurgusu.
+ Satır 72 pt; sağda yalnız verisi olan bilgi (son net). Mert Yıldız'da alan yok (10. sınıf).
+ Arama
+ Karşılaştırma tr-TR katlamasıyla: I→ı, İ→i, sonra ı ve i eşitlenir. "aydin" = "Aydın" = "AYDIN".
+ Ad ve soyad ayrı ayrı ve birlikte aranır ("kerem a").
+ İstemcide, 150 ms gecikmeli; 50'den fazla öğrencide sunucuda.
+ Eskiden
+ Arama Türkçe harflerde (I/ı/İ/i) eşleşmiyordu; satırda son net ve deneme sayısı yoktu (envanter §2.3).

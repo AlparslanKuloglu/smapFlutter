@@ -1,0 +1,86 @@
+1.25 İllüstrasyon Seti ve Mevcut Varlıklar 
+ 1.25 · Temeller · İllüstrasyon
+ İllüstrasyon Seti ve Mevcut Varlıklar
+ Paylaştığın kil seti avatarlarla aynı yumuşak 3D dilde; Bölüm 7'deki "sade ve avatar stilinde" koşulunu karşılıyor ve yeni bir ikon seti değil. Yalnız onboarding'de, ekran düzeyi boş durumlarda ve mağaza görsellerinde kullanılır. Ders satırı, çip, sekme ve veri ekranlarında ders glifi kalır (Ek D-12, 1.5). Altta mevcut uygulamadaki görsellerin her biri için karar var.
+ Kil Seti · 11 Görsel
+ Her görsel kendi pastel karosuyla gelir (köşe 28/140). Ders görselleri o dersin destesinde ve "eksik yok" durumunda; diğerleri belirli boş durumlarda.
+ Kitap Türkçe 
+ Hokka Edebiyat · koçta görüşme boş durumu 
+ Sütun Tarih 
+ Küre Coğrafya 
+ İşlemler Matematik · yalnız mağaza (v1'de web'de) 
+ Piramit Geometri · yalnız mağaza (v1'de web'de) 
+ Atom Fizik 
+ Erlenmeyer Kimya 
+ Yaprak Biyoloji 
+ Ampul Programım boş durumu 
+ Harita Denemelerim boş durumu, onboarding, mağaza 
+ Boş Durumda · Açık ve Koyu
+ Programım, henüz program yokken. Görsel M boy (128 pt).
+ Programım
+ Henüz programın yok
+ Haftalık programını kurduğunda günün konuları burada ve Anasayfa'da görünür.
+ Haftalık Programını Kur 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Açık Görsel, başlık, tek cümle, tek eylem. Görsel süs: ekran okuyucu "Henüz programın yok" başlığından başlar. 
+ Programım
+ Henüz programın yok
+ Haftalık programını kurduğunda günün konuları burada ve Anasayfa'da görünür.
+ Haftalık Programını Kur 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Koyu Karo aynen kalır: ters çevrilmez, parlama ya da gölge eklenmez. Pastel karo koyu zeminde ekranın tek açık yüzeyi, bu yüzden en fazla bir tane. 
+ Kurallar
+ Yalnız onboarding, ekran düzeyi boş durum ve mağaza görsellerinde.
+ Ekranda en fazla bir illüstrasyon; altında başlık ve tek cümle, sonra tek eylem.
+ İki boy: L 160 pt (onboarding), M 128 pt (boş durum). Bölüm düzeyi boş durum yalnız metin (1.22).
+ Ders satırında, çipte, sekmede, düğmede ve grafiğin yanında kullanılmaz.
+ Süstür: ekran okuyucu atlar (Flutter'da ExcludeSemantics); anlamı başlık taşır.
+ Karonun kendi köşesi ve rengi var; üstüne kenar, gölge ya da ikinci kap konmaz.
+ Koyu temada karo değişmez; ters çevrilmiş ya da soluklaştırılmış kopya yok.
+ Üretim için 3x (480 px) PNG ya da WebP gerekir; buradakiler 140 px'lik görüntüden kırpıldı.
+ Satırda Glif, Boş Durumda Kil
+ Tarih 60 eksik 
+ Doğru · ders glifi
+ 40 pt'de net, ders rengini taşır (Ek D-12, 1.5).
+ Tarih 60 eksik 
+ Yanlış · kil görsel satırda
+ 40 pt'de ayrıntı kaybolur, pastel karo ders rengini bozar, liste gürültüye döner.
+ Boş Durum → Görsel
+ Boş durum Görsel Tur 
+ Analizlerim › Denemelerim · "Henüz deneme yok" Harita 4 (kitte 1.22) 
+ Programım · "Henüz programın yok" Ampul 6 
+ Kart destesi ya da ders detayı · eksik kalmadı Dersin görseli 5 
+ Öğrencilerim (koç) · "İlk öğrencini ekle" Üç avatar (1.17) 9 
+ Görüşmelerim (koç) · "Henüz görüşme yok" Hokka 9 
+ Onboarding ve rol seçimi Tur 7'de seçilir (L boy) 7 
+ Mevcut Varlıklar · Karar
+ Paylaştığın varlık görselleri ve ekran görüntüleri üzerinden. Görsel numaraları ekran görüntülerinden.
+ 3D avatarlar · 7
+ Kalır
+ Ek D-13. 1.17'de gerçek dosyalarla; örnek kişiler sabit atandı.
+ Kil seti · 11
+ Yeni kullanım
+ Onboarding, ekran düzeyi boş durum, mağaza görselleri (Tur 7, Tur 11).
+ Düz ders illüstrasyonları · 9
+ Kalkar
+ 28 pt'de ayrıntı okunmuyordu (09, 29); satırda ders glifi (1.5).
+ Gezginler ve harita
+ Kalkar
+ Giriş ekranındaki düz vektör (06); avatar dilinde değil. Yerine kil Harita.
+ Puan parası
+ Kalkar
+ Puan ve coin yok (Ek D-3). Anasayfa'daki "0" çipi gider (09).
+ Onboarding telefon görselleri
+ Kalkar
+ Eski arayüzün ekran görüntüleri, toplam 7,7 MB (01–05). Tur 7'de yeni arayüz parçalarıyla.
+ Eski üçgen logo
+ Kalkar
+ Eski sürümün işareti, #FF6400 (01–05'teki görsellerde). Logo 1.26'da.
+ "Stundent map" taslağı
+ Kullanılmaz
+ "Student" yanlış yazılmış; noktalı yay işareti yılan gibi okunuyor. Mağaza görsellerine girmez.
+ Mevcut ikon · S + "Student map"
+ Yenileniyor
+ Yazı 29 pt'de okunmuyor, lacivert yarı lacivert zeminde kayboluyor. Öneri 1.26'da.

@@ -1,0 +1,55 @@
+9.4 Hesabı Sil 
+ 9.4 · Tur 8 · Hesap
+ Hesabı Sil · 5 Kare
+ Açıklama → tehlikeli onay → siliniyor → silindi.
+ Profil
+ Düzenle 
+ Telefon +90 5XX XXX XX XX
+ Sınıf 12. Sınıf
+ Alan Eşit Ağırlık
+ Hesabı Sil 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Giriş noktası Profil'in en altında, ayraçtan sonra tehlikeli metin düğmesi. Hesap ana listesinde yok: yanlışlıkla dokunulmasın. 
+ Hesabını sil
+ Hesabını silersen:
+ Okuttuğun 10 deneme ve analizleri silinir. 
+ Eksik konuların, programların ve bilgi kartı ilerlemen silinir. 
+ Koçun Mehmet Özkan ile bağlantın kalkar. 
+ Bu işlem geri alınamaz. 
+ Yalnız bir süre ara vermek istiyorsan çıkış yapman yeterli; verilerin hesabında kalır.
+ Hesabımı Sil Vazgeç 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Açıklama Neyin silineceği Ek C verisiyle (10 deneme, koç adı). Çıkışın yeterli olabileceği de söylenir. 
+ Hesabını sil
+ Hesabını silersen:
+ Okuttuğun 10 deneme ve analizleri silinir. 
+ Eksik konuların, programların ve bilgi kartı ilerlemen silinir. 
+ Koçun Mehmet Özkan ile bağlantın kalkar. 
+ Bu işlem geri alınamaz. 
+ Yalnız bir süre ara vermek istiyorsan çıkış yapman yeterli; verilerin hesabında kalır.
+ Hesabımı Sil Vazgeç 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ Hesabın silinsin mi?
+ Alparslan Kuloğlu hesabı ve bütün verilerin kalıcı olarak silinecek. Bu işlem geri alınamaz.
+ Hesabımı Sil Vazgeç 
+ 3 · Tehlikeli onay Kelime yazdırma yok (D-28). Odak Vazgeç'te. Kırmızı düğme yalnız burada. 
+ Hesabın siliniyor
+ Uygulamayı kapatma.
+ 4 · Siliniyor Tam ekran, geri hareketi kapalı. Hata olursa açıklama ekranına döner: "Hesabın silinemedi. Bağlantını kontrol edip tekrar dene." 
+ Hesabın silindi
+ Verilerin silindi. İstersen yeni bir hesapla yeniden başlayabilirsin.
+ Tamam 
+ 5 · Silindi Oturum kapanır; Tamam Hoş geldin ekranına (2.2 kare 5) götürür. Haptik yok. 
+ Bileşenler
+ Tehlikeli metin düğmesi error + Trash ikonu.
+ Liste: X ikonu error , 16/24 metin; her madde tek cümle.
+ Onay sheet'i 1.21 tehlikeli; düğme error #C42D35, beyaz metin (5,4:1).
+ Davranış
+ Silme isteği gönderilince bekleyen form kuyruğu temizlenir.
+ Koça bildirim gitmez; koçun listesinden öğrenci kalkar (Tur 9).
+ Yasal saklama gereken kayıtlar sunucuda kurala göre tutulur; metin bunu vaat etmez, Sözleşmeler'e bağlanır.
+ Eskiden
+ "Hesabımı Sil" profil sayfasının altında, onaysız görünen kırmızı bağlantı (33).

@@ -1,0 +1,38 @@
+12.1 Mağaza Panoraması 
+ 12.1 · Tur 11 · Mağaza Görselleri
+ Panorama · 7 Kare
+ App Store ve Google Play görsellerinin kaynağı: 7 karelik tek panorama (kare başına 1290 × 2796, burada 1/3 ölçek). Kesik çizgiler kesim yerleri.
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ SMAP 
+ Denemeni okut, eksiğini kapat
+ YKS'ye hazırlanırken her denemenden ders çıkar.
+ Optik formunu kamerayla okut
+ Köşeleri oturt, gönder; cevapların sayılır.
+ Netin ve D/Y/B'n tek ekranda
+ Önceki denemene göre farkını da görürsün.
+ Her soruda ne olduğunu gör
+ İşaretin, doğru cevap ve kaçırdığın konu.
+ Gelişimini grafikte izle
+ Her deneme grafiğe yeni bir nokta ekler.
+ Eksiklerini konu konu kapat
+ Konu anlatımı ve bilgi kartlarıyla tekrar et.
+ Haftanı planla, bugüne odaklan
+ Eksik konularından haftalık program kur.
+ Kurgu
+ Yedi kare tek panorama: turuncu rota bir kareden ötekine geçer, kesim çizgisinde kopmaz.
+ Her karede tek başlık (114 px gerçek boy), tek alt satır, tek telefon; 6. karede ikinci telefon kart destesi.
+ Telefonlarda yalnız bu projenin koyu ekranları: 3.3, 4.3, 5.1, 5.9, 6.4, 7.6 + 8.2, 3.8. Veriler Ek C.
+ Görsel dil
+ Zemin navy-900 → #0A1424; parlamalar ve rota yalnız mağazada serbest (Bölüm 6 istisnası).
+ Kil nesneler: Harita, Sütun, Ampul (1.25); İşlemler ve Piramit kullanılmadı (Mat/Geo web'de).
+ Yazı Plus Jakarta Sans 800 / 500; turuncu metin yok, beyaz ve navy-200.
+ Söz
+ Süre vaadi, sıralama vaadi, "yapay zeka" yok. Kaldırılan özellik (coin, Gelen Kutusu, SmapLab, ödeme) görünmez.
+ Ad yalnız "SMAP"; "Stundent map" taslağı kullanılmadı.
+ Başlıklar "sen" diliyle, Türkçe başlık düzeninde değil cümle düzeninde (mağaza metni).

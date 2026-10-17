@@ -1,0 +1,31 @@
+4.8 Form Kontrol Durumlar 
+ 4.8 · Tur 2 · Kamera ve Optik Okuma
+ Form Kontrol · Durumlar · 2 Kare
+ Form Kontrol'ün yükleme ve hata durumları. Boş durum yok: okunan form her zaman bir şey gösterir; boş liste sheet'te (4.7, kare 2).
+ Form Kontrol
+ Okunan cevapları formunla karşılaştır.
+ Form görüntüsü yükleniyor 
+ İki parmakla yakınlaştırabilirsin.
+ 160 cevap okundu 2 boş 
+ 1. kolon boş yok 2. kolon boş yok 3. kolon 1 boş 4. kolon 1 boş 
+ 3. kolon · 40 soru · düzeltmek için soruya dokun
+ 1 B 2 A 3 C 4 E 5 A 6 B 7 A 8 C 9 C 10 A 11 E 12 – 13 C 14 B 15 A 16 A 17 B 18 A 19 C 20 E 
+ Düzelt Cevapları Onayla 
+ 1 · Görüntü yükleniyor Cevaplar yanıtla geldiği için ızgara hemen çalışır; yalnız görüntü iskelet. 15 sn'de gelmezse kartta "Görüntü yüklenemedi · Tekrar Dene". 
+ Form Kontrol
+ Okunan cevapları formunla karşılaştır.
+ İki parmakla yakınlaştırabilirsin.
+ 160 cevap okundu 0 boş 2 düzeltme 
+ 1. kolon boş yok 2. kolon boş yok 3. kolon boş yok 4. kolon boş yok 
+ 3. kolon · 40 soru · düzeltmek için soruya dokun
+ 1 B 2 A 3 C 4 E 5 A 6 B 7 A 8 C 9 C 10 A 11 E 12 C 13 C 14 B 15 A 16 A 17 B 18 A 19 C 20 E 
+ Cevaplar gönderilemedi. Düzeltmelerin duruyor; tekrar dene. 
+ Düzelt Tekrar Dene 
+ 2 · Gönderilemedi Düzeltmeler kaybolmaz. Birincil düğme "Tekrar Dene"ye döner. Çevrimdışıysa metin: "Bağlantı yok. Bağlantı gelince tekrar dene." 
+ Durum kuralları
+ İskelet bg-sunken , 1200 ms parıltı (1.22); metinle desteklenir.
+ Hata satır içi uyarı ( role=alert ), error-bg zemin, 24 pt ikon.
+ Eskiden: iç kodlu SnackBar ("Gönderim hatası 590: …") ya da sunucu Left dönerse hiç mesaj yok (envanter).
+ Hareket ve haptik
+ Uyarı 250 ms'de aşağıdan açılır; error haptiği.
+ "Tekrar Dene" uyarıyı kapatır, düğme meşgul durumuna geçer (4.7, kare 4).

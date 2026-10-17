@@ -1,0 +1,59 @@
+2.6 Kayıt Durumlar 
+ 2.6 · Tur 7 · Açılış ve Giriş
+ Kayıt · Durumlar · 4 Kare
+ Alan hataları, gönderim hataları, sözleşme metinleri yüklenemediğinde kapalı kayıt ve 9.–10. sınıf.
+ Kayıt ol
+ Öğrenci Öğrenci Koçu 
+ Avatarın 7 avatar 
+ Ad Soyad Alparslan Kuloğlu
+ Kullanıcı adı alparslan
+ Bu kullanıcı adı alınmış. 
+ Boşta olan: alparslan.k 
+ E-posta alparslan@ornek
+ E-posta adresi eksik görünüyor. Örn: ad@alan.com 
+ 1 · Alan hataları Kullanıcı adı alınmış: boşta olan öneri tek dokunuşla yazılır. E-posta hatası çözüm söyler (1.12). 
+ Kayıt ol
+ Öğrenci Öğrenci Koçu 
+ Şifre •••••••••• 
+ En az 8 karakter.
+ Şifre (tekrar) •••••••••• 
+ Şifreler aynı değil. 
+ Sınıf 12. Sınıf 
+ Alan Eşit Ağırlık 
+ Kullanım Koşulları 'nı ve KVKK Aydınlatma Metni 'ni okudum, kabul ediyorum. Kaydolmak için metinleri onaylaman gerekiyor. 
+ Kayıt Ol Hesabın var mı? Giriş Yap 
+ 2 · Gönderimde Şifreler eşleşmiyor ve onay yok: alanın altında ikonlu hata. Odak ilk hatalı alanda; error haptiği bir kez. 
+ Kayıt ol
+ Öğrenci Öğrenci Koçu 
+ Şifre •••••••••• 
+ En az 8 karakter.
+ Şifre (tekrar) •••••••••• 
+ Sınıf 12. Sınıf 
+ Alan Eşit Ağırlık 
+ Sözleşme metinleri yüklenemedi. Kaydolmak için metinleri görebilmen gerekiyor.
+ Tekrar Dene 
+ Kayıt Ol Metinler yüklenince kayıt açılır.
+ 3 · Metinler yüklenemedi Onay yerine hata kutusu ve Tekrar Dene; Kayıt Ol pasif ve nedeni altında yazılı. 
+ Kayıt ol
+ Öğrenci Öğrenci Koçu 
+ Şifre •••••••••• 
+ En az 8 karakter.
+ Şifre (tekrar) •••••••••• 
+ Sınıf 10. Sınıf 
+ Alan Seçilmez 9. ve 10. sınıfta alan seçilmez.
+ Kullanım Koşulları 'nı ve KVKK Aydınlatma Metni 'ni okudum, kabul ediyorum. 
+ Kayıt Ol Hesabın var mı? Giriş Yap 
+ 4 · 10. sınıf Alan pasif "Seçilmez" ve tek satır neden (1.12). Örnek: Mert Yıldız, 10. sınıf. 
+ Hata metinleri
+ "Bu kullanıcı adı alınmış." + "Boşta olan: alparslan.k"
+ "E-posta adresi eksik görünüyor. Örn: ad@alan.com"
+ "Şifreler aynı değil."
+ "Kaydolmak için metinleri onaylaman gerekiyor."
+ "Sözleşme metinleri yüklenemedi. Kaydolmak için metinleri görebilmen gerekiyor."
+ Hareket ve haptik
+ Hatalı alana 350 ms kaydırma; hareketi azaltta doğrudan.
+ Öneri çipine dokununca alan dolar, kontrol yeniden çalışır; selectionClick.
+ Metinler yüklenince kutu 250 ms'de onay satırına döner.
+ Neden
+ Hukuk metni okunamıyorsa onay alınamaz; kayıt kapatılır (brief).
+ Hata çözüm söyler, iç kod yok (1.22).

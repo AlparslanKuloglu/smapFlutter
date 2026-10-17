@@ -1,0 +1,45 @@
+1.16 Kartlar ve Satırlar 
+ 1.16 · Temeller · Veri
+ Kartlar ve Satırlar
+ Ders satırı, konu satırı, deneme kartı ve istatistik kutusu. Hepsinde sahte değer yok: "%75 · 15/20 konu · 4 alt başlık · 26 madde · 8 kart" (11, 29), "+18.2% gecen ay" (19) ve "Deneme: 1" (21) kalktı. Veri yoksa alan çizilmez. Ad hiçbir yerde kesilmez.
+ Ders satırı
+ Türkçe 31 eksik 
+ Tarih 60 eksik 41 / 64 kart biliniyor 
+ Coğrafya 44 eksik 
+ Matematik Web'de 
+ Tarih-2 SOS-2 
+ Glif kutusu ders renginde; ad text-primary; "TYT" öneki yazılmaz. Eksik sayısı etiketle. Kart ilerlemesi yalnız verisi olan derste (Tarih). Tarih-2'nin eksik verisi örnekte yok, bu yüzden sayı yerine yalnız SOS-2 etiketi var.
+ Metin %130 · ad sarılır 
+ Türk Dili ve Edebiyatı 3 eksik 
+ Sağ sütun dar olduğunda etiket adın altına iner; satır yüksekliği içerikle büyür.
+ Konu satırı · Türkçe, 1'den n'ye 
+ 7 Söz Öbekleri 
+ 8 Cümlenin Öğeleri 2 eksik 
+ 9 Fiilde Çatı 3 eksik 
+ 10 Cümle Türleri 
+ 11 Anlatım Bozuklukları 
+ 12 Noktalama İşaretleri 3 eksik 
+ Numara kesintisiz ve sola sabit (eskiden 3, 4, 4, 5, 5, 6; 18). Eksik yoksa etiket yok, "0 eksik" yazılmaz.
+ Uzun ad · SOS-2 Tarih 
+ 2 İkinci Dünya Savaşı Sürecinde Türkiye ve Dünya 
+ 5 21.yy'ın Eşiğinde Türkiye ve Dünya 
+ İki satıra kadar sarılır (15'te "Sürecin…" diye kesiliyordu). Meta sütunu kalktığı için ad tüm genişliği kullanır.
+ Deneme kartı · liste 
+ Türkiye Geneli Deneme 6
+ Örnek Yayınları
+ AYT 5 Eki. 2026 
+ 86 D 74 Y 0 B 
+ 67,5
+ net
+ TYT Genel Deneme 9
+ TYT 28 Eyl. 2026 
+ 80 D 21 Y 19 B 
+ 74,75
+ net
+ Net en belirgin öğe; D/Y/B küçük. Kapak yoksa nötr yer tutucu. İkinci kartta yayınevi verisi örnekte yok, satır çizilmedi. Favori nötr ve düşük vurgulu (yalnız cihazda). Izgara ya da liste kararı Tur 4'te.
+ İstatistik kutusu · Analizlerim, TYT · Genel 
+ 6 Çözülen deneme 
+ 67,79 Ortalama net son denemede +3,25 
+ 381,40 Ortalama puan 
+ 182.430 Ortalama sıralama 
+ Değer, etiket, varsa bağlam. Değişim yalnız son iki denemeden hesaplanır (71,5 → 74,75); işaret ve ok her zaman yazılır, renk tek ipucu değil. Sıralamada düşen sayı iyidir: ok yönü ve renk buna göre. Verisi olmayan bağlam satırı çizilmez.

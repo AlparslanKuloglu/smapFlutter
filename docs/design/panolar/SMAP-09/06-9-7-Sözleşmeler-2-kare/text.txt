@@ -1,0 +1,27 @@
+9.7 Sözleşmeler 
+ 9.7 · Tur 8 · Hesap
+ Sözleşmeler · 2 Kare
+ Ad, sürüm ve tarihle liste; okuma ekranı.
+ Sözleşmeler
+ Kullanım Koşulları Sürüm 1.2 · 1 Eylül 2026 KVKK Aydınlatma Metni Sürüm 1.1 · 1 Eylül 2026 Gizlilik Politikası Sürüm 1.1 · 1 Eylül 2026 
+ Kayıt olurken bu sürümleri onayladın. Bir metin değişirse uygulama açılışında yeni sürümü onaylaman istenir.
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Liste Ad, sürüm ve tarih. Alt not onayın sürüme bağlı olduğunu söyler. 
+ Kullanım Koşulları
+ Sürüm 1.2 · Yürürlük 1 Eylül 2026
+ 1. Taraflar ve konu
+ Bu koşullar, SMAP uygulamasını kullanan öğrenci ve koçlar için geçerlidir. Uygulamayı kullanarak bu koşulları kabul etmiş olursun.
+ 2. Hesabın
+ Hesabının güvenliğinden sen sorumlusun. Kullanıcı adını ve şifreni kimseyle paylaşma; paylaşıldığını düşünürsen şifreni değiştir.
+ 3. Okutulan formlar
+ Okuttuğun optik formların görüntüsü yalnız sonucunu hesaplamak için işlenir. Ayrıntılar KVKK Aydınlatma Metni'nde.
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Okuma Başlık bara iner; sürüm ve yürürlük tarihi üstte. Gövde 16/26, başlıklar 17/700. Metin sunucudan. 
+ Bileşenler
+ Satır 1.13: File ikonu, ad, alt metinde sürüm ve tarih.
+ Okuma: 1.18 detay barı, kaydırınca başlık bara iner; gövde body-lg .
+ Eskiden
+ Sarı belge ikonları ve göz ikonları; sürüm ve tarih yoktu (36).
+ Metinler web görünümünde, uygulama tipografisinin dışında açılıyordu (envanter).

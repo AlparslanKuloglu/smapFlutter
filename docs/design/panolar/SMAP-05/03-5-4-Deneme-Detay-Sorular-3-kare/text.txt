@@ -1,0 +1,56 @@
+5.4 Deneme Detay Sorular 
+ 5.4 · Tur 3 · Deneme Detay
+ Deneme Detay · Sorular · 3 Kare
+ Testler akordeonda, sorular 5 sütunlu ızgarada: numara, senin işaretin ve yanlışsa doğru cevap. Tümü, Yanlışlar, Boşlar süzgeci; hücre Soru Detay'ı açar.
+ Türkiye Geneli Deneme 6
+ Genel Sorular Konular Kartlar 
+ Tümü 160 soru Yanlışlar 74 yanlış Boşlar boş yok 
+ Türk Dili ve Edebiyatı–Sosyal Bilimler 1
+ 23 D 17 Y 0 B 40 soru 
+ 1 E Doğru B 2 B Doğru E 3 A Doğru B 4 A Doğru D 5 E Doğru C 6 B Doğru B 7 C Doğru A 8 C Doğru A 9 A Doğru A 10 B Doğru B 11 A Doğru D 12 E Doğru B 13 E Doğru A 14 A Doğru A 15 C Doğru D 16 D Doğru D 17 D Doğru D 18 C Doğru B 19 B Doğru B 20 B Doğru B 21 D Doğru D 22 E Doğru E 23 E Doğru E 24 C Doğru C 25 A Doğru E 26 C Doğru C 27 A Doğru A 28 A Doğru A 29 E Doğru E 30 C Doğru C 31 C Doğru A 32 D Doğru D 33 E Doğru C 34 E Doğru E 35 A Doğru D 36 B Doğru B 37 B Doğru E 38 E Doğru E 39 D Doğru D 40 A Doğru A 
+ Sosyal Bilimler 2
+ 17 D 23 Y 0 B 40 soru 
+ Matematik
+ 25 D 15 Y 0 B 40 soru 
+ Fen Bilimleri
+ 21 D 19 Y 0 B 40 soru 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Tümü İlk test açık. Hücrede numara, durum çipi, işaretin; yanlış ve boşta altta doğru cevap. Doğru/yanlış dizilimi gerçek (26, 27); şıklar örnek. 
+ Türkiye Geneli Deneme 6
+ Genel Sorular Konular Kartlar 
+ Tümü 160 soru Yanlışlar 74 yanlış Boşlar boş yok 
+ Türk Dili ve Edebiyatı–Sosyal Bilimler 1
+ 23 D 17 Y 0 B 40 soru 
+ 1 E Doğru B 2 B Doğru E 3 A Doğru B 4 A Doğru D 5 E Doğru C 7 C Doğru A 8 C Doğru A 11 A Doğru D 12 E Doğru B 13 E Doğru A 15 C Doğru D 18 C Doğru B 25 A Doğru E 31 C Doğru A 33 E Doğru C 35 A Doğru D 37 B Doğru E 
+ Sosyal Bilimler 2
+ 17 D 23 Y 0 B 40 soru 
+ Matematik
+ 25 D 15 Y 0 B 40 soru 
+ Fen Bilimleri
+ 21 D 19 Y 0 B 40 soru 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Yanlışlar Süzgeç yalnız yanlışları bırakır: ilk testte 17 hücre. Kapalı testler sayaçlarıyla durur; açılınca kendi yanlışları gelir. 
+ Türkiye Geneli Deneme 6
+ Genel Sorular Konular Kartlar 
+ Tümü 160 soru Yanlışlar 74 yanlış Boşlar boş yok 
+ Boş bıraktığın soru yok
+ Bu denemedeki 160 sorunun hepsini işaretledin.
+ Tüm Soruları Göster 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Boşlar · boş Bu denemede boş yok (0 B): bölüm düzeyinde boş durum, metin ve tek geri dönüş eylemi. Görsel yok (1.25). 
+ Bileşenler
+ Süzgeç sayaçlı segment (1.10): "160 soru", "74 yanlış", "boş yok".
+ Akordeon başlığı: tam ad (sarar), ikonlu küçük D/Y/B sayacı + soru sayısı; açıkken yukarı, kapalıyken aşağı ok (1.13).
+ Soru hücresi 1.14: 76 pt, 5 sütun, 8 pt aralık; doğru surface + çizgi, yanlış dyb-wrong-bg , boş bg-sunken .
+ Hücreye dokunmak Soru Detay'ı (5.7) açar.
+ Hareket ve haptik
+ Akordeon 250 ms ( standard ); açılan bölüm görünür alana kayar.
+ Süzgeç değişince ızgara 150 ms çapraz geçiş; selectionClick .
+ Hücre basılı: 0,97 ölçek, 100 ms.
+ Eskiden
+ Her hücrede anlamı belirsiz sabit "A"; doğru şık hiç yoktu (26).
+ Doğruda daire yok, yanlışta var; açık ve kapalı bölümde aynı ok (26, 27).
+ Etiketsiz 23/17/0 rozetleri; başlıkla ızgara arasında ~90 pt boşluk; son satır ana ekran göstergesinin altında (26).

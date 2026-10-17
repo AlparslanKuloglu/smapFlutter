@@ -1,0 +1,179 @@
+14.6 · Tur 12 · Geri Gelen Özellikler
+Edebiyat · Yazar Sheet'i · 3 Kare
+Eser başına durum ve "Öğrendim" geri geldi; yazar düzeyindeki tek düğmenin yerini aldı.
+Tanzimat Dönemi 
+2 eksik eser 
+Birinci Dönem Sanatçıları 
+2 eksik 
+Ş 
+Şinasi 
+3 eser 
+NK 
+Namık Kemal 
+8 eser 
+2 eksik 
+ZP 
+Ziya Paşa 
+6 eser 
+İkinci Dönem Sanatçıları 
+Anasayfa
+Analizlerim
+Okut
+Derslerim
+Hesap 
+NK
+Namık Kemal 
+Tanzimat Dönemi 
+Hakkında 
+Tanzimat Dönemi'nin şair ve yazarı; "vatan şairi" 
+olarak bilinir. Edebiyatı toplumu eğitmenin aracı 
+olarak gördü. 
+Vatan yahut Silistre oyunu sahnelendiğinde 
+büyük ilgi gördü. 
+Eserleri
+8 eser · 2 eksik 
+Roman · 2 
+İntibah
+Eksik
+Öğrendim 
+Cezmi
+Biliyorsun 
+Tiyatro · 6 
+Vatan yahut Silistre
+Eksik
+Öğrendim 
+Gülnihal
+Biliyorsun 
+Akif Bey
+Biliyorsun 
+Zavallı Çocuk
+Biliyorsun 
+Kara Bela
+Biliyorsun 
+Celaleddin Harzemşah
+Biliyorsun
+1 · AuthorSheet
+Tam boy. Başlık, Hakkında, "Eserleri · 8 eser · 2 eksik", türe göre 
+gruplar. Eksik eser: eksik etiketi ve "Öğrendim"; bilinen eser: ✓ 
+"Biliyorsun". Yazar düzeyindeki tek "Öğrendim" kalktı.
+Yerine geçtiği kare: 7.4·2
+Tanzimat Dönemi 
+2 eksik eser 
+Birinci Dönem Sanatçıları 
+2 eksik 
+Ş 
+Şinasi 
+3 eser 
+NK 
+Namık Kemal 
+8 eser 
+2 eksik 
+ZP 
+Ziya Paşa 
+6 eser 
+İkinci Dönem Sanatçıları 
+Anasayfa
+Analizlerim
+Okut
+Derslerim
+Hesap 
+NK
+Namık Kemal 
+Tanzimat Dönemi 
+Hakkında 
+Tanzimat Dönemi'nin şair ve yazarı; "vatan şairi" 
+olarak bilinir. Edebiyatı toplumu eğitmenin aracı 
+olarak gördü. 
+Vatan yahut Silistre oyunu sahnelendiğinde 
+büyük ilgi gördü. 
+Eserleri
+8 eser · 1 eksik 
+Roman · 2 
+İntibah
+Biliyorsun 
+Cezmi
+Biliyorsun 
+Tiyatro · 6 
+Vatan yahut Silistre
+Eksik
+Öğrendim 
+Gülnihal
+Biliyorsun 
+Akif Bey
+Biliyorsun 
+Zavallı Çocuk
+Biliyorsun 
+Kara Bela
+Biliyorsun 
+Celaleddin Harzemşah
+Biliyorsun 
+İntibah bildiklerine eklendi.
+Geri Al
+2 · Öğrendim sonrası
+"İntibah" ✓ olur, sayaç "1 eksik"e düşer; arkadaki dönem ve alt 
+başlık sayaçları da düşer. Toast 6 sn "Geri Al".
+Tanzimat Dönemi 
+2 eksik eser 
+Birinci Dönem Sanatçıları 
+2 eksik 
+Ş 
+Şinasi 
+3 eser 
+NK 
+Namık Kemal 
+8 eser 
+2 eksik 
+ZP 
+Ziya Paşa 
+6 eser 
+İkinci Dönem Sanatçıları 
+Anasayfa
+Analizlerim
+Okut
+Derslerim
+Hesap 
+Ş
+Şinasi 
+Tanzimat Dönemi 
+Hakkında 
+Tanzimat edebiyatının öncüsü. Agâh Efendi ile 
+ilk özel Türkçe gazete Tercüman-ı Ahvâl'i çıkardı. 
+Şair Evlenmesi, Batılı anlamda yazılmış ilk Türk 
+tiyatro eseridir. 
+Eserleri
+3 eser 
+Tiyatro · 1 
+Şair Evlenmesi
+Biliyorsun 
+Şiir · 1 
+Müntehabat-ı Eş'ar 
+Çeviri · 1 
+Tercüme-i Manzume
+3 · Durum bilinmiyor
+Durum verisi gelmeyen eserde yalnız ad; eski "?" ikonu yok, sayaçta 
+eksik sayısı yazılmaz. Hiç eser yoksa bölümde tek cümle: "Bu 
+yazarın eser listesi henüz yok."
+Bileşenler
+BottomSheet tam boy (1.20); başlıkta 56 pt fotoğraf.
+Eser satırı: 7.4'teki eser listesinin durumlu varyantı (G 
+maddesi): ad 16/24, sağda EksikTag + metin düğmesi 
+"Öğrendim" ya da ✓ "Biliyorsun" (success).
+Tür başlığı 13/700 "Roman · 2". Alt eylem bandı yok.
+Veri
+Eser: eser (ad), type (tür kodu, 33 tür), itemData{_id, 
+status} (0 eksik, 1 biliyor; yoksa durum yok).
+Öğrendim: GET /student/learnedItem?itemId=; geri alma 
+ucu yok, istek 6 sn sonra gider ("Geri Al" istemcide).
+Yazarın yıldızı yalnız yereldi, taşınmadı.
+Erişilebilirlik ve hareket
+"İntibah, roman, eksik. Öğrendim olarak işaretle."
+Bilinen eser: "Cezmi, roman, biliyorsun".
+Öğrendim: satır 250 ms'de ✓'ye döner, success haptiği; 
+sayaçlar aynı anda düşer.
+Varsayımlar (T12)
+T12.13 Şinasi 3, Ziya Paşa 6 eser ve "Hakkında" metinleri 
+örnek. Yazar fotoğrafı yoksa baş harf, Edebiyat tonlarında.
+T12.14 "Biliyorsun" ✓ ile success renginde. Durumu 
+gelmeyen eserde yalnız ad; sayaçta yalnız "N eser".
+T12.15 "Öğrendim" isteği 6 sn sonra gider; "Geri Al" 
+istemcide (geri alma ucu yok).

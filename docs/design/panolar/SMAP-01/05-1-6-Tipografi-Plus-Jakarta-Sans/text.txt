@@ -1,0 +1,62 @@
+1.6 Tipografi 
+ 1.6 · Temeller · Tipografi
+ Tipografi · Plus Jakarta Sans
+ Ürün planındaki yazı tipi; Türkçe glifleri tam. Kodda tanımlı yazı tipi yoktu, 18 farklı punto ve 9 pt metin vardı. Şimdi 12 metin stili ve 4 rakam stili var. Gövde en az 15 pt, ikincil metin en az 13 pt; tek istisna alt çubuk etiketi (12 pt). Bütün satır yükseklikleri 4 pt ızgarada. Örnekler 370 pt genişlikte, yani telefondaki gerçek kırılımla.
+ Stil Örnek (370 pt sütun) Boyut/satır · ağırlık · aralık Kullanım Flutter 
+ display Denemeni okut, eksiklerini gör
+ 32/40 · 800 · −0,5 Onboarding, sonuç anı başlığı; en çok 2 satır displaySmall 
+ title-lg Analizlerim
+ 24/32 · 700 · −0,3 Kök sekme başlığı (lacivert bant), detay ekranının sayfa başlığı headlineSmall 
+ title-md Türkiye Geneli Deneme 6
+ 20/28 · 700 · −0,2 Sheet başlığı, deneme adı, boş durum başlığı titleLarge 
+ headline Konu Analizi
+ 17/24 · 700 · −0,1 Bölüm başlığı, Türkçe başlık düzeninde (kart olmadan da bölüm ayırır) titleMedium 
+ title-sm İslamiyet Etkisindeki Türk Edebiyatı (Divan-Halk Edebiyatı)
+ 16/24 · 600 · 0 Satır ve kart başlığı; 2 satıra kadar sarılır, kesilmez titleSmall 
+ body-lg Bir sözcüğün akla gelen ilk anlamıdır. Sözlük anlamı da denir.
+ 16/24 · 400 · 0 Okuma metni: madde tanımı, örnek, bilgi kartı bodyLarge 
+ body Kurtuluş Savaşı Hazırlık Dönemi'nde 13 sorudan 9'unu kaçırdın.
+ 15/24 · 400 · 0 Gövde, açıklama, sheet metni bodyMedium 
+ body-strong Edirne-Segedin Antlaşması (1444)
+ 15/24 · 600 · 0 Gövde içi vurgu, liste değeri ext.bodyStrong 
+ caption Örnek Yayınları · 5 Eki. 2026
+ 13/20 · 500 · 0 İkincil metin, meta, alan yardımı, eksen bodySmall 
+ label-lg Detaylı Analiz
+ 16/24 · 600 · 0 48 pt düğme labelLarge 
+ label-md TYT · 28 eksik
+ 14/20 · 600 · 0 40 pt düğme, segment, çip, sekme, girdi etiketi labelMedium 
+ label-sm Görüşmelerim
+ 12/16 · 600 · 0 Yalnız alt çubuk etiketi (13 pt'de "Görüşmelerim" 80 pt yuvaya sığmıyor) labelSmall 
+ Rakam stilleri · hepsi tabular (tnum)
+ 67,5 net 
+ metric-xl · 56/64 · 800 · −1,5
+ Sonuç anı ve Deneme Detay'da net
+ 412,63 puan 
+ metric-lg · 40/48 · 800 · −1
+ Puan, tek değer gösteren grafik yerine
+ 48.215. sıra 
+ metric-md · 24/32 · 700 · −0,4
+ İstatistik kutusu, sıralama
+ 86 74 0 
+ metric-sm · 17/24 · 700
+ D/Y/B sayaçları, ders neti
+ Sayı ve tarih biçimi
+ 67,5 net · öncekinden +8,25
+ 74,75 net · 412,63 puan
+ 48.215. sıra · %42 
+ 15 Eylül 2026 · kısa 15 Eyl. 
+ Pzt Sal Çar Per Cum Cmt Paz 
+ Ondalık virgül, binlik nokta. Net çeyrek adımla gelir ve sondaki sıfır yazılmaz (68, 67,5, 74,75). Yüzde en yakın tam sayıya yuvarlanır: %41,67 → %42.
+ Neden tabular
+ orantılı
+ 61,5
+64,25
+74,75
+ tabular
+ 61,5
+64,25
+74,75
+ Liste ve tablolarda rakamlar alt alta hizalanır, sayaçlar değişirken satır oynamaz. Flutter: FontFeature.tabularFigures().
+ Türkçe ve büyütme
+ İı Şş Ğğ Çç Öö Üü · İstanbul
+ Büyük harf dönüşümü tr yerel ayarıyla yapılır; yine de büyük harfli düğme ve harf aralıklı üst etiket yok. Metin %130'a kadar büyür: satır sarılır, yükseklik içerikle büyür, hiçbir ad kesilmez. Yazı tipi uygulamayla birlikte paketlenir (zayıf okul Wi-Fi'ında indirilmez).

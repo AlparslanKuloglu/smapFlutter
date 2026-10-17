@@ -1,0 +1,62 @@
+1.9 Düğmeler 
+ 1.9 · Temeller · Kontroller
+ Düğmeler · 5 Tür × 2 Boy
+ Birincil düğme her yerde lacivert dolgu ve beyaz metin (Ek D-6). Eskiden bir yerde lacivert, bir yerde soluk gri, bir yerde indigoydu; soluk gri olanı pasif gibi görünüyordu (01). Turuncu düğme yok: turuncu üstüne beyaz metin 2,94:1. Etiketler Türkçe başlık düzeninde, büyük harfle yazılmış düğme yok.
+ Tür
+ Varsayılan · 48
+ Basılı
+ Odak
+ Yükleniyor
+ Pasif
+ 40 boy
+ Birincil
+ primary · on-primary
+ Detaylı Analiz 
+ Detaylı Analiz 
+ Detaylı Analiz 
+ Detaylı Analiz 
+ Analizi Gör 
+ İkincil
+ yüzey + 1,5 pt primary kenar
+ Tekrar Çek 
+ Tekrar Çek 
+ Tekrar Çek 
+ Tekrar Çek 
+ Düzenle 
+ Sessiz
+ bg-sunken · text-primary
+ Vazgeç 
+ Vazgeç 
+ Vazgeç 
+ Vazgeç 
+ Yeni Fotoğraf 
+ Tehlikeli
+ status-error · beyaz (5,56)
+ Hesabı Sil 
+ Hesabı Sil 
+ Hesabı Sil 
+ Hesabı Sil 
+ Notu Sil 
+ Metin
+ text-action · dolgusuz
+ Şifremi Unuttum 
+ Şifremi Unuttum 
+ Şifremi Unuttum 
+ Metin düğmesi yüklenmez; işlem başlatıyorsa birincil kullanılır 
+ Kodu Tekrar Gönder 
+ Tümünü Gör 
+ İkonlu ve yalnız ikon
+ İlk Denemeni Okut 
+ Web'de Aç 
+ Geri 
+ Kapat (sheet) 
+ Bant üstü eylem 
+ Favori (düşük vurgu) 
+ İkon 20 pt (düğme içinde) ya da 24 pt (yalnız ikon), etiketten 8 pt uzakta. Yalnız ikon düğmesinin dokunma alanı 48 × 48 ve her birinin erişilebilir adı var: "Geri", "Kapat", "Filtrele", "Favorilere ekle".
+ Kurallar
+ Bir ekran, bir birincil. Kamera düğmesi bu sayıma girmez. 
+ Pasif yerine doğrulama. Form eksikken birincil dolu kalır; basınca ilk hatalı alana gidilir ve hata yazılır. Pasif yalnız işlem sürerken ya da sayaç bitmeden (Kodu Tekrar Gönder). 
+ Yükleniyor: genişlik sabit, etiket yerine dönen gösterge, çift dokunma engelli, erişilebilir ad "Yükleniyor". 
+ İptal sözlüğü. "Vazgeç": işlem yapmadan kapatır. "Tamam": yalnız bilgi veren sheet'te tek düğme. "Kapat": yalnız X ikonunun erişilebilir adı. "Geri Al": yalnız toast eylemi. "İptal" kullanılmaz. 
+ Sheet'te sıra: birincil üstte, sessiz ya da ikincil altında; ikisi de tam genişlik. Tehlikeli onayda tehlikeli düğme üstte, "Vazgeç" altta. 
+ 40 boy yalnız satır ve kart içinde; görünür yükseklik 40, dokunma alanı üst ve alttan 4 pt görünmez payla 48.

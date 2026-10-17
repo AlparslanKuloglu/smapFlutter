@@ -1,0 +1,18 @@
+13.5 Deneme Bulunamadı 
+ 13.5 · Ekran Akışı
+ Deneme Bulunamadı
+ Form Kontrol'de onaylanan cevaplar sistemdeki bir denemeyle eşleşmezse: talep formu, doğrulama, onay ve talebin alınması.
+ Okun üstü: dokunulan yer Kesikli ok: kendiliğinden geçiş Üst sıra ana yol; altında o ekranın durumları ve koyu teması Kod: kaynak pano ve kare 
+ Buradan 13.4 Cevapları Onayla · deneme tanınmadı
+ 1 Talep formu 
+ 4.9 · kare 1
+ Analizimi Hazırlayın
+ 2 Doğrulama 
+ 4.9 · kare 2
+ Analizimi Hazırlayın
+ 3 Onay 
+ 4.9 · kare 3
+ Talebi Gönder
+ 4 Talep alındı 
+ 4.9 · kare 4
+ Sonra Anasayfa: 13.3

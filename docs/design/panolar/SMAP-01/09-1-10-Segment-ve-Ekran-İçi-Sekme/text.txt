@@ -1,0 +1,69 @@
+1.10 Segment ve Ekran İçi Sekme 
+ 1.10 · Temeller · Kontroller
+ Segment ve Ekran İçi Sekme
+ Segment aynı listenin görünümünü değiştirir (TYT / AYT); sekme aynı nesnenin bölümleri arasında gezdirir (Genel / Sorular / Konular / Kartlar). Kodda 6 ayrı segment ve 4 ayrı seçili turuncusu vardı (11, 20, 24, 29); 24'te iki farklı segment üst üste duruyordu. Şimdi bir segment, bir sekme çubuğu. Örnekler 370 pt, yani telefon içerik genişliği.
+ Segment
+ 2 seçenek · Derslerim 
+ TYT 
+ AYT 
+ 3 seçenek · Tarih ders detayı 
+ TYT 
+ AYT 
+ SOS-2 
+ 4 seçenek · AYT alanı 
+ Sayısal 
+ Eşit Ağırlık 
+ Sözel 
+ Dil 
+ Odak · klavye ve erişilebilirlik 
+ TYT 
+ AYT 
+ Ray bg-sunken, radius-md, 4 pt iç pay; başparmak primary, radius-sm. Görünür yükseklik 44, dokunma alanı 48. Seçili / pasif kontrastı 12,32:1 (beyaz başparmak olsaydı 1,10:1). Seçenek genişliği etikete göre paylaşılır, hiçbir etiket kesilmez.
+ Segment varyantları
+ Sayaçlı · Türkçe ders detayı 
+ Tümü 31 eksik 
+ TYT 28 eksik 
+ AYT 3 eksik 
+ Sayı her zaman neyin sayısı olduğunu söyler. Sıfırsa "eksik yok" yazar. Rozet yok.
+ Sayaçlı, iki seçenek · Fizik 
+ TYT · 7 eksik 
+ AYT · 7 eksik 
+ Yer yetiyorsa tek satır "TYT · 7 eksik"; 3–4 seçenekte iki satıra geçer.
+ Lacivert bant üstünde · kök ekran 
+ TYT 
+ AYT 
+ Ray navy-800, başparmak beyaz, pasif etiket navy-200 (8,43:1).
+ Metin %130 · etiket sarılır, ray uzar 
+ Sayısal 
+ Eşit Ağırlık 
+ Sözel 
+ Dil 
+ Ekran içi sekme
+ Sabit, 4 sekme · Deneme Detay 
+ Genel 
+ Sorular 
+ Konular 
+ Kartlar 
+ Sabit, 2 sekme · Analizlerim 
+ Genel 
+ Denemelerim 
+ Kaydırılabilir, başta · metin %130 
+ Genel 
+ Sorular 
+ Konular 
+ Kartlar 
+ Kaydırılabilir, sonda · son sekme tam görünür 
+ Sorular 
+ Konular 
+ Kartlar 
+ Sekmeler sığmazsa kendiliğinden kaydırılabilir olur: 16 pt baş ve son pay, seçili sekme görünür alana kaydırılır, devam eden kenarda 40 pt solma ipucu.
+ Lacivert bant üstünde
+ Genel 
+ Denemelerim 
+ Bant üstünde gösterge orange-500 (lacivertte 4,98:1).
+ Hangisi ne zaman
+ Liste aynı kalıp süzülüyorsa segment. İçerik tamamen değişiyorsa sekme. Bir ekranda ikisi üst üste gerekiyorsa segment içeriğin içine iner (örn. Deneme Detay › Genel'deki AYT alanı).
+ Seçili durumun dili
+ Segment ve çip seçimi lacivert dolgu. Sekme konum bildirir, bu yüzden alt çubukla aynı dili kullanır: turuncu çizgi ve kalın etiket. Renk tek ipucu değildir; seçili sekme kalın, segmentte dolgu var.
+ Erişilebilirlik
+ Segment bir radyo grubu gibi okunur: "TYT, 28 eksik, seçili, 3 seçenekten 2.". Sekme çubuğu tablist; seçilen sekme duyurulur. Kaydırılabilir sekmede seçim değişince odak kaybolmaz.

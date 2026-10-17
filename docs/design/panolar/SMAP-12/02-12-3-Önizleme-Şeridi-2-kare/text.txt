@@ -1,0 +1,25 @@
+12.3 Önizleme Şeridi 
+ 12.3 · Tur 11 · Mağaza Görselleri
+ Önizleme Şeridi
+ Karelerin mağazada nasıl yan yana görüneceği: arama sonucu satırı ve ürün sayfası şeridi. Mağaza arayüzleri genel bir kalıpla çizildi.
+ deneme analizi
+ SMAP
+ Deneme okut, eksiğini kapat
+ Eğitim
+ İndir 
+ İlk üç kare sonuç listesinde yan yana görünür: okut → net → soru.
+ 1 · Arama sonucu · açık Mağaza arama listesinde uygulama satırı ve ilk üç kare. Puan ve indirme sayısı gibi veriler çizilmedi (henüz yok). 
+ deneme analizi
+ SMAP
+ Deneme okut, eksiğini kapat
+ Eğitim
+ İndir 
+ İlk üç kare sonuç listesinde yan yana görünür: okut → net → soru.
+ 2 · Arama sonucu · koyu Koyu temalı mağazada da kareler zemine karışmaz: navy panorama koyu yüzeyde ayrışır. 
+ Ürün sayfası şeridi · 7 kare
+ Okunurluk
+ Küçük boyda (104 px) başlıklar iki satır ve okunur; telefon ekranı tanınır.
+ Rota şeritte kareleri birbirine bağlar; kaydırdıkça devam eder.
+ Sıra
+ 1 hero (ne yapar), 2 okutma (nasıl), 3 sonuç (ne alırım), 4 soru, 5 grafik, 6 eksik ve kart, 7 program.
+ Koç özellikleri v1 görsellerinde yok: koyu koç ekranı çizilmedi (D-14 dışı).

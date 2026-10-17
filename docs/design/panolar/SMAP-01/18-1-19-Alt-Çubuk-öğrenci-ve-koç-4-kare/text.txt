@@ -1,0 +1,60 @@
+1.19 Alt Çubuk 
+ 1.19 · Temeller · Kabuk
+ Alt Çubuk · Öğrenci ve Koç
+ Beş yuvalı çubuk ve ortadaki turuncu kamera korundu. Değişen: seçili sekmenin tek turuncu göstergesi var (eskiden #FF7A00 çizgi, #FF6600 ikon ve şeftali hap aynı yerdeydi), kamera ikonu lacivert ve altında "Okut" yazıyor (eskiden turuncu üstünde yarı saydam beyaz, 1,5:1), pasif etiket 1,96:1'den 6,28:1'e çıktı (09).
+ Bugün
+ 10:00 Fiilde Çatı
+ Türkçe
+ Anasayfa 
+ Analizlerim 
+ Okut 
+ Derslerim 
+ Hesap 
+ Öğrenci · Anasayfa seçili
+ Anasayfa · Analizlerim · Okut · Derslerim · Hesap (Ek D-29)
+ Ölçüler
+ Yükseklik 68 + 34 güvenli alan 
+ Zemin bg-bar, 20 pt bulanıklık 
+ Ayrım üst ayraç, gölge yok 
+ Üst köşeler radius-xl 24 
+ Yuvalar 4 × 82,5 + kamera 72 
+ İkon · etiket 24 · 12/16 600, 6 pt arayla 
+ Seçili Fill ikon, navy-900, 700 
+ Gösterge 32 × 4, accent-line, üst kenarda 
+ Pasif Regular ikon, text-secondary 
+ Kamera 56 × 56, radius-lg, 16 pt yukarı 
+ Kamera ikonu 28, navy-900 (4,98:1) 
+ Dokunma alanı yuva tam yükseklik, ≥ 48 
+ Etiket 12 pt: ikincil metin kuralının (13 pt) tek istisnası; "Görüşmelerim" 13 pt'de 82,5 pt'lik yuvaya sığmıyor. Büyük metinde etiket yuvaya sığacak kadar küçülür (FittedBox), kesilmez; uzun basışta büyük ikon ve adıyla bir balon açılır. Ekran okuyucu: "Analizlerim, sekme, 5'te 2".
+ Türkçe 31 eksik 
+ Anasayfa 
+ Analizlerim 
+ Okut 
+ Derslerim 
+ Hesap 
+ Öğrenci · Derslerim seçili
+ İçerik çubuğun arkasından bulanık geçer.
+ Elif Şahin
+ 11. Sınıf · Sayısal
+ Anasayfa 
+ Öğrencilerim 
+ Okut 
+ Görüşmelerim 
+ Hesap 
+ Koç · Öğrencilerim seçili
+ Anasayfa · Öğrencilerim · Okut · Görüşmelerim · Hesap
+ Elif Şahin
+ 15 Eki. 2026 · 19:30 · Veli
+ Anasayfa 
+ Öğrencilerim 
+ Okut 
+ Görüşmelerim 
+ Hesap 
+ Koç · Görüşmelerim seçili
+ En uzun etiket; 12 pt'de yuvaya sığar.
+ Kamera sekme değildir
+ Gösterge almaz, tam ekran okutma akışını açar (Tur 2). Basınca 0,92'ye küçülür ve orta haptik verir. Koçta da var.
+ Ne zaman görünür
+ Sekmenin içindeki bütün ekranlarda kalır (her sekmenin kendi gezinme yığını). Yalnız tam ekran akışlarda gizlenir: kamera, sonuç anı, kart destesi oturumu, onboarding, giriş. Seçili sekmeye yeniden dokunmak köke döndürür ve başa kaydırır.
+ Toast ile ilişki
+ Toast çubuğun 8 pt üstünde belirir (Ek D-31), çubuğu örtmez. Çubuk gizliyse ekran altından güvenli alan + 16 pt yukarıda.

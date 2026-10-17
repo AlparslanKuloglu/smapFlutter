@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<title>1.13 Satır ve Seçim Kontrolleri</title>
+<script src="res/663c73b8-8b06-4b15-b356-3f02a4b56a14.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/a872c3b4-2b4c-4ab6-99a0-c70a166b0710.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/faa28bbd-e6ca-4367-a2b1-2c73795662c8.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/a872c3b4-2b4c-4ab6-99a0-c70a166b0710.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/faa28bbd-e6ca-4367-a2b1-2c73795662c8.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/a872c3b4-2b4c-4ab6-99a0-c70a166b0710.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/faa28bbd-e6ca-4367-a2b1-2c73795662c8.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/a872c3b4-2b4c-4ab6-99a0-c70a166b0710.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/faa28bbd-e6ca-4367-a2b1-2c73795662c8.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/a872c3b4-2b4c-4ab6-99a0-c70a166b0710.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/faa28bbd-e6ca-4367-a2b1-2c73795662c8.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+button{font-family:inherit;border:0;margin:0;cursor:pointer;background:transparent;color:inherit;text-align:left}
+.gh{font-size:13px;line-height:20px;font-weight:600;color:#556173;margin:0 0 8px 4px}
+.grp{background:#FFFFFF;border-radius:16px;overflow:hidden}
+.rw{width:100%;display:flex;align-items:center;gap:12px;min-height:56px;padding:12px 16px;position:relative}
+.rw+.rw::before{content:"";position:absolute;top:0;left:52px;right:0;height:1px;background:#E8ECF1}
+.ic{width:24px;height:24px;flex:none;color:#556173}
+.tt{font-size:16px;line-height:24px;font-weight:600;color:#1B2232}
+.st{font-size:13px;line-height:20px;color:#556173}
+.bd{flex:1;min-width:0}
+.vl{font-size:15px;line-height:24px;color:#556173}
+.cv{width:20px;height:20px;flex:none;color:#556173}
+.lb{font-size:14px;line-height:20px;font-weight:700;margin-bottom:10px}
+.lb span{font-weight:500;color:#556173}
+.sw{position:relative;width:52px;height:32px;border-radius:999px;flex:none;display:inline-block}
+.cap{font-size:13px;line-height:20px;color:#556173;margin-top:6px}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1200px; background: #FFFFFF; color: #1B2232; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; padding: 64px; display: flex; flex-direction: column; gap: 36px; font-variant-numeric: tabular-nums">
+
+<header style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 15px; line-height: 20px; font-weight: 600; color: #556173">1.13 · Temeller · Kontroller</div>
+<h1 style="margin: 0; font-size: 36px; line-height: 44px; font-weight: 800; letter-spacing: -0.5px">Satır ve Seçim Kontrolleri</h1>
+<p style="margin: 4px 0 0; font-size: 17px; line-height: 28px; color: #556173; max-width: 1100px">Tek satır bileşeni: ikon, başlık, alt metin ve sağ öğe (ok, değer, anahtar ya da etiket). Eski Hesap satırları zeminle aynı tondaydı (31; 1,05:1), "Çıkış Yap" menü satırlarıyla aynı biçimdeydi ve yalnız ince bir çizgiyle ayrılıyordu; Tailwind yeşili (#22C55E) anahtar markadan kopuktu (37). Anahtar artık lacivert ve açıkken onay işareti taşıyor.</p>
+</header>
+
+<div style="display: grid; grid-template-columns: 402px 1fr 402px; gap: 56px">
+
+<section style="background: #F2F4F7; border-radius: 24px; padding: 16px; display: flex; flex-direction: column; gap: 20px">
+<div>
+<div class="gh">Hesap</div>
+<div class="grp">
+<button class="rw"><svg class="ic" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="96" r="64"></circle><path d="M32 216c19.37-33.47 54.55-56 96-56s76.63 22.53 96 56"></path></svg><span class="bd"><span class="tt" style="display: block">Profil</span></span><svg class="cv" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></button>
+<button class="rw"><svg class="ic" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M96 192a32 32 0 0 0 64 0"></path><path d="M56 104a72 72 0 0 1 144 0c0 35.82 8.3 64.6 14.9 76A8 8 0 0 1 208 192H48a8 8 0 0 1-6.88-12C47.71 168.6 56 139.81 56 104Z"></path></svg><span class="bd"><span class="tt" style="display: block">Bildirimler</span><span class="st" style="display: block">Deneme sonucu, koç, görüşme, hatırlatıcı</span></span><svg class="cv" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></button>
+<button class="rw"><svg class="ic" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><polyline points="128 72 128 128 184 128"></polyline></svg><span class="bd"><span class="tt" style="display: block">Sessiz saatler</span></span><span class="vl">22:00–08:00</span><svg class="cv" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></button>
+<div class="rw" role="group"><svg class="ic" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="32" y="80" width="160" height="128" rx="8"></rect><path d="M64 48h152a8 8 0 0 1 8 8v120"></path></svg><span class="bd"><span class="tt" style="display: block">Deneme sonucun hazır</span><span class="st" style="display: block">Okuttuğun denemenin analizi bitince</span></span><button role="switch" aria-checked="true" aria-label="Deneme sonucun hazır" class="sw" style="background: #0F294A"><span style="position: absolute; top: 4px; right: 4px; width: 24px; height: 24px; border-radius: 999px; background: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; color: #0F294A"><svg width="14" height="14" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span></button></div>
+</div>
+</div>
+<div>
+<div class="gh">Derslerin</div>
+<div class="grp">
+<button class="rw"><span style="width: 40px; height: 40px; border-radius: 12px; background: #F6ECE6; color: #93573C; display: inline-flex; align-items: center; justify-content: center; flex: none; margin: 0 -8px 0 -8px"><svg width="22" height="22" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="24 192 80 64 136 192"></polyline><line x1="44" y1="148" x2="116" y2="148"></line><circle cx="188" cy="164" r="32"></circle><line x1="220" y1="128" x2="220" y2="196"></line></svg></span><span class="bd" style="margin-left: 8px"><span class="tt" style="display: block">Türkçe</span></span><span style="height: 24px; padding: 0 8px; border-radius: 8px; background: #E8ECF1; font-size: 13px; line-height: 24px; font-weight: 600">31 eksik</span><svg class="cv" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></button>
+</div>
+</div>
+<div class="grp">
+<button class="rw" style="color: #C42D35"><svg class="ic" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: #C42D35"><polyline points="174 86 216 128 174 170"></polyline><line x1="104" y1="128" x2="216" y2="128"></line><path d="M104 216H48a8 8 0 0 1-8-8V48a8 8 0 0 1 8-8h56"></path></svg><span class="tt" style="color: #C42D35">Çıkış Yap</span></button>
+</div>
+<p style="margin: 0 4px; font-size: 13px; line-height: 20px; color: #556173">Tehlikeli satır ayrı bir grupta, ok taşımaz, onay sheet'i açar. Satır içi ayraç metnin başladığı yerden başlar.</p>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 32px">
+<div><div class="lb">Anahtar <span>· 52 × 32, dokunma 48</span></div>
+<div style="display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start">
+<div><button role="switch" aria-checked="false" aria-label="Örnek, kapalı" class="sw" style="box-shadow: inset 0 0 0 2px #697586"><span style="position: absolute; top: 8px; left: 8px; width: 16px; height: 16px; border-radius: 999px; background: #697586"></span></button><div class="cap">Kapalı</div></div>
+<div><button role="switch" aria-checked="true" aria-label="Örnek, açık" class="sw" style="background: #0F294A"><span style="position: absolute; top: 4px; right: 4px; width: 24px; height: 24px; border-radius: 999px; background: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; color: #0F294A"><svg width="14" height="14" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span></button><div class="cap">Açık</div></div>
+<div><button role="switch" aria-checked="true" aria-label="Örnek, odak" class="sw" style="background: #0F294A; box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #36537C"><span style="position: absolute; top: 4px; right: 4px; width: 24px; height: 24px; border-radius: 999px; background: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; color: #0F294A"><svg width="14" height="14" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span></button><div class="cap">Odak</div></div>
+<div><button role="switch" aria-checked="false" aria-disabled="true" aria-label="Örnek, pasif" class="sw" style="box-shadow: inset 0 0 0 2px #C3CBD6"><span style="position: absolute; top: 8px; left: 8px; width: 16px; height: 16px; border-radius: 999px; background: #C3CBD6"></span></button><div class="cap">Pasif</div></div>
+</div>
+<p class="cap" style="margin-top: 10px">Kapalı ray yalnız kenardır (4,68:1), baş küçük ve gri. Açıkken ray lacivert, baş büyür ve onay işareti taşır: renk görmeyen için de durum belli. Değişiklik anında kaydedilir; ayrı "Kaydet" yok.</p></div>
+
+<div><div class="lb">Onay kutusu <span>· 24, dokunma 48</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<button role="checkbox" aria-checked="false" style="display: flex; align-items: center; gap: 12px; min-height: 48px; font-size: 15px; line-height: 24px; width: 100%; text-align: left"><span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 4px; box-shadow: inset 0 0 0 2px #697586; flex: none"></span>Bir daha gösterme</button>
+<button role="checkbox" aria-checked="true" style="display: flex; align-items: center; gap: 12px; min-height: 48px; font-size: 15px; line-height: 24px; width: 100%; text-align: left"><span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 4px; background: #0F294A; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="16" height="16" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span>Kullanım Koşulları'nı ve KVKK Aydınlatma Metni'ni okudum</button>
+<button role="checkbox" aria-checked="false" aria-disabled="true" style="display: flex; align-items: center; gap: 12px; min-height: 48px; font-size: 15px; line-height: 24px; color: #9AA5B4; width: 100%; text-align: left"><span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 4px; box-shadow: inset 0 0 0 2px #C3CBD6; flex: none"></span>Pasif seçenek</button>
+</div>
+<p class="cap">Bütün satır dokunulabilir; etiket kutunun sağında, 12 pt uzakta.</p></div>
+
+<div><div class="lb">Radyo <span>· sheet içi tekli seçim</span></div>
+<div style="background: #FFFFFF; border-radius: 16px; box-shadow: inset 0 0 0 1px #DCE2E9">
+<button role="radio" aria-checked="false" style="display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 16px; font-size: 16px; line-height: 24px; font-weight: 600; border-bottom: 1px solid #E8ECF1; width: 100%; text-align: left"><span style="flex: 1">11. Sınıf</span><span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 999px; box-shadow: inset 0 0 0 2px #697586"></span></button>
+<button role="radio" aria-checked="true" style="display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 16px; font-size: 16px; line-height: 24px; font-weight: 600; border-bottom: 1px solid #E8ECF1; width: 100%; text-align: left"><span style="flex: 1">12. Sınıf</span><span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 999px; box-shadow: inset 0 0 0 2px #0F294A; display: inline-flex; align-items: center; justify-content: center"><span style="width: 12px; height: 12px; border-radius: 999px; background: #0F294A"></span></span></button>
+<button role="radio" aria-checked="false" style="display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 16px; font-size: 16px; line-height: 24px; font-weight: 600; width: 100%; text-align: left"><span style="flex: 1">Mezun</span><span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 999px; box-shadow: inset 0 0 0 2px #697586"></span></button>
+</div>
+<p class="cap">Açılır seçim alanının açtığı sheet bu listeyi taşır; seçince sheet kapanır, ayrı onay yok.</p></div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 20px">
+<div class="lb" style="margin: 0">Akordeon başlığı <span>· açık ve kapalı ayrı ok</span></div>
+<div style="background: #F2F4F7; border-radius: 24px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<div class="grp">
+<button aria-expanded="true" style="width: 100%; display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px">
+<span style="flex: 1; min-width: 0"><span class="tt" style="display: block">Türk Dili ve Edebiyatı–Sosyal Bilimler 1</span>
+<span style="display: flex; gap: 12px; margin-top: 6px; font-size: 15px; line-height: 20px; font-weight: 700">
+<span style="display: inline-flex; align-items: center; gap: 4px"><span style="width: 16px; height: 16px; border-radius: 999px; background: #0B6E3E; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="40 144 96 200 224 72"></polyline></svg></span>23<span style="font-size: 13px; font-weight: 500; color: #556173">D</span></span>
+<span style="display: inline-flex; align-items: center; gap: 4px"><span style="width: 16px; height: 16px; border-radius: 999px; background: #D8333A; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="196" y1="60" x2="60" y2="196"></line><line x1="196" y1="196" x2="60" y2="60"></line></svg></span>17<span style="font-size: 13px; font-weight: 500; color: #556173">Y</span></span>
+<span style="display: inline-flex; align-items: center; gap: 4px"><span style="width: 16px; height: 16px; border-radius: 999px; background: #7E8A9B; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center"><svg width="10" height="10" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="128" x2="208" y2="128"></line></svg></span>0<span style="font-size: 13px; font-weight: 500; color: #556173">B</span></span>
+</span></span>
+<span style="width: 32px; height: 32px; border-radius: 999px; background: #E8ECF1; color: #1B2232; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="18" height="18" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="48 160 128 80 208 160"></polyline></svg></span>
+</button>
+<div style="padding: 0 16px 16px; font-size: 13px; line-height: 20px; color: #556173">Açık: ok yukarı, ok zemini dolu. İçerik burada başlar (Tur 3: soru ızgarası).</div>
+</div>
+<div class="grp">
+<button aria-expanded="false" style="width: 100%; display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px">
+<span style="flex: 1; min-width: 0"><span class="tt" style="display: block">Sosyal Bilimler 2</span>
+<span style="display: flex; gap: 12px; margin-top: 6px; font-size: 15px; line-height: 20px; font-weight: 700">
+<span style="display: inline-flex; align-items: center; gap: 4px"><span style="width: 16px; height: 16px; border-radius: 999px; background: #0B6E3E"></span>17<span style="font-size: 13px; font-weight: 500; color: #556173">D</span></span>
+<span style="display: inline-flex; align-items: center; gap: 4px"><span style="width: 16px; height: 16px; border-radius: 999px; background: #D8333A"></span>23<span style="font-size: 13px; font-weight: 500; color: #556173">Y</span></span>
+<span style="display: inline-flex; align-items: center; gap: 4px"><span style="width: 16px; height: 16px; border-radius: 999px; background: #7E8A9B"></span>0<span style="font-size: 13px; font-weight: 500; color: #556173">B</span></span>
+</span></span>
+<span style="width: 32px; height: 32px; border-radius: 999px; color: #556173; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="18" height="18" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="208 96 128 176 48 96"></polyline></svg></span>
+</button>
+</div>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 20px; color: #556173">Uzun test adı sarılır, sayaçlar alt satıra iner; hiçbir ad kesilmez. Kapalı başlıkta küçük sayaç çipleri sade (glifsiz) kalabilir; harf etiketi her zaman var. Dokunma alanı bütün başlık.</p>
+<div style="border-top: 1px solid #DCE2E9; padding-top: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 20px">
+<div style="display: flex; justify-content: space-between"><span style="color: #556173">Satır yüksekliği</span><strong>en az 56 · iki satır 72</strong></div>
+<div style="display: flex; justify-content: space-between"><span style="color: #556173">İç dolgu</span><strong>16 yan · 12 dikey</strong></div>
+<div style="display: flex; justify-content: space-between"><span style="color: #556173">İkon · ok</span><strong>24 metin-2 · 20 metin-2</strong></div>
+<div style="display: flex; justify-content: space-between"><span style="color: #556173">Başlık · alt metin</span><strong>title-sm 16/24 · caption 13/20</strong></div>
+<div style="display: flex; justify-content: space-between"><span style="color: #556173">Grup</span><strong>bg-surface · radius-lg · başlık caption</strong></div>
+</div>
+</section>
+
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1200}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+
+
+</body></html>

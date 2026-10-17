@@ -1,0 +1,48 @@
+1.18 Üst Bar Ailesi 
+ 1.18 · Temeller · Kabuk
+ Üst Bar Ailesi · 6 Kare
+ 9 ayrı yazılmış üst bar iki türe indi. Kök sekmede lacivert bant ekranın başlığını ve ana kontrolünü taşır. Detay ekranında açık zeminli bar: geri, en çok bir eylem; başlık içerikte büyük durur, kaydırınca bara iner (Ek D-9'daki seçim). Kullanıcı adı ve avatar artık barlarda yok; alt sayfalarda başlıksız bar sorunu (31–37) kalktı.
+ Görüşmelerim
+ Alparslan Kuloğlu
+ 12 Eki. 2026 · 16:00 · Öğrenci
+ Elif Şahin
+ 15 Eki. 2026 · 19:30 · Veli
+ 1 · Kök, açık
+ Bant 134 pt (62 güvenli alan + 56 + 16). Başlık title-lg beyaz; sağda en çok bir ikon eylemi, erişilebilir adıyla ("Yeni görüşme").
+ Derslerim
+ TYT 
+ AYT 
+ Türkçe 28 eksik 
+ 2 · Kök, bantta ana kontrol
+ Bant işlevli: ekranın segmenti ya da sekmesi bantta durur (178 pt). Eskiden segment bandın kenarına taşıp listeyle çakışıyordu (11, 29).
+ Görüşmelerim
+ Alparslan Kuloğlu
+ 12 Eki. 2026 · 16:00 · Öğrenci
+ Elif Şahin
+ 15 Eki. 2026 · 19:30 · Veli
+ 3 · Kök, kaydırınca küçülmüş
+ 56 pt kaydırmada başlık 24 → 17, bant 134 → 110, alt köşeler düzleşir. Bantta segment varsa sabit kalır. Süre yok, kaydırmayı izler.
+ Eksiklerim (31) 
+ Türkçe
+ Tümü 31 eksik 
+ TYT 28 eksik 
+ AYT 3 eksik 
+ 4 · Detay, başta
+ Açık zemin (bg-canvas), 48 pt satır: geri ve en çok bir eylem. Başlık içerikte title-lg; uzun adda 3 satıra kadar sarılır. Durum çubuğu koyu içerikli.
+ İslamiyet Etkisindeki Türk Edebiyatı (Divan-Halk Edebiyatı)
+ Son denemede bu konu
+ Türkiye Geneli Deneme 6 · 2 soru, ikisi de yanlış
+ 5 · Detay, kaydırılmış, uzun ad
+ Büyük başlık bara 15/20 600 olarak iner, ortalı ve 2 satıra kadar; alt ayraç belirir. Ad kesilmez. Sağdaki eylem burada "Kartlarım".
+ Alparslan Kuloğlu'nun verileri 
+ 12. Sınıf · EA 
+ Türkiye Geneli Deneme 6
+ Örnek Yayınları · 5 Eki. 2026
+ 6 · Koç bağlamı şeridi
+ Koç bir öğrencinin ekranındayken her ekranda barın altında: navy-50 zemin, 40 pt, avatar 24 ve "Ad Soyad'ın verileri". Kaydırınca barla birlikte sabit kalır.
+ Neden açık zeminli detay barı
+ Lacivert "bir sekmenin kökündesin" der, açık zemin "içeri girdin". Konu anlatımı gibi okuma ekranları sakin kalır. Eski uygulamada sabit lacivert blok ekranın %25'ini kaplıyordu (10); detayda bu tekrar etmez.
+ Tek eylem kuralı
+ Sağda en çok bir eylem: ikon (48 pt, erişilebilir adlı) ya da 40 pt'lik ikincil düğme. Daha fazla eylem gerekirse içeriğe iner. Geri her zaman CaretLeft; Android'de sistem geri hareketi de çalışır.
+ Durum çubuğu
+ Bant üstünde açık içerik, açık barda koyu içerik (SystemUiOverlayStyle). Dynamic Island alanı boş bırakılır; Android karelerinde çentik çizilmez. Koyu temada bant yine navy-900 (1.24).

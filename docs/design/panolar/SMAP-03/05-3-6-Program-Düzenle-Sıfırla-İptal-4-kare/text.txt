@@ -1,0 +1,89 @@
+3.6 Program Düzenle 
+ 3.6 · Tur 6 · Anasayfa ve Programım
+ Program · Düzenle, Sıfırla, İptal · 4 Kare
+ Programı düzenleme: saat değiştir, konu çıkar, konu ekle. "Günü Sıfırla" ve "Programı İptal Et" onaylı.
+ Bitti 
+ Ekim 2. Hafta
+ Her gün biraz daha
+ 5–11 Ekim 2026
+ Gün Hafta 
+ Pzt 5 Sal 6 Çar 7 Per 8 Cum 9 Cmt 10 Paz 11 
+ Cumartesi, 10 Ekim
+ 3 çalışma 
+ 10:00 Türkçe
+ Fiilde Çatı
+ 14:00 Tarih
+ Kurtuluş Savaşı Hazırlık Dönemi
+ 20:00 Coğrafya
+ İklim Bilgisi
+ Konu Ekle Günü Sıfırla Programı İptal Et 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Düzenleme modu Satırda saat değiştir (altı çizili saat) ve çıkar. "Konu Ekle" ızgara sheet'ini açar. Tehlikeli eylemler sonda, metin düğmesi. 
+ Bitti 
+ Ekim 2. Hafta
+ Her gün biraz daha
+ 5–11 Ekim 2026
+ Gün Hafta 
+ Pzt 5 Sal 6 Çar 7 Per 8 Cum 9 Cmt 10 Paz 11 
+ Cumartesi, 10 Ekim
+ 3 çalışma 
+ 10:00 Türkçe
+ Fiilde Çatı
+ 14:00 Tarih
+ Kurtuluş Savaşı Hazırlık Dönemi
+ 20:00 Coğrafya
+ İklim Bilgisi
+ Konu Ekle Günü Sıfırla Programı İptal Et 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ Cumartesi'yi sıfırlayalım mı?
+ 10 Ekim'deki 3 çalışma programdan çıkar. Diğer günler değişmez.
+ Günü Sıfırla Vazgeç 
+ 2 · Günü sıfırla · onay Tehlikeli onay (1.21): hata ikonu, soru, ne olacağı, kırmızı eylem. Odak Vazgeç'te. 
+ Bitti 
+ Ekim 2. Hafta
+ Her gün biraz daha
+ 5–11 Ekim 2026
+ Gün Hafta 
+ Pzt 5 Sal 6 Çar 7 Per 8 Cum 9 Cmt 10 Paz 11 
+ Cumartesi, 10 Ekim
+ Bu gün için çalışma yok.
+ Konu Ekle 
+ Günü Sıfırla Programı İptal Et 
+ Cumartesi sıfırlandı. Geri Al 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Sıfırlandı Gün boş hâline döner; 6 sn "Geri Al" (D-31). Boş gün: tek cümle + "Konu Ekle". 
+ Bitti 
+ Ekim 2. Hafta
+ Her gün biraz daha
+ 5–11 Ekim 2026
+ Gün Hafta 
+ Pzt 5 Sal 6 Çar 7 Per 8 Cum 9 Cmt 10 Paz 11 
+ Cumartesi, 10 Ekim
+ 3 çalışma 
+ 10:00 Türkçe
+ Fiilde Çatı
+ 14:00 Tarih
+ Kurtuluş Savaşı Hazırlık Dönemi
+ 20:00 Coğrafya
+ İklim Bilgisi
+ Konu Ekle Günü Sıfırla Programı İptal Et 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ Ekim 2. Hafta iptal edilsin mi?
+ Program listeden kalkar ve Anasayfa'daki Bugün bölümü boşalır. Bu işlem geri alınamaz.
+ Programı İptal Et Vazgeç 
+ 4 · Programı iptal · onay Geri alınamayan tek eylem; metin bunu açıkça söyler. Onaydan sonra Programım listesi, toast "Program iptal edildi.". 
+ Bileşenler
+ Düzenleme modunda bar: geri gizli, sağda "Bitti". Değişiklikler anında kaydedilir; geri alınabilenler toast'la.
+ Satır: saat düğmesi (saat seçici sheet), çıkar ikon düğmesi 48 pt, erişilebilir adı "Fiilde Çatı, programdan çıkar".
+ Tehlikeli metin düğmesi error #C42D35; ikon Reset / Trash.
+ Hareket ve haptik
+ Çıkar: satır 250 ms (exit) kayar; toast "Konu çıkarıldı." + Geri Al.
+ Sıfırla: satırlar 150 ms aralıkla söner; success yerine selectionClick (silme kutlanmaz).
+ Onay sheet'i 350 ms; perdeye dokunmak Vazgeç.
+ Neden
+ Günü sıfırlamak ve programı iptal etmek bir dokunuşla olmamalı; ikisi de onaylı, biri geri alınabilir.
+ D-26: tamamlama işareti yok; düzenleme yalnız plan içindir.

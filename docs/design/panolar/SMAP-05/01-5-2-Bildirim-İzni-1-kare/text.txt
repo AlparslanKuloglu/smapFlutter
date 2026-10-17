@@ -1,0 +1,37 @@
+5.2 Bildirim İzni 
+ 5.2 · Tur 2 · Deneme Sonucu
+ Bildirim İzni · 1 Kare
+ İzin, ihtiyacın doğduğu anda ve bir kez soruluyor: ilk deneme okunduktan sonra.
+ Örnek Yayınları
+ Türkiye Geneli Deneme 6
+ AYT 5 Ekim 2026 
+ 67,5 net 
+ +8,25 önceki AYT denemene göre 
+ Doğru 
+ 86
+ Yanlış 
+ 74
+ Boş 
+ 0
+ Eşit Ağırlık Sayısal Sözel 
+ 412,63
+ Yerleştirme puanı
+ 48.215.
+ Sıra
+ Eşit Ağırlık neti 40
+ Türk Dili ve Edebiyatı–Sosyal Bilimler 1 ve Matematik
+ Bu denemeden 23 bilgi kartı eklendi Anasayfa Detaylı Analiz 
+ Sonucun hazır olunca haber verelim mi?
+ Sistemde olmayan bir denemeyi okuttuğunda analizini hazırlayınca bildirim gönderelim. Hesap › Bildirimler'den istediğin zaman kapatabilirsin.
+ Bildirimlere İzin Ver Sonra 
+ 1 · İlk okumadan sonra Sonuç anının üstünde, ayrılırken. Sonuç arkada görünür kalır; soru tek cümle. 
+ Ne zaman
+ Yalnız ilk başarılı okumada, kullanıcı sonuç anından ayrılırken ("Anasayfa" ya da "Detaylı Analiz") bir kez (Ek D-23).
+ Seçimden sonra hedef ekrana gidilir. "Sonra" bir daha sormaz; Hesap › Bildirimler'den açılır.
+ Planlı: bildirim gönderimi Tur 8'deki kategorilerle birlikte gelir; o güne kadar bu sheet kapalı.
+ Bileşenler
+ Sheet orta boy; zil 64 pt navy-100 daire. "Bildirimlere İzin Ver" sistem iletişim kutusunu açar.
+ "Sonra" izin ön açıklamalarında ortak erteleme sözü (4.1 ile aynı).
+ Hareket ve haptik
+ Sheet 350 ms; haptik yok.
+ Sistem kutusundan sonra sheet 250 ms'de kapanır, gezinme sürer.

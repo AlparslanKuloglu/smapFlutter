@@ -1,0 +1,78 @@
+1.26 Logo Çalışması 
+ 1.26 · Temeller · Marka
+ Logo Çalışması · S-rota
+ Başlangıç noktası paylaştığın 1.10 çalışmasındaki örgülü S. Hedefler: ikonda yazı olmasın, S 20 pt'de okunsun, işaret tek renkte de çalışsın, lacivert zeminde yarısı kaybolmasın. Renkler Tur 1 token'larından (navy-900, orange-500). Mağaza görsellerinin dili ayrı (Tur 11); burada uygulama ve ikon.
+ Mevcut Durum
+ Uygulamadaki ikon, elimizdeki taslaklar ve senin önerin.
+ Mevcut ikon
+ S monogramı ve "Student map". Yazı 29 pt'de okunmuyor; lacivert yarı lacivert barda kayboluyor (09); kesişim kahverengiye dönüyor.
+ 1.10 önerin · örgülü S
+ Doğru yön: yazısız, iki renk, iki kanca. Gradyan ve parlama fazla; örgü boşluğu 60 pt altında kapanıyor.
+ "Stundent map" taslağı
+ "Student" yanlış yazılmış. Noktalı yay işareti yılan gibi okunuyor. Kullanılmaz.
+ Eski üçgen logo
+ Eski sürümün işareti (01–05'teki görseller). #FF6400 marka turuncusuyla tutmuyor. Kalkar.
+ İki İşaret Yönü
+ Aynı kutu (600 × 794), aynı iki renk. Üstte ikon, yanında gerçek boylar, altta tek renk.
+ A · Örgülü S-rota
+ Önerilen 
+ 60 
+ 40 
+ 29 
+ 20 
+ Tek renk: örgü boşluğu iki kancayı ayırır, siluet S olarak kalır. 
+ Güçlü Kendine özgü; iki kanca iki renk, rota ve öğrenci. Tek renkte okunur. 20 pt'de S. Zayıf Örgü 40 pt altında renk sınırına iner (kusur değil, ayrıntı kaybı). 
+ B · Tek Çizgi Rota
+ 60 
+ 40 
+ 29 
+ 20 
+ Tek renk: düz bir S; başlangıç noktası eklenince yılana benziyor. 
+ Güçlü En sade; 16 px'te bile okunur. Renk ortadan bölünür: yolun yarısı. Zayıf Sıradan bir S; ayırt edici değil. Noktalı hali eski "yılan" taslağına dönüyor. 
+ Öneri · A, Lacivert Pafta Zemin
+ Varsayılan ikon lacivert: açılış ekranı ve kök bantla aynı renk, açık duvar kâğıdında öne çıkıyor. Açık sürüm iOS açık görünümde alternatif olarak kalır.
+ 600 794 boşluk = 1 çizgi (120) İki kanca aynı biçim; merkez etrafında 180° döndürülmüş (turuncu artı).
+ 1080'lik ızgarada çizgi 120, örgü boşluğu 30; köşe yarıçapları 40, 135, 225.
+ Solda lacivert, sağda turuncu üstten geçer: örgü bu.
+ Kesikli beyaz: kanca orta çizgisi. Gri kesikli: boşluk alanı, her yönde bir çizgi.
+ Önerilen · Lacivert pafta Üç kat 40 pt altında kendiliğinden kaybolur, düz laciverte döner. 
+ Açık 1.10'daki seçimin, düz renklerle. Koyu duvar kâğıdında güçlü, açıkta beyaz ikonlar arasında kaybolabilir. 
+ iOS Koyu Üst kanca navy-400 (#6C8BB6); siyah zeminde lacivert kaybolmasın. 
+ iOS Renkli Gri tonlu kaynak; sistem renklendirir. Kancalar açıklıkla ayrılır. 
+ Android · Uyarlanabilir Ön katman işaret, arka katman pafta. İşaret 66/108 güvenli alanda; daire maskede kesilmez. 
+ Android Bildirim Beyaz siluet, saydam zemin; 24 dp ve 12 dp (2x gösterim). 
+ 1.10'dan Ne Değişti
+ Gradyan → düz navy-900 ve orange-500: token'larla aynı, Android katmanlarında sorunsuz.
+ Çizgi 130 → 120: iç boşluklar açıldı, 29 pt'de S daha net.
+ Örgü boşluğu 18 → 30: 60 pt'de de görünür, tek renkte kancaları ayırır.
+ İşaretin ikondaki payı %66 → %70: küçük boyda daha dolu.
+ Lacivert ikondaki turuncu parlama kalktı (Bölüm 6); mağaza görsellerinde serbest (Tur 11).
+ Dalgalı harita çizgileri yerine üç katlı pafta: aynı fikir, daha sakin.
+ Renkler
+ navy-900 · #0F294A · üst kanca, lacivert zemin
+ orange-500 · #FF6600 · alt kanca
+ Beyaz · lacivert zeminde üst kanca
+ Tek renk: lacivert ya da beyaz. Turuncu tek başına yok (beyazda 2,94:1).
+ Kilit Yapılar
+ Ad tek yazım: SMAP. "Student map" ikondan ve logodan kalkar.
+ SMAP 
+ SMAP 
+ SMAP 
+ Wordmark Plus Jakarta Sans ExtraBold, harf aralığı −%2; işaret yüksekliği büyük harf yüksekliğinin iki katı. Üretimde yazı çizgiye dönüştürülür.
+ Kurallar
+ İkonda yazı yok; ad yalnız kilit yapıda ve mağaza başlığında.
+ Lacivert zeminde üst kanca beyaz. Lacivert üstünde lacivert işaret yok (eski sorun, 09).
+ Kancaların yeri ve rengi sabit: üstte lacivert ya da beyaz, altta turuncu.
+ Boşluk alanı her yönde bir çizgi kalınlığı.
+ En küçük boy uygulama içinde 20 pt; 16 px'te tek renk siluet.
+ Gradyan, parlama, gölge, kontur, döndürme, eğme yok. Mağaza görselleri kendi dilinde (Tur 11).
+ Uygulama içinde logo yalnız açılışta ve girişte; kök bantlarda başlık var, logo yok (Ek D-9).
+ Ana Ekranda ve Açılışta
+ SMAP 
+ SMAP 
+ SMAP 
+ SMAP 
+ SMAP 
+ SMAP 
+ Soldan: mevcut, açık, önerilen. 60 pt, gerçek boy.
+ Açılış · Tur 7

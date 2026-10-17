@@ -1,0 +1,43 @@
+2.5 Kayıt 
+ 2.5 · Tur 7 · Açılış ve Giriş
+ Kayıt · 3 Kare
+ Öğrenci ve koç kaydı: rol, 7 avatar, ad, canlı kullanıcı adı kontrolü, e-posta, şifre, sınıf ve alan ya da koçluk kodu bilgisi, tek satır onay.
+ Kayıt ol
+ Öğrenci Öğrenci Koçu 
+ Avatarın 7 avatar 
+ Ad Soyad Alparslan Kuloğlu
+ Kullanıcı adı alparslan.k
+ Bu kullanıcı adı boşta.
+ E-posta alparslan@ornek.com
+ 1 · Öğrenci · üst Rol ve seçimler 2.2'den gelir, değiştirilebilir. 7 avatar tek satırda, sayı yazılı. Kullanıcı adı yazarken kontrol edilir: "Bu kullanıcı adı boşta." 
+ Kayıt ol
+ Öğrenci Öğrenci Koçu 
+ Şifre •••••••••• 
+ En az 8 karakter.
+ Şifre (tekrar) •••••••••• 
+ Sınıf 12. Sınıf 
+ Alan Eşit Ağırlık 
+ Kullanım Koşulları 'nı ve KVKK Aydınlatma Metni 'ni okudum, kabul ediyorum. 
+ Kayıt Ol Hesabın var mı? Giriş Yap 
+ 2 · Öğrenci · alt Bar küçülür, rol segmenti sabit kalır. Sınıf ve alan alttan sheet açan seçim (1.12). Tek satır onay; bağlantılar metni sheet'te açar. 
+ Kayıt ol
+ Öğrenci Öğrenci Koçu 
+ Şifre •••••••••• 
+ En az 8 karakter.
+ Şifre (tekrar) •••••••••• 
+ Kaydın tamamlanınca koçluk kodun oluşur. Öğrencilerin bu kodla sana bağlanır; kodun Hesap › Koçluk'ta durur. 
+ Kullanım Koşulları 'nı ve KVKK Aydınlatma Metni 'ni okudum, kabul ediyorum. 
+ Kayıt Ol Hesabın var mı? Giriş Yap 
+ 3 · Koç · alt Sınıf ve alan yok; yerine koçluk kodunun ne işe yaradığını söyleyen tek satır. Ad Soyad üstte (Mehmet Özkan). 
+ Alanlar
+ Rol · Avatar (7) · Ad Soyad · Kullanıcı adı (canlı kontrol) · E-posta · Şifre · Şifre (tekrar) · öğrenciye Sınıf ve Alan · koça kod bilgisi · Onay · Kayıt Ol.
+ Önceden dolu alan yok; buradaki değerler örnek kullanıcının yazdıkları.
+ Zorunlu alan yıldızsız; isteğe bağlı alan yok.
+ Davranış
+ Kullanıcı adı: yazmayı bırakınca 400 ms sonra kontrol; spinner alanın sağında.
+ Gönderimde odak ilk hatalı alana gider (2.6).
+ Kayıt sonrası öğrenci yeni kullanıcı Anasayfa'sına (3.1 kare 3), koç Koç Anasayfa'ya (Tur 9) gider. Bildirim izni ilk okutmadan sonra (D-23).
+ Eskiden
+ "usernametest", "test@smap.tr" ve şifreler dolu (07, 08).
+ Avatar okla tek tek; kaç seçenek olduğu belli değildi (07).
+ İki satırlık hukuk metni onay kutusuz; koç formunda "Tamamla" (07, 08).

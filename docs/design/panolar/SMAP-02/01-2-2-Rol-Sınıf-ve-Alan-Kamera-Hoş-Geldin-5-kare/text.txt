@@ -1,0 +1,45 @@
+2.2 Rol, Sınıf, Kamera 
+ 2.2 · Tur 7 · Açılış ve Giriş
+ Rol, Sınıf ve Alan, Kamera, Hoş Geldin · 5 Kare
+ Tanıtımdan sonra: rol seçimi, öğrenciye sınıf ve alan, kamera ön açıklaması ve giriş ya da kayıt ayrımı.
+ SMAP'i nasıl kullanacaksın?
+ Ekranların buna göre hazırlanır.
+ Öğrenciyim
+ Denemelerini okut, eksiklerini kapat.
+ Öğrenci Koçuyum
+ Öğrencilerinin gelişimini izle, görüşmelerini planla.
+ Devam Et 
+ 1 · Rol İki büyük seçenek; avatar ve tek cümle. Seçim kayıt formuna taşınır; giriş yapan kullanıcının rolü hesabından gelir. 
+ Kaçıncı sınıftasın?
+ 9 10 11 12 Mezun 
+ Alanın
+ Sayısal Eşit Ağırlık Sözel Dil 
+ Devam Et 
+ 2 · Sınıf ve alan Öğrenciye: sınıf 9, 10, 11, 12, Mezun (D-20); alan Sayısal, Eşit Ağırlık, Sözel, Dil (D-19). Koç bu adımı görmez. 
+ Kaçıncı sınıftasın?
+ 9 10 11 12 Mezun 
+ Alanın
+ 9. ve 10. sınıfta alan seçilmez; 11. sınıfa geçince Hesap'tan eklersin. 
+ Devam Et 
+ 3 · 9.–10. sınıf Alan bölümü yerine tek satır açıklama. Devam Et hemen açık. 
+ Formunu okutmak için kamera gerekli
+ SMAP kamerayı yalnız optik formunu çekerken kullanır. Bir sonraki adımda telefonun izin isteyecek.
+ Kameraya İzin Ver Sonra 
+ 4 · Kamera ön açıklaması Söz 4.1 ile aynı. "Sonra" izinsiz geçer; ilk okutmada 4.1 sheet'i yeniden sorar. 
+ SMAP'e hoş geldin
+ Hesabın varsa giriş yap; yoksa birkaç adımda kaydol. Seçtiklerin kayıt formuna gelir.
+ Kayıt Ol Giriş Yap 
+ 5 · Hoş geldin Kil "Harita" L 160 (1.25): giriş ekranındaki eski gezginler çiziminin yerine. Kayıt Ol birincil, Giriş Yap ikincil. 
+ Akış
+ Tanıtım → Rol → (öğrenci) Sınıf ve alan → Kamera ön açıklaması → Hoş geldin → Kayıt ya da Giriş.
+ Koç: Rol → Kamera → Hoş geldin.
+ Geri her adımda çalışır; seçimler korunur. Seçimler yalnız cihazda, kayda kadar.
+ Bileşenler
+ Rol seçeneği: 16 pt köşe, 1 pt çerçeve; seçili 2 pt navy-900 + radyo (1.13).
+ Sınıf: kare çipler 56 × 48 (1.11 .sq ), Mezun 88. Alan: hap çipler 48 pt.
+ Bilgi satırı: info-bg zemin, Info ikonu.
+ İllüstrasyon yalnız Hoş geldin'de; ekranda en fazla bir (1.25).
+ Eskiden
+ Rol seçimi yalnız kayıt formunun üstünde iki düğmeydi; seçilen rolün ne değiştirdiği yazmıyordu (07, 08).
+ Sınıf açılır listesi; alan sorulmuyordu (07).
+ Kamera izni hiç açıklanmadan isteniyordu (envanter).

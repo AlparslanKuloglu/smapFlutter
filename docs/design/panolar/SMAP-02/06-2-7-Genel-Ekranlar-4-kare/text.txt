@@ -1,0 +1,33 @@
+2.7 Genel Ekranlar 
+ 2.7 · Tur 7 · Açılış ve Giriş
+ Genel Ekranlar · 4 Kare
+ Zorunlu güncelleme, oturum sona erdi, bakım ve bilinmeyen rol.
+ Yeni sürüm gerekli
+ Bu sürüm artık desteklenmiyor. Devam etmek için SMAP'i güncelle; verilerin hesabında duruyor.
+ Güncelle 
+ 1 · Zorunlu güncelleme Açılışta sürüm desteklenmiyorsa. Kapatılamaz; tek eylem mağazayı açar. İkon 1.26 lacivert pafta. 
+ Anasayfa
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ Oturumun sona erdi
+ Güvenliğin için yeniden giriş yapman gerekiyor. Okuttuğun denemeler hesabında duruyor.
+ Giriş Yap 
+ 2 · Oturum sona erdi Herhangi bir ekranın üstünde sheet; perde ve sürükleme kapatmaz. Giriş sonrası aynı ekrana dönülür. 
+ SMAP şu an bakımda
+ Kısa süre içinde geri döneceğiz. Verilerin güvende; bakım bitince kaldığın yerden devam edersin.
+ Tekrar Dene 
+ 3 · Bakım Sunucu bakım yanıtı verirse. Süre vaadi yok; Tekrar Dene ikincil. 
+ Hesabın açılamadı
+ Hesap türün tanınmadı. Çıkış yapıp yeniden giriş yapmayı dene; sorun sürerse bize yaz.
+ Yeniden Giriş Yap Destek'e Yaz 
+ 4 · Bilinmeyen rol Hesabın rolü öğrenci ya da koç değilse. Ham hata ya da kod yok; "Destek'e Yaz" e-posta taslağını açar. 
+ Ortak kalıp
+ Ekran düzeyi: 96 pt ikon dairesi (durum rengi), başlık display 32/40, tek cümle, en çok iki düğme.
+ İllüstrasyon yok: kil set yalnız onboarding ve boş durumlarda (1.25).
+ Hepsinde metin "sen" diliyle, iç kod yok.
+ Davranış
+ Zorunlu güncelleme: geri hareketi ve sistem geri tuşu çalışmaz.
+ Oturum: istekte 401 → bekleyen gönderimler sırada kalır, girişten sonra sürer.
+ Bakım: uygulama öne gelince kendiliğinden yeniden dener.
+ Eskiden
+ Bu durumların ekranı yoktu; hatalar ham metinle ya da sessizce geçiyordu (envanter §3).

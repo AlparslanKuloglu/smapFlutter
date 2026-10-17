@@ -1,0 +1,42 @@
+5.6 Deneme Detay Kartlar 
+ 5.6 · Tur 3 · Deneme Detay
+ Deneme Detay · Kartlar · 1 Kare
+ Bu denemeden eklenen bilgi kartları, derse göre. Sonuç anındaki kart satırı (5.1) buraya açılır.
+ Örnek Yayınları
+ Türkiye Geneli Deneme 6
+ AYT 5 Ekim 2026 
+ 67,5 net 
+ Doğru 
+ 86
+ Yanlış 
+ 74
+ Boş 
+ 0
+ Eşit Ağırlık
+ 412,63
+ Yerleştirme puanı
+ 48.215.
+ Sıra
+ Genel Sorular Konular Kartlar 
+ 23 bilgi kartı eklendi
+ Bu denemede yanlış ve boş bıraktığın sorulardan.
+ Kartları Çalış 
+ Tarih
+ Edirne-Segedin Antlaşması (1444)
+ Haçlılarla Osmanlı Devleti'nin imzaladığı ilk antlaşma. Tuna sınır olur, on yıl savaş yapılmaz.
+ Eksiklerimde 
+ Otlukbeli Savaşı (1473)
+ Fatih Sultan Mehmet – Uzun Hasan (Akkoyunlu).
+ Eksiklerimde 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Kartlar · üst Başlık açıkken; aşağı kaydırınca sekmeler üste yapışır ve liste sürer. 
+ Ne gösteriyor
+ Bu denemeden eklenen kartlar, derse göre gruplu; grubun içinde kart sırası denemedeki soru sırası.
+ Tek birincil eylem "Kartları Çalış": bu denemenin kartlarıyla deste açılır (Tur 5, kart destesi).
+ Karta dokunmak kart sheet'ini açar (Tur 5).
+ Veri
+ Toplam 23 Ek C'den. Ek C'de yalnız iki Tarih kartı var; ders başına sayılar yok, grup sayacı çizilmedi.
+ Yeni kart eksik kabul edilir: "Eksiklerimde" etiketi.
+ Eskiden
+ "Toplam N bilgi kartı kazandın" (çift boşluk); ders kartlarında D değeri yanlış alandan geliyordu; ad ilk dört harften kesiliyordu; kart dokunuşu boştu (envanter).

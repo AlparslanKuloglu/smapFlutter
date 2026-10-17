@@ -1,0 +1,52 @@
+5.8 Deneme Detay Durumlar 
+ 5.8 · Tur 3 · Deneme Detay
+ Deneme Detay · Durumlar · 4 Kare
+ İskelet, ders verisi yok, hata ve çevrimdışı. Her sekmenin kendi bölüm düzeyi durumu var; ekran bütünüyle yalnız başlık verisi gelmezse hata verir.
+ Genel Sorular Konular Kartlar 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · İskelet Gerçek düzenin şekli; sekmeler hemen gelir, dokunulabilir. 15 sn'de veri yoksa 3. kare. 
+ TYT Genel Deneme 9
+ TYT 28 Eylül 2026 
+ 74,75 net 
+ Doğru 
+ 80
+ Yanlış 
+ 21
+ Boş 
+ 19
+ Genel Sorular Konular Kartlar 
+ Ders kırılımı yok
+ Netin ve doğru, yanlış, boş sayıların hesaplandı; bu deneme için ders bazında sonuç gelmedi.
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Ders verisi yok Başlık verisi var, ders kırılımı yoksa bölüm düzeyinde boş durum; eskiden bölüm sessizce boş kalıyordu. Durum örneği TYT başlığıyla. 
+ Deneme yüklenemedi
+ Bağlantını kontrol edip tekrar dene.
+ Tekrar Dene 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Hata Ekran düzeyi hata (1.22): neden ve tek eylem. "Tekrar Dene" iskelete döner. 
+ Türkiye Geneli Deneme 6
+ Çevrimdışısın. Son kaydedilen veriler gösteriliyor. 
+ Genel Sorular Konular Kartlar 
+ Türk Dili ve Edebiyatı–Sosyal Bilimler 1 18,75 net 
+ 23 D 17 Y 0 B 40 soru 
+ Sosyal Bilimler 2 11,25 net 
+ 17 D 23 Y 0 B 40 soru 
+ Matematik 21,25 net 
+ 25 D 15 Y 0 B 40 soru 
+ Fen Bilimleri 16,25 net 
+ 21 D 19 Y 0 B 40 soru 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 4 · Çevrimdışı Önbellekteki deneme gösterilir; şerit kısa barın altında, ters yüzey. Bağlantı gelince şerit 250 ms'de kapanır. 
+ Kurallar
+ İskelet yalnız ilk yüklemede; sekme değişiminde veri zaten varsa iskelet yok.
+ Sorular, Konular, Kartlar sekmeleri ayrı yüklenir; her biri kendi bölüm düzeyi boş ve hata durumunu taşır (1.22).
+ Boş metinleri: "Bu deneme için soru ayrıntısı yok." · "Konu analizi henüz hazır değil." · "Bu denemeden kart eklenmedi."
+ Hareket ve haptik
+ İskelet parıltısı 1200 ms; hareketi azaltta düz.
+ Hata geldiğinde haptik yok (kullanıcı eylemi değil); "Tekrar Dene" başarısızsa error .
+ Eskiden
+ Spinner ve sessiz boşluk; hata metninde ham istisna ("Hata oluştu: …", "Bilgi kartları yüklenirken hata oluştu: …") (envanter).

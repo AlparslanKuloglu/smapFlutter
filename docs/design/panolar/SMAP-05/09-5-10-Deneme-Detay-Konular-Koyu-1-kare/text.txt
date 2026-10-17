@@ -1,0 +1,34 @@
+5.10 Deneme Detay Konular Koyu 
+ 5.10 · Tur 10 · Tutarlılık
+ Deneme Detay · Konular · Koyu · 1 Kare
+ D-14 listesini tamamlayan pano: Konular sekmesinin koyu tema karşılığı.
+ Türkiye Geneli Deneme 6
+ Genel Sorular Konular Kartlar 
+ En çok kaçırdığın konu
+ Cumhuriyet Edebiyatı
+ 12 sorudan 7'sini kaçırdın.
+ Bu Konuyu Çalış 
+ Türk Dili ve Edebiyatı
+ zayıftan güçlüye 
+ 12 D 12 Y 0 B 24 soru 
+ İslamiyet Etkisindeki Türk Edebiyatı (Divan-Halk Edebiyatı)
+ 0 doğru 2 yanlış 0 boş Az soru 
+ %0 Nazım Bilgisi
+ 0 doğru 1 yanlış 0 boş Az soru 
+ %0 Söz Sanatları
+ 0 doğru 1 yanlış 0 boş Az soru 
+ %0 Cumhuriyet Edebiyatı
+ 5 doğru 7 yanlış 0 boş 
+ %42 Batı Edebiyatı ve Akımları
+ 1 doğru 0 yanlış 0 boş Az soru 
+ %100 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Konular · koyu Yapı 5.5 ile aynı: en çok kaçırılan konu, ders ders zayıftan güçlüye. 
+ Koyu tema
+ Kanvas #0A1424, kart #121D31; konu satırı ayracı #26354D.
+ Kelimeli sayaç koyu D/Y/B tonlarında (#52CC8E, #F07575, #6E7C92), çipte ✓ ✕ – glifi #0A1424.
+ Yüzde halkası tek renk koyu çizgi #9BB3D3; eşik rengi yok (5.5 ile aynı kural).
+ Birincil düğme #C5D4E8 üstünde #091A31; sekme göstergesi #FF8533.
+ Neden
+ Ek D-14 listesindeki son eksik ekran: Deneme Detay › Konular. Tur 3'te Genel ve Sorular çizilmişti (5.9).

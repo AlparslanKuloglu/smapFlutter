@@ -1,0 +1,20 @@
+4.3 Çekim 
+ 4.3 · Tur 2 · Kamera ve Optik Okuma
+ Çekim · 2 Kare
+ Önizleme, cevap alanı kılavuzu, üstte Kapat ve yardım, altta deklanşör. Eski üst çubuktaki logo ve "SMAP" yazısı kalktı; kullanılmayan "Optik Form Okuma" ipucu metni burada gerçekten görünüyor.
+ Optik Form 
+ Cevap alanını çerçeveye al.
+Ders adları şeridi dışarıda kalsın. 
+ 1 · Aranıyor Çerçeve dışı karartılır; köşe işaretleri cevap alanının oranında (0,82). Deklanşör her zaman çalışır: algılama bir öneri, zorunluluk değil. 
+ Optik Form 
+ Hazır. Telefonu sabit tut ve çek. 
+ 2 · Form bulundu Eklentinin bulduğu kenar turuncu dörtgen ve köşe noktaları olarak çizilir; aynı noktalar köşe ekranına (4.4) taşınır. 
+ Bileşenler
+ Kamera aşaması her temada koyu: önizleme içeriğin kendisi (iOS Kamera gibi). Koyu tema kopyası ayrıca yok.
+ Üst: Kapat ve ? 48 pt hedef, 40 pt yarı saydam daire ( canvas koyu %64).
+ Deklanşör 76 pt: 4 pt beyaz halka, 60 pt orange-500 disk; erişilebilir ad "Fotoğraf çek".
+ Flaş ve galeri yok (Ek D-15).
+ Hareket ve haptik
+ Kenar bulununca çerçeve köşeleri 150 ms'de saydamlaşır, dörtgen 150 ms'de belirir; ipucu metni çapraz geçişle değişir.
+ Deklanşörde mediumImpact ; önizleme 100 ms donar, köşe ekranı 250 ms'de açılır.
+ Hareketi azalt açıksa yalnız opaklık; ipucu role=status ile okunur.

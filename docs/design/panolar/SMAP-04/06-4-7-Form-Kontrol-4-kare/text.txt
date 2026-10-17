@@ -1,0 +1,73 @@
+4.7 Form Kontrol 
+ 4.7 · Tur 2 · Kamera ve Optik Okuma
+ Form Kontrol · 4 Kare
+ Akışın çekirdeği. Büyütülebilen okunan form, okunan cevapların özeti ve tek bir düzeltme sheet'i: kolon → soru → şık. Düzeltmeler aynı sheet'te listelenir, sayı hep görünür. Birincil eylem "Cevapları Onayla".
+ Form Kontrol
+ Okunan cevapları formunla karşılaştır.
+ İki parmakla yakınlaştırabilirsin.
+ 160 cevap okundu 2 boş 
+ 1. kolon boş yok 2. kolon boş yok 3. kolon 1 boş 4. kolon 1 boş 
+ 3. kolon · 40 soru · düzeltmek için soruya dokun
+ 1 B 2 A 3 C 4 E 5 A 6 B 7 A 8 C 9 C 10 A 11 E 12 – 13 C 14 B 15 A 16 A 17 B 18 A 19 C 20 E 
+ Düzelt Cevapları Onayla 
+ 1 · Okunan form Üstte sunucunun okuduğu görüntü (5 kata kadar büyür), altta kolon kolon okunan cevaplar. Boş okunan soru kesikli çerçeveyle işaretli. 
+ Form Kontrol
+ Okunan cevapları formunla karşılaştır.
+ İki parmakla yakınlaştırabilirsin.
+ 160 cevap okundu 2 boş 
+ 1. kolon boş yok 2. kolon boş yok 3. kolon 1 boş 4. kolon 1 boş 
+ 3. kolon · 40 soru · düzeltmek için soruya dokun
+ 1 B 2 A 3 C 4 E 5 A 6 B 7 A 8 C 9 C 10 A 11 E 12 – 13 C 14 B 15 A 16 A 17 B 18 A 19 C 20 E 
+ Düzelt Cevapları Onayla 
+ Cevap Düzelt
+ Düzeltme yok
+ Kolon 1. kolon 2. kolon 3. kolon 4. kolon 
+ Soru 12
+ Okunan
+ Boş 
+ Formdaki işaretin A B C D E Boş 
+ Düzeltmeyi Ekle Düzeltmeler
+ Henüz düzeltme yok. Okunan cevap formundakinden farklıysa yukarıdan ekle.
+ 2 · Tek sheet · boş liste Soruya dokununca kolon ve soru dolu gelir; yalnız şık seçilir. Düzeltme sayısı başlıkta hep görünür. 
+ Form Kontrol
+ Okunan cevapları formunla karşılaştır.
+ İki parmakla yakınlaştırabilirsin.
+ 160 cevap okundu 2 boş 
+ 1. kolon boş yok 2. kolon boş yok 3. kolon 1 boş 4. kolon 1 boş 
+ 3. kolon · 40 soru · düzeltmek için soruya dokun
+ 1 B 2 A 3 C 4 E 5 A 6 B 7 A 8 C 9 C 10 A 11 E 12 – 13 C 14 B 15 A 16 A 17 B 18 A 19 C 20 E 
+ Düzelt Cevapları Onayla 
+ Cevap Düzelt
+ 2 düzeltme
+ Kolon 1. kolon 2. kolon 3. kolon 4. kolon 
+ Soru 31
+ Okunan
+ Boş 
+ Formdaki işaretin A B C D E Boş 
+ Düzeltmeyi Ekle Düzeltmeler
+ 3. kolon · 12. soru Boş → C 
+ 4. kolon · 31. soru Boş → A 
+ 3 · Tek sheet · iki düzeltme Liste aynı sheet'te; her satır kaldırılabilir. Şık seçilmeden "Düzeltmeyi Ekle" pasif. Eskiden iki ayrı sheet ve bir onay diyaloğu vardı. 
+ Form Kontrol
+ Okunan cevapları formunla karşılaştır.
+ İki parmakla yakınlaştırabilirsin.
+ 160 cevap okundu 0 boş 2 düzeltme 
+ 1. kolon boş yok 2. kolon boş yok 3. kolon boş yok 4. kolon boş yok 
+ 3. kolon · 40 soru · düzeltmek için soruya dokun
+ 1 B 2 A 3 C 4 E 5 A 6 B 7 A 8 C 9 C 10 A 11 E 12 C 13 C 14 B 15 A 16 A 17 B 18 A 19 C 20 E 
+ Düzelt Gönderiliyor 
+ 4 · Düzeltildi · gönderiliyor Düzeltilen hücre lacivert çerçeve ve kalem işaretiyle. "Cevapları Onayla" ayrıca soru sormaz; gönderirken düğme meşgul. 
+ Bileşenler
+ Görüntü kartı surface , 12 pt iç pay; büyüt düğmesi 48 pt hedef, 40 pt daire, shadow-raised .
+ Kolon segmenti sayaçlı (1.10): "1 boş" ya da "boş yok"; kolon adı yerine sıra numarası, çünkü deneme bu adımda henüz tanınmadı.
+ Soru hücresi 66 × 52, 5 sütun (Deneme Detay'daki ızgarayla aynı düzen, Tur 3). Boş okunan: warning-bg + 2 pt kesikli warning .
+ Şık çipi 48 × 48 kare (1.11), "Boş" 64 genişlikte; seçili lacivert dolgu.
+ Hareket ve haptik
+ Sheet 350 ms'de gelir; açılışta seçili soruya odak.
+ Şık seçiminde selectionClick ; "Düzeltmeyi Ekle"de satır listenin başına 250 ms'de kayarak girer, sayaç güncellenir.
+ Gönderim başarılıysa success haptiği sonuç anında (5.1); hata 4.8'de error .
+ Görüntü iki parmakla 1–5 kat ( InteractiveViewer ); çift dokunuş 2,5 kat.
+ Veri ve metin
+ Örnek: 160 cevap, 2 boş okundu (3. kolon 12, 4. kolon 31); düzeltmeyle 0 boş, sonuç 86 D · 74 Y · 0 B (Ek C). Şıklar örnek.
+ "Düzenleme Yap", "Düzenlemeler (N)", "LİSTEYE EKLE", "Onaylıyor musunuz?" kalktı; tek akış: soruya dokun, şıkkı seç, ekle.
+ Kapat (X) düzeltmeleri silmeden önce onay sheet'i açar: "Okutmadan çıkılsın mı?"

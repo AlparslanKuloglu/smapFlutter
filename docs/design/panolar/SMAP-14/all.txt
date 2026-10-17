@@ -1,0 +1,663 @@
+14.1 · Tur 12 · Geri Gelen Özellikler
+
+
+Koç · Öğrencinin Programı · 4 Kare
+Koç öğrencisinin programını görür, düzenler ve tüm programlarını listeler. 10.4·3'teki salt okunur sekmenin yerine geçer.
+
+
+
+
+           Alparslan Kuloğlu                    Görüşme Planla                                                             Yeni Program                                                                                Bitti                                                            Görüşme Planla
+
+
+          Alparslan Kuloğlu'nun verileri                 12. Sınıf · EA            Alparslan Kuloğlu'nun verileri              12. Sınıf · EA                  Alparslan Kuloğlu'nun verileri                    12. Sınıf · EA                   Alparslan Kuloğlu'nun verileri                12. Sınıf · EA
+
+
+          Analiz               Denemeler              Program                Programlar                                                                 Ekim 2. Hafta                                                                       Alparslan Kuloğlu
+                                                                                                                                                        Her gün biraz daha                                                                  alparslan.k · 10 deneme · son 5 Eki. 2026
+  Ekim 2. Hafta
+                                                          Düzenle                    Program ara
+  Her gün biraz daha · 5–11 Ekim 2026                                                                                                                   5–11 Ekim 2026                                                                           Analiz              Denemeler                Program
+
+                   Gün                           Hafta                                                                                                                 Gün                               Hafta
+                                                                                         Ekim 2. Hafta          Bu hafta
+
+                                                                                         Her gün biraz daha
+                                                                                                                                                                                                                                               Alparslan'ın programı yok
+     Pzt        Sal      Çar      Per      Cum      Cmt         Paz                                                                                       Pzt        Sal       Çar       Per      Cum        Cmt        Paz
+      5            6     7         8        9        10          11                      5–11 Ekim 2026                                                    5         6          7         8         9         10         11                    Onun için bir hafta kurabilirsin; Alparslan
+                                                                                                                                                                                                                                               programı kendi Anasayfa'sında görür.
+
+                         Türkçe                                                                                                                         Cumartesi, 10 Ekim 3 çalışma
+     10:00                                                                               Deneme haftası
+                         Fiilde Çatı                                                                                                                                                                                                                                   Program Kur
+                                                                                         Az ama her gün                                                                        Türkçe
+                                                                                                                                                           10:00
+                         Tarih                                                           28 Eylül–4 Ekim 2026                                                                  Fiilde Çatı
+     14:00               Kurtuluş Savaşı Hazırlık
+                                                                                                                                                                               Tarih
+                         Dönemi
+                                                                                         Yaz tekrarı                                                       14:00               Kurtuluş Savaşı Hazırlık
+                         Coğrafya                                                        17–23 Ağustos 2026                                                                    Dönemi
+     20:00
+                         İklim Bilgisi
+                                                                                                                                                                               Coğrafya
+                                                                                                                                                           20:00
+                                                                                                                                                                               İklim Bilgisi
+            Bu programı Alparslan da görür ve
+            düzenleyebilir. Yaptığın değişiklik onun
+            programına hemen yansır.                                                                                                                                                   Konu Ekle
+
+
+             Programlar                         3 program                                                                                                    Günü Sıfırla
+
+
+
+
+  Anasayfa      Öğrencilerim      Okut     Görüşmelerim       Hesap         Anasayfa     Öğrencilerim     Okut      Görüşmelerim    Hesap               Anasayfa     Öğrencilerim       Okut      Görüşmelerim         Hesap                Anasayfa    Öğrencilerim      Okut     Görüşmelerim       Hesap
+
+
+
+
+1 · Program sekmesi                                                       2 · Programlar                                                             3 · Düzenleme modu                                                                  4 · Öğrencinin programı yok
+Profil başlığı kaydırınca bara iner; bağlam şeridi ve sekmeler sabit      3.4·1'in koç bağlamındaki hâli: barda "Yeni Program", altında              3.6·1'in koç hâli: geri gizli, "Bitti"; saat değiştir, konu çıkar, "Konu            Sekme içinde bölüm düzeyi boş durum; tek birincil eylem
+kalır. Başlık satırında "Düzenle" (BarAction.inline), Gün | Hafta, gün    bağlam şeridi; arama ve üç program. Satır o programın Gün                  Ekle", "Günü Sıfırla". "Programı İptal Et" yok (silme ucu yok).                     "Program Kur". Programlar satırı çizilmez (program yok).
+şeridi, satırlar. InfoBox koçun değişikliğinin öğrenciye yansıdığını      görünümünü açar (kare 1 düzeni).                                           Değişiklik anında kaydedilir.
+söyler; en altta Programlar.
+
+ Yerine geçtiği kare: 10.4·3
+
+
+
+
+Bileşenler                                                                                          Kural                                                                                                     Erişilebilirlik ve hareket
+   DetailBar + ContextStrip (10.4) + InScreenTabs; kaydırınca 1.18 kare 3 gibi küçülür,                 Koç bağlamında tek düzenleme istisnası Program (6.8 #36 ve T9.6 güncellenir).                              "Düzenle" okunuşu: "Alparslan'ın programını düzenle".
+   şerit ve sekmeler yapışır.                                                                           Favori, "Öğrendim", "Bu Konuyu Çalış", "Kartları Çalış" koçta yine yok.                                    Şerit ilk okunan öğe: "Alparslan Kuloğlu'nun verileri, 12. sınıf, Eşit Ağırlık".
+   Program başlık satırı: headline 17/24 + BarAction.inline (PencilSimple). Alt satır                   "Programı İptal Et" koçta çizilmez: silme ucu yok, bugünkü uygulamada da yok.                              ProgramRow: "Ekim 2. Hafta, Her gün biraz daha, 5–11 Ekim 2026, bu hafta".
+   motto · tarih aralığı 13/20.
+                                                                                                        Hafta görünümü 3.4·4 ızgarası; koçta yalnız şerit eklenir (kare yok).                                      Hareket ve haptik 3.4 ve 3.6 ile aynı; düzenleme kayıtları selectionClick.
+   Segment (Gün | Hafta), DayChip şeridi, ProgramItemRow; düzenlemede
+                                                                                                        Programlar satırı yalnız program varsa; sayı weeklies uzunluğu.
+   ProgramItemRow.edit.
+
+   InfoBox (info), SettingsRow değer varyantı (CalendarBlank, "Programlar", değer "3
+   program"), ProgramRow, SearchField, EmptyState bölüm düzeyi.
+
+
+Varsayımlar (T12)
+   T12.2 14.1·1 kaydırılmış hâlde çizildi: ad bara iner, şerit ve sekmeler yapışır; InfoBox
+   ve Programlar satırı aynı karede görünsün diye.
+
+   T12.3 Programlar satırı SettingsRow değer varyantı (tek satır, 56 pt); yalnız
+   program varsa çizilir.
+
+   T12.4 Program listesi yeniden eskiye; bu haftanın programı "Bu hafta" etiketli.
+14.2 · Tur 12 · Geri Gelen Özellikler
+
+
+Koç · Öğrenci İçin Yeni Program · 6 Kare
+3.5'in dört karesi koç bağlamında, kayıt sonrası ve öğrencinin düzeltilen Çantam'ı: bağlam şeridi her adımda, metinler öğrenciyi adıyla anar, Çanta yalnız gerçek alanlarla.
+
+
+
+
+                                                           Adım 1/3                                                             Adım 2/3                                                                 Adım 2/3                                                                    Adım 3/3                 Alparslan Kuloğlu                    Görüşme Planla                                                                     Adım 2/3
+
+
+          Alparslan Kuloğlu'nun verileri                12. Sınıf · EA             Alparslan Kuloğlu'nun verileri            12. Sınıf · EA           Alparslan Kuloğlu'nun verileri                  12. Sınıf · EA               Alparslan Kuloğlu'nun verileri                 12. Sınıf · EA             Alparslan Kuloğlu'nun verileri                 12. Sınıf · EA
+                                                                                                                                                                                                                                                                                                                                                                               Konuları yerleştir
+                                                                                                                                                                                                                                                                                                                                                                               Boş bir saate dokun, konu seç. Izgara 06:00–23:00.
+  Hangi günler çalışacak?                                                   Konuları yerleştir                                                  Konuları yerleştir                                                           Programa ad ver                                                                 Analiz               Denemeler            Program
+
+  Alparslan için birden çok gün seçebilirsin; geçmiş                        Boş bir saate dokun, konu seç. Izgara 06:00–23:00.                  Boş bir saate dokun, konu seç. Izgara 06:00–23:00.                                                                                                    Ekim 2. Hafta
+                                                                                                                                                                                                                             Program adı                                                                                                                    Düzenle               Pzt
+  günler seçilemez.                                                                                                                                                                                                                                                                                   Her gün biraz daha · 5–11 Ekim 2026                                                    Sal           Çar     Per       Cum        Cmt
+                                                                                                                                                                                                                                                                                                                                                                                   12         13           14      15         16         17
+                                                                                Pzt                                                                Pzt                                                                           Ekim 3. Hafta                                                                                                                                   2 konu
+                                                                                           Sal           Çar    Per    Cum        Cmt                          Sal         Çar      Per       Cum          Cmt                                                                                                        Gün                           Hafta
+                               Ekim 2026                                        12         13            14     15      16         17               12         13          14       15         16           17
+                                                                             2 konu                                                               2 konu
+                                                                                                                                                                                                                             Motto (isteğe bağlı)                                                                                                                                 09:00
+                                                                                                                                                                                                                                                                                                        Pzt        Sal      Çar      Per      Cum     Cmt          Paz
+        Pzt       Sal    Çar      Per      Cum    Cmt        Paz
+                                                                                                                                                                                                                                                                                                         5            6     7         8        9       10           11
+                                                                               09:00                                                               09:00                                                                         Az ama her gün
+                                   1        2       3         4                                                                                                                                                                                                                                                                                                                   10:00            Türkçe
+
+                                                                                                                                                                                                                             Program listesinde adın altında görünür.                                                       Türkçe
+                                                                                                                                                                                                                                                                                                                                                                                                   Fiilde Çatı
+                                                                               10:00             Türkçe                                           Pazartesi
+                                                                                                                                                   10:00
+                                                                                                                                                            12Türkçe
+                                                                                                                                                                Ekim · 15:00                                                                                                                             10:00                                                                   Pazartesi 12 Ekim · 16:00
+        5         6       7        8        9      10         11                                                                                                                                                                                                                                                            Fiilde Çatı
+                                                                                                 Fiilde Çatı                                                          Fiilde Çatı                                                                                                                                                                                                 11:00
+                                                                                                                                                                                                                                 Kimin için
+                                                                                                                                                              Çanta                         Dersler                                                                                                                         Tarih                                                           Çantam                         Dersler
+        12        13     14       15       16      17        18                                                                                                                                                                  Alparslan Kuloğlu
+                                                                               11:00                                                               11:00                                                                                                                                                 14:00              Kurtuluş Savaşı Hazırlık                              12:00
+                                                                                                                                                  Çanta: Alparslan'ın denemelerinden çıkan eksik konular.                                                                                                                   Dönemi                                               Çantam: denemelerinden çıkan eksik konuların.
+        19        20      21      22       23      24        25                                                                                                                                                                  Günler
+                                                                               12:00                                                               12:00
+                                                                                                                                                       Noktalama İşaretleri                                                                                                                                                                                                           Noktalama İşaretleri
+                                                                                                                                                                                                                                 12–17 Ekim 2026 · 6 gün                                                                    Coğrafya                                              13:00
+                                                                                                                                                         TYT Türkçe                                                                                                                                      20:00                                                                        TYT Türkçe
+        26        27     28       29       30      31                                                                                                                                                                                                                                                                       İklim Bilgisi
+                                                                               13:00                                                               13:00                                                                         Çalışmalar                                                                                                                                                        Tarih
+                                                                                                                                                                                                                                                                                                                                                                                  14:00
+                                                                                                                                                         Fiilde Çatı                                                             3 çalışma, hepsi Pazartesi                                                                                                                             Fiilde Çatı
+                                                                                                                                                                                                                                                                                                                                                                                                   Kurtuluş Savaşı Hazırlık
+                                                                                                                                                       TYT Türkçe · Programda: Pzt 10:00                                                                                                                       Bu programı Alparslan da görür ve                                        TYT Türkçe · Programda: Pzt 10:00
+          Bugün                                                                                  Tarih                                                           Tarih                                                           Salı–Cumartesi henüz boş; kaydettikten sonra                                                                                                                      Dönemi
+                                                                               14:00                                                               14:00
+                                                                                                                                                                                                                                 ekleyebilirsin.                                                               düzenleyebilir. Yaptığın değişiklik onun
+                                                                                                 Kurtuluş Savaşı Hazırlık                                             Kurtuluş Savaşı Hazırlık
+                                                                                                                                                         Kurtuluş Savaşı Hazırlık Dönemi                                                                                                                       programına hemen yansır.                                                 Kurtuluş Savaşı Hazırlık Dönemi
+                                                                                                 Dönemi                                                               Dönemi                                                                                                                                                                                                      15:00
+                                                                                                                                                         AYT Tarih · Programda: Pzt 14:00                                                                                                                                                                                             AYT Tarih · Programda: Pzt 14:00
+
+
+                                                                               15:00             Konu Ekle                                         15:00        Konu Ekle
+                                                                                                                                                       İklim Bilgisi                                                                                                                                           Programlar                 4 program                                   İklim Bilgisi
+                                                                                                                                                                                                                                                                                                               Program Alparslan'ın hesabına kaydedildi.                          16:00        Konu Ekle
+                                                                                                                                                         TYT Coğrafya                                                                                                                                                                                                                 TYT Coğrafya
+    6 gün seçildi 12–17 Ekim
+
+
+                               Devam Et                                                                  Devam Et                                                           Devam
+                                                                                                                                                                              Ekle Et                                                              Programı Kaydet                                                                                                                                         Devam
+                                                                                                                                                                                                                                                                                                                                                                                                             Ekle Et
+                                                                                                                                                                                                                                                                                                     Anasayfa      Öğrencilerim      Okut     Görüşmelerim       Hesap
+
+
+
+
+1 · Günler                                                               2 · Izgara                                                           3 · Konu seç · Çanta                                                        4 · Ad ve motto                                                          5 · Kaydedildi                                                            6 · Öğrencide Çantam
+Tam ekran akış; bağlam şeridi barın altında. Başlık ve yardım            3.5·2 aynen: 06:00–23:00 saatlik ızgara, dolu saat ders tonunda ve   Segment Çanta | Dersler. Çanta satırı: konu adı ve ders adı.                Özet kartında "Kimin için" satırı. Vazgeç onayı 3.5'teki gibi; tek       Program sekmesine dönülür; toast 4 sn. Sekme bu haftanın                  Öğrencinin kendi akışında aynı satır düzeni: konu adı, ders adı,
+üçüncü kişiyle: "Hangi günler çalışacak?". Seçim kuralları 3.5·1 ile     çıkarılabilir.                                                       EksikTag ve "Son denemede…" satırı yok (Çanta verisinde bu                  birincil eylem "Programı Kaydet".                                        programında kalır; yeni program Programlar listesinde en üstte,           varsa "Programda". EksikTag ve "Son denemede…" satırı kalktı;
+aynı.                                                                                                                                         alanlar yok); "Programda: Pzt 10:00" istemcide hesaplanır.                                                                                           satırdaki sayı 4 olur.                                                    Çanta verisinde bu alanlar yok. Şerit yok.
+
+                                                                                                                                                                                                                                                                                                                                                                              Yerine geçtiği kare: 3.5·3
+
+
+
+
+Akış                                                                                                                                           3.5·3 düzeltmesi                                                                                                                                      Veri
+   Programlar › Yeni Program ya da 14.1·4 "Program Kur" → Günler → Izgara → Ad ve motto → Program sekmesi (toast 4 sn).                           Öğrencinin kendi akışında da (kare 6) Çantam satırından EksikTag ve "Son denemede 13 sorudan 9'u yanlış" satırı kalkar: veri yok.                     POST /student/getMyWeeklies?studentId= → bagItems[] (Çanta).
+
+   Geri her adımda seçimi korur; X değişiklik varsa "Program kaydedilmesin mi?" sorar.                                                            Çanta satırı yalnız data.name ve lesson.name gösterir; "Programda" istemcide hesaplanır.                                                              GET /student/getAllMainSubjects?studentId= → Dersler ağacı.
+
+   Kaydetme hatası: toast "Program kaydedilemedi. Bağlantını kontrol edip tekrar dene."; form ve seçimler korunur.                                Derse göre gruplama kalktı: ders adı satırın alt satırında, iki akışta aynı.                                                                          POST /student/addNewProgram?studentId= {dataObj:{name, motto, tasks}}; tarih aralığı görev günlerinden çıkar.
+
+
+Varsayımlar (T12)
+   T12.1 Tam ekran akışlarda bağlam şeridi barın hemen altında, ekran başlığının üstünde (10.4 düzeni).
+
+   T12.5 Yeni program örneği "Ekim 3. Hafta" / "Az ama her gün", 12–17 Ekim; konu sheet'inin açıldığı saat Pazartesi 15:00. Ek C'de
+   yok.
+
+   T12.6 Kayıttan sonra Program sekmesine dönülür; sekme bu haftanın programında kalır.
+14.3 · Tur 12 · Geri Gelen Özellikler
+
+
+Koç · Program · Durumlar ve Koyu · 4 Kare
+İskelet, hata ve çevrimdışı sekme içinde; ana ekranın koyu teması.
+
+
+
+
+                                                 Görüşme Planla                                                        Görüşme Planla                            Alparslan Kuloğlu                    Görüşme Planla                           Alparslan Kuloğlu                    Görüşme Planla
+
+
+            Alparslan Kuloğlu'nun verileri              12. Sınıf · EA           Alparslan Kuloğlu'nun verileri               12. Sınıf · EA                Çevrimdışısın. Son kaydedilen veriler gösteriliyor.                               Alparslan Kuloğlu'nun verileri                 12. Sınıf · EA
+
+
+                                                                                                                                                                Alparslan Kuloğlu'nun verileri                 12. Sınıf · EA
+   Alparslan Kuloğlu                                                       Alparslan Kuloğlu                                                                                                                                                  Analiz               Denemeler            Program
+
+   alparslan.k · 10 deneme · son 5 Eki. 2026                               alparslan.k · 10 deneme · son 5 Eki. 2026
+                                                                                                                                                                Analiz               Denemeler            Program                     Ekim 2. Hafta
+                                                                                                                                                                                                                                                                                             Düzenle
+                                                                                                                                                                                                                                      Her gün biraz daha · 5–11 Ekim 2026
+            Analiz             Denemeler              Program                    Analiz              Denemeler               Program
+                                                                                                                                                       Ekim 2. Hafta
+                                                                                                                                                                                                               Düzenle
+                                                                                                                                                       Her gün biraz daha · 5–11 Ekim 2026                                                             Gün                           Hafta
+
+                                                                                    Programlar yüklenemedi                                                               Gün                           Hafta
+                                                                                                                                                                                                                                         Pzt        Sal      Çar      Per      Cum     Cmt          Paz
+                                                                                    Bağlantını kontrol edip tekrar dene.
+                                                                                                                                                                                                                                          5            6     7         8        9       10           11
+                                                                                    Tekrar Dene                                                           Pzt         Sal      Çar       Per     Cum     Cmt          Paz
+                                                                                                                                                           5             6     7         8        9       10           11
+                                                                                                                                                                                                                                                             Türkçe
+                                                                                                                                                                                                                                         10:00
+                                                                                                                                                                                                                                                             Fiilde Çatı
+                                                                                                                                                                               Türkçe
+                                                                                                                                                          10:00
+                                                                                                                                                                               Fiilde Çatı                                                                   Tarih
+                                                                                                                                                                                                                                         14:00               Kurtuluş Savaşı Hazırlık
+                                                                                                                                                                               Tarih
+                                                                                                                                                                                                                                                             Dönemi
+                                                                                                                                                          14:00                Kurtuluş Savaşı Hazırlık
+                                                                                                                                                                               Dönemi                                                                        Coğrafya
+                                                                                                                                                                                                                                         20:00
+                                                                                                                                                                                                                                                             İklim Bilgisi
+                                                                                                                                                                               Coğrafya
+                                                                                                                                                          20:00
+                                                                                                                                                                               İklim Bilgisi
+                                                                                                                                                                                                                                                Bu programı Alparslan da görür ve
+                                                                                                                                                        Program kurmak ve düzenlemek için bağlantı gerekiyor.                                   düzenleyebilir. Yaptığın değişiklik onun
+                                                                                                                                                        Kayıtlı programı görebilirsin.                                                          programına hemen yansır.
+
+
+                                                                                                                                                                   Programlar                         3 program
+                                                                                                                                                                                                                                                 Programlar                         3 program
+
+
+
+
+  Anasayfa        Öğrencilerim     Okut      Görüşmelerim    Hesap         Anasayfa     Öğrencilerim      Okut    Görüşmelerim     Hesap               Anasayfa       Öğrencilerim      Okut     Görüşmelerim       Hesap             Anasayfa      Öğrencilerim      Okut     Görüşmelerim       Hesap
+
+
+
+
+1 · İskelet                                                              2 · Hata                                                                    3 · Çevrimdışı                                                                 4 · Koyu
+Sekme içi; şerit, başlık ve sekmeler hemen gelir. Satır iskeleti 3.7·2   ErrorState.section: neden ve "Tekrar Dene" yalnız sekmeyi yeniler;          OfflineStrip barın altında, bağlam şeridi onun altında. "Düzenle"              14.1·1'in koyu teması: bağlam şeridi #1A2B45, InfoBox koyu bilgi
+ile aynı.                                                                şerit ve sekmeler kalır.                                                    pasif; Programlar ekranında "Yeni Program" da pasif. Neden tek                 tonları, satırlar koyu ders tonlarında.
+                                                                                                                                                     satırda.
+
+
+
+Durum metinleri                                                                                     Varsayımlar (T12)                                                                                     Koyu tema
+   Hata: "Programlar yüklenemedi" · "Bağlantını kontrol edip tekrar dene." · "Tekrar                   T12.7 Çevrimdışı şeridi bağlam şeridinin üstünde. "Görüşme Planla" çevrimdışında                        Kanvas #0A1424, kart #121D31, şerit #1A2B45, sekme göstergesi #FF8533.
+   Dene".                                                                                              da açık: formu açar, kayıt kendi akışında.                                                              Satır ders karoları koyu ders tonlarında (1.5); gün çipi seçili #C5D4E8.
+   Çevrimdışı: "Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı                          T12.8 Sunucu, koç oturumundaki program yazmasını öğrencinin hesabına işler                              BarAction.inline koyuda çerçeveli #C5D4E8.
+   programı görebilirsin."                                                                             (açık soru). İşlemiyorsa 14.1–14.3 bayrakla kapanır, 10.4·3 geçerli kalır.
+
+   Kaydetme hatası (kare yok): toast "Program kaydedilemedi. Bağlantını kontrol                        T12.9 Öğrenci ve koç aynı anda düzenlerse son kayıt geçerli; çakışma ekranı yok
+   edip tekrar dene."; değişiklik korunur.                                                             (açık soru).
+
+                                                                                                       T12.10 Öğrenciye bildirim gitmez; metinlerde "bildirildi" yok (açık soru).
+14.4 · Tur 12 · Geri Gelen Özellikler
+
+
+Deneme Detay · Puan Kartı · 5 Kare
+Puan kartına ham puan ve ham puan sırası eklendi. İskelet ve koç karesi yeni karta göre yeniden çizildi.
+
+
+
+
+             Örnek Yayınları                                                                                                                                              Örnek Yayınları
+                                                                                      TYT Genel Deneme 9                                                                                                                                                                                                           Alparslan Kuloğlu'nun verileri                  12. Sınıf · EA
+             Türkiye Geneli Deneme 6                                                                                                                                      Türkiye Geneli Deneme 6
+                                                                                         TYT   28 Eylül 2026                                                                                                                                                                                                            Örnek Yayınları
+                 AYT   5 Ekim 2026                                                                                                                                          AYT   5 Ekim 2026
+                                                                                                                                                                                                                                                                                                                        Türkiye Geneli Deneme 6
+  67,5 net                                                                 74,75 net                                                                           67,5 net                                                                                                                                                     AYT   5 Ekim 2026
+
+
+          Doğru                 Yanlış                Boş                        Doğru                    Yanlış                Boş                                  Doğru                  Yanlış              Boş                                                                                          67,5 net
+  86                      74                     0                         80                        21                    19                                  86                     74                   0                                                                                                       Doğru                   Yanlış                Boş
+
+
+     Eşit Ağırlık                                                             TYT                                                                                 Eşit Ağırlık
+                                                                                                                                                                                                                                                                                                             86                      74                     0
+     412,63                           48.215.                                 384,05                             176.320.                                         412,63                         48.215.                                                                                                        Eşit Ağırlık
+     Yerleştirme puanı                Sıra                                    Yerleştirme puanı                  Sıra                                             Yerleştirme puanı              Sıra
+                                                                                                                                                                                                                                                                                                                412,63                           48.215.
+     398,12                           52.904.                                 371,90                             189.004.                                         398,12                         52.904.                                                                                                        Yerleştirme puanı                Sıra
+     Ham puan                         Sıra                                    Ham puan                           Sıra                                             Ham puan                       Sıra
+                                                                                                                                                                                                                                                                                                                398,12                           52.904.
+                                                                                                                                                                                                                                                                                                                Ham puan                         Sıra
+     Genel             Sorular           Konular           Kartlar            Genel            Sorular             Konular            Kartlar                    Genel            Sorular            Konular        Kartlar         Genel           Sorular            Konular         Kartlar
+
+                                                                                                                                                                                                                                                                                                                Genel             Sorular           Konular            Kartlar
+     Türk Dili ve Edebiyatı–Sosyal                    18,75 net               Türkçe                                                30,5 net                      Türk Dili ve Edebiyatı–Sosyal                18,75 net
+     Bilimler 1                                                                                                                                                   Bilimler 1
+                                                                                                                                                                                                                                                                                                                Türk Dili ve Edebiyatı–Sosyal                    18,75 net
+                                                                                  32 D         6Y         2B                          40 soru
+                                                                                                                                                                                                                                                                                                                Bilimler 1
+          23 D         17 Y      0B                       40 soru                                                                                                    23 D         17 Y      0B                      40 soru
+
+                                                                              Sosyal Bilimler                                         13 net
+                                                                                                                                                                                                                                                                                                                     23 D         17 Y      0B                         40 soru
+     Sosyal Bilimler 2                                11,25 net                                                                                                   Sosyal Bilimler 2                            11,25 net
+                                                                                  14 D         4Y         2B                          20 soru
+                                                                                                                                                                                                                                                                                                                Sosyal Bilimler 2                                11,25 net
+          17 D         23 Y      0B                       40 soru                                                                                                    17 D         23 Y      0B                      40 soru
+
+                                                                              Temel Matematik                                   20,75 net
+                                                                                                                                                                                                                                                                                                                     17 D         23 Y      0B                         40 soru
+     Matematik                                        21,25 net                                                                                                   Matematik                                    21,25 net
+  Anasayfa        Analizlerim    Okut        Derslerim       Hesap         Anasayfa       Analizlerim      Okut         Derslerim       Hesap                  Anasayfa      Analizlerim     Okut       Derslerim     Hesap      Anasayfa     Analizlerim       Okut      Derslerim      Hesap               Anasayfa       Öğrencilerim    Okut        Görüşmelerim     Hesap
+                                                                                  22 D         5Y         13 B                        40 soru
+          25 D         15 Y      0B                       40 soru                                                                                                    25 D         15 Y      0B                      40 soru
+
+1 · AYT                                                                       Fen Bilimleri
+                                                                         2 · TYT                                                    10,5 net                 3 · Koyu                                                          4 · İskelet                                                                 5 · Koç
+      Fen Bilimleri
+Kart başlığı                                          16,25
+             öğrencinin puan türü: Eşit Ağırlık. Üst satır      net
+                                                           yerleştirme   Puan verisi varsa kart başlığı "TYT". İki puan da yoksa kart hiç                    5.9·1Fen  Bilimleri
+                                                                                                                                                                   üstünde                                  16,25 net
+                                                                                                                                                                           kare 1: kart #121D31, ayraç #26354D.                Puan bloğunun iskeleti yeni kartın yüksekliğinde (163 pt); sekmeler         Koç aynı kartı görür; şeridin altında aynı düzen.
+puanı ve sırası, ince ayraç, alt satır ham puan ve sırası. Ham değer     çizilmez (5.3·3
+                                                                                   12 D gibi). 6 Y        2B                          20 soru                                                                                  aşağı iner.
+                                                                                                                                                              Yerine geçtiği kare: 5.9·1                                                                                                                    Yerine geçtiği kare: 10.4·4
+yoksa alt satır çizilmez.
+         21 D         19 Y       0B                       40 soru                                                                                                    21 D        19 Y       0B                      40 soru     Yerine geçtiği kare: 5.8·1
+ Yerine geçtiği kare: 5.3·1
+
+
+
+
+Kurallar                                                                                                                        Veri                                                                                                                        Erişilebilirlik
+   Yalnız öğrencinin alanındaki puan türü; eski Eşit Ağırlık / Sayısal / Sözel sekmeleri ve "Deneme Sonucu /                         Deneme satırındaki points[], ranks[], pointsHam[], ranksHam[] (puan türü başına dizi) ve mexam.type (1 =                 İki satır ayrı grup: "Yerleştirme puanı 412,63, sıra 48.215" · "Ham puan 398,12, sıra 52.904".
+   Sıralama" anahtarı yok. OBP satırı yok.                                                                                           TYT). Ayrı istek yok.                                                                                                    Sıra sonundaki nokta ekran okuyucuda okunmaz (sıra sayısı).
+   Ham puan yalnız Deneme Detay'da; 5.1 sonuç anına eklenmez.                                                                        AYT dizisindeki sıranın hangi puan türüne ait olduğu backend'e soruldu; ürün sahibi ham puanı istemezse alt
+
+   Kart ayrı istek değil: hata ve çevrimdışı 5.8'deki gibi ekran düzeyinde; çevrimdışında kart önbellekten gelir.                    satır kalkar.
+
+   Hiyerarşi: yerleştirme metric-md 24/32, ham metric-sm 17/24; etiketler 13/20.
+
+
+Varsayımlar (T12)
+   T12.11 Puan kartı hiyerarşisi: yerleştirme puanı metric-md, ham puan metric-sm; ham satır yalnız değer
+   varsa.
+
+   T12.12 TYT puan ve sıraları (384,05 · 176.320. ve 371,90 · 189.004.) Tur 12 örnek verisinden; Ek C'de TYT
+   puanı yok.
+14.5 · Tur 12 · Geri Gelen Özellikler
+
+
+Edebiyat · Dönemler ve Yazarlar · 3 Kare
+Yazar ve Eserler sunucunun verdiği sırayla: dönem → alt başlık → yazar. Eksik eser sayısı her katmanda.
+
+
+
+
+            Türk Dili ve Edebiyatı                                       Tanzimat Dönemi                                                              Tanzimat Dönemi
+                                                                              2 eksik eser                                                                 2 eksik eser
+                                          Yazar ve Eserler
+              Konular
+                                                 3 eksik
+                                                                            Birinci Dönem Sanatçıları                                                    Birinci Dönem Sanatçıları
+                                                                                 2 eksik                                                                       2 eksik
+       1     Tanzimat Dönemi                 2 eksik eser
+
+                                                                                       Şinasi
+                                                                                Ş                                                                        İkinci Dönem Sanatçıları
+                                                                                       3 eser
+             Servet-i Fünun
+       2                                      1 eksik eser
+             Dönemi
+                                                                                       Namık Kemal
+                                                                               NK                                          2 eksik
+                                                                                       8 eser
+       3     Fecr-i Âti
+
+                                                                                       Ziya Paşa
+                                                                               ZP
+       4     Millî Edebiyat Dönemi                                                     6 eser
+
+
+
+
+       5     Cumhuriyet Dönemi
+                                                                            İkinci Dönem Sanatçıları
+
+
+
+
+  Anasayfa      Analizlerim      Okut       Derslerim        Hesap       Anasayfa       Analizlerim     Okut        Derslerim        Hesap           Anasayfa       Analizlerim   Okut       Derslerim      Hesap
+
+
+
+
+1 · Yazar ve Eserler · dönemler                                        2 · Dönem detayı                                                            3 · Akordeon yükleniyor
+Sayaçlı segment: "Yazar ve Eserler · 3 eksik". Satır: sıra numarası,   Alt başlıklar akordeon; eksiği olan ilk akordeon açık gelir, sayfa          Yazarlar akordeon açılınca yüklenir; akordeonun içinde üç satır
+dönem adı, eksik varsa "2 eksik eser". Yazar sayısı gelmediği için     oraya kayar (7.3 kuralı). Yazar satırı: fotoğraf ya da baş harf, ad, eser   iskeleti.
+yazılmaz.                                                              sayısı, eksik varsa etiket.
+
+ Yerine geçtiği kare: 7.4·1
+
+
+
+
+Bileşenler                                                             Veri                                                                         Erişilebilirlik ve hareket
+   Segment sayaçlı (1.10); "Konular" sayaçsız.                            Dönemler: GET /student/yazarEserMainSubjects → name,                         Dönem satırı: "1, Tanzimat Dönemi, 2 eksik eser".
+
+   TopicRow: 28 pt numara, ad, EksikTag; Accordion (7.3 alt               order, itemDataCount; segment sayacı bunların toplamı.                       Yazar satırı: "Namık Kemal, 8 eser, 2 eksik".
+   başlık kartı) + EksikTag.                                              Dönem detayı: GET /student/getSubSubjects?                                   Akordeon 250 ms; açılışta ilk eksiğe 350 ms kaydırma,
+   AuthorRow: 48 pt fotoğraf (yoksa baş harf, Edebiyat                    mainSubjectId= ve POST /student/getItems?                                    hareketi azaltta doğrudan.
+   tonları), ad, "8 eser", EksikTag "2 eksik".                            edebiyat=true&yazarEserMode=true.
+
+                                                                          Yazarlar: GET /student/getSubjectAuthors?itemId=
+                                                                          akordeon açılınca; eser sayısı works uzunluğu.
+
+
+Varsayımlar (T12)
+   T12.16 Bölüm düzeyi boş durumlarda illüstrasyon yok.
+   Dönem listesinin boş hâli çizilmedi: dönemler müfredattan
+   gelir.
+14.6 · Tur 12 · Geri Gelen Özellikler
+
+
+Edebiyat · Yazar Sheet'i · 3 Kare
+Eser başına durum ve "Öğrendim" geri geldi; yazar düzeyindeki tek düğmenin yerini aldı.
+
+
+
+
+    NK
+                Namık Kemal                                               NK
+                                                                                      Namık Kemal                                               Ş
+                                                                                                                                                              Şinasi
+  Tanzimat   Dönemi
+        Tanzimat Dönemi
+                                                                        Tanzimat   Dönemi
+                                                                              Tanzimat Dönemi
+                                                                                                                                              Tanzimat   Dönemi
+                                                                                                                                                    Tanzimat Dönemi
+
+       2 eksik eser                                                          2 eksik eser                                                          2 eksik eser
+    Hakkında                                                              Hakkında                                                              Hakkında
+    Tanzimat Dönemi'nin şair ve yazarı; "vatan şairi"                     Tanzimat Dönemi'nin şair ve yazarı; "vatan şairi"                     Tanzimat edebiyatının öncüsü. Agâh Efendi ile
+     Birinci Dönem Sanatçıları                                             Birinci Dönem Sanatçıları                                             Birinci Dönem Sanatçıları
+    olarak bilinir. Edebiyatı toplumu eğitmenin aracı                     olarak bilinir. Edebiyatı toplumu eğitmenin aracı                     ilk özel Türkçe gazete Tercüman-ı Ahvâl'i çıkardı.
+          2 eksik                                                               2 eksik                                                               2 eksik
+    olarak gördü.                                                         olarak gördü.                                                         Şair Evlenmesi, Batılı anlamda yazılmış ilk Türk
+    Vatan yahut Silistre oyunu sahnelendiğinde                            Vatan yahut Silistre oyunu sahnelendiğinde                            tiyatro eseridir.
+            Şinasi                                                                Şinasi                                                                  Şinasi
+       Ş ilgi gördü.
+    büyük                                                                    Ş ilgi gördü.
+                                                                          büyük                                                                      Ş
+                3 eser                                                                3 eser
+                                                                                                                                                Eserleri 3 eser                                     3 eser
+    Eserleri                                       8 eser · 2 eksik       Eserleri                                       8 eser · 1 eksik
+                                                                                                                                                Tiyatro · 1
+                Namık Kemal                                                           Namık Kemal                                                             Namık Kemal
+        NK
+    Roman · 2 8 eser
+                                                   2 eksik                    NK
+                                                                          Roman · 2 8 eser
+                                                                                                                         2 eksik                    NK                                      2 eksik
+                                                                                                                                                         8 eser
+                                                                                                                                                Şair Evlenmesi                                   Biliyorsun
+
+    İntibah                               Eksik      Öğrendim             İntibah                                             Biliyorsun
+                Ziya Paşa                                                             Ziya Paşa                                                 Şiir ·ZP
+                                                                                                                                                       1      Ziya Paşa
+        ZP                                                                    ZP
+                6 eser                                                                6 eser                                                                  6 eser
+    Cezmi                                               Biliyorsun        Cezmi                                               Biliyorsun
+                                                                                                                                                Müntehabat-ı Eş'ar
+
+     İkinci· 6Dönem Sanatçıları
+    Tiyatro                                                                İkinci· 6Dönem Sanatçıları
+                                                                          Tiyatro                                                                İkinci Dönem Sanatçıları
+                                                                                                                                                Çeviri · 1
+
+    Vatan yahut Silistre                  Eksik      Öğrendim             Vatan yahut Silistre                  Eksik      Öğrendim             Tercüme-i Manzume
+
+    Gülnihal                                            Biliyorsun        Gülnihal                                            Biliyorsun
+
+
+
+    Akif Bey                                            Biliyorsun        Akif Bey                                            Biliyorsun
+
+
+
+    Zavallı Çocuk                                       Biliyorsun        Zavallı Çocuk                                       Biliyorsun
+
+
+
+    Kara Bela                                           Biliyorsun        Kara Bela                                           Biliyorsun
+
+
+                                                                                 İntibah bildiklerine eklendi.                Geri Al
+    Celaleddin
+  Anasayfa
+               HarzemşahOkut
+             Analizlerim                    Derslerim
+                                                        Biliyorsun
+                                                             Hesap
+                                                                          Celaleddin
+                                                                        Anasayfa
+                                                                                     HarzemşahOkut
+                                                                                   Analizlerim                    Derslerim
+                                                                                                                              Biliyorsun
+                                                                                                                                   Hesap      Anasayfa        Analizlerim      Okut   Derslerim      Hesap
+
+
+
+
+1 · AuthorSheet                                                       2 · Öğrendim sonrası                                                  3 · Durum bilinmiyor
+Tam boy. Başlık, Hakkında, "Eserleri · 8 eser · 2 eksik", türe göre   "İntibah" ✓ olur, sayaç "1 eksik"e düşer; arkadaki dönem ve alt       Durum verisi gelmeyen eserde yalnız ad; eski "?" ikonu yok, sayaçta
+gruplar. Eksik eser: eksik etiketi ve "Öğrendim"; bilinen eser: ✓     başlık sayaçları da düşer. Toast 6 sn "Geri Al".                      eksik sayısı yazılmaz. Hiç eser yoksa bölümde tek cümle: "Bu
+"Biliyorsun". Yazar düzeyindeki tek "Öğrendim" kalktı.                                                                                      yazarın eser listesi henüz yok."
+
+ Yerine geçtiği kare: 7.4·2
+
+
+
+
+Bileşenler                                                            Veri                                                                   Erişilebilirlik ve hareket
+   BottomSheet tam boy (1.20); başlıkta 56 pt fotoğraf.                  Eser: eser (ad), type (tür kodu, 33 tür), itemData{_id,                "İntibah, roman, eksik. Öğrendim olarak işaretle."
+
+   Eser satırı: 7.4'teki eser listesinin durumlu varyantı (G             status} (0 eksik, 1 biliyor; yoksa durum yok).                         Bilinen eser: "Cezmi, roman, biliyorsun".
+   maddesi): ad 16/24, sağda EksikTag + metin düğmesi                    Öğrendim: GET /student/learnedItem?itemId=; geri alma                  Öğrendim: satır 250 ms'de ✓'ye döner, success haptiği;
+   "Öğrendim" ya da ✓ "Biliyorsun" (success).                            ucu yok, istek 6 sn sonra gider ("Geri Al" istemcide).                 sayaçlar aynı anda düşer.
+   Tür başlığı 13/700 "Roman · 2". Alt eylem bandı yok.                  Yazarın yıldızı yalnız yereldi, taşınmadı.
+
+
+Varsayımlar (T12)
+   T12.13 Şinasi 3, Ziya Paşa 6 eser ve "Hakkında" metinleri
+   örnek. Yazar fotoğrafı yoksa baş harf, Edebiyat tonlarında.
+
+   T12.14 "Biliyorsun" ✓ ile success renginde. Durumu
+   gelmeyen eserde yalnız ad; sayaçta yalnız "N eser".
+
+   T12.15 "Öğrendim" isteği 6 sn sonra gider; "Geri Al"
+   istemcide (geri alma ucu yok).
+14.7 · Tur 12 · Geri Gelen Özellikler
+
+
+Edebiyat · Durumlar ve Koyu · 4 Kare
+İskelet, bölüm hatası, çevrimdışı ve yazar sheet'inin koyu teması.
+
+
+
+
+                                                                                                                                                                                                                            NK
+                                                                                                                                                                                                                                       Namık Kemal
+           Türk Dili ve Edebiyatı                                      Tanzimat Dönemi                                                                Çevrimdışısın. Son kaydedilen veriler gösteriliyor.                 Tanzimat   Dönemi
+                                                                                                                                                                                                                                Tanzimat Dönemi
+
+                                                                            2 eksik eser
+                                                                                                                                                 Tanzimat Dönemi                                                              2 eksik eser
+                                                                                                                                                                                                                           Hakkında
+              Konular                   Yazar ve Eserler
+                                                                                                                                                               Namık Kemal
+                                                                                                                                                      2 eksik eser
+                                                                                                                                                     NK                                                                    Tanzimat Dönemi'nin şair ve yazarı; "vatan şairi"
+                                                                          Birinci Dönem Sanatçıları                                                              Tanzimat Dönemi
+                                                                                                                                                                                                                            Birinci Dönem Sanatçıları
+                                                                                                                                                                                                                           olarak bilinir. Edebiyatı toplumu eğitmenin aracı
+                                                                               2 eksik                                                                                                                                            2 eksik
+                                                                                                                                                    Birinci Dönem Sanatçıları
+                                                                                                                                                   Hakkında                                                                olarak gördü.
+                                                                                                                                                       2 eksik
+                                                                                                                                                   Tanzimat  Dönemi'nin şair ve yazarı; "vatan şairi"                      Vatan yahut Silistre oyunu sahnelendiğinde
+                                                                                Yazarlar yüklenemedi.                                                                                                                              Şinasi
+                                                                                                                                                                                                                              Ş ilgi gördü.
+                                                                                                                                                                                                                           büyük
+                                                                                Bağlantını kontrol edip tekrar dene.
+                                                                                                                                                   olarak bilinir. Edebiyatı toplumu eğitmenin aracı                                   3 eser
+                                                                                                                                                              Şinasi
+                                                                                                                                                   olarak gördü.
+                                                                                                                                                       Ş                                                                   Eserleri                                 8 eser · 2 eksik
+                                                                                Tekrar Dene                                                                      3 eser
+                                                                                                                                                   Vatan yahut Silistre oyunu sahnelendiğinde                                          Namık Kemal
+                                                                                                                                                                                                                              NK
+                                                                                                                                                                                                                           Roman · 2 8 eser
+                                                                                                                                                                                                                                                                    2 eksik
+                                                                                                                                                   büyük ilgi gördü.
+                                                                                                                                                            Namık Kemal
+                                                                          İkinci Dönem Sanatçıları                                                    NK                                        2 eksik                    İntibah                          Eksik     Öğrendim
+                                                                                                                                                                 8 eser
+                                                                                                                                                   Eserleri                                     8 eser · 2 eksik                       Ziya Paşa
+                                                                                                                                                                                                                              ZP
+                                                                                                                                                                                                                                       6 eser
+                                                                                                                                                   Roman · 2
+                                                                                                                                                                 Ziya Paşa                                                 Cezmi                                          Biliyorsun
+                                                                                                                                                       ZP
+                                                                                                                                                                 6 eser
+                                                                                                                                                   İntibah                              Eksik     Öğrendim
+                                                                                                                                                                                                                            İkinci· 6Dönem Sanatçıları
+                                                                                                                                                                                                                           Tiyatro
+                                                                                                                                                   Öğrendim'i kaydetmek için bağlantı gerekiyor.
+                                                                                                                                                    İkinci Dönem Sanatçıları                                               Vatan yahut Silistre             Eksik     Öğrendim
+                                                                                                                                                   Cezmi                                             Biliyorsun
+
+                                                                                                                                                                                                                           Gülnihal                                       Biliyorsun
+                                                                                                                                                   Tiyatro · 6
+
+                                                                                                                                                                                                                           Akif Bey                                       Biliyorsun
+                                                                                                                                                   Vatan yahut Silistre                 Eksik     Öğrendim
+
+                                                                                                                                                                                                                           Zavallı Çocuk                                  Biliyorsun
+                                                                                                                                                   Gülnihal                                          Biliyorsun
+
+
+                                                                                                                                                                                                                           Kara Bela                                      Biliyorsun
+                                                                                                                                                   Akif Bey                                          Biliyorsun
+
+
+                                                                                                                                                                                                                           Celaleddin HarzemşahOkut                       Biliyorsun
+  Anasayfa     Analizlerim      Okut     Derslerim      Hesap          Anasayfa       Analizlerim      Okut      Derslerim      Hesap             Zavallı Çocuk
+                                                                                                                                                 Anasayfa  Analizlerim         Okut       Derslerim Biliyorsun
+                                                                                                                                                                                                         Hesap            Anasayfa  Analizlerim               Derslerim       Hesap
+
+
+
+                                                                                                                                                   Kara Bela                                         Biliyorsun
+1 · İskelet                                                          2 · Bölüm hatası                                                          3 · Çevrimdışı                                                          4 · Koyu
+Başlık ve segment hemen; segment sayacı veri gelince. Satırlar       Akordeon içinde: "Yazarlar yüklenemedi." ve "Tekrar Dene"; diğer          Önbellekteki liste; "Öğrendim" pasif ve nedeni ilk eksik eserin         AuthorSheet koyu: sheet #18263D, Edebiyat koyu tonları
+                                                                                                                                                   Celaleddin Harzemşah                               Biliyorsun
+iskelet.                                                             akordeonlar çalışır.                                                      altında. OfflineStrip sheet açıkken de görünür.                         (#301A27 / #E494BE), eksik etiketi #F2C46D / #33270F, ✓
+                                                                                                                                                                                                                       #52CC8E.
+
+
+
+Durum metinleri                                                                                 Boş durum                                                                                         Koyu tema
+   Bölüm hatası: "Yazarlar yüklenemedi." + "Tekrar Dene". Dönem listesi gelmezse                    Dönem listesinin boş hâli anlamsız: dönemler müfredattan gelir. Veri gelmezse                    Edebiyat koyu: zemin #301A27, vurgu #E494BE (1.5).
+   segmentin altında "Dönemler yüklenemedi." ve aynı düğme (14.3·2 düzeni).                         hata gösterilir (T12.16).                                                                        Metin düğmesi #9BB3D3; pasif #56657C.
+   Çevrimdışı: "Öğrendim'i kaydetmek için bağlantı gerekiyor."                                      Alt başlıkta yazar yoksa akordeon içinde "Bu bölümde yazar yok."
+
+   Kaydetme hatası (kare yok): satır eksiğe döner, toast "Kaydedilemedi. Bağlantını
+   kontrol edip tekrar dene."
+
+   Eser yok: "Bu yazarın eser listesi henüz yok."
+

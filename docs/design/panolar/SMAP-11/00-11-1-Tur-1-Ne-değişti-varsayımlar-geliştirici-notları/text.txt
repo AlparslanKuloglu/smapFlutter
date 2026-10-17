@@ -1,0 +1,229 @@
+11.1 Tur 1 Notları 
+ 11.1 · Notlar · Tur 1
+ Tur 1 · Temeller ve Bileşen Kiti
+ Bu turda 13 sayfa açıldı ve "1 · Temeller"e 26 pano kondu: renk (1.1–1.5), tipografi, şekil ve hareket (1.6–1.8), kontroller (1.9–1.13), veri bileşenleri (1.14–1.17), kabuk ve yüzeyler (1.18–1.22), koyu tema (1.23–1.24), illüstrasyon ve logo (1.25–1.26, Tur 1 eki). Aşağıda: ne değişti ve neden (görüntü numarasıyla), bu turda verdiğim kararlar, geliştirici devri ve Bölüm 6 denetimi.
+ Ne değişti, neden
+ # Değişiklik Çözdüğü sorun Görüntü Pano 
+ 1 Tek lacivert skalası, navy-900 = #0F294A En az 12 lacivert: #162A40 kamera ve görüşmede, #0D2744 giriş ve koçta, #1A365D onboarding'de, #1A237E indigo 11 yerde 06, 09, 19, 24, 38 1.1 
+ 2 Tek turuncu skalası: dolguda 500, ince öğede 600, metinde 700 9 turuncu; aynı yerde iki turuncu (gösterge #FF7A00, ikon #FF6600); turuncu metin beyazda 2,94:1 09, 19, 24 1.1, 1.2 
+ 3 Kamera ikonu lacivert, altında "Okut" Turuncu üstünde yarı saydam beyaz ikon (#FFA366) 1,5:1, etiketsiz kamera 09 1.19 
+ 4 Tek nötr skala; ikincil metin #556173 (6,28:1) #8A90A6 3,17:1; meta ~3:1; eksen 2,61:1; "Kapat" 2,68:1; 5 ayrı gri ailesi 11, 19, 22, 40 1.1, 1.3 
+ 5 Pasif sekme etiketi ve ikonu #556173 Pasif sekme 1,96:1 09 1.19 
+ 6 D/Y/B tek sözlük: renk + ✓ ✕ – + etiket, sabit sıra, farklı açıklık Dört sözlük; bir ekranda "Doğru" lacivert; "Boş" bazen siyah bazen gri; ✓ dairesiz, ✕ daireli 24, 26, 28 1.4, 1.14 
+ 7 Soru hücresi: işaretin, yanlışta altta doğru şık, durum çipi Her hücrede anlamı belirsiz "A"; doğru şık hiç yok 26, 27 1.14 
+ 8 Ders renkleri ayrıştı, glif kontrastı en az 4,55:1 Matematik, Kimya, Edebiyat 351–358°; Coğrafya, Geometri, Fizik 197–216°; Tarih glifi 1,87:1 ve turuncuya yakın; kart şeritleri rastgele 11, 29, 30 1.5 
+ 9 Ders ikonu: ders renginde zemin + tek renk Phosphor glifi Çok renkli illüstrasyon 28 pt'de okunmuyor; iki ayrı ders ikon seti 09, 20, 29 1.5, 1.17 
+ 10 Köşe yarıçapı 22 → 5 değer + tam; iç = dış − boşluk Kart 9/16, istatistik kartı 12/6, analiz çipi 7, giriş düğmesi 15 09, 19, 24 1.7 
+ 11 Gölge 57 → 2; bir yüzeyde kenar ya da gölge Filtre panelinde çift gölge; alt çubuk gölgesi görünmeyen yöne düşüyor 19, 20 1.7 
+ 12 Plus Jakarta Sans; 12 metin + 4 rakam stili; 13 pt altı yok (alt çubuk etiketi hariç) Tanımsız sistem fontu, 18 punto, 9–11 pt meta satırları 09, 11, 12, 40 1.6 
+ 13 Türkçe sayı ve tarih biçimi, tabular rakam "118.30", "72.154", "67.5", "Oct", "Pt", "Cu" karışık 03, 09, 19, 21 1.6 
+ 14 Tek birincil düğme (lacivert), büyük harf yok, iptal sözlüğü Soluk gri CTA pasif görünüyordu; indigo dialog düğmesi; "ANLADIM", "GÖNDER"; Vazgeç/İptal/Kapat/Geri Al/Tamam karışık 01, 22, 38, envanter 1.9 
+ 15 Tek segment kontrolü, lacivert başparmak, etiketli sayaç 6 segment, 4 seçili turuncusu, üst üste iki segment; etiketsiz 31/28/3 rozetleri listeyle çakışıyor 11, 20, 24, 29 1.10 
+ 16 Ekran içi sekme çubuğu, sabit ve kaydırılabilir; filtre sekmeden ayrı Açılır "Genel" filtresi ile Denemelerim/Analiz/Harita sekmeleri aynı biçimde aynı satırda; ikisi "Yakında"ya çıkıyor; Deneme Detay'da 4 sekme sıkışık 19, 22, 23, 24 1.10 
+ 17 Çip (dokunulur) ve etiket (bilgi) ayrıldı; renkli hap yok "Deneme: 1" hapı; anlamsız renkli kart şeritleri 11, 21 1.11 
+ 18 Girdi: etiket üstte, "Örn:" placeholder, tek stil, önceden dolu alan yok Etiketsiz alanlar; test verisi dolu; değer ile placeholder aynı renk; üç ayrı alan stili (mavi dolgu, gri dolgu, çerçeveli) 06, 07, 32, 33 1.12 
+ 19 Satır bileşeni; tehlikeli satır ayrı grupta; anahtar lacivert + onay işareti Satırlar zeminle aynı ton (1,05:1); "Çıkış Yap" menü satırlarıyla aynı biçimde, yalnız ince çizgiyle ayrı; Tailwind yeşili (#22C55E) anahtar 31, 33, 37 1.13 
+ 20 Akordeonda açık ve kapalı için ayrı ok Açık ve kapalı bölümde aynı ok 26, 27 1.13 
+ 21 İlerleme: veri yoksa çizilmez; "%0" ile "soru yok" ayrı; tek renk halka; doğru yuvarlama %0 çubuk dolu görünüyor; %60 yazan çubuk boş; sarı halka 1,22:1; %41,67 → %41 09, 28, 40 1.15 
+ 22 Ders ve konu satırında sahte meta yok; numara kesintisiz; ad kesilmez Her kartta %75 · 15/20 · 4/26/8; numaralar 3, 4, 4, 5, 5, 6; "İkinci Dünya Savaşı Sürecin…" 11, 15, 18, 29 1.16 
+ 23 İstatistik kutusu: değişim yalnız son iki denemeden Dört kutuda sabit "+18.2% gecen ay" 19 1.16 
+ 24 Avatar yalnız Anasayfa ve Hesap'ta; 7 avatar bir arada; koç rozeti Ad ve avatar aynı ekranda iki kez; oklu avatar seçicide kaç seçenek olduğu belirsiz 07, 09, 32 1.17 
+ 25 Tek ikon ailesi: Phosphor, Regular / seçiliyken Fill Menüde 3 ikon stili; geri oku 4 farklı Material ikonu; potrace SVG'ler 09, 20 1.17 
+ 26 Üst bar 9 → 2 tür: başlıklı kök bant, açık zeminli detay barı Alt sayfalarda başlık yok; ad ve avatar tekrarı; sabit lacivert blok ekranın %25'i 09, 10, 19, 31–37 1.18 
+ 27 Alt çubuk: tek gösterge, sekme içinde her ekranda İki turuncu ve şeftali hap; alt çubuğun bazı detaylarda olup bazılarında olmaması 09, 39 1.19 
+ 28 Seçim ve onaylar alttan sheet; tek çerçeve; meşgul durumu Ortada açılan dialoglar, kapatma düğmesiz; köşe 12/16/20/24 14, 17, 22, 23 1.20, 1.21 
+ 29 "Yakında" yalnız kitte, "Haber ver" yok Hiçbir şey kaydetmeyen "Kaydınız Alındı"; web'de hazır bir şey için "yakında" çelişkisi 22, 23 1.21 
+ 30 Toast: tek konum ve süre, emoji ve iç kod yok "🎉" ve "🔴" mesajları, "Gönderim hatası 590", ham Exception metni (envanter §3) envanter 1.22 
+ 31 Durum kalıpları: 15 sn'de hata, bölüm düzeyi durum, çevrimdışı şeridi Hata durumunda sonsuz iskelet (Anasayfa ders şeridi, sonuç akışı 2. adım) envanter 1.22 
+ 32 Koyu tema token düzeyinde tasarlandı Koyu tema yoktu; ters çevrilmiş bir koyu tema istenmiyor — 1.2, 1.23, 1.24 33 Gerçek 3D avatarlar kitte; örnek kişilere sabit avatar Panolarda renkli daire yer tutucusu vardı 07, 09, 32 1.17–1.24 34 Kil illüstrasyon seti: yalnız onboarding, ekran düzeyi boş durum ve mağaza Boş durum görseli yer tutucuydu; uygulamada dört ayrı illüstrasyon stili karışık 06, 09, 29 1.22, 1.25 35 Mevcut varlıklar için tek tek karar Düz ders PNG'leri, puan parası, eski logo ve 7,7 MB onboarding görselleri hâlâ pakette 01–06, 09 1.25 36 Logo: örgülü S-rota inceltildi, varsayılan ikon lacivert pafta İkondaki yazı 29 pt'de okunmuyor; lacivert yarı lacivert zeminde kayboluyor; taslaklardan birinde "Stundent" yazım hatası 09, varlıklar 1.26 
+ Varsayımlar
+ Ek D'de olmayan ve bu turda verdiğim kararlar. Hiçbiri bir ekranın çizimini engellemiyor; değiştirmek istediğin olursa bir sonraki turda düzeltirim.
+ 1 Hesabındaki "Design System" artifact'ı kullanılmadı: varsayılan olarak işaretli değildi ve brif SMAP'ın kendi dilini istiyor.
+ 2 42 ekran görüntüsü Tur 1'den sonra geldi; her pano onlarla karşılaştırıldı ve renkler piksel ölçümüyle doğrulandı. Tariften gelen beş yanlış düzeltildi (aşağıda "Tur 1 eki"). Görüntü numaraları dosya adlarıyla aynı.
+ 3 Kanvas #F5F7F9 → #F2F4F7 (beyaz kart ayrışsın diye bir ton koyu). Başlık metni #1C1F33 → #1B2232 (nötr skalanın tonuna hizalı; fark algılanmaz).
+ 4 Detay üst barı açık zeminli (Ek D-9'un bıraktığı seçim). Başlık içerikte büyük durur, kaydırınca bara 2 satıra kadar iner.
+ 5 İnce turuncu öğeler (gösterge, ilerleme, "bugün", grafikte seçili nokta) orange-600, çünkü #FF6600 beyazda 3:1'i tutmuyor. Koyu temada orange-400.
+ 6 Segment, çip, anahtar ve onay kutusunda seçim lacivert. Turuncu yalnız konum, ilerleme, "bugün" ve kamerada.
+ 7 Segment başparmağı lacivert dolgu: beyaz başparmak gri rayda 1,10:1 durum kontrastı veriyordu.
+ 8 Alt çubuk etiketi 12 pt: 13 pt kuralının tek istisnası ("Görüşmelerim" 13 pt'de yuvaya sığmıyor). Büyük metinde FittedBox ile küçülür, uzun basışta büyük içerik balonu.
+ 9 Alt çubuk sekme içindeki bütün ekranlarda kalır; yalnız tam ekran akışlarda (kamera, sonuç anı, kart oturumu, onboarding, giriş) gizlenir.
+ 10 iPhone 16 Pro güvenli alanı üst 62, alt 34 pt. Klavye 336 pt ve yalnız şematik.
+ 11 Kamera düğmesi 56 × 56, radius-lg, 16 pt yukarı (eskiden 74 × 74, 12 pt).
+ 12 Kök bant 134 pt, bantta segment ya da sekme varsa 178 pt; kaydırınca 110 pt.
+ 13 Kartlar kenarsız ve gölgesiz; ayrımı kanvas/yüzey farkı yapar. Gölge yalnız sürüklenen kart, kamera düğmesi, toast ve balonlarda.
+ 14 D/Y/B değerleri: Doğru #0B6E3E, Yanlış #D8333A, Boş #7E8A9B. Sayılar metin renginde, renk çipte. Koyu temada açıklık sırası tersine döner.
+ 15 Ders glifleri: TextAa, Feather, Bank, Globe, MathOperations, Angle, Atom, Flask, Dna. Kimya eflatuna (296°), Edebiyat şarap tonuna (340°) kaydı; diğerleri kimliğini korudu.
+ 16 Başarı halkası tek renk; eşik renkleri yok. Yüzde en yakın tam sayıya yuvarlanır. Soru hiç yoksa halka çizilmez, "Soru yok" yazar.
+ 17 Net sondaki sıfırsız yazılır (68, 67,5, 74,75); puan iki haneli (381,40). Kısa tarih noktalı ay: "5 Eki.", gerekiyorsa "5 Eki. 2026".
+ 18 İptal sözlüğü: Vazgeç (eylemsiz kapatır), Tamam (bilgi sheet'inde tek düğme), Kapat (yalnız X'in erişilebilir adı), Geri Al (yalnız toast). "İptal" kullanılmaz.
+ 19 Soru biçimindeki onay başlıkları cümle düzeninde ("Koç bağlantısı kaldırılsın mı?"); ekran, sheet ve bölüm başlıkları Türkçe başlık düzeninde.
+ 20 Zorunlu alan yıldızı yok; isteğe bağlı alanın etiketi "(isteğe bağlı)" ile biter.
+ 21 Şifre ipucu "En az 8 karakter." Kodda kural yoktu; sunucu kuralı netleşince güncellenir.
+ 22 Placeholder yalnız beyaz girdi zemininde (kanvasta 4,25:1'e düşüyor).
+ 23 Toast eylemi beyaz kalın metin. Koyu temada toast ve çevrimdışı şeridi ters yüzey (açık zemin, koyu metin).
+ 24 İskelet 15 sn içinde veri alamazsa hata durumuna geçer.
+ 25 Koç rol rozeti ikon değil, "Koç" kelimesi.
+ 26 Avatarlar ve kil illüstrasyonlar paylaştığın görsellerden kırpıldı (avatar 190 px, kil 140 px) ve panolara gömüldü. Üretimde asıl dosyaların 3x kopyası kullanılır. Kapak görselleri hâlâ yer tutucu.
+ 27 Panolardaki ikonlar Phosphor'un elle çizilmiş yaklaşığı; uygulamada phosphor_flutter'daki aynı adlı ikon kullanılır.
+ 28 Soru hücresi örneğindeki şıklar, Öğrenci Ekle'deki kullanıcı adı ve sheet içi alt başlıklar örnek; Ek C'de karşılıkları yok.
+ 29 Ders bazında bilgi kartı toplamı yalnız Tarih için var (41 / 64); diğer derslerde kart ilerlemesi çizilmedi.
+ 30 Yazı tipi uygulamaya gömülür; çalışma anında indirilmez (zayıf okul Wi-Fi'ı).
+ 31 Örnek kişilerin avatarları: Alparslan 1, Mehmet Özkan 2, Kerem 3, Elif 4, Zeynep 5, Mert 2. Erkek avatarı üç tane; Mert koçuyla aynı avatarı paylaşıyor, ikisi aynı listede görünmez.
+ 32 Kil seti yeni bir ikon seti sayılmadı (Bölüm 7): mevcut görseller, avatar diliyle aynı, yalnız izin verilen yerlerde.
+ 33 Ders satırında kil görsel yerine glif kaldı (Ek D-12): kil görsel 40 pt'de bulanıklaşıyor ve ders rengini bozuyor.
+ 34 Logo için senin örgülü S'n esas alındı. Varsayılan ikon lacivert pafta önerildi; açık sürüm alternatif. Karar senin, Tur 7 (açılış) ve Tur 11 (mağaza) buna göre çizilecek.
+ 35 Wordmark Plus Jakarta Sans ExtraBold ile yazıldı; ayrı bir logo yazı tipi seçilmedi.
+ Geliştirici notları
+ ColorScheme · açık
+ // seed yok; elle ColorScheme. Gri seed (#7D858D) kalkıyor. 
+ColorScheme(
+ brightness: Brightness.light,
+ primary: Color(0xFF0F294A), onPrimary: Color(0xFFFFFFFF),
+ secondary: Color(0xFFFF6600), onSecondary: Color(0xFF0F294A),
+ error: Color(0xFFC42D35), onError: Color(0xFFFFFFFF),
+ surface: Color(0xFFF2F4F7), onSurface: Color(0xFF1B2232),
+ onSurfaceVariant: Color(0xFF556173),
+ outline: Color(0xFF697586), outlineVariant: Color(0xFFDCE2E9),
+ surfaceContainerLowest: Color(0xFFFFFFFF),
+ surfaceContainerLow: Color(0xFFFFFFFF),
+ surfaceContainerHighest: Color(0xFFE8ECF1),
+ scrim: Color(0x7A091A31), // %48 
+) 
+ ColorScheme · koyu
+ ColorScheme(
+ brightness: Brightness.dark,
+ primary: Color(0xFFC5D4E8), onPrimary: Color(0xFF091A31),
+ secondary: Color(0xFFFF6600), onSecondary: Color(0xFF0F294A),
+ error: Color(0xFFFF8F8F), onError: Color(0xFF3B0A10),
+ surface: Color(0xFF0A1424), onSurface: Color(0xFFEDF1F6),
+ onSurfaceVariant: Color(0xFFA9B5C6),
+ outline: Color(0xFF6B7D97), outlineVariant: Color(0xFF26354D),
+ surfaceContainerLowest: Color(0xFF121D31),
+ surfaceContainerLow: Color(0xFF18263D),
+ surfaceContainerHighest: Color(0xFF213049),
+ scrim: Color(0xA302060E), // %64 
+) 
+ ThemeExtension · SmapColors
+ // açık / koyu değerleri 1.2, 1.4, 1.5'te 
+navyBand, navyBandRaised, onNavyBand, onNavyBandVariant,
+bar, borderStrong, textPlaceholder, textDisabled,
+textAction, textAccent, primaryPressed, accentLine, focusRing,
+dybCorrect, dybWrong, dybEmpty, dybOn,
+dybCorrectBg, dybWrongBg, dybEmptyBg,
+info, infoBg, success, successBg, warning, warningBg, errorBg,
+chartLine, chartArea, chartHighlight, chartGrid, chartSeries[4],
+subjects: Map<Ders, (bg, accent)> // 9 ders 
+ ThemeExtension · SmapTokens
+ radius: xs 4 · sm 8 · md 12 · lg 16 · xl 24 · full 999
+space: 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 // gutter 16 
+shadowRaised: BoxShadow(0, 2, blur 8, #0F294A @ .08) // koyu #000 @ .40 
+shadowOverlay: BoxShadow(0, 8, blur 24, #0F294A @ .16) // koyu #000 @ .56 
+duration: instant 100 · fast 150 · base 250 · slow 350 · loop 1200
+curves: standard Cubic(0.2, 0, 0, 1)
+ enter Cubic(0, 0, 0, 1)
+ exit Cubic(0.3, 0, 1, 1)
+blur: bar 20 · scrim 8 // başka yerde BackdropFilter yok 
+ TextTheme eşlemesi · Plus Jakarta Sans, FontFeature.tabularFigures()
+ displaySmall
+ display 32/40 · 800 · −0,5
+ headlineSmall
+ title-lg 24/32 · 700 · −0,3
+ titleLarge
+ title-md 20/28 · 700 · −0,2
+ titleMedium
+ headline 17/24 · 700 · −0,1
+ titleSmall
+ title-sm 16/24 · 600
+ bodyLarge · bodyMedium · bodySmall
+ body-lg 16/24 · body 15/24 · caption 13/20 500
+ labelLarge · labelMedium · labelSmall
+ label-lg 16/24 · label-md 14/20 · label-sm 12/16 (yalnız alt çubuk), hepsi 600
+ ext.metricXl · Lg · Md · Sm
+ 56/64 800 −1,5 · 40/48 800 −1 · 24/32 700 −0,4 · 17/24 700
+ Biçimlendirme
+ final net = NumberFormat('#,##0.##', 'tr'); // 67,5 · 74,75 · 68 
+final puan = NumberFormat('#,##0.00', 'tr'); // 412,63 · 381,40 
+final sira = NumberFormat('#,##0', 'tr'); // 48.215 → "48.215. sıra" 
+String yuzde(int d, int toplam) =>
+ '%${(d * 100 / toplam).round()}'; // 5/12 → %42 
+String kisaTarih(DateTime t) =>
+ '${t.day} ${DateFormat('MMM', 'tr').format(t)}.'; // 5 Eki. 
+DateFormat('d MMMM y', 'tr') // 15 Eylül 2026 
+DateFormat('EEE', 'tr') // Pzt Sal Çar Per Cum Cmt Paz 
+ // Büyük harf gerekirse toUpperCase() değil, tr yerel ayarlı dönüşüm (i → İ). 
+ Erişilebilirlik
+ // D/Y/B tek okunuş 
+Semantics(label: '86 doğru, 74 yanlış, 0 boş', excludeSemantics: true)
+ // soru hücresi 
+Semantics(button: true, label: 'Soru 7, yanlış, işaretin C, doğru cevap A')
+ // ikon düğmeleri: tooltip + semanticLabel 
+'Geri' · 'Kapat' · 'Filtrele' · 'Favorilere ekle' · 'Şifreyi göster'
+ // metin ölçeği: 1,3'e kadar düzen kırılmaz; sabit yükseklik yok 
+ // alt çubuk etiketi: FittedBox(scaleDown) + uzun basış balonu 
+ // dokunma hedefi 48: MaterialTapTargetSize.padded, 40'lık düğmede pay 
+ // hareketi azalt: MediaQuery.disableAnimations → opaklık geçişi 
+ Bileşen listesi (önerilen widget adları)
+ SmapButton
+ variant: primary · secondary · quiet · danger · text; size: lg 48 · md 40; loading; leading/trailing ikon (1.9)
+ SmapSegmented
+ 2–4 seçenek; counterLabel ("28 eksik", sıfırsa "eksik yok"); onNavy; etiket sarılır (1.10)
+ SmapTabBar
+ fixed · scrollable (sığmazsa kendiliğinden); onNavy; seçili sekmeyi görünür alana kaydırır (1.10)
+ SmapChip · SmapTag
+ chip: filter · choice · subject (nokta) · square (şık); tag: bilgi etiketi, dokunulmaz (1.11)
+ SmapTextField
+ text · password · search · select (sheet açar) · code (6 hane) · multiline; durumlar: odak · hata · pasif · salt okunur · canlı kontrol (1.12)
+ SmapRow · SmapSwitch · SmapCheckbox · SmapRadio
+ trailing: chevron · value · switch · tag; danger; accordion header (expanded) (1.13)
+ DybChip · DybCounter · DybStackedBar · QuestionCell
+ counter: large · small (harfli/kelimeli); bar: 2 pt boşluklu parçalar (1.14)
+ SubjectProgress · SmapProgress · SuccessRing · SmapSpinner
+ ring: value · noData ("Soru yok") (1.15)
+ SubjectRow · TopicRow · ExamCard · StatBox
+ veri yoksa alan çizilmez; değişim yalnız gerçekse (1.16)
+ SmapAvatar · AvatarStack · AvatarPicker
+ 24/32/40/56/96; baş harf yedeği; "Koç" rozeti (1.17)
+ RootBand · DetailBar · ContextStrip
+ bant: title, action, bottom (segment/sekme), küçülme; detay: back, action, compactTitle 2 satır; koç bağlam şeridi (1.18)
+ SmapBottomBar · CameraButton
+ role: student · coach; tek gösterge; "Okut" (1.19)
+ SmapSheet · ConfirmSheet · ComingSoonSheet
+ size: small · medium · full; header, footer, busy; confirm: normal · danger; ComingSoon yalnız kitte (1.20, 1.21)
+ SmapToast · Skeleton · EmptyState · ErrorState · OfflineStrip
+ toast: info · success · error, action; empty/error: screen · section (1.22)
+ Koddan kalkacaklar
+ Giriş ve kayıttaki önceden dolu test kullanıcı adı/şifresi · sabit "OBP notunuz 85" · "+18.2% gecen ay" varsayılanları · "Deneme: N" etiketi · SnackBar'lardaki emoji ve "Hata:" öneki · iç hata kodları ve ham Exception metinleri · #22C55E yeşil Switch · indigo dialog düğmesi · 6 segment ve 9 üst bar kopyası · çok renkli ders PNG'leri ve stok menü illüstrasyonları · AppTheme'deki gri seed · Colors.grey/Tailwind literal'leri (yerine SmapColors) · puan parası (smapc.png) · eski üçgen logo ve ~40 logo varyantı · ob1-6.png (7,7 MB) · loginImage.png.
+ Paketler
+ phosphor_flutter (ikonlar) · intl, tr yerel ayarı (zaten var) · Plus Jakarta Sans TTF varlık olarak (google_fonts ile indirme yok) · bildirim haptikleri için küçük platform kanalı (iOS UINotificationFeedbackGenerator, Android HapticFeedbackConstants.CONFIRM / REJECT) · kullanılmayan cupertino_icons kaldırılabilir.
+ Tur 1 eki · ekran görüntüleri, varlıklar ve logo
+ Tur 1'den sonra gelen 42 ekran görüntüsü, varlık görselleri ve 1.10 logo çalışması işlendi. Tur 2'ye geçilmedi. Değişen panolar: 1.12, 1.13, 1.17, 1.18, 1.19, 1.21, 1.22, 1.24. Yeni panolar: 1.25 (illüstrasyon ve mevcut varlıklar), 1.26 (logo çalışması).
+ Doğrulanan
+ D1 Renkler piksel ölçümüyle tuttu: bant #0F294A, giriş #0D2744, kamera öğreticisi #162A40, turuncu #FF6600, giriş alanı #E8F1FA, seçili hap #FFD4B3.
+ D2 Kontrastlar: pasif sekme #B4B8C0 1,99:1 · konu metası #8A90A6 3,17:1 · "Kapat" #9E9E9E 2,68:1 · sarı halka #FFEB3B 1,22:1 · Hesap satırı #F9FAFB zeminde 1,05:1.
+ D3 D/Y/B'nin dört sözlüğü ekranda da dört: Material (25), Tailwind (26, 28), Doğru lacivert (24), iOS (kart SVG'leri).
+ D4 Sayı ve tarih karışıklığı: "118.30", "72.154", "67.5", "Cu" (09, 19, 21).
+ Düzeltilen
+ Y1 Satır 16: 19'da "Harita" kesik değil; kesik olan, tanıtım ekranlarındaki eski arayüz görseli. Asıl sorun: açılır filtre ile sekmeler aynı biçimde aynı satırda.
+ Y2 Satır 19 ve 1.13: "Çıkış Yap" ayrı satırda, yalnız ince bir çizgiyle ayrılıyor; anahtar Material değil Tailwind yeşili (#22C55E).
+ Y3 Satır 18 ve 1.12: alan stili iki değil üç (07 mavi dolgu, 32 gri dolgu, 33 çerçeveli).
+ Y4 Satır 3 ve 1.19: kamera ikonu yarı saydam beyaz (#FFA366), turuncu üstünde 1,5:1.
+ Y5 Satır 31: 10'da iskelet görünmüyor; kaynak yalnız envanter.
+ Sonraki turlar için bulgular
+ Görüntü Bulgu Tur 01–05 Beş tanıtım ekranı eski arayüz görselleriyle; "5 saniyede", "yapay zeka destekli" gibi doğrulanmamış iddialar 7 06 "Öğrenme yolculuğunuza başlamaya hazır mısınız?" siz dili; önceden dolu "student" ve şifre 7 07, 08 Oklu avatar seçicide kaç avatar olduğu görünmüyor; koç kaydında koçluk kodu bilgisi yok 7 09, 10 Kişi kartı, menü ızgarası, takvim; puan parası "0"; rozetler etiketsiz; kaydırınca menü ders şeridinin altına giriyor 6 14, 17 "Dersin kategorisini seçin" ortada dialog; TYT, AYT, SOS-2 üç ayrı mavi tonunda 5 15, 16 Başlıklar üç noktayla kesik; eksik rozeti "0" 5 19–23 "+18.2% gecen ay" (yazımı da hatalı); filtre sekmelerle aynı biçimde; "Deneme: 1" 4 24–28 "AYT Deneme (Test)", sabit "OBP notunuz 85"; "Söz Sanatları ( Edebi Sanatlar)"; sarı halka; ad iki satırda kesik 3 31–37 Alt sayfalarda başlık yok; "E-Mail Adresi"; Bildirimler'de anlamı belirsiz anahtarlar ("Kullanıcılar Görebilsin", "Mobilde Göster"); turuncu "Değişiklikleri Kaydet"; İngilizce fatura satırları (v1'de gizli) 8 38 "Beyaz noktaları" diyor, noktalar turuncu; tek sayfalık gösterge; "ANLADIM" 2 39–42 Konu detayında %60 yazan boş çubuk, 9 pt madde metni, her alt başlıkta aynı kitap ikonu 5 
+ Bölüm 6 denetimi
+ Tur bitmeden her pano bu listeye karşı kontrol edildi.
+ ✓ Emoji yok; selamlamada el sallama emojisi de yok.
+ ✓ Gradyanlı hero + cam istatistik kartı + halka üçlüsü yok. Tek gradyan, iskelet parıltısı ve kaydırma solması (işlevli).
+ ✓ Elmas/coin/seri çipi yok; verisi olmayan oyunlaştırma yok.
+ ✓ Grafiğin ekseni ve etiketleri var; noktalar dokunulabilir.
+ ✓ Kategori başına renkli hap yok (etiketler nötr); üstü çizili görev yok.
+ ✓ Turuncu dört işle sınırlı: kamera, konum göstergesi, ilerleme, "bugün" (+ grafikte seçili nokta).
+ ✓ Gövde 15 pt, ikincil 13 pt; tek istisna alt çubuk etiketi 12 pt (varsayım 8).
+ ✓ Parıltı, bulanık renk lekesi, konfeti yok. Bulanıklık yalnız alt çubuk ve sheet perdesinde.
+ ✓ Her bölüm "kart + başlık + Tümü ›" değil; bölümleri başlık ve boşluk ayırıyor.
+ ✓ Uygulama arayüzünde büyük harfli, harf aralıklı üst etiket yok. Panolardaki küçük "1.x · Temeller" satırı yalnız kanvas belgelemesi.
+ ✓ Koyu tema ters çevrilmiş açık tema değil; ayrı roller ve ayrı oranlar.
+ ✓ Turuncu üstüne beyaz metin yok; bütün metin/zemin çiftleri 1.3'te ölçüldü.
+ ✓ Kil illüstrasyonlar yalnız boş durum ve onboarding'de, ekranda en fazla bir tane; renkli hap değil. Logo ikonunda parlama ve gradyan kaldırıldı (1.26); parlamalar yalnız mağaza görsellerinde (Tur 11).
+ Sıradaki tur
+ Tur 2: Kamera ve optik okuma, "4 · Kamera ve Optik Okuma" sayfasına; sonuç anı "5 · Deneme Sonucu ve Detay"ın ilk panosu olacak. Bu kitteki bileşenler yeniden çizilmeden kullanılacak; genişletmeler bu sayfaya "Tur 2" başlığıyla yazılacak.

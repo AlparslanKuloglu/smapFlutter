@@ -1,0 +1,50 @@
+1.12 Girdiler 
+ 1.12 · Temeller · Kontroller
+ Girdiler · 6 Tür, 5 Durum
+ Etiket her zaman alanın üstünde. Eskiden alanlar etiketsizdi ve test verisiyle dolu geliyordu; girilmiş değer ile placeholder aynı renkteydi (06, 07). Şimdi placeholder yalnız "Örn: …" biçiminde, açık gri ve isteğe bağlı. Üç ayrı alan stili (07 mavi dolgu, 32 gri dolgu, 33 çerçeveli) tek stile indi.
+ Türler
+ Metin
+ Ad Soyad 
+ Şifre · göster/gizle
+ Şifre 
+ En az 8 karakter.
+ Arama
+ Öğrenci ara 
+ Etiket görünmez ama okunur: "Öğrenci ara". Türkçe harflerde doğru eşleşir (I/ı/İ/i).
+ Açılır seçim · alttan sheet açar
+ Sınıf 12. Sınıf 
+ 6 haneli kod
+ Doğrulama kodu
+ Kodu alparslan@ornek.com adresine gönderdik.
+ Kodu Tekrar Gönder (0:24) 
+ Çok satırlı
+ Görüşme notu Tarih eksikleri için haftada 3 saat ayrıldı. 
+ Durumlar
+ Boş · placeholder
+ Yayınevi 
+ Odak
+ Deneme adı 
+ Hata
+ E-posta E-posta adresi eksik görünüyor. Örn: ad@alan.com
+ Canlı kontrol · başarılı
+ Kullanıcı adı 
+ Bu kullanıcı adı boşta.
+ Pasif
+ Alan Seçilmez 9. ve 10. sınıfta alan seçilmez.
+ Salt okunur
+ Kullanıcı adı 
+ Metin tam kontrastta kalır; pasiften farkı bu.
+ Ölçüler ve kurallar
+ Etiket label-md 14/20 · 8 pt üstte 
+ Alan 48 yükseklik · radius-md · 16 yan 
+ Değer 16/24 (iOS yakınlaştırmaz) 
+ Kenar 1 pt border-control (4,68:1) 
+ Odak · hata 2 pt navy-800 · 2 pt error 
+ Yardım · hata metni caption 13/20 · 6 pt altta 
+ Alanlar arası space-24 
+ Doğrulama zamanı. Alan bırakılınca ya da gönderince doğrulanır; ilk hatadan sonra yazarken güncellenir. Gönderimde odak ilk hatalı alana gider. 
+ Hata metni çözüm söyler. "Geçersiz giriş" değil, "E-posta adresi eksik görünüyor. Örn: ad@alan.com". İç kod ya da ham hata yok. 
+ Zorunlu alan. Formların çoğu zorunlu alandan oluştuğu için yıldız yok; isteğe bağlı alanın etiketi "(isteğe bağlı)" ile biter. 
+ Klavye. E-posta için e-posta, telefon için sayı klavyesi ve +90 5XX XXX XX XX maskesi; kodda sayı klavyesi ve tek kullanımlık kod doldurma; yapıştırınca 6 kutu birden dolar. 
+ Önceden dolu alan yok. Test kullanıcı adı ve şifresi koddan kalkar (06, 07). 
+ Seçim alttan. Açılır seçim yerinde liste açmaz; alttan sheet açar (1.20).

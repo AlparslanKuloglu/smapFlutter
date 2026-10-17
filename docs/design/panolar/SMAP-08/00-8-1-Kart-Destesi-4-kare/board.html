@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<title>8.1 Kart Destesi</title>
+<script src="res/90e75a4f-6c5b-4322-a8c7-332a8f516343.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/74ebc087-854b-4666-9c6b-31c99d11fbb6.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/bca74b7f-1fa2-4e14-9b0c-6e7436159ccc.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/74ebc087-854b-4666-9c6b-31c99d11fbb6.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/bca74b7f-1fa2-4e14-9b0c-6e7436159ccc.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/74ebc087-854b-4666-9c6b-31c99d11fbb6.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/bca74b7f-1fa2-4e14-9b0c-6e7436159ccc.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/74ebc087-854b-4666-9c6b-31c99d11fbb6.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/bca74b7f-1fa2-4e14-9b0c-6e7436159ccc.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/74ebc087-854b-4666-9c6b-31c99d11fbb6.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/bca74b7f-1fa2-4e14-9b0c-6e7436159ccc.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+button{font-family:inherit;border:0;margin:0;cursor:pointer;background:transparent;color:inherit;padding:0}
+input{font-family:inherit;margin:0;outline:none}
+.ph{width:402px;height:874px;border-radius:56px;overflow:hidden;position:relative;background:#F2F4F7;box-shadow:0 0 0 1px #C3CBD6;color:#1B2232;flex:none}
+.ph.dk{background:#0A1424;box-shadow:0 0 0 1px #34445F;color:#EDF1F6}
+.ph.cm{background:#000000;box-shadow:0 0 0 1px #34445F;color:#FFFFFF}
+.di{position:absolute;top:11px;left:138px;width:126px;height:37px;border-radius:19px;background:#000000;z-index:9}
+.hi{position:absolute;bottom:8px;left:134px;width:134px;height:5px;border-radius:3px;background:#1B2232;z-index:9}
+.dk .hi,.cm .hi{background:#EDF1F6}
+.abs{position:absolute}
+.cap{width:402px}
+.cap b{display:block;font-size:15px;line-height:20px;margin-top:16px}
+.cap span{display:block;font-size:13px;line-height:20px;color:#556173;margin-top:2px}
+.t24{margin:0;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.3px}
+.t20{margin:0;font-size:20px;line-height:28px;font-weight:700;letter-spacing:-0.2px}
+.t17{margin:0;font-size:17px;line-height:24px;font-weight:700;letter-spacing:-0.1px}
+.b16{margin:0;font-size:16px;line-height:24px}
+.b15{margin:0;font-size:15px;line-height:24px}
+.c13{margin:0;font-size:13px;line-height:20px}
+.mu{color:#556173}
+.dk .mu,.cm .mu{color:#A9B5C6}
+.bp{height:48px;border-radius:12px;background:#0F294A;color:#FFFFFF;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bp,.cm .bp{background:#C5D4E8;color:#091A31}
+.bp.off{background:#DCE2E9;color:#9AA5B4}
+.dk .bp.off,.cm .bp.off{background:#213049;color:#56657C}
+.bo{height:48px;border-radius:12px;background:#FFFFFF;color:#0F294A;box-shadow:inset 0 0 0 1.5px #0F294A;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bo,.cm .bo{background:transparent;color:#C5D4E8;box-shadow:inset 0 0 0 1.5px #C5D4E8}
+.bq{height:48px;border-radius:12px;background:#E8ECF1;color:#1B2232;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bq,.cm .bq{background:#213049;color:#EDF1F6}
+.bt{height:48px;padding:0 12px;border-radius:12px;color:#1A3357;font-size:16px;line-height:24px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.dk .bt,.cm .bt{color:#9BB3D3}
+.ib{width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;flex:none;border-radius:12px;color:inherit}
+.ibc{width:40px;height:40px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:rgba(10,20,36,0.64);color:#FFFFFF}
+.scrim{position:absolute;inset:0;background:rgba(9,26,49,0.48);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:4}
+.scrim.dk2{background:rgba(2,6,14,0.64)}
+.sh{position:absolute;left:0;right:0;bottom:0;background:#FFFFFF;border-radius:24px 24px 0 0;z-index:5;display:flex;flex-direction:column;color:#1B2232}
+.dk .sh{background:#18263D;color:#EDF1F6}
+.hd{width:36px;height:4px;border-radius:999px;background:#C3CBD6;margin:8px auto 0;flex:none}
+.dk .hd{background:#34445F}
+.shh{display:flex;align-items:flex-start;gap:8px;padding:12px 12px 0 24px}
+.shf{padding:16px 24px 42px;display:flex;flex-direction:column;gap:12px}
+.xi{width:36px;height:36px;border-radius:999px;background:#E8ECF1;color:#1B2232;display:inline-flex;align-items:center;justify-content:center}
+.dk .xi{background:#213049;color:#EDF1F6}
+.fl{display:block;font-size:14px;line-height:20px;font-weight:600;margin-bottom:8px}
+.in{width:100%;height:48px;padding:0 16px;border-radius:12px;border:1px solid #697586;background:#FFFFFF;font-size:16px;line-height:24px;color:#1B2232;display:flex;align-items:center}
+.in.err{border:2px solid #C42D35;padding:0 15px}
+.ph-t{color:#697586}
+.er{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:13px;line-height:20px;font-weight:600;color:#C42D35}
+.hp{font-size:13px;line-height:20px;color:#556173;margin-top:6px}
+.seg{display:flex;gap:4px;padding:4px;background:#E8ECF1;border-radius:12px}
+.dk .seg{background:#213049}
+.seg button{flex:1;min-height:36px;border-radius:8px;color:#556173;font-size:14px;line-height:20px;font-weight:600}
+.dk .seg button{color:#A9B5C6}
+.seg button.on{background:#0F294A;color:#FFFFFF}
+.dk .seg button.on{background:#C5D4E8;color:#091A31}
+.seg.cnt button{min-height:48px;padding:4px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.seg.cnt button b{font-size:14px;line-height:20px;font-weight:700;color:#1B2232}
+.seg.cnt button i{font-style:normal;font-size:13px;line-height:20px;font-weight:500}
+.seg.cnt button.on b{color:#FFFFFF}
+.seg.cnt button.on i{color:#C5D4E8}
+.dk .seg.cnt button b{color:#EDF1F6}
+.dk .seg.cnt button.on b{color:#091A31}
+.dk .seg.cnt button.on i{color:#1A3357}
+.sq{width:48px;height:48px;border-radius:12px;background:#FFFFFF;color:#1B2232;box-shadow:inset 0 0 0 1px #697586;font-size:16px;line-height:24px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.sq.w{width:64px}
+.sq.on{background:#0F294A;color:#FFFFFF;box-shadow:none}
+.cb{display:flex;align-items:center;gap:12px;min-height:48px;font-size:15px;line-height:24px;text-align:left}
+.cbx{width:24px;height:24px;border-radius:4px;box-shadow:inset 0 0 0 2px #697586;flex:none;display:inline-flex;align-items:center;justify-content:center}
+.dk .cbx{box-shadow:inset 0 0 0 2px #6B7D97}
+.c24{width:24px;height:24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;flex:none}
+.dyl{font-size:15px;line-height:24px;font-weight:600;color:#556173}
+.dk .dyl{color:#A9B5C6}
+.dyv{font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.4px;margin-top:4px}
+.card{background:#FFFFFF;border-radius:16px}
+.dk .card{background:#121D31}
+.toast{display:flex;align-items:center;gap:12px;min-height:48px;padding:12px 16px;border-radius:12px;background:#0F294A;color:#FFFFFF;font-size:15px;line-height:24px;box-shadow:0 8px 24px rgba(15,41,74,0.16)}
+.sk{background:#E8ECF1;border-radius:8px}
+.nts{display:grid;column-gap:48px;row-gap:24px}
+.nts h3{margin:0 0 10px;font-size:17px;line-height:24px;font-weight:700}
+.nts ul{margin:0;padding:0 0 0 18px;font-size:14px;line-height:22px;color:#1B2232}
+.nts li{margin:0 0 6px}
+.nts code{font-family:inherit;font-weight:600;color:#264066}
+.tk{display:inline-block;font-weight:600;color:#264066}
+.cm .sh .bp{background:#0F294A;color:#FFFFFF}
+.cm .sh .bq{background:#E8ECF1;color:#1B2232}
+.cm .sh .mu{color:#556173}
+.cm .sh .bt{color:#1A3357}
+.c16{width:16px;height:16px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;flex:none}
+.dk .c16{color:#0A1424}
+.sm{display:inline-flex;align-items:center;gap:4px;font-size:15px;line-height:20px;font-weight:700}
+.sm i{font-style:normal;font-size:13px;font-weight:500;color:#556173}
+.dk .sm i{color:#A9B5C6}
+.qc{height:76px;border-radius:8px;padding:6px;display:flex;flex-direction:column;justify-content:space-between;position:relative;text-align:center}
+.qn{font-size:13px;line-height:20px;font-weight:600;color:#556173;text-align:left}
+.dk .qn{color:#A9B5C6}
+.qm{font-size:20px;line-height:24px;font-weight:700}
+.qa{font-size:13px;line-height:16px;font-weight:600;color:#0B6E3E}
+.dk .qa{color:#52CC8E}
+.qs{position:absolute;top:8px;right:8px}
+.bar{display:flex;gap:2px;height:12px;border-radius:999px;overflow:hidden}
+.tr{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:72px;width:100%;text-align:left}
+.tr+.tr{border-top:1px solid #E8ECF1}
+.dk .tr+.tr{border-top:1px solid #26354D}
+.tn{font-size:16px;line-height:24px;font-weight:600}
+.tm{font-size:13px;line-height:20px;color:#556173}
+.dk .tm{color:#A9B5C6}
+.tg{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:8px;background:#E8ECF1;color:#1B2232;font-size:13px;line-height:20px;font-weight:600;white-space:nowrap}
+.dk .tg{background:#213049;color:#EDF1F6}
+.tabs{display:flex;height:48px;box-shadow:inset 0 -1px 0 #DCE2E9}
+.dk .tabs{box-shadow:inset 0 -1px 0 #26354D}
+.tabs button{flex:1;position:relative;color:#556173;font-size:15px;line-height:24px;font-weight:600}
+.dk .tabs button{color:#A9B5C6}
+.tabs button.on{color:#1B2232;font-weight:700}
+.dk .tabs button.on{color:#EDF1F6}
+.tabs .u{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:3px;border-radius:999px;background:#E05500}
+.dk .tabs .u{background:#FF8533}
+.sep{border-top:1px solid #E8ECF1}
+.dk .sep{border-top:1px solid #26354D}
+.off{display:flex;align-items:center;gap:10px;min-height:40px;padding:8px 16px;background:#1B2232;color:#FFFFFF;font-size:13px;line-height:20px;font-weight:600}
+.band{background:#0F294A;padding-top:62px;border-radius:0 0 24px 24px}
+.bnt{height:56px;display:flex;align-items:center;padding:0 16px;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.3px;color:#FFFFFF}
+.gt{width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.rw{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:72px;width:100%;text-align:left}
+.rw+.rw{border-top:1px solid #E8ECF1}
+.dk .rw+.rw{border-top:1px solid #26354D}
+.nb{width:28px;height:28px;border-radius:999px;background:#E8ECF1;font-size:13px;line-height:28px;font-weight:700;text-align:center;flex:none}
+.dk .nb{background:#213049}
+.ek{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 8px;border-radius:8px;background:#FCF1D9;color:#8A5A00;font-size:13px;line-height:20px;font-weight:700;white-space:nowrap}
+.dk .ek{background:#33270F;color:#F2C46D}
+.ex{background:#F2F4F7;border-radius:12px;padding:12px 16px}
+.dk .ex{background:#18263D}
+.trk{height:8px;border-radius:999px;background:#E8ECF1;overflow:hidden}
+.dk .trk{background:#213049}
+.chp{height:40px;padding:0 14px;border-radius:999px;background:#FFFFFF;color:#1B2232;font-size:15px;line-height:20px;font-weight:600;box-shadow:inset 0 0 0 1px #697586;display:inline-flex;align-items:center;gap:6px}
+.chp.on{background:#0F294A;color:#FFFFFF;box-shadow:none}
+</style>
+</helmet>
+<div style="width: 1880px; height: 1480px; background: #FFFFFF; color: #1B2232; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; padding: 64px; display: flex; flex-direction: column; gap: 40px; font-variant-numeric: tabular-nums">
+<header style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 15px; line-height: 20px; font-weight: 600; color: #556173">8.1 · Tur 5 · Bilgi Kartları</div>
+<h1 style="margin: 0; font-size: 36px; line-height: 44px; font-weight: 800; letter-spacing: -0.5px">Kart Destesi · 4 Kare</h1>
+<p style="margin: 4px 0 0; font-size: 17px; line-height: 28px; color: #556173; max-width: 1500px">Girişler: ders detayında "Kartlarım", Deneme Detay › Kartlar, konu detayındaki kart. Üç sekme sayaçlı; kaydırmalı deste; "Öğrendim" yalnız eksik kartta.</p>
+</header>
+<div style="display: flex; gap: 48px; align-items: flex-start"><div style="flex: none"><div class="ph" role="img" aria-label="Kart destesi"><div class="di"></div><div class="abs" style="top: 54px; left: 4px"><button class="ib" aria-label="Geri"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="160 208 80 128 160 48"></polyline></svg></button></div><div class="abs" style="top: 102px; left: 16px; right: 16px"><h2 class="t24">Tarih Kartları</h2></div><div class="abs" style="top: 150px; left: 16px; right: 16px"><div class="seg cnt" role="radiogroup" aria-label="Kart grubu"><button role="radio" aria-checked="true" aria-label="Eksiklerim, 23 kart" class="on"><b>Eksiklerim</b><i>23 kart</i></button><button role="radio" aria-checked="false" aria-label="Bildiklerim, 41 kart"><b>Bildiklerim</b><i>41 kart</i></button><button role="radio" aria-checked="false" aria-label="Favorilerim, 6 kart"><b>Favorilerim</b><i>6 kart</i></button></div></div><div class="abs" style="top: 222px; left: 16px; right: 16px; display: flex; align-items: center; gap: 12px"><div class="trk" style="flex: 1" role="progressbar" aria-label="Oturum" aria-valuenow="12" aria-valuemax="23"><div style="width: 52%; height: 100%; border-radius: 999px; background: #E05500"></div></div><span class="c13" style="font-weight: 700">12/23</span></div><div class="abs card" style="top: 282px; left: 40px; right: 40px; height: 380px; opacity: 0.5"></div><div class="abs card" style="top: 270px; left: 28px; right: 28px; height: 380px; opacity: 0.75; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"></div><article class="abs card" style="top: 258px; left: 16px; right: 16px; min-height: 392px; padding: 24px; box-shadow: 0 8px 24px rgba(15,41,74,0.16)"><div style="display: flex; align-items: center; justify-content: space-between"><span style="display: inline-flex; align-items: center; gap: 8px"><span class="gt" style="background: #FBF1DA; color: #8C6106; width: 28px; height: 28px"><svg width="15" height="15" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="24 96 128 40 232 96"></polyline><line x1="40" y1="96" x2="216" y2="96"></line><line x1="64" y1="104" x2="64" y2="176"></line><line x1="104" y1="104" x2="104" y2="176"></line><line x1="152" y1="104" x2="152" y2="176"></line><line x1="192" y1="104" x2="192" y2="176"></line><line x1="32" y1="208" x2="224" y2="208"></line></svg></span><span class="c13" style="font-weight: 700">Tarih</span></span><button class="ib" aria-label="Favorilere ekle" aria-pressed="false" style="color: #697586; margin: -10px -12px 0 0"><svg width="22" height="22" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div><h3 class="t20" style="margin-top: 20px">Edirne-Segedin Antlaşması (1444)</h3><p class="b16" style="line-height: 26px; margin-top: 12px">Haçlılarla Osmanlı Devleti'nin imzaladığı ilk antlaşma. Tuna sınır olur, on yıl savaş yapılmaz.</p><div style="position: absolute; left: 24px; bottom: 20px"><span class="ek"><svg width="14" height="14" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="224" x2="48" y2="48"></line><path d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>Eksik</span></div></article><div class="abs" style="top: 676px; left: 16px; right: 16px; display: flex; gap: 12px"><button class="bo" style="width: 120px">Detay</button><button class="bp" style="flex: 1; width: auto">Öğrendim</button></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="224 208 32 208 32 48"></polyline><polyline points="224 96 160 152 96 104 32 160"></polyline></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Analizlerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M128 88a32 32 0 0 1 32-32h72v144h-72a32 32 0 0 0-32 32"></path><path d="M24 200h72a32 32 0 0 1 32 32V88a32 32 0 0 0-32-32H24Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Derslerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Hesap</span></button></div></nav><div class="hi"></div></div><div class="cap"><b>1 · Eksiklerim</b><span>Sayaçlı sekmeler (23 · 41 · 6), oturum 12/23. Kaydırma sonraki karta geçer; öğrenmek yalnız "Öğrendim" ile (yanlışlıkla taşınmaz).</span></div></div><div style="flex: none"><div class="ph" role="img" aria-label="Öğrendim onayı"><div class="di"></div><div class="abs" style="top: 54px; left: 4px"><button class="ib" aria-label="Geri"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="160 208 80 128 160 48"></polyline></svg></button></div><div class="abs" style="top: 102px; left: 16px; right: 16px"><h2 class="t24">Tarih Kartları</h2></div><div class="abs" style="top: 150px; left: 16px; right: 16px"><div class="seg cnt" role="radiogroup" aria-label="Kart grubu"><button role="radio" aria-checked="true" aria-label="Eksiklerim, 23 kart" class="on"><b>Eksiklerim</b><i>23 kart</i></button><button role="radio" aria-checked="false" aria-label="Bildiklerim, 41 kart"><b>Bildiklerim</b><i>41 kart</i></button><button role="radio" aria-checked="false" aria-label="Favorilerim, 6 kart"><b>Favorilerim</b><i>6 kart</i></button></div></div><div class="abs" style="top: 222px; left: 16px; right: 16px; display: flex; align-items: center; gap: 12px"><div class="trk" style="flex: 1" role="progressbar" aria-label="Oturum" aria-valuenow="12" aria-valuemax="23"><div style="width: 52%; height: 100%; border-radius: 999px; background: #E05500"></div></div><span class="c13" style="font-weight: 700">12/23</span></div><div class="abs card" style="top: 282px; left: 40px; right: 40px; height: 380px; opacity: 0.5"></div><div class="abs card" style="top: 270px; left: 28px; right: 28px; height: 380px; opacity: 0.75; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"></div><article class="abs card" style="top: 258px; left: 16px; right: 16px; min-height: 392px; padding: 24px; box-shadow: 0 8px 24px rgba(15,41,74,0.16)"><div style="display: flex; align-items: center; justify-content: space-between"><span style="display: inline-flex; align-items: center; gap: 8px"><span class="gt" style="background: #FBF1DA; color: #8C6106; width: 28px; height: 28px"><svg width="15" height="15" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="24 96 128 40 232 96"></polyline><line x1="40" y1="96" x2="216" y2="96"></line><line x1="64" y1="104" x2="64" y2="176"></line><line x1="104" y1="104" x2="104" y2="176"></line><line x1="152" y1="104" x2="152" y2="176"></line><line x1="192" y1="104" x2="192" y2="176"></line><line x1="32" y1="208" x2="224" y2="208"></line></svg></span><span class="c13" style="font-weight: 700">Tarih</span></span><button class="ib" aria-label="Favorilere ekle" aria-pressed="false" style="color: #697586; margin: -10px -12px 0 0"><svg width="22" height="22" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div><h3 class="t20" style="margin-top: 20px">Edirne-Segedin Antlaşması (1444)</h3><p class="b16" style="line-height: 26px; margin-top: 12px">Haçlılarla Osmanlı Devleti'nin imzaladığı ilk antlaşma. Tuna sınır olur, on yıl savaş yapılmaz.</p><div style="position: absolute; left: 24px; bottom: 20px"><span class="ek"><svg width="14" height="14" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="224" x2="48" y2="48"></line><path d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>Eksik</span></div></article><div class="abs" style="top: 676px; left: 16px; right: 16px; display: flex; gap: 12px"><button class="bo" style="width: 120px">Detay</button><button class="bp" style="flex: 1; width: auto">Öğrendim</button></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="224 208 32 208 32 48"></polyline><polyline points="224 96 160 152 96 104 32 160"></polyline></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Analizlerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M128 88a32 32 0 0 1 32-32h72v144h-72a32 32 0 0 0-32 32"></path><path d="M24 200h72a32 32 0 0 1 32 32V88a32 32 0 0 0-32-32H24Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Derslerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Hesap</span></button></div></nav><div class="scrim"></div><section class="sh" role="dialog" aria-modal="true" aria-labelledby="cf"><div class="hd"></div><div style="padding: 20px 24px 0"><h2 class="t20" id="cf">Kartı Bildiklerim'e taşıyalım mı?</h2><p class="b15 mu" style="margin-top: 8px">"Edirne-Segedin Antlaşması (1444)" eksiklerinden çıkıp Bildiklerim'e geçecek.</p><div style="margin-top: 8px"><button class="cb" role="checkbox" aria-checked="false"><span class="cbx" aria-hidden="true"></span>Bir daha sorma</button></div></div><div class="shf" style="padding-top: 12px"><button class="bp">Öğrendim</button><button class="bq">Vazgeç</button></div></section><div class="hi"></div></div><div class="cap"><b>2 · İlk "Öğrendim"</b><span>Onay yalnız ilk seferde; "Bir daha sorma" ile kalıcı. Bileşen 1.21.</span></div></div><div style="flex: none"><div class="ph" role="img" aria-label="Kart taşındı"><div class="di"></div><div class="abs" style="top: 54px; left: 4px"><button class="ib" aria-label="Geri"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="160 208 80 128 160 48"></polyline></svg></button></div><div class="abs" style="top: 102px; left: 16px; right: 16px"><h2 class="t24">Tarih Kartları</h2></div><div class="abs" style="top: 150px; left: 16px; right: 16px"><div class="seg cnt" role="radiogroup" aria-label="Kart grubu"><button role="radio" aria-checked="true" aria-label="Eksiklerim, 22 kart" class="on"><b>Eksiklerim</b><i>22 kart</i></button><button role="radio" aria-checked="false" aria-label="Bildiklerim, 42 kart"><b>Bildiklerim</b><i>42 kart</i></button><button role="radio" aria-checked="false" aria-label="Favorilerim, 6 kart"><b>Favorilerim</b><i>6 kart</i></button></div></div><div class="abs" style="top: 222px; left: 16px; right: 16px; display: flex; align-items: center; gap: 12px"><div class="trk" style="flex: 1" role="progressbar" aria-label="Oturum" aria-valuenow="13" aria-valuemax="23"><div style="width: 57%; height: 100%; border-radius: 999px; background: #E05500"></div></div><span class="c13" style="font-weight: 700">13/23</span></div><div class="abs card" style="top: 282px; left: 40px; right: 40px; height: 380px; opacity: 0.5"></div><div class="abs card" style="top: 270px; left: 28px; right: 28px; height: 380px; opacity: 0.75; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"></div><article class="abs card" style="top: 258px; left: 16px; right: 16px; min-height: 392px; padding: 24px; box-shadow: 0 8px 24px rgba(15,41,74,0.16)"><div style="display: flex; align-items: center; justify-content: space-between"><span style="display: inline-flex; align-items: center; gap: 8px"><span class="gt" style="background: #FBF1DA; color: #8C6106; width: 28px; height: 28px"><svg width="15" height="15" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="24 96 128 40 232 96"></polyline><line x1="40" y1="96" x2="216" y2="96"></line><line x1="64" y1="104" x2="64" y2="176"></line><line x1="104" y1="104" x2="104" y2="176"></line><line x1="152" y1="104" x2="152" y2="176"></line><line x1="192" y1="104" x2="192" y2="176"></line><line x1="32" y1="208" x2="224" y2="208"></line></svg></span><span class="c13" style="font-weight: 700">Tarih</span></span><button class="ib" aria-label="Favorilere ekle" aria-pressed="false" style="color: #697586; margin: -10px -12px 0 0"><svg width="22" height="22" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M135.34 28.9l23.23 55.36a8 8 0 0 0 6.67 4.88l59.46 5.14a8 8 0 0 1 4.54 14.07L184.13 147a8.08 8.08 0 0 0-2.53 7.85l13.52 58.54a8 8 0 0 1-11.89 8.69l-51.1-31a7.93 7.93 0 0 0-8.24 0l-51.1 31a8 8 0 0 1-11.89-8.69L74.4 154.8a8.08 8.08 0 0 0-2.53-7.85l-45.11-39.24a8 8 0 0 1 4.54-14.07l59.46-5.14a8 8 0 0 0 6.67-4.88l23.23-55.36a8 8 0 0 1 14.68.04Z"></path></svg></button></div><h3 class="t20" style="margin-top: 20px">Otlukbeli Savaşı (1473)</h3><p class="b16" style="line-height: 26px; margin-top: 12px">Fatih Sultan Mehmet – Uzun Hasan (Akkoyunlu).</p><div style="position: absolute; left: 24px; bottom: 20px"><span class="ek"><svg width="14" height="14" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="224" x2="48" y2="48"></line><path d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>Eksik</span></div></article><div class="abs" style="top: 676px; visibility: hidden; left: 16px; right: 16px; display: flex; gap: 12px"><button class="bo" style="width: 120px">Detay</button><button class="bp" style="flex: 1; width: auto">Öğrendim</button></div><div class="abs toast" role="status" style="left: 16px; right: 16px; bottom: 110px; z-index: 6"><span style="flex: 1">Kart Bildiklerim'e taşındı.</span><button style="height: 48px; padding: 0 4px; margin: -12px 0; color: #FFFFFF; font-weight: 700; font-size: 15px">Geri Al</button></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="224 208 32 208 32 48"></polyline><polyline points="224 96 160 152 96 104 32 160"></polyline></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Analizlerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M128 88a32 32 0 0 1 32-32h72v144h-72a32 32 0 0 0-32 32"></path><path d="M24 200h72a32 32 0 0 1 32 32V88a32 32 0 0 0-32-32H24Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Derslerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Hesap</span></button></div></nav><div class="hi"></div></div><div class="cap"><b>3 · Taşındı</b><span>Sayaçlar güncellenir (22 · 42), sıradaki kart gelir; toast 6 sn "Geri Al" ile (Ek D-31).</span></div></div><div style="flex: none"><div class="ph" role="img" aria-label="Eksik kart kalmadı"><div class="di"></div><div class="abs" style="top: 54px; left: 4px"><button class="ib" aria-label="Geri"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="160 208 80 128 160 48"></polyline></svg></button></div><div class="abs" style="top: 102px; left: 16px; right: 16px"><h2 class="t24">Tarih Kartları</h2></div><div class="abs" style="top: 150px; left: 16px; right: 16px"><div class="seg cnt" role="radiogroup" aria-label="Kart grubu"><button role="radio" aria-checked="true" aria-label="Eksiklerim, kart yok" class="on"><b>Eksiklerim</b><i>kart yok</i></button><button role="radio" aria-checked="false" aria-label="Bildiklerim, 64 kart"><b>Bildiklerim</b><i>64 kart</i></button><button role="radio" aria-checked="false" aria-label="Favorilerim, 6 kart"><b>Favorilerim</b><i>6 kart</i></button></div></div><div class="abs" style="top: 260px; left: 32px; right: 32px; display: flex; flex-direction: column; align-items: center; text-align: center"><img src="data:image/webp;base64,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" alt="" width="128" height="128" style="display: block"><h2 class="t20" style="margin-top: 24px">Bu derste eksik kartın kalmadı.</h2><p class="b15 mu" style="margin-top: 8px">Bildiklerim'deki 64 kartı tekrar etmek istersen oradan devam edebilirsin.</p><button class="bt" style="margin-top: 12px">Bildiklerime Geç</button></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="224 208 32 208 32 48"></polyline><polyline points="224 96 160 152 96 104 32 160"></polyline></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Analizlerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M128 88a32 32 0 0 1 32-32h72v144h-72a32 32 0 0 0-32 32"></path><path d="M24 200h72a32 32 0 0 1 32 32V88a32 32 0 0 0-32-32H24Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Derslerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Hesap</span></button></div></nav><div class="hi"></div></div><div class="cap"><b>4 · Eksiklerim boş</b><span>Bütün eksikler öğrenilince: dersin kil görseli (Sütun), Ek C'deki boş metin, tek eylem.</span></div></div></div><section class="nts" style="grid-template-columns: repeat(3, minmax(0, 1fr))"><div><h3>Bileşenler</h3><ul><li>Sekmeler sayaçlı segment; boş sekme "kart yok".</li><li>Oturum ilerlemesi 1.15 vurgu ilerlemesi (<span class="tk">orange-600</span>), "12/23".</li><li>Kart 24 pt köşe, 24 pt iç pay, gölge yalnız sürüklenen kartta (<span class="tk">shadow-overlay</span>); arkada iki kart kenarı.</li><li>"Detay" ikincil çerçeveli, "Öğrendim" birincil; Bildiklerim'de yalnız "Detay".</li></ul></div><div><h3>Hareket ve haptik</h3><ul><li>Kaydırma: kart parmağı izler; %30 eşiği geçince 250 ms'de çıkar, sıradaki ölçekle öne gelir.</li><li>"Öğrendim": kart sağa 250 ms'de çıkar; <span class="tk">success</span> haptiği; toast 6 sn.</li><li>Hareketi azaltta kartlar kaymaz, çapraz geçiş.</li></ul></div><div><h3>Boş metinler (Ek C)</h3><ul><li>Eksiklerim: "Bu derste eksik kartın kalmadı."</li><li>Bildiklerim: "Henüz öğrendiğin kart yok."</li><li>Favorilerim: "Favoriye eklediğin kart yok."</li></ul></div></section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1880,&quot;height&quot;:1480}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+
+
+</body></html>

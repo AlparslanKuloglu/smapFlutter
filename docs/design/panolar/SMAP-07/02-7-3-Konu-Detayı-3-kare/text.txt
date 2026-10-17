@@ -1,0 +1,93 @@
+7.3 Konu Detayı 
+ 7.3 · Tur 5 · Derslerim ve Konular
+ Konu Detayı · 3 Kare
+ Okuma ekranı: alt başlık akordeonu, numaralı madde, tanım ve ayrı örnek kutusu. Tek eksik işareti; kart ikonu kart sheet'ini açar.
+ Sözcükte Anlam
+ Türkçe · TYT · 1. konu
+ 5 alt başlık · 25 madde
+ Anlamı Yönünden Sözcükler
+ 4 madde 1 eksik 
+ 1 Temel Anlam Eksik Bir sözcüğün akla gelen ilk anlamıdır. Sözlük anlamı da denir.
+ Örnek
+ Bazı insanlar karanlıktan korkar.
+ "Karanlık" burada ışıksız anlamında, temel anlamıyla kullanılmış.
+ Kartı Aç 
+ 2 Yan Anlam 
+ 3 Mecaz Anlam 
+ 4 Terim Anlam 
+ Sözcükler Arası Anlam İlişkileri
+ 9 madde 
+ Mecaz Oluşturma Yolları
+ 9 madde 
+ Yansıma Sözcükler
+ 1 madde 
+ Kalıplaşmış Söz Öbekleri
+ 2 madde 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · İlk eksik açık Açılışta ilk eksik maddeye kaydırılır ve açılır. Tanım 16/26, örnek ayrı kutuda. Eksik işareti alt başlıkta ve maddede aynı. 
+ Sözcükte Anlam
+ Anlamı Yönünden Sözcükler
+ 4 madde 1 eksik 
+ 1 Temel Anlam Eksik 
+ 2 Yan Anlam Bir sözcüğün temel anlamıyla bağlantılı olarak kazandığı yeni anlamdır.
+ Örnek
+ Yorganın yüzü kirlenmiş.
+ "Yüz" insanın yüzü değil, yorganın dış tarafı: temel anlamla bağlantılı yan anlam.
+ Kartı Aç 
+ 3 Mecaz Anlam 
+ 4 Terim Anlam 
+ Sözcükler Arası Anlam İlişkileri
+ 9 madde 
+ Mecaz Oluşturma Yolları
+ 9 madde 
+ Yansıma Sözcükler
+ 1 madde 
+ Kalıplaşmış Söz Öbekleri
+ 2 madde 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Okuma · kaydırılmış Başlık kısa bara iner. Madde açık/kapalı ayrı okla. "Kartı Aç" maddenin kartını sheet'te açar. 
+ Sözcükte Anlam
+ Türkçe · TYT · 1. konu
+ 5 alt başlık · 25 madde
+ Anlamı Yönünden Sözcükler
+ 4 madde 1 eksik 
+ 1 Temel Anlam Eksik Bir sözcüğün akla gelen ilk anlamıdır. Sözlük anlamı da denir.
+ Örnek
+ Bazı insanlar karanlıktan korkar.
+ "Karanlık" burada ışıksız anlamında, temel anlamıyla kullanılmış.
+ Kartı Aç 
+ 2 Yan Anlam 
+ 3 Mecaz Anlam 
+ 4 Terim Anlam 
+ Sözcükler Arası Anlam İlişkileri
+ 9 madde 
+ Mecaz Oluşturma Yolları
+ 9 madde 
+ Yansıma Sözcükler
+ 1 madde 
+ Kalıplaşmış Söz Öbekleri
+ 2 madde 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ Türkçe · Sözcükte Anlam
+ Temel Anlam
+ Eksik 
+ Bir sözcüğün akla gelen ilk anlamıdır. Sözlük anlamı da denir.
+ Örnek
+ Bazı insanlar karanlıktan korkar.
+ "Karanlık" burada ışıksız anlamında, temel anlamıyla kullanılmış.
+ Öğrendim 
+ 3 · Kart sheet'i Başlık, ders · konu, içerik, örnek. Kart eksikse "Öğrendim"; favori sağ üstte. İlk "Öğrendim"de bir kez onay (8.1). 
+ Okuma
+ Gövde 16/26 ( body-lg ); örnek kutusu bg-canvas , "Örnek" etiketi 13/700.
+ Madde: 28 pt numara, ad 16/600, eksik etiketi, ok; açılınca tanım, örnek ve "Kartı Aç".
+ Alt başlık: ad headline 17, madde sayısı ve varsa eksik sayısı (bilinmeyen kart durumu çizilmez).
+ Hareket ve haptik
+ Açılışta ilk eksiğe 350 ms kaydırma; hareketi azaltta doğrudan konum.
+ Akordeon 250 ms; açılan madde görünür alana getirilir.
+ Sheet 350 ms; "Öğrendim"de success .
+ Eskiden
+ Her alt başlıkta aynı kitap ikonu; %60 yazan boş çubuk; etiketsiz 0 · 0 · 0 sayaçları (40–42).
+ Madde metni ~9 pt, örnek madde içinde ayrılmadan; eksik yalnız kırmızı başlıkla belli (40, 41).

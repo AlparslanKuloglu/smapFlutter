@@ -1,0 +1,26 @@
+13.2 Giriş ve Şifre 
+ 13.2 · Ekran Akışı
+ Giriş ve Şifre
+ Hesabı olan kullanıcının girişi ve şifre sıfırlama. Giriş başarılıysa rol hesaptan okunur: öğrenci Anasayfa'ya, koç Koç Anasayfa'ya gider.
+ Okun üstü: dokunulan yer Kesikli ok: kendiliğinden geçiş Üst sıra ana yol; altında o ekranın durumları ve koyu teması Kod: kaynak pano ve kare 
+ Buradan 13.1 Hoş geldin · Giriş Yap
+ 1 Giriş 
+ 2.3 · kare 1
+ Giriş Yap: öğrenci 13.3, koç 13.11
+ Durumlar · 3
+ Gönderiliyor 2.3 · kare 2 
+ Hatalı bilgi 2.3 · kare 3 
+ Apple ve Google varyantı 2.3 · kare 4 
+ Şifremi Unuttum
+ 2 Şifremi unuttum · e-posta 
+ 2.4 · kare 1
+ Kod Gönder
+ 3 6 haneli kod 
+ 2.4 · kare 2
+ kod tamamlanınca
+ 4 Yeni şifre 
+ 2.4 · kare 3
+ Şifreyi Güncelle
+ 5 Şifre güncellendi 
+ 2.4 · kare 4
+ Sonra Giriş Yap: girişe döner (1)

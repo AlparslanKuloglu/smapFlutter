@@ -1,0 +1,72 @@
+1.22 Toast ve Durum Kalıpları 
+ 1.22 · Temeller · Kabuk
+ Toast ve Durum Kalıpları · 6 Kare
+ Her ekranın dört durumu var: ilk yükleme (iskelet), boş, hata (Tekrar Dene) ve çevrimdışı. Eskiden hata durumları sessizce sonsuz iskelete dönüyordu (Anasayfa ders şeridi, sonuç akışı); mesajlarda emoji, "Hata:" öneki ve "Gönderim hatası 590" gibi iç kodlar vardı. Toast tek kalıp: alt çubuğun 8 pt üstünde, 4 sn; "Geri Al" varsa 6 sn (Ek D-31).
+ Derslerim
+ Sonucun hazır olunca bildirim gelecek. 
+ Program kaydedildi. 
+ Gönderilemedi. Bağlantını kontrol edip tekrar dene. 
+ Kart Bildiklerim'e taşındı. Geri Al 
+ Anasayfa 
+ Analizlerim 
+ Okut 
+ Derslerim 
+ Hesap 
+ 1 · Toast · 4 tür Bilgi, başarı, hata, Geri Al'lı. Aynı anda tek toast; burada yan yana gösterildi. Lacivert zemin (14,62:1), ikon durum renginde, yukarı kaydırınca kapanır. Hata toast'u yalnız geçici hatalar için; kalıcı hata ekranda durum olarak çizilir. 
+ Analizlerim
+ Genel Denemelerim 
+ Anasayfa 
+ Analizlerim 
+ Okut 
+ Derslerim 
+ Hesap 
+ 2 · İskelet · ilk yükleme Gerçek düzenin şekli: başlık, grafik, dört kutu. bg-sunken bloklar, 1200 ms parıltı (hareketi azaltta durur). Bant ve sekmeler hemen gelir. 15 sn içinde veri yoksa hata durumuna geçer. 
+ Analizlerim
+ Genel Denemelerim 
+ Henüz deneme yok
+ İlk denemeni okuttuğunda sonuçların, netin ve eksik konuların burada görünür.
+ İlk Denemeni Okut 
+ Anasayfa 
+ Analizlerim 
+ Okut 
+ Derslerim 
+ Hesap 
+ 3 · Boş · ekran düzeyi Görsel + başlık + tek cümle + tek eylem. Yeni kullanıcı. Eylem kamerayı açar. Görsel kil setinden "Harita" (1.25), 128 pt; süs olduğu için ekran okuyucu atlar. 
+ Anasayfa
+ Bugün
+ Bugün için programında konu yok.
+ Haftalık Programını Kur 
+ Derslerin
+ Dersler yüklenemedi.
+ Tekrar Dene 
+ Anasayfa 
+ Analizlerim 
+ Okut 
+ Derslerim 
+ Hesap 
+ 4 · Bölüm düzeyi · boş ve hata Bölüm kendi durumunu taşır, ekranın geri kalanı çalışır. Boş: tek cümle + metin düğmesi. Hata: ikon, kısa cümle, Tekrar Dene. Anasayfa'nın kendisi Tur 6'da; burada yalnız kalıp. 
+ Analizlerim
+ Genel Denemelerim 
+ Analizin yüklenemedi
+ Bağlantını kontrol edip tekrar dene. Sorun sürerse biraz sonra yeniden açabilirsin.
+ Tekrar Dene 
+ Anasayfa 
+ Analizlerim 
+ Okut 
+ Derslerim 
+ Hesap 
+ 5 · Hata · ekran düzeyi Ham hata metni ya da iç kod yok. Tekrar Dene ikincil düğme; basınca iskelete döner. Aynı hata üst üste gelirse metin değişmez, sonsuz iskelet yok. 
+ Analizlerim
+ Genel Denemelerim 
+ Çevrimdışısın. Son kaydedilen veriler gösteriliyor.
+ TYT · Genel
+ 6 Çözülen deneme 
+ 67,79 Ortalama net 
+ 381,40 Ortalama puan 
+ 182.430 Ortalama sıralama 
+ Anasayfa 
+ Analizlerim 
+ Okut 
+ Derslerim 
+ Hesap 
+ 6 · Çevrimdışı şeridi Barın hemen altında, içeriği iter (üstüne binmez); bant köşeleri düzleşir. n-900 zemin, beyaz metin (15,89:1). Son veri gösterilir, gönderim gerektiren eylemler sırada bekler. Bağlantı gelince "Bağlantı geri geldi" 2 sn görünür ve şerit kapanır.

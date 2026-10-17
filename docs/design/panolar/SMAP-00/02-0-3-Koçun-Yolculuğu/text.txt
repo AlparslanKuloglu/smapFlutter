@@ -1,0 +1,68 @@
+0.3 Koçun Yolculuğu 
+ 0.3 · Tur 10 · Akış Haritası
+ Koçun Yolculuğu
+ Kayıttan ilk öğrenciye, öğrencinin verisine ve görüşmelere. Öğrenci ekranları koça aynı bileşenlerle, bağlam şeridiyle gelir.
+ 2.2
+ Rol: Öğrenci Koçuyum
+ Sınıf ve alan sorulmaz
+ 2.2
+ Kamera ön açıklaması
+ Koç da form okutabilir
+ 2.2
+ Hoş geldin
+ Kayıt Ol ya da Giriş Yap
+ 2.5
+ Kayıt (koç)
+ Koçluk kodu kayıttan sonra oluşur
+ 10.1
+ Koç Anasayfa
+ Öğrenci yoksa: İlk öğrencini ekle
+ 4.3
+ Okut (koç)
+ Öğrenci seçilir; sonuç onun hesabına
+ 9.1
+ Hesap (koç)
+ Koçluk kodu: Kopyala, Paylaş
+ 10.3
+ Öğrenci Ekle
+ Hesabı koç açar; giriş bilgileri bir kez
+ Kod
+ Kodunu paylaş
+ MOZK-4821; öğrenci 9.5'te girer
+ 10.2
+ Öğrencilerim
+ Arama I/ı/İ/i; satırda son net
+ 10.4
+ Öğrenci profili
+ Bağlam şeridi; Anasayfa karosundan ve dikkat satırından da
+ 6.1
+ Analiz
+ Öğrencinin grafiği ve kutuları
+ 6.2 · 5.3
+ Denemeler
+ Deneme Detay koç bağlamında
+ 3.4
+ Program
+ Salt okunur
+ 10.5
+ Görüşmelerim
+ Arama, Kiminle süzgeci
+ 10.5
+ Yeni görüşme
+ Öğrenci, Öğrenci/Veli, tarih, saat
+ 10.5
+ Görüşme detayı
+ Tarih, saat, öğrencinin verileri
+ 10.6
+ Notlar
+ Ekle, düzenle, onaylı sil, geri al
+ 9.6
+ Öğrenciye bildirim
+ "Görüşme planlandı"
+ Okut
+ Öğrenci Ekle
+ Kodunu Paylaş
+ Görüşme Planla
+ Yeni
+ Not
+ Ekran (pano kodu) Kök sekme Kamera Karar Sunucu Uygulama dışı ya da başka akış Kendiliğinden güncellenir

@@ -1,0 +1,105 @@
+10.3 Öğrenci Ekle 
+ 10.3 · Tur 9 · Koç
+ Öğrenci Ekle · 3 Kare
+ Öğrenci hesabını koç açar ya da koçluk kodunu paylaşır.
+ Öğrencilerim 
+ Öğrenci ara 
+ 5 öğrenci
+ Alparslan Kuloğlu
+ 12. Sınıf · Eşit Ağırlık · 10 deneme
+ 67,5
+ son net
+ Elif Şahin
+ 11. Sınıf · Sayısal
+ Kerem Aydın
+ Mezun · Sözel
+ Mert Yıldız
+ 10. Sınıf
+ Zeynep Kaya
+ 12. Sınıf · Eşit Ağırlık
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ Öğrenci ekle
+ Hesabını sen aç ya da kodunu paylaş.
+ Ad Zeynep
+ Soyad Kaya
+ Kullanıcı adı zeynep.kaya
+ Kontrol Et 
+ Bu kullanıcı adı boşta.
+ Şifre •••••••••• 
+ Oluştur 
+ Öğrencine ilet; ilk girişte değiştirmesi önerilir.
+ Sınıf 12. Sınıf 
+ Alan Eşit Ağırlık 
+ Öğrenciyi Kaydet 
+ ya da 
+ Öğrencin kendi hesabıyla bağlansın
+ Koçluk kodun
+ MOZK-4821
+ Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır.
+ Kopyala Paylaş 
+ 1 · Form Uzun sheet: ad, soyad, kullanıcı adı ("Kontrol Et"), şifre ("Oluştur" + göster), sınıf, alan. Örnek: Zeynep Kaya, 12. sınıf, EA. 
+ Öğrencilerim 
+ Öğrenci ara 
+ 5 öğrenci
+ Alparslan Kuloğlu
+ 12. Sınıf · Eşit Ağırlık · 10 deneme
+ 67,5
+ son net
+ Elif Şahin
+ 11. Sınıf · Sayısal
+ Kerem Aydın
+ Mezun · Sözel
+ Mert Yıldız
+ 10. Sınıf
+ Zeynep Kaya
+ 12. Sınıf · Eşit Ağırlık
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ Öğrenci ekle
+ Sınıf 12. Sınıf 
+ Alan Eşit Ağırlık 
+ Öğrenciyi Kaydet 
+ ya da 
+ Öğrencin kendi hesabıyla bağlansın
+ Koçluk kodun
+ MOZK-4821
+ Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır.
+ Kopyala Paylaş 
+ 2 · Kod kartı Formun altında "ya da": öğrenci kendi hesabıyla kodla bağlanır. Kopyala ve Paylaş eşit ağırlıkta. 
+ Öğrencilerim 
+ Öğrenci ara 
+ 5 öğrenci
+ Alparslan Kuloğlu
+ 12. Sınıf · Eşit Ağırlık · 10 deneme
+ 67,5
+ son net
+ Elif Şahin
+ 11. Sınıf · Sayısal
+ Kerem Aydın
+ Mezun · Sözel
+ Mert Yıldız
+ 10. Sınıf
+ Zeynep Kaya
+ 12. Sınıf · Eşit Ağırlık
+ Anasayfa Öğrencilerim Okut 
+ Görüşmelerim Hesap 
+ Zeynep Kaya eklendi
+ Giriş bilgilerini öğrencine ilet.
+ Kullanıcı adı zeynep.kaya
+ Şifre •••••••••• 
+ Bu ekranı kapatınca şifre yeniden gösterilmez.
+ Bilgileri Paylaş Tamam 
+ 3 · Eklendi Giriş bilgileri bir kez gösterilir; paylaşım sistem sheet'iyle. Tamam sonrası liste ve toast "Zeynep Kaya eklendi." 
+ Alanlar
+ Ad ve Soyad ayrı (sıralama soyadla da yapılabilsin).
+ Kullanıcı adı: "Kontrol Et" ya da 400 ms sonra canlı kontrol; sonuç 1.12 dilinde.
+ Şifre: "Oluştur" 10 karakterlik okunur şifre üretir (karışan harfler yok: I, l, 0, O); göster/gizle.
+ Sınıf ve Alan 1.12 açılır seçim; 9.–10. sınıfta Alan pasif.
+ Davranış
+ "Öğrenciyi Kaydet" zorunlu alanlar dolunca çalışır; hata alanın altında.
+ Kayıt sonrası öğrenci koça bağlı gelir; öğrencinin ilk girişinde 2.3 kullanılır.
+ Kod kartındaki Kopyala: toast "Kod kopyalandı."
+ Neden
+ İki yol aynı sheet'te: koç hesabı açar ya da öğrenci kendi hesabıyla kodla bağlanır.
+ Şifreyi bir kez göstermek, ekran görüntüsüyle dolaşan şifreyi azaltır.

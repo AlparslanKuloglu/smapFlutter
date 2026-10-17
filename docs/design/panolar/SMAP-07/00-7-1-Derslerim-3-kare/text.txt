@@ -1,0 +1,66 @@
+7.1 Derslerim 
+ 7.1 · Tur 5 · Derslerim ve Konular
+ Derslerim · 3 Kare
+ Kök sekme: bantta TYT/AYT segmenti (1.18, kare 2), altında ders satırları. Her satırda ders rengi ve glifi, etiketli eksik sayısı ve varsa kart ilerlemesi.
+ Derslerim
+ TYT AYT 
+ Türkçe
+ 28 eksik Tarih
+ 41/64 kart 
+ 60 eksik Coğrafya
+ 44 eksik Matematik
+ Web'de Geometri
+ Web'de Fizik
+ 7 eksik Kimya
+ 9 eksik Biyoloji
+ 11 eksik 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · TYT Ad "TYT" öneksiz; renk + glif; etiketli eksik. Kart ilerlemesi yalnız gerçek olduğu yerde (Tarih 41/64). Matematik ve Geometri "Web'de". 
+ Derslerim
+ TYT AYT 
+ Türk Dili ve Edebiyatı
+ 3 eksik Tarih
+ Türk Dili ve Edebiyatı–Sosyal Bilimler 1 testi
+ Tarih-2
+ Sosyal Bilimler 2 testi
+ eksik yok Coğrafya
+ Türk Dili ve Edebiyatı–Sosyal Bilimler 1 testi
+ Coğrafya-2
+ Sosyal Bilimler 2 testi
+ Matematik
+ Web'de Fizik
+ 7 eksik 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · AYT Tarih ile Tarih-2, Coğrafya ile Coğrafya-2 ayrı satır ve test adıyla. Eksik sayısı Ek C'de olmayan satırda etiket yok. 
+ Derslerim
+ TYT AYT 
+ Türkçe
+ 28 eksik Tarih
+ 41/64 kart 
+ 60 eksik Coğrafya
+ 44 eksik Matematik
+ Web'de Geometri
+ Web'de Fizik
+ 7 eksik Kimya
+ 9 eksik Biyoloji
+ 11 eksik 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ Kavram haritan web'de
+ Matematik ve Geometri kavram haritan şimdilik smaptr.com'da.
+ Web'de Aç Tamam 
+ 3 · Web'de Matematik ya da Geometri'ye dokununca. "Web'de Aç" tarayıcıyı açar; "Tamam" kapatır. "Haber ver" yok. 
+ Bileşenler
+ Ders satırı 1.16 SubjectRow : 40 pt glif karosu (ders zemini + ders vurgusu, 1.5), ad, sağda etiket ve ok.
+ Eksik etiketi her zaman ne saydığını söyler: "28 eksik", "eksik yok".
+ Kart ilerlemesi 8 pt ray, ders vurgusu dolgu, "41/64 kart" metni.
+ Web'de satırında ok yerine dışarı ikon (ArrowSquareOut).
+ Davranış
+ TYT/AYT seçimi ders detayına taşınır: AYT'deki "Tarih-2" satırı Tarih detayını SOS-2 seçili açar (7.2).
+ Seçim cihazda hatırlanır.
+ Eski TYT/AYT/SOS-2 diyaloğu kalktı (14, 17).
+ Eskiden
+ Her kartta aynı sahte "%75 · 15/20 konu · 4 alt başlık · 26 madde · 8 kart" (29, 30).
+ "TYT Türkçe", "AYT Tarih" önekleri; rastgele renkli şeritler; 28 pt'de okunmayan illüstrasyonlar (29, 30).

@@ -1,0 +1,63 @@
+6.1 Analizlerim Genel 
+ 6.1 · Tur 4 · Analizlerim
+ Analizlerim · Genel · 3 Kare
+ Kök bantta iki sekme: Genel ve Denemelerim. Genel'de tek satırlık süzgeç, net grafiği ve dört kutu. Kutulardaki değişim yalnız son iki denemeden.
+ Analizlerim
+ Genel Denemelerim 
+ TYT · Genel 6 deneme 
+ Net gelişimi
+ Son 6 deneme 
+ 120 90 60 30 0 22 Nis. 14 May. 17 Haz. 4 Ağu. 15 Eyl. 28 Eyl. TYT Genel Deneme 9 · 28 Eyl. 74,75 net 
+ net · TYT 0–120 · son nokta vurgulu
+ 6 Çözülen deneme 
+ 67,79 Ortalama net +3,25 son denemede 
+ 381,40 Ortalama puan 
+ 182.430 Ortalama sıralama 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · TYT · Genel Grafik noktalı çizgi + açık alan; son deneme vurgulu ve balonlu. Değişim yalnız son iki denemeden: 71,5 → 74,75, "son denemede +3,25". 
+ Analizlerim
+ Genel Denemelerim 
+ AYT · Genel 4 deneme 
+ Net gelişimi
+ Son 4 deneme 
+ 160 120 80 40 0 8 May. 2 Ağu. 21 Eyl. 5 Eki. Türkiye Geneli Deneme 6 · 5 Eki. 67,5 net 
+ net · AYT 0–160 · son nokta vurgulu
+ 4 Çözülen deneme 
+ 57,56 Ortalama net +8,25 son denemede 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · AYT · Genel · eksik veriyle AYT için ortalama puan ve sıralama Ek C'de yok: kutular hiç çizilmez. Y ekseni AYT'de 0–160. 
+ Analizlerim
+ Genel Denemelerim 
+ TYT · Genel 6 deneme 
+ Net gelişimi
+ Son 6 deneme 
+ 120 90 60 30 0 22 Nis. 14 May. 17 Haz. 4 Ağu. 15 Eyl. 28 Eyl. TYT Genel Deneme 9 · 28 Eyl. 74,75 net 
+ net · TYT 0–120 · son nokta vurgulu
+ 6 Çözülen deneme 
+ 67,79 Ortalama net +3,25 son denemede 
+ 381,40 Ortalama puan 
+ 182.430 Ortalama sıralama 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ Süzgeç
+ Sınav TYT AYT 
+ Alan Eşit Ağırlık Sayısal Sözel Dil 
+ Ders listesi alanına göre değişir. Profildeki alanın seçili gelir.
+ Ders Genel Türk Dili ve Edebiyatı Tarih Coğrafya Matematik 
+ Uygula 
+ 3 · Süzgeç sheet'i Tek satırlık süzgeç dokununca açılır: sınav, AYT'de alan, ders. EA ders listesine Matematik eklendi (eskiden yoktu). 
+ Bileşenler
+ Kök bant (1.18): başlık + bantta iki sekme; Analiz ve Harita sekmeleri v1'de yok (Ek D-4).
+ Süzgeç 40 pt hap düğme, tek satır: "TYT · Genel"; sağda deneme sayısı.
+ Grafik fl_chart LineChart: chart-line 2,5 pt, alan %10, noktalar 4,5 pt, son nokta chart-highlight 7 pt; ızgara chart-grid ; eksen 13 pt.
+ İstatistik kutusu 1.16 StatBox ; değişim satırı ok ikonu + 13/600 success .
+ Etkileşim
+ Noktaya dokununca balon: deneme adı, tarih, net (ad yoksa yalnız tarih ve net). Balon dışına dokununca son noktaya döner.
+ Hedef çizgisi yok (Ek D-3). X ekseni deneme tarihleri, kısa ay noktalı.
+ Süzgeç değişince grafik 350 ms'de yeniden çizilir; selectionClick .
+ Eskiden
+ Dört kutuda sabit "+18.2% gecen ay"; "118.30", "72.154" biçimleri (19).
+ Süzgeç sekmelerle aynı biçimde aynı satırda; Analiz ve Harita "Yakında"ya çıkıyordu (19, 22, 23).
+ Çizgi eğri, nokta ve alan yok; tek nokta durumunda "Veri Yok" etiketi (envanter).

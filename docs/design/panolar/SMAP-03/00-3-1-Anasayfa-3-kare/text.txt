@@ -1,0 +1,131 @@
+3.1 Anasayfa 
+ 3.1 · Tur 6 · Anasayfa ve Programım
+ Anasayfa · 3 Kare
+ Anasayfa tek soruyu cevaplar: "Bugün ne yapmalıyım?" Dört bölüm: bant, Bugün, Son denemen, Derslerin. Kişi kartı, menü ızgarası ve takvim kalktı.
+ Merhaba, Alparslan
+ 252 gün kaldı
+ YKS · 19 Haziran 2027 Cumartesi
+ Bugün
+ Cumartesi, 10 Ekim · Ekim 2. Hafta
+ Programım 
+ 10:00 Türkçe
+ Fiilde Çatı
+ 14:00 Tarih
+ Kurtuluş Savaşı Hazırlık Dönemi
+ 20:00 Coğrafya
+ İklim Bilgisi
+ Son denemen
+ Türkiye Geneli Deneme 6
+ Örnek Yayınları · AYT · 5 Eki. 2026
+ 67,5 net +8,25 önceki AYT'ye göre 
+ 86 doğru 74 yanlış 0 boş 
+ En çok kaçırdığın konu
+ Kurtuluş Savaşı Hazırlık Dönemi'nde 13 sorudan 9'unu kaçırdın.
+ Analizi Gör 
+ Derslerin
+ Eksiği en çok olandan başlar
+ Tarih
+ 60 eksik 
+ Coğrafya
+ 44 eksik 
+ Türkçe
+ 31 eksik 
+ Fizik
+ 14 eksik 
+ Biyoloji
+ 11 eksik 
+ Kimya
+ 9 eksik 
+ Türk Dili ve Edebiyatı
+ 3 eksik 
+ Matematik
+ Web'de 
+ Geometri
+ Web'de 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Açılış Bant: selam ve YKS sayacı (cihazda hesaplanır). Bugün: bugünün çalışmaları saatiyle; tamamlama yok. Satır konu detayını açar. 
+ Merhaba, Alparslan
+ YKS'ye 252 gün 
+ Merhaba, Alparslan
+ 252 gün kaldı
+ YKS · 19 Haziran 2027 Cumartesi
+ Bugün
+ Cumartesi, 10 Ekim · Ekim 2. Hafta
+ Programım 
+ 10:00 Türkçe
+ Fiilde Çatı
+ 14:00 Tarih
+ Kurtuluş Savaşı Hazırlık Dönemi
+ 20:00 Coğrafya
+ İklim Bilgisi
+ Son denemen
+ Türkiye Geneli Deneme 6
+ Örnek Yayınları · AYT · 5 Eki. 2026
+ 67,5 net +8,25 önceki AYT'ye göre 
+ 86 doğru 74 yanlış 0 boş 
+ En çok kaçırdığın konu
+ Kurtuluş Savaşı Hazırlık Dönemi'nde 13 sorudan 9'unu kaçırdın.
+ Analizi Gör 
+ Derslerin
+ Eksiği en çok olandan başlar
+ Tarih
+ 60 eksik 
+ Coğrafya
+ 44 eksik 
+ Türkçe
+ 31 eksik 
+ Fizik
+ 14 eksik 
+ Biyoloji
+ 11 eksik 
+ Kimya
+ 9 eksik 
+ Türk Dili ve Edebiyatı
+ 3 eksik 
+ Matematik
+ Web'de 
+ Geometri
+ Web'de 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Kaydırılmış Bant 110 pt'ye iner, selam ve sayaç bir satır. Son denemen: net, D/Y/B, fark, en çok kaçırılan konu; tek birincil eylem "Analizi Gör". Derslerin yatay şerit. 
+ Merhaba, Alparslan
+ 252 gün kaldı
+ YKS · 19 Haziran 2027 Cumartesi
+ Bugün
+ Cumartesi, 10 Ekim
+ Haftalık programın yok. Bir hafta kurduğunda günün konuları burada görünür.
+ Haftalık Programını Kur 
+ Son denemen
+ Henüz deneme okutmadın.
+ Optik formunu okuttuğunda netin, doğru-yanlış dağılımın ve en çok kaçırdığın konu burada görünür.
+ İlk Denemeni Okut 
+ Derslerin
+ Tarih
+ Coğrafya
+ Türkçe
+ Fizik
+ Biyoloji
+ Kimya
+ Türk Dili ve Edebiyatı
+ Matematik
+ Geometri
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Yeni kullanıcı Program ve deneme yok. Her bölüm kendi boş hâlini taşır: "Haftalık Programını Kur" metin düğmesi, "İlk Denemeni Okut" birincil. Şeritte eksik etiketi yok (veri yok). 
+ Bölümler (en çok 4)
+ (a) Bant: avatar 40 + selam title-md 20; sayaç 40/800 rakam + "gün kaldı" + sınav tarihi. Eyebrow ve gri alt satır üçlüsü yok.
+ (b) Bugün: saat body-strong 15/24 tabular, ders glifi 36, ders 13 + konu 16/600. "Programım" bölümün tek bağlantısı.
+ (c) Son denemen: ad ve yayınevi ayrı satır (D-32), net metric-lg 40/48, fark info + ok, küçük D/Y/B (1.14), en çok kaçırılan konu cümlesi.
+ (d) Derslerin: 132 pt karolar, eksik etiketi (Tur 5 EksikTag); Mat/Geo "Web'de".
+ Davranış
+ Ders karosu ders detayını açar; Derslerim'deki son TYT/AYT seçimiyle. Eski TYT/AYT/SOS-2 diyaloğu yok (14, 17).
+ Bugün satırı konu detayını ilk eksik maddede açar (7.3).
+ Sayaç cihaz saatinden (D-21); gece yarısı yenilenir, ağ gerekmez.
+ Kaydırınca bant 1.18 kare 3 gibi küçülür; çekince yenilenir (RefreshIndicator).
+ Eskiden
+ Kişi kartı: coin "0" ve %0 çubuğu (09).
+ Menü ızgarası: Analiz, Denemelerim, Derslerim, Gelen Kutusu, SmapLab, Programım; alt çubukla aynı işi yapıyordu (09, 10).
+ Ay takvimi: bugün halkalı ama içerik yok (09, 10).
+ Ders kartlarında yüzen etiketsiz rozetler (31, 60, 44, 3) (09).

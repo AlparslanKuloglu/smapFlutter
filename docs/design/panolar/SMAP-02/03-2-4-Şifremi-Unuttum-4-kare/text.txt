@@ -1,0 +1,36 @@
+2.4 Şifremi Unuttum 
+ 2.4 · Tur 7 · Açılış ve Giriş
+ Şifremi Unuttum · 4 Kare
+ E-posta → 6 haneli kod → yeni şifre → bitti.
+ Şifreni sıfırla
+ Hesabındaki e-posta adresini yaz; 6 haneli bir kod gönderelim.
+ E-posta alparslan@ornek.com
+ Kod Gönder 
+ 1 · E-posta Girişteki "Şifremi Unuttum"dan. E-posta klavyesi; kayıtlı olmasa da aynı yanıt verilir (hesap var mı sızdırılmaz). 
+ Kodu gir
+ Kodu alparslan@ornek.com adresine gönderdik. Gelen kutunda yoksa istenmeyen klasörüne bak.
+ Doğrulama kodu
+ Kodu Tekrar Gönder (0:24) E-postayı Değiştir 
+ 2 · 6 haneli kod Kutular 1.12; tek kullanımlık kod otomatik dolar, yapıştırınca 6 kutu birden. 6. hanede kendiliğinden doğrular. Tekrar gönderme 30 sn sonra. 
+ Yeni şifreni belirle
+ Yeni şifre •••••••••• 
+ En az 8 karakter.
+ Yeni şifre (tekrar) •••••••••• 
+ Şifreyi Güncelle 
+ 3 · Yeni şifre Kural alanın altında baştan yazılı. İki alan eşleşmezse "Şifreler aynı değil." 
+ Şifren güncellendi
+ Yeni şifrenle giriş yapabilirsin.
+ Giriş Yap 
+ 4 · Bitti Başarı rengiyle tek ikon, tek cümle, tek eylem; Giriş Yap kullanıcı adını hazır getirir. Haptik: success. 
+ Hata metinleri
+ Kod: "Kod hatalı ya da süresi dolmuş. Yeni kod iste."
+ Çok deneme: "Çok fazla deneme yaptın. 10 dakika sonra tekrar dene."
+ E-posta biçimi: "E-posta adresi eksik görünüyor. Örn: ad@alan.com" (1.12).
+ Bağlantı: toast "Gönderilemedi. Bağlantını kontrol edip tekrar dene."
+ Hareket ve haptik
+ Adımlar arası 350 ms yatay geçiş.
+ Kod hatalıysa kutular 150 ms sallanır (hareketi azaltta yok) ve error haptiği.
+ Bitti: success.
+ Neden
+ D-18: e-posta + 6 haneli kod. Bağlantılı e-posta yerine kod: uygulamadan çıkmadan biter.
+ Her adımda tek iş ve tek birincil düğme.

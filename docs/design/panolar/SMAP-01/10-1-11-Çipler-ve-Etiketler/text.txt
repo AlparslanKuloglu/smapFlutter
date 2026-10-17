@@ -1,0 +1,58 @@
+1.11 Çipler 
+ 1.11 · Temeller · Kontroller
+ Çipler ve Etiketler
+ Çip dokunulur: tam yuvarlak, kenarlı, 36 pt görünür ve 48 pt dokunma alanı. Etiket yalnız bilgi verir: köşeli, kenarsız, nötr. Her kategoriye ayrı renkli hap yok; renk yalnız ders noktasında.
+ Filtre çipi · çoklu seçim · Görüşmelerim 
+ Öğrenci görüşmesi 
+ Veli görüşmesi 
+ Bu hafta 
+ Seçili: lacivert dolgu, beyaz etiket ve onay işareti (renk tek ipucu değil). Pasif: kenar border-control (4,68:1). Üçüncü çip odak halkasıyla.
+ Seçim çipi · tekli seçim · Sorular filtresi 
+ Tümü 
+ Yanlışlar 
+ Boşlar 
+ Seçim çipi · Sınıf (Ek D-20) 
+ 9. Sınıf 
+ 10. Sınıf 
+ 11. Sınıf 
+ 12. Sınıf 
+ Mezun 
+ Ders çipi · renk noktası + ad · Analizlerim filtresi 
+ Genel 
+ Türkçe 
+ Tarih 
+ Coğrafya 
+ Matematik 
+ Geometri 
+ Fizik 
+ Kimya 
+ Biyoloji 
+ Seçili ders çipinde nokta beyaz halkayla korunur. "Genel" bir ders değil, noktası yok.
+ Pasif · seçilemeyen seçenek 
+ Dil 
+ Yalnız gerçekten seçilemiyorsa; nedeni yanında yazar. 
+ Kare seçim çipi · şık seçimi (Form Kontrol, Tur 2) 
+ A 
+ B 
+ C 
+ D 
+ E 
+ Boş 
+ Tam 48 × 48, radius-md. Tek dokunuşla seçilir; seçim lacivert dolgu.
+ Etiket · bilgi, dokunulmaz 
+ AYT 
+ TYT 
+ SOS-2 
+ 31 eksik 
+ Az soru 
+ Web'de 
+ 24 pt yükseklik, radius-sm, bg-sunken, text-primary 13/600 (13,39:1). Sayı taşıyan etiket ne saydığını söyler: "31 eksik", asla yalnız "31".
+ Satır içinde
+ Türkiye Geneli Deneme 6
+ Örnek Yayınları · 5 Eki. 2026
+ AYT 
+ 67,5
+ net
+ Kapak alanı burada yer tutucu; gerçek kapak sunucudan gelir.
+ Eskiden
+ Analiz sekmeleri 7 yarıçaplı dikdörtgen çipti (19), "Deneme: 1" gri hapı anlamsızdı (21), kart başına renkli şerit vardı (11). Şimdi sekmeler 1.10'daki sekme çubuğu, "Deneme: N" hiç gösterilmez (Ek D-33), renk yalnız ders kimliğinde.

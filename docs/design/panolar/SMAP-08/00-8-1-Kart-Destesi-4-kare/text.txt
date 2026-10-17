@@ -1,0 +1,63 @@
+8.1 Kart Destesi 
+ 8.1 · Tur 5 · Bilgi Kartları
+ Kart Destesi · 4 Kare
+ Girişler: ders detayında "Kartlarım", Deneme Detay › Kartlar, konu detayındaki kart. Üç sekme sayaçlı; kaydırmalı deste; "Öğrendim" yalnız eksik kartta.
+ Tarih Kartları
+ Eksiklerim 23 kart Bildiklerim 41 kart Favorilerim 6 kart 
+ 12/23 
+ Tarih 
+ Edirne-Segedin Antlaşması (1444)
+ Haçlılarla Osmanlı Devleti'nin imzaladığı ilk antlaşma. Tuna sınır olur, on yıl savaş yapılmaz.
+ Eksik 
+ Detay Öğrendim 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Eksiklerim Sayaçlı sekmeler (23 · 41 · 6), oturum 12/23. Kaydırma sonraki karta geçer; öğrenmek yalnız "Öğrendim" ile (yanlışlıkla taşınmaz). 
+ Tarih Kartları
+ Eksiklerim 23 kart Bildiklerim 41 kart Favorilerim 6 kart 
+ 12/23 
+ Tarih 
+ Edirne-Segedin Antlaşması (1444)
+ Haçlılarla Osmanlı Devleti'nin imzaladığı ilk antlaşma. Tuna sınır olur, on yıl savaş yapılmaz.
+ Eksik 
+ Detay Öğrendim 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ Kartı Bildiklerim'e taşıyalım mı?
+ "Edirne-Segedin Antlaşması (1444)" eksiklerinden çıkıp Bildiklerim'e geçecek.
+ Bir daha sorma 
+ Öğrendim Vazgeç 
+ 2 · İlk "Öğrendim" Onay yalnız ilk seferde; "Bir daha sorma" ile kalıcı. Bileşen 1.21. 
+ Tarih Kartları
+ Eksiklerim 22 kart Bildiklerim 42 kart Favorilerim 6 kart 
+ 13/23 
+ Tarih 
+ Otlukbeli Savaşı (1473)
+ Fatih Sultan Mehmet – Uzun Hasan (Akkoyunlu).
+ Eksik 
+ Detay Öğrendim 
+ Kart Bildiklerim'e taşındı. Geri Al 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Taşındı Sayaçlar güncellenir (22 · 42), sıradaki kart gelir; toast 6 sn "Geri Al" ile (Ek D-31). 
+ Tarih Kartları
+ Eksiklerim kart yok Bildiklerim 64 kart Favorilerim 6 kart 
+ Bu derste eksik kartın kalmadı.
+ Bildiklerim'deki 64 kartı tekrar etmek istersen oradan devam edebilirsin.
+ Bildiklerime Geç 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 4 · Eksiklerim boş Bütün eksikler öğrenilince: dersin kil görseli (Sütun), Ek C'deki boş metin, tek eylem. 
+ Bileşenler
+ Sekmeler sayaçlı segment; boş sekme "kart yok".
+ Oturum ilerlemesi 1.15 vurgu ilerlemesi ( orange-600 ), "12/23".
+ Kart 24 pt köşe, 24 pt iç pay, gölge yalnız sürüklenen kartta ( shadow-overlay ); arkada iki kart kenarı.
+ "Detay" ikincil çerçeveli, "Öğrendim" birincil; Bildiklerim'de yalnız "Detay".
+ Hareket ve haptik
+ Kaydırma: kart parmağı izler; %30 eşiği geçince 250 ms'de çıkar, sıradaki ölçekle öne gelir.
+ "Öğrendim": kart sağa 250 ms'de çıkar; success haptiği; toast 6 sn.
+ Hareketi azaltta kartlar kaymaz, çapraz geçiş.
+ Boş metinler (Ek C)
+ Eksiklerim: "Bu derste eksik kartın kalmadı."
+ Bildiklerim: "Henüz öğrendiğin kart yok."
+ Favorilerim: "Favoriye eklediğin kart yok."

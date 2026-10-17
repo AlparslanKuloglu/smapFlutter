@@ -1,0 +1,207 @@
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/f696f23d-bbef-4c3c-8415-07c20ef665fc.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/82d7518b-e0a4-4953-9686-4464607fed2b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/f696f23d-bbef-4c3c-8415-07c20ef665fc.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/82d7518b-e0a4-4953-9686-4464607fed2b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/f696f23d-bbef-4c3c-8415-07c20ef665fc.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/82d7518b-e0a4-4953-9686-4464607fed2b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/f696f23d-bbef-4c3c-8415-07c20ef665fc.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/82d7518b-e0a4-4953-9686-4464607fed2b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/f696f23d-bbef-4c3c-8415-07c20ef665fc.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/82d7518b-e0a4-4953-9686-4464607fed2b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+body{margin:0}
+*{box-sizing:border-box}
+button{font-family:inherit;border:0;margin:0;cursor:pointer;background:transparent;color:inherit}
+.ph{width:402px;height:220px;border-radius:20px 20px 56px 56px;overflow:hidden;position:relative;background:#F2F4F7;box-shadow:0 0 0 1px #C3CBD6}
+.hi{position:absolute;bottom:8px;left:134px;width:134px;height:5px;border-radius:3px;background:#1B2232;z-index:4}
+.nav{position:absolute;left:0;right:0;bottom:0;height:102px;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:24px 24px 0 0;box-shadow:inset 0 1px 0 #DCE2E9;z-index:3}
+.slots{display:flex;height:68px}
+.tab{width:82.5px;position:relative;display:flex;flex-direction:column;align-items:center;padding-top:14px;gap:6px;color:#556173}
+.tab .l{font-size:12px;line-height:16px;font-weight:600}
+.tab.on{color:#0F294A}
+.tab.on .l{font-weight:700}
+.ind{position:absolute;top:0;left:50%;transform:translateX(-50%);width:32px;height:4px;border-radius:0 0 4px 4px;background:#E05500}
+.cam{width:72px;position:relative}
+.camb{position:absolute;top:-16px;left:8px;width:56px;height:56px;border-radius:16px;background:#FF6600;color:#0F294A;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(15,41,74,0.08)}
+.caml{position:absolute;top:44px;left:0;right:0;text-align:center;font-size:12px;line-height:16px;font-weight:700;color:#1B2232}
+.fl{font-size:15px;line-height:20px;font-weight:700;margin-top:14px}
+.fd{font-size:13px;line-height:20px;color:#556173;margin-top:2px}
+.grp{background:#FFFFFF;border-radius:16px;overflow:hidden}
+.rw{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:72px}
+.tn{font-size:16px;line-height:24px;font-weight:600;color:#1B2232}
+.tm{font-size:13px;line-height:20px;color:#556173}
+.sp{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid #E8ECF1;font-size:14px;line-height:20px}
+.av{display:inline-block;border-radius:999px;overflow:hidden;flex:none}
+.av{background-size:cover;background-position:center;background-color:#DCE2E9}
+.av-4{background-image:url(data:image/webp;base64,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)}

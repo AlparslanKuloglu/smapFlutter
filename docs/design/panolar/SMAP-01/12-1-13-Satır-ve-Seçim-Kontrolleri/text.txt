@@ -1,0 +1,45 @@
+1.13 Satır ve Seçim Kontrolleri 
+ 1.13 · Temeller · Kontroller
+ Satır ve Seçim Kontrolleri
+ Tek satır bileşeni: ikon, başlık, alt metin ve sağ öğe (ok, değer, anahtar ya da etiket). Eski Hesap satırları zeminle aynı tondaydı (31; 1,05:1), "Çıkış Yap" menü satırlarıyla aynı biçimdeydi ve yalnız ince bir çizgiyle ayrılıyordu; Tailwind yeşili (#22C55E) anahtar markadan kopuktu (37). Anahtar artık lacivert ve açıkken onay işareti taşıyor.
+ Hesap
+ Profil 
+ Bildirimler Deneme sonucu, koç, görüşme, hatırlatıcı 
+ Sessiz saatler 22:00–08:00 
+ Deneme sonucun hazır Okuttuğun denemenin analizi bitince 
+ Derslerin
+ Türkçe 31 eksik 
+ Çıkış Yap 
+ Tehlikeli satır ayrı bir grupta, ok taşımaz, onay sheet'i açar. Satır içi ayraç metnin başladığı yerden başlar.
+ Anahtar · 52 × 32, dokunma 48 
+ Kapalı
+ Açık
+ Odak
+ Pasif
+ Kapalı ray yalnız kenardır (4,68:1), baş küçük ve gri. Açıkken ray lacivert, baş büyür ve onay işareti taşır: renk görmeyen için de durum belli. Değişiklik anında kaydedilir; ayrı "Kaydet" yok.
+ Onay kutusu · 24, dokunma 48 
+ Bir daha gösterme 
+ Kullanım Koşulları'nı ve KVKK Aydınlatma Metni'ni okudum 
+ Pasif seçenek 
+ Bütün satır dokunulabilir; etiket kutunun sağında, 12 pt uzakta.
+ Radyo · sheet içi tekli seçim 
+ 11. Sınıf 
+ 12. Sınıf 
+ Mezun 
+ Açılır seçim alanının açtığı sheet bu listeyi taşır; seçince sheet kapanır, ayrı onay yok.
+ Akordeon başlığı · açık ve kapalı ayrı ok 
+ Türk Dili ve Edebiyatı–Sosyal Bilimler 1 
+ 23 D 
+ 17 Y 
+ 0 B 
+ Açık: ok yukarı, ok zemini dolu. İçerik burada başlar (Tur 3: soru ızgarası).
+ Sosyal Bilimler 2 
+ 17 D 
+ 23 Y 
+ 0 B 
+ Uzun test adı sarılır, sayaçlar alt satıra iner; hiçbir ad kesilmez. Kapalı başlıkta küçük sayaç çipleri sade (glifsiz) kalabilir; harf etiketi her zaman var. Dokunma alanı bütün başlık.
+ Satır yüksekliği en az 56 · iki satır 72 
+ İç dolgu 16 yan · 12 dikey 
+ İkon · ok 24 metin-2 · 20 metin-2 
+ Başlık · alt metin title-sm 16/24 · caption 13/20 
+ Grup bg-surface · radius-lg · başlık caption

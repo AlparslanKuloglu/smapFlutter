@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<title>Token Tablosu · Son Hâl</title>
+<script src="res/d8779ae4-8227-4ec1-880d-e4432b1bc3c5.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/97408e8f-7634-4c13-9963-09bf09db0861.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/9bbe54e2-3735-4ebf-9440-b4e388ffa986.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/97408e8f-7634-4c13-9963-09bf09db0861.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/9bbe54e2-3735-4ebf-9440-b4e388ffa986.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/97408e8f-7634-4c13-9963-09bf09db0861.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/9bbe54e2-3735-4ebf-9440-b4e388ffa986.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/97408e8f-7634-4c13-9963-09bf09db0861.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/9bbe54e2-3735-4ebf-9440-b4e388ffa986.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/97408e8f-7634-4c13-9963-09bf09db0861.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/9bbe54e2-3735-4ebf-9440-b4e388ffa986.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+h2{margin:0;font-size:28px;line-height:36px;font-weight:800;letter-spacing:-0.3px}
+h3{margin:0;font-size:20px;line-height:28px;font-weight:700}
+.ld{margin:8px 0 0;font-size:16px;line-height:26px;color:#556173;max-width:1100px}
+.nt{width:100%;border-collapse:collapse;table-layout:fixed}
+.nt th{font-size:13px;line-height:20px;font-weight:600;color:#556173;text-align:left;padding:10px 12px;border-bottom:1px solid #C3CBD6}
+.nt td{font-size:14px;line-height:21px;padding:10px 12px;border-bottom:1px solid #E8ECF1;vertical-align:top;color:#1B2232}
+.nt td.n{font-weight:700;color:#556173}
+.nt td.m{color:#556173}
+.nt td.b{font-weight:600}
+.ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0}
+.ol li{display:grid;grid-template-columns:40px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #E8ECF1;font-size:14px;line-height:21px}
+.ol li span{font-weight:700;color:#556173}
+pre{margin:0;padding:20px 24px;border-radius:16px;background:#0F1420;color:#EDF1F6;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:13px;line-height:20px;white-space:pre-wrap;overflow:hidden}
+pre .c{color:#8B9AAF}
+.kv{display:grid;grid-template-columns:260px 1fr;font-size:14px;line-height:21px}
+.kv div{padding:8px 0;border-bottom:1px solid #E8ECF1}
+.kv div:nth-child(odd){font-weight:700}
+.ck{display:grid;grid-template-columns:28px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #E8ECF1;font-size:14px;line-height:21px}
+.ok{color:#0B6E3E;font-weight:800}
+.sw2{display:inline-block;width:18px;height:18px;border-radius:5px;vertical-align:-4px;margin-right:8px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.12)}
+.tk{font-weight:600;color:#264066}
+</style>
+</helmet>
+<div style="width: 1440px; height: 4820px; background: #FFFFFF; color: #1B2232; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; padding: 64px; display: flex; flex-direction: column; gap: 44px; font-variant-numeric: tabular-nums">
+<header style="display: flex; flex-direction: column; gap: 8px"><div style="font-size: 15px; line-height: 20px; font-weight: 600; color: #556173">11.12 · Geliştirici Teslimi</div><h1 style="margin: 0; font-size: 36px; line-height: 44px; font-weight: 800; letter-spacing: -0.5px">Token Tablosu · Son Hâl</h1><p class="ld">Tur 1'de tanımlanan ve 2–10. turlarda genişleyen bütün token'lar tek yerde. Ekran kodu yalnız rol adlarını kullanır; tema değişince değer değişir. Tur 10'daki iki yeni token: <span class="tk">delta</span> ve <span class="tk">bg-context</span>.</p></header>
+<section style="display: flex; flex-direction: column; gap: 14px"><h2>Renk rolleri</h2><sc-raw-table class="nt"><sc-raw-thead><sc-raw-tr><sc-raw-th>Rol</sc-raw-th><sc-raw-th>Açık</sc-raw-th><sc-raw-th>Koyu</sc-raw-th><sc-raw-th>Flutter</sc-raw-th><sc-raw-th>Kullanım</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td class="b">bg-canvas</sc-raw-td><sc-raw-td><span class="sw2" style="background: #F2F4F7"></span>#F2F4F7</sc-raw-td><sc-raw-td><span class="sw2" style="background: #0A1424"></span>#0A1424</sc-raw-td><sc-raw-td>surface</sc-raw-td><sc-raw-td>Sayfa zemini</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">bg-surface</sc-raw-td><sc-raw-td><span class="sw2" style="background: #FFFFFF"></span>#FFFFFF</sc-raw-td><sc-raw-td><span class="sw2" style="background: #121D31"></span>#121D31</sc-raw-td><sc-raw-td>surfaceContainerLowest</sc-raw-td><sc-raw-td>Kart, liste grubu, girdi</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">bg-raised</sc-raw-td><sc-raw-td><span class="sw2" style="background: #FFFFFF"></span>#FFFFFF</sc-raw-td><sc-raw-td><span class="sw2" style="background: #18263D"></span>#18263D</sc-raw-td><sc-raw-td>surfaceContainerLow</sc-raw-td><sc-raw-td>Sheet</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">bg-sunken</sc-raw-td><sc-raw-td><span class="sw2" style="background: #E8ECF1"></span>#E8ECF1</sc-raw-td><sc-raw-td><span class="sw2" style="background: #213049"></span>#213049</sc-raw-td><sc-raw-td>surfaceContainerHighest</sc-raw-td><sc-raw-td>Ray, iskelet, sessiz düğme</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">bg-navy</sc-raw-td><sc-raw-td><span class="sw2" style="background: #0F294A"></span>#0F294A</sc-raw-td><sc-raw-td><span class="sw2" style="background: #0F294A"></span>#0F294A</sc-raw-td><sc-raw-td>ext.navyBand</sc-raw-td><sc-raw-td>Kök bant; açıkta toast</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">bg-navy-raised</sc-raw-td><sc-raw-td><span class="sw2" style="background: #1A3357"></span>#1A3357</sc-raw-td><sc-raw-td><span class="sw2" style="background: #1A3357"></span>#1A3357</sc-raw-td><sc-raw-td>ext.navyBandRaised</sc-raw-td><sc-raw-td>Bant içi segment rayı</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">bg-context</sc-raw-td><sc-raw-td><span class="sw2" style="background: #F1F5FA"></span>#F1F5FA</sc-raw-td><sc-raw-td><span class="sw2" style="background: #1A2B45"></span>#1A2B45</sc-raw-td><sc-raw-td>ext.contextStrip</sc-raw-td><sc-raw-td>Koç bağlam şeridi (Tur 9)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">border-subtle</sc-raw-td><sc-raw-td><span class="sw2" style="background: #DCE2E9"></span>#DCE2E9</sc-raw-td><sc-raw-td><span class="sw2" style="background: #26354D"></span>#26354D</sc-raw-td><sc-raw-td>outlineVariant</sc-raw-td><sc-raw-td>Ayraç (dekoratif)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">border-strong</sc-raw-td><sc-raw-td><span class="sw2" style="background: #C3CBD6"></span>#C3CBD6</sc-raw-td><sc-raw-td><span class="sw2" style="background: #34445F"></span>#34445F</sc-raw-td><sc-raw-td>ext.borderStrong</sc-raw-td><sc-raw-td>Pasif kontrol kenarı</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">border-control</sc-raw-td><sc-raw-td><span class="sw2" style="background: #697586"></span>#697586</sc-raw-td><sc-raw-td><span class="sw2" style="background: #6B7D97"></span>#6B7D97</sc-raw-td><sc-raw-td>outline</sc-raw-td><sc-raw-td>Girdi, çip, onay kutusu, kapalı anahtar</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">text-primary</sc-raw-td><sc-raw-td><span class="sw2" style="background: #1B2232"></span>#1B2232</sc-raw-td><sc-raw-td><span class="sw2" style="background: #EDF1F6"></span>#EDF1F6</sc-raw-td><sc-raw-td>onSurface</sc-raw-td><sc-raw-td>Başlık, gövde, değer</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">text-secondary</sc-raw-td><sc-raw-td><span class="sw2" style="background: #556173"></span>#556173</sc-raw-td><sc-raw-td><span class="sw2" style="background: #A9B5C6"></span>#A9B5C6</sc-raw-td><sc-raw-td>onSurfaceVariant</sc-raw-td><sc-raw-td>Alt metin, etiket, eksen</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">text-placeholder</sc-raw-td><sc-raw-td><span class="sw2" style="background: #697586"></span>#697586</sc-raw-td><sc-raw-td><span class="sw2" style="background: #8B9AAF"></span>#8B9AAF</sc-raw-td><sc-raw-td>ext.textPlaceholder</sc-raw-td><sc-raw-td>Yalnız "Örn: …"</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">text-disabled</sc-raw-td><sc-raw-td><span class="sw2" style="background: #9AA5B4"></span>#9AA5B4</sc-raw-td><sc-raw-td><span class="sw2" style="background: #56657C"></span>#56657C</sc-raw-td><sc-raw-td>ext.textDisabled</sc-raw-td><sc-raw-td>Pasif metin</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">text-on-navy</sc-raw-td><sc-raw-td><span class="sw2" style="background: #FFFFFF"></span>#FFFFFF</sc-raw-td><sc-raw-td><span class="sw2" style="background: #FFFFFF"></span>#FFFFFF</sc-raw-td><sc-raw-td>ext.onNavyBand</sc-raw-td><sc-raw-td>Bant başlığı</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">text-on-navy-2</sc-raw-td><sc-raw-td><span class="sw2" style="background: #C5D4E8"></span>#C5D4E8</sc-raw-td><sc-raw-td><span class="sw2" style="background: #C5D4E8"></span>#C5D4E8</sc-raw-td><sc-raw-td>ext.onNavyBandVariant</sc-raw-td><sc-raw-td>Bant alt metni</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">text-action</sc-raw-td><sc-raw-td><span class="sw2" style="background: #1A3357"></span>#1A3357</sc-raw-td><sc-raw-td><span class="sw2" style="background: #9BB3D3"></span>#9BB3D3</sc-raw-td><sc-raw-td>ext.textAction</sc-raw-td><sc-raw-td>Metin düğmesi, bağlantı</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">text-accent</sc-raw-td><sc-raw-td><span class="sw2" style="background: #B34400"></span>#B34400</sc-raw-td><sc-raw-td><span class="sw2" style="background: #FF9A57"></span>#FF9A57</sc-raw-td><sc-raw-td>ext.textAccent</sc-raw-td><sc-raw-td>Turuncu metin gerekirse</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">primary</sc-raw-td><sc-raw-td><span class="sw2" style="background: #0F294A"></span>#0F294A</sc-raw-td><sc-raw-td><span class="sw2" style="background: #C5D4E8"></span>#C5D4E8</sc-raw-td><sc-raw-td>primary</sc-raw-td><sc-raw-td>Birincil düğme, seçili segment ve çip, açık anahtar</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">on-primary</sc-raw-td><sc-raw-td><span class="sw2" style="background: #FFFFFF"></span>#FFFFFF</sc-raw-td><sc-raw-td><span class="sw2" style="background: #091A31"></span>#091A31</sc-raw-td><sc-raw-td>onPrimary</sc-raw-td><sc-raw-td>Birincil üstü</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">accent</sc-raw-td><sc-raw-td><span class="sw2" style="background: #FF6600"></span>#FF6600</sc-raw-td><sc-raw-td><span class="sw2" style="background: #FF6600"></span>#FF6600</sc-raw-td><sc-raw-td>secondary</sc-raw-td><sc-raw-td>Yalnız kamera düğmesi dolgusu</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">on-accent</sc-raw-td><sc-raw-td><span class="sw2" style="background: #0F294A"></span>#0F294A</sc-raw-td><sc-raw-td><span class="sw2" style="background: #0F294A"></span>#0F294A</sc-raw-td><sc-raw-td>onSecondary</sc-raw-td><sc-raw-td>Kamera ikonu</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">accent-line</sc-raw-td><sc-raw-td><span class="sw2" style="background: #E05500"></span>#E05500</sc-raw-td><sc-raw-td><span class="sw2" style="background: #FF8533"></span>#FF8533</sc-raw-td><sc-raw-td>ext.accentLine</sc-raw-td><sc-raw-td>Konum göstergesi, ilerleme, "bugün", seçili grafik noktası</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">focus-ring</sc-raw-td><sc-raw-td><span class="sw2" style="background: #36537C"></span>#36537C</sc-raw-td><sc-raw-td><span class="sw2" style="background: #9BB3D3"></span>#9BB3D3</sc-raw-td><sc-raw-td>ext.focusRing</sc-raw-td><sc-raw-td>Odak: 2 pt çizgi, 2 pt boşluk</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></section><section style="display: flex; flex-direction: column; gap: 14px"><h2>Anlamsal renkler</h2><sc-raw-table class="nt"><sc-raw-thead><sc-raw-tr><sc-raw-th>Token</sc-raw-th><sc-raw-th>Açık</sc-raw-th><sc-raw-th>Koyu</sc-raw-th><sc-raw-th>Kullanım</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td class="b">dyb-correct</sc-raw-td><sc-raw-td><span class="sw2" style="background: #0B6E3E"></span>#0B6E3E</sc-raw-td><sc-raw-td><span class="sw2" style="background: #52CC8E"></span>#52CC8E</sc-raw-td><sc-raw-td>Doğru: çip, çubuk, doğru cevap metni</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">dyb-wrong</sc-raw-td><sc-raw-td><span class="sw2" style="background: #D8333A"></span>#D8333A</sc-raw-td><sc-raw-td><span class="sw2" style="background: #F07575"></span>#F07575</sc-raw-td><sc-raw-td>Yanlış</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">dyb-blank</sc-raw-td><sc-raw-td><span class="sw2" style="background: #7E8A9B"></span>#7E8A9B</sc-raw-td><sc-raw-td><span class="sw2" style="background: #6E7C92"></span>#6E7C92</sc-raw-td><sc-raw-td>Boş</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">dyb-wrong-bg</sc-raw-td><sc-raw-td><span class="sw2" style="background: #FCEAEA"></span>#FCEAEA</sc-raw-td><sc-raw-td><span class="sw2" style="background: #3B1D22"></span>#3B1D22</sc-raw-td><sc-raw-td>Yanlış soru hücresi</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">dyb-blank-bg</sc-raw-td><sc-raw-td><span class="sw2" style="background: #E8ECF1"></span>#E8ECF1</sc-raw-td><sc-raw-td><span class="sw2" style="background: #213049"></span>#213049</sc-raw-td><sc-raw-td>Boş soru hücresi</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">delta</sc-raw-td><sc-raw-td><span class="sw2" style="background: #36537C"></span>#36537C</sc-raw-td><sc-raw-td><span class="sw2" style="background: #9BB3D3"></span>#9BB3D3</sc-raw-td><sc-raw-td>Değişim değeri ve oku ("+8,25"). Tur 10: yeşil yalnız Doğru'ya ayrıldı</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">eksik</sc-raw-td><sc-raw-td>#8A5A00 / #FCF1D9</sc-raw-td><sc-raw-td>#F2C46D / #33270F</sc-raw-td><sc-raw-td>EksikTag: bayrak + "3 eksik" (Tur 5)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">error</sc-raw-td><sc-raw-td>#C42D35 / #FCEAEA</sc-raw-td><sc-raw-td>#FF8F8F / #3B1D22</sc-raw-td><sc-raw-td>Hata metni, tehlikeli düğme ve onay</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">success</sc-raw-td><sc-raw-td>#0B6E3E / #E4F4EA</sc-raw-td><sc-raw-td>#52CC8E / #15301F</sc-raw-td><sc-raw-td>Başarı ikonu (şifre güncellendi, hesap silindi)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">warning</sc-raw-td><sc-raw-td>#8A5A00 / #FCF1D9</sc-raw-td><sc-raw-td>#F2C46D / #33270F</sc-raw-td><sc-raw-td>Uyarı kutusu, dikkat rozeti</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">info</sc-raw-td><sc-raw-td>#36537C / #E2EAF4</sc-raw-td><sc-raw-td>#9BB3D3 / #1A2B45</sc-raw-td><sc-raw-td>Bilgi kutusu, ikon daireleri</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">chart-line</sc-raw-td><sc-raw-td><span class="sw2" style="background: #264066"></span>#264066</sc-raw-td><sc-raw-td><span class="sw2" style="background: #9BB3D3"></span>#9BB3D3</sc-raw-td><sc-raw-td>Net çizgisi, alan %10 (koyu %14)</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">chart-highlight</sc-raw-td><sc-raw-td><span class="sw2" style="background: #E05500"></span>#E05500</sc-raw-td><sc-raw-td><span class="sw2" style="background: #FF8533"></span>#FF8533</sc-raw-td><sc-raw-td>Son nokta</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">chart-grid</sc-raw-td><sc-raw-td><span class="sw2" style="background: #DCE2E9"></span>#DCE2E9</sc-raw-td><sc-raw-td><span class="sw2" style="background: #26354D"></span>#26354D</sc-raw-td><sc-raw-td>Izgara</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></section><section style="display: flex; flex-direction: column; gap: 14px"><h2>Ders renkleri</h2><sc-raw-table class="nt"><sc-raw-thead><sc-raw-tr><sc-raw-th>Ders</sc-raw-th><sc-raw-th>Açık · zemin · vurgu</sc-raw-th><sc-raw-th>Koyu · zemin · vurgu</sc-raw-th><sc-raw-th>Glif (Phosphor)</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td class="b">Türkçe</sc-raw-td><sc-raw-td><span class="sw2" style="background: #F6ECE6"></span>#F6ECE6 · <span class="sw2" style="background: #93573C"></span>#93573C</sc-raw-td><sc-raw-td><span class="sw2" style="background: #2D211C"></span>#2D211C · <span class="sw2" style="background: #E2A98D"></span>#E2A98D</sc-raw-td><sc-raw-td>TextAa</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">Edebiyat</sc-raw-td><sc-raw-td><span class="sw2" style="background: #F6E7EC"></span>#F6E7EC · <span class="sw2" style="background: #8A2F4E"></span>#8A2F4E</sc-raw-td><sc-raw-td><span class="sw2" style="background: #301A27"></span>#301A27 · <span class="sw2" style="background: #E494BE"></span>#E494BE</sc-raw-td><sc-raw-td>Feather</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">Tarih</sc-raw-td><sc-raw-td><span class="sw2" style="background: #FBF1DA"></span>#FBF1DA · <span class="sw2" style="background: #8C6106"></span>#8C6106</sc-raw-td><sc-raw-td><span class="sw2" style="background: #2C2513"></span>#2C2513 · <span class="sw2" style="background: #E3B651"></span>#E3B651</sc-raw-td><sc-raw-td>Bank</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">Coğrafya</sc-raw-td><sc-raw-td><span class="sw2" style="background: #E1EFFA"></span>#E1EFFA · <span class="sw2" style="background: #1E6FAE"></span>#1E6FAE</sc-raw-td><sc-raw-td><span class="sw2" style="background: #12293C"></span>#12293C · <span class="sw2" style="background: #7DB9EC"></span>#7DB9EC</sc-raw-td><sc-raw-td>Globe</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">Matematik</sc-raw-td><sc-raw-td><span class="sw2" style="background: #FDE8E8"></span>#FDE8E8 · <span class="sw2" style="background: #C42A36"></span>#C42A36</sc-raw-td><sc-raw-td><span class="sw2" style="background: #341B1B"></span>#341B1B · <span class="sw2" style="background: #F7847F"></span>#F7847F</sc-raw-td><sc-raw-td>MathOperations</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">Geometri</sc-raw-td><sc-raw-td><span class="sw2" style="background: #E7E9FB"></span>#E7E9FB · <span class="sw2" style="background: #4450BE"></span>#4450BE</sc-raw-td><sc-raw-td><span class="sw2" style="background: #1D2144"></span>#1D2144 · <span class="sw2" style="background: #A3ABF4"></span>#A3ABF4</sc-raw-td><sc-raw-td>Angle</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">Fizik</sc-raw-td><sc-raw-td><span class="sw2" style="background: #DDF2F2"></span>#DDF2F2 · <span class="sw2" style="background: #08737A"></span>#08737A</sc-raw-td><sc-raw-td><span class="sw2" style="background: #0E2B2D"></span>#0E2B2D · <span class="sw2" style="background: #5FCBD0"></span>#5FCBD0</sc-raw-td><sc-raw-td>Atom</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">Kimya</sc-raw-td><sc-raw-td><span class="sw2" style="background: #F7E8F7"></span>#F7E8F7 · <span class="sw2" style="background: #93359A"></span>#93359A</sc-raw-td><sc-raw-td><span class="sw2" style="background: #271B33"></span>#271B33 · <span class="sw2" style="background: #C89AE3"></span>#C89AE3</sc-raw-td><sc-raw-td>Flask</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">Biyoloji</sc-raw-td><sc-raw-td><span class="sw2" style="background: #E4F3E3"></span>#E4F3E3 · <span class="sw2" style="background: #2B7A35"></span>#2B7A35</sc-raw-td><sc-raw-td><span class="sw2" style="background: #16291A"></span>#16291A · <span class="sw2" style="background: #80CC89"></span>#80CC89</sc-raw-td><sc-raw-td>Dna</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></section><section style="display: flex; flex-direction: column; gap: 14px"><h2>Tipografi · Plus Jakarta Sans, tabular rakamlar</h2><sc-raw-table class="nt"><sc-raw-thead><sc-raw-tr><sc-raw-th>Stil</sc-raw-th><sc-raw-th>Boyut/satır · ağırlık · aralık</sc-raw-th><sc-raw-th>Flutter</sc-raw-th><sc-raw-th>Kullanım</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td class="b">display</sc-raw-td><sc-raw-td>32/40 · 800 · −0,5</sc-raw-td><sc-raw-td>displaySmall</sc-raw-td><sc-raw-td>Onboarding ve genel ekran başlığı, sonuç anı</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">title-lg</sc-raw-td><sc-raw-td>24/32 · 700 · −0,3</sc-raw-td><sc-raw-td>headlineSmall</sc-raw-td><sc-raw-td>Kök bant başlığı, sayfa başlığı</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">title-md</sc-raw-td><sc-raw-td>20/28 · 700 · −0,2</sc-raw-td><sc-raw-td>titleLarge</sc-raw-td><sc-raw-td>Sheet başlığı, bölüm başlığı (Anasayfa), boş durum</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">headline</sc-raw-td><sc-raw-td>17/24 · 700 · −0,1</sc-raw-td><sc-raw-td>titleMedium</sc-raw-td><sc-raw-td>Bölüm ve alt başlık</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">title-sm</sc-raw-td><sc-raw-td>16/24 · 600</sc-raw-td><sc-raw-td>titleSmall</sc-raw-td><sc-raw-td>Satır ve kart başlığı</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">body-lg</sc-raw-td><sc-raw-td>16/24 (okumada 16/26) · 400</sc-raw-td><sc-raw-td>bodyLarge</sc-raw-td><sc-raw-td>Madde tanımı, bilgi kartı, sözleşme</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">body</sc-raw-td><sc-raw-td>15/24 · 400</sc-raw-td><sc-raw-td>bodyMedium</sc-raw-td><sc-raw-td>Gövde, açıklama</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">body-strong</sc-raw-td><sc-raw-td>15/24 · 600</sc-raw-td><sc-raw-td>ext.bodyStrong</sc-raw-td><sc-raw-td>Vurgu, program saati</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">caption</sc-raw-td><sc-raw-td>13/20 · 500</sc-raw-td><sc-raw-td>bodySmall</sc-raw-td><sc-raw-td>Meta, yardım, eksen, etiket</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">label-lg</sc-raw-td><sc-raw-td>16/24 · 600</sc-raw-td><sc-raw-td>labelLarge</sc-raw-td><sc-raw-td>48 pt düğme</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">label-md</sc-raw-td><sc-raw-td>14/20 · 600</sc-raw-td><sc-raw-td>labelMedium</sc-raw-td><sc-raw-td>40 pt düğme, segment, çip, girdi etiketi</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">label-sm</sc-raw-td><sc-raw-td>12/16 · 600</sc-raw-td><sc-raw-td>labelSmall</sc-raw-td><sc-raw-td>Yalnız alt çubuk etiketi</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">metric-xl</sc-raw-td><sc-raw-td>56/64 · 800 · −1,5</sc-raw-td><sc-raw-td>ext.metricXl</sc-raw-td><sc-raw-td>Sonuç anı neti</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">metric-lg</sc-raw-td><sc-raw-td>40/48 · 800 · −1</sc-raw-td><sc-raw-td>ext.metricLg</sc-raw-td><sc-raw-td>Deneme Detay ve Anasayfa neti, YKS sayacı</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">metric-md</sc-raw-td><sc-raw-td>24/32 · 700 · −0,4</sc-raw-td><sc-raw-td>ext.metricMd</sc-raw-td><sc-raw-td>İstatistik kutusu, puan, koçluk kodu, tarih bloğu</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">metric-sm</sc-raw-td><sc-raw-td>17/24 · 700</sc-raw-td><sc-raw-td>ext.metricSm</sc-raw-td><sc-raw-td>D/Y/B sayaçları, ders neti</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></section><section style="display: flex; flex-direction: column; gap: 14px"><h2>Şekil, gölge, boşluk</h2><sc-raw-table class="nt"><sc-raw-thead><sc-raw-tr><sc-raw-th>Token</sc-raw-th><sc-raw-th>Değer</sc-raw-th><sc-raw-th>Kullanım</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td class="b">radius-xs</sc-raw-td><sc-raw-td>4</sc-raw-td><sc-raw-td>Onay kutusu</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">radius-sm</sc-raw-td><sc-raw-td>8</sc-raw-td><sc-raw-td>Segment başparmağı, soru hücresi, etiket</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">radius-md</sc-raw-td><sc-raw-td>12</sc-raw-td><sc-raw-td>Düğme, girdi, glif karosu, toast</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">radius-lg</sc-raw-td><sc-raw-td>16</sc-raw-td><sc-raw-td>Kart, liste grubu, kamera düğmesi</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">radius-xl</sc-raw-td><sc-raw-td>24</sc-raw-td><sc-raw-td>Sheet üst köşeleri, bant alt köşeleri, bilgi kartı</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">radius-full</sc-raw-td><sc-raw-td>999</sc-raw-td><sc-raw-td>Çip, avatar, anahtar, ilerleme</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">shadow-raised</sc-raw-td><sc-raw-td>0 2 8 · #0F294A %8 (koyu #000 %40)</sc-raw-td><sc-raw-td>Sürüklenen kart, kamera düğmesi</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">shadow-overlay</sc-raw-td><sc-raw-td>0 8 24 · #0F294A %16 (koyu #000 %56)</sc-raw-td><sc-raw-td>Toast, balon</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">space-4 … space-64</sc-raw-td><sc-raw-td>4, 8, 12, 16, 24, 32, 48, 64</sc-raw-td><sc-raw-td>Sayfa kenarı 16; bölümler arası 24–32; dokunma 48</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></section><section style="display: flex; flex-direction: column; gap: 14px"><h2>Hareket</h2><sc-raw-table class="nt"><sc-raw-thead><sc-raw-tr><sc-raw-th>Token</sc-raw-th><sc-raw-th>Değer</sc-raw-th><sc-raw-th>Kullanım</sc-raw-th></sc-raw-tr></sc-raw-thead><sc-raw-tbody><sc-raw-tr><sc-raw-td class="b">duration-instant</sc-raw-td><sc-raw-td>100 ms</sc-raw-td><sc-raw-td>Basılı durum</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">duration-fast</sc-raw-td><sc-raw-td>150 ms</sc-raw-td><sc-raw-td>Anahtar, çip, onay; hareketi azaltta opaklık</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">duration-base</sc-raw-td><sc-raw-td>250 ms</sc-raw-td><sc-raw-td>Segment, gösterge, akordeon, toast, ekleme/çıkarma</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">duration-slow</sc-raw-td><sc-raw-td>350 ms</sc-raw-td><sc-raw-td>Sheet, sayfa, ilk eksiğe kaydırma</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">duration-loop</sc-raw-td><sc-raw-td>1200 ms</sc-raw-td><sc-raw-td>İskelet parıltısı</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">ease-standard</sc-raw-td><sc-raw-td>Cubic(0.2, 0, 0, 1)</sc-raw-td><sc-raw-td>Yerinde değişim</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">ease-enter</sc-raw-td><sc-raw-td>Cubic(0, 0, 0, 1)</sc-raw-td><sc-raw-td>Giren öğe</sc-raw-td></sc-raw-tr><sc-raw-tr><sc-raw-td class="b">ease-exit</sc-raw-td><sc-raw-td>Cubic(0.3, 0, 1, 1)</sc-raw-td><sc-raw-td>Çıkan öğe, girişin %70'i</sc-raw-td></sc-raw-tr></sc-raw-tbody></sc-raw-table></section><section style="display: flex; flex-direction: column; gap: 14px"><h2>Kod iskeleti</h2><pre><span class="c">// SmapColors: ThemeExtension. Rol adları 1.2 ile aynı; açık ve koyu iki örnek.</span>
+class SmapColors extends ThemeExtension&lt;SmapColors&gt; {
+  final Color navyBand, navyBandRaised, contextStrip, borderStrong, textPlaceholder, textDisabled,
+      onNavyBand, onNavyBandVariant, textAction, textAccent, accentLine, focusRing,
+      dybCorrect, dybWrong, dybBlank, dybWrongBg, dybBlankBg, delta,
+      eksik, eksikBg, error, errorBg, success, successBg, warning, warningBg, info, infoBg,
+      chartLine, chartHighlight, chartGrid;
+  final Map&lt;Subject, (Color bg, Color fg)&gt; subject;
+  ...
+}
+<span class="c">// Yazı: Plus Jakarta Sans paketlenir; FontFeature.tabularFigures() tüm rakam stillerinde.</span></pre></section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:4820}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+
+
+</body></html>

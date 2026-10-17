@@ -1,0 +1,149 @@
+3.2 Anasayfa Durumlar 
+ 3.2 · Tur 6 · Anasayfa ve Programım
+ Anasayfa · Durumlar · 4 Kare
+ İskelet, bölüm düzeyi hata, çevrimdışı ve %130 metin. Bölümler kendi durumunu taşır; ekranın geri kalanı çalışır.
+ Merhaba, Alparslan
+ 252 gün kaldı
+ YKS · 19 Haziran 2027 Cumartesi
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · İskelet Bant hemen gelir (ad ve sayaç cihazda). Bölümler iskelet; 15 sn'de veri yoksa bölüm hatası. 
+ Merhaba, Alparslan
+ 252 gün kaldı
+ YKS · 19 Haziran 2027 Cumartesi
+ Bugün
+ Cumartesi, 10 Ekim
+ Programım 
+ Bugünün programı yüklenemedi.
+ Tekrar Dene 
+ Son denemen
+ Türkiye Geneli Deneme 6
+ Örnek Yayınları · AYT · 5 Eki. 2026
+ 67,5 net +8,25 önceki AYT'ye göre 
+ 86 doğru 74 yanlış 0 boş 
+ En çok kaçırdığın konu
+ Kurtuluş Savaşı Hazırlık Dönemi'nde 13 sorudan 9'unu kaçırdın.
+ Analizi Gör 
+ Derslerin
+ Eksiği en çok olandan başlar
+ Tarih
+ 60 eksik 
+ Coğrafya
+ 44 eksik 
+ Türkçe
+ 31 eksik 
+ Fizik
+ 14 eksik 
+ Biyoloji
+ 11 eksik 
+ Kimya
+ 9 eksik 
+ Türk Dili ve Edebiyatı
+ 3 eksik 
+ Matematik
+ Web'de 
+ Geometri
+ Web'de 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Bölüm hatası Program yüklenemedi; Son denemen ve Derslerin çalışmaya devam eder (1.22 kare 4). Tekrar Dene yalnız o bölümü yeniler. 
+ Merhaba, Alparslan
+ 252 gün kaldı
+ YKS · 19 Haziran 2027 Cumartesi
+ Çevrimdışısın. Son kaydedilen veriler gösteriliyor. 
+ Bugün
+ Cumartesi, 10 Ekim · Ekim 2. Hafta
+ Programım 
+ 10:00 Türkçe
+ Fiilde Çatı
+ 14:00 Tarih
+ Kurtuluş Savaşı Hazırlık Dönemi
+ 20:00 Coğrafya
+ İklim Bilgisi
+ Son denemen
+ Türkiye Geneli Deneme 6
+ Örnek Yayınları · AYT · 5 Eki. 2026
+ 67,5 net +8,25 önceki AYT'ye göre 
+ 86 doğru 74 yanlış 0 boş 
+ En çok kaçırdığın konu
+ Kurtuluş Savaşı Hazırlık Dönemi'nde 13 sorudan 9'unu kaçırdın.
+ Analizi Gör 
+ Derslerin
+ Eksiği en çok olandan başlar
+ Tarih
+ 60 eksik 
+ Coğrafya
+ 44 eksik 
+ Türkçe
+ 31 eksik 
+ Fizik
+ 14 eksik 
+ Biyoloji
+ 11 eksik 
+ Kimya
+ 9 eksik 
+ Türk Dili ve Edebiyatı
+ 3 eksik 
+ Matematik
+ Web'de 
+ Geometri
+ Web'de 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Çevrimdışı Şerit bandın altında, içeriği iter; bant köşeleri düzleşir. Son kaydedilen program ve deneme gösterilir. 
+ Merhaba, Alparslan
+ 252 gün kaldı
+ YKS · 19 Haziran 2027 Cumartesi
+ Bugün
+ Cumartesi, 10 Ekim · Ekim 2. Hafta
+ Programım 
+ 10:00 Türkçe
+ Fiilde Çatı
+ 14:00 Tarih
+ Kurtuluş Savaşı Hazırlık Dönemi
+ 20:00 Coğrafya
+ İklim Bilgisi
+ Son denemen
+ Türkiye Geneli Deneme 6
+ Örnek Yayınları · AYT · 5 Eki. 2026
+ 67,5 net +8,25 önceki AYT'ye göre 
+ 86 doğru 74 yanlış 0 boş 
+ En çok kaçırdığın konu
+ Kurtuluş Savaşı Hazırlık Dönemi'nde 13 sorudan 9'unu kaçırdın.
+ Analizi Gör 
+ Derslerin
+ Eksiği en çok olandan başlar
+ Tarih
+ 60 eksik 
+ Coğrafya
+ 44 eksik 
+ Türkçe
+ 31 eksik 
+ Fizik
+ 14 eksik 
+ Biyoloji
+ 11 eksik 
+ Kimya
+ 9 eksik 
+ Türk Dili ve Edebiyatı
+ 3 eksik 
+ Matematik
+ Web'de 
+ Geometri
+ Web'de 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 4 · Metin %130 Sistem yazı boyutu %130. Satırlar uzar, ad ve konu kesilmez; sayaç ve bölüm başlıkları sığar. Alt çubuk etiketi 1.19'daki gibi sığdırılır. 
+ Durum metinleri
+ Bugün, program yok: "Haftalık programın yok. Bir hafta kurduğunda günün konuları burada görünür."
+ Bugün, hata: "Bugünün programı yüklenemedi."
+ Son denemen, yok: "Henüz deneme okutmadın."
+ Derslerin, hata: "Dersler yüklenemedi." (1.22)
+ Hareket ve haptik
+ İskelet parıltısı 1200 ms; hareketi azaltta durağan.
+ Çekip yenileme: bırakınca selectionClick.
+ Bölüm hatası ve çevrimdışı haptiksiz; şerit 250 ms iner.
+ Erişilebilirlik
+ Sayaç tek öğe: "YKS'ye 252 gün kaldı. Sınav 19 Haziran 2027 Cumartesi."
+ Bugün satırı: "10:00, Türkçe, Fiilde Çatı".
+ Şerit karosu: "Tarih, 60 eksik"; yatay liste kaydırma eylemleriyle.

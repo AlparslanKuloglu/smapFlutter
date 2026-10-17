@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<title>9.1 Hesap</title>
+<script src="res/bc8b677e-ab0b-419c-a6a9-4f13ad5fccbe.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/0a851287-25f5-421b-8d82-dfc23078afe8.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/3d07ba7c-d9e5-42ed-8e57-e86fb81b4ccb.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/0a851287-25f5-421b-8d82-dfc23078afe8.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/3d07ba7c-d9e5-42ed-8e57-e86fb81b4ccb.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/0a851287-25f5-421b-8d82-dfc23078afe8.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/3d07ba7c-d9e5-42ed-8e57-e86fb81b4ccb.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/0a851287-25f5-421b-8d82-dfc23078afe8.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/3d07ba7c-d9e5-42ed-8e57-e86fb81b4ccb.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/0a851287-25f5-421b-8d82-dfc23078afe8.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/3d07ba7c-d9e5-42ed-8e57-e86fb81b4ccb.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+button{font-family:inherit;border:0;margin:0;cursor:pointer;background:transparent;color:inherit;padding:0}
+input{font-family:inherit;margin:0;outline:none}
+.ph{width:402px;height:874px;border-radius:56px;overflow:hidden;position:relative;background:#F2F4F7;box-shadow:0 0 0 1px #C3CBD6;color:#1B2232;flex:none}
+.ph.dk{background:#0A1424;box-shadow:0 0 0 1px #34445F;color:#EDF1F6}
+.ph.cm{background:#000000;box-shadow:0 0 0 1px #34445F;color:#FFFFFF}
+.di{position:absolute;top:11px;left:138px;width:126px;height:37px;border-radius:19px;background:#000000;z-index:9}
+.hi{position:absolute;bottom:8px;left:134px;width:134px;height:5px;border-radius:3px;background:#1B2232;z-index:9}
+.dk .hi,.cm .hi{background:#EDF1F6}
+.abs{position:absolute}
+.cap{width:402px}
+.cap b{display:block;font-size:15px;line-height:20px;margin-top:16px}
+.cap span{display:block;font-size:13px;line-height:20px;color:#556173;margin-top:2px}
+.t24{margin:0;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.3px}
+.t20{margin:0;font-size:20px;line-height:28px;font-weight:700;letter-spacing:-0.2px}
+.t17{margin:0;font-size:17px;line-height:24px;font-weight:700;letter-spacing:-0.1px}
+.b16{margin:0;font-size:16px;line-height:24px}
+.b15{margin:0;font-size:15px;line-height:24px}
+.c13{margin:0;font-size:13px;line-height:20px}
+.mu{color:#556173}
+.dk .mu,.cm .mu{color:#A9B5C6}
+.bp{height:48px;border-radius:12px;background:#0F294A;color:#FFFFFF;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bp,.cm .bp{background:#C5D4E8;color:#091A31}
+.bp.off{background:#DCE2E9;color:#9AA5B4}
+.dk .bp.off,.cm .bp.off{background:#213049;color:#56657C}
+.bo{height:48px;border-radius:12px;background:#FFFFFF;color:#0F294A;box-shadow:inset 0 0 0 1.5px #0F294A;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bo,.cm .bo{background:transparent;color:#C5D4E8;box-shadow:inset 0 0 0 1.5px #C5D4E8}
+.bq{height:48px;border-radius:12px;background:#E8ECF1;color:#1B2232;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bq,.cm .bq{background:#213049;color:#EDF1F6}
+.bt{height:48px;padding:0 12px;border-radius:12px;color:#1A3357;font-size:16px;line-height:24px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.dk .bt,.cm .bt{color:#9BB3D3}
+.ib{width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;flex:none;border-radius:12px;color:inherit}
+.ibc{width:40px;height:40px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:rgba(10,20,36,0.64);color:#FFFFFF}
+.scrim{position:absolute;inset:0;background:rgba(9,26,49,0.48);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:4}
+.scrim.dk2{background:rgba(2,6,14,0.64)}
+.sh{position:absolute;left:0;right:0;bottom:0;background:#FFFFFF;border-radius:24px 24px 0 0;z-index:5;display:flex;flex-direction:column;color:#1B2232}
+.dk .sh{background:#18263D;color:#EDF1F6}
+.hd{width:36px;height:4px;border-radius:999px;background:#C3CBD6;margin:8px auto 0;flex:none}
+.dk .hd{background:#34445F}
+.shh{display:flex;align-items:flex-start;gap:8px;padding:12px 12px 0 24px}
+.shf{padding:16px 24px 42px;display:flex;flex-direction:column;gap:12px}
+.xi{width:36px;height:36px;border-radius:999px;background:#E8ECF1;color:#1B2232;display:inline-flex;align-items:center;justify-content:center}
+.dk .xi{background:#213049;color:#EDF1F6}
+.fl{display:block;font-size:14px;line-height:20px;font-weight:600;margin-bottom:8px}
+.in{width:100%;height:48px;padding:0 16px;border-radius:12px;border:1px solid #697586;background:#FFFFFF;font-size:16px;line-height:24px;color:#1B2232;display:flex;align-items:center}
+.in.err{border:2px solid #C42D35;padding:0 15px}
+.ph-t{color:#697586}
+.er{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:13px;line-height:20px;font-weight:600;color:#C42D35}
+.hp{font-size:13px;line-height:20px;color:#556173;margin-top:6px}
+.seg{display:flex;gap:4px;padding:4px;background:#E8ECF1;border-radius:12px}
+.dk .seg{background:#213049}
+.seg button{flex:1;min-height:36px;border-radius:8px;color:#556173;font-size:14px;line-height:20px;font-weight:600}
+.dk .seg button{color:#A9B5C6}
+.seg button.on{background:#0F294A;color:#FFFFFF}
+.dk .seg button.on{background:#C5D4E8;color:#091A31}
+.seg.cnt button{min-height:48px;padding:4px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.seg.cnt button b{font-size:14px;line-height:20px;font-weight:700;color:#1B2232}
+.seg.cnt button i{font-style:normal;font-size:13px;line-height:20px;font-weight:500}
+.seg.cnt button.on b{color:#FFFFFF}
+.seg.cnt button.on i{color:#C5D4E8}
+.dk .seg.cnt button b{color:#EDF1F6}
+.dk .seg.cnt button.on b{color:#091A31}
+.dk .seg.cnt button.on i{color:#1A3357}
+.sq{width:48px;height:48px;border-radius:12px;background:#FFFFFF;color:#1B2232;box-shadow:inset 0 0 0 1px #697586;font-size:16px;line-height:24px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.sq.w{width:64px}
+.sq.on{background:#0F294A;color:#FFFFFF;box-shadow:none}
+.cb{display:flex;align-items:center;gap:12px;min-height:48px;font-size:15px;line-height:24px;text-align:left}
+.cbx{width:24px;height:24px;border-radius:4px;box-shadow:inset 0 0 0 2px #697586;flex:none;display:inline-flex;align-items:center;justify-content:center}
+.dk .cbx{box-shadow:inset 0 0 0 2px #6B7D97}
+.c24{width:24px;height:24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;flex:none}
+.dyl{font-size:15px;line-height:24px;font-weight:600;color:#556173}
+.dk .dyl{color:#A9B5C6}
+.dyv{font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.4px;margin-top:4px}
+.card{background:#FFFFFF;border-radius:16px}
+.dk .card{background:#121D31}
+.toast{display:flex;align-items:center;gap:12px;min-height:48px;padding:12px 16px;border-radius:12px;background:#0F294A;color:#FFFFFF;font-size:15px;line-height:24px;box-shadow:0 8px 24px rgba(15,41,74,0.16)}
+.sk{background:#E8ECF1;border-radius:8px}
+.nts{display:grid;column-gap:48px;row-gap:24px}
+.nts h3{margin:0 0 10px;font-size:17px;line-height:24px;font-weight:700}
+.nts ul{margin:0;padding:0 0 0 18px;font-size:14px;line-height:22px;color:#1B2232}
+.nts li{margin:0 0 6px}
+.nts code{font-family:inherit;font-weight:600;color:#264066}
+.tk{display:inline-block;font-weight:600;color:#264066}
+.cm .sh .bp{background:#0F294A;color:#FFFFFF}
+.cm .sh .bq{background:#E8ECF1;color:#1B2232}
+.cm .sh .mu{color:#556173}
+.cm .sh .bt{color:#1A3357}
+.c16{width:16px;height:16px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;flex:none}
+.dk .c16{color:#0A1424}
+.sm{display:inline-flex;align-items:center;gap:4px;font-size:15px;line-height:20px;font-weight:700}
+.sm i{font-style:normal;font-size:13px;font-weight:500;color:#556173}
+.dk .sm i{color:#A9B5C6}
+.qc{height:76px;border-radius:8px;padding:6px;display:flex;flex-direction:column;justify-content:space-between;position:relative;text-align:center}
+.qn{font-size:13px;line-height:20px;font-weight:600;color:#556173;text-align:left}
+.dk .qn{color:#A9B5C6}
+.qm{font-size:20px;line-height:24px;font-weight:700}
+.qa{font-size:13px;line-height:16px;font-weight:600;color:#0B6E3E}
+.dk .qa{color:#52CC8E}
+.qs{position:absolute;top:8px;right:8px}
+.bar{display:flex;gap:2px;height:12px;border-radius:999px;overflow:hidden}
+.tr{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:72px;width:100%;text-align:left}
+.tr+.tr{border-top:1px solid #E8ECF1}
+.dk .tr+.tr{border-top:1px solid #26354D}
+.tn{font-size:16px;line-height:24px;font-weight:600}
+.tm{font-size:13px;line-height:20px;color:#556173}
+.dk .tm{color:#A9B5C6}
+.tg{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:8px;background:#E8ECF1;color:#1B2232;font-size:13px;line-height:20px;font-weight:600;white-space:nowrap}
+.dk .tg{background:#213049;color:#EDF1F6}
+.tabs{display:flex;height:48px;box-shadow:inset 0 -1px 0 #DCE2E9}
+.dk .tabs{box-shadow:inset 0 -1px 0 #26354D}
+.tabs button{flex:1;position:relative;color:#556173;font-size:15px;line-height:24px;font-weight:600}
+.dk .tabs button{color:#A9B5C6}
+.tabs button.on{color:#1B2232;font-weight:700}
+.dk .tabs button.on{color:#EDF1F6}
+.tabs .u{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:3px;border-radius:999px;background:#E05500}
+.dk .tabs .u{background:#FF8533}
+.sep{border-top:1px solid #E8ECF1}
+.dk .sep{border-top:1px solid #26354D}
+.off{display:flex;align-items:center;gap:10px;min-height:40px;padding:8px 16px;background:#1B2232;color:#FFFFFF;font-size:13px;line-height:20px;font-weight:600}
+.av{display:inline-block;border-radius:999px;overflow:hidden;flex:none;background-size:cover;background-position:center;background-color:#DCE2E9}
+.av-1{background-image:url(data:image/webp;base64,UklGRhgRAABXRUJQVlA4IAwRAACQSQCdASqwALAAPjEWiUMiISEUiPY0IAMEoAy6Ip/rXX7cB7v+Tn8c94uyv4j8af0b3D+HO270e/KP2b/Y/238g/mZ/tfVH+ff+77gX6ufsB1t/MJ+137le8z6Pf8H/qfYQ/pX+Q9KL2QPQk8uf2XP69/0PSb//96//ovEfzB/Kpg9w/2aR+ssXlfqHezN/3AR9eeMjxAOITNCaZfz3/X+wr+uZy5bAhe2KAn3t9pYduqSlQhcZ3F6fRyuCM3U1/BPdRb41e6DQu8C85H2KqvLkqwItogPWEHyQ9fU1JiK7462nGfdkxELXO9XWzjcv//Lsbl/pbktvsEnLD7+P5Cw+Osvqw0IzHACqtBy831EvC7dxbKtDUh6N4TByCKof872wMb61FPV4WC59LfrTZpIwjEWoVC1qfBlpV2lSGb8Zb27GAbzMn+ZtyEAv0rhfBOzclSjqQbsOq4TPuhb1W0l0natW+uE52BJ5HXJ/upJkEJA/iRK+8b5k3FB11chJKJ+xHhdtkpp76//4IKkjAm60k9hSRepBitNyaJZBW6zitGH6GXPWF8JhVqKAd4tapuDo4urykGfmfLfg8+XtrS6EFnpJrOPxbOKQL/okmE/UWgDT9c2z1ZCM5Z4DRH3GM8gtv5nqA5YCD7Pb/P4cCoVZyY+t59y5YElAm/sdNoPbO9Xb1rxkRUz4eI7SKYDDXCuPVvxyOPf1b1JTch+GELcN7OzW0+tG13Nce3OvZCRrhzEdbL0uvAcAn6WKV1hKUl1enTQVaLeQqxCosHTCe7yyHCs8AAA/v7deA1hdI59G1gaNFn5rqXFGHsTMKNX6jUbxhaXomDpEhLHBlPZ/R/hW23jkbLc2UGtuWI79IAPdeItqE4BrP9XA748fQP1lSi48lGWpWbiz8mmy8d/uqJKyXUdBhPYDmjLmIikS5MJEER+GZcNL8sQvvbo8NT/OrdgAASxtYz0Iu3I3bT36ftH/vU8SxZJK9Fp02vbiiFjuA7BJ3papPbwGe+LRoX4y+TYYABdIIMUy74rVSniBZ8otXTvVVDTKnZRRg6jjgzdLvMY/7PzrpshGLbNu12kgDw9CcNnuUb5Pv0NU2ltkvK1o79GC11AHLxkm3YuhPH9cw4KmYRqPgvleYq0h+AINZGrHh//igwZ///Yc9749YTNK/3/IZfvEj1wQLiTKUM/VKTEE7rdoHK46oXyVdgfYsEsiQV+RJTU6EElVaR4nh73HuXUKzVroNW7zTv3UMU4OxRFVHXMcGCN18V4YvMfNXmdMoR8AOfYeVYHwEVX+1u3qXqfUltFJnzxwCDBSgJfduZ64AtaDwitu4V0dRmiLQ2cbHiVBwx5Wupx2qBurkQkL+kfF6UsyZ+BwQH7FEB6bm++nyiupg7++HmnGhe0Vr05p7gFJzRmtj0Pi8xQZbH0bYz4SXKBIASo2OnCuXnxNJ/em1XKl6uj7QXEOSbb8+FkgWmyLeJv3UduH3+5031B7GkZWWMRIBEoH8nuwAQnZf6CZroEG+88Oco9zWW6T6JfA7O5LWDCudhFEQ+DvLdZcvGuNhvg8dI5cXidQQYeISbXyYAsPZU4IQTR0RRZeLfS35YtuakreBL2aUwD9fNW9V3ilXnv9pPiePPeEzHx0pj8CmSy7erBlvjipx01kNIp9DDvKOQcSWFLb2+T4xZuSwr7BW0rpy+BxAj3iYma3A2pQZLrImkIRE3w+B1cauHGllL7Wo+xLoNLs5eYJtRPcGEUtNEkMLbzngtVTj8fiEKJICBJGYbxybx4LpG0Leo0GQpQk5aKIsLODQBxb/NKNy89CGBABpegDcOl2xtW2KwXtLAQQXjdxN0lxoui4bNfG7SKP8nNhXmO36vrJYfuZYPfO6oAwFuVD3/8yT4TqM3gdaA0QMSzxUPHWAACpE57dUhXmXl7gQwsxYWrfbGnxcrfa+EfCJj8qw99B2E+GwRTjbjuOYqwwdD/U8XeqKdYME4EaDPzaFEVxZMM50PZOiMzaDO1x/EVnuMVvhX99Oa5+/ub43GmzVabtrRUjSTgxo7c6s/OfM+3ZcPHxl3vX6kVqOx7xlPdsHMHC/CzU7+Kkgb5yIIIYNqGewDvhgTYXCgjrwZCxT6hvMcAUssiukeqAKbpTvdR1FwH6Xd4ExdOELRV8FFsBwzBRqKvi6LjExpIc+3+224nMN+EfM7lqPPtTf2CIVT/DRhpz9MxOA/CAd6yjNg/9TPggvRuElSAC/GiLRnZaDmHW2N8KqrGsM0q6/9aJD2hSloi/9zqGMxkb7fq7nUWxeJ6rLhptX/hd3Akw5gXX/ptw4+TofJeXRWalgaKE56Wtv6I64GyrhZvv6SxVg7T8LYU/+TERyolWc1so4tb/Y2zTBZlcuQBP+uEOEbf8Yyb8plYSz5/rVp7AgLe82ZBy1HM/5R1Sk3hTRZN+o7bf6elb+7x+0sKMMl0+jQ6bedecsNs7FrH5Hx9UBDlrFShFt2clNj3xOqW/ro74VYld7xEaPuTlRKCMJmc3uNLyCt1h6hhJkAAgjKpLHLBY8ZH21Ir2HCtiTkVaBmWSD4Z6EbXvOtYEyH+coNM81QTwlJgUR1rbEhoQWzY6detI2YjfM203cNBXKpOxHIl9A8+itcaVGMCAiAfXWKlxluSPUyZQywI5Ji5rfzlH1MbX9yHCZjB4xgIXl1/rTvpFHLeamrzIrHyu5zmpTLJMFwFtxmjHkAemKaV76Df2lkldf642xLyihl/rbkAtEDze6f9FM2O22Em3N1xDnSrBDlW3/0ghaA9WwXQRbH+dJd6ZjHkkDznkdmJC2Z1lam7/Kv6w9mv/ip6QbwPMy/v/zzS1+Quvz8pi484HTVr/n7/wGNr5/82S4nOsbqo/6b3ifQKVeBn51E8fyOj7rB9Io6X7Wycg4eBk656yKLp9YJHFP92xe4kpNE6HGS6Hhnlp+K4h4wRiUjyWMnKeJyrCl47CA9vRvmMbgVVuPg974XbSXx7FemC68qxGT07T0PCkG4LjD/dsJe5af/lwbtIT1jMxqWjMy7BLp2+3E9SfOs1PRrgDtvFRiXhssNUIggh8AsxT73Z0T/GLIBNe5has7t6lCDOcNq/kExEAEgu1sw4xdmvABA6fB9mGo3VxxAW+Lyurj384qzHzLDuaOChe/OnU2bhdEltxeRmib1rSf4b9GeARCSfS2A7kQsihA07i9LNxX/7/8m9GHfrS/oEO9YvG28jto1rqa+8eoZvSOMsaaXcIi5PJe6axURlMYW6SZyFyR5f3Qlc2PtX8CBtM8kjxHhyY4ZLqKnABaISO6VlnFIPbEbB986ToLBb3STeI+5v+VN3j5CN9t/nGoz70Z3gQhtm79/BvzTJf/v/2wyXcHOJoafPNXf+/qrrNiKGX2lXjNP7eBltoMOL4+e2TrpfcW86lNAahvD+ZxvBxTW8h3BcnJELBe/BH2Zt7JVqD90JGxtLGbvd6aFx3ASp/IVu1hlqY1LBC6DoQb91TEvV6Mm2zdWWseEXHLx8I81gQiR7forD3TYzotbn3k3D7Vv9NUMgRsvRz6HaL1MOb1+H03j142/L7PuJK1PHSm9M75uv/RpVlgCCWmSmQJ1POtKYG/R8R51tUWAz3ZD9Pz4F0uIDzCEsG/M/Mc1PhM6afZam54PrjwlW+flZ6uFXmR1ZWldUvfKg+7f0kmYcSbEGx+W6cmFxkHiyrj5yhuEhElNozuvtyuCJWWTwRBZXzaW2c2MvUwdE/R/OTOIBW8lykxZbbCoNS5QQvK7VYMaPDO4caaIgiFleldB716hKoxqiKqoybjnzEkgr2+fl/Bb64PA6yxEt7kaXbRCxhKfOPeEzuuct1SJMS1mditISvXJ1rMCE4fLWPIKqdTxdORooahV/SNkptPG3xPTVpe1G+5VjNPbncBmvxNZv8xtFdF5F1ulVpk04miIWhe1T/NYBkgChv3OtpVApIIYOvYkR10X9LiJI0cpEPtgmV8x4/4fQN8lcTM+v4cxKieEoeJ/cQPsxXgo/sOxfGavgOmFm8uRKwLvMzmfJjJLxHf2NGbQmyswmEZg1OVaMfe2EjVWM8yxoKGyUO1zCA2M2mo0oJvqBL9jSAEFuzxGfHmAsgendJfFE7ChZWkE4uUEAqCQGqgZQE9cjYFOe3pYTdmKq3ZforMtf60MziAO6mCV48xvqxDhW0vyWngS9WWrcyKB3skH+PTbh2kJvJjA4WNgxy70+gXrqIxeai/jeCiY+ex3V5953SK3vxpWC9c9EZ0o2fhdk96cDLMseyOYZCtCAt+pIlyVOhPDQ3p8CraH+3mqc8hyTxM5/MmaoYOciuN5SVkEaUj3cEDNHr5bjg6YyNqv3+GRiLqI53pK4xvSE9SRYL9RzqLET5JuD9z/CmzhYhqfNCMRNFXmMiIWWgVdp3v7EHmugDziADQ2bPNRZ2mu2CnycWWwtwtoD+6YcBTt480sKBb/iJYd52/zYPTgMrxqyz8Pi0g9xJp3NFXntWFDC9h68Snm1YEDzC5JRWSTjt4GqvRzxAaoc6aCYTSci4CG1yEL7biajuRGGehj9vCd7bKxgFQUzG6DRBfv/VWLyPckukZXhGfJbqXn+KnVZqdc0uh3sxELAj//UNo6K3q6J6xRC6QTBeNZYUspnKtYayVfLX2aGfnKhHV4XnOVDEk3pj4fMtUfebJCG0G15uhoKwZKQb2690tLStIvzDCEJN2gLjiVitVvEQSWoL9qZP6t6IQ+6D9FX36kFgcetYMWTnv5UTzF7OtdD+Ft47yxZfmXEI0msObvWKENu8NcmyC0r0yOECikWuLL/1pMV/GMdRP1IX2VsYx+aW0w01omO2RdUzWik9P/fs9DOwtJUxYwnuJCmL+NKI3y0AwG7XKoTqWuGemS4ykwklzpsUmPKgtaw/FQJ0D+gzekgFY4K5nmWTEoK+PKsHvdLs5nflm+3yDUWO84O+Erc1FV/GCnctMzmzpRTkRkuhFktMhCu8FzoOGdKw8C42ulcENv2I1nskAJcGdWTNNahxwxCAjOQHxGAzwPljg4PT/MwEtz998o4v4r4dj3Us9Y+YV+IbGESoGqZTTFPdGc6E3rZQ2A7HFQg5c2T0ALpHNwWUtJP1HDmAFx2e45g58Htzhdws7WHNbwb0seOEcwg9l9BsOci+QyCroyWpw//kzRwVqKjDPWVNz7lFafHhXfd5lW5fr6XW4ak30EC9CTBDBnlNwpoXFE5gZ7UZa1hKBYtC765hcF8TAKQx4+Us5/nRl/wS0XooHnRXM6MWKOH/9LrAtAu7UgW17mOgY+64Id8IDnM3sY8D6jhMJ5tXhImyj4a4HEvFSWYBblev/h4eRKby5M7haXP6B6GdmnVfLEK6dwJEln+vsGMM7J5OnlUpZOFiM8VJEjOp1MijUn+JJ598ukzD6Q3t5ICw5C+ts6pD7MOWMkbwJx9+3amRCaxLT00W6vm1iDQawx6eVEemAgL1hMDmoz5yxfDK5/ThIeB6MGdkvTv7O9X7ppFeJyWo2VEm4TDVOAvXqXJVvHpOmpkk/7DektP3lcDraD6Tu1CCuzp+qSbezy4mMAlbZ7Dt+HnO19LB09LIwXz3k3aLIkROvHWv7osy2GIyB95d91MCyt20d1D7beGiIg3zwaTrvBfmyD9rG2/LOTV5xTwm1qftR4XRrtZAGkTJin8AOMorKJ759nYZ9H9sCP4Q9OuF358ww1pNoc2Jk7dgoT6gOggivYq+0sMYlPsdmi1pmyg46eXVOyKbGq62J58FRw+xKMpkCgncvG5H4P0D2bAKk2j4yClXUJAAAAAAA==)}
+.av-2{background-image:url(data:image/webp;base64,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)}
+.band{background:#0F294A;padding-top:62px;border-radius:0 0 24px 24px}
+.bnt{height:56px;display:flex;align-items:center;padding:0 16px;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.3px;color:#FFFFFF}
+.gh{font-size:13px;line-height:20px;font-weight:600;color:#556173;margin:0 0 8px 4px}
+.grp{background:#FFFFFF;border-radius:16px;overflow:hidden}
+.rw{width:100%;display:flex;align-items:center;gap:12px;min-height:56px;padding:12px 16px;position:relative;text-align:left}
+.rw+.rw::before{content:"";position:absolute;top:0;left:52px;right:0;height:1px;background:#E8ECF1}
+.ic{width:24px;height:24px;flex:none;color:#556173;display:inline-flex}
+.ti{font-size:16px;line-height:24px;font-weight:600;color:#1B2232}
+.su{font-size:13px;line-height:20px;color:#556173}
+.bd{flex:1;min-width:0}
+.vl{font-size:15px;line-height:24px;color:#556173}
+.sw{position:relative;width:52px;height:32px;border-radius:999px;flex:none;display:inline-block}
+.s2{height:40px;padding:0 14px;border-radius:12px;background:#FFFFFF;color:#0F294A;box-shadow:inset 0 0 0 1.5px #0F294A;font-size:14px;line-height:20px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.s2.p{background:#0F294A;color:#FFFFFF;box-shadow:none}
+.ro{background:#E8ECF1;border-color:transparent}
+.fo{border-color:#1A3357!important;box-shadow:inset 0 0 0 1px #1A3357}
+.fe{border-color:#C42D35!important;box-shadow:inset 0 0 0 1px #C42D35}
+.wrap{position:relative}
+.wrap .ib{position:absolute;top:0;right:0;color:#556173}
+.bdg{height:48px;border-radius:12px;background:#C42D35;color:#FFFFFF;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.fr{box-shadow:0 0 0 2px #FFFFFF,0 0 0 4px #36537C}
+.dn{color:#C42D35}
+.inf{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:#E2EAF4;color:#1B2232;font-size:15px;line-height:22px}
+.wrn{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:#FCF1D9;color:#1B2232;font-size:15px;line-height:22px}
+.rd{width:24px;height:24px;border-radius:999px;box-shadow:inset 0 0 0 2px #697586;flex:none}
+.rd.on{box-shadow:inset 0 0 0 7px #0F294A}
+.lg h3{margin:20px 0 6px;font-size:17px;line-height:24px;font-weight:700}
+.lg p{margin:0 0 10px;font-size:16px;line-height:26px}
+</style>
+</helmet>
+<div style="width: 1880px; height: 1480px; background: #FFFFFF; color: #1B2232; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; padding: 64px; display: flex; flex-direction: column; gap: 40px; font-variant-numeric: tabular-nums">
+<header style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 15px; line-height: 20px; font-weight: 600; color: #556173">9.1 · Tur 8 · Hesap</div>
+<h1 style="margin: 0; font-size: 36px; line-height: 44px; font-weight: 800; letter-spacing: -0.5px">Hesap · 4 Kare</h1>
+<p style="margin: 4px 0 0; font-size: 17px; line-height: 28px; color: #556173; max-width: 1500px">Kök sekme: profil özeti, gruplar (Hesap, Koçluk, Bildirimler, Yasal, Destek), onaylı Çıkış Yap ve sürüm. Koç varyantı.</p>
+</header>
+<div style="display: flex; gap: 48px; align-items: flex-start"><div style="flex: none"><div class="ph" role="img" aria-label="Hesap"><div class="di"></div><div class="band" style="padding-bottom: 20px"><div class="bnt">Hesap</div><button aria-label="Profil: Alparslan Kuloğlu, 12. Sınıf, Eşit Ağırlık, koçun Mehmet Özkan" style="display: flex; align-items: center; gap: 14px; padding: 4px 16px 0; width: 100%; text-align: left; color: #FFFFFF"><span class="av av-1" style="width: 56px; height: 56px" aria-hidden="true"></span><div style="flex: 1; min-width: 0"><div style="font-size: 17px; line-height: 24px; font-weight: 700">Alparslan Kuloğlu</div><div style="font-size: 13px; line-height: 20px; color: #C5D4E8">12. Sınıf · Eşit Ağırlık</div><div style="font-size: 13px; line-height: 20px; color: #C5D4E8">Koçun: Mehmet Özkan</div></div><span style="color: #C5D4E8; display: inline-flex"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button></div><div class="abs" style="top: 222px; left: 16px; right: 16px; display: flex; flex-direction: column; gap: 20px"><div><div class="gh">Hesap</div><div class="grp"><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg></span><span class="bd"><span class="ti" style="display: block">Profil</span><span class="su">Ad, e-posta, telefon, sınıf ve alan</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="40" y="88" width="176" height="128" rx="8"></rect><path d="M88 88V56a40 40 0 0 1 80 0V88"></path></svg></span><span class="bd"><span class="ti" style="display: block">Şifre</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button></div></div><div><div class="gh">Koçluk</div><div class="grp"><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="84" cy="108" r="52"></circle><path d="M10.23 200a88 88 0 0 1 147.54 0"></path><path d="M172 160a87.93 87.93 0 0 1 73.77 40"></path><path d="M152.69 59.7A52 52 0 1 1 172 160"></path></svg></span><span class="bd"><span class="ti" style="display: block">Koçluk</span><span class="su">Mehmet Özkan</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button></div></div><div><div class="gh">Bildirimler</div><div class="grp"><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M56 104a72 72 0 0 1 144 0c0 35.82 8.3 64.6 14.9 76A8 8 0 0 1 208 192H48a8 8 0 0 1-6.88-12C47.71 168.6 56 139.81 56 104Z"></path><path d="M96 192a32 32 0 0 0 64 0"></path></svg></span><span class="bd"><span class="ti" style="display: block">Bildirimler</span><span class="su">Deneme sonucu, koç, görüşme, hatırlatıcı</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button></div></div><div><div class="gh">Yasal</div><div class="grp"><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M200 224H56a8 8 0 0 1-8-8V40a8 8 0 0 1 8-8h96l56 56v128a8 8 0 0 1-8 8Z"></path><polyline points="152 32 152 88 208 88"></polyline><line x1="96" y1="136" x2="160" y2="136"></line><line x1="96" y1="168" x2="160" y2="168"></line></svg></span><span class="bd"><span class="ti" style="display: block">Sözleşmeler</span><span class="su">Kullanım Koşulları, KVKK, Gizlilik</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button></div></div></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="224 208 32 208 32 48"></polyline><polyline points="224 96 160 152 96 104 32 160"></polyline></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Analizlerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M128 88a32 32 0 0 1 32-32h72v144h-72a32 32 0 0 0-32 32"></path><path d="M24 200h72a32 32 0 0 1 32 32V88a32 32 0 0 0-32-32H24Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Derslerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Hesap</span></button></div></nav><div class="hi"></div></div><div class="cap"><b>1 · Hesap · üst</b><span>Bant: başlık ve profil özeti (avatar, ad, sınıf · alan, koç); ad ve avatar yalnız burada ve Anasayfa'da (D-9). Gruplar: Hesap, Koçluk, Bildirimler, Yasal, Destek.</span></div></div><div style="flex: none"><div class="ph" role="img" aria-label="Hesap, kaydırılmış"><div class="di"></div><div class="abs" style="top: 0; left: 0; right: 0; height: 110px; background: #0F294A; padding: 62px 16px 0; z-index: 2"><div style="height: 48px; display: flex; align-items: center; font-size: 17px; line-height: 24px; font-weight: 700; color: #FFFFFF">Hesap</div></div><div class="abs" style="top: 126px; left: 16px; right: 16px; display: flex; flex-direction: column; gap: 20px"><div><div class="gh">Bildirimler</div><div class="grp"><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M56 104a72 72 0 0 1 144 0c0 35.82 8.3 64.6 14.9 76A8 8 0 0 1 208 192H48a8 8 0 0 1-6.88-12C47.71 168.6 56 139.81 56 104Z"></path><path d="M96 192a32 32 0 0 0 64 0"></path></svg></span><span class="bd"><span class="ti" style="display: block">Bildirimler</span><span class="su">Deneme sonucu, koç, görüşme, hatırlatıcı</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button></div></div><div><div class="gh">Yasal</div><div class="grp"><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M200 224H56a8 8 0 0 1-8-8V40a8 8 0 0 1 8-8h96l56 56v128a8 8 0 0 1-8 8Z"></path><polyline points="152 32 152 88 208 88"></polyline><line x1="96" y1="136" x2="160" y2="136"></line><line x1="96" y1="168" x2="160" y2="168"></line></svg></span><span class="bd"><span class="ti" style="display: block">Sözleşmeler</span><span class="su">Kullanım Koşulları, KVKK, Gizlilik</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button></div></div><div><div class="gh">Destek</div><div class="grp"><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="32" y="56" width="192" height="144" rx="8"></rect><polyline points="224 56 128 144 32 56"></polyline></svg></span><span class="bd"><span class="ti" style="display: block">Bize Yaz</span><span class="su">E-posta uygulaman açılır</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="216 104 216 40 152 40"></polyline><line x1="144" y1="112" x2="216" y2="40"></line><path d="M184 144v64a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8V80a8 8 0 0 1 8-8h64"></path></svg></span></button></div></div><div><div class="grp"><button class="rw" style="color: #C42D35"><span class="ic" style="color: #C42D35"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="174 86 216 128 174 170"></polyline><line x1="104" y1="128" x2="216" y2="128"></line><path d="M104 216H48a8 8 0 0 1-8-8V48a8 8 0 0 1 8-8h56"></path></svg></span><span class="bd"><span class="ti" style="display: block; color: #C42D35">Çıkış Yap</span></span></button></div></div><p class="c13 mu" style="text-align: center">Sürüm 3.0.0 (300)</p></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="224 208 32 208 32 48"></polyline><polyline points="224 96 160 152 96 104 32 160"></polyline></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Analizlerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M128 88a32 32 0 0 1 32-32h72v144h-72a32 32 0 0 0-32 32"></path><path d="M24 200h72a32 32 0 0 1 32 32V88a32 32 0 0 0-32-32H24Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Derslerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Hesap</span></button></div></nav><div class="hi"></div></div><div class="cap"><b>2 · Hesap · alt</b><span>Çıkış Yap ayrı grupta, kırmızı, oksuz (1.13). Altta sürüm. Ödeme, paketler ve kayıtlı kartlar yok (D-4).</span></div></div><div style="flex: none"><div class="ph" role="img" aria-label="Çıkış onayı"><div class="di"></div><div class="abs" style="top: 0; left: 0; right: 0; height: 110px; background: #0F294A; padding: 62px 16px 0; z-index: 2"><div style="height: 48px; display: flex; align-items: center; font-size: 17px; line-height: 24px; font-weight: 700; color: #FFFFFF">Hesap</div></div><div class="abs" style="top: 126px; left: 16px; right: 16px; display: flex; flex-direction: column; gap: 20px"><div><div class="gh">Bildirimler</div><div class="grp"><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M56 104a72 72 0 0 1 144 0c0 35.82 8.3 64.6 14.9 76A8 8 0 0 1 208 192H48a8 8 0 0 1-6.88-12C47.71 168.6 56 139.81 56 104Z"></path><path d="M96 192a32 32 0 0 0 64 0"></path></svg></span><span class="bd"><span class="ti" style="display: block">Bildirimler</span><span class="su">Deneme sonucu, koç, görüşme, hatırlatıcı</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button></div></div><div><div class="gh">Yasal</div><div class="grp"><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M200 224H56a8 8 0 0 1-8-8V40a8 8 0 0 1 8-8h96l56 56v128a8 8 0 0 1-8 8Z"></path><polyline points="152 32 152 88 208 88"></polyline><line x1="96" y1="136" x2="160" y2="136"></line><line x1="96" y1="168" x2="160" y2="168"></line></svg></span><span class="bd"><span class="ti" style="display: block">Sözleşmeler</span><span class="su">Kullanım Koşulları, KVKK, Gizlilik</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button></div></div><div><div class="gh">Destek</div><div class="grp"><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="32" y="56" width="192" height="144" rx="8"></rect><polyline points="224 56 128 144 32 56"></polyline></svg></span><span class="bd"><span class="ti" style="display: block">Bize Yaz</span><span class="su">E-posta uygulaman açılır</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="216 104 216 40 152 40"></polyline><line x1="144" y1="112" x2="216" y2="40"></line><path d="M184 144v64a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8V80a8 8 0 0 1 8-8h64"></path></svg></span></button></div></div><div><div class="grp"><button class="rw" style="color: #C42D35"><span class="ic" style="color: #C42D35"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="174 86 216 128 174 170"></polyline><line x1="104" y1="128" x2="216" y2="128"></line><path d="M104 216H48a8 8 0 0 1-8-8V48a8 8 0 0 1 8-8h56"></path></svg></span><span class="bd"><span class="ti" style="display: block; color: #C42D35">Çıkış Yap</span></span></button></div></div><p class="c13 mu" style="text-align: center">Sürüm 3.0.0 (300)</p></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="224 208 32 208 32 48"></polyline><polyline points="224 96 160 152 96 104 32 160"></polyline></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Analizlerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M128 88a32 32 0 0 1 32-32h72v144h-72a32 32 0 0 0-32 32"></path><path d="M24 200h72a32 32 0 0 1 32 32V88a32 32 0 0 0-32-32H24Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Derslerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Hesap</span></button></div></nav><div class="scrim"></div><section class="sh" role="dialog" aria-modal="true" aria-label="Çıkış yapılsın mı?"><div class="hd"></div><div style="padding: 20px 24px 0"><div style="display: flex; gap: 12px; align-items: flex-start"><h2 class="t20">Çıkış yapılsın mı?</h2></div><p class="b15 mu" style="margin-top: 8px">Tekrar girmek için kullanıcı adın ve şifren gerekecek. Okuttuğun denemeler hesabında kalır.</p></div><div class="shf" style="padding-top: 20px"><button class="bp">Çıkış Yap</button><button class="bq">Vazgeç</button></div></section><div class="hi"></div></div><div class="cap"><b>3 · Çıkış onayı</b><span>Normal onay (1.21): eylemin adı sorunun fiili. Kırmızı düğme yalnız silmede.</span></div></div><div style="flex: none"><div class="ph" role="img" aria-label="Hesap, koç"><div class="di"></div><div class="band" style="padding-bottom: 20px"><div class="bnt">Hesap</div><button aria-label="Profil: Mehmet Özkan, öğrenci koçu, koçluk kodu MOZK-4821" style="display: flex; align-items: center; gap: 14px; padding: 4px 16px 0; width: 100%; text-align: left; color: #FFFFFF"><span class="av av-2" style="width: 56px; height: 56px" aria-hidden="true"></span><div style="flex: 1; min-width: 0"><div style="font-size: 17px; line-height: 24px; font-weight: 700">Mehmet Özkan</div><div style="font-size: 13px; line-height: 20px; color: #C5D4E8">Öğrenci koçu</div><div style="font-size: 13px; line-height: 20px; color: #C5D4E8">Koçluk kodun: MOZK-4821</div></div><span style="color: #C5D4E8; display: inline-flex"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button></div><div class="abs" style="top: 222px; left: 16px; right: 16px; display: flex; flex-direction: column; gap: 20px"><div><div class="gh">Hesap</div><div class="grp"><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg></span><span class="bd"><span class="ti" style="display: block">Profil</span><span class="su">Ad, e-posta, telefon, sınıf ve alan</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="40" y="88" width="176" height="128" rx="8"></rect><path d="M88 88V56a40 40 0 0 1 80 0V88"></path></svg></span><span class="bd"><span class="ti" style="display: block">Şifre</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button></div></div><div><div class="gh">Koçluk</div><div class="grp"><div class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="84" cy="108" r="52"></circle><path d="M10.23 200a88 88 0 0 1 147.54 0"></path><path d="M172 160a87.93 87.93 0 0 1 73.77 40"></path><path d="M152.69 59.7A52 52 0 1 1 172 160"></path></svg></span><span class="bd"><span class="ti" style="display: block">Koçluk kodun</span><span class="su" style="font-size: 15px; line-height: 24px; font-weight: 700; color: #1B2232; letter-spacing: 0.5px">MOZK-4821</span></span><button class="ib" aria-label="Kodu kopyala"><svg width="22" height="22" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="168 168 216 168 216 40 88 40 88 88"></polyline><rect x="40" y="88" width="128" height="128"></rect></svg></button><button class="ib" aria-label="Kodu paylaş" style="margin-right: -12px"><svg width="22" height="22" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="64" cy="128" r="32"></circle><circle cx="176" cy="200" r="32"></circle><circle cx="176" cy="56" r="32"></circle><line x1="149.09" y1="73.3" x2="90.91" y2="110.7"></line><line x1="90.91" y1="145.3" x2="149.09" y2="182.7"></line></svg></button></div></div></div><div><div class="gh">Bildirimler</div><div class="grp"><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M56 104a72 72 0 0 1 144 0c0 35.82 8.3 64.6 14.9 76A8 8 0 0 1 208 192H48a8 8 0 0 1-6.88-12C47.71 168.6 56 139.81 56 104Z"></path><path d="M96 192a32 32 0 0 0 64 0"></path></svg></span><span class="bd"><span class="ti" style="display: block">Bildirimler</span><span class="su">Deneme sonucu, koç, görüşme, hatırlatıcı</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button></div></div><div><div class="gh">Yasal</div><div class="grp"><button class="rw"><span class="ic"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M200 224H56a8 8 0 0 1-8-8V40a8 8 0 0 1 8-8h96l56 56v128a8 8 0 0 1-8 8Z"></path><polyline points="152 32 152 88 208 88"></polyline><line x1="96" y1="136" x2="160" y2="136"></line><line x1="96" y1="168" x2="160" y2="168"></line></svg></span><span class="bd"><span class="ti" style="display: block">Sözleşmeler</span><span class="su">Kullanım Koşulları, KVKK, Gizlilik</span></span><span class="ic" style="width: 20px; height: 20px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></span></button></div></div></div><nav aria-label="Ana gezinme" style="position: absolute; left: 0; right: 0; bottom: 0; height: 102px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px 24px 0 0; box-shadow: inset 0 1px 0 #DCE2E9; z-index: 3"><div style="display: flex; height: 68px"><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M152 208v-48a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v48a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8v-92.46a8 8 0 0 1 2.62-5.92l80-75.54a8 8 0 0 1 10.77 0l80 75.54a8 8 0 0 1 2.61 5.92V208a8 8 0 0 1-8 8h-48a8 8 0 0 1-8-8Z"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Anasayfa</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="84" cy="108" r="52"></circle><path d="M10.23 200a88 88 0 0 1 147.54 0"></path><path d="M172 160a87.93 87.93 0 0 1 73.77 40"></path><path d="M152.69 59.7A52 52 0 1 1 172 160"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Öğrencilerim</span></button><div style="width: 72px; position: relative"><button aria-label="Okut: deneme formunu kamerayla okut" style="position: absolute; top: -16px; left: 8px; width: 56px; height: 56px; border-radius: 16px; background: #FF6600; color: #0F294A; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(15,41,74,0.08)"><svg width="28" height="28" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z"></path><circle cx="128" cy="132" r="36"></circle></svg></button><span aria-hidden="true" style="position: absolute; top: 44px; left: 0; right: 0; text-align: center; font-size: 12px; line-height: 16px; font-weight: 700; color: #1B2232">Okut</span></div><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #556173"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M71.58 144 32 176V48a8 8 0 0 1 8-8h128a8 8 0 0 1 8 8v88a8 8 0 0 1-8 8Z"></path><path d="M80 144v40a8 8 0 0 0 8 8h96.42L224 224V96a8 8 0 0 0-8-8h-40"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 600">Görüşmelerim</span></button><button style="width: 82.5px; position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px; gap: 6px; color: #0F294A" aria-current="page"><span style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 4px; border-radius: 0 0 4px 4px; background: #E05500"></span><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="128" cy="128" r="96"></circle><circle cx="128" cy="120" r="40"></circle><path d="M63.8 199.37a72 72 0 0 1 128.4 0"></path></svg><span style="font-size: 12px; line-height: 16px; font-weight: 700">Hesap</span></button></div></nav><div class="hi"></div></div><div class="cap"><b>4 · Koç · Hesap</b><span>Koçta Koçluk grubu kodu taşır: Kopyala ve Paylaş. Alt çubuk koç sekmeleriyle (D-29).</span></div></div></div><section class="nts" style="grid-template-columns: repeat(3, minmax(0, 1fr))"><div><h3>Bileşenler</h3><ul><li>Satır 1.13: ikon 24, başlık 16/600, alt metin 13, sağda ok; grup başlığı 13/600, grup yüzeyi 16 pt köşe.</li><li>Bant 1.18 kök; profil özeti tek dokunma alanı, Profil'i açar.</li><li>Bize Yaz: dış uygulama ikonu (ArrowSquareOut), e-posta taslağı sürüm ve cihaz bilgisiyle dolar.</li></ul></div><div><h3>Davranış</h3><ul><li>Çıkış: onaydan sonra Hoş geldin (2.2 kare 5); bekleyen gönderim varsa onay metni "Gönderilmeyi bekleyen 1 form var; çıkarsan silinir." olur.</li><li>Koç kodu Kopyala: toast "Kod kopyalandı." (4 sn); Paylaş sistem paylaşımını açar.</li><li>Sürüm satırına uzun basınca kopyalanır (destek için).</li></ul></div><div><h3>Eskiden</h3><ul><li>Ödeme ve Paketler, Kayıtlı Kartlarım menüde (31, 34, 35).</li><li>Satırlar zeminle aynı tonda (1,05:1); renkli emoji benzeri ikonlar (31).</li><li>Koçluk ve destek yoktu; sürüm numarası yoktu; Çıkış diğer satırlarla aynı biçimde (31).</li></ul></div></section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1880,&quot;height&quot;:1480}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+
+
+</body></html>

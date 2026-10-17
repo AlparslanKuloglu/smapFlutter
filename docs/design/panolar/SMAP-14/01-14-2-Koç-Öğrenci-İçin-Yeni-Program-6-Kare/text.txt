@@ -1,0 +1,277 @@
+14.2 · Tur 12 · Geri Gelen Özellikler
+Koç · Öğrenci İçin Yeni Program · 6 Kare
+3.5'in dört karesi koç bağlamında, kayıt sonrası ve öğrencinin düzeltilen Çantam'ı: bağlam şeridi her adımda, metinler öğrenciyi adıyla anar, Çanta yalnız gerçek alanlarla.
+Adım 1/3 
+Alparslan Kuloğlu'nun verileri
+12. Sınıf · EA 
+Hangi günler çalışacak? 
+Alparslan için birden çok gün seçebilirsin; geçmiş 
+günler seçilemez. 
+Ekim 2026 
+Pzt
+Sal
+Çar
+Per
+Cum
+Cmt
+Paz 
+1
+2
+3
+4 
+5
+6
+7
+8
+9
+10
+11 
+12
+13
+14
+15
+16
+17
+18 
+19
+20
+21
+22
+23
+24
+25 
+26
+27
+28
+29
+30
+31 
+Bugün 
+6 gün seçildi 12–17 Ekim 
+Devam Et
+1 · Günler
+Tam ekran akış; bağlam şeridi barın altında. Başlık ve yardım 
+üçüncü kişiyle: "Hangi günler çalışacak?". Seçim kuralları 3.5·1 ile 
+aynı.
+Adım 2/3 
+Alparslan Kuloğlu'nun verileri
+12. Sınıf · EA 
+Konuları yerleştir 
+Boş bir saate dokun, konu seç. Izgara 06:00–23:00. 
+Pzt 
+12 
+2 konu 
+Sal 
+13 
+Çar 
+14 
+Per 
+15 
+Cum 
+16 
+Cmt 
+17 
+09:00 
+10:00
+Türkçe 
+Fiilde Çatı 
+11:00 
+12:00 
+13:00 
+14:00
+Tarih 
+Kurtuluş Savaşı Hazırlık 
+Dönemi 
+15:00
+Konu Ekle 
+Devam Et
+2 · Izgara
+3.5·2 aynen: 06:00–23:00 saatlik ızgara, dolu saat ders tonunda ve 
+çıkarılabilir.
+Adım 2/3 
+Alparslan Kuloğlu'nun verileri
+12. Sınıf · EA 
+Konuları yerleştir 
+Boş bir saate dokun, konu seç. Izgara 06:00–23:00. 
+Pzt 
+12 
+2 konu 
+Sal 
+13 
+Çar 
+14 
+Per 
+15 
+Cum 
+16 
+Cmt 
+17 
+09:00 
+10:00
+Türkçe 
+Fiilde Çatı 
+11:00 
+12:00 
+13:00 
+14:00
+Tarih 
+Kurtuluş Savaşı Hazırlık 
+Dönemi 
+15:00
+Konu Ekle 
+Devam Et 
+Pazartesi 12 Ekim · 15:00 
+Çanta
+Dersler 
+Çanta: Alparslan'ın denemelerinden çıkan eksik konular. 
+Noktalama İşaretleri 
+TYT Türkçe 
+Fiilde Çatı 
+TYT Türkçe · Programda: Pzt 10:00 
+Kurtuluş Savaşı Hazırlık Dönemi 
+AYT Tarih · Programda: Pzt 14:00 
+İklim Bilgisi 
+TYT Coğrafya 
+Ekle
+3 · Konu seç · Çanta
+Segment Çanta | Dersler. Çanta satırı: konu adı ve ders adı. 
+EksikTag ve "Son denemede…" satırı yok (Çanta verisinde bu 
+alanlar yok); "Programda: Pzt 10:00" istemcide hesaplanır.
+Adım 3/3 
+Alparslan Kuloğlu'nun verileri
+12. Sınıf · EA 
+Programa ad ver 
+Program adı 
+Ekim 3. Hafta 
+Motto (isteğe bağlı) 
+Az ama her gün 
+Program listesinde adın altında görünür. 
+Kimin için 
+Alparslan Kuloğlu 
+Günler 
+12–17 Ekim 2026 · 6 gün 
+Çalışmalar 
+3 çalışma, hepsi Pazartesi 
+Salı–Cumartesi henüz boş; kaydettikten sonra 
+ekleyebilirsin. 
+Programı Kaydet
+4 · Ad ve motto
+Özet kartında "Kimin için" satırı. Vazgeç onayı 3.5'teki gibi; tek 
+birincil eylem "Programı Kaydet".
+Alparslan Kuloğlu
+Görüşme Planla 
+Alparslan Kuloğlu'nun verileri
+12. Sınıf · EA 
+Analiz
+Denemeler
+Program 
+Ekim 2. Hafta 
+Her gün biraz daha · 5–11 Ekim 2026 
+Düzenle 
+Gün
+Hafta 
+Pzt 
+5 
+Sal 
+6 
+Çar 
+7 
+Per 
+8 
+Cum 
+9 
+Cmt 
+10 
+Paz 
+11 
+10:00 
+Türkçe 
+Fiilde Çatı 
+14:00 
+Tarih 
+Kurtuluş Savaşı Hazırlık 
+Dönemi 
+20:00 
+Coğrafya 
+İklim Bilgisi 
+Bu programı Alparslan da görür ve 
+düzenleyebilir. Yaptığın değişiklik onun 
+programına hemen yansır. 
+Programlar
+4 program 
+Program Alparslan'ın hesabına kaydedildi. 
+Anasayfa
+Öğrencilerim
+Okut
+Görüşmelerim
+Hesap
+5 · Kaydedildi
+Program sekmesine dönülür; toast 4 sn. Sekme bu haftanın 
+programında kalır; yeni program Programlar listesinde en üstte, 
+satırdaki sayı 4 olur.
+Adım 2/3 
+Konuları yerleştir 
+Boş bir saate dokun, konu seç. Izgara 06:00–23:00. 
+Pzt 
+12 
+2 konu 
+Sal 
+13 
+Çar 
+14 
+Per 
+15 
+Cum 
+16 
+Cmt 
+17 
+09:00 
+10:00
+Türkçe 
+Fiilde Çatı 
+11:00 
+12:00 
+13:00 
+14:00
+Tarih 
+Kurtuluş Savaşı Hazırlık 
+Dönemi 
+15:00 
+16:00
+Konu Ekle 
+Devam Et 
+Pazartesi 12 Ekim · 16:00 
+Çantam
+Dersler 
+Çantam: denemelerinden çıkan eksik konuların. 
+Noktalama İşaretleri 
+TYT Türkçe 
+Fiilde Çatı 
+TYT Türkçe · Programda: Pzt 10:00 
+Kurtuluş Savaşı Hazırlık Dönemi 
+AYT Tarih · Programda: Pzt 14:00 
+İklim Bilgisi 
+TYT Coğrafya 
+Ekle
+6 · Öğrencide Çantam
+Öğrencinin kendi akışında aynı satır düzeni: konu adı, ders adı, 
+varsa "Programda". EksikTag ve "Son denemede…" satırı kalktı; 
+Çanta verisinde bu alanlar yok. Şerit yok.
+Yerine geçtiği kare: 3.5·3
+Akış
+Programlar › Yeni Program ya da 14.1·4 "Program Kur" → Günler → Izgara → Ad ve motto → Program sekmesi (toast 4 sn).
+Geri her adımda seçimi korur; X değişiklik varsa "Program kaydedilmesin mi?" sorar.
+Kaydetme hatası: toast "Program kaydedilemedi. Bağlantını kontrol edip tekrar dene."; form ve seçimler korunur.
+3.5·3 düzeltmesi
+Öğrencinin kendi akışında da (kare 6) Çantam satırından EksikTag ve "Son denemede 13 sorudan 9'u yanlış" satırı kalkar: veri yok.
+Çanta satırı yalnız data.name ve lesson.name gösterir; "Programda" istemcide hesaplanır.
+Derse göre gruplama kalktı: ders adı satırın alt satırında, iki akışta aynı.
+Veri
+POST /student/getMyWeeklies?studentId= → bagItems[] (Çanta).
+GET /student/getAllMainSubjects?studentId= → Dersler ağacı.
+POST /student/addNewProgram?studentId= {dataObj:{name, motto, tasks}}; tarih aralığı görev günlerinden çıkar.
+Varsayımlar (T12)
+T12.1 Tam ekran akışlarda bağlam şeridi barın hemen altında, ekran başlığının üstünde (10.4 düzeni).
+T12.5 Yeni program örneği "Ekim 3. Hafta" / "Az ama her gün", 12–17 Ekim; konu sheet'inin açıldığı saat Pazartesi 15:00. Ek C'de 
+yok.
+T12.6 Kayıttan sonra Program sekmesine dönülür; sekme bu haftanın programında kalır.

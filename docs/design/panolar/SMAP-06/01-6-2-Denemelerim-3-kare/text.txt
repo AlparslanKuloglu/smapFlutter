@@ -1,0 +1,93 @@
+6.2 Denemelerim 
+ 6.2 · Tur 4 · Analizlerim
+ Denemelerim · 3 Kare
+ Okutulan bütün denemeler. Tür segmenti, tarih ve sıralama; her satırda net en belirgin öğe. Satır Deneme Detay'ı (5.3) açar.
+ Analizlerim
+ Genel Denemelerim 
+ Tümü 10 deneme TYT 6 deneme AYT 4 deneme 
+ Tüm tarihler · En yeni önce Süz ve Sırala 
+ Türkiye Geneli Deneme 6
+ AYT 5 Eki. 2026 · Örnek Yayınları 
+ 86 D 74 Y 0 B 
+ 67,5
+ net
+ TYT Genel Deneme 9
+ TYT 28 Eyl. 2026 
+ 80 D 21 Y 19 B 
+ 74,75
+ net
+ AYT denemesi
+ AYT 21 Eyl. 2026 
+ 59,25
+ net
+ TYT denemesi
+ TYT 15 Eyl. 2026 
+ 71,5
+ net
+ TYT denemesi
+ TYT 4 Ağu. 2026 
+ 66,75
+ net
+ AYT denemesi
+ AYT 2 Ağu. 2026 
+ 55
+ net
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Liste Net en belirgin öğe; D/Y/B küçük. Ad Ek C'de yoksa başlık tür + "denemesi" olur, alan uydurulmaz. Favori yıldızı düşük vurgulu, yalnız cihazda. 
+ Analizlerim
+ Genel Denemelerim 
+ Tümü 10 deneme TYT 6 deneme AYT 4 deneme 
+ Tüm tarihler · En yeni önce Süz ve Sırala 
+ Türkiye Geneli Deneme 6
+ AYT 5 Eki. 2026 · Örnek Yayınları 
+ 86 D 74 Y 0 B 
+ 67,5
+ net
+ TYT Genel Deneme 9
+ TYT 28 Eyl. 2026 
+ 80 D 21 Y 19 B 
+ 74,75
+ net
+ AYT denemesi
+ AYT 21 Eyl. 2026 
+ 59,25
+ net
+ TYT denemesi
+ TYT 15 Eyl. 2026 
+ 71,5
+ net
+ TYT denemesi
+ TYT 4 Ağu. 2026 
+ 66,75
+ net
+ AYT denemesi
+ AYT 2 Ağu. 2026 
+ 55
+ net
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ Süz ve Sırala
+ Tarih Tüm tarihler Son 30 gün Son 3 ay Bu eğitim yılı 
+ Sıralama En yeni önce En yüksek net önce 
+ Uygula 
+ 2 · Süz ve Sırala Tür ekranda segment olarak; tarih ve sıralama tek sheet'te. Seçim satırın üstündeki özet metinde görünür. 
+ Analizlerim
+ Genel Denemelerim 
+ Henüz deneme yok
+ İlk denemeni okuttuğunda sonuçların, netin ve eksik konuların burada görünür.
+ İlk Denemeni Okut 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Boş İlk kullanım: kil "Harita" (1.25), başlık, tek cümle, tek eylem; eylem kamerayı açar. Genel sekmesi de aynı boş durumu gösterir. 
+ Neden liste
+ Deneme adları uzun ve kesilmemeli; listede iki satıra kadar sığar, ızgarada kesiliyordu (21).
+ Kapaklar birbirine benziyor; ayırt edici olan tarih ve net. Liste tarihe göre taranır.
+ Satır 1.16 deneme kartının liste hâli; 6 satır bir ekrana sığıyor (ızgarada 4).
+ Bileşenler
+ Satır: kapak 40 × 54, ad title-sm , tür etiketi + kısa tarih + yayınevi, ikonlu küçük D/Y/B; net 24/32 sağda.
+ Favori 48 pt hedef, 20 pt yıldız control (#697586); favoride lacivert dolgu.
+ Sonsuz kaydırma 8'erli sayfa; altta küçük çark; liste bitince "Hepsi bu kadar" yazmaz, son satır yeterli.
+ Eskiden
+ "67.5 net" ham metin; anlamsız "Deneme: 1" hapı; "(Test)" eki (21).
+ Filtre yoktu (API destekliyordu); yıldız sunucuya yazılmıyordu ama bunu söyleyen yoktu (envanter).

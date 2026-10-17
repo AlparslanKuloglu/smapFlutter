@@ -1,0 +1,47 @@
+7.5 Derslerim Durumlar 
+ 7.5 · Tur 5 · Derslerim ve Konular
+ Derslerim ve Konular · Durumlar · 4 Kare
+ İskelet, süzgeç boş, hata ve çevrimdışı.
+ Derslerim
+ TYT AYT 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · İskelet Bant ve segment hemen; satırlar iskelet. 15 sn'de veri yoksa hata. 
+ Tarih
+ Eksiklerim (60) Kartlarım · 41/64 
+ TYT 60 eksik AYT SOS-2 eksik yok 
+ Bu süzgeçte gösterilecek konu yok
+ SOS-2'de eksik konun yok. Tüm SOS-2 konularını görmek için süzgeci kapat.
+ Süzgeci Kapat 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · Süzgeç boş Tarih, Eksiklerim açık, SOS-2 seçili: bu kategoride eksik yok. Tek eylem süzgeci kapatır. 
+ Konu yüklenemedi
+ Bağlantını kontrol edip tekrar dene.
+ Tekrar Dene 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Hata Konu detayı yüklenemezse ekran düzeyi hata; geri dönüş her zaman açık. 
+ Derslerim
+ TYT AYT 
+ Çevrimdışısın. Son kaydedilen veriler gösteriliyor. 
+ Türkçe
+ 28 eksik Tarih
+ 41/64 kart 
+ 60 eksik Coğrafya
+ 44 eksik Fizik
+ 7 eksik Kimya
+ 9 eksik Biyoloji
+ 11 eksik 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 4 · Çevrimdışı Şerit bandın hemen altında, içeriği iter; bant köşeleri düzleşir (1.22). Web'deki dersler çevrimdışıyken gizlenir. 
+ Boş metinler
+ Ders detayı, Eksiklerim: "Bu süzgeçte gösterilecek konu yok."
+ Konu detayı, alt başlık yok: "Bu konunun içeriği hazırlanıyor."
+ Kart destesi sekmeleri: 8.1'de.
+ Hareket ve haptik
+ İskelet 1200 ms; çevrimdışı şeridi 250 ms.
+ Hata ve çevrimdışı haptiksiz.
+ Eskiden
+ Spinner; hata UI'ı yoktu (print); "Konu verisi bulunamadı." hem boş hem hata için aynı (envanter).

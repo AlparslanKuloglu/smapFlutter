@@ -1,0 +1,48 @@
+1.14 D/Y/B Ailesi 
+ 1.14 · Temeller · Veri
+ D/Y/B Ailesi
+ Dört bileşen, tek sözlük (1.4): büyük ve küçük üçlü sayaç, yığılmış çubuk, soru hücresi. Sıra her yerde Doğru, Yanlış, Boş. Sayılar birincil metin renginde; renk ve şekil çipte; etiket ya da harf her zaman yanında. Ekran okuyucu tek cümle duyar: "86 doğru, 74 yanlış, 0 boş".
+ Büyük üçlü sayaç · AYT, Türkiye Geneli Deneme 6 
+ Doğru 
+ 86
+ Yanlış 
+ 74
+ Boş 
+ 0
+ Boş sıfır da olsa görünür: veri var, değeri sıfır. Eskiden genel kartlarda Boş hiç yoktu (24).
+ Büyük üçlü sayaç · TYT Genel Deneme 9 
+ Doğru 
+ 80
+ Yanlış 
+ 21
+ Boş 
+ 19
+ Küçük üçlü sayaç · harfli ve kelimeli 
+ 23 D 
+ 17 Y 
+ 0 B 
+ 5 doğru 
+ 7 yanlış 
+ 0 boş 
+ Harfli: akordeon başlığı, deneme kartı. Kelimeli: yer olan konu satırı (Cumhuriyet Edebiyatı, 5 · 7 · 0).
+ Soru hücresi · anatomi 
+ 6 B Doğru B 
+ 7 C Doğru A 
+ 31 – Doğru D 
+ 7 C Doğru A 
+ 6 B x 
+ Doğru Yanlış Boş Basılı Odak 
+ Üstte soru numarası ve durum çipi; ortada senin işaretin (boşsa –); yanlış ve boşta altta doğru cevap (#0B6E3E, yanlış zeminde 5,46:1). Hücre dokununca Soru Detay açılır. Eskiden her hücrede anlamı belirsiz bir "A" vardı ve doğruda daire yoktu (26). Bu paneldeki şıklar örnek; soru bazında şık verisi Ek C'de yok.
+ Yığılmış yatay çubuk · test başına, AYT Türkiye Geneli Deneme 6 
+ Türk Dili ve Edebiyatı–Sosyal Bilimler 1 18,75 net 
+ 23 D 17 Y 0 B 40 soru 
+ Sosyal Bilimler 2 11,25 net 
+ 17 D 23 Y 0 B 40 soru 
+ Matematik 21,25 net 
+ 25 D 15 Y 0 B 40 soru 
+ Fen Bilimleri 16,25 net 
+ 21 D 19 Y 0 B 40 soru 
+ Dört testin neti toplamı 67,5. Çubuk 12 pt, parçalar arasında 2 pt boşluk (renk görmeyen için de sınır). Sıfır olan parça çizilmez, sayacı yine yazar.
+ Boş parçalı örnek · TYT Genel Deneme 9, Temel Matematik 
+ Temel Matematik 20,75 net 
+ 22 D 5 Y 13 B 40 soru

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<title>3.5 Yeni Program</title>
+<script src="res/d8a26523-5f9c-4a57-b432-f8fd97c4db89.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/1c029426-8b79-4c5b-8728-7fec0e79e3a3.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("res/a63b8f77-1060-4b8d-869b-b05f410ab76b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/1c029426-8b79-4c5b-8728-7fec0e79e3a3.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("res/a63b8f77-1060-4b8d-869b-b05f410ab76b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/1c029426-8b79-4c5b-8728-7fec0e79e3a3.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("res/a63b8f77-1060-4b8d-869b-b05f410ab76b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/1c029426-8b79-4c5b-8728-7fec0e79e3a3.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("res/a63b8f77-1060-4b8d-869b-b05f410ab76b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko70yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko50yygg_vbd-E.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/1c029426-8b79-4c5b-8728-7fec0e79e3a3.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("res/a63b8f77-1060-4b8d-869b-b05f410ab76b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+button{font-family:inherit;border:0;margin:0;cursor:pointer;background:transparent;color:inherit;padding:0}
+input{font-family:inherit;margin:0;outline:none}
+.ph{width:402px;height:874px;border-radius:56px;overflow:hidden;position:relative;background:#F2F4F7;box-shadow:0 0 0 1px #C3CBD6;color:#1B2232;flex:none}
+.ph.dk{background:#0A1424;box-shadow:0 0 0 1px #34445F;color:#EDF1F6}
+.ph.cm{background:#000000;box-shadow:0 0 0 1px #34445F;color:#FFFFFF}
+.di{position:absolute;top:11px;left:138px;width:126px;height:37px;border-radius:19px;background:#000000;z-index:9}
+.hi{position:absolute;bottom:8px;left:134px;width:134px;height:5px;border-radius:3px;background:#1B2232;z-index:9}
+.dk .hi,.cm .hi{background:#EDF1F6}
+.abs{position:absolute}
+.cap{width:402px}
+.cap b{display:block;font-size:15px;line-height:20px;margin-top:16px}
+.cap span{display:block;font-size:13px;line-height:20px;color:#556173;margin-top:2px}
+.t24{margin:0;font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.3px}
+.t20{margin:0;font-size:20px;line-height:28px;font-weight:700;letter-spacing:-0.2px}
+.t17{margin:0;font-size:17px;line-height:24px;font-weight:700;letter-spacing:-0.1px}
+.b16{margin:0;font-size:16px;line-height:24px}
+.b15{margin:0;font-size:15px;line-height:24px}
+.c13{margin:0;font-size:13px;line-height:20px}
+.mu{color:#556173}
+.dk .mu,.cm .mu{color:#A9B5C6}
+.bp{height:48px;border-radius:12px;background:#0F294A;color:#FFFFFF;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bp,.cm .bp{background:#C5D4E8;color:#091A31}
+.bp.off{background:#DCE2E9;color:#9AA5B4}
+.dk .bp.off,.cm .bp.off{background:#213049;color:#56657C}
+.bo{height:48px;border-radius:12px;background:#FFFFFF;color:#0F294A;box-shadow:inset 0 0 0 1.5px #0F294A;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bo,.cm .bo{background:transparent;color:#C5D4E8;box-shadow:inset 0 0 0 1.5px #C5D4E8}
+.bq{height:48px;border-radius:12px;background:#E8ECF1;color:#1B2232;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none}
+.dk .bq,.cm .bq{background:#213049;color:#EDF1F6}
+.bt{height:48px;padding:0 12px;border-radius:12px;color:#1A3357;font-size:16px;line-height:24px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.dk .bt,.cm .bt{color:#9BB3D3}
+.ib{width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;flex:none;border-radius:12px;color:inherit}
+.ibc{width:40px;height:40px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:rgba(10,20,36,0.64);color:#FFFFFF}
+.scrim{position:absolute;inset:0;background:rgba(9,26,49,0.48);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:4}
+.scrim.dk2{background:rgba(2,6,14,0.64)}
+.sh{position:absolute;left:0;right:0;bottom:0;background:#FFFFFF;border-radius:24px 24px 0 0;z-index:5;display:flex;flex-direction:column;color:#1B2232}
+.dk .sh{background:#18263D;color:#EDF1F6}
+.hd{width:36px;height:4px;border-radius:999px;background:#C3CBD6;margin:8px auto 0;flex:none}
+.dk .hd{background:#34445F}
+.shh{display:flex;align-items:flex-start;gap:8px;padding:12px 12px 0 24px}
+.shf{padding:16px 24px 42px;display:flex;flex-direction:column;gap:12px}
+.xi{width:36px;height:36px;border-radius:999px;background:#E8ECF1;color:#1B2232;display:inline-flex;align-items:center;justify-content:center}
+.dk .xi{background:#213049;color:#EDF1F6}
+.fl{display:block;font-size:14px;line-height:20px;font-weight:600;margin-bottom:8px}
+.in{width:100%;height:48px;padding:0 16px;border-radius:12px;border:1px solid #697586;background:#FFFFFF;font-size:16px;line-height:24px;color:#1B2232;display:flex;align-items:center}
+.in.err{border:2px solid #C42D35;padding:0 15px}
+.ph-t{color:#697586}
+.er{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:13px;line-height:20px;font-weight:600;color:#C42D35}
+.hp{font-size:13px;line-height:20px;color:#556173;margin-top:6px}
+.seg{display:flex;gap:4px;padding:4px;background:#E8ECF1;border-radius:12px}
+.dk .seg{background:#213049}
+.seg button{flex:1;min-height:36px;border-radius:8px;color:#556173;font-size:14px;line-height:20px;font-weight:600}
+.dk .seg button{color:#A9B5C6}
+.seg button.on{background:#0F294A;color:#FFFFFF}
+.dk .seg button.on{background:#C5D4E8;color:#091A31}
+.seg.cnt button{min-height:48px;padding:4px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.seg.cnt button b{font-size:14px;line-height:20px;font-weight:700;color:#1B2232}
+.seg.cnt button i{font-style:normal;font-size:13px;line-height:20px;font-weight:500}
+.seg.cnt button.on b{color:#FFFFFF}
+.seg.cnt button.on i{color:#C5D4E8}
+.dk .seg.cnt button b{color:#EDF1F6}
+.dk .seg.cnt button.on b{color:#091A31}
+.dk .seg.cnt button.on i{color:#1A3357}
+.sq{width:48px;height:48px;border-radius:12px;background:#FFFFFF;color:#1B2232;box-shadow:inset 0 0 0 1px #697586;font-size:16px;line-height:24px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.sq.w{width:64px}
+.sq.on{background:#0F294A;color:#FFFFFF;box-shadow:none}
+.cb{display:flex;align-items:center;gap:12px;min-height:48px;font-size:15px;line-height:24px;text-align:left}
+.cbx{width:24px;height:24px;border-radius:4px;box-shadow:inset 0 0 0 2px #697586;flex:none;display:inline-flex;align-items:center;justify-content:center}
+.dk .cbx{box-shadow:inset 0 0 0 2px #6B7D97}
+.c24{width:24px;height:24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;flex:none}
+.dyl{font-size:15px;line-height:24px;font-weight:600;color:#556173}
+.dk .dyl{color:#A9B5C6}
+.dyv{font-size:24px;line-height:32px;font-weight:700;letter-spacing:-0.4px;margin-top:4px}
+.card{background:#FFFFFF;border-radius:16px}
+.dk .card{background:#121D31}
+.toast{display:flex;align-items:center;gap:12px;min-height:48px;padding:12px 16px;border-radius:12px;background:#0F294A;color:#FFFFFF;font-size:15px;line-height:24px;box-shadow:0 8px 24px rgba(15,41,74,0.16)}
+.sk{background:#E8ECF1;border-radius:8px}
+.nts{display:grid;column-gap:48px;row-gap:24px}
+.nts h3{margin:0 0 10px;font-size:17px;line-height:24px;font-weight:700}
+.nts ul{margin:0;padding:0 0 0 18px;font-size:14px;line-height:22px;color:#1B2232}
+.nts li{margin:0 0 6px}
+.nts code{font-family:inherit;font-weight:600;color:#264066}
+.tk{display:inline-block;font-weight:600;color:#264066}
+.cm .sh .bp{background:#0F294A;color:#FFFFFF}
+.cm .sh .bq{background:#E8ECF1;color:#1B2232}
+.cm .sh .mu{color:#556173}
+.cm .sh .bt{color:#1A3357}
+.c16{width:16px;height:16px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;flex:none}
+.dk .c16{color:#0A1424}
+.sm{display:inline-flex;align-items:center;gap:4px;font-size:15px;line-height:20px;font-weight:700}
+.sm i{font-style:normal;font-size:13px;font-weight:500;color:#556173}
+.dk .sm i{color:#A9B5C6}
+.qc{height:76px;border-radius:8px;padding:6px;display:flex;flex-direction:column;justify-content:space-between;position:relative;text-align:center}
+.qn{font-size:13px;line-height:20px;font-weight:600;color:#556173;text-align:left}
+.dk .qn{color:#A9B5C6}
+.qm{font-size:20px;line-height:24px;font-weight:700}
+.qa{font-size:13px;line-height:16px;font-weight:600;color:#0B6E3E}
+.dk .qa{color:#52CC8E}
+.qs{position:absolute;top:8px;right:8px}
+.bar{display:flex;gap:2px;height:12px;border-radius:999px;overflow:hidden}
+.tr{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:72px;width:100%;text-align:left}
+.tr+.tr{border-top:1px solid #E8ECF1}
+.dk .tr+.tr{border-top:1px solid #26354D}
+.tn{font-size:16px;line-height:24px;font-weight:600}
+.tm{font-size:13px;line-height:20px;color:#556173}
+.dk .tm{color:#A9B5C6}
+.tg{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:8px;background:#E8ECF1;color:#1B2232;font-size:13px;line-height:20px;font-weight:600;white-space:nowrap}
+.dk .tg{background:#213049;color:#EDF1F6}
+.tabs{display:flex;height:48px;box-shadow:inset 0 -1px 0 #DCE2E9}
+.dk .tabs{box-shadow:inset 0 -1px 0 #26354D}
+.tabs button{flex:1;position:relative;color:#556173;font-size:15px;line-height:24px;font-weight:600}
+.dk .tabs button{color:#A9B5C6}
+.tabs button.on{color:#1B2232;font-weight:700}
+.dk .tabs button.on{color:#EDF1F6}
+.tabs .u{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:3px;border-radius:999px;background:#E05500}
+.dk .tabs .u{background:#FF8533}
+.sep{border-top:1px solid #E8ECF1}
+.dk .sep{border-top:1px solid #26354D}
+.off{display:flex;align-items:center;gap:10px;min-height:40px;padding:8px 16px;background:#1B2232;color:#FFFFFF;font-size:13px;line-height:20px;font-weight:600}
+.band{background:#0F294A;padding-top:62px;border-radius:0 0 24px 24px}
+.gt{width:40px;height:40px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.ek{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 8px;border-radius:8px;background:#FCF1D9;color:#8A5A00;font-size:13px;line-height:20px;font-weight:700;white-space:nowrap}
+.dk .ek{background:#33270F;color:#F2C46D}
+.av{display:inline-block;border-radius:999px;overflow:hidden;flex:none;background-size:cover;background-position:center;background-color:#DCE2E9}
+.hb{background:#0F294A;padding:62px 16px 20px;border-radius:0 0 24px 24px;color:#FFFFFF;position:relative;z-index:2}
+.hg{margin:0;font-size:20px;line-height:28px;font-weight:700;letter-spacing:-0.2px;color:#FFFFFF}
+.cdn{font-size:40px;line-height:48px;font-weight:800;letter-spacing:-1px;color:#FFFFFF}
+.cdl{font-size:15px;line-height:20px;font-weight:700;color:#FFFFFF}
+.cds{font-size:13px;line-height:20px;color:#C5D4E8}
+.pg{display:flex;flex-direction:column;gap:28px;padding:24px 16px 140px}
+.sc{display:flex;flex-direction:column;gap:12px}
+.pr{display:flex;align-items:center;gap:12px;padding:10px 12px 10px 16px;min-height:64px;width:100%;text-align:left}
+.pr+.pr{border-top:1px solid #E8ECF1}
+.dk .pr+.pr{border-top:1px solid #26354D}
+.tt{font-size:15px;line-height:24px;font-weight:600;min-width:48px;flex:none}
+.nv{font-size:40px;line-height:48px;font-weight:800;letter-spacing:-1px}
+.stp{display:flex;gap:8px;padding:0 16px;overflow:hidden}
+.st{display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:132px;flex:none;padding:16px;border-radius:16px;background:#FFFFFF;text-align:left}
+.dk .st{background:#121D31}
+.dg{color:#36537C}
+.dk .dg{color:#9BB3D3}
+.dn{color:#C42D35}
+.dk .dn{color:#FF8F8F}
+.bdg{height:48px;border-radius:12px;background:#C42D35;color:#FFFFFF;font-size:16px;line-height:24px;font-weight:600;width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.dk .bdg{background:#FF8F8F;color:#3B0A10}
+.fr{box-shadow:0 0 0 2px #FFFFFF,0 0 0 4px #36537C}
+.dk .fr{box-shadow:0 0 0 2px #18263D,0 0 0 4px #9BB3D3}
+.s2{height:40px;padding:0 14px;border-radius:12px;background:#FFFFFF;color:#0F294A;box-shadow:inset 0 0 0 1.5px #0F294A;font-size:14px;line-height:20px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.dk .s2{background:transparent;color:#C5D4E8;box-shadow:inset 0 0 0 1.5px #C5D4E8}
+.s2.off{background:#DCE2E9;color:#9AA5B4;box-shadow:none}
+.dc{width:48px;height:64px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;background:#FFFFFF}
+.dk .dc{background:#121D31}
+.dc i{font-style:normal;font-size:13px;line-height:20px;font-weight:600;color:#556173}
+.dk .dc i{color:#A9B5C6}
+.dc b{font-size:17px;line-height:24px;font-weight:700}
+.dc.on{background:#0F294A;color:#FFFFFF}
+.dc.on i{color:#C5D4E8}
+.dk .dc.on{background:#C5D4E8;color:#091A31}
+.dk .dc.on i{color:#1A3357}
+.td{position:absolute;bottom:5px;left:50%;transform:translateX(-50%);width:6px;height:6px;border-radius:999px;background:#E05500}
+.dk .td{background:#FF8533}
+.dc.on .td{background:#FF6600}
+.dk .dc.on .td{background:#E05500}
+.cal{display:grid;grid-template-columns:repeat(7,46px);gap:4px;justify-content:center}
+.cal span,.cal button{height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;line-height:24px;font-weight:600}
+.cal .wd{height:24px;font-size:13px;line-height:20px;color:#556173}
+.cal .ds{color:#9AA5B4;font-weight:500}
+.cal .on{background:#0F294A;color:#FFFFFF}
+.cal .tdy{box-shadow:inset 0 0 0 2px #E05500}
+.hr{display:flex;align-items:stretch;gap:8px;min-height:52px;padding:4px 12px 4px 16px}
+.hr+.hr{border-top:1px solid #E8ECF1}
+.hl{width:44px;flex:none;font-size:13px;line-height:20px;font-weight:600;color:#556173;padding-top:12px}
+.blk{flex:1;min-width:0;border-radius:12px;display:flex;align-items:center;gap:10px;padding:8px 4px 8px 12px}
+.rd{width:24px;height:24px;border-radius:999px;box-shadow:inset 0 0 0 2px #697586;flex:none}
+.rd.on{box-shadow:inset 0 0 0 7px #0F294A}
+.ro{display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 24px;width:100%;text-align:left}
+.gl{font-size:13px;line-height:20px;font-weight:700;color:#556173;padding:12px 24px 0}
+.wg{position:relative}
+.wh{font-size:13px;line-height:20px;font-weight:600;color:#556173}
+.dk .wh{color:#A9B5C6}
+.wb{position:absolute;border-radius:8px;padding:4px 6px;display:flex;flex-direction:column;gap:2px;overflow:hidden}
+.wb span{font-size:13px;line-height:16px;font-weight:700}
+.x13 .hg{font-size:26px;line-height:34px}
+.x13 .cdn{font-size:52px;line-height:60px}
+.x13 .cdl{font-size:19.5px;line-height:26px}
+.x13 .cds,.x13 .c13,.x13 .tm{font-size:17px;line-height:26px}
+.x13 .t20{font-size:26px;line-height:36px}
+.x13 .tn{font-size:21px;line-height:30px}
+.x13 .tt{font-size:19.5px;line-height:30px}
+.x13 .b15{font-size:19.5px;line-height:30px}
+.x13 .nv{font-size:52px;line-height:62px}
+.x13 .bt,.x13 .bp{font-size:20.8px;line-height:28px}
+.x13 .sm{font-size:19.5px;line-height:26px}
+.x13 .sm i{font-size:17px}
+</style>
+</helmet>
+<div style="width: 1880px; height: 1520px; background: #FFFFFF; color: #1B2232; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; padding: 64px; display: flex; flex-direction: column; gap: 40px; font-variant-numeric: tabular-nums">
+<header style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 15px; line-height: 20px; font-weight: 600; color: #556173">3.5 · Tur 6 · Anasayfa ve Programım</div>
+<h1 style="margin: 0; font-size: 36px; line-height: 44px; font-weight: 800; letter-spacing: -0.5px">Yeni Program · 4 Kare</h1>
+<p style="margin: 4px 0 0; font-size: 17px; line-height: 28px; color: #556173; max-width: 1500px">Çoklu gün seçimi, 06:00–23:00 ızgarasına Çantam'dan ya da Dersler'den konu yerleştirme, ad ve mottoyla kaydetme.</p>
+</header>
+<div style="display: flex; gap: 48px; align-items: flex-start"><div style="flex: none"><div class="ph" role="img" aria-label="Yeni program, günler"><div class="di"></div><div class="abs" style="top: 54px; left: 4px; right: 16px; height: 48px; display: flex; align-items: center; justify-content: space-between"><button class="ib" aria-label="Vazgeç"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="200" y1="56" x2="56" y2="200"></line><line x1="200" y1="200" x2="56" y2="56"></line></svg></button><span class="c13 mu" style="font-weight: 600">Adım 1/3</span></div><div class="abs" style="top: 110px; left: 16px; right: 16px"><h2 class="t24">Hangi günler çalışacaksın?</h2><p class="b15 mu" style="margin-top: 4px">Birden çok gün seçebilirsin; geçmiş günler seçilemez.</p></div><div class="abs" style="top: 206px; left: 16px; right: 16px"><div class="card" style="padding: 8px 8px 12px"><div style="display: flex; align-items: center; justify-content: space-between"><button class="ib" aria-label="Önceki ay"><svg width="22" height="22" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="160 208 80 128 160 48"></polyline></svg></button><h3 class="t17">Ekim 2026</h3><button class="ib" aria-label="Sonraki ay"><svg width="22" height="22" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="96 48 176 128 96 208"></polyline></svg></button></div><div class="cal" role="grid" aria-label="Ekim 2026" style="margin-top: 4px"><span class="wd">Pzt</span><span class="wd">Sal</span><span class="wd">Çar</span><span class="wd">Per</span><span class="wd">Cum</span><span class="wd">Cmt</span><span class="wd">Paz</span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span><span class="ds" aria-disabled="true">1</span><span class="ds" aria-disabled="true">2</span><span class="ds" aria-disabled="true">3</span><span class="ds" aria-disabled="true">4</span><span class="ds" aria-disabled="true">5</span><span class="ds" aria-disabled="true">6</span><span class="ds" aria-disabled="true">7</span><span class="ds" aria-disabled="true">8</span><span class="ds" aria-disabled="true">9</span><button class="tdy" aria-label="10 Ekim, bugün" aria-pressed="false">10</button><button aria-label="11 Ekim" aria-pressed="false">11</button><button class="on" aria-label="12 Ekim, seçili" aria-pressed="true">12</button><button class="on" aria-label="13 Ekim, seçili" aria-pressed="true">13</button><button class="on" aria-label="14 Ekim, seçili" aria-pressed="true">14</button><button class="on" aria-label="15 Ekim, seçili" aria-pressed="true">15</button><button class="on" aria-label="16 Ekim, seçili" aria-pressed="true">16</button><button class="on" aria-label="17 Ekim, seçili" aria-pressed="true">17</button><button aria-label="18 Ekim" aria-pressed="false">18</button><button aria-label="19 Ekim" aria-pressed="false">19</button><button aria-label="20 Ekim" aria-pressed="false">20</button><button aria-label="21 Ekim" aria-pressed="false">21</button><button aria-label="22 Ekim" aria-pressed="false">22</button><button aria-label="23 Ekim" aria-pressed="false">23</button><button aria-label="24 Ekim" aria-pressed="false">24</button><button aria-label="25 Ekim" aria-pressed="false">25</button><button aria-label="26 Ekim" aria-pressed="false">26</button><button aria-label="27 Ekim" aria-pressed="false">27</button><button aria-label="28 Ekim" aria-pressed="false">28</button><button aria-label="29 Ekim" aria-pressed="false">29</button><button aria-label="30 Ekim" aria-pressed="false">30</button><button aria-label="31 Ekim" aria-pressed="false">31</button></div></div></div><div class="abs c13 mu" style="top: 572px; left: 20px; right: 20px; display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 6px; box-shadow: inset 0 0 0 2px #E05500"></span>Bugün</div><div class="abs" style="left: 0; right: 0; bottom: 0; background: #FFFFFF; box-shadow: 0 -1px 0 #DCE2E9; padding: 12px 24px 42px; z-index: 2"><div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px"><span class="tn" style="font-weight: 700">6 gün seçildi</span><span class="tm">12–17 Ekim</span></div><button class="bp">Devam Et</button></div><div class="hi"></div></div><div class="cap"><b>1 · Günler</b><span>Çoklu seçim: günlere tek tek dokunulur (aralık şart değil). Geçmiş günler pasif; bugün turuncu halka. Alt çubuk yok: tam ekran akış.</span></div></div><div style="flex: none"><div class="ph" role="img" aria-label="Yeni program, ızgara"><div class="di"></div><div class="abs" style="top: 54px; left: 4px; right: 16px; height: 48px; display: flex; align-items: center; justify-content: space-between"><button class="ib" aria-label="Geri"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="160 208 80 128 160 48"></polyline></svg></button><span class="c13 mu" style="font-weight: 600">Adım 2/3</span></div><div class="abs" style="top: 110px; left: 16px; right: 16px"><h2 class="t24">Konuları yerleştir</h2><p class="b15 mu" style="margin-top: 4px">Boş bir saate dokun, konu seç. Izgara 06:00–23:00.</p></div><div class="abs" style="top: 186px; left: 16px; right: 16px; display: flex; justify-content: space-between"><button class="dc on" style="width: 56px; height: 76px" aria-pressed="true" aria-label="Pzt 12 Ekim, 2 konu"><i>Pzt</i><b>12</b><span style="font-size: 13px; line-height: 16px; font-weight: 600">2 konu</span></button><button class="dc" style="width: 56px; height: 76px" aria-pressed="false" aria-label="Sal 13 Ekim"><i>Sal</i><b>13</b></button><button class="dc" style="width: 56px; height: 76px" aria-pressed="false" aria-label="Çar 14 Ekim"><i>Çar</i><b>14</b></button><button class="dc" style="width: 56px; height: 76px" aria-pressed="false" aria-label="Per 15 Ekim"><i>Per</i><b>15</b></button><button class="dc" style="width: 56px; height: 76px" aria-pressed="false" aria-label="Cum 16 Ekim"><i>Cum</i><b>16</b></button><button class="dc" style="width: 56px; height: 76px" aria-pressed="false" aria-label="Cmt 17 Ekim"><i>Cmt</i><b>17</b></button></div><div class="abs card" style="top: 278px; left: 16px; right: 16px; overflow: hidden"><div class="hr"><span class="hl">09:00</span><button class="blk" aria-label="09:00, boş, konu ekle" style="min-height: 44px"></button></div><div class="hr"><span class="hl">10:00</span><div class="blk" style="background: #F6ECE6"><svg style="color: #93573C; flex: none" width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="24 192 80 64 136 192"></polyline><line x1="44" y1="148" x2="116" y2="148"></line><circle cx="188" cy="164" r="32"></circle><line x1="220" y1="128" x2="220" y2="196"></line></svg><div style="flex: 1; min-width: 0"><div class="c13" style="color: #93573C; font-weight: 700">Türkçe</div><div class="tn" style="font-size: 15px; line-height: 22px">Fiilde Çatı</div></div><button class="ib" aria-label="Fiilde Çatı, çıkar" style="width: 40px; height: 40px; color: #556173"><svg width="18" height="18" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="200" y1="56" x2="56" y2="200"></line><line x1="200" y1="200" x2="56" y2="56"></line></svg></button></div></div><div class="hr"><span class="hl">11:00</span><button class="blk" aria-label="11:00, boş, konu ekle" style="min-height: 44px"></button></div><div class="hr"><span class="hl">12:00</span><button class="blk" aria-label="12:00, boş, konu ekle" style="min-height: 44px"></button></div><div class="hr"><span class="hl">13:00</span><button class="blk" aria-label="13:00, boş, konu ekle" style="min-height: 44px"></button></div><div class="hr"><span class="hl">14:00</span><div class="blk" style="background: #FBF1DA"><svg style="color: #8C6106; flex: none" width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="24 96 128 40 232 96"></polyline><line x1="40" y1="96" x2="216" y2="96"></line><line x1="64" y1="104" x2="64" y2="176"></line><line x1="104" y1="104" x2="104" y2="176"></line><line x1="152" y1="104" x2="152" y2="176"></line><line x1="192" y1="104" x2="192" y2="176"></line><line x1="32" y1="208" x2="224" y2="208"></line></svg><div style="flex: 1; min-width: 0"><div class="c13" style="color: #8C6106; font-weight: 700">Tarih</div><div class="tn" style="font-size: 15px; line-height: 22px">Kurtuluş Savaşı Hazırlık Dönemi</div></div><button class="ib" aria-label="Kurtuluş Savaşı Hazırlık Dönemi, çıkar" style="width: 40px; height: 40px; color: #556173"><svg width="18" height="18" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="200" y1="56" x2="56" y2="200"></line><line x1="200" y1="200" x2="56" y2="56"></line></svg></button></div></div><div class="hr"><span class="hl">15:00</span><button class="blk" aria-label="15:00, boş, konu ekle" style="min-height: 44px"></button></div><div class="hr"><span class="hl">16:00</span><button class="blk fr" style="background: #E2EAF4; color: #0F294A; font-size: 15px; line-height: 24px; font-weight: 600; justify-content: flex-start; gap: 6px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"></line><line x1="128" y1="40" x2="128" y2="216"></line></svg>Konu Ekle</button></div></div><div class="abs" style="left: 0; right: 0; bottom: 0; background: #FFFFFF; box-shadow: 0 -1px 0 #DCE2E9; padding: 12px 24px 42px; z-index: 2"><button class="bp">Devam Et</button></div><div class="hi"></div></div><div class="cap"><b>2 · Izgara</b><span>Seçilen günler üstte; saat satırları 06:00–23:00. Dolu saat ders tonunda, çıkar düğmeli. Boş saate dokununca konu sheet'i.</span></div></div><div style="flex: none"><div class="ph" role="img" aria-label="Konu sheet'i"><div class="di"></div><div class="abs" style="top: 54px; left: 4px; right: 16px; height: 48px; display: flex; align-items: center; justify-content: space-between"><button class="ib" aria-label="Geri"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="160 208 80 128 160 48"></polyline></svg></button><span class="c13 mu" style="font-weight: 600">Adım 2/3</span></div><div class="abs" style="top: 110px; left: 16px; right: 16px"><h2 class="t24">Konuları yerleştir</h2><p class="b15 mu" style="margin-top: 4px">Boş bir saate dokun, konu seç. Izgara 06:00–23:00.</p></div><div class="abs" style="top: 186px; left: 16px; right: 16px; display: flex; justify-content: space-between"><button class="dc on" style="width: 56px; height: 76px" aria-pressed="true" aria-label="Pzt 12 Ekim, 2 konu"><i>Pzt</i><b>12</b><span style="font-size: 13px; line-height: 16px; font-weight: 600">2 konu</span></button><button class="dc" style="width: 56px; height: 76px" aria-pressed="false" aria-label="Sal 13 Ekim"><i>Sal</i><b>13</b></button><button class="dc" style="width: 56px; height: 76px" aria-pressed="false" aria-label="Çar 14 Ekim"><i>Çar</i><b>14</b></button><button class="dc" style="width: 56px; height: 76px" aria-pressed="false" aria-label="Per 15 Ekim"><i>Per</i><b>15</b></button><button class="dc" style="width: 56px; height: 76px" aria-pressed="false" aria-label="Cum 16 Ekim"><i>Cum</i><b>16</b></button><button class="dc" style="width: 56px; height: 76px" aria-pressed="false" aria-label="Cmt 17 Ekim"><i>Cmt</i><b>17</b></button></div><div class="abs card" style="top: 278px; left: 16px; right: 16px; overflow: hidden"><div class="hr"><span class="hl">09:00</span><button class="blk" aria-label="09:00, boş, konu ekle" style="min-height: 44px"></button></div><div class="hr"><span class="hl">10:00</span><div class="blk" style="background: #F6ECE6"><svg style="color: #93573C; flex: none" width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="24 192 80 64 136 192"></polyline><line x1="44" y1="148" x2="116" y2="148"></line><circle cx="188" cy="164" r="32"></circle><line x1="220" y1="128" x2="220" y2="196"></line></svg><div style="flex: 1; min-width: 0"><div class="c13" style="color: #93573C; font-weight: 700">Türkçe</div><div class="tn" style="font-size: 15px; line-height: 22px">Fiilde Çatı</div></div><button class="ib" aria-label="Fiilde Çatı, çıkar" style="width: 40px; height: 40px; color: #556173"><svg width="18" height="18" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="200" y1="56" x2="56" y2="200"></line><line x1="200" y1="200" x2="56" y2="56"></line></svg></button></div></div><div class="hr"><span class="hl">11:00</span><button class="blk" aria-label="11:00, boş, konu ekle" style="min-height: 44px"></button></div><div class="hr"><span class="hl">12:00</span><button class="blk" aria-label="12:00, boş, konu ekle" style="min-height: 44px"></button></div><div class="hr"><span class="hl">13:00</span><button class="blk" aria-label="13:00, boş, konu ekle" style="min-height: 44px"></button></div><div class="hr"><span class="hl">14:00</span><div class="blk" style="background: #FBF1DA"><svg style="color: #8C6106; flex: none" width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="24 96 128 40 232 96"></polyline><line x1="40" y1="96" x2="216" y2="96"></line><line x1="64" y1="104" x2="64" y2="176"></line><line x1="104" y1="104" x2="104" y2="176"></line><line x1="152" y1="104" x2="152" y2="176"></line><line x1="192" y1="104" x2="192" y2="176"></line><line x1="32" y1="208" x2="224" y2="208"></line></svg><div style="flex: 1; min-width: 0"><div class="c13" style="color: #8C6106; font-weight: 700">Tarih</div><div class="tn" style="font-size: 15px; line-height: 22px">Kurtuluş Savaşı Hazırlık Dönemi</div></div><button class="ib" aria-label="Kurtuluş Savaşı Hazırlık Dönemi, çıkar" style="width: 40px; height: 40px; color: #556173"><svg width="18" height="18" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="200" y1="56" x2="56" y2="200"></line><line x1="200" y1="200" x2="56" y2="56"></line></svg></button></div></div><div class="hr"><span class="hl">15:00</span><button class="blk" aria-label="15:00, boş, konu ekle" style="min-height: 44px"></button></div><div class="hr"><span class="hl">16:00</span><button class="blk fr" style="background: #E2EAF4; color: #0F294A; font-size: 15px; line-height: 24px; font-weight: 600; justify-content: flex-start; gap: 6px"><svg width="20" height="20" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"></line><line x1="128" y1="40" x2="128" y2="216"></line></svg>Konu Ekle</button></div></div><div class="abs" style="left: 0; right: 0; bottom: 0; background: #FFFFFF; box-shadow: 0 -1px 0 #DCE2E9; padding: 12px 24px 42px; z-index: 2"><button class="bp">Devam Et</button></div><div class="scrim"></div><section class="sh" role="dialog" aria-modal="true" aria-label="Konu ekle"><div class="hd"></div><div class="shh"><h2 class="t20" style="flex: 1; padding-top: 8px">Pazartesi 12 Ekim · 16:00</h2><button class="ib" aria-label="Kapat"><span class="xi"><svg width="18" height="18" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="200" y1="56" x2="56" y2="200"></line><line x1="200" y1="200" x2="56" y2="56"></line></svg></span></button></div><div style="padding: 12px 24px 0"><div class="seg" role="radiogroup" aria-label="Kaynak"><button role="radio" aria-checked="true" class="on">Çantam</button><button role="radio" aria-checked="false">Dersler</button></div><p class="c13 mu" style="margin-top: 8px">Çantam: denemelerinden çıkan eksik konuların.</p></div><div role="radiogroup" aria-label="Konu" style="padding-bottom: 4px"><div class="gl">Türkçe</div><button class="ro" role="radio" aria-checked="true"><span class="rd on" aria-hidden="true"></span><div style="flex: 1; min-width: 0"><div class="tn" style="font-size: 16px">Noktalama İşaretleri</div></div><span class="ek"><svg width="14" height="14" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="224" x2="48" y2="48"></line><path d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>3 eksik</span></button><button class="ro" role="radio" aria-checked="false"><span class="rd" aria-hidden="true"></span><div style="flex: 1; min-width: 0"><div class="tn" style="font-size: 16px">Cümlenin Öğeleri</div></div><span class="ek"><svg width="14" height="14" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="224" x2="48" y2="48"></line><path d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>2 eksik</span></button><button class="ro" role="radio" aria-checked="false"><span class="rd" aria-hidden="true"></span><div style="flex: 1; min-width: 0"><div class="tn" style="font-size: 16px">Fiilde Çatı</div><div class="tm">Programda: Pzt 10:00</div></div><span class="ek"><svg width="14" height="14" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="48" y1="224" x2="48" y2="48"></line><path d="M48 168c64-48 96 32 160 0V48c-64 32-96-48-160 0"></path></svg>3 eksik</span></button><div class="gl">Tarih</div><button class="ro" role="radio" aria-checked="false"><span class="rd" aria-hidden="true"></span><div style="flex: 1; min-width: 0"><div class="tn" style="font-size: 16px">Kurtuluş Savaşı Hazırlık Dönemi</div><div class="tm">Son denemede 13 sorudan 9'u yanlış · Programda: Pzt 14:00</div></div></button><div class="gl">Coğrafya</div><button class="ro" role="radio" aria-checked="false"><span class="rd" aria-hidden="true"></span><div style="flex: 1; min-width: 0"><div class="tn" style="font-size: 16px">İklim Bilgisi</div></div></button></div><div class="shf" style="padding-top: 8px"><button class="bp">Ekle</button></div></section><div class="hi"></div></div><div class="cap"><b>3 · Konu seç</b><span>Çantam = eksik konular, derse göre gruplu, eksik etiketiyle. Programdaki konu işaretli ama yeniden eklenebilir. Dersler sekmesi tüm konular.</span></div></div><div style="flex: none"><div class="ph" role="img" aria-label="Yeni program, kaydet"><div class="di"></div><div class="abs" style="top: 54px; left: 4px; right: 16px; height: 48px; display: flex; align-items: center; justify-content: space-between"><button class="ib" aria-label="Geri"><svg width="24" height="24" sc-camel-view-box="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="160 208 80 128 160 48"></polyline></svg></button><span class="c13 mu" style="font-weight: 600">Adım 3/3</span></div><div class="abs" style="top: 110px; left: 16px; right: 16px"><h2 class="t24">Programına ad ver</h2></div><div class="abs" style="top: 162px; left: 16px; right: 16px"><label class="fl">Program adı</label><div class="in">Ekim 3. Hafta</div><label class="fl" style="margin-top: 20px">Motto <span class="mu" style="font-weight: 500">(isteğe bağlı)</span></label><div class="in">Her gün biraz daha</div><p class="hp">Program listesinde adın altında görünür.</p></div><div class="abs card" style="top: 378px; left: 16px; right: 16px; padding: 4px 16px"><div style="padding: 12px 0; border-bottom: 1px solid #E8ECF1"><div class="tm">Günler</div><div class="tn">12–17 Ekim 2026 · 6 gün</div></div><div style="padding: 12px 0"><div class="tm">Çalışmalar</div><div class="tn">3 çalışma, hepsi Pazartesi</div><p class="c13 mu" style="margin-top: 2px">Salı–Cumartesi henüz boş; kaydettikten sonra ekleyebilirsin.</p></div></div><div class="abs" style="left: 0; right: 0; bottom: 0; background: #FFFFFF; box-shadow: 0 -1px 0 #DCE2E9; padding: 12px 24px 42px; z-index: 2"><button class="bp">Programı Kaydet</button></div><div class="hi"></div></div><div class="cap"><b>4 · Ad ve motto</b><span>Ad zorunlu, motto isteğe bağlı. Özet gerçek seçimden: gün sayısı ve çalışmalar. Kaydedince listeye "Program kaydedildi." toast'ıyla döner.</span></div></div></div><section class="nts" style="grid-template-columns: repeat(3, minmax(0, 1fr))"><div><h3>Akış</h3><ul><li>Programım › Yeni Program → Günler → Izgara → Ad ve motto → Programım (toast, 4 sn).</li><li>Vazgeç (X) değişiklik varsa "Program kaydedilmesin mi?" onayı sorar (1.21 normal onay).</li><li>Geri her adımda seçimleri korur.</li></ul></div><div><h3>Bileşenler</h3><ul><li>Takvim: 46 pt gün, 4 pt aralık; seçili <span class="tk">navy-900</span>, bugün 2 pt <span class="tk">orange-600</span> halka, geçmiş <span class="tk">text-disabled</span>.</li><li>Saat satırı: 44 pt saat etiketi + slot; dolu slot ders zemini, glif, ders 13/700, konu 15/600.</li><li>Konu sheet'i: segment Çantam / Dersler, radyo satırları 56 pt, grup başlığı 13/700.</li><li>Alt bant: beyaz yüzey, üst ayraç; tek birincil düğme.</li></ul></div><div><h3>Hareket ve haptik</h3><ul><li>Gün seçimi ve konu seçimi: selectionClick.</li><li>Konu yerleşince blok 250 ms (enter) belirir.</li><li>Kaydet: success; hata olursa toast ve form korunur.</li></ul></div></section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1880,&quot;height&quot;:1520}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+
+
+</body></html>

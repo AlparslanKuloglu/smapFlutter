@@ -1,0 +1,60 @@
+1.7 Şekil, Gölge, Boşluk 
+ 1.7 · Temeller · Şekil
+ Şekil, Gölge, Boşluk
+ 22 köşe yarıçapı 5 değere ve tam yuvarlağa, 57 gölge 2 token'a indi. Bütün ölçüler 4 pt ızgarada; sayfa kenarı her ekranda 16 pt.
+ Köşe yarıçapı
+ radius-xs · 4
+ Onay kutusu, grafik çubuğu ucu
+ radius-sm · 8
+ Segment başparmağı, soru hücresi, kapak küçük resmi, ipucu balonu
+ radius-md · 12
+ Düğme, girdi, segment rayı, glif kutusu, banner, toast
+ radius-lg · 16
+ Kart, liste grubu, istatistik kutusu, kamera düğmesi
+ radius-xl · 24
+ Sheet üst köşeleri, lacivert bant alt köşeleri, bilgi kartı
+ radius-full
+ Çip, rozet, avatar, ilerleme çubuğu, anahtar
+ Eski → yeni: 2–5 → xs · 6–10 → sm · 12–15 → md · 16–20 → lg · 22–32 → xl · 99/100/999 → full. İç içe yüzeyde iç yarıçap = dış yarıçap − aradaki boşluk (16'lık kartta 8 boşlukla iç köşe 8). Eski istatistik kartındaki 12 dış / 6 iç uyumsuzluğu bu kuralla biter.
+ Gölge · en çok 2
+ shadow-raised
+ 0 2 8 · #0F294A %8 · koyu #000 %40
+ Sürüklenen bilgi kartı, kamera düğmesi, büyüteç
+ shadow-overlay
+ 0 8 24 · #0F294A %16 · koyu #000 %56
+ Toast, ipucu balonu, grafik balonu
+ Bir yüzeyde kenar ya da gölge, ikisi birden değil. Kartlar ikisini de kullanmaz. Alt çubuk gölge yerine üst ayraç kullanır (eski gölge pozitif Y ile çubuğun altına düşüyordu). Sheet perdeyle ayrılır, gölgesi yok. Koyu temada yükselti, yüzeyin açılmasıyla anlatılır.
+ Boşluk · 4 pt ızgara
+ space-4 
+ İkon–etiket, sayı–birim 
+ space-8 
+ Çipler arası, satır içi öğeler 
+ space-12 
+ Satır dikey dolgusu, başlıktan içeriğe 
+ space-16 
+ Sayfa kenarı, kart iç dolgusu 
+ space-24 
+ Bölüm içi gruplar, sheet iç dolgusu 
+ space-32 
+ Bölümler arası 
+ space-48 
+ Dokunma hedefi, boş durum çevresi 
+ space-64 
+ Ekran düzeyi boş durumun üstü 
+ Eskide 3, 5, 14, 15, 25 gibi ızgara dışı 19 farklı dikey boşluk vardı; sayfa kenarı ekrana göre 16, 20, 24 ya da 40'tı.
+ Sabit ölçüler
+ Çerçeve · iPhone 16 Pro 402 × 874 pt 
+ Güvenli alan üst · alt 62 · 34 pt 
+ Dokunma hedefi (görseli 40 olanlarda 4 pt görünmez pay) 48 × 48 
+ Liste satırı · tek satır / iki satır en az 56 / 72 
+ Kök bant · açık / küçülmüş (güvenli alan dahil) 134 / 110 
+ Detay üst barı (güvenli alan dahil) 110 
+ Alt çubuk + güvenli alan · kamera düğmesi 68 + 34 · 56 × 56 
+ Sheet tutamacı · üstten 36 × 4 · 8 
+ Kenar boşluğu, telefonda
+ Derslerin
+ Türkçe
+ 31 eksik
+ Tarih
+ 60 eksik
+ Turuncu taralı alanlar 16 pt sayfa kenarı. Başlıktan gruba 12, satır 72, satır içi 12/16.

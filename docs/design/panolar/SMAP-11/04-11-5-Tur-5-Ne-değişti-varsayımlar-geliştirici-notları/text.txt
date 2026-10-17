@@ -1,0 +1,47 @@
+11.5 · Notlar · Tur 5 Notları 
+ 11.5 · Notlar · Tur 5
+ Tur 5 · Derslerim, Konular, Bilgi Kartları
+ "7 · Derslerim ve Konular"a 6 pano (7.1–7.6), "8 · Bilgi Kartları"na 2 pano (8.1–8.2) kondu: Derslerim, ders detayı, konu detayı, Edebiyat yazarları, durumlar, kart destesi ve koyu karşılıkları.
+ Ne değişti, neden
+ # Değişiklik Çözdüğü sorun Görüntü Pano 1 Kök bant "Derslerim"; ad ve avatar yalnız Anasayfa ve Hesap'ta (D-9) Her kök sekmede logo, ad ve alan başlığı tekrar ediyordu 29, 30 7.1 2 Ders satırı: ders rengi + glif, adda "TYT/AYT" öneki yok, etiketli eksik ("28 eksik") "TYT Türkçe" önekleri; Derslerim'de eksik sayısı hiç yoktu, ders detayında etiketsiz kırmızı rozetteydi 29, 30, 39 7.1 3 AYT'de Tarih-2 ve Coğrafya-2 ayrı satır, altında test adı ("Sosyal Bilimler 2 testi") Tarih ile Tarih-2, Coğrafya ile Coğrafya-2 aynı illüstrasyon ve aynı kartla ayırt edilmiyordu 30 7.1 4 Kart ilerlemesi yalnız gerçek veriyle (Tarih 41/64); sahte yüzde ve sayaçlar kalktı Her kartta aynı "%75 · 15/20 Konu tamamlandı · 4 Alt Başlık · 26 Madde · 8 Bilgi Kartı" 11, 29, 30 7.1, 7.2 5 Matematik ve Geometri: "Web'de" etiketi, dış bağlantı ikonu, açıklayan sheet ("Haber ver" yok) Kavram haritası web'de olan dersler uygulama içi ders gibi görünüyordu 29 7.1 6 TYT/AYT/SOS-2 diyaloğu kalktı; kategori ders detayında segment, Derslerim'deki seçim taşınır Derse girerken ortada diyalog; Fizik'te aynı soru yeniden 14, 17 7.2 7 Segment sayaçları etiketli ("28 eksik"); başlıkta "Eksiklerim (31)" süzgeci Segment altında yüzen etiketsiz rozetler (31, 28, 3); başlıkta kırmızı ikonlu "31" 11, 39 7.2 8 Konu numaraları 1..n kesintisiz; ad iki satıra kadar, kesilmez "3, 4, 4, 5, 5, 6" numaraları; "İki Savaş Arasındaki Dön…" gibi kesik adlar 15, 16, 18 7.2 9 Tek eksik işareti: bayrak + "eksik" sözcüğü, amber; kırmızı yanlış cevaba ayrıldı "1 Eksiğin var" kırmızı hapı, başlıkta kırmızı rozet, maddede kırmızı ad: üç ayrı işaret 18, 40 7.2, 7.3 10 Konu detayı: alt başlık akordeonu (ad, madde sayısı, eksik sayısı); madde = numara, ad, tanım, ayrı "Örnek" kutusu; gövde 16 pt Her alt başlıkta aynı kitap ikonu, anlamsız %60 çubuğu, etiketsiz 0 · 0 · 0; madde metni ~9 pt, örnek tanımın içinde 40, 41, 42 7.3 11 Açılışta ilk eksik maddeye kaydırma; madde açık Eksik madde uzun listede aranıyordu 40 7.3 12 Maddenin kartı "Kartı Aç" ile sheet'te: başlık, içerik, örnek, favori, eksikse "Öğrendim" Kart sayısı yalnız sayaç olarak duruyordu ("8 Bilgi Kartı") 11, 39 7.3 13 Kart destesi: Eksiklerim · Bildiklerim · Favorilerim sayaçlı; oturum sayacı; "Öğrendim" yalnız eksik kartta, onay bir kez, 6 sn "Geri Al" Kartlara üç ayrı giriş (ders, deneme, konu) ortak bir desteye çıkmıyordu brief 8.1 14 Sekme başına boş metin (Ek C) ve tek eylem Boş deste için metin yoktu brief 8.1 15 Edebiyat: Konular / Yazar ve Eserler segmenti; yazar sheet'i (hakkında, türe göre eserler, "Öğrendim") Yazar ve eser bilgisi konu listesinin içinde kayboluyordu brief 7.4 16 Durumlar: iskelet, süzgeç boş, hata + "Tekrar Dene", çevrimdışı şeridi Spinner; hata yalnız print; "Konu verisi bulunamadı." hem boş hem hata için aynı envanter 7.5 17 Koyu: konu detayı ve kart destesi (D-14) Koyu tema yoktu — 7.6, 8.2 
+ Önceki turların bileşenlerinde genişletmeler
+ G1 SubjectRow (1.16 satırı): 40 pt glif karosu, etiketli eksik, isteğe bağlı kart ilerlemesi (8 pt ray), "Web'de" varyantı (etiket + ArrowSquareOut).
+ G2 Segment (1.10) sayaçlı: bir seçeneğin verisi yoksa yalnız o seçeneğin sayaç satırı çizilmez (Tarih · AYT). Koyu sayaç renkleri eklendi.
+ G3 EksikTag yeni: bayrak 14 pt + metin 13/600, warning #8A5A00 / #FCF1D9; koyu #F2C46D / #33270F.
+ G4 Accordion (1.13 satırından) iki düzey: alt başlık kartı ve madde satırı; ExampleBox yeni ( bg-canvas , "Örnek" 13/700).
+ G5 CardDeck yeni: kart 24 pt köşe, sürüklenen kartta shadow-overlay , arkada iki kart kenarı; SessionProgress 1.15 çubuğunun 4 pt hâli.
+ G6 Sheet (1.20) uzun boy: yazar sheet'i ve kart sheet'i; başlıkta favori ikon düğmesi (Star / Star Fill).
+ Varsayımlar
+ Ek D'de karşılığı olmayan ve bu turda verdiğim kararlar. Hiçbiri bir ekranın çizimini engellemiyor.
+ 1 Eksik dağılımı: Tarih 60 TYT'de (14'teki rozet); Coğrafya 44, Kimya 9, Biyoloji 11 TYT; Fizik 7 + 7. Ek C'de AYT payı olmayan satırda (AYT Tarih, Coğrafya, Coğrafya-2) etiket çizilmedi.
+ 2 Türkçe ders toplamı 31 (TYT 28 · AYT 3); Ek C'de konu bazında yalnız 8 eksik var (Cümlenin Öğeleri 2, Fiilde Çatı 3, Noktalama İşaretleri 3). Süzgeçte bu üç konu görünür; fark sunucudan gelir.
+ 3 Sözcükte Anlam: 5 alt başlık, 25 madde (4 + 9 + 9 + 1 + 2). Eksik madde yalnız Temel Anlam (40).
+ 4 Kart destesi oturum sayacı açılıştaki eksik kart sayısıyla başlar: 12/23. Kart taşınınca sekme sayaçları 22 · 42 olur, oturum sayacı ilerlemeye devam eder.
+ 5 Kaydırma yalnız sonraki karta geçer; öğrenme yalnız "Öğrendim" düğmesiyle (yanlışlıkla taşımayı önlemek için).
+ 6 "Öğrendim" onayı ilk seferde sorulur; "Bir daha sorma" cihazda saklanır. Her taşıma 6 sn "Geri Al" toast'ı gösterir (D-31).
+ 7 Yazar listesi ve Namık Kemal metni Ek C'de yok; müfredattan örnek. Fotoğraf yoksa Edebiyat tonlarında baş harf.
+ 8 Derslerim'de TYT/AYT seçimi cihazda hatırlanır ve ders detayına taşınır; AYT'deki Tarih-2 satırı Tarih'i SOS-2 seçili açar.
+ 9 Çevrimdışıyken Web'de dersler listeden gizlenir; açılamadıkları için.
+ 10 Matematik EA AYT listesinde; Geometri de "Web'de" (D-5).
+ Geliştirici notları
+ Ekranlar
+ LessonsScreen (RootBand + Segment TYT/AYT + SubjectRow listesi) · LessonDetailScreen (SubjectHeader + EksikFilterChip + Segment cnt + TopicRow) · TopicDetailScreen (Accordion<SubTopic> → Accordion<Item> + ExampleBox) · CardSheet · CardDeckScreen (TabBar cnt + SessionProgress + CardDeck) · AuthorList / AuthorSheet · WebOnlySheet.
+ Veri
+ Eksik sayıları ders ve kategori bazında sunucudan; kart ilerlemesi (öğrenilen / toplam) yoksa satırda çizilmez. Konu numarası sunucu sırasından 1..n istemcide üretilir; süzgeçte tam listedeki numara korunur.
+ Kaydırma
+ TopicDetail açılışında ilk eksik maddeye Scrollable.ensureVisible (350 ms, standard); hareketi azalt açıksa jumpTo. Akordeon 250 ms.
+ Deste
+ Sürükleme eşiği %30 genişlik ya da 800 px/sn; "Öğrendim" iyimser güncelleme, hata olursa geri alınır ve toast. Geri Al 6 sn.
+ Erişilebilirlik
+ Destede kaydırmaya alternatif "Sonraki kart" / "Önceki kart" eylemleri (Semantics customActions). Eksik etiketi "3 eksik" diye okunur; segment "TYT, 28 eksik". Web'de satırı "Matematik, web'de açılır".
+ Bölüm 6 denetimi
+ ✓ Ders başına renkli hap yok; renk yalnız glif karosunda.
+ ✓ Tamamlama yüzdesi ve üstü çizili satır yok (D-3).
+ ✓ Turuncu yalnız alt çubuk, kamera ve oturum ilerlemesi.
+ ✓ Emoji, elmas, seri yok.
+ ✓ 13 pt altı metin yok (alt çubuk etiketi hariç).
+ ✓ Uzun adlar iki satıra kadar; kesilmiyor.
+ ✓ Koyu tema ayrı roller (7.6, 8.2).
+ ! Alt başlıkta "kart durumu ✓/✕" yerine madde düzeyinde eksik etiketi kullanıldı; madde başına kart durumu sunucuda varsa alt başlığa "4 kartın 3'ü öğrenildi" satırı eklenebilir.
+ Sıradaki tur
+ Tur 6: Anasayfa ve Programım ("3 · Anasayfa ve Programım").

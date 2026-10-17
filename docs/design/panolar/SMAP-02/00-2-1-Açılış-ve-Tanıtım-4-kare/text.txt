@@ -1,0 +1,44 @@
+2.1 Açılış ve Tanıtım 
+ 2.1 · Tur 7 · Açılış ve Giriş
+ Açılış ve Tanıtım · 4 Kare
+ Açılış ekranı ve üç tanıtım: okut → analiz → eksikleri kapat. Görseller yeni arayüz parçalarından; eski ekran görüntüleri ve vaatler kalktı.
+ SMAP 
+ 1 · Açılış Lacivert zeminde S-rota işareti ve SMAP yazısı (1.26). Üst kanca beyaz. 1 sn'den uzun sürerse işaretin altında spinner. 
+ Geç 
+ Optik formunu kamerayla okut
+ Deneme bitince formunun fotoğrafını çek; cevapların sayılır, netin hesaplanır.
+ Devam Et 
+ 2 · Tanıtım 1 · okut Görsel yeni arayüzden: kamera, form ve köşe tutamaçları (Tur 2). Başlık 2 satır; süre vaadi yok. 
+ Geç 
+ AYT · Türkiye Geneli Deneme 6
+ 67,5 net +8,25 
+ 86 doğru 74 yanlış 0 boş 
+ 40 55 70 8 May. 5 Eki. 
+ Netini ve gelişimini gör
+ Her denemenin neti, doğru-yanlış dağılımı ve önceki denemene göre farkı tek ekranda.
+ Devam Et 
+ 3 · Tanıtım 2 · analiz Sonuç kartı ve eksenli net grafiği (Tur 3–4) Ek C verisiyle. 
+ Fiilde Çatı 3 eksik 
+ Noktalama İşaretleri 3 eksik 
+ Cümlenin Öğeleri 2 eksik 
+ Tarih · bilgi kartı
+ Edirne-Segedin Antlaşması (1444)
+ Haçlılarla Osmanlı Devleti'nin imzaladığı ilk antlaşma.
+ Öğrendim 
+ Eksiklerini konu konu kapat
+ Kaçırdığın konular eksik listene girer; konu anlatımı ve bilgi kartlarıyla tamamlarsın.
+ Başla 
+ 4 · Tanıtım 3 · eksikleri kapat Eksik etiketli konular ve bilgi kartı (Tur 5). "Başla" rol seçimine geçer. 
+ Bileşenler
+ Başlık display 32/40 800, en çok 2 satır; gövde 16/26.
+ Sayfa noktaları: geçerli 24 × 8 orange-600 (ilerleme, D-7), diğerleri 8 × 8 border-strong .
+ Sağ üstte "Geç" metin düğmesi (altı çizili değil); son ekranda yok.
+ Tek birincil düğme altta, 48 pt.
+ Hareket ve haptik
+ Kaydırarak ya da düğmeyle geçiş; sayfa 350 ms (standard).
+ Görsel parçaları 250 ms gecikmeli belirir; hareketi azaltta yok.
+ Açılış: işaret ilk karede, solma yok; uygulama hazır olunca 250 ms geçiş.
+ Eskiden
+ 5 tanıtım ekranı, eski arayüzün ekran görüntüleri (7,7 MB) ve eski üçgen logo (01–05).
+ 3–4 satırlık başlıklar; "5 saniyede analizin hazırlanır" ve "yapay zeka destekli" vaatleri (01, 02).
+ Coin 5590, Oyunlar ve Gelen Kutusu görünüyordu (05). "Tanıtımı atla" altı çizili bağlantı.

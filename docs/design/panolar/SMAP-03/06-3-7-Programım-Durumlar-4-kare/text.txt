@@ -1,0 +1,43 @@
+3.7 Programım Durumlar 
+ 3.7 · Tur 6 · Anasayfa ve Programım
+ Programım · Durumlar · 4 Kare
+ Boş, iskelet, hata ve çevrimdışı.
+ Programım
+ Henüz programın yok
+ Haftalık programını kurduğunda günün konuları burada ve Anasayfa'da görünür.
+ Haftalık Programını Kur 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 1 · Boş Görsel (Ampul, 128 pt, 1.25), başlık, tek cümle, tek eylem. Metin 1.25'teki gibi. 
+ Programım
+ Program ara 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 2 · İskelet Başlık ve arama hemen; satırlar iskelet. 15 sn'de veri yoksa hata. 
+ Programların yüklenemedi
+ Bağlantını kontrol edip tekrar dene.
+ Tekrar Dene 
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 3 · Hata Ekran düzeyi hata; Tekrar Dene ikincil düğme, iskelete döner. 
+ Çevrimdışısın. Son kaydedilen veriler gösteriliyor. 
+ Yeni Program 
+ Programım
+ Program ara 
+ Ekim 2. Hafta Bu hafta 
+ Her gün biraz daha
+ 5–11 Ekim 2026
+ Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı programını görebilirsin.
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ 4 · Çevrimdışı Kayıtlı program okunur; kurma ve düzenleme bağlantı ister, düğme pasif ve nedeni yazılı. 
+ Boş metinler
+ Programım: "Henüz programın yok" + "Haftalık programını kurduğunda günün konuları burada ve Anasayfa'da görünür." (1.25)
+ Gün boş: "Bu gün için çalışma yok."
+ Arama: "“kasım” ile eşleşen program yok".
+ Hareket ve haptik
+ İskelet 1200 ms.
+ Hata ve çevrimdışı haptiksiz.
+ Bağlantı gelince şerit "Bağlandın" der ve 2 sn sonra kalkar (1.22).
+ Eskiden
+ Yükleme, boş ve hata durumları yoktu; hata yalnız konsola yazılıyordu (envanter).

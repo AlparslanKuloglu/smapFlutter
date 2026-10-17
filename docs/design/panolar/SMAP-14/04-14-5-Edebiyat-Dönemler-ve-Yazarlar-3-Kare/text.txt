@@ -1,0 +1,90 @@
+14.5 · Tur 12 · Geri Gelen Özellikler
+Edebiyat · Dönemler ve Yazarlar · 3 Kare
+Yazar ve Eserler sunucunun verdiği sırayla: dönem → alt başlık → yazar. Eksik eser sayısı her katmanda.
+Türk Dili ve Edebiyatı 
+Konular 
+Yazar ve Eserler 
+3 eksik 
+1
+Tanzimat Dönemi
+2 eksik eser 
+2 
+Servet-i Fünun 
+Dönemi 
+1 eksik eser 
+3
+Fecr-i Âti 
+4
+Millî Edebiyat Dönemi 
+5
+Cumhuriyet Dönemi 
+Anasayfa
+Analizlerim
+Okut
+Derslerim
+Hesap
+1 · Yazar ve Eserler · dönemler
+Sayaçlı segment: "Yazar ve Eserler · 3 eksik". Satır: sıra numarası, 
+dönem adı, eksik varsa "2 eksik eser". Yazar sayısı gelmediği için 
+yazılmaz.
+Yerine geçtiği kare: 7.4·1
+Tanzimat Dönemi 
+2 eksik eser 
+Birinci Dönem Sanatçıları 
+2 eksik 
+Ş 
+Şinasi 
+3 eser 
+NK 
+Namık Kemal 
+8 eser 
+2 eksik 
+ZP 
+Ziya Paşa 
+6 eser 
+İkinci Dönem Sanatçıları 
+Anasayfa
+Analizlerim
+Okut
+Derslerim
+Hesap
+2 · Dönem detayı
+Alt başlıklar akordeon; eksiği olan ilk akordeon açık gelir, sayfa 
+oraya kayar (7.3 kuralı). Yazar satırı: fotoğraf ya da baş harf, ad, eser 
+sayısı, eksik varsa etiket.
+Tanzimat Dönemi 
+2 eksik eser 
+Birinci Dönem Sanatçıları 
+2 eksik 
+İkinci Dönem Sanatçıları 
+Anasayfa
+Analizlerim
+Okut
+Derslerim
+Hesap
+3 · Akordeon yükleniyor
+Yazarlar akordeon açılınca yüklenir; akordeonun içinde üç satır 
+iskeleti.
+Bileşenler
+Segment sayaçlı (1.10); "Konular" sayaçsız.
+TopicRow: 28 pt numara, ad, EksikTag; Accordion (7.3 alt 
+başlık kartı) + EksikTag.
+AuthorRow: 48 pt fotoğraf (yoksa baş harf, Edebiyat 
+tonları), ad, "8 eser", EksikTag "2 eksik".
+Veri
+Dönemler: GET /student/yazarEserMainSubjects → name, 
+order, itemDataCount; segment sayacı bunların toplamı.
+Dönem detayı: GET /student/getSubSubjects?
+mainSubjectId= ve POST /student/getItems?
+edebiyat=true&yazarEserMode=true.
+Yazarlar: GET /student/getSubjectAuthors?itemId= 
+akordeon açılınca; eser sayısı works uzunluğu.
+Erişilebilirlik ve hareket
+Dönem satırı: "1, Tanzimat Dönemi, 2 eksik eser".
+Yazar satırı: "Namık Kemal, 8 eser, 2 eksik".
+Akordeon 250 ms; açılışta ilk eksiğe 350 ms kaydırma, 
+hareketi azaltta doğrudan.
+Varsayımlar (T12)
+T12.16 Bölüm düzeyi boş durumlarda illüstrasyon yok. 
+Dönem listesinin boş hâli çizilmedi: dönemler müfredattan 
+gelir.

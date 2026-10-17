@@ -1,0 +1,23 @@
+4.4 Köşeler 
+ 4.4 · Tur 2 · Kamera ve Optik Okuma
+ Köşe Düzenleme · 2 Kare
+ Dört sürüklenebilir köşe, büyüteç, "Tekrar Çek" ve "Devam". Eskiden kırpma ve düzenleme iki ayrı sayfaydı, ardından "GERİ" kırmızı ve "GÖNDER" turuncu olan bir diyalog geliyordu; "GÖNDER" yalnız devam demekti.
+ Köşeleri Ayarla 
+ Noktaları cevap alanının köşelerine getir.
+ Ders adları şeridi dışarıda kalsın.
+ Bir daha gösterme 
+ Tekrar Çek Devam 
+ 1 · İlk kez Eski "Hatırlatma" diyaloğunun yerine tek satır ipucu ve küçük örnek. "Bir daha gösterme" ipucunu kalıcı gizler; ? ile öğretici her zaman açılır. 
+ Köşeleri Ayarla 
+ Tekrar Çek Devam 
+ 2 · Köşe sürükleniyor Parmağın altı görünmediği için 2,6 kat büyüteç parmağın üstünde açılır; artı işareti noktanın tam yeri. İpucu sürüklerken gizlenir. 
+ Bileşenler
+ Köşe noktası 18 pt görünür, 48 pt dokunma alanı; sürüklerken 28 pt.
+ Büyüteç 116 pt daire, 3 pt beyaz halka; Flutter RawMagnifier .
+ "Tekrar Çek" ikincil (çerçeveli, 1.9), "Devam" birincil; koyu bileşen seti.
+ Kırpma ve düzenleme tek adım: eklentinin ikinci "düzenleme" sayfası kalktı.
+ Hareket ve haptik
+ Büyüteç 100 ms'de ölçekle açılır, bırakınca 150 ms'de kapanır.
+ Nokta bir kenara oturunca selectionClick .
+ "Devam" ile fotoğraf kırpılır, gönderim ekranı 250 ms'de açılır.
+ "Tekrar Çek" kameraya döner; öğretici yeniden açılmaz.

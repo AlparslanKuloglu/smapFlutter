@@ -1,0 +1,42 @@
+13.6 Deneme Detay 
+ 13.6 · Ekran Akışı
+ Deneme Detay
+ Bir denemenin dört sekmesi: Genel, Sorular, Konular, Kartlar; sorudan Soru Detay'a. Sonuç anından, Denemelerim'den ve Anasayfa'daki Analizi Gör'den açılır.
+ Okun üstü: dokunulan yer Kesikli ok: kendiliğinden geçiş Üst sıra ana yol; altında o ekranın durumları ve koyu teması Kod: kaynak pano ve kare 
+ Buradan 13.4 Detaylı Analiz · 13.7 Denemelerim · 13.3 Analizi Gör
+ 1 Genel · AYT 
+ 5.3 · kare 1
+ Durumlar ve koyu tema · 6
+ TYT, puansız 5.3 · kare 3 
+ İskelet 5.8 · kare 1 
+ Ders verisi yok 5.8 · kare 2 
+ Hata 5.8 · kare 3 
+ Çevrimdışı 5.8 · kare 4 
+ Genel · koyu 5.9 · kare 1 
+ aşağı kaydır
+ 2 Genel · kaydırılmış 
+ 5.3 · kare 2
+ Sorular
+ 3 Sorular · tümü 
+ 5.4 · kare 1
+ Durumlar ve koyu tema · 1
+ Sorular · koyu 5.9 · kare 2 
+ Yanlışlar
+ 4 Yanlışlar 
+ 5.4 · kare 2
+ Durumlar · 1
+ Boşlar, boş 5.4 · kare 3 
+ soru hücresi
+ 5 Soru Detay · yanlış 
+ 5.7 · kare 1
+ Durumlar · 1
+ Doğru soru, açıklama yok 5.7 · kare 2 
+ geri, Konular
+ 6 Konular 
+ 5.5 · kare 1
+ Durumlar ve koyu tema · 1
+ Konular · koyu 5.10 · kare 1 
+ Kartlar
+ 7 Kartlar 
+ 5.6 · kare 1
+ Sonra Bu Konuyu Çalış: 13.8 · Kartları Çalış: 13.9

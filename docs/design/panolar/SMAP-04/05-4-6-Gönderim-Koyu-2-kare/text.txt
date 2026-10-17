@@ -1,0 +1,25 @@
+4.6 Gönderim Koyu 
+ 4.6 · Tur 2 · Kamera ve Optik Okuma
+ Gönderim · Koyu · 2 Kare
+ 4.5'in koyu tema karşılığı. Yapı aynı; yalnız roller değişiyor, ters çevrilmiş renk yok.
+ Formun okunuyor
+ Birkaç saniye sürebilir.
+ Fotoğraf hazırlandı 
+ Gönderiliyor %64 
+ Cevaplar okunacak 
+ Vazgeç 
+ 1 · Gönderiliyor · koyu Kartlar surface #121D31, ray bg-sunken #213049, dolgu orange-400 (#FF8533, rayda 4,9:1). 
+ Formun gönderilemedi
+ Bağlantı koptu. Fotoğrafın duruyor; tekrar gönderebilir ya da yeniden çekebilirsin.
+ Fotoğraf hazırlandı 
+ Gönderilemedi 
+ Cevaplar okunacak 
+ Tekrar Dene Yeni Fotoğraf 
+ 2 · Gönderilemedi · koyu Hata rengi koyuda #FF8F8F. Birincil düğme koyu temada açık lacivert (#C5D4E8) üstünde koyu metin. 
+ Koyu tema farkları
+ Kanvas #0A1424, metin #EDF1F6, ikincil #A9B5C6 (1.2).
+ Bitti işareti primary koyu #C5D4E8 daire, #091A31 onay.
+ Gölge yerine kart ve kanvas arasındaki ton farkı; fotoğraf kartında koyu gölge %40.
+ Neden koyu
+ Brif koyu temayı kamera, gönderim ve sonuç anı için istiyor (Ek D-14). Gönderim kameradan hemen sonra geldiği için koyu temada parlak bir beyaz ekran sıçraması olmuyor.
+ Akış ve metinler 4.5 ile birebir aynı.

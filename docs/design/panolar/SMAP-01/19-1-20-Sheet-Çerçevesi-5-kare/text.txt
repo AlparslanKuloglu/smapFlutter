@@ -1,0 +1,56 @@
+1.20 Sheet Çerçevesi 
+ 1.20 · Temeller · Kabuk
+ Sheet Çerçevesi · 5 Kare
+ Bütün seçim ve onay yüzeyleri alttan açılır (TYT/AYT seçimi, "yakında" ve onaylar ekranın ortasındaki dialoglardan buraya taşındı; 14, 17, 22). Parçalar: tutamaç, başlık + alt başlık, Kapat, kaydırılan içerik, sabit eylem alanı. Köşe radius-xl, perde scrim + 8 pt bulanıklık. Dialog köşeleri 12, 16, 20 ve 24 arasında değişiyordu; artık tek çerçeve.
+ Derslerim
+ Türkçe 
+ Matematik 
+ Matematik ve Geometri
+ Matematik ve Geometri kavram haritan şimdilik smaptr.com'da.
+ Web'de Aç Tamam 
+ 1 · Küçük · içeriğe göre Tek mesaj ve iki eylem. Eylem alanı ekranın altına sabit; alt güvenli alan dahil 50 pt pay. Bu örnek Tur 5'teki web dersi sheet'i. 
+ Analizlerim
+ Filtre
+ Grafik ve istatistikler bu seçime göre.
+ Sınav türü
+ TYT AYT 
+ Ders
+ Genel 
+ Türkçe 
+ Tarih 
+ Coğrafya 
+ Matematik 
+ Geometri 
+ Fizik 
+ Kimya 
+ Biyoloji 
+ Uygula 
+ 2 · Orta · seçim Ekranın yaklaşık üçte ikisi. Seçimler bir kez uygulanır. Bu örnek Tur 4'teki filtre sheet'inin iskeleti. 
+ Öğrencilerim
+ Öğrenci Ekle
+ Hesabı sen açarsın; öğrenci bu bilgilerle giriş yapar.
+ Ad 
+ Soyad 
+ Kullanıcı adı Kontrol Et 
+ Şifre Oluştur 
+ Sınıf 10. Sınıf 
+ Alan Seçilmez 9. ve 10. sınıfta alan seçilmez.
+ Öğrenciyi Kaydet 
+ 3 · Tam boy · form Üstte güvenli alan + 8 pt kalır; arkadaki ekran perdeyle görünür. İçerik kaydırıldığında eylem alanının üstünde ayraç belirir. Bu örnek Tur 9'daki Öğrenci Ekle'nin iskeleti. 
+ Öğrencilerim
+ Öğrenci Ekle
+ Ad 
+ Soyad 
+ Kullanıcı adı Kontrol Et 
+ Öğrenciyi Kaydet 
+ Sistem klavyesi · 336 pt 
+ 4 · Klavye açık Eylem alanı klavyenin hemen üstüne çıkar, alt güvenli alan payı düşer. Odaklanan alan görünür alana kaydırılır. Klavye burada şematik; çizilmez. 
+ Öğrencilerim
+ Öğrenci Ekle
+ Kaydediliyor. Birkaç saniye sürebilir.
+ Ad 
+ Soyad 
+ Kullanıcı adı 
+ Şifre 
+ Sınıf 
+ 5 · Meşgul İşlem sürerken Kapat gizlenir, tutamaç soluklaşır, sürükleme ve perdeye dokunma kapatmaz, Android geri hareketi engellenir. Alanlar salt okunur. Hata olursa sheet açık kalır ve girilenler korunur.

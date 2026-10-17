@@ -1,0 +1,28 @@
+4.1 Kamera İzni 
+ 4.1 · Tur 2 · Kamera ve Optik Okuma
+ Kamera İzni · 2 Kare
+ Eskiden izin ekranı yoktu; izin reddedilince kamera boş kalıyordu. Şimdi izin istenmeden önce neden gerektiği tek cümleyle söyleniyor, reddedildiyse ayarlara giden yol veriliyor. İkisi de alttan sheet (Bölüm 7).
+ Anasayfa
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ Formunu okutmak için kamera gerekli
+ SMAP kamerayı yalnız optik formunu çekerken kullanır. Bir sonraki adımda telefonun izin isteyecek.
+ Kameraya İzin Ver Sonra 
+ 1 · İzin öncesi Kamera düğmesine ilk dokunuşta, sistem izni sorulmadan önce. "Sonra" sheet'i kapatır, Anasayfa'da kalınır. Görsel işlevli: neyin çekileceğini gösterir. 
+ Anasayfa
+ Anasayfa Analizlerim Okut 
+ Derslerim Hesap 
+ Kamera izni kapalı
+ Formunu okutabilmek için Ayarlar'da SMAP'e kamera izni ver. Sonra buraya dön; kaldığın yerden devam edersin.
+ Ayarları Aç Vazgeç 
+ 2 · İzin reddedildi Sistem izni reddedildiyse kamera yerine bu açılır. "Ayarları Aç" uygulamanın ayar sayfasına gider; dönüşte izin kontrol edilir, verilmişse doğrudan çekime geçilir. 
+ Bileşenler
+ Sheet çerçevesi 1.20, orta boy; perde scrim %48.
+ Birincil primary + ikincil quiet düğme (1.9); 48 pt, 12 pt aralık.
+ Uyarı ikonu error / error-bg , 40 pt daire.
+ "Sonra" izin ön açıklamalarına özgü erteleme (Tur 7'deki kamera ön açıklamasıyla aynı söz).
+ Hareket ve haptik
+ Sheet açılışı duration-slow 350 ms, enter eğrisi; kapanış 250 ms exit .
+ "Kameraya İzin Ver" sistem iletişim kutusunu açar; sheet arkada kapanır.
+ Haptik yok: izin bir hata değil.
+ Ayarlardan dönüşte izin verilmişse kamera 250 ms opaklık geçişiyle açılır.

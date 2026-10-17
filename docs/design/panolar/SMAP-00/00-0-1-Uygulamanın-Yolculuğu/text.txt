@@ -1,0 +1,100 @@
+0.1 Uygulamanın Yolculuğu 
+ 0.1 · Tur 10 · Akış Haritası
+ Uygulamanın Yolculuğu
+ İlk açılıştan kök sekmelere ve ayrıntı ekranlarına. Kutulardaki kodlar pano numaraları; her kutu o panoda çizili.
+ Alt çubuk · öğrenci
+ 2.1
+ Açılış
+ Lacivert zemin, S-rota işareti
+ 2.1
+ Tanıtım
+ 3 ekran: okut → analiz → eksikleri kapat
+ 2.2
+ Rol
+ Öğrenciyim ya da Öğrenci Koçuyum
+ 2.2
+ Sınıf ve alan
+ Yalnız öğrenci; 9.–10. sınıfta alan yok
+ 2.2
+ Kamera ön açıklaması
+ İzin ver ya da Sonra
+ 2.2
+ Hoş geldin
+ Kayıt Ol ya da Giriş Yap
+ 2.5 · 2.6
+ Kayıt
+ Rol, 7 avatar, kullanıcı adı, şifre, sınıf ve alan
+ 2.3
+ Giriş
+ Kullanıcı adı ve şifre; Apple ve Google varyantı
+ 2.4
+ Şifremi Unuttum
+ E-posta → 6 haneli kod → yeni şifre
+ Oturum
+ Rol hesaptan okunur
+ Öğrenci mi, koç mu?
+ 10.1
+ Koç Anasayfa
+ Koçun yolculuğu: 0.3
+ 3.1
+ Anasayfa
+ Bugün, Son denemen, Derslerin
+ 6.1
+ Analizlerim
+ Genel · Denemelerim
+ 4.3
+ Okut
+ Kamera: denemenin yolculuğu 0.2
+ 7.1
+ Derslerim
+ TYT/AYT, eksikler, kartlar
+ 9.1
+ Hesap
+ Profil, koçluk, bildirimler, çıkış
+ 3.4
+ Programım
+ Liste, gün ve hafta görünümü
+ 3.5 · 3.6
+ Yeni program, düzenle
+ Günler → ızgara → ad ve motto; Günü Sıfırla
+ 6.2
+ Denemelerim
+ Tür, tarih, sıralama
+ 5.3–5.6
+ Deneme Detay
+ Genel · Sorular · Konular · Kartlar
+ 5.7
+ Soru Detay
+ İşaretin, doğru cevap, kartlar
+ 4.1–4.10
+ Çekim ve gönderim
+ İzin, öğretici, köşeler, Form Kontrol
+ 5.1 · 5.2
+ Sonuç anı
+ Net, D/Y/B, fark; ilk seferde bildirim izni
+ 7.2 · 7.4
+ Ders detayı
+ Kategori segmenti, Eksiklerim; Edebiyat yazarları
+ 7.3
+ Konu detayı
+ Alt başlık, madde, örnek; Kartı Aç
+ 8.1
+ Kart destesi
+ Eksiklerim · Bildiklerim · Favorilerim
+ 9.2–9.7
+ Hesap ekranları
+ Profil, şifre, koçluk, bildirimler, sözleşmeler
+ 9.4 · 9.1
+ Hesabı Sil ya da Çıkış
+ Onaylı; ardından Hoş geldin (2.2)
+ 2.7
+ Genel ekranlar
+ Zorunlu güncelleme, oturum sona erdi, bakım, bilinmeyen rol: her an
+ Öğrenci
+ Koç
+ Kayıt Ol
+ Giriş Yap
+ Koç
+ Öğrenci
+ Detaylı Analiz
+ Ekran (pano kodu) Kök sekme Kamera Karar Sunucu Uygulama dışı ya da başka akış Kendiliğinden güncellenir

@@ -1,0 +1,85 @@
+1.5 Ders Renkleri 
+ 1.5 · Temeller · Renk
+ Ders Renkleri · 9 Ders, İki Tema
+ Her dersin kimliği korundu, birbirine karışan tonlar ayrıldı. Matematik, Kimya ve Edebiyat eskiden 351°–358° arasında üç kırmızı-pembeydi; Coğrafya, Geometri ve Fizik 197°–216° arasında üç maviydi. Tarih'in kehribarı marka turuncusuna yakındı. Ders rengi yalnız kimlik taşır: D/Y/B ya da durum anlamı taşımaz, ders adı her zaman yanında yazar.
+ Ders · glif Eski (zemin / vurgu, oran) Yeni açık (zemin / vurgu, oran) Yeni koyu (zemin / vurgu, oran) Ne değişti 
+ Türkçe
+ TextAa
+ 3,35 
+ #93573C · 4,92 
+ #E2A98D · 7,65 
+ Kahve korundu, glif okunsun diye koyulaştı. 
+ Edebiyat
+ Feather
+ 3,09 
+ #8A2F4E · 6,76 
+ #E494BE · 7,12 
+ Mercandan şarap tonuna (340°), en koyu kırmızımsı. 
+ Tarih
+ Bank
+ 1,87 
+ #8C6106 · 4,88 
+ #E3B651 · 8,02 
+ Kehribardan koyu hardala (41°); turuncudan ayrıldı. 
+ Coğrafya
+ Globe
+ 2,68 
+ #1E6FAE · 4,55 
+ #7DB9EC · 7,12 
+ Gök mavisi (206°), koyulaştı. 
+ Matematik
+ MathOperations
+ 2,86 
+ #C42A36 · 4,79 
+ #F7847F · 6,49 
+ Kırmızı kaldı (355°); tek saf kırmızı ders. 
+ Geometri
+ Angle
+ 4,09 
+ #4450BE · 5,56 
+ #A3ABF4 · 7,16 
+ Çivit mavisine (234°) kaydı; Coğrafya'dan ayrıldı. 
+ Fizik
+ Atom
+ 4,45 
+ #08737A · 4,82 
+ #5FCBD0 · 7,80 
+ Petrol mavisinden petrol yeşiline (184°). 
+ Kimya
+ Flask
+ 3,18 
+ #93359A · 5,55 
+ #C89AE3 · 7,12 
+ Gülden eflatuna (296°); Matematik'ten 60° uzakta. 
+ Biyoloji
+ Dna
+ 2,73 
+ #2B7A35 · 4,63 
+ #80CC89 · 7,99 
+ Yeşil korundu (128°); "Doğru" yeşilinden (151°) ayrı. 
+ Yan yana · açık
+ Türkçe
+ Edebiyat
+ Tarih
+ Coğrafya
+ Matematik
+ Geometri
+ Fizik
+ Kimya
+ Biyoloji
+ Yan yana · koyu
+ Türkçe
+ Edebiyat
+ Tarih
+ Coğrafya
+ Matematik
+ Geometri
+ Fizik
+ Kimya
+ Biyoloji
+ Nerede, nasıl
+ Glif kutusu 48 pt (liste) ya da 40 pt (şerit), radius-md; zemin açık ton, glif vurgu, 24 pt. Ders çipinde 10 pt nokta. İlerleme dolgusu vurgu, ray bg-sunken (en düşük oran 4,49).
+ Metin rengi değil
+ Ders adı her zaman text-primary. Vurgu yalnız glif, nokta ve ilerlemede. Çok renkli ders illüstrasyonları kaldırıldı; tek renk Phosphor glifi kullanılır.
+ SOS-2 ve web dersleri
+ Tarih-2 ve Coğrafya-2 ana dersin rengini kullanır; ayrımı ad ve "SOS-2" etiketi yapar. Matematik ve Geometri satırında rengin yanında nötr "Web'de" etiketi durur.

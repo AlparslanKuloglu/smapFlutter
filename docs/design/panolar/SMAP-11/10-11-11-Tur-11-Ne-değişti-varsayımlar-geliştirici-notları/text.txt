@@ -1,0 +1,43 @@
+11.11 · Notlar · Tur 11 Notları 
+ 11.11 · Notlar · Tur 11
+ Tur 11 · Mağaza Görselleri
+ "12 · Mağaza Görselleri"ne 3 pano kondu: 7 karelik panorama (12.1), App Store ve Google Play kesimleri ile öne çıkan görsel (12.2), mağazada önizleme (12.3). Telefonlarda yalnız bu projede çizilen koyu ekranlar var; eksik koyu ekran yoktu, yalnız 5.9'daki segment sayaçları düzeltildi.
+ Ne değişti, neden
+ # Değişiklik Çözdüğü sorun Görüntü Pano 1 Mağaza görselleri tek kaynaktan: 7 karelik panorama; turuncu rota kareden kareye geçer, kesimde kopmaz Projede mağaza görseli yoktu; ayrı ayrı tasarlanan kareler yan yana dizilince bir bütün oluşturmaz — 12.1 2 Telefonlarda yalnız bu projenin koyu ekranları: 3.3, 4.3, 5.1, 5.9, 6.4, 7.6 + 8.2, 3.8; veriler Ek C Eski görsellerde kaldırılan özellikler görünüyordu: coin, Oyunlar, Gelen Kutusu, ödeme paketleri, kayıtlı kartlar 01–05, 34, 35 12.1 3 Her karede tek başlık ve tek alt satır, "sen" diliyle, en çok iki satır; süre, sıralama ve "yapay zeka" vaadi yok Tanıtımdaki "5 saniyede analizin hazırlanır", "Yapay zeka destekli" gibi doğrulanamayan vaatler 01, 02, 04 12.1 4 Logo: S-rota işareti ve SMAP yazısı, lacivertte üst kanca beyaz (1.26); arama sonucunda pafta ikonu Eski üçgen logo koyu zeminde kayboluyordu; taslaklardan birinde "Stundent" yazım hatası vardı 01–05, 09 1.26, 12.1–12.3 5 Parlama, rota ve üç kil nesne (Harita, Sütun, Ampul) yalnız mağazada; kil nesneler ekran metninin üstüne binmez Bölüm 6 parlamayı ve blobu uygulamada yasaklıyor; istisna mağazayla sınırlı ve ölçülü tutuldu — 12.1 6 App Store için 7 kare (1320 × 2868 / 1290 × 2796); Play için 9:16 kesim (üst %82) ve 1024 × 500 öne çıkan görsel Mağaza başına ayrı tasarım yerine tek kaynak ve yazılı kesim kuralları — 12.2 7 Önizleme: arama sonucunda ilk üç kare, ürün sayfasında 7 kare; açık ve koyu mağaza teması Karelerin küçük boyda okunup okunmadığı tasarım aşamasında görülmüyordu — 12.3 8 Deneme Detay koyu (5.9): segment sayaçları koyu tonlarda okunur; not 5.10'a bağlandı Sayaçlar koyu zeminde açık tema rengindeydi; mağazadaki 4. kare bu ekrandan 26 5.9 
+ Önceki turların bileşenlerinde genişletmeler
+ G1 StoreDevice yeni, yalnız mağazada: genel cihaz çerçevesi; ekran 804 × 1748 görüntü (402 × 874, ×2), kenar genişliğin %3'ü, köşe yarıçapı %16, gölge 0 30 60 %50 siyah.
+ G2 StorePanel yeni: kare 430 × 932 (1290 × 2796'nın 1/3'ü). Başlık 38/44 800 (gerçek boy 114/132), alt satır 17/24 500 (gerçek 51/72); ikisinde de dengeli satır kırma (text-wrap: balance).
+ G3 Rota 1.26'daki S-rota işaretinden: 14 px orange-500 çizgi, 44 px %22 hale, beyaz kesikli orta çizgi. Duraklar kesim çizgilerinde; kareler yan yana durunca birleşir.
+ G4 Zemin : navy-900 'den #0A1424'e dikey geçiş; kare ortalarında sırayla turuncu %20 ve info #36537C %55 parlama.
+ G5 Kil nesneler 1.25 kuralıyla: mağazada 92–104 px (gerçek 276–312), en çok üç nesne, ekran metninin üstüne binmez.
+ G6 Uygulama ikonu 1.26'daki pafta ikonu; arama sonucunda 64 px.
+ Varsayımlar
+ Ek D'de karşılığı olmayan ve bu turda verdiğim kararlar. Hiçbiri bir ekranın çizimini engellemiyor.
+ 1 SMAP_Magaza_Gorselleri_Prompt.md ile cihaz çerçevesi ve logo dosyaları eklenmedi. Genel bir cihaz çerçevesi çizildi; logo 1.26'daki S-rota çalışmasından. Gerçek dosyalar gelince yalnız bu katmanlar değişir.
+ 2 Boyut ve adetler bildiğim son kurallara göre yazıldı: App Store iPhone 6,9" için 1320 × 2868 ya da 1290 × 2796; Play telefon 9:16, en az 2, en çok 8 görsel; öne çıkan görsel 1024 × 500. Bu turda doğrulanamadı.
+ 3 Başlık ve alt satırlar benim önerim; süre, sıralama, puan ve "yapay zeka" vaadi yok. Arama sonucundaki alt başlık "Deneme okut, eksiğini kapat" ve kategori "Eğitim" örnek değer.
+ 4 Koç ekranları mağaza setinde yok: görseller öğrenciye yönelik, koçun koyu ekranı çizilmedi.
+ 5 Kil nesnelerden Harita, Sütun ve Ampul seçildi; mağazada en çok üç nesne.
+ 6 Mağaza arayüzleri (arama sonucu, ürün sayfası şeridi) Apple ve Google markası olmadan genel bir kalıpla çizildi.
+ 7 Eksik koyu ekran yoktu (liste Tur 10'da tamamlandı); yalnız 5.9'daki segment sayaçlarının koyu rengi düzeltildi.
+ 8 Play kareleri ayrı bir kurgu değil, App Store karelerinin üst %82'si; telefonun altı kesilir.
+ 9 Kare sırası: ne yapar (1), nasıl (2), ne alırım (3), ayrıntılar (4–7). İlk üç kare arama sonucunda tek başına anlaşılır.
+ Geliştirici notları
+ Dışa aktarma
+ Panorama ×3 ölçekte 9030 × 2796 px alınır ve x = 0, 1290, 2580 … noktalarından 7 dilime kesilir (appstore-01…07). 1320 × 2868 için her dilim %2,6 büyütülür, yanlardan toplam 3 px kırpılır. Play: her dilimin üstteki 1290 × 2293'lük kısmı 1080 × 1920'ye küçültülür. Öne çıkan görsel 12.2'deki kurgudan 1024 × 500 alınır. Hepsi RGB, saydamlıksız PNG.
+ Ekran görüntüleri
+ Telefonlar 804 × 1748 (×2) görüntüyle çizildi. Gerçek boyda ekran 846 px genişliğinde; son dışa aktarmada ekranlar ×3 (1206 × 2622) alınmalı. Kaynak: 1 → 3.3 kare 1 · 2 → 4.3 kare 2 · 3 → 5.1 kare 3 · 4 → 5.9 kare 2 · 5 → 6.4 kare 1 · 6 → 7.6 kare 1 ve 8.2 kare 1 · 7 → 3.8 kare 1.
+ Güncelleme
+ Bir ekran değişirse yalnız o telefonun görüntüsü yeniden alınır; kurgu, rota ve kesimler aynı kalır. Başlık değişirse iki satır sınırı ve kesim kuralı (başlık ve alt satır karenin üst %35'inde) korunur.
+ Bölüm 6 denetimi
+ ✓ Telefonlarda yalnız bu projenin koyu ekranları; kaldırılan özellik (coin, Oyunlar, Gelen Kutusu, SmapLab, ödeme) yok.
+ ✓ Veriler Ek C; puan, yorum ve indirme sayısı çizilmedi.
+ ✓ Emoji, büyük harfli metin ve iç kod yok; ad yalnız "SMAP", "Stundent map" taslağı kullanılmadı.
+ ✓ Parlama, rota ve üç kil nesne yalnız mağaza görsellerinde (izinli istisna); uygulama ekranlarına girmedi. Konfeti ve blob yok.
+ ✓ Turuncu metin yok; turuncu yalnız rota, logonun alt kancası ve ekranların kendi turuncusu (kamera, konum göstergesi, ilerleme, bugün).
+ ✓ Kontrast: beyaz ve #C5D4E8 metin #0F294A–#0A1424 zeminde AA'nın üstünde; rota ve parlama metnin altına girmiyor.
+ ✓ Kil nesneler ekran metninin üstüne binmiyor; telefonlar kesim çizgisine gerçek boyda 40 px'ten fazla yaklaşmıyor.
+ ! Gerçek cihaz çerçevesi ve onaylı logo dosyaları gelince 12.1–12.3'te bu katmanlar değiştirilmeli.
+ ! Boyut ve adet kuralları yüklemeden önce App Store Connect ve Play Console'da doğrulanmalı.
+ Sıradaki tur
+ Bütün turlar tamamlandı. Uygulamaya geçiş için okuma sırası: 0.1–0.3 akış haritası → 11.12–11.16 teslim panoları → sayfa sayfa ekran panoları.
