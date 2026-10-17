@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart'
     show ValueNotifier, immutable, listEquals;
 import 'package:stacked/stacked.dart';
 
+import 'package:smap/core/theme/app_motion.dart';
 import 'package:smap/app/router/app_router.dart';
 import 'package:smap/core/errors/app_exception.dart';
 import 'package:smap/core/errors/app_result.dart';
@@ -99,7 +100,7 @@ class AnalyticsViewModel extends BaseViewModel {
     this.student,
     AnalyticsTab initialTab = AnalyticsTab.general,
     DateTime Function()? clock,
-    Duration timeout = const Duration(seconds: 15),
+    Duration timeout = SmapDurations.skeletonTimeout,
   }) : _analytics = analytics,
        _exams = exams,
        _connectivity = connectivity,
