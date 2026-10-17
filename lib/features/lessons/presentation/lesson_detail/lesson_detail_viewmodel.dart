@@ -5,9 +5,7 @@ import 'package:stacked/stacked.dart';
 import 'package:smap/core/errors/app_exception.dart';
 import 'package:smap/core/errors/app_result.dart';
 import 'package:smap/core/extensions/either_extensions.dart';
-import 'package:smap/core/services/app_haptics.dart';
 import 'package:smap/core/services/device_preferences.dart';
-import 'package:smap/core/services/toast_service.dart';
 import 'package:smap/core/theme/app_motion.dart';
 import 'package:smap/features/cards/data/card_repository.dart';
 import 'package:smap/features/cards/domain/card_totals.dart';
@@ -17,13 +15,12 @@ import 'package:smap/features/lessons/application/lesson_category.dart';
 import 'package:smap/features/lessons/application/lesson_rows.dart';
 import 'package:smap/features/lessons/application/lesson_segments.dart';
 import 'package:smap/features/lessons/application/lessons_service.dart';
-import 'package:smap/features/lessons/application/literature_authors.dart';
+import 'package:smap/features/lessons/application/literature_service.dart';
 import 'package:smap/features/lessons/data/lesson_content_repository.dart';
 import 'package:smap/features/lessons/domain/general_lesson.dart';
 import 'package:smap/features/lessons/domain/main_subjects.dart';
 import 'package:smap/features/lessons/presentation/lesson_detail/lesson_detail_state.dart';
 import 'package:smap/features/lessons/presentation/lessons_navigator.dart';
-import 'package:smap/features/lessons/presentation/literature/sheets/author_sheet.dart';
 import 'package:smap/shared/ui/feedback/section_state.dart';
 
 /// The logic of Ders Detayı (pano 7.2, 7.4, 7.5 kare 2 and 3; spec §4.F 7.2).
@@ -38,7 +35,11 @@ import 'package:smap/shared/ui/feedback/section_state.dart';
 /// - "Eksiklerim" keeps the topics with something missing under the segment,
 ///   with their numbers of the full list.
 /// - Edebiyat has a second segment, Konular and Yazar ve Eserler (kept on the
-///   device); the authors load the first time they are shown.
+///   device). The era list of Yazar ve Eserler (pano 14.5 kare 1) is the
+///   [LiteratureService]'s and is read when the screen opens, so the segment's
+///   counter "3 eksik" is there on either section; a row opens the era
+///   detail. An empty era list is a failure (T12.16: the eras come from the
+///   curriculum).
 /// - Returning from a topic reloads the counts without a skeleton; every first
 ///   load is bounded by 15 s, then the error state shows.
 class LessonDetailViewModel extends ReactiveViewModel {
@@ -47,9 +48,9 @@ class LessonDetailViewModel extends ReactiveViewModel {
     required LessonsService lessons,
     required LessonContentRepository content,
     required CardRepository cards,
+    required LiteratureService literature,
     required DevicePreferences preferences,
     required LessonsNavigator navigator,
-    required ToastService toast,
     LessonCat? cat,
     bool onlyMissing = false,
     LiteratureSection? section,
@@ -57,9 +58,9 @@ class LessonDetailViewModel extends ReactiveViewModel {
   }) : _lessons = lessons,
        _content = content,
        _cards = cards,
+       _literature = literature,
        _preferences = preferences,
        _navigator = navigator,
-       _toast = toast,
        _requestedCat = cat,
        _onlyMissing = onlyMissing,
        _requestedSection = section,
@@ -72,9 +73,9 @@ class LessonDetailViewModel extends ReactiveViewModel {
   final LessonsService _lessons;
   final LessonContentRepository _content;
   final CardRepository _cards;
+  final LiteratureService _literature;
   final DevicePreferences _preferences;
   final LessonsNavigator _navigator;
-  final ToastService _toast;
   final LessonCat? _requestedCat;
   final LiteratureSection? _requestedSection;
   final Duration _timeout;
@@ -82,9 +83,6 @@ class LessonDetailViewModel extends ReactiveViewModel {
 
   /// Main subjects by backend lesson id.
   final Map<String, AsyncSection<MainSubjects>> _subjects = {};
-  AsyncSection<LiteratureAuthors> _authors =
-      const AsyncSection<LiteratureAuthors>.loading();
-  bool _authorsRequested = false;
   CardTotals _cardTotals = const CardTotals.empty();
   int? _selectedValue;
   bool _onlyMissing;
@@ -97,10 +95,13 @@ class LessonDetailViewModel extends ReactiveViewModel {
   LessonFilterBarData? _filterBar;
   LessonSegmentBarData? _segmentBar;
   LessonTopicsData? _topicsData;
-  LessonAuthorsData? _authorsData;
+  LessonErasData? _erasData;
 
   @override
-  List<ListenableServiceMixin> get listenableServices => [_lessons];
+  List<ListenableServiceMixin> get listenableServices => [
+    _lessons,
+    _literature,
+  ];
 
   @override
   void notifyListeners() {
@@ -108,7 +109,7 @@ class LessonDetailViewModel extends ReactiveViewModel {
     _filterBar = null;
     _segmentBar = null;
     _topicsData = null;
-    _authorsData = null;
+    _erasData = null;
     super.notifyListeners();
   }
 
@@ -177,13 +178,15 @@ class LessonDetailViewModel extends ReactiveViewModel {
     subject: lesson?.subject,
   );
 
-  /// The Edebiyat detail shows its author list instead of the topics.
-  bool get showsAuthors =>
-      isLiterature && _section == LiteratureSection.authors;
+  /// The Edebiyat detail shows its era list instead of the topics.
+  bool get showsEras => isLiterature && _section == LiteratureSection.authors;
 
-  /// The Edebiyat section choice; `null` for any other lesson.
-  LessonSectionData get sectionData =>
-      LessonSectionData(isLiterature ? _section : null);
+  /// The Edebiyat section choice and the missing works of Yazar ve Eserler
+  /// for its counter; `null` for any other lesson.
+  LessonSectionData get sectionData => LessonSectionData(
+    isLiterature ? _section : null,
+    authorsMissing: isLiterature ? _literature.totalMissing : null,
+  );
 
   LessonFilterBarData get filterBar => _filterBar ??= _buildFilterBar();
 
@@ -194,10 +197,32 @@ class LessonDetailViewModel extends ReactiveViewModel {
 
   LessonTopicsData get topics => _topicsData ??= _buildTopics();
 
-  LessonAuthorsData get authors => _authorsData ??= LessonAuthorsData(
-    state: _authors.state,
-    authors: _authors.data ?? const LiteratureAuthors([]),
-  );
+  LessonErasData get eras => _erasData ??= _buildEras();
+
+  /// The era list: the server's order, numbered 1 to n. An empty list is the
+  /// error state (T12.16), as is a failed read.
+  LessonErasData _buildEras() {
+    final section = _literature.state.eras;
+    final list = section.data;
+    if (section.isLoading) {
+      return const LessonErasData(state: SectionState.loading);
+    }
+    if (list == null || list.isEmpty) {
+      return const LessonErasData(state: SectionState.error);
+    }
+    return LessonErasData(
+      state: SectionState.ready,
+      eras: [
+        for (final (index, era) in list.indexed)
+          EraRowData(
+            id: era.id,
+            number: index + 1,
+            name: era.name,
+            missing: era.missing,
+          ),
+      ],
+    );
+  }
 
   LessonFilterBarData _buildFilterBar() {
     final state = _topicsState;
@@ -280,11 +305,11 @@ class LessonDetailViewModel extends ReactiveViewModel {
     }
     _resolveSelection();
     notifyListeners();
-    await Future.wait([_loadTopics(), if (_wantsAuthors) _loadAuthors()]);
+    await Future.wait([
+      _loadTopics(),
+      if (isLiterature) _literature.loadEras(),
+    ]);
   }
-
-  bool get _wantsAuthors =>
-      isLiterature && _section == LiteratureSection.authors;
 
   /// Picks the segment to open on once the options are known: at once for a
   /// lesson with tracks, after the server's filters for the others.
@@ -352,21 +377,6 @@ class LessonDetailViewModel extends ReactiveViewModel {
     notifyListeners();
   }
 
-  Future<void> _loadAuthors() async {
-    _authorsRequested = true;
-    _authors = const AsyncSection<LiteratureAuthors>.loading();
-    notifyListeners();
-    _authors = await AsyncSection.load(
-      () async => LiteratureAuthors.of(
-        await _unwrap(LiteratureLoader(_content).load()),
-      ),
-      isEmpty: (list) => list.isEmpty,
-      timeout: _timeout,
-    );
-    if (_disposed) return;
-    notifyListeners();
-  }
-
   static Future<T> _unwrap<T>(Future<AppResult<T>> future) async {
     final result = await future;
     return result.fold<T>(
@@ -407,9 +417,6 @@ class LessonDetailViewModel extends ReactiveViewModel {
       ),
     );
     notifyListeners();
-    if (section == LiteratureSection.authors && !_authorsRequested) {
-      await _loadAuthors();
-    }
   }
 
   Future<void> retryTopics() async {
@@ -419,7 +426,8 @@ class LessonDetailViewModel extends ReactiveViewModel {
     await _loadTopics();
   }
 
-  Future<void> retryAuthors() => _loadAuthors();
+  /// "Tekrar Dene" under the segment: the era list again.
+  Future<void> retryEras() => _literature.loadEras(force: true);
 
   /// A topic row was pressed: Konu Detayı opens on the chosen category; the
   /// counts are read again when it closes.
@@ -440,50 +448,9 @@ class LessonDetailViewModel extends ReactiveViewModel {
     await _navigator.openCardDeck(backendLessonId: id, lessonName: name);
   }
 
-  /// An author row was pressed: the sheet opens; its "Öğrendim" marks the
-  /// author's missing works learned.
-  Future<void> openAuthor(AuthorView author) async {
-    final learn = await AuthorSheet.show(author: author);
-    if (learn ?? false) await learnAuthor(author.key);
-  }
-
-  /// Marks the missing works of the author [authorKey] learned. The list
-  /// follows at once; a work whose request failed goes back to missing and
-  /// the toast says nothing was sent. There is no undo on the server.
-  Future<void> learnAuthor(String authorKey) async {
-    final before = _authors.data;
-    final author = before?.authorOf(authorKey);
-    if (before == null || author == null) return;
-    final ids = author.missingProgressIds;
-    if (ids.isEmpty) return;
-
-    _authors = AsyncSection<LiteratureAuthors>.ready(
-      before.withLearned(authorKey, ids.toSet()),
-    );
-    notifyListeners();
-
-    final answers = await Future.wait([
-      for (final id in ids) _content.markItemLearned(itemId: id),
-    ]);
-    if (_disposed) return;
-    final sent = <String>{
-      for (final (index, answer) in answers.indexed)
-        if (answer.isRight()) ids[index],
-    };
-    if (sent.length < ids.length) {
-      // Back to missing for the works that were not sent.
-      final current = _authors.data ?? before;
-      _authors = AsyncSection<LiteratureAuthors>.ready(
-        current.withAuthor(author.withLearned(sent)),
-      );
-      notifyListeners();
-      _toast.error((l) => l.lessons_sendFailed);
-    }
-    if (sent.isNotEmpty) {
-      AppHaptics.success();
-      unawaited(_lessons.refresh().catchError((Object _) {}));
-    }
-  }
+  /// An era row was pressed: Dönem detayı opens.
+  Future<void> openEra(String eraId) =>
+      _navigator.openEra(lessonId: lessonId, eraId: eraId);
 
   @override
   void dispose() {

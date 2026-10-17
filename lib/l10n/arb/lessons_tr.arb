@@ -124,26 +124,6 @@
   "@lessonDetail_sectionAuthors": {
     "description": "Second option of the Edebiyat section segment (pano 7.4)."
   },
-  "literature_empty": "Yazar listesi hazırlanıyor.",
-  "@literature_empty": {
-    "description": "Empty state of the Yazar ve Eserler list."
-  },
-  "literature_errorTitle": "Yazarlar yüklenemedi",
-  "@literature_errorTitle": {
-    "description": "Title of the error state of the Yazar ve Eserler list."
-  },
-  "literature_authorA11y": "{name}, {era}",
-  "@literature_authorA11y": {
-    "description": "Screen reader sentence of an author row (C28): \"Namık Kemal, Tanzimat\".",
-    "placeholders": {
-      "name": {
-        "type": "String"
-      },
-      "era": {
-        "type": "String"
-      }
-    }
-  },
   "literature_about": "Hakkında",
   "@literature_about": {
     "description": "Heading of the biography in the author sheet (pano 7.4 kare 2)."
@@ -156,18 +136,9 @@
   "@literature_otherType": {
     "description": "Heading of the works whose type the app does not know."
   },
-  "literature_workMissingA11y": "{title}, eksik",
-  "@literature_workMissingA11y": {
-    "description": "Screen reader reading of a work that is still missing.",
-    "placeholders": {
-      "title": {
-        "type": "String"
-      }
-    }
-  },
   "literature_learned": "Öğrendim",
   "@literature_learned": {
-    "description": "Primary button of the author sheet: marks the author's missing works learned (pano 7.4 kare 2)."
+    "description": "Text button of a missing work in the author sheet (pano 14.6 kare 1)."
   },
   "topicDetail_contextTrack": "{lesson} · {track} · {number}. konu",
   "@topicDetail_contextTrack": {
@@ -261,5 +232,196 @@
   "cardSheet_dontAsk": "Bir daha sorma",
   "@cardSheet_dontAsk": {
     "description": "Checkbox of the confirmation of \"Öğrendim\"; kept on the device (pano 8.1 kare 2)."
+  },
+  "literature_eraMissing": "{count} eksik eser",
+  "@literature_eraMissing": {
+    "description": "EksikTag of an era row and of the era detail title (pano 14.5 kare 1 and 2): \"2 eksik eser\". The count is formatted with thousands dots.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_eraRowA11y": "{number}, {name}, {count} eksik eser",
+  "@literature_eraRowA11y": {
+    "description": "Screen reader sentence of an era row with missing works (pano 14.5 kare 1): \"1, Tanzimat Dönemi, 2 eksik eser\".",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_workCount": "{count} eser",
+  "@literature_workCount": {
+    "description": "Work count of an author row and of the sheet heading when nothing is missing (pano 14.5 kare 2): \"8 eser\".",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_worksCounter": "{count} eser · {missing} eksik",
+  "@literature_worksCounter": {
+    "description": "Counter at the right of \"Eserleri\" in the author sheet (pano 14.6 kare 1): \"8 eser · 2 eksik\".",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      },
+      "missing": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_authorRowA11y": "{name}, {works}",
+  "@literature_authorRowA11y": {
+    "description": "Screen reader sentence of an author row without missing works (pano 14.5 kare 2): \"Şinasi, 3 eser\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "works": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_authorRowMissingA11y": "{name}, {works}, {missing} eksik",
+  "@literature_authorRowMissingA11y": {
+    "description": "Screen reader sentence of an author row with missing works (pano 14.5 kare 2): \"Namık Kemal, 8 eser, 2 eksik\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "works": {
+        "type": "String"
+      },
+      "missing": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_eraListError": "Dönemler yüklenemedi.",
+  "@literature_eraListError": {
+    "description": "Section error under the segment when the era list did not load (pano 14.7, 14.3 kare 2 layout)."
+  },
+  "literature_authorsErrorTitle": "Yazarlar yüklenemedi.",
+  "@literature_authorsErrorTitle": {
+    "description": "Title of the error inside an accordion whose authors did not load (pano 14.7 kare 2)."
+  },
+  "literature_authorsErrorBody": "Bağlantını kontrol edip tekrar dene.",
+  "@literature_authorsErrorBody": {
+    "description": "Second line of the error inside an accordion (pano 14.7 kare 2)."
+  },
+  "literature_noAuthors": "Bu bölümde yazar yok.",
+  "@literature_noAuthors": {
+    "description": "Empty text inside an accordion without authors (pano 14.7)."
+  },
+  "literature_noWorks": "Bu yazarın eser listesi henüz yok.",
+  "@literature_noWorks": {
+    "description": "Empty text of the author sheet when the author has no works (pano 14.6 kare 3)."
+  },
+  "literature_typeHeading": "{type} · {count}",
+  "@literature_typeHeading": {
+    "description": "Heading of a work type in the author sheet (pano 14.6 kare 1): \"Roman · 2\".",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_known": "Biliyorsun",
+  "@literature_known": {
+    "description": "Check and word of a work the student knows (pano 14.6 kare 1)."
+  },
+  "literature_learnedToast": "{work} bildiklerine eklendi.",
+  "@literature_learnedToast": {
+    "description": "Toast after \"Öğrendim\" with \"Geri Al\" (pano 14.6 kare 2).",
+    "placeholders": {
+      "work": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_saveFailed": "Kaydedilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@literature_saveFailed": {
+    "description": "Toast when the held \"Öğrendim\" request failed and the work is missing again (pano 14.7, \"kaydetme hatası\")."
+  },
+  "literature_offlineNote": "Öğrendim'i kaydetmek için bağlantı gerekiyor.",
+  "@literature_offlineNote": {
+    "description": "Note under the first missing work while the device is offline (pano 14.7 kare 3)."
+  },
+  "literature_workMissingA11y": "{title}, {type}, eksik. Öğrendim olarak işaretle.",
+  "@literature_workMissingA11y": {
+    "description": "Screen reader reading of a missing work whose type is known (pano 14.6): \"İntibah, roman, eksik. Öğrendim olarak işaretle.\"",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_workMissingNoTypeA11y": "{title}, eksik. Öğrendim olarak işaretle.",
+  "@literature_workMissingNoTypeA11y": {
+    "description": "Screen reader reading of a missing work of an unknown type.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_workKnownA11y": "{title}, {type}, biliyorsun",
+  "@literature_workKnownA11y": {
+    "description": "Screen reader reading of a known work (pano 14.6): \"Cezmi, roman, biliyorsun\".",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_workKnownNoTypeA11y": "{title}, biliyorsun",
+  "@literature_workKnownNoTypeA11y": {
+    "description": "Screen reader reading of a known work of an unknown type.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_workUnknownA11y": "{title}, {type}",
+  "@literature_workUnknownA11y": {
+    "description": "Screen reader reading of a work with no status (pano 14.6 kare 3).",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_sheetA11y": "{name}, {era}",
+  "@literature_sheetA11y": {
+    "description": "Accessible name of the author sheet.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "era": {
+        "type": "String"
+      }
+    }
   }
 }

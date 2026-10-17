@@ -20,11 +20,14 @@ import 'package:smap/features/exams/presentation/widgets/exam_summary_card.dart'
 import 'package:smap/features/exams/presentation/widgets/question_cell.dart';
 import 'package:smap/features/exams/presentation/widgets/test_bar_row.dart';
 import 'package:smap/features/exams/presentation/widgets/topic_result_row.dart';
+import 'package:smap/features/lessons/application/topic_outline.dart';
+import 'package:smap/features/lessons/presentation/widgets/author_row.dart';
 import 'package:smap/features/lessons/presentation/widgets/eksik_tag.dart';
 import 'package:smap/features/lessons/presentation/widgets/subject_glyph.dart';
 import 'package:smap/features/lessons/presentation/widgets/subject_row.dart';
 import 'package:smap/features/lessons/presentation/widgets/subject_tile.dart';
 import 'package:smap/features/lessons/presentation/widgets/topic_row.dart';
+import 'package:smap/features/lessons/presentation/widgets/work_row.dart';
 import 'package:smap/features/schedule/presentation/widgets/program_item_row.dart';
 import 'package:smap/shared/ui/surfaces/app_card.dart';
 import 'package:smap/shared/ui/surfaces/app_row_group.dart';
@@ -50,6 +53,7 @@ class _DomainGalleryState extends State<DomainGallery> {
   var _favorite = false;
   var _cardFavorite = false;
   var _removed = false;
+  var _workLearned = false;
 
   static const _aytCounts = DybCounts(correct: 86, wrong: 74, blank: 0);
   static const _tytCounts = DybCounts(correct: 80, wrong: 21, blank: 19);
@@ -98,6 +102,8 @@ class _DomainGalleryState extends State<DomainGallery> {
         _subjectRowSection(),
         _subjectTileSection(),
         _topicRowSection(),
+        _eraAuthorSection(),
+        _workRowSection(),
         _programSection(),
         _cardFaceSection(),
         _rowShellSection(),
@@ -662,6 +668,120 @@ class _DomainGalleryState extends State<DomainGallery> {
             ),
             TopicRow(number: 12, name: 'Noktalama İşaretleri', onTap: _noop),
           ],
+        ),
+      ],
+    );
+  }
+
+  Widget _eraAuthorSection() {
+    return const GallerySection(
+      title: 'TopicRow dönem hâli · AuthorRow · C22, C28 · pano 14.5',
+      note:
+          'Dönem satırı: sıra numarası, ad, "2 eksik eser" (yazar sayısı '
+          'gelmediği için yazılmaz). Yazar satırı: 48 pt fotoğraf ya da baş '
+          'harf, ad, "8 eser", eksik varsa "2 eksik"; eserleri yoksa sayı '
+          'yazılmaz.',
+      children: [
+        GalleryState(
+          label: 'dönemler',
+          child: AppRowGroup(
+            children: [
+              TopicRow(
+                number: 1,
+                name: 'Tanzimat Dönemi',
+                missing: 2,
+                missingWorks: true,
+                onTap: _noop,
+              ),
+              TopicRow(
+                number: 2,
+                name: 'Servet-i Fünun Dönemi',
+                missing: 1,
+                missingWorks: true,
+                onTap: _noop,
+              ),
+              TopicRow(number: 3, name: 'Fecr-i Âti', onTap: _noop),
+            ],
+          ),
+        ),
+        GalleryState(
+          label: 'yazarlar',
+          child: AppRowGroup(
+            children: [
+              AuthorRow(name: 'Şinasi', workCount: 3, onTap: _noop),
+              AuthorRow(
+                name: 'Namık Kemal',
+                workCount: 8,
+                missing: 2,
+                onTap: _noop,
+              ),
+              AuthorRow(name: 'Ziya Paşa', workCount: 6, onTap: _noop),
+              AuthorRow(
+                name: 'Sami Paşazade Sezai',
+                workCount: 0,
+                onTap: _noop,
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _workRowSection() {
+    return GallerySection(
+      title: 'WorkRow · durumlu eser satırı · pano 14.6, 14.7',
+      note:
+          'Eksik eserde "Eksik" ve metin düğmesi "Öğrendim"; bilinen eserde '
+          '✓ "Biliyorsun" (success); durumu gelmeyen eserde yalnız ad. '
+          'Çevrimdışıyken düğme pasif, nedeni ilk eksik eserin altında. '
+          'Durum değişince sağ taraf 250 ms\'de çapraz solar.',
+      children: [
+        GalleryState(
+          label: 'missing · known · unknown',
+          child: ColoredBox(
+            color: context.appColors.bgRaised,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: AppSpacing.s24),
+              child: Column(
+                children: [
+                  WorkRow(
+                    title: 'İntibah',
+                    state: _workLearned
+                        ? ItemCardState.learned
+                        : ItemCardState.missing,
+                    typeName: 'Roman',
+                    onLearn: () => setState(() => _workLearned = true),
+                  ),
+                  const WorkRow(
+                    title: 'Cezmi',
+                    state: ItemCardState.learned,
+                    typeName: 'Roman',
+                  ),
+                  const WorkRow(
+                    title: 'Müntehabat-ı Eş\'ar',
+                    state: ItemCardState.unknown,
+                    typeName: 'Şiir',
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        GalleryState(
+          label: 'offline',
+          child: ColoredBox(
+            color: context.appColors.bgRaised,
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: AppSpacing.s24),
+              child: WorkRow(
+                title: 'İntibah',
+                state: ItemCardState.missing,
+                typeName: 'Roman',
+                offlineNote: true,
+              ),
+            ),
+          ),
         ),
       ],
     );

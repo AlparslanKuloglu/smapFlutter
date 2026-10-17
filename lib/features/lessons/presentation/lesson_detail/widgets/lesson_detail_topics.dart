@@ -2,7 +2,7 @@ part of '../lesson_detail_view.dart';
 
 /// The topic list: the skeleton, the card of topic rows, the empty filter
 /// card or the error state (pano 7.2, 7.5 kare 1 to 3). Nothing while the
-/// Edebiyat detail shows its authors.
+/// Edebiyat detail shows its eras.
 class _LessonTopicsSection
     extends
         SelectorViewModelWidget<
@@ -13,7 +13,7 @@ class _LessonTopicsSection
 
   @override
   (LessonTopicsData, bool) selector(LessonDetailViewModel viewModel) =>
-      (viewModel.topics, !viewModel.showsAuthors);
+      (viewModel.topics, !viewModel.showsEras);
 
   @override
   Widget build(BuildContext context, (LessonTopicsData, bool) data) {
