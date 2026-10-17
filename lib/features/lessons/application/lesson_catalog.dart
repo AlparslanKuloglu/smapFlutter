@@ -110,9 +110,8 @@ class GeneralLessonSpec {
   final bool isLiterature;
 }
 
-/// The nine general lessons, moved from the legacy `AppLessons.generalLessons`
-/// (`lib/core/constants/lesson_constants.dart`, which stays until its readers
-/// retire). The ids are the backend's ObjectIds, copied unchanged.
+/// The nine general lessons, moved from the old app's `AppLessons.generalLessons`
+/// (that file is gone). The ids are the backend's ObjectIds, copied unchanged.
 abstract final class LessonCatalog {
   static const List<GeneralLessonSpec> generalLessons = [
     GeneralLessonSpec(

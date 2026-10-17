@@ -54,9 +54,6 @@ part 'widgets/result_moment_states.dart';
 /// closed while `FeatureFlags.notificationsEnabled` is off), then closes the
 /// camera flow and opens the destination: Deneme Detay on the Analizlerim
 /// stack, or Anasayfa. The system Back does what the close button does.
-///
-/// The old three-step result flow (`omd_result_flow_view.dart`) goes with
-/// the scan task's own cleanup.
 @RoutePage()
 class ResultMomentView extends StackedView<ResultMomentViewModel> {
   const ResultMomentView({
