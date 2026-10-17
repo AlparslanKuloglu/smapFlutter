@@ -20,7 +20,8 @@ class HomeMonthCalendar extends StatelessWidget {
     'Paz',
   ];
 
-  static const Color _gridLine = Color(0xFFEEF0F3);
+  static const Color _gridLine = Color(0xFFEDEFF2);
+  static const Color _headerBg = Color(0xFFF5F6F8);
 
   List<DateTime> _cellsForMonth(DateTime monthStart) {
     final y = monthStart.year;
@@ -109,53 +110,60 @@ class HomeMonthCalendar extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Column(
-                      children: [
-                        Container(
-                          color: AppColors.white,
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: Row(
-                            children: _dayShort
-                                .map(
-                                  (e) => Expanded(
-                                    child: Text(
-                                      e,
-                                      textAlign: TextAlign.center,
-                                      style: const TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w600,
-                                        color: AppColors.textPrimary,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: AppColors.white,
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: _gridLine),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(11),
+                      child: Column(
+                        children: [
+                          Container(
+                            color: _headerBg,
+                            padding: const EdgeInsets.symmetric(vertical: 11),
+                            child: Row(
+                              children: _dayShort
+                                  .map(
+                                    (e) => Expanded(
+                                      child: Text(
+                                        e,
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w500,
+                                          color: AppColors.textPrimary,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                )
-                                .toList(),
+                                  )
+                                  .toList(),
+                            ),
                           ),
-                        ),
-                        Table(
-                          border: TableBorder(
-                            horizontalInside: BorderSide(color: _gridLine),
-                            verticalInside: BorderSide(color: _gridLine),
+                          Table(
+                            border: TableBorder(
+                              horizontalInside: BorderSide(color: _gridLine),
+                              verticalInside: BorderSide(color: _gridLine),
+                            ),
+                            children: List.generate(rows, (r) {
+                              return TableRow(
+                                children: List.generate(7, (c) {
+                                  final i = r * 7 + c;
+                                  final d = cells[i];
+                                  final inMonth = _sameMonth(d, focusedMonth);
+                                  final today = _isToday(d);
+                                  return _DateCell(
+                                    day: d.day,
+                                    muted: !inMonth,
+                                    today: today,
+                                  );
+                                }),
+                              );
+                            }),
                           ),
-                          children: List.generate(rows, (r) {
-                            return TableRow(
-                              children: List.generate(7, (c) {
-                                final i = r * 7 + c;
-                                final d = cells[i];
-                                final inMonth = _sameMonth(d, focusedMonth);
-                                final today = _isToday(d);
-                                return _DateCell(
-                                  day: d.day,
-                                  muted: !inMonth,
-                                  today: today,
-                                );
-                              }),
-                            );
-                          }),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -187,8 +195,8 @@ class _ChevronIconButton extends StatelessWidget {
   }
 }
 
-/// Tüm satırlar aynı yükseklikte kalsın diye sabit; bugün vurgusu bunun içinde ortalanır.
-const double _kDateCellHeight = 40;
+/// Tüm satırlar aynı yükseklikte kalsın diye sabit; gün numarası üstte ortalanır.
+const double _kDateCellHeight = 52;
 
 class _DateCell extends StatelessWidget {
   const _DateCell({
@@ -206,31 +214,31 @@ class _DateCell extends StatelessWidget {
     return Container(
       color: AppColors.white,
       height: _kDateCellHeight,
-      alignment: Alignment.center,
+      alignment: Alignment.topCenter,
+      padding: EdgeInsets.only(top: today ? 4 : 8),
       child: today
           ? Container(
-              width: 30,
-              height: 30,
+              width: 24,
+              height: 24,
               alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: AppColors.navSelectedBg,
+              decoration: const BoxDecoration(
+                color: AppColors.primaryOrange,
                 shape: BoxShape.circle,
-                border: Border.all(color: AppColors.primaryOrange, width: 2),
               ),
               child: Text(
                 '$day',
                 style: const TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.primaryOrange,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.white,
                 ),
               ),
             )
           : Text(
               '$day',
               style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
                 color: muted ? _kMutedCalendarDay : AppColors.textPrimary,
               ),
             ),
