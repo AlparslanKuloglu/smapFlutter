@@ -1,6 +1,6 @@
 # SMAP — Ekran Akışı (SMAP-13'ten)
 
-Kaynak: `tasarim-html/unpacked/SMAP-13/*` (12 akış panosu, 181 ekran), PNG'ler `tasarim-html/png/SMAP-13_*.png`.
+Kaynak: `docs/design/panolar/SMAP-13/*` (12 akış panosu, 181 ekran), PNG'ler `docs/design/panolar/png/SMAP-13_*.png`.
 Gösterim: `→ [dokunulan yer]` dokunuşla geçiş, `⇢` kendiliğinden geçiş. `(2.3·1)` = kaynak pano 2.3, kare 1.
 
 ## 13.1 İlk açılış ve kayıt

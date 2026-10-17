@@ -1,0 +1,1253 @@
+[
+ {
+  "name": "Programım (öğrenci haftalık programı: liste, yeni program, düzenleme, Çantam)",
+  "oldScreens": [
+   "lib/features/home/presentation/screens/my_schedule_page/my_schedule_page.dart",
+   "lib/features/home/presentation/screens/my_schedule_page/schedule_list_page/schedule_list_page.dart",
+   "lib/features/home/presentation/screens/my_schedule_page/day_selection_page/day_selection_page.dart",
+   "lib/features/home/presentation/screens/my_schedule_page/add_lessons_page/add_lessons_page.dart",
+   "lib/features/home/presentation/screens/my_schedule_page/add_lessons_page/widgets/add_topic_popup.dart",
+   "lib/repository/weekly_repository.dart"
+  ],
+  "entryPoints": "Öğrenci Anasayfa menü ızgarası 'Programım' karosu (home_menu_grid.dart:40-44, dokunma :139-141 → HomeNavNotifier.open(HomeRoute.mySchedule)); HomeFlowScreen bunu MySchedulePage'e çevirir (home_flow_screen.dart:20-23).",
+  "status": "working-real-api",
+  "endpoints": [
+   "POST /student/getMyWeeklies — weekly_repository.dart:41, çağıran schedule_list_page.dart:51",
+   "GET /student/getAllMainSubjects — weekly_repository.dart:19, çağıran add_topic_popup.dart:63",
+   "POST /student/addNewProgram — weekly_repository.dart:53, çağıran add_lessons_page.dart:696",
+   "POST /student/updateProgram — weekly_repository.dart:67, çağıran add_lessons_page.dart:701"
+  ],
+  "dataShown": "Program kartları: ad ve motto (schedule_list_card.dart:17-18). Çantam: getMyWeeklies yanıtındaki bagItems, SharedPreferences 'bagItemsStr'e yazılır (schedule_list_page.dart:61-65) ve 'Çantam' sekmesinde listelenir (add_topic_popup.dart:142, 185-200). 'Dersler' sekmesinde bütün ders ve konu ağacı gösterilir. Görevler: gün, saat, dakika, ders, konu, madde ve renk (add_lessons_page.dart:665-679).",
+  "userActions": "Yeni program: gün seçimi → saat ızgarası → Çantam/Dersler'den konu → ad ve motto → kaydet (addNewProgram). Kayıtlı karta dokununca aynı akış açılır ve kayıt updateProgram ile yapılır (schedule_list_page.dart:149-176). Silme yok.",
+  "inNewDesign": "Var: 3.4 Programım liste, Gün ve Hafta görünümü (SMAP_Flutter_Spec.md:1505); 3.5 Yeni Program, Çantam ve Dersler sekmeleriyle (:1515, :1520); 3.6 Düzenle, Günü Sıfırla, İptal; Anasayfa 'Bugün' bölümü (:1494). Not: tasarım Çantam'ın kaynağını belirtilmemiş sayıyor. Kodda kaynak, getMyWeeklies yanıtındaki bagItems alanı.",
+  "evidence": "Bütün yazma ve okuma işlemleri WeeklyRepository._makeRequest üzerinden gerçek dio isteğiyle yapılır ve success kontrol edilir (weekly_repository.dart:77-121). Kayıt payload'u {dataObj:{name, motto, tasks}} (add_lessons_page.dart:684-686).",
+  "recommendation": "covered-by-design",
+  "why": "Çalışan, backend'e bağlı bir özellik. Yeni tasarım bunu daha zengin hâliyle (Gün/Hafta görünümü, düzenleme modu) kapsıyor. Tasarım ekibine iletilecek tek not: Çantam verisi getMyWeeklies.bagItems alanından geliyor."
+ },
+ {
+  "name": "Koç: öğrencinin programını görüntüleme ve OLUŞTURMA/DÜZENLEME",
+  "oldScreens": [
+   "lib/features/home/presentation/screens/coach_programs_screen.dart",
+   "lib/features/home/presentation/screens/my_schedule_page/my_schedule_page.dart",
+   "lib/features/home/presentation/screens/my_schedule_page/schedule_list_page/schedule_list_page.dart",
+   "lib/features/home/presentation/screens/my_schedule_page/add_lessons_page/add_lessons_page.dart"
+  ],
+  "entryPoints": "Koç Anasayfa öğrenci şeridi → öğrenci diyaloğu → 'Program' (home_students_cards.dart:305-316 → TeacherViewScheduleScreen). Öğrencilerim kartı → 'Program' (my_students_screen.dart:157-167).",
+  "status": "working-real-api",
+  "endpoints": [
+   "POST /student/getMyWeeklies?studentId= — weekly_repository.dart:41 + studentId enjeksiyonu :86-89",
+   "GET /student/getAllMainSubjects?studentId= — weekly_repository.dart:19",
+   "POST /student/addNewProgram?studentId= — weekly_repository.dart:53, çağıran add_lessons_page.dart:696",
+   "POST /student/updateProgram?studentId= — weekly_repository.dart:67, çağıran add_lessons_page.dart:701"
+  ],
+  "dataShown": "Öğrencinin programları (ad, motto) ve öğrencinin Çantam'ı. Üst barda öğrenci adı ve avatarı (coach_programs_screen.dart:29-61).",
+  "userActions": "Koç, öğrenci adına yeni program kurabilir ('+' schedule_list_page.dart:103-111) ve var olan programı düzenleyip kaydedebilir (kart dokunuşu :149-176). İkisi de studentId ile API'ye gider. Okuma-yazma ayrımı yok: my_schedule_page altında rol, readOnly veya isCoach kontrolü bulunmuyor.",
+  "inNewDesign": "Kısmen var. 10.4 Öğrenci Profili 'Program' sekmesi yalnız görüntüleme sunar: 'Programı Alparslan düzenler; sen görüntülersin.', 'Günü Sıfırla' ve 'Düzenle' yok (SMAP_Flutter_Spec.md:1866). T9.6 'koç programı yalnız görür' (:2155). Koçun program kurma ve düzenleme yeteneği tasarımda yok.",
+  "evidence": "TeacherViewScheduleScreen gövdesi MySchedulePage(studentId: studentId) (coach_programs_screen.dart:68). Bu sayfa WeeklyRepository(studentId: studentId) kurar (my_schedule_page.dart:14). Aynı repository DaySelectionPage'e ve AddLessonsPage'e geçer (day_selection_page.dart:188-194). Backend'in yazma uçlarında koç adına studentId kabul edip etmediği koddan doğrulanamıyor; spec de bunu açık soru olarak bırakmış (§6.3 #33, SMAP_Flutter_Spec.md:2065).",
+  "recommendation": "keep-needs-design",
+  "why": "Mevcut kodda gerçek uçlara bağlı ve erişilebilir bir yazma özelliği var; tasarım bunu salt okunur yapıp düşürmüş. Ürün sahibinin kuralına göre yeniden tasarlanmalı: koç bağlamında 'Yeni Program' ve 'Düzenle' akışları, ContextStrip ile. Önce backend'in studentId ile addNewProgram/updateProgram kabul ettiği doğrulanmalı."
+ },
+ {
+  "name": "Programım listesi araması ve süzgeci (Son 30 gün / Son 3 ay / Bu dönem)",
+  "oldScreens": [
+   "lib/features/home/presentation/screens/my_schedule_page/schedule_list_page/schedule_list_page.dart",
+   "lib/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_search_field.dart",
+   "lib/features/home/presentation/screens/my_schedule_page/schedule_list_page/widgets/schedule_list_filter_panel.dart"
+  ],
+  "entryPoints": "Programım listesinin üst araç satırı: süzgeç düğmesi ve arama alanı (schedule_list_page.dart:91-102).",
+  "status": "mock-or-fake",
+  "endpoints": [],
+  "dataShown": "Süzgeç panelinde üç onay kutusu (Son 30 gün, Son 3 ay, Bu dönem) ve 'Filtreleri Temizle' (schedule_list_filter_panel.dart:19-32, 63). Arama alanı.",
+  "userActions": "Arama yazılabilir ama listeyi süzmez. Süzgeçte seçim yapılabilir ama 'Uygula' yalnız paneli kapatır, 'Temizle' boş callback'tir. API çağrısı yok.",
+  "inNewDesign": "Arama var ve çalışır hâlde: 3.4, ad ve motto üzerinde istemcide (SMAP_Flutter_Spec.md:1505 ve sonrası). Tarih süzgeci yok.",
+  "evidence": "ScheduleListSearchField'in onChanged parametresi var (schedule_list_search_field.dart:8, 14, 22) ama ScheduleListPage onu geçmiyor (schedule_list_page.dart:99-102). Süzgeç panelinde onApply yalnız _filterOpen=false yapıyor, onClear: () {} (schedule_list_page.dart:193-196). getMyWeeklies'in filter.dates alanı her zaman boş gönderiliyor (weekly_repository.dart:33-37).",
+  "recommendation": "drop-mock",
+  "why": "Arama ve süzgeç işlevsiz; arama yeni tasarımda çalışır hâlde zaten var. Tarih süzgeci istenirse sunucuda filter.dates desteği var gibi görünüyor, ama bugün kullanılmıyor."
+ },
+ {
+  "name": "Anasayfa ay takvimi (deneme/ödev/görüşme noktaları)",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_month_calendar.dart",
+   "lib/features/home/presentation/provider/home_provider.dart"
+  ],
+  "entryPoints": "Öğrenci ve koç Anasayfa'sının en altı (home_screen.dart:72).",
+  "status": "mock-or-fake",
+  "endpoints": [],
+  "dataShown": "Yalnız ay/yıl başlığı, gün adları ve bugün vurgusu (home_month_calendar.dart:61-69, 147-153, 210-228). Etkinlik, nokta ya da lejant yok.",
+  "userActions": "Önceki ve sonraki ay okları yalnız yerel state'i değiştirir (home_provider.dart:20-40). Gün hücrelerinde onTap yok. API çağrısı yok.",
+  "inNewDesign": "Ay takvimi yok (§7.1 'içeriksiz aylık takvim', SMAP_Flutter_Spec.md:2195). 'Bugün' bilgisi yeni tasarımda başka yerlerde: 3.1 Bugün bölümü (:1494), Program Gün görünümündeki DayChip şeridi, koç için 10.1 'Yaklaşan görüşmeler' (:1840).",
+  "evidence": "HomeState yalnız focusedMonth taşır (home_provider.dart:118-122). Deneme, Ödev ve Görüşme lejantlı takvim yalnız onboarding mockup görseli ob6.png'de geçiyor (onboarding_page.dart:43; SMAP_Ekran_Goruntuleri.md:125, 136). Gerçek cihaz ekranında takvimde hiçbir gün işaretli değil (SMAP_Ekran_Goruntuleri.md:248, 269).",
+  "recommendation": "drop-mock",
+  "why": "Takvim süs amaçlı, hiçbir veriye bağlı değil; nokta ve etkinlik özelliği hiç uygulanmamış. Noktalar için gereken tarih verisi aslında var (getMyWeeklies, getMyMockExams, /coach/getInterviews), ama bugün takvime bağlanmıyor. Gelecekte istenirse yeni bir özellik olarak ele alınmalı."
+ },
+ {
+  "name": "Kişi kartı: coin (points) ve ilerleme çubuğu (progress %); elmas",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_person_card.dart",
+   "lib/domain/models/user_model.dart",
+   "lib/features/shared/presentation/provider/user_provider.dart"
+  ],
+  "entryPoints": "Öğrenci ve koç Anasayfa'sında ders veya öğrenci şeridinin hemen altı (home_screen.dart:68).",
+  "status": "partially-real",
+  "endpoints": [
+   "POST /student/login — auth_remote_data_source.dart:14-15 → yanıttaki user, user_data'ya yazılır (auth_repository_impl.dart:74-81)",
+   "GET /ajax/checkUser — auth_remote_data_source.dart:47-48 → validateSession (auth_repository_impl.dart:41-52)",
+   "POST /student/register — auth_remote_data_source.dart:33-34 → auth_repository_impl.dart:107-113",
+   "Profil güncelleme yanıtındaki student nesnesi, user_data'ya yazılır (account_settings_screen.dart:376-382)"
+  ],
+  "dataShown": "smapc.png coin ikonu ve user.points (home_person_card.dart:77-91). Turuncu ilerleme çubuğu ve user.progress yüzdesi (:30, 104-118). 'Elmas' kodda yok: yalnız kullanılmayan _diamond sabiti var (:13).",
+  "userActions": "Yalnız görüntüleme. Kazanma, harcama, seri veya rozet mantığı yok.",
+  "inNewDesign": "Yok. D-3 'elmas/coin/puan/seri/rozet gösterilmez' (SMAP_Flutter_Spec.md:2108); §7.1 coin ve %0 çubuğunu kaldırılanlara koyuyor (:2195). Ad ve avatar HomeBand'e taşınıyor.",
+  "evidence": "Değerlerin kaynağı: UserModel.fromJson, points'i json['points'] ?? 0 ile, progress'i json['progress'] ?? 0.0 ile okur (user_model.dart:27-28). JSON, SharedPreferences 'user_data'dan gelir (user_provider.dart:11-19); orası da login, checkUser ya da register yanıtındaki 'user' nesnesiyle dolar. İstemcide bu alanları hesaplayan ya da yazan başka kod yok (grep: yalnız home_person_card.dart:30, 86, 106 okuyor). Gerçek cihaz ekranında, eksik verisi dolu bir kullanıcıda coin '0' ve '0%' görünüyor (SMAP_Ekran_Goruntuleri.md:229, 243, 251). 'Elmas 5590' yalnız onboarding mockup'ında var (:123). Backend kaynak kodu elimizde yok.",
+  "recommendation": "ask-owner",
+  "why": "İstemci sunucudaki bir alanı okuyor, ama backend'in user.points ve user.progress'i gerçekten hesaplayıp döndüğüne dair kanıt yok; ekran görüntüsü 0 ve %0 gösteriyor. Ürün sahibine sorulacak: bu alanlar sunucuda gerçekten üretiliyor mu? Üretilmiyorsa drop-mock. Üretiliyorsa D-3 ile çelişen gerçek bir puan özelliği demektir ve tasarıma gönderilmelidir."
+ },
+ {
+  "name": "Kişi kartı ve üst bar: ad, avatar, alan etiketi",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_person_card.dart",
+   "lib/features/root/presentation/widgets/header_user_section.dart",
+   "lib/features/shared/presentation/widgets/app_user_avatar.dart"
+  ],
+  "entryPoints": "Anasayfa kişi kartı (home_screen.dart:68). Bütün sekmelerdeki lacivert üst bar (root_screen.dart:92-114).",
+  "status": "working-real-api",
+  "endpoints": [
+   "Oturum verisi: POST /student/login, GET /ajax/checkUser (auth_repository_impl.dart:41-81)"
+  ],
+  "dataShown": "Ad (home_person_card.dart:53; header_user_section.dart:76). Alan etiketi: aimType 2/3/4 için EA/Sayısal/Sözel, koçta 'Öğrenci Koçu' (header_user_section.dart:17-31). Avatar asset'i.",
+  "userActions": "Yalnız görüntüleme. Üst bardaki logo ve kullanıcı bölümünün onTap'ları boş (header_user_section.dart:47, 64).",
+  "inNewDesign": "Var: 3.1 HomeBand 'Merhaba, {firstName}', avatar ve YKS sayacı (SMAP_Flutter_Spec.md:1497). D-9: ad ve avatar yalnız Anasayfa'da ve Hesap'ta (:2111 civarı). Alan etiketi Hesap ve Profil'de.",
+  "evidence": "Veri SharedPreferences user_data'dan okunur (user_provider.dart:11-19); orası oturum yanıtından dolar.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek oturum verisi. Yeni tasarımda HomeBand ve Hesap ekranlarına taşınıyor."
+ },
+ {
+  "name": "Anasayfa ders şeridi (toplam eksik rozetli)",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_lessons_cards.dart",
+   "lib/features/home/presentation/provider/home_provider.dart",
+   "lib/repository/home_repository.dart"
+  ],
+  "entryPoints": "Öğrenci Anasayfa'sının en üstü (home_screen.dart:43-44).",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /ajax/getGeneralLessons — home_repository.dart:13, çağıran home_provider.dart:72-75",
+   "GET /student/getLessonsTotalMissing — home_repository.dart:30-31, çağıran home_provider.dart:72-75"
+  ],
+  "dataShown": "9 genel ders: ikon, ad ve stats['total'] toplam eksik rozeti (home_lessons_cards.dart:359, 366-444). Ders bazında TYT/AYT/SOS-2 kırılımı stats['1'/'2'/'3'] (home_provider.dart:83-89).",
+  "userActions": "Ders kartına dokunma → LessonNavigationHelper.showTypeSelection (home_lessons_cards.dart:366-369). Yükleme ve hata durumunda sonsuz iskelet görünür (:31, 61); HomeProvider.error hiçbir yerde okunmuyor.",
+  "inNewDesign": "Var: 3.1 'Derslerin' SubjectTile şeridi, eksiği en çok olandan başlar; Matematik ve Geometri 'Web'de' (SMAP_Flutter_Spec.md:1496).",
+  "evidence": "home_provider.dart:59-104: Future.wait ile iki gerçek istek atılır, sonuçlar dersle birleştirilir.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek veri; yeni tasarımda aynı veriyle 'Derslerin' bölümü olarak var."
+ },
+ {
+  "name": "Ders kategori diyaloğu (TYT / AYT / SOS-2, eksik sayılı)",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/lesson_navigation_helper.dart",
+   "lib/features/home/presentation/widgets/home_lessons_cards.dart"
+  ],
+  "entryPoints": "Anasayfa ders şeridi (home_lessons_cards.dart:366-369). Derslerim sekmesindeki ders kartları (my_card_page.dart:251). İkisi de LessonNavigationHelper.showTypeSelection'ı çağırır.",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /student/getLessonsTotalMissing — eksik sayıları, home_repository.dart:30-31",
+   "Hedef LessonDetailPage ve EdebiyatLessonDetailPage kendi gerçek uçlarını çağırır (mainSubjects vb.)"
+  ],
+  "dataShown": "Ders adı ve 'Dersin kategorisini seçin' başlığı. TYT ve AYT düğmeleri; SOS-2 yalnız Tarih ve Coğrafya'da (lesson_navigation_helper.dart:122-124). Düğmelerin üstünde stats['1'/'2'/'3'] eksik rozetleri (:117-119, 234-264).",
+  "userActions": "tytAyt==1 olan derslerde (Tarih, Coğrafya, Fizik, Kimya, Biyoloji) diyalog açılır (:44-45). Seçim, LessonDetailPage'i defaultFilterValue 1, 2, 3 ya da 4 ile açar (:183-203). Edebiyat doğrudan kendi sayfasına (:46-57), diğerleri filtre 9 ile açılır (:58-70). home_lessons_cards.dart:100-355 aralığında aynı mantığın kullanılmayan kopyası duruyor.",
+  "inNewDesign": "Diyalog kaldırıldı ama işlevi taşındı: 7.1 Derslerim'de TYT·AYT segmenti, cihazda hatırlanır ('Eski TYT/AYT/SOS-2 diyaloğu kalkar', SMAP_Flutter_Spec.md:1708). 7.2 Ders Detayı'nda eksik sayaçlı TYT·AYT·SOS-2 segmenti (:1718, Tarih SOS-2 kare 3 :1723). Anasayfa'dan ders detayına son TYT/AYT seçimiyle gidilir (T6.6, :2149).",
+  "evidence": "lesson_navigation_helper.dart:10-72, 108-203.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek veriyle çalışıyor. Yeni tasarım aynı işlevi ve sayıları diyalog yerine segmentlerle karşılıyor."
+ },
+ {
+  "name": "Kavram Haritan (Matematik/Geometri) ve Analizlerim 'Harita' sekmesi",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/lesson_navigation_helper.dart",
+   "lib/features/home/presentation/widgets/app_dialog.dart",
+   "lib/features/analytics/presentation/provider/analytics_view_provider.dart",
+   "lib/features/analytics/presentation/screens/analytics_screen.dart"
+  ],
+  "entryPoints": "Anasayfa ders şeridinde ve Derslerim'de Matematik ya da Geometri'ye dokunma (lesson_navigation_helper.dart:30-42). Analizlerim üst sekmesi 'Harita' (analytics_screen.dart:65 → analytics_view_provider.dart:117-125).",
+  "status": "web-redirect",
+  "endpoints": [],
+  "dataShown": "Yakında diyaloğu: modül mobilde çok yakında, web'de hazır; smaptr.com'dan giriş yapılarak görülebilir (lesson_navigation_helper.dart:34-40). Tıklanabilir bağlantı yok. Derslerim kartlarında totalMapItems sayısı görünür (my_card_page.dart:109, 219).",
+  "userActions": "Yalnız diyaloğu kapatma. Uygulama web sayfasını açmaz: lib altında url_launcher veya launchUrl kullanımı yok. 'Harita' IndexedStack'te SectionPlaceholder (analytics_screen.dart:81).",
+  "inNewDesign": "Var: D-5 Matematik ve Geometri 'Web'de' etiketi, sheet ve 'Web'de Aç' (SMAP_Flutter_Spec.md:2110). 7.1 WebOnlySheet 'Kavram haritan web'de' + 'Web'de Aç' (url_launcher; URL belirtilmemiş) (:1712). Analizlerim 'Harita' sekmesi D-4 ile kalkıyor (:2109).",
+  "evidence": "mindMap: 1 yalnız Matematik ve Geometri'de (lesson_constants.dart:58, 68). Mobilde kavram haritası ekranı yok; envanter: SMAP_Ekran_Envanteri.md:25, 359.",
+  "recommendation": "covered-by-design",
+  "why": "Mobilde özellik yok, yalnız web'e yönlendiren metin var. Yeni tasarım bunu gerçek bir 'Web'de Aç' bağlantısına çeviriyor; ürün sahibinden URL alınması gerekiyor."
+ },
+ {
+  "name": "Menü ızgarası kısayolları (öğrenci: Analiz, Denemelerim, Derslerim; koç: Öğrencilerim, Görüşmelerim)",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_menu_grid.dart"
+  ],
+  "entryPoints": "Anasayfa menü ızgarası. Öğrenci menüsü home_menu_grid.dart:13-45, koç menüsü :48-81.",
+  "status": "working-real-api",
+  "endpoints": [
+   "Kısayolların kendisi API çağırmaz. Hedef sekmeler (AnalyticsView, MyCardScreen, MyStudentsScreen, GorusmeFlowScreen) kendi gerçek uçlarını çağırır."
+  ],
+  "dataShown": "İkon ve başlık.",
+  "userActions": "Analiz → sekme 1, initialTabIndex 0 (:148-151). Denemelerim → sekme 1, initialTabIndex 1 (:153-156). Derslerim → sekme 2 (:143-146). Koç: Öğrencilerim → sekme 1 (:191-194), Görüşmelerim → sekme 2 (:241-244).",
+  "inNewDesign": "Var, alt çubuk üzerinden: `/analytics?tab=genel|denemelerim` (SMAP_Flutter_Spec.md:1345), Derslerim `/lessons`, koç K1 Öğrencilerim ve K2 Görüşmelerim. Menü ızgarası §7.1 ile kaldırıldı (:2195).",
+  "evidence": "home_menu_grid.dart:134-245. Bunlar alt çubuktaki sekmelerin yinelenen girişleri.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek ekranlara giden ama alt çubuğu tekrar eden kısayollar. Hedef ekranların hepsi yeni tasarımda var."
+ },
+ {
+  "name": "Koç Anasayfa öğrenci şeridi ve öğrenci diyaloğu (Analiz / Denemeler / Program)",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_students_cards.dart",
+   "lib/features/analytics/presentation/screens/coach_analytics_screen.dart"
+  ],
+  "entryPoints": "Koç Anasayfa'sının üstü (home_screen.dart:45-46). Öğrenci karosuna dokunma → diyalog.",
+  "status": "working-real-api",
+  "endpoints": [
+   "POST /coach/getMyStudents — home_repository.dart:61, çağıran home_provider.dart:93",
+   "Analiz ve Denemeler: CoachAnalyticsDetailScreen → AnalyticsView(studentId) (coach_analytics_screen.dart:67-70), koç adına gerçek analiz uçları"
+  ],
+  "dataShown": "Avatar, ad, '{seasonType}. Sınıf' ve alan adı (home_students_cards.dart:125-126). Diyalogda 4 düğme (:240, 260, 285, 305).",
+  "userActions": "Analiz → initialTabIndex 0, Denemeler → 1, Kaynak Takibi → 2 (yer tutucu), Program → TeacherViewScheduleScreen (:312).",
+  "inNewDesign": "Var: 10.1 'Öğrencilerin' şeridi → 10.4 StudentProfileScreen, Analiz, Denemeler ve Program sekmeleriyle (SMAP_Flutter_Spec.md:1836, 1862). Kaynak Takibi düğmesi ve programı düzenleme yok (ayrı maddelere bakın).",
+  "evidence": "home_students_cards.dart:230-316; home_provider.dart:90-95.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek veriyle çalışıyor ve yeni tasarımda öğrenci profiline taşınıyor. İstisna: 'Program' düğmesinin sağladığı düzenleme yeteneği tasarımda yok, ayrı maddede ele alındı."
+ },
+ {
+  "name": "Kaynak Takibi (koç menüsü + öğrenci diyaloğu/kartındaki 'Kaynak Takibi' / 'Kaynak Tkp.')",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_menu_grid.dart",
+   "lib/features/home/presentation/widgets/home_students_cards.dart",
+   "lib/features/my_students/student_card.dart",
+   "lib/features/analytics/presentation/widgets/section_placeholder.dart"
+  ],
+  "entryPoints": "Koç menüsü 'Kaynak Takibi' (home_menu_grid.dart:71-75, 226-240). Koç Anasayfa öğrenci diyaloğu (home_students_cards.dart:285-296). Öğrencilerim kartı 'Kaynak Tkp.' (student_card.dart:153-158).",
+  "status": "stub-or-coming-soon",
+  "endpoints": [],
+  "dataShown": "Menüden: 'Ne Çözüyoruz? Siz söyleyin.' ve ödev atama vaadi, 'Çok yakında.' (home_menu_grid.dart:230-233). Öğrenci diyaloğundan: 'Analiz yakinda' yer tutucusu.",
+  "userActions": "Menü: Yakında diyaloğu; onNotifyMe boş (:236-238). Diyalog ve kart: CoachAnalyticsDetailScreen initialTabIndex 2 → topTabIndex 2 (analytics_view_provider.dart:470) → SectionPlaceholder('Analiz') (analytics_screen.dart:80) → '$title yakinda' (section_placeholder.dart:13). API yok.",
+  "inNewDesign": "Yok. D-4 (SMAP_Flutter_Spec.md:2109); koç diyaloğunun 4 düğmesi §7.1 ile kalkıyor (:2195).",
+  "evidence": "Kodda ödev, kaynak ya da assignment ucu yok; ilgili grep yalnız metin döndürüyor.",
+  "recommendation": "drop-mock",
+  "why": "Hiçbir yerde uygulanmamış: menüde yakında diyaloğu, öğrenci bağlamında boş yer tutucu sekme."
+ },
+ {
+  "name": "SmapCoach (koç menüsü)",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_menu_grid.dart",
+   "lib/features/home/presentation/widgets/app_dialog.dart"
+  ],
+  "entryPoints": "Koç Anasayfa menü ızgarası 'SmapCoach' (home_menu_grid.dart:49-53; dokunma :176-190).",
+  "status": "stub-or-coming-soon",
+  "endpoints": [],
+  "dataShown": "'Öğrenci Koçunun Profili' ve koçluk başarılarını gösterme vaadi, 'Çok yakında.' (home_menu_grid.dart:179-183).",
+  "userActions": "buttonType 2: 'Detaylı Bilgi Al' yerel olarak 'Talebiniz Alındı'ya döner (app_dialog.dart:105-125). onGetInfo verilmemiş, yalnız onNotifyMe: () {} var (home_menu_grid.dart:186-188). API yok.",
+  "inNewDesign": "Yok (D-4, SMAP_Flutter_Spec.md:2109).",
+  "evidence": "home_menu_grid.dart:176-190 yalnız AppDialogs.showUnderConstruction çağırıyor.",
+  "recommendation": "drop-mock",
+  "why": "Yalnız yakında diyaloğu ve sahte talep onayı var."
+ },
+ {
+  "name": "Koç menüsü 'Analizler' (toplu öğrenci analizi)",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_menu_grid.dart"
+  ],
+  "entryPoints": "Koç Anasayfa menü ızgarası 'Analizler' (home_menu_grid.dart:59-63; dokunma :196-210).",
+  "status": "stub-or-coming-soon",
+  "endpoints": [],
+  "dataShown": "'Öğrencilerinize Dair En Detaylı Analiz', 'Güçlü konular, zayıf konular… Çok yakında.' (home_menu_grid.dart:200-203).",
+  "userActions": "Yakında diyaloğu; onNotifyMe boş (:206-208). API yok.",
+  "inNewDesign": "Toplu 'Analizler' yok. Öğrenci bazlı analiz 10.4 Analiz sekmesinde var (SMAP_Flutter_Spec.md:1862).",
+  "evidence": "home_menu_grid.dart:196-210.",
+  "recommendation": "drop-mock",
+  "why": "Uygulanmamış bir vaat. Öğrenci bazında gerçek analiz yeni tasarımda zaten var."
+ },
+ {
+  "name": "Müfredat (koç menüsü)",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_menu_grid.dart"
+  ],
+  "entryPoints": "Koç Anasayfa menü ızgarası 'Müfredat' (home_menu_grid.dart:65-70; dokunma :211-225).",
+  "status": "stub-or-coming-soon",
+  "endpoints": [],
+  "dataShown": "'Henüz İşlenmedi Mi?' ve işlenmemiş konuları eksikten çıkarma vaadi, 'Çok yakında.' (home_menu_grid.dart:215-218).",
+  "userActions": "Yakında diyaloğu; onNotifyMe boş (:221-223). API yok.",
+  "inNewDesign": "Yok (D-4, SMAP_Flutter_Spec.md:2109).",
+  "evidence": "home_menu_grid.dart:211-225; kodda müfredat ya da curriculum ucu yok.",
+  "recommendation": "drop-mock",
+  "why": "Yalnız yakında diyaloğu."
+ },
+ {
+  "name": "SmapLab (öğrenci menüsü)",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_menu_grid.dart",
+   "lib/features/home/presentation/widgets/app_dialog.dart"
+  ],
+  "entryPoints": "Öğrenci Anasayfa menü ızgarası 'SmapLab' (home_menu_grid.dart:35-39; dokunma :158-166).",
+  "status": "stub-or-coming-soon",
+  "endpoints": [],
+  "dataShown": "Kendi kartlarından quiz ve online rekabet vaadi, 'Şu anda yapım aşamasında.' (home_menu_grid.dart:163-164).",
+  "userActions": "Yakında diyaloğu. 'Yayınladığında Haber Ver' yalnız yerel 'Kaydınız Alındı' gösterir (app_dialog.dart:146-167). API yok.",
+  "inNewDesign": "Yok (D-4, SMAP_Flutter_Spec.md:2109; §7.1 :2195).",
+  "evidence": "home_menu_grid.dart:158-166; kodda lab, quiz ya da rekabet ucu yok. SMAP_Ekran_Envanteri.md:355.",
+  "recommendation": "drop-mock",
+  "why": "Yalnız yakında diyaloğu, arkasında özellik yok."
+ },
+ {
+  "name": "Gelen Kutusu (inbox / mesajlar)",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_menu_grid.dart",
+   "lib/features/home/presentation/widgets/app_dialog.dart"
+  ],
+  "entryPoints": "Öğrenci Anasayfa menü ızgarası 'Gelen Kutusu' (home_menu_grid.dart:29-34; dokunma :167-174).",
+  "status": "stub-or-coming-soon",
+  "endpoints": [],
+  "dataShown": "'Şu anda yapım aşamasında.' Okunmamış rozeti yorum satırı (home_menu_grid.dart:33).",
+  "userActions": "Yakında diyaloğu; 'Kaydınız Alındı' sahte onayı (app_dialog.dart:146-167). API yok.",
+  "inNewDesign": "Yok (D-4, SMAP_Flutter_Spec.md:2109).",
+  "evidence": "Kodda kullanılan bütün uçlar /student/*, /ajax/* ve /coach/* altında; hiçbiri mesaj, inbox ya da bildirim listesi değil. SMAP_Ekran_Envanteri.md:354.",
+  "recommendation": "drop-mock",
+  "why": "Mesajlaşma için ne veri ne ekran var."
+ },
+ {
+  "name": "'Yakında' diyaloğundaki 'Yayınladığında Haber Ver' / 'Detaylı Bilgi Al' talebi",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/app_dialog.dart"
+  ],
+  "entryPoints": "SmapLab, Gelen Kutusu, SmapCoach, Analizler, Müfredat, Kaynak Takibi, Kavram Haritan ve Analizlerim 'Analiz'/'Harita' sekmeleri (home_menu_grid.dart:159-237; lesson_navigation_helper.dart:34; analytics_view_provider.dart:110, 118).",
+  "status": "mock-or-fake",
+  "endpoints": [],
+  "dataShown": "Düğme tıklanınca 'Kaydınız Alındı' ya da 'Talebiniz Alındı' görünür (app_dialog.dart:125, 167).",
+  "userActions": "Tıklama yalnız yerel setState yapar (app_dialog.dart:109-113, 150-154). Çağıranlar boş callback geçiyor: onNotifyMe: () {} (home_menu_grid.dart:186-188, 206-208, 221-223, 236-238). Hiçbir şey kaydedilmiyor.",
+  "inNewDesign": "Yok (§6.8 #29 '“Yakında” sheet'i ve “Haber ver” yok'; §7.1, SMAP_Flutter_Spec.md:2195).",
+  "evidence": "app_dialog.dart:105-167; SMAP_Ekran_Envanteri.md:205.",
+  "recommendation": "drop-mock",
+  "why": "Kullanıcıya kayıt alındı diyen ama hiçbir şey kaydetmeyen sahte bir başarı mesajı."
+ },
+ {
+  "name": "Oyunlar",
+  "oldScreens": [
+   "assets/ob6.png (onboarding mockup görseli)",
+   "lib/features/onboarding/onboarding_page.dart"
+  ],
+  "entryPoints": "Uygulamada giriş yok. Yalnız onboarding'in 5. slaytındaki mockup görselinde görünüyor (onboarding_page.dart:43).",
+  "status": "mock-or-fake",
+  "endpoints": [],
+  "dataShown": "Yalnız tanıtım görselinin içinde 'Oyunlar' menü karosu (SMAP_Ekran_Goruntuleri.md:124, 136).",
+  "userActions": "Yok.",
+  "inNewDesign": "Yok (D-4, SMAP_Flutter_Spec.md:2109; §7.1 'Oyunlar' :2195).",
+  "evidence": "lib altında oyun ya da game ile ilgili kod, ekran veya uç yok. Gerçek menüde Oyunlar yerine SmapLab var (home_menu_grid.dart:13-45).",
+  "recommendation": "drop-mock",
+  "why": "Hiç uygulanmamış; yalnız pazarlama görselinde var."
+ },
+ {
+  "name": "Soru Bankam",
+  "oldScreens": [
+   "lib/features/analytics/presentation/screens/question_detail_page.dart"
+  ],
+  "entryPoints": "Deneme Detay → soru → Soru Detay → 'Soru Fotoğrafı' sekmesindeki açıklama metni (question_detail_page.dart:393-410).",
+  "status": "mock-or-fake",
+  "endpoints": [],
+  "dataShown": "Soruyu kaydedip Soru Bankam modülüne aktarma ve PDF alma vaadi (question_detail_page.dart:395-410).",
+  "userActions": "Yok; tıklanabilir bir öğe değil, yalnız metin.",
+  "inNewDesign": "Yok (D-4, SMAP_Flutter_Spec.md:2109; §7.1 :2195).",
+  "evidence": "Kodda Soru Bankam modülü, ekranı ya da ucu yok; 'Soru Bankam' yalnız question_detail_page.dart:400'deki metinde geçiyor. SMAP_Ekran_Envanteri.md:259, 356.",
+  "recommendation": "drop-mock",
+  "why": "Var olmayan bir modülü vaat eden metin."
+ },
+ {
+  "name": "Soru fotoğrafı (Soru Detay 'Soru Fotoğrafı' sekmesi + 'Fotoğraf Çek')",
+  "oldScreens": [
+   "lib/features/analytics/presentation/screens/question_detail_page.dart"
+  ],
+  "entryPoints": "Soru Detay'ın 2. sekmesi 'Soru Fotoğrafı' (question_detail_page.dart:234-242).",
+  "status": "stub-or-coming-soon",
+  "endpoints": [],
+  "dataShown": "Kamera ikonu ve 'Sorunun fotoğrafı Smap'de mevcut ancak telif hakları sebebiyle…' metni (question_detail_page.dart:468-479).",
+  "userActions": "'Fotoğraf Çek' yalnız print(\"Fotoğraf çekme başlatıldı\") çalıştırır (question_detail_page.dart:543-547). Kamera, yükleme ya da API yok.",
+  "inNewDesign": "Yok. D-4 'soru fotoğrafı' (SMAP_Flutter_Spec.md:2109); 5.7 Soru Detay tek ekran, fotoğraf sekmesi yok (:1669).",
+  "evidence": "question_detail_page.dart:224-242, 393-479, 541-566.",
+  "recommendation": "drop-mock",
+  "why": "Fotoğraf gösterilmiyor, düğme ölü; yalnız yer tutucu."
+ },
+ {
+  "name": "Ödeme ve Paketler: mevcut plan kartı ve 'Planı Değiştir'",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/payment_settings/payment_settings_screen.dart",
+   "lib/features/profile/presentation/screens/payment_settings/widgets/current_plan_card.dart"
+  ],
+  "entryPoints": "Alt çubuk 'Hesap' sekmesi (lib/features/root/presentation/widgets/custom_bottom_nav_bar.dart:140-146, index 3), oradan AccountScreen'deki 'Ödeme ve Paketler' satırı (lib/features/profile/presentation/screens/account/account_screen.dart:99-103), AccountRoute.payment (account_nav_provider.dart:6,24) ve AccountFlowScreen case'i (account_flow_screen.dart:37). Öğrenci ve koç aynı hub'ı görüyor (root_screen.dart:37,45).",
+  "status": "mock-or-fake",
+  "endpoints": [],
+  "dataShown": "Sabit metin: 'Plan: Yıllık Avantaj - 12 Aylık' (current_plan_card.dart:25) ve '249 ₺ / Aylık' (current_plan_card.dart:34). Sunucudan hiçbir alan gelmiyor.",
+  "userActions": "Tek eylem 'Planı Değiştir' (current_plan_card.dart:45-59, onPressed: onChangePlan). PaymentSettingsScreen kartı callback vermeden `const CurrentPlanCard()` diye kuruyor (payment_settings_screen.dart:30), bu yüzden düğme pasif. API çağrısı yok.",
+  "inNewDesign": "Yok. D-4 (SMAP_Flutter_Spec.md:2109): 'Ödeme ve Paketler … paywall v1'de yok'. §4.H notu (Spec:1771) ve §7.1 (Spec:2195) kaldırıyor. SMAP-09 00-9-1-Hesap kare 2 notu: 'Ödeme, paketler ve kayıtlı kartlar yok'.",
+  "evidence": "payment_settings_screen.dart:1-7 yalnız mock/widget import ediyor, repository ya da servis yok. current_plan_card.dart:25,34 değerleri sabit. pubspec.yaml:30-64 arasında ödeme paketi yok. Envanter (SMAP_Ekran_Envanteri.md:329-330) ve Geliştirme Planı Y5 (SMAP_Gelistirme_Plani.md:168-175) de bunu 'tamamen sahte' olarak işaretliyor.",
+  "recommendation": "drop-mock",
+  "why": "Sahte veri gösteriyor, backend'e hiç gitmiyor ve tek düğmesi pasif. K12 kuralına göre kaldırılabilir. Gerçek bir abonelik modeli (Geliştirme Planı §7-P1) seçilirse sıfırdan yeni bir özellik olarak tasarlanması gerekir. Taşınacak çalışan bir işlev yok."
+ },
+ {
+  "name": "Faturalar listesi, sayfalama ve sütun sıralama",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/payment_settings/payment_settings_screen.dart",
+   "lib/features/profile/presentation/screens/payment_settings/data/payment_invoice_mock.dart",
+   "lib/features/profile/presentation/screens/payment_settings/models/payment_invoice_item.dart",
+   "lib/features/profile/presentation/screens/payment_settings/widgets/invoice_row.dart",
+   "lib/features/profile/presentation/screens/payment_settings/widgets/invoice_table_header.dart",
+   "lib/features/profile/presentation/screens/payment_settings/widgets/invoice_pagination.dart"
+  ],
+  "entryPoints": "Plan kartıyla aynı ekran: Hesap > 'Ödeme ve Paketler' (account_screen.dart:99-103, account_flow_screen.dart:37).",
+  "status": "mock-or-fake",
+  "endpoints": [],
+  "dataShown": "Satırlar PaymentInvoiceMock.page(_currentPage) ile üretiliyor (payment_settings_screen.dart:21): 'Invoice #${1023+index}' ve 15 Mayıs 2022'den 28'er gün geri giden tarihler (payment_invoice_mock.dart:13-16). Sayfa boyutu 10, toplam sayfa sabit 68 (payment_invoice_mock.dart:6-7). Aylar İngilizce kısaltma (invoice_row.dart:10-16). Sütunlar: 'Fatura Numarası', 'Kesilme Tarihi' (invoice_table_header.dart:25,29).",
+  "userActions": "Sayfa değiştirme yalnız yerel setState (payment_settings_screen.dart:57-61, invoice_pagination.dart:23-39). Başlıktaki ▾ okları süs, handler yok (invoice_table_header.dart:57-61). Fatura açma, indirme ya da detay yok. Hiçbir eylem API'ye gitmiyor.",
+  "inNewDesign": "Yok. D-4 (Spec:2109) faturaları açıkça çıkarıyor. 05_ekranlar_C_hesap_koc.md:50 'Plan, fatura listesi ve kayıtlı kartlar v1 kapsamı dışında'. §7.1 (Spec:2195) 'İngilizce fatura satırları'.",
+  "evidence": "payment_invoice_mock.dart:3-18 tamamen üretilmiş veri. Ekranın tek veri kaynağı PaymentInvoiceMock (payment_settings_screen.dart:3,21,59). Kod tabanında fatura uç noktası yok (lib altında 'invoice|fatura' araması yalnız bu klasörü buluyor).",
+  "recommendation": "drop-mock",
+  "why": "Tamamen sahte veri; 68 sayfalık sayfalama da uydurma. Arkasında fatura kaynağı (backend ya da e-arşiv) yok (Geliştirme Planı §7-P2 açık soru). Taşınacak çalışan bir işlev yok."
+ },
+ {
+  "name": "Kayıtlı Kartlarım (kart listesi, varsayılan kart, ⋮ menü, Yeni Kart Ekle)",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/saved_cards/saved_cards_screen.dart",
+   "lib/features/profile/presentation/screens/saved_cards/widgets/saved_card_widget.dart"
+  ],
+  "entryPoints": "Hesap > 'Kayıtlı Kartlarım' satırı (account_screen.dart:104-108), AccountRoute.savedCards (account_nav_provider.dart:7,25), AccountFlowScreen case'i (account_flow_screen.dart:38). Her iki rolde de açık.",
+  "status": "mock-or-fake",
+  "endpoints": [],
+  "dataShown": "Koda gömülü 3 kart: Mastercard 5678, Visa 1234 ('Varsayılan' rozetli) ve Visa 7892 (saved_cards_screen.dart:15-27). Maskeli gösterim '**** **** **** $lastFourDigits' (saved_card_widget.dart:90). Marka logoları assets/master.svg ve assets/visaa.svg (saved_card_widget.dart:124-142).",
+  "userActions": "'Yeni Kart Ekle' düğmesi `onPressed: () {}` (saved_cards_screen.dart:33), yani hiçbir şey yapmıyor. ⋮ düğmesi `onPressed: onMoreTap` (saved_card_widget.dart:78) ama ekran onMoreTap vermiyor, bu yüzden pasif. Kart silme ya da varsayılan yapma kodu hiç yazılmamış. API yok.",
+  "inNewDesign": "Yok. D-4 (Spec:2109) 'Kayıtlı Kartlarım'. 05_ekranlar_C_hesap_koc.md:43-60 bu ekranı ve AccountRoute.savedCards'ı kaldırıyor. §7.1 (Spec:2195).",
+  "evidence": "saved_cards_screen.dart:1-3 yalnız widget import ediyor, veri katmanı yok. Ödeme ya da tokenizasyon paketi yok (pubspec.yaml:30-64; pubspec.lock'ta in_app_purchase/stripe/iyzico eşleşmesi yok). SMAP_Gelistirme_Plani.md:339 dijital abonelik için kayıtlı kart ekranının App Store 3.1.1 ve Play ödeme politikasıyla çeliştiğini not ediyor.",
+  "recommendation": "drop-mock",
+  "why": "Sabit kartlar ve boş düğmeler; ekle, sil ve varsayılan yap işlevlerinin hiçbiri uygulanmamış. Ayrıca mağaza politikası açısından riskli. Kaldırılabilir."
+ },
+ {
+  "name": "IAP / paywall / ödeme SDK'sı / web ödeme yönlendirmesi",
+  "oldScreens": [
+   "lib/views/main_webview/main_inapp_webview.dart"
+  ],
+  "entryPoints": "Yok. Paywall, satın alma akışı ya da ödeme sayfasına giden bir yönlendirme bulunmuyor. Kodda tek web görünümü olan MainInappWebView (main_inapp_webview.dart:9,19, smaptr.com yüklüyor) hiçbir yerden çağrılmıyor (lib içinde 'MainInappWebView' yalnız kendi dosyasında geçiyor).",
+  "status": "stub-or-coming-soon",
+  "endpoints": [],
+  "dataShown": "Yok. Fiyat, ürün ya da yetki (entitlement) verisi yok.",
+  "userActions": "Yok. Satın alma, geri yükleme ya da abonelik yönetimi kodu yazılmamış.",
+  "inNewDesign": "Yok. D-4 (Spec:2109) 'paywall v1'de yok'. 05_ekranlar_C_hesap_koc.md:53: 'Yakında' sheet'i yalnız kitte, paywall ya da yer tutucu yok.",
+  "evidence": "pubspec.yaml:30-64'te in_app_purchase, purchases_flutter, stripe ya da iyzico yok. pubspec.lock'ta da eşleşme yok. android/app/src ve ios/Runner'da BILLING izni ya da StoreKit referansı yok. lib içinde 'paywall|premium|subscription|abonelik' araması payment_settings mock'u dışında sonuç vermiyor. SMAP_Gelistirme_Plani.md:84 'ödeme SDK'sı yok (RevenueCat planlanmış)'.",
+  "recommendation": "drop-dead",
+  "why": "Taşınacak ya da kaldırılacak bir kod yok. Kullanılmayan ölü web görünümü ödeme yönlendirmesi değil. Gelir modeli (Geliştirme Planı §7-P1) ayrı bir ürün kararı; K12 kapsamında geri getirilecek çalışan bir işlev değil."
+ },
+ {
+  "name": "Bildirimler: 6 anahtar (Aktif, Bildirimleri Aç, Kullanıcılar Görebilsin, Varsayılan Bildirim, Mobilde Göster, Otomatik Güncellemeleri Aç) ve 'Değişiklikleri Kaydet'",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/notifications/notifications_screen.dart",
+   "lib/features/profile/presentation/screens/notifications/widgets/notification_toggle_tile.dart"
+  ],
+  "entryPoints": "Hesap > 'Bildirimler' satırı (account_screen.dart:114-118), AccountRoute.notifications, AccountFlowScreen case'i (account_flow_screen.dart:40). Her iki rolde de açık.",
+  "status": "mock-or-fake",
+  "endpoints": [],
+  "dataShown": "Altı yerel bool, varsayılanları koda gömülü (notifications_screen.dart:13-18); etiketler notifications_screen.dart:28-53'te. Açık anahtar rengi #22C55E (notification_toggle_tile.dart:18).",
+  "userActions": "Anahtarlar yalnız setState çağırıyor (notifications_screen.dart:30-55); SharedPreferences'a bile yazılmıyor. 'Değişiklikleri Kaydet' `onPressed: () {}` (notifications_screen.dart:65). API yok, push altyapısı yok (pubspec.yaml ve pubspec.lock'ta firebase/onesignal/notification paketi yok).",
+  "inNewDesign": "Eski 6 anahtar kaldırıldı (§7.1, Spec:2195: 'bildirimlerdeki geliştirici anahtarları … ve turuncu Değişiklikleri Kaydet'). Yerine SMAP-09 05-9-6-Bildirimler-3-kare geliyor: 9.6 NotificationsScreen'de 4 kategori, sessiz saatler ve TimeWheel var (Spec:1818-1826). Bunun için yeni tercih ucu ve push gerekiyor (§6.3 #16, Spec:2048); notificationsEnabled bayrağı false.",
+  "evidence": "notifications_screen.dart:1-3 yalnız tema ve widget import ediyor. Kaydet düğmesi boş callback (:65). Envanter: 'şablon panelinden kopyalanmış, öğrenci bağlamıyla ilgisiz etiketler' (SMAP_Ekran_Envanteri.md:337).",
+  "recommendation": "drop-mock",
+  "why": "Altı anahtarın hiçbiri bir şeyi yönetmiyor; değer kaydedilmiyor, gönderilmiyor. Yeni 9.6 ekranı bunların karşılığı değil, backend #16'ya bağlı yeni bir özellik. Eski anahtarlar güvenle kaldırılabilir."
+ },
+ {
+  "name": "Sözleşmeler: liste ve HTML metin okuyucu",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/contracts/contracts_screen.dart",
+   "lib/features/profile/presentation/screens/contracts/widgets/contract_card.dart"
+  ],
+  "entryPoints": "Hesap > 'Sözleşmeler' satırı (account_screen.dart:109-113), AccountRoute.contracts, AccountFlowScreen case'i (account_flow_screen.dart:39). Her iki rolde de açık.",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /ajax/getLegalDocuments — lib/features/auth/data/datasources/auth_remote_data_source.dart:70-72; AuthRepositoryImpl.getLegalDocuments auth_repository_impl.dart:138-147; çağıran: GetLegalDocumentsUseCase, contracts_screen.dart:37-38 (provider main.dart:68-69)"
+  ],
+  "dataShown": "Her belge için bir kart, kartta başlık (contract_card.dart:42-48). Karta dokununca AlertDialog içinde flutter_html ile tam içerik açılıyor (contracts_screen.dart:52-83, Html :70). Modelde id, name, title, version, content ve isActive var (lib/domain/models/legal_document.dart:19-27); version arayüzde gösterilmiyor. Yükleniyor, hata ve boş durumları contracts_screen.dart:91-113'te.",
+  "userActions": "Salt okuma: karta dokununca metin açılıyor; hatada 'Tekrar Deneyin' ile yeniden çekiliyor (contracts_screen.dart:102-105). Not: repository hatayı yutup [] döndürüyor (auth_repository_impl.dart:150-153). Bu yüzden hata arayüzüne pratikte hiç düşülmüyor; hata 'Gösterilecek sözleşme bulunamadı.' olarak görünüyor (contracts_screen.dart:111-113).",
+  "inNewDesign": "SMAP-09 06-9-7-Sözleşmeler-2-kare: 9.7 AgreementsScreen listesi (FileText satırları, 'Sürüm x · tarih' alt metni, altbilgi) ve AgreementReader tam sayfa okuyucu (flutter_html, uygulama tipografisine eşlenmiş) (Spec:1827-1830). Veri aynı uçtan; tarih alanı yok (§6.3 #13, Spec:2045).",
+  "evidence": "Gerçek Dio çağrısı auth_remote_data_source.dart:70-80'de. Envanter bu ekranı 'gerçek' olarak işaretliyor (SMAP_Ekran_Envanteri.md:335). Aynı use case kayıt akışında da kullanılıyor (register_provider.dart:39, login_card.dart:131-132).",
+  "recommendation": "covered-by-design",
+  "why": "Çalışan ve gerçek bir özellik; yeni tasarım 9.7 onu birebir karşılıyor ve geliştiriyor (diyalogdan tam sayfa okuyucuya geçiş). Brif notu: (1) sunucuda tarih alanı yoksa satırda yalnız 'Sürüm x' gösterilsin; (2) 1.22 hata durumunun çizilebilmesi için repository'nin hatayı yutması düzeltilmeli."
+ },
+ {
+  "name": "Sözleşme kartında 'Okudum, onaylıyorum' onay kutusu ve göz ikonu",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/contracts/widgets/contract_card.dart"
+  ],
+  "entryPoints": "Ulaşılamıyor. Onay satırı yorum satırına alınmış (contract_card.dart:64-91). Göz ikonunun onViewTap'ı hiç verilmiyor (contract_card.dart:51-53; contracts_screen.dart:124-130).",
+  "status": "dead-unreachable",
+  "endpoints": [],
+  "dataShown": "isApproved olarak doc.isActive geçiliyor (contracts_screen.dart:126) ama hiçbir yerde çizilmiyor. _ApprovalCheckbox sınıfı kullanılmıyor (contract_card.dart:98-121).",
+  "userActions": "Yok. onApprovedChanged boş gövdeli (contracts_screen.dart:127-129).",
+  "inNewDesign": "Hesap içinde onay yok. Sürümlü onay kayıt ekranına (2.5 sözleşme onay kutusu) ve açılıştaki yeni sürüm onayına taşındı (§6.5 #11, çizilmemiş). 9.7 altbilgisi bunu açıklıyor (Spec:1828).",
+  "evidence": "contract_card.dart:64-91 yorum bloğu, :98-121 kullanılmayan sınıf. contracts_screen.dart:127-129 boş callback.",
+  "recommendation": "drop-dead",
+  "why": "Ölü kod; kullanıcıya hiç görünmüyor ve hiçbir işlevi yok."
+ },
+ {
+  "name": "Profil bilgileri: görüntüle/düzenle (Ad Soyad, Telefon) ve kaydet",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/account_settings/account_settings_screen.dart",
+   "lib/features/profile/presentation/screens/account_settings/widgets/account_settings_text_field.dart"
+  ],
+  "entryPoints": "Hesap > 'Profilim ve Şifre' satırı (account_screen.dart:94-98), AccountRoute.account, AccountFlowScreen (account_flow_screen.dart:34-36). Ekranda 'Hesap Bilgileri' bölümü ve kalem ikonu (account_settings_screen.dart:803-832). Koç da aynı ekranı kullanıyor (root_screen.dart:45).",
+  "status": "working-real-api",
+  "endpoints": [
+   "POST /student/updateStudent — lib/repository/profile_repository.dart:43-48; çağıran account_settings_screen.dart:370-372"
+  ],
+  "dataShown": "Ad, e-posta ve telefon SharedPreferences 'user_data'dan okunuyor (account_settings_screen.dart:81-98); profil için ayrı bir GET yok. Alanlar account_settings_screen.dart:835-856'da.",
+  "userActions": "Kalem ikonu düzenleme modunu açıyor (:275-287); 'Kaydet' (:1002-1032) yalnız değişiklik varsa updateProfile çağırıyor. Gövde: name, email, phone, country, city (:361-367). Başarıda yanıttaki 'student' prefs'e yazılıyor (:375-383) ama UserProvider yenilenmiyor (dosyada loadUserData yok), bu yüzden üst bardaki ad bir sonraki yüklemeye kadar eski kalıyor. Sonuç SnackBar'ları :433-497'de. Koç rolünde de aynı /student/updateStudent ucuna gidiyor.",
+  "inNewDesign": "SMAP-09 01-9-2-Profil-4-kare: 9.2 ProfileScreen görüntüleme/düzenleme. Alanlar: Ad Soyad, salt okunur Kullanıcı adı, E-posta, maskeli Telefon, Sınıf ve Alan sheet'leri, avatar sheet'i; koçta Sınıf ve Alan yok (Spec:1786-1793). Backend §6.3 #11 (Spec:2043).",
+  "evidence": "profile_repository.dart:43-52 gerçek POST yapıyor. _makeRequest success!=true olduğunda istisna fırlatıyor (profile_repository.dart:68-78). Envanter SMAP_Ekran_Envanteri.md:320-322.",
+  "recommendation": "covered-by-design",
+  "why": "Çalışan bir özellik ve 9.2 onu kapsıyor, hatta genişletiyor (avatar, sınıf, alan). Uygulama notu: kayıttan sonra UserProvider tazelensin (yeni tasarımda ProfileSummary aynı veriyi kullanıyor); koç güncellemesi için doğru uç backend'e sorulsun."
+ },
+ {
+  "name": "E-posta değiştirme (bugün doğrulamasız, updateStudent içinde)",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/account_settings/account_settings_screen.dart"
+  ],
+  "entryPoints": "Profilim ve Şifre > düzenleme modu > 'E-Mail Adresi' alanı (account_settings_screen.dart:842-848), sonra 'Kaydet'.",
+  "status": "working-real-api",
+  "endpoints": [
+   "POST /student/updateStudent (body.email) — lib/repository/profile_repository.dart:43-48; çağıran account_settings_screen.dart:361-372"
+  ],
+  "dataShown": "Mevcut e-posta 'user_data'dan okunuyor (account_settings_screen.dart:93).",
+  "userActions": "Kullanıcı e-postayı yazıp kaydediyor; değer doğrudan sunucuya gidiyor (:363). Doğrulama kodu adımı yok.",
+  "inNewDesign": "Kısmen. 9.2 düzenleme modunda E-posta alanı var ama değişiklik yeni adrese 6 haneli kod gönderilmesini şart koşuyor; doğrulanana kadar eski adres geçerli (Spec:1790). Doğrulama ekranı çizilmemiş ([Karar] 2.4 kod adımı SmapBottomSheet.full içinde; 05_ekranlar_C_hesap_koc.md:517). Uç da yok (§6.3 #10, Spec:2042; 05_ekranlar_C:521).",
+  "evidence": "account_settings_screen.dart:309-310 değişiklik algılıyor, :363 e-postayı gövdeye koyuyor. Kod tabanında e-posta doğrulama ucu yok.",
+  "recommendation": "keep-needs-design",
+  "why": "Bugün çalışan bir yetenek. Yeni akış, doğrulama ucu ve ekranı olmadan e-posta değişimini fiilen engelliyor; bu da çalışan bir özelliğin kaybı demek. Tasarıma brif: (a) 9.2 için 'E-postanı doğrula' kod adımı (2.4 CodeInput, full sheet; gönder, tekrar gönder, hatalı kod ve başarı durumlarıyla) çizilsin; (b) uç gelmezse yedek hâl çizilsin: e-posta doğrudan kaydedilir ve 'Profilin güncellendi.' toast'ı gösterilir; bu davranış emailVerificationEnabled bayrağına bağlanır."
+ },
+ {
+  "name": "Ülke / Şehir alanları",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/account_settings/account_settings_screen.dart"
+  ],
+  "entryPoints": "Ulaşılamıyor. Arayüz satırı yorumda (account_settings_screen.dart:978-1000).",
+  "status": "dead-unreachable",
+  "endpoints": [
+   "POST /student/updateStudent (country/city gövdede) — profile_repository.dart:43-48; çağıran account_settings_screen.dart:365-366"
+  ],
+  "dataShown": "Gösterilmiyor. Controller'lar yine de user_data'dan dolduruluyor (account_settings_screen.dart:95-96).",
+  "userActions": "Kullanıcı düzenleyemiyor. Ancak profil her kaydedildiğinde eski country/city değerleri gövdeyle geri gönderiliyor (:365-366).",
+  "inNewDesign": "Yok (9.2 alan listesinde Ülke ve Şehir yok, Spec:1789).",
+  "evidence": "account_settings_screen.dart:978-1000 yorum bloğu. Envanter de bu alanları listeliyor (SMAP_Ekran_Envanteri.md:321).",
+  "recommendation": "drop-dead",
+  "why": "Arayüzde görünmüyor. Uygulama notu: yeni profil kaydı yalnız değişen alanları göndersin (Spec 9.2 Veri), böylece sunucudaki country/city boşaltılmaz."
+ },
+ {
+  "name": "Şifre değiştirme ('Şifre ve Güvenlik')",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/account_settings/account_settings_screen.dart",
+   "lib/features/profile/presentation/screens/account_settings/widgets/account_settings_password_field.dart"
+  ],
+  "entryPoints": "Profilim ve Şifre > 'Şifre ve Güvenlik' bölümü ve kalem ikonu (account_settings_screen.dart:1041-1070), alanlar :1073-1101, 'Şifreyi Güncelle' :1104-1134.",
+  "status": "mock-or-fake",
+  "endpoints": [],
+  "dataShown": "Mevcut şifre, yeni şifre ve yeni şifre tekrar alanları (göz ikonlu).",
+  "userActions": "_savePasswordChanges (account_settings_screen.dart:749-774) yalnız iki yeni şifrenin eşleşmesine bakıyor, alanları temizliyor ve 'Şifreniz başarıyla değiştirildi.' diyor. Mevcut şifre hiçbir yere gönderilmiyor, API çağrısı yok. lib'de changePassword/updatePassword ucu bulunmuyor.",
+  "inNewDesign": "SMAP-09 02-9-3-Şifre-3-kare: 9.3 PasswordScreen'de gerçek akış var (hata metinleri, diğer oturumları kapatma) (Spec:1795-1799). Yeni uç gerekiyor (§6.3 #8, Spec:2040); passwordChangeEnabled bayrağı (Spec §6.4).",
+  "evidence": "account_settings_screen.dart:749-774. Geliştirme Planı Y1 (SMAP_Gelistirme_Plani.md:145-146). Envanter SMAP_Ekran_Envanteri.md:324.",
+  "recommendation": "covered-by-design",
+  "why": "Eski özellik sahte, korunacak çalışan bir şey yok. Yeni tasarımda gerçek sürümü zaten çizili. Uç gelene kadar bayrakla gizlenmeli; sahte başarı mesajı taşınmamalı."
+ },
+ {
+  "name": "Hesabımı Sil",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/account_settings/account_settings_screen.dart"
+  ],
+  "entryPoints": "Profilim ve Şifre ekranının en altındaki kırmızı 'Hesabımı Sil' bağlantısı (account_settings_screen.dart:1143-1170), onay diyaloğu (:152-201) ve ardından _handleDeleteAccount (:203-258). Her iki rolde de açık.",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /ajax/deleteAccount — lib/features/auth/data/datasources/auth_remote_data_source.dart:82-84; çağıran account_settings_screen.dart:214-215 (repository'yi atlayıp new AuthRemoteDataSource() ile)"
+  ],
+  "dataShown": "Onay metni 'Hesabınızı Silmek İstediğinize Emin Misiniz?' (:161-169), işlem sırasında spinner (:205-210), başarı ya da hata SnackBar'ı; hatada sunucunun 'msg' alanı gösteriliyor (:241).",
+  "userActions": "'Evet, Sil' ile API çağrılıyor. Başarı koşulu statusCode 200 ve success==true (:220); ardından '/login'e gidiliyor (:232-235). Bu sırada çerez ve yerel oturum temizlenmiyor (dosyada logout, clearSessionCookie ya da cookieJar çağrısı yok; temizliğin yapıldığı yer auth_repository_impl.dart:165-168).",
+  "inNewDesign": "SMAP-09 03-9-4-Hesabı-Sil-5-kare: 9.4 akışı. Profil'in altından giriliyor; açıklama ekranı, tehlikeli onay, siliniyor ve silindi ekranları, ardından /welcome. Uç aynı /ajax/deleteAccount (Spec:1801-1808; D-28; §6.3 #14). Koç metinleri açık soru (§6.5 #6).",
+  "evidence": "auth_remote_data_source.dart:82-92 gerçek Dio GET. account_settings_screen.dart:212-257. Not: §7.1 eski bağlantıyı 'onaysız' diye tanımlıyor ama kodda onay diyaloğu var (:152-201).",
+  "recommendation": "covered-by-design",
+  "why": "Çalışan bir özellik ve 9.4 onu daha kapsamlı bir akışla karşılıyor. Uygulama notu: silme sonrası çerez ve yerel oturum temizlensin; koç için de aynı akış kullanılsın ([Karar])."
+ },
+ {
+  "name": "Çıkış Yap",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/account/account_screen.dart"
+  ],
+  "entryPoints": "Hesap hub'ında kırmızı 'Çıkış Yap' satırı (account_screen.dart:125-132), onay diyaloğu (:13-83).",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /ajax/logout — lib/features/auth/data/datasources/auth_remote_data_source.dart:58-60; AuthRepositoryImpl.logout auth_repository_impl.dart:157-178; çağıran account_screen.dart:57"
+  ],
+  "dataShown": "Diyalog: 'Çıkış Yap?' / 'Hesabınızdan çıkış yapmak istediğinize emin misiniz?'.",
+  "userActions": "Onay verilince logout çağrılıyor; yerel oturum ve çerezler temizleniyor (auth_repository_impl.dart:165-168), UserProvider.clearUserData çalışıyor (account_screen.dart:62) ve /login'e gidiliyor (:65-69).",
+  "inNewDesign": "9.1 kare 2: 'Çıkış Yap' satırı, normal ConfirmSheet, /ajax/logout ve ardından /welcome (Spec:1783-1784).",
+  "evidence": "auth_remote_data_source.dart:58-68, auth_repository_impl.dart:157-178.",
+  "recommendation": "covered-by-design",
+  "why": "Çalışıyor ve yeni tasarımda birebir karşılığı var."
+ },
+ {
+  "name": "Öğrenci: bağlı koç bilgisini görme",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/account_settings/account_settings_screen.dart"
+  ],
+  "entryPoints": "Profilim ve Şifre > 'Öğrenci Koçluğu' bölümü (account_settings_screen.dart:861-975). Yalnız rol 'student' iken çalışıyor (:87-89,106).",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /student/getStudentsCoach — lib/repository/profile_repository.dart:19-21; çağıran account_settings_screen.dart:107-108"
+  ],
+  "dataShown": "Koç adı (name ya da firstName + surname), refCode ve photo; avatar assets/avatars/ altından (:112-121, kart :894-955). Yüklenirken spinner kutusu (:864-893). Koç yoksa 'Bir Koça Bağlı Değilsiniz' (:123-129).",
+  "userActions": "Salt görüntüleme. Düzenleme modunda karta 'Değiştir' ve 'Sil' ekleniyor (:936-951).",
+  "inNewDesign": "SMAP-09 04-9-5-Koçluk-4-kare: 9.5 'Koçu var' hâli, SmapCoachCard ve bilgilendirme kutusu (Spec:1811). Ayrıca 9.1'de Koçluk satırının alt metni ve ProfileSummary'de 'Koçun: …' (Spec:1776,1787). Uç aynı.",
+  "evidence": "profile_repository.dart:19-24 gerçek GET. account_settings_screen.dart:106-129.",
+  "recommendation": "covered-by-design",
+  "why": "Çalışıyor ve 9.5 ile 9.1 karşılıyor. 'Sıradaki görüşme' satırı yeni bir alan, kaynağı yok (§6.3 #15)."
+ },
+ {
+  "name": "Öğrenci: koçluk koduyla koça bağlanma ve 'Koçluk Kodu Nedir?'",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/account_settings/account_settings_screen.dart"
+  ],
+  "entryPoints": "Profilim ve Şifre > düzenleme modu > 'Öğrenci Koçluğu' kod alanı ve '?' ikonu (account_settings_screen.dart:959-972), sonra 'Kaydet' (:1002-1032).",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /student/addCoach?code= — lib/repository/profile_repository.dart:26-30; çağıran account_settings_screen.dart:402-404 (_saveProfileChanges içinde, :399-431)"
+  ],
+  "dataShown": "'Kod Giriniz' ipucu. '?' ikonu 'Koçluk Kodu Nedir?' diyaloğunu açıyor (:519-561), öğrenci metni :43-46'da.",
+  "userActions": "Kod girilip kaydedilince addCoach çağrılıyor; başarıda koç adı ve kodu gösteriliyor (:405-421). Not: _makeRequest success!=true durumunda istisna fırlattığı için (profile_repository.dart:71-75) sunucu mesajı kayboluyor ve genel 'Sistemsel bir hata…' metni çıkıyor (:426-430). Ayrıca hiç çağrılmayan sahte bir _saveCoachingCode var (:563-587): API'siz 'Yeni Koç Başarıyla Bağlandı' yazıyor; ölü kod.",
+  "inNewDesign": "9.5 'Koçu yok' hâli: AAAA-0000 maskeli 'Koçluk kodu' alanı, 'Koça Bağlan' düğmesi, 'Koçluk Kodu Nedir?' küçük sheet'i, hata ve başarı metinleri (Spec:1813-1814). Uç aynı.",
+  "evidence": "profile_repository.dart:26-33 gerçek GET. account_settings_screen.dart:326-330,399-431.",
+  "recommendation": "covered-by-design",
+  "why": "Çalışıyor; 9.5 daha net bir akışla karşılıyor. _saveCoachingCode sahte ölü kod, taşınmamalı. Hata metninin sunucudan gelebilmesi için _makeRequest düzeltilmeli."
+ },
+ {
+  "name": "Öğrenci: koç bağlantısını kaldırma",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/account_settings/account_settings_screen.dart"
+  ],
+  "entryPoints": "Profilim ve Şifre > düzenleme modu > koç kartındaki 'Sil' (account_settings_screen.dart:945-951), ardından 'Bağlantıyı Kopar?' diyaloğu (_deleteCoach :589-730).",
+  "status": "partially-real",
+  "endpoints": [
+   "GET /student/deleteCoach (parametresiz) — lib/repository/profile_repository.dart:35-38; çağıran account_settings_screen.dart:658-660"
+  ],
+  "dataShown": "Onay metni (:628-629); başarıda 'Koç bağlantısı başarıyla kaldırıldı.' (:679).",
+  "userActions": "Gerçek uca istek gidiyor ama 'coach' parametresi oluşturulup isteğe eklenmiyor (profile_repository.dart:36-38), yani coachId gönderilmiyor. Diyalogdaki isDeleting değişkeni builder içinde tanımlandığı için (account_settings_screen.dart:598) yükleniyor hâli hiç görünmüyor.",
+  "inNewDesign": "9.5 'Bağlantıyı Kaldır' + tehlikeli onay + toast 'Koç bağlantın kaldırıldı.' (Spec:1811-1812). Spec parametre hatasının düzeltilmesini istiyor (Spec:1815; §7.1 Spec:2196 civarı; Geliştirme Planı O1 :234).",
+  "evidence": "profile_repository.dart:35-41 (queryParams kullanılmıyor). account_settings_screen.dart:589-730.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek uca bağlı ve 9.5 karşılıyor; yalnız parametre hatası giderilmeli."
+ },
+ {
+  "name": "Öğrenci: bağlıyken koçu doğrudan değiştirme ('Değiştir' ve yeni kod)",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/account_settings/account_settings_screen.dart"
+  ],
+  "entryPoints": "Profilim ve Şifre > düzenleme modu > koç kartındaki 'Değiştir' (account_settings_screen.dart:936-944), _changeCoachMode (:776-781) ile kod alanı açılıyor, sonra 'Kaydet'.",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /student/addCoach?code= — lib/repository/profile_repository.dart:26-30; çağıran account_settings_screen.dart:402-404 (_isChangingCoach koşulu :327-330)"
+  ],
+  "dataShown": "Mevcut koç kartı yerine boş kod alanı geliyor; başarıda yeni koçun adı (:410-421).",
+  "userActions": "Koç bağlıyken yeni kod girilip kaydediliyor ve addCoach çağrılıyor. İstemci mevcut bağın yenisiyle değiştiğini varsayıyor (_hasCoach=true, ad güncelleniyor). Sunucunun eski bağı gerçekten değiştirip değiştirmediği istemciden doğrulanamıyor.",
+  "inNewDesign": "Doğrudan karşılığı yok. 9.5 'Koçu var' hâlinde yalnız 'Bağlantıyı Kaldır' var; yeni koç ancak kaldırıp koçsuz hâlde kod girerek bağlanabiliyor, yani iki adım (Spec:1811-1813; 00_akis.md:53).",
+  "evidence": "account_settings_screen.dart:776-781, 936-944, 326-330, 399-421.",
+  "recommendation": "keep-needs-design",
+  "why": "Bugün tek adımda çalışan bir eylem, yeni tasarımda düşmüş. Tasarıma brif: 9.5 'Koçu var' hâline 'Koçunu Değiştir' text düğmesi eklensin. Bu düğme kod giriş sheet'ini açsın (9.5 koçsuz hâldeki maskeli alan ve 'Koça Bağlan' yeniden kullanılır); üstte '<Koç adı> ile bağlantın kalkacak' uyarısı ve normal onay olsun; başarı toast'ı '<Yeni koç>'a bağlandın.' olsun. Önce backend'den addCoach'un mevcut bağı değiştirdiği teyit edilmeli; değiştirmiyorsa iki adımlı mevcut yol yeterli sayılıp bu madde kapatılabilir."
+ },
+ {
+  "name": "Koç: kendi koçluk kodunu (refCode) görme ve 'Koçluk Kodu Nedir?' (koç metni)",
+  "oldScreens": [
+   "lib/features/profile/presentation/screens/account_settings/account_settings_screen.dart"
+  ],
+  "entryPoints": "Koç rolünde Hesap > 'Profilim ve Şifre' (root_screen.dart:45; account_screen.dart:94-98). 'Öğrenci Koçluğu' etiketli alan ve '?' ikonu (account_settings_screen.dart:959-972).",
+  "status": "working-real-api",
+  "endpoints": [
+   "(dolaylı) GET /ajax/checkUser ve POST /student/login yanıtındaki user.refCode prefs'e yazılıyor — auth_remote_data_source.dart:45-48 ve :14-16; auth_repository_impl.dart:48-49,80-81; ekranda okunması account_settings_screen.dart:130-136"
+  ],
+  "dataShown": "Koçun kendi refCode'u (yoksa 'Kod Yok'). '?' diyaloğu koç metnini gösteriyor (:47-49,135).",
+  "userActions": "Kopyalama ya da paylaşma yok. Hata: düzenleme modunda koçta _hasCoach false olduğu için alan boşaltılıyor (:283-285); koç bir şey yazıp kaydederse öğrenci ucu addCoach çağrılıyor (:327-330,399-404).",
+  "inNewDesign": "9.1 kare 4 (SMAP-09 00-9-1-Hesap-4-kare): ProfileSummary'de 'Koçluk kodun: …' ve 'Koçluk kodun' satırında Kopyala ve Paylaş (Spec:1779). Ayrıca 10.1/10.3 SmapCodeCard. Koç için 'kod nedir' açıklaması çizilmemiş.",
+  "evidence": "account_settings_screen.dart:130-136, 283-285, 959-972.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek veriyi gösteriyor ve 9.1 koç kartı kopyala/paylaş ile daha iyi karşılıyor. Eski düzenleme hatası taşınmamalı. İsteğe bağlı: koç için kısa bir 'Koçluk kodun ne işe yarar?' açıklaması (eski coachDesc) 9.1 koç satırına bilgi sheet'i olarak eklenebilir."
+ },
+ {
+  "name": "Hesap üst bilgisi ve profil avatarı (ad, alan veya rol, avatar)",
+  "oldScreens": [
+   "lib/features/root/presentation/widgets/header_user_section.dart",
+   "lib/features/profile/presentation/screens/account_settings/widgets/account_settings_navy_header.dart"
+  ],
+  "entryPoints": "Hesap sekmesinin üst barı (root_screen.dart:92-114, CustomTopAppBar) ve Profilim ve Şifre'deki lacivert bant + avatar (account_settings_screen.dart:790-793).",
+  "status": "working-real-api",
+  "endpoints": [
+   "(dolaylı) GET /ajax/checkUser — auth_remote_data_source.dart:45-48; auth_repository_impl.dart:27-52 user_data'yı yazıyor; UserProvider.loadUserData user_provider.dart:11-19"
+  ],
+  "dataShown": "Ad ve aimType adı ya da 'Öğrenci Koçu' (header_user_section.dart:26-31,75-90), küçük avatar (:94). Profilde 88 px avatar: 'assets/avatars/${photo}' (account_settings_navy_header.dart:47-51,83-96).",
+  "userActions": "Görüntüleme. Avatar değiştirme yok; ad ve avatar dokunuşları boş (header_user_section.dart:47,64).",
+  "inNewDesign": "9.1 SmapProfileSummary (ad, 'Sınıf · Alan', 'Koçun: …') ve 9.2'de av-1 72 + 'Avatarı Değiştir' sheet'i (yeni) (Spec:1776,1789-1791).",
+  "evidence": "header_user_section.dart:26-94, account_settings_navy_header.dart:47-105.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek oturum verisi; yeni tasarım karşılıyor ve avatar değişimini ekliyor."
+ },
+ {
+  "name": "Analizlerim · Genel (net grafiği, 4 istatistik kutusu, TYT/AYT-alan-ders süzgeci)",
+  "oldScreens": [
+   "lib/features/analytics/presentation/screens/analytics_screen.dart",
+   "lib/features/analytics/presentation/widgets/general_tab.dart",
+   "lib/features/analytics/presentation/widgets/net_chart_card.dart",
+   "lib/features/analytics/presentation/widgets/stats_grid.dart",
+   "lib/features/analytics/presentation/widgets/general_filter_panel.dart",
+   "lib/features/analytics/presentation/provider/analytics_view_provider.dart"
+  ],
+  "entryPoints": "Öğrenci alt bar 'Analizlerim' (lib/features/root/presentation/widgets/custom_bottom_nav_bar.dart:112-117 → root_screen.dart:35); Anasayfa menü 'Analiz' (home_menu_grid.dart:148-151, changeTab(1, initialTabIndex:0)).",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /student/getTotal — analysis_repository.dart:80-84, çağıran analytics_view_provider.dart:23",
+   "GET /student/getLineChartData — analysis_repository.dart:39-42, çağıran analytics_view_provider.dart:31"
+  ],
+  "dataShown": "'Deneme Net Grafiği' (mockexams[].net / date); 'Genel' seçiliyken Çözülen Deneme (total.count), Ortalama Net (total.ortNet), Ort. Sıralama ve Ortalama Puan (ranks/points dizilerinin alan indeksli ortalaması); tek ders seçiliyken Toplam Doğru / Ortalama Net / Toplam Yanlış / Toplam Boş (analytics_view_provider.dart:252-302). Süzgeç: TYT|AYT, EA/SAY/SÖZ, sabit ID'li ders çipleri (general_filter_panel.dart:36-71).",
+  "userActions": "Süzgeç paneli açma/kapama (Genel pill'ine tekrar dokunma, analytics_view_provider.dart:102-106); alan ve ders değişince getTotal + getLineChartData yeniden çağrılır (setAytGroup :368-377, setLesson :379-388; setExamType yenilemez :358-366); grafik noktasına dokunma balonu. Yazma işlemi yok.",
+  "inNewDesign": "Var: 6.1 Analizlerim · Genel (00_akis 13.7: 6.1·1, AYT 6.1·2, Süzgeç sheet 6.1·3, durumlar 6.3, koyu 6.4). NetChart + StatBox (delta'lı) + Süzgeç (Sınav, Alan+Dil, Ders).",
+  "evidence": "Veri gerçek uçlardan geliyor (analytics_view_provider.dart:21-62). Kusurlar: aimType sabit 2 (analytics_view_provider.dart:42 'todosmap, backend düzeltme'); her kutuda sabit '+18.2%  gecen ay' (analytics_general_data.dart:138-139, stats_grid.dart:118-135); hata yalnız debugPrint (:59-61).",
+  "recommendation": "covered-by-design",
+  "why": "Çalışan özellik tasarımda birebir karşılığa sahip (6.1); sahte '+18.2%' ve aimType=2 sabiti tasarımda zaten kaldırılıyor (D-3, §7.1)."
+ },
+ {
+  "name": "Analizlerim · 'Eksik Ders Konu Dağılımları' grafiği (LessonDistributionChartCard)",
+  "oldScreens": [
+   "lib/features/analytics/presentation/widgets/lesson_distribution_chart_card.dart"
+  ],
+  "entryPoints": "Yok: GeneralTab içinde yorum satırı (general_tab.dart:22).",
+  "status": "dead-unreachable",
+  "endpoints": [
+   "GET /student/getTotal (veri hâlâ hesaplanıyor: analytics_view_provider.dart:162-196)"
+  ],
+  "dataShown": "Kullanıcıya gösterilmiyor. Kodda ders başına (count − trueValue) eksik dağılımı hesaplanıyor.",
+  "userActions": "Yok.",
+  "inNewDesign": "yok (ders başına eksik bilgisi 7.1 Derslerim'deki EksikTag ile veriliyor)",
+  "evidence": "general_tab.dart:22 '//LessonDistributionChartCard(items: data.lessonDistributions)'; başlık 'Eksik Ders Konu Dagilimlari' lesson_distribution_chart_card.dart:50.",
+  "recommendation": "drop-dead",
+  "why": "Kullanıcı bu grafiği bugün göremiyor, çalışan bir özellik değil. Aynı bilgi tasarımda Derslerim'de var."
+ },
+ {
+  "name": "Analizlerim · Denemelerim listesi (sayfalı)",
+  "oldScreens": [
+   "lib/features/analytics/presentation/widgets/my_test_results_tab.dart",
+   "lib/features/analytics/presentation/widgets/my_test_results_card.dart"
+  ],
+  "entryPoints": "Analizlerim 'Denemelerim' pill'i (analytics_screen.dart:65, :79); Anasayfa menü 'Denemelerim' (home_menu_grid.dart:153-156, initialTabIndex:1).",
+  "status": "working-real-api",
+  "endpoints": [
+   "POST /student/getMyMockExams?page&perPage=8 body filter{types,nets,dates} — analysis_repository.dart:107-114, çağıran analytics_view_provider.dart:76 (my_test_results_tab.dart:31, :40, :73, :83 üzerinden)"
+  ],
+  "dataShown": "2 sütunlu kartlar: '{net} net', 'Deneme: {mexam.order}', kapak (uploads/{mexam.image}), itemName, 'Detay' düğmesi (my_test_results_card.dart:26-30).",
+  "userActions": "Sonsuz kaydırma (8'erli, my_test_results_tab.dart:36-42), aşağı çekip yenileme (:83), boşta 'Yeniden Dene' (:72-74), Detay → Deneme Detay (my_test_results_card.dart:136-143). Repo types/nets/dates süzgecini destekliyor (analysis_repository.dart:88-105) ama arayüz hiç göndermiyor.",
+  "inNewDesign": "Var: 6.2 Denemelerim (13.7: 6.2·1, Süz ve Sırala 6.2·2, boş 6.2·3); satır → 13.6 Deneme Detay.",
+  "evidence": "analytics_view_provider.dart:64-98 sayfalama; 'Deneme: N' rozeti my_test_results_card.dart:27 (D-33 ile kalkıyor).",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek ve çalışıyor; tasarım daha kapsamlı bir sürümünü veriyor (segment, süzgeç, sıralama)."
+ },
+ {
+  "name": "Denemelerim kartında favori yıldızı",
+  "oldScreens": [
+   "lib/features/analytics/presentation/widgets/my_test_results_card.dart"
+  ],
+  "entryPoints": "Denemelerim kartının sağ üst köşesi (my_test_results_card.dart:103-119).",
+  "status": "mock-or-fake",
+  "endpoints": [],
+  "dataShown": "Yıldız ilk açılışta yanıttaki isStarred'dan geliyor (my_test_results_card.dart:20).",
+  "userActions": "Dokununca yalnız yerel setState çalışıyor (my_test_results_card.dart:107). API çağrısı yok, kayıt yok; sayfa yeniden kurulunca durum kayboluyor.",
+  "inNewDesign": "Var: 6.2 ExamRow'da Star favori düğmesi; D-25 ve T4.8 ile yalnız cihazda (SharedPreferences) saklanıyor; koçta yıldız yok (10.4).",
+  "evidence": "my_test_results_card.dart:14-20 ve :107; §6.3 #40 'Modelde isStarred var, yazılmıyor'.",
+  "recommendation": "covered-by-design",
+  "why": "Bugünkü yıldız kalıcı değil. Tasarım bunu cihazda kalıcı favoriye çeviriyor, kaybolan bir şey yok."
+ },
+ {
+  "name": "Analizlerim · 'Analiz' sekmesi (çok yakında)",
+  "oldScreens": [
+   "lib/features/analytics/presentation/screens/analytics_screen.dart",
+   "lib/features/analytics/presentation/widgets/section_placeholder.dart"
+  ],
+  "entryPoints": "Analizlerim üst şeridinde 'Analiz' pill'i (analytics_screen.dart:65).",
+  "status": "stub-or-coming-soon",
+  "endpoints": [],
+  "dataShown": "'Yakında' diyaloğu: 'Güçlü ve zayıf konularını … Çok yakında hazır.' (analytics_view_provider.dart:109-116). Sekme değişmiyor. IndexedStack'te 'Analiz yakinda' yer tutucusu var (analytics_screen.dart:80, section_placeholder.dart:13).",
+  "userActions": "Yalnız diyaloğu kapatma.",
+  "inNewDesign": "yok (D-4: 'Analiz sekmesi' v1'de yok; 6.1 notu 'Analiz ve Harita sekmeleri v1'de yok')",
+  "evidence": "analytics_view_provider.dart:109-116 showUnderConstruction; section_placeholder.dart:13 '$title yakinda'.",
+  "recommendation": "drop-mock",
+  "why": "Kodda içerik ya da API yok, yalnız 'yakında' diyaloğu açılıyor."
+ },
+ {
+  "name": "Analizlerim · 'Harita' sekmesi ve Matematik/Geometri 'Kavram Haritan' yönlendirmesi",
+  "oldScreens": [
+   "lib/features/analytics/presentation/provider/analytics_view_provider.dart",
+   "lib/features/home/presentation/widgets/lesson_navigation_helper.dart",
+   "lib/features/home/presentation/widgets/home_lessons_cards.dart"
+  ],
+  "entryPoints": "Analizlerim 'Harita' pill'i (analytics_screen.dart:65 → analytics_view_provider.dart:117-125); Derslerim'de Matematik/Geometri satırı (lesson_navigation_helper.dart:30-44); Anasayfa ders şeridinde Mat/Geo (home_lessons_cards.dart:108-118).",
+  "status": "web-redirect",
+  "endpoints": [],
+  "dataShown": "Yalnız metin: 'Kavram Haritan … mobilde de çok yakında … Web kısmında ise şu anda hazır. smaptr.com'dan giriş yaparak …'. Bağlantı yok (projede launchUrl/url_launcher çağrısı yok).",
+  "userActions": "Yalnız diyaloğu kapatma.",
+  "inNewDesign": "Harita sekmesi yok (D-4). Mat/Geo için 7.1'de 'Web'de' etiketi, Web'de sheet'i ve 'Web'de Aç' düğmesi var (D-5, remote webLessonsUrl).",
+  "evidence": "analytics_view_provider.dart:117-125; lesson_navigation_helper.dart:33-43; grep 'launchUrl' sonuç vermedi.",
+  "recommendation": "drop-mock",
+  "why": "Uygulama içinde harita yok, yalnız web'i işaret eden bir metin var. Web'e yönlendirme ihtiyacını tasarımdaki Web'de sheet'i zaten karşılıyor."
+ },
+ {
+  "name": "Deneme Detay · Genel ('Deneme Sonucu')",
+  "oldScreens": [
+   "lib/features/analytics/presentation/screens/my_test_result_detail_screen.dart",
+   "lib/features/analytics/presentation/widgets/my_test_results_detail_widgets.dart"
+  ],
+  "entryPoints": "Denemelerim kartında 'Detay' (my_test_results_card.dart:136-143); koç bağlamında da aynı yol.",
+  "status": "working-real-api",
+  "endpoints": [
+   "Ek istek yok. Veri getMyMockExams satır yükünden geliyor: true, wrong, net, lessonInfo, mexam.image (my_test_result_detail_screen.dart:241-262)"
+  ],
+  "dataShown": "Kapak, 'Deneme: {order}', itemName, Net/Doğru/Yanlış kutuları, lessonInfo JSON'undan 4 ders kartı D/Y/B (my_test_result_detail_screen.dart:392-519); TYT dışı denemelerde sabit OBP şeridi (my_test_results_detail_widgets.dart:116).",
+  "userActions": "4 sekme arasında geçiş (my_test_result_detail_screen.dart:138-157), Deneme Sonucu/Sıralama anahtarı (:343-351).",
+  "inNewDesign": "Var: 5.3 Deneme Detay · Genel (13.6: ExamHeader, net, DybLarge, puan kartı, StackedBar'lı test listesi).",
+  "evidence": "Sabit 'OBP notunuz 85' (my_test_results_detail_widgets.dart:116) ve 'Deneme: N' (my_test_result_detail_screen.dart:295) sahte veya kaldırılan öğeler (D-3, D-33).",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek veri tasarımda daha zengin hâliyle var. Kalkanlar yalnız sahte ve sabit metinler."
+ },
+ {
+  "name": "Deneme Detay · 'Sıralama' görünümü (Yerleştirme ve Ham puan ile sıraları)",
+  "oldScreens": [
+   "lib/features/analytics/presentation/screens/my_test_result_detail_screen.dart",
+   "lib/features/analytics/presentation/widgets/my_test_results_detail_widgets.dart"
+  ],
+  "entryPoints": "Deneme Detay > Genel > 'Deneme Sonucu | Sıralama' anahtarındaki 'Sıralama' (my_test_result_detail_screen.dart:343-351; widgets :124-189).",
+  "status": "partially-real",
+  "endpoints": [
+   "Ek istek yok. points, ranks, pointsHam, ranksHam dizileri getMyMockExams satır yükünden okunuyor (my_test_result_detail_screen.dart:259-277)"
+  ],
+  "dataShown": "'Yerleştirme Puanı' + 'Yerleştirme Puanı Sıralaması' ve 'Ham Puan' + 'Ham Puan Sıralaması' (my_test_result_detail_screen.dart:359-390). AYT'de 'Eşit Ağırlık / Sayısal / Sözel' sekmeleri statik: hep EA aktif, dokunulamıyor (widgets :192-230, isActive:true :212). _currentType her zaman 0 (:264), bu yüzden AYT'de de dizinin 0. elemanı gösteriliyor.",
+  "userActions": "Yalnız anahtarı değiştirme. Puan türü sekmeleri çalışmıyor.",
+  "inNewDesign": "Kısmen var: 5.3 puan kartı yalnız öğrencinin alanı için 'Yerleştirme puanı' ve 'Sıra' gösteriyor (T2.11, T3.2). Ham puan ve ham sıra çizilmemiş (§6.5 açık soru 7). Diğer puan türleri yok.",
+  "evidence": "my_test_result_detail_screen.dart:264 '_currentType = isTypeOne ? 0 : 0'; widgets :206-224 sabit sekmeler; ham puan kartı :377-384.",
+  "recommendation": "keep-needs-design",
+  "why": "Ham puan ve ham sıra bugün sunucudan gelen gerçek veriyle gösteriliyor. Yeni tasarımda karşılığı yok, bu yüzden 5.3 puan kartına bir 'Ham puan · Sıra' satırı tasarlanmalı (ürün sahibinin #7 cevabıyla netleşecek). Statik EA/SAY/SÖZ sekmeleri sahte olduğu için kalkabilir."
+ },
+ {
+  "name": "Deneme Detay · Sorular ızgarası",
+  "oldScreens": [
+   "lib/features/analytics/presentation/widgets/my_test_results_detail_widgets.dart"
+  ],
+  "entryPoints": "Deneme Detay > 'Sorular' sekmesi (my_test_result_detail_screen.dart:143-147, :169-172).",
+  "status": "working-real-api",
+  "endpoints": [
+   "Ek istek yok. Veri satır yükündeki questionsArrStr ({order,type}) (my_test_results_detail_widgets.dart:574-576)"
+  ],
+  "dataShown": "Ders başına ExpansionTile ve D/Y/B sayaçları; 5 sütunlu soru kutuları ✓/✕/? (widgets :553-717).",
+  "userActions": "Kutuya dokunma → Soru Detay (widgets :660-672).",
+  "inNewDesign": "Var: 5.4 Sorular (Tümü/Yanlışlar/Boşlar, SmapQuestionCell) → 5.7 Soru Detay.",
+  "evidence": "my_test_results_detail_widgets.dart:595-604 sayım; :660-672 gezinme.",
+  "recommendation": "covered-by-design",
+  "why": "Tasarımda birebir ve daha gelişmiş karşılığı var. Soru başına şık bilgisi backend'e bağlı (§6.3 #9)."
+ },
+ {
+  "name": "Soru Detay · Soru Analizi (açıklama ve ilgili bilgi kartları)",
+  "oldScreens": [
+   "lib/features/analytics/presentation/screens/question_detail_page.dart"
+  ],
+  "entryPoints": "Deneme Detay > Sorular > soru kutusu (my_test_results_detail_widgets.dart:660-672).",
+  "status": "working-real-api",
+  "endpoints": [
+   "POST /student/getQuestion {mexam, questionOrder, lessonOrder} — analysis_repository.dart:151-157, çağıran question_detail_page.dart:56"
+  ],
+  "dataShown": "Başlık '{ders}  {order}. Soru'; question.desc; question.items[] → kartlar (mainSubject.name, name, desc), CardSwiper ile ve '{i} / {n}' sayacıyla; kartta 'Detay' diyaloğu. page_info isteniyor (:66) ama ekranda gösterilmiyor.",
+  "userActions": "Kartları kaydırma, Detay diyaloğu. Okuma dışında API eylemi yok.",
+  "inNewDesign": "Var: 5.7 Soru Detay (işaretin/doğru cevap, Soru Analizi, 'İlgili kartlar' carousel, Kartları Çalış, telif notu).",
+  "evidence": "question_detail_page.dart:48-104 gerçek istek ve dönüşüm; :318-378 açıklama ve swiper.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek içerik tasarımda tek ekranda karşılanıyor. page_info bugün de gösterilmediği için kayıp yok."
+ },
+ {
+  "name": "Soru Detay ekleri: 'Soru Fotoğrafı' sekmesi, 'Fotoğraf Çek', 'Soru Bankam', sahte 'Tekrar Dene', kart yıldızı",
+  "oldScreens": [
+   "lib/features/analytics/presentation/screens/question_detail_page.dart"
+  ],
+  "entryPoints": "Soru Detay üst TabBar 'Soru Fotoğrafı' (question_detail_page.dart:230-240); hata durumunda 'Tekrar Dene' (:289-299); kart yıldızı (:577-590).",
+  "status": "mock-or-fake",
+  "endpoints": [],
+  "dataShown": "'Soruyu kaydederek Soru Bankam modülüne aktarırsın ve PDF çıktıları alabilirsin' (:400), telif metni (:479), turuncu 'Fotoğraf Çek'. 'Tekrar Dene' gerçek isteği değil _fetchMockRepositoryData'yı çağırıyor ve sabit Osmanlı tarihi kartları gösteriyor (:106-140, :292).",
+  "userActions": "'Fotoğraf Çek' yalnız print yapıyor (:546). Yıldız yalnız yerel SnackBar gösteriyor: 'Favorilere eklendi!' (:577-590). API yok.",
+  "inNewDesign": "yok (5.7 kuralı: 'Fotoğraf Çek ve Soru Bankam yok'; D-4: Soru Bankam ve soru fotoğrafı; yalnız tek satırlık telif notu kalıyor)",
+  "evidence": "question_detail_page.dart:106-140, :292, :400, :479, :546, :577-590.",
+  "recommendation": "drop-mock",
+  "why": "Bunların hepsi sahte ya da yer tutucu, arkalarında backend yok."
+ },
+ {
+  "name": "Deneme Detay · Konu Analizi",
+  "oldScreens": [
+   "lib/features/analytics/presentation/widgets/my_test_results_detail_widgets.dart"
+  ],
+  "entryPoints": "Deneme Detay > 'Konu Analizi' sekmesi (my_test_result_detail_screen.dart:148-152, :175-198).",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /student/getMexamSubjectDetail?mexamId — analysis_repository.dart:118-128, çağıran my_test_result_detail_screen.dart:67"
+  ],
+  "dataShown": "Ders başına konu kartları: trueValue/wrongValue/passValue ve netRate yüzde halkası; ders başlığında lessonmockexams D/Y/B (widgets :799-950).",
+  "userActions": "Ders genişletme. Yazma yok.",
+  "inNewDesign": "Var: 5.5 Konular (SmapTopicResultRow, SuccessRing, 'Bu Konuyu Çalış'); koyu 5.10.",
+  "evidence": "my_test_result_detail_screen.dart:67-69; widgets :888-901.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek veri tasarımda birebir karşılanıyor."
+ },
+ {
+  "name": "Deneme Detay · Bilgi Kartları sekmesi",
+  "oldScreens": [
+   "lib/features/analytics/presentation/widgets/my_test_results_detail_widgets.dart"
+  ],
+  "entryPoints": "Deneme Detay > 'Bilgi Kartları' sekmesi (my_test_result_detail_screen.dart:153-157, :200-232).",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /student/getMexamItemDetail?mexamId — analysis_repository.dart:130-138, çağıran my_test_result_detail_screen.dart:70"
+  ],
+  "dataShown": "'Toplam N bilgi kartı kazandın' (totalCards+totalItems+totalMapItems); ders başına kart: Net, D, Y ve 'N Bilgi Kartı' (widgets :1192-1460).",
+  "userActions": "Ders kartına dokunma boş (widgets :1352-1355).",
+  "inNewDesign": "Var: 5.6 Kartlar ('N bilgi kartı eklendi', derse göre gruplu kart listesi, 'Kartları Çalış' → 8.1, kart → CardSheet).",
+  "evidence": "Hata: D değeri yanlışla dolduruluyor 'lessonDetail['true'] = result['wrong']' (widgets :1234); ad substring(4) ile kırpılıyor (:1387).",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek veri tasarımda karşılanıyor ve tasarım kartları çalışılabilir hâle getiriyor. Ders başına Net/D/Y zaten Genel sekmesinde var."
+ },
+ {
+  "name": "Koç · öğrenci analizi ekranı (CoachAnalyticsDetailScreen: öğrencinin Genel ve Denemelerim'i)",
+  "oldScreens": [
+   "lib/features/analytics/presentation/screens/coach_analytics_screen.dart",
+   "lib/features/analytics/presentation/screens/analytics_screen.dart"
+  ],
+  "entryPoints": "Öğrencilerim > StudentCard 'Analiz' / 'Denemeler' (student_card.dart:133-147 → my_students_screen.dart:169-180); Koç Anasayfa öğrenci diyaloğu 'Analiz' / 'Denemeler' (home_students_cards.dart:240-276).",
+  "status": "partially-real",
+  "endpoints": [
+   "GET /student/getTotal?studentId, GET /student/getLineChartData?studentId, POST /student/getMyMockExams?studentId — studentId enjeksiyonu analysis_repository.dart:266-268, AnalyticsView(studentId) coach_analytics_screen.dart:67-70, analytics_screen.dart:31",
+   "GET /student/getMexamSubjectDetail, GET /student/getMexamItemDetail, POST /student/getQuestion — studentId OLMADAN gidiyor (my_test_result_detail_screen.dart:37 'AnalysisRepository()')"
+  ],
+  "dataShown": "AppBar'da öğrenci avatarı ve adı; öğrencinin Genel grafiği ve kutuları, Denemelerim listesi, Deneme Detay.",
+  "userActions": "Öğrenci ekranıyla aynı (süzgeç, sayfalama, detay). Yazma yok.",
+  "inNewDesign": "Var: 10.4 Öğrenci Profili koç bağlamında (ContextStrip; Analiz 10.4·1, Denemeler 10.4·2, Deneme Detay koç bağlamı 10.4·4); koçta favori yıldızı ve Bu Konuyu Çalış/Kartları Çalış yok.",
+  "evidence": "coach_analytics_screen.dart:67-70; analysis_repository.dart:266-268; my_test_result_detail_screen.dart:37 studentId'siz repo.",
+  "recommendation": "covered-by-design",
+  "why": "Özellik çalışıyor ve tasarımda karşılığı var. Koçun açtığı deneme detayındaki alt isteklere studentId eklenmesi geliştirme işi (§6.3 #33)."
+ },
+ {
+  "name": "Koç · 'Kaynak Takibi' / 'Kaynak Tkp.' düğmesi",
+  "oldScreens": [
+   "lib/features/my_students/student_card.dart",
+   "lib/features/home/presentation/widgets/home_students_cards.dart",
+   "lib/features/analytics/presentation/widgets/section_placeholder.dart"
+  ],
+  "entryPoints": "StudentCard 'Kaynak Tkp.' (student_card.dart:155-157 → onAnalizTap(2)); Koç Anasayfa diyaloğu 'Kaynak Takibi' (home_students_cards.dart:285-298).",
+  "status": "stub-or-coming-soon",
+  "endpoints": [],
+  "dataShown": "CoachAnalyticsDetailScreen'i initialTabIndex 2 ile açıyor. IndexedStack'te 'Analiz yakinda' yer tutucusu görünüyor (analytics_screen.dart:80, section_placeholder.dart:13).",
+  "userActions": "Yok.",
+  "inNewDesign": "yok (D-4 'Kaynak Takibi'; §7.1 koç öğrenci diyaloğunun 4 düğmesi kalkıyor)",
+  "evidence": "student_card.dart:155-157; home_students_cards.dart:285-298; section_placeholder.dart:13.",
+  "recommendation": "drop-mock",
+  "why": "Yalnız 'yakında' yer tutucusu gösteriyor, arkasında uygulama yok."
+ },
+ {
+  "name": "Koç · öğrencinin programını görme, YENİ PROGRAM OLUŞTURMA ve DÜZENLEME",
+  "oldScreens": [
+   "lib/features/home/presentation/screens/coach_programs_screen.dart",
+   "lib/features/home/presentation/screens/my_schedule_page/my_schedule_page.dart",
+   "lib/features/home/presentation/screens/my_schedule_page/schedule_list_page/schedule_list_page.dart",
+   "lib/features/home/presentation/screens/my_schedule_page/day_selection_page/day_selection_page.dart",
+   "lib/features/home/presentation/screens/my_schedule_page/add_lessons_page/add_lessons_page.dart"
+  ],
+  "entryPoints": "StudentCard 'Program' (student_card.dart:164-165 → my_students_screen.dart:157-168, TeacherViewScheduleScreen); Koç Anasayfa öğrenci diyaloğu 'Program' (home_students_cards.dart:305-318).",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /student/getMyWeeklies?studentId — weekly_repository.dart:41-43",
+   "POST /student/addNewProgram?studentId — weekly_repository.dart:50-56, çağıran add_lessons_page.dart:696",
+   "POST /student/updateProgram?studentId — weekly_repository.dart:62-70, çağıran add_lessons_page.dart:701",
+   "GET /student/getAllMainSubjects — weekly_repository.dart:19",
+   "studentId tüm isteklere ekleniyor: weekly_repository.dart:86-88; MySchedulePage(studentId) coach_programs_screen.dart:68, my_schedule_page.dart:14"
+  ],
+  "dataShown": "Öğrencinin program kartları, gün/saat ızgarası, ders ve konu blokları.",
+  "userActions": "Koç '+' ile öğrenciye yeni program oluşturabiliyor (schedule_list_page.dart:103-120) ve programa dokunup düzenleyebiliyor (:149-170): gün seçimi → ders/konu ekle → Kaydet, API'ye yazılıyor. Rol kısıtı yok.",
+  "inNewDesign": "Kısmen: 10.4·3 Program yalnız salt okunur. InfoBox 'Programı {öğrenci} düzenler; sen görüntülersin.', 'Günü Sıfırla' ve 'Düzenle' yok (05_ekranlar_C 10.4 kare 3; T9.6; yasak 36 'koç görünümünde düzenleme yok').",
+  "evidence": "schedule_list_page.dart:103-120 ve :149-170; add_lessons_page.dart:696/:701; weekly_repository.dart:86-88. Backend'in koç oturumunda yazma uçlarında studentId'yi kabul ettiği doğrulanmadı (§6.3 #33).",
+  "recommendation": "keep-needs-design",
+  "why": "Koçun öğrenci adına program kurup düzenlemesi istemci tarafında uçtan uca gerçek API ile yazılmış ve erişilebilir durumda, ama tasarım bunu salt okunura indiriyor. Ürün sahibinin kuralına göre koç bağlamı için 'Yeni Program' ve 'Düzenle' akışı tasarlanmalı: 3.5/3.6 ekranları ContextStrip ile ve 'öğrenciye bildirilir' notuyla. Backend'in studentId'li yazmayı kabul ettiği de teyit edilmeli."
+ },
+ {
+  "name": "Koç · Öğrencilerim listesi (arama + StudentCard)",
+  "oldScreens": [
+   "lib/features/my_students/my_students_screen.dart",
+   "lib/features/my_students/student_card.dart"
+  ],
+  "entryPoints": "Koç alt bar 'Öğrencilerim' (custom_bottom_nav_bar.dart:105-111 → root_screen.dart:43); koç menüsü 'Öğrencilerim' (home_menu_grid.dart:191-193).",
+  "status": "working-real-api",
+  "endpoints": [
+   "POST /coach/getMyStudents — home_repository.dart:59-61 (HomeProvider.coachStudents, my_students_screen.dart:31-38)"
+  ],
+  "dataShown": "2 sütunlu kart: avatar, ad, seasonType sınıfı, herkes için sabit 'Başarısız (Derece)' (student_card.dart:27, :119), 4 düğme (Analiz, Denemeler, Kaynak Tkp., Program).",
+  "userActions": "İstemci tarafında ad araması (my_students_screen.dart:41-51), '+' ile Öğrenci Ekle (:96-123). Kartın kendi onTap'i yalnız debugPrint (:152-156).",
+  "inNewDesign": "Var: 10.2 Öğrencilerim (Türkçe I/ı/İ/i vurgulu arama, SmapStudentRow, sonuç yok ve boş durumları) → 10.4 profil.",
+  "evidence": "student_card.dart:27 ve :119 sahte durum; my_students_screen.dart:41-51.",
+  "recommendation": "covered-by-design",
+  "why": "Liste ve arama tasarımda var. Sahte 'Başarısız (Derece)' tasarımda kalkıyor (§7.1)."
+ },
+ {
+  "name": "Koç · Öğrenci Ekle diyaloğu (avatar seçici dahil)",
+  "oldScreens": [
+   "lib/features/my_students/add_student_dialog.dart"
+  ],
+  "entryPoints": "Öğrencilerim '+' (my_students_screen.dart:96-110).",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /ajax/checkUsername?name — coach_repository.dart:68-76, çağıran add_student_dialog.dart:62",
+   "POST /coach/addNewStudent {dataObj{name,surname,userName,password,seasonType,aimType,photo}} — coach_repository.dart:79-86, çağıran add_student_dialog.dart:136"
+  ],
+  "dataShown": "Avatar karuseli (add_student_dialog.dart:37, :300-350), Ad, Soyad, Kullanıcı adı + 'Kontrol Et' (:484), Şifre + 'Oluştur' (:531-544), Sınıf 9–12, Alan (9–10'da gizli; Say/EA/Söz/Dil → 1/2/3/4 :103-108).",
+  "userActions": "Kullanıcı adı kontrolü (API), 10 karakterlik rastgele şifre üretme (:88-100), avatar seçme (payload 'photo' :120-132), kaydetme (API) → listeye ekleme (my_students_screen.dart:113-121).",
+  "inNewDesign": "Kısmen: 10.3 Öğrenci Ekle sheet'i (Ad, Soyad, Kullanıcı adı + Kontrol Et, Şifre + Oluştur, Sınıf, Alan) + CredentialsSheet + CodeCard. Avatar seçimi tasarımda yok.",
+  "evidence": "add_student_dialog.dart:120-132 'photo' alanı API'ye gidiyor; 05_ekranlar_C 10.3 kare 1'de avatar alanı yok. Alan kodları kayıttan farklı (§6.3 #18).",
+  "recommendation": "keep-needs-design",
+  "why": "Akış tasarımda var, eksik olan yalnız avatar seçimi. Bu alan bugün API'ye gerçekten 'photo' olarak yazılıyor, bu yüzden 10.3 formuna (C57 SmapAvatarPicker ile) eklenmeli."
+ },
+ {
+  "name": "Koç Anasayfa · öğrenci şeridi ve öğrenci diyaloğu",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_students_cards.dart"
+  ],
+  "entryPoints": "Koç Anasayfa üst şeridi (home_screen.dart:45-46).",
+  "status": "working-real-api",
+  "endpoints": [
+   "POST /coach/getMyStudents — home_repository.dart:59-61"
+  ],
+  "dataShown": "Avatar, ad, totalMexam rozeti (home_students_cards.dart:528); diyalogda sınıf ve aimType'tan alan adı (:110-126); 4 düğme (:240-318).",
+  "userActions": "Kart → diyalog → Analiz/Denemeler/Kaynak Takibi/Program. Kendisi yazma yapmıyor.",
+  "inNewDesign": "Var: 10.1 Koç Anasayfa (öğrenci şeridi, dikkat gerektirenler, yaklaşan görüşmeler) → 10.4 StudentProfileScreen. Diyalog kalkıyor (§7.1).",
+  "evidence": "home_students_cards.dart:240-318.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek veri ve gezinme tasarımda profil ekranıyla karşılanıyor."
+ },
+ {
+  "name": "Koç menüsü 'yakında' öğeleri (SmapCoach, Analizler, Müfredat, Kaynak Takibi) ve 'Yayınladığında Haber Ver'",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_menu_grid.dart",
+   "lib/features/home/presentation/widgets/app_dialog.dart"
+  ],
+  "entryPoints": "Koç Anasayfa menü ızgarası (home_menu_grid.dart:48-81).",
+  "status": "stub-or-coming-soon",
+  "endpoints": [],
+  "dataShown": "Her biri showUnderConstruction diyaloğu açıyor (home_menu_grid.dart:176-240).",
+  "userActions": "'Yayınladığında Haber Ver' ya da 'Detaylı Bilgi Al' 'Kaydınız Alındı' gösteriyor ama hiçbir şey kaydedilmiyor (app_dialog.dart:113, :154; callback'ler boş).",
+  "inNewDesign": "yok (D-4: SmapCoach, Müfredat, Kaynak Takibi; §7.1 koç menüsü kalkıyor)",
+  "evidence": "home_menu_grid.dart:176-240.",
+  "recommendation": "drop-mock",
+  "why": "Hepsi 'yakında' diyaloğu, arkalarında backend yok."
+ },
+ {
+  "name": "Öğrenci menüsü 'yakında' öğeleri (Gelen Kutusu, SmapLab)",
+  "oldScreens": [
+   "lib/features/home/presentation/widgets/home_menu_grid.dart"
+  ],
+  "entryPoints": "Öğrenci Anasayfa menü ızgarası (home_menu_grid.dart:30-38).",
+  "status": "stub-or-coming-soon",
+  "endpoints": [],
+  "dataShown": "'Şu anda yapım aşamasında.' diyalogları (home_menu_grid.dart:158-175).",
+  "userActions": "Yalnız diyaloğu kapatma ve sahte 'Haber Ver'.",
+  "inNewDesign": "yok (D-4: SmapLab, Gelen Kutusu)",
+  "evidence": "home_menu_grid.dart:158-175.",
+  "recommendation": "drop-mock",
+  "why": "Uygulaması yok."
+ },
+ {
+  "name": "Koç · Görüşmelerim listesi ve Yeni Görüşme",
+  "oldScreens": [
+   "lib/features/my_interviews/interviews_screen.dart",
+   "lib/features/my_interviews/interview_card.dart"
+  ],
+  "entryPoints": "Koç alt bar 'Görüşmelerim' (custom_bottom_nav_bar.dart:125-130 → root_screen.dart:44); koç menüsü 'Görüşmelerim' (home_menu_grid.dart:241-243).",
+  "status": "working-real-api",
+  "endpoints": [
+   "POST /coach/getInterviews?page&limit body filter{types,dates} — coach_repository.dart:7-31, çağıran interviews_screen.dart:101-106",
+   "POST /coach/addNewInterview {dataObj{date,type,student}} — coach_repository.dart:33-42, çağıran interviews_screen.dart:632"
+  ],
+  "dataShown": "Öğrenci adı ve avatarı, tarih 'd MMMM' (yılsız), tür 'Öğrenci Görüşmesi' ya da 'Veli Görüşmesi' (interviews_screen.dart:69-78).",
+  "userActions": "Sonsuz kaydırma (8'erli), yenileme, '+' Yeni Görüşme (öğrenci, tür, tarih, saat → API, :595-640), satır → detay (:394-403). Arama sahte: sorgu API'ye gitmiyor (:140-143). types/dates süzgeci için arayüz yok.",
+  "inNewDesign": "Var: 10.5 Görüşmelerim (arama, Kiminle süzgeci, yıllı tarih, boş durum) + Yeni görüşme 10.5·2.",
+  "evidence": "interviews_screen.dart:101-106, :140-143, :632.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek liste ve ekleme tasarımda var. Aramanın backend parametresi açık soru (§6.3 #31)."
+ },
+ {
+  "name": "Koç · Görüşme Detayı ve notlar (ekle/düzenle/sil)",
+  "oldScreens": [
+   "lib/features/my_interviews/interview_detail_screen.dart"
+  ],
+  "entryPoints": "Görüşmelerim satırı (interviews_screen.dart:394-403).",
+  "status": "working-real-api",
+  "endpoints": [
+   "POST /coach/addNewNote — coach_repository.dart:44-50, çağıran interview_detail_screen.dart:39",
+   "POST /coach/editNote — coach_repository.dart:52-58, çağıran interview_detail_screen.dart:323",
+   "POST /coach/deleteNote — coach_repository.dart:60-66, çağıran interview_detail_screen.dart:456"
+  ],
+  "dataShown": "Öğrenci avatarı, ad, tarih, tür; 'Görüşme Notları' listesi (tarih-saat, düzenle/sil ikonları).",
+  "userActions": "Not Ekle, Notu Düzenle ve onaylı Notu Sil; üçü de API'ye gidiyor.",
+  "inNewDesign": "Var: 10.6 Görüşme Notları (Not Ekle 10.6·1, Düzenle 10.6·2, onaylı Sil 10.6·3, Geri Al'lı silindi 10.6·4).",
+  "evidence": "interview_detail_screen.dart:33-66, :323, :456.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek ve tasarımda birebir var."
+ },
+ {
+  "name": "Derslerim listesi (MyCardPage, TYT/AYT)",
+  "oldScreens": [
+   "lib/features/my_card/presentation/screens/my_card_screen.dart",
+   "lib/features/my_card/presentation/screens/my_cards_page/my_card_page/my_card_page.dart",
+   "lib/features/analytics/presentation/screens/lesson_bar.dart"
+  ],
+  "entryPoints": "Öğrenci alt bar 'Derslerim' (custom_bottom_nav_bar.dart:132-136 → root_screen.dart:36); Anasayfa menü 'Derslerim' (home_menu_grid.dart:143-146).",
+  "status": "partially-real",
+  "endpoints": [
+   "GET /student/getInfoCardsInfo — cards_repository.dart:7-12, çağıran my_card_page.dart:52",
+   "GET /ajax/getGeneralLessons — home_repository.dart:13 (HomeProvider.lessons)"
+  ],
+  "dataShown": "TYT|AYT segmenti ve ders satırları. Satırdaki sayıların hepsi sabit yer tutucu: %75, '15/20 Konu tamamlandı', '4 Alt Başlık / 26 Madde / 8 Bilgi Kartı' (lesson_bar.dart:17-22, :238, :284-304). Sunucudan gelen missCount/trueCount/favoriteCount hesaplanıyor ama gösterilmiyor (my_card_page.dart:91-93). 'N Eksiğin var' hiç çıkmıyor.",
+  "userActions": "Satır → TYT/AYT/SOS-2 diyaloğu ya da ders detayı (my_card_page.dart:251-254).",
+  "inNewDesign": "Var: 7.1 Derslerim (SmapSubjectRow, EksikTag, '41/64 kart', Web'de etiketi, iskelet ve çevrimdışı durumları).",
+  "evidence": "lesson_bar.dart:17-22; my_card_page.dart:52, :91-93.",
+  "recommendation": "covered-by-design",
+  "why": "Liste ve gezinme tasarımda var, sahte sayılar tasarımda kalkıyor (D-3)."
+ },
+ {
+  "name": "Ders detayı (LessonDetailPage) ve TYT/AYT/SOS-2 seçim diyaloğu",
+  "oldScreens": [
+   "lib/features/analytics/presentation/screens/lesson_detail_page.dart",
+   "lib/features/home/presentation/widgets/lesson_navigation_helper.dart"
+  ],
+  "entryPoints": "Derslerim satırı → LessonNavigationHelper.showTypeSelection (my_card_page.dart:251-254; lesson_navigation_helper.dart:46-71, diyalog :75-200); Anasayfa ders şeridi.",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /student/mainSubjects?lessonId — analysis_repository.dart:161-171, çağıran lesson_detail_page.dart:75"
+  ],
+  "dataShown": "Ders adı, filterObjs segmenti ve başa eklenen 'Tümü' (lesson_detail_page.dart:82-87), sekme başına resultByType eksik sayısı, konu kartları (sabit yer tutucu ilerleme).",
+  "userActions": "Segment değiştirme, konu → Konu detayı (:487-500). 'Eksikler' düğmesi yalnız print (:169-171).",
+  "inNewDesign": "Var: 7.2 Ders detayı (sayaçlı segment, Eksiklerim süzgeci 7.2·2, Tarih SOS-2 7.2·3). TYT/AYT/SOS-2 diyaloğu kalkıyor ve segmente taşınıyor (§7.1).",
+  "evidence": "lesson_detail_page.dart:75-87, :169-171; lesson_navigation_helper.dart:126-180.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek veri tasarımda var. 'Eksikler' düğmesi bugün çalışmıyor, tasarım onu gerçek süzgece çeviriyor."
+ },
+ {
+  "name": "Konu detayı (SubTopicDetailPage: alt başlık → madde → bilgi kartı diyaloğu)",
+  "oldScreens": [
+   "lib/features/analytics/presentation/screens/subject_detail_page.dart"
+  ],
+  "entryPoints": "Ders detayında konu kartı (lesson_detail_page.dart:487-500); Edebiyat 'Konular' sekmesi (edebiyat_lesson_detail_page.dart:676-686).",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /student/getSubSubjects?mainSubjectId + POST /student/getItems {subjectIds,type} — analysis_repository.dart:173-223, çağıran subject_detail_page.dart:39"
+  ],
+  "dataShown": "Alt başlık genişleyen satırları (sabit %60: subject_detail_page.dart:378-379), madde sayısı, eksik/bilinen kart ikonları, maddeler, bilgi kartı diyaloğu.",
+  "userActions": "İlk eksiğe otomatik kaydırma (:100-134), kart diyaloğu (:667-790). Yıldız yalnız yerel, API yok (:670-734).",
+  "inNewDesign": "Var: 7.3 Konu detayı (akordeon, ExampleBox, ilk eksiğe kaydırma) + 7.3·3 CardSheet (Öğrendim → learnedItem/learnedCard, Favori → addFavoriteMobil).",
+  "evidence": "subject_detail_page.dart:39, :100-134, :670-734.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek içerik tasarımda var. Sahte yerel yıldızın yerine tasarımda gerçek favori ucu geliyor."
+ },
+ {
+  "name": "Edebiyat · Yazar & Eserler (dönem → alt başlık → yazar → eserler; eser başına durum ve 'Öğrendim')",
+  "oldScreens": [
+   "lib/features/analytics/presentation/screens/edebiyat_lesson_detail_page.dart"
+  ],
+  "entryPoints": "Derslerim > Türk Dili ve Edebiyatı (lesson_navigation_helper.dart:46-58) > 'Yazar & Eserler' sekmesi (edebiyat_lesson_detail_page.dart:365-366).",
+  "status": "working-real-api",
+  "endpoints": [
+   "GET /student/yazarEserMainSubjects — analysis_repository.dart:225-233, çağıran edebiyat_lesson_detail_page.dart:249",
+   "GET /student/mainSubjects — çağıran edebiyat_lesson_detail_page.dart:250",
+   "GET /student/getSubSubjects + POST /student/getItems?edebiyat=true&yazarEserMode=true — çağıran edebiyat_lesson_detail_page.dart:1106-1110",
+   "GET /student/getSubjectAuthors?itemId — analysis_repository.dart:235-243, çağıran edebiyat_lesson_detail_page.dart:2519",
+   "GET /student/learnedItem?itemId — analysis_repository.dart:245-253, çağıran edebiyat_lesson_detail_page.dart:2344"
+  ],
+  "dataShown": "Dönem/ana başlık listesi → alt başlık akordeonları (eksik varsa kırmızı başlık :1406-1433, :1520-1521) → yazar kartları (assets/authors fotoğrafı) → yazar diyaloğu: biyografi ('Hakkında'), 26 türe göre gruplu eserler (EserTypeHelper :12-40), her eser için yeşil ya da kırmızı durum kutusu (:2391, :2405-2422).",
+  "userActions": "Eser başına 'Öğrendim': iyimser güncelleme ve learnedItem (:2318-2350, hata yutuluyor). Yazar yıldızı yalnız yerel (:1810, :1896). Alt başlıkta yazar listesi getSubjectAuthors ile tembel yükleniyor (:2509-2530).",
+  "inNewDesign": "Kısmen: 7.4 Edebiyat · Yazar ve Eserler. Düz yazar listesi (ad + dönem) ve AuthorSheet (Hakkında, tür gruplu Eserleri, tek bir 'Öğrendim'). Eser başına öğrenildi/eksik durumu, eser başına 'Öğrendim', eksik vurgusu ve dönem → alt başlık gruplaması tasarımda yok. 'learnedItem mi learnedCard mı' açık (04_ekranlar_B:853, :1063).",
+  "evidence": "edebiyat_lesson_detail_page.dart:249-256, :1106-1110, :2318-2350, :2519; tasarım 04_ekranlar_B_deneme_analiz_ders_kart.md:858-884.",
+  "recommendation": "keep-needs-design",
+  "why": "Eser başına gerçek learnedItem yazımı, eser durum göstergeleri ve dönemli hiyerarşi bugün çalışıyor, ama 7.4'te yalnız yazar düzeyinde tek bir 'Öğrendim' var. AuthorSheet'te eser satırlarına durum ve 'Öğrendim' eklenmeli, yazar listesi dönem/alt başlık başlıklarıyla ve eksik vurgusuyla gruplanmalı."
+ },
+ {
+  "name": "Bilgi kartı desteleri (Eksiklerim / Bildiklerim / Favorilerim; Öğrendim, favori, kaydırma)",
+  "oldScreens": [
+   "lib/features/my_card/presentation/screens/my_cards_page/my_card_lesson_detail_page/my_card_lesson_detail_page.dart",
+   "lib/features/my_card/presentation/screens/my_cards_page/my_cards_detail_page/my_cards_detail_page.dart",
+   "lib/features/my_card/presentation/screens/my_cards_page/my_cards_detail_page/widgets/my_card_info_card.dart"
+  ],
+  "entryPoints": "Yok. Tek giriş _openLessonDetail (my_card_page.dart:116-130) ve hiçbir yerden çağrılmıyor (grep). Satır dokunuşu LessonNavigationHelper'a gidiyor (:251-254).",
+  "status": "dead-unreachable",
+  "endpoints": [
+   "GET /student/getLessonInfoCards?lesson — cards_repository.dart:14-27, çağıran my_card_lesson_detail_page.dart:90",
+   "GET /student/learnedCard?item — cards_repository.dart:29-42, çağıran my_card_info_card.dart:201",
+   "GET /student/addFavoriteMobil?item — cards_repository.dart:44-57, çağıran my_card_info_card.dart:61"
+  ],
+  "dataShown": "failedCards/successCards/favoriteCards sekmeleri; kartta konu, alt başlık, içerik, favori durumu.",
+  "userActions": "CardSwiper ile kaydırma (my_cards_detail_page.dart:297-301), 'Öğrendim' → learnedCard ve 'Kart, bildiklerin kısmına aktarıldı.' (my_card_info_card.dart:201-208), favori → addFavoriteMobil, Detay diyaloğu. Kod tam, kullanıcıya açılmıyor.",
+  "inNewDesign": "Var: 8.1 Kart Destesi (13.9; Eksiklerim / Bildiklerim / Favorilerim, Öğrendim + 6 sn Geri Al); girişler Ders detayı 'Kartlarım' ve Deneme Detay 'Kartları Çalış'. §7.2 'ortak CardDeck (eskiden ulaşılamıyordu)'.",
+  "evidence": "my_card_page.dart:116-130 çağrılmıyor; my_card_lesson_detail_page.dart:90; my_card_info_card.dart:61, :201.",
+  "recommendation": "covered-by-design",
+  "why": "Gerçek API'ye bağlı ama bugün erişilemiyor. Tasarım bu özelliği giriş noktalarıyla geri getiriyor, ayrıca bir şey yapmaya gerek yok."
+ },
+ {
+  "name": "Eski WebView kabuğu (sitenin tamamını oturum çereziyle açan MainInappWebView)",
+  "oldScreens": [
+   "lib/views/main_webview/main_inapp_webview.dart",
+   "lib/views/main_webview/main_webview.dart"
+  ],
+  "entryPoints": "Yok. views/main_webview hiçbir yerden import edilmiyor (grep). main_webview.dart tamamen yorum satırı (:1-4 vd.).",
+  "status": "dead-unreachable",
+  "endpoints": [],
+  "dataShown": "Web sitesini InAppWebView'da açıyor, connect.sid çerezini başlığa ekliyor (main_inapp_webview.dart:105-106, :134-142), giriş sayfalarını yakalıyor (:184-196), kamerayı açıyor (:130).",
+  "userActions": "Yok (erişilemiyor).",
+  "inNewDesign": "yok",
+  "evidence": "main_inapp_webview.dart:9 sınıf tanımı; projede başka referans yok; kDebugMode yalnız burada (:24, :208).",
+  "recommendation": "drop-dead",
+  "why": "Uygulamada hiçbir yerden açılmıyor, eski hibrit yaklaşımın kalıntısı."
+ },
+ {
+  "name": "Eski giriş/kayıt ve onboarding kopyaları (views/)",
+  "oldScreens": [
+   "lib/views/auth/login_view.dart",
+   "lib/views/onboarding/onboarding_page.dart"
+  ],
+  "entryPoints": "Yok. main.dart yalnız features/ sürümlerini import ediyor (main.dart:17, :21). main.dart'ta kayıtlı rotalar yalnız '/onboarding', '/login', '/home' (main.dart:97-118) ve üçü de tasarımda var.",
+  "status": "dead-unreachable",
+  "endpoints": [],
+  "dataShown": "Kopya LoginView/RegisterView (login_view.dart:10, :345) ve OnboardingScreen (views/onboarding/onboarding_page.dart:4).",
+  "userActions": "Yok.",
+  "inNewDesign": "yok (yeni 13.1/13.2 akışı features/ sürümlerinin yerini alıyor)",
+  "evidence": "grep 'import.*views/' yalnız optic_mark_detection_view'ı import ediyor (root_screen.dart:14).",
+  "recommendation": "drop-dead",
+  "why": "Derlenen akışta kullanılmıyorlar."
+ },
+ {
+  "name": "Ölü yardımcılar ve mock veri; bayrak/debug taraması",
+  "oldScreens": [
+   "lib/features/my_card/presentation/screens/my_cards_page/my_card_dummy_data.dart",
+   "lib/features/analytics/presentation/models/analytics_general_data.dart",
+   "lib/features/analytics/presentation/provider/analytics_view_provider.dart",
+   "lib/core/constants/socket_constants.dart",
+   "lib/services/google_auth_service.dart"
+  ],
+  "entryPoints": "Yok.",
+  "status": "dead-unreachable",
+  "endpoints": [
+   "GET /student/getLessons — analysis_repository.dart:47-53, çağıran yok (tasarım 6.1 süzgeç dersleri için bu ucu kullanacak)"
+  ],
+  "dataShown": "MyCardDummyData (referansı yok), AnalyticsGeneralData.mock() (analytics_general_data.dart:24, çağıranı yok), _buildGeneralData (analytics_view_provider.dart:396-445, sahte seri üretiyor, çağıranı yok), MyTestResultsDetailTabPlaceholder (my_test_results_detail_widgets.dart:480, kullanılmıyor), SocketConstants ve GoogleAuthService (kullanılmıyor).",
+  "userActions": "Yok.",
+  "inNewDesign": "yok",
+  "evidence": "Bayrak taraması: kDebugMode, kReleaseMode, bool/String.fromEnvironment ya da '*Enabled/*Mock' sabitleri yalnız ölü main_inapp_webview.dart:24, :208'de bulundu. Bayrak arkasında gizli çalışan özellik yok.",
+  "recommendation": "drop-dead",
+  "why": "Kullanıcıya hiçbir yoldan ulaşmıyorlar. getLessons ucu yeni süzgeçte yeniden kullanılacak."
+ }
+]
