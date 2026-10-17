@@ -401,7 +401,7 @@ class _DomainGalleryState extends State<DomainGallery> {
 
   Widget _headerSection() {
     return GallerySection(
-      title: 'ExamHeader · ExamScoreCard · ExamInfoRow · C26 · pano 5.1, 5.3',
+      title: 'ExamHeader · ExamScoreCard · ExamInfoRow · C26 · pano 5.1, 14.4',
       note:
           'Detay: kapak 48 x 64. Sonuç anı: kapak 56 x 76 ve girişte 8 pt '
           'yükselen düşme. Puan ve sıralama yalnız veri varsa.',
@@ -419,6 +419,8 @@ class _DomainGalleryState extends State<DomainGallery> {
               scoreFieldName: 'Eşit Ağırlık',
               score: 412.63,
               rank: 48215,
+              scoreHam: 398.12,
+              rankHam: 52904,
             ),
           ),
         ),
@@ -438,11 +440,40 @@ class _DomainGalleryState extends State<DomainGallery> {
           ),
         ),
         const GalleryState(
-          label: 'ExamScoreCard',
+          label:
+              'ExamScoreCard · AYT (pano 14.4 kare 1; koyu: tema anahtarı, kare 3)',
           child: ExamScoreCard(
             fieldName: 'Eşit Ağırlık',
             score: 412.63,
             rank: 48215,
+            scoreHam: 398.12,
+            rankHam: 52904,
+          ),
+        ),
+        const GalleryState(
+          label: 'ExamScoreCard · TYT (kare 2)',
+          child: ExamScoreCard(
+            fieldName: 'TYT',
+            score: 384.05,
+            rank: 176320,
+            scoreHam: 371.9,
+            rankHam: 189004,
+          ),
+        ),
+        const GalleryState(
+          label: 'ExamScoreCard · ham değer yok (alt satır çizilmez)',
+          child: ExamScoreCard(
+            fieldName: 'Eşit Ağırlık',
+            score: 412.63,
+            rank: 48215,
+          ),
+        ),
+        const GalleryState(
+          label: 'ExamScoreCard · ham puan var, sıra yok (sütun çizilmez)',
+          child: ExamScoreCard(
+            fieldName: 'Sayısal',
+            score: 398,
+            scoreHam: 380.5,
           ),
         ),
         const GalleryState(
