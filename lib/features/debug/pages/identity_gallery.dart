@@ -115,7 +115,8 @@ class _IdentityGalleryState extends State<IdentityGallery> {
           title: 'AppAvatarPicker · C57 · pano 1.17',
           note:
               '7 avatar birden görünür, sayısı yazılır. Seçili: 2 pt boşluk + '
-              '2 pt lacivert halka.',
+              '2 pt lacivert halka. Üçüncüsü satır varyantı (Tur 12 D, pano '
+              '14.8): 44 pt, sayaç etiketin sağında, radyo grubu okunuşu.',
           children: [
             AppAvatarPicker(
               avatars: _avatars,
@@ -126,6 +127,15 @@ class _IdentityGalleryState extends State<IdentityGallery> {
               avatars: _avatars,
               selectedIndex: _avatar,
               size: 48,
+              onChanged: (i) => setState(() => _avatar = i),
+            ),
+            AppAvatarPicker(
+              avatars: _avatars,
+              selectedIndex: _avatar,
+              size: 44,
+              showCount: false,
+              groupLabel: 'Avatar, ${_avatars.length} seçenek',
+              optionLabelOf: (i) => 'Avatar ${i + 1} / ${_avatars.length}',
               onChanged: (i) => setState(() => _avatar = i),
             ),
           ],

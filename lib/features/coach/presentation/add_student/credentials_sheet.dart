@@ -16,8 +16,9 @@ import 'package:smap/shared/ui/sheets/app_sheet.dart';
 /// "Zeynep Kaya eklendi" (pano 10.3 kare 3 "Eklendi"; Tur 12 D, brief 14.8 kare
 /// 2), the small sheet that shows the login of the student just added, once.
 ///
-/// The head: the chosen avatar (56), "Zeynep Kaya eklendi" 20/28 · 700,
-/// "Giriş bilgilerini öğrencine ilet." 15/24 `textSecondary` and "Kapat". The
+/// The head: the chosen avatar (48, at the left of the title), "Zeynep Kaya
+/// eklendi" 20/28 · 700, "Giriş bilgilerini öğrencine ilet." 13/20
+/// `textSecondary` and "Kapat". The
 /// body (16 down, 24 at the sides, 16 apart): "Kullanıcı adı" (read only) and
 /// "Şifre" (masked, with the eye) with "Bu ekranı kapatınca şifre yeniden
 /// gösterilmez."; the primary "Bilgileri Paylaş" (the system share sheet with
@@ -85,7 +86,7 @@ class _CredentialsHeader extends StatelessWidget {
             AppAvatar(
               name: added.fullName,
               image: AssetImage(asset),
-              size: AppAvatarSize.lg,
+              size: AppAvatarSize.tile,
               decorative: true,
             ),
             const SizedBox(width: AppSpacing.s12),
@@ -104,7 +105,7 @@ class _CredentialsHeader extends StatelessWidget {
                 const SizedBox(height: AppSpacing.s4),
                 Text(
                   l10n.addStudent_addedSubtitle,
-                  style: text.body.copyWith(color: colors.textSecondary),
+                  style: text.caption.copyWith(color: colors.textSecondary),
                 ),
               ],
             ),

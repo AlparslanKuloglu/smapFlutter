@@ -17,17 +17,16 @@ String addStudentIssueText(AppLocalizations l10n, AddStudentIssue issue) =>
       AddStudentIssue.trackMissing => l10n.addStudent_issueTrack,
     };
 
-/// The notice above "Öğrenciyi Kaydet" for a save that failed: what the failure
-/// is in plain words, never a server code; a refusal with the backend's own
-/// text (`validation`) shows that text.
-String addStudentFailureText(AppLocalizations l10n, AppException failure) =>
-    switch (failure.code) {
-      AppErrorCode.offline => l10n.errors_offline,
-      AppErrorCode.network => l10n.errors_network,
-      AppErrorCode.timeout => l10n.errors_timeout,
-      AppErrorCode.server => l10n.errors_server,
-      AppErrorCode.maintenance => l10n.errors_maintenance,
-      AppErrorCode.validation =>
-        failure.serverMessage ?? l10n.errors_validation,
-      _ => l10n.addStudent_saveFailed,
-    };
+/// The error toast of a save that failed (pano 14.8 kare 5): "Öğrenci
+/// kaydedilemedi. Bağlantını kontrol edip tekrar dene." for a lost connection,
+/// a timeout, a server fault or anything unexpected; never a server code. A
+/// refusal with the backend's own text (`validation`) shows that text, and a
+/// maintenance window says so.
+String addStudentFailureText(AppLocalizations l10n, AppException? failure) {
+  if (failure == null) return l10n.addStudent_saveFailed;
+  return switch (failure.code) {
+    AppErrorCode.maintenance => l10n.errors_maintenance,
+    AppErrorCode.validation => failure.serverMessage ?? l10n.errors_validation,
+    _ => l10n.addStudent_saveFailed,
+  };
+}

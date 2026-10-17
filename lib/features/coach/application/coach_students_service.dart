@@ -91,14 +91,26 @@ class CoachStudentsService with ListenableServiceMixin {
       _repository.checkUsername(userName);
 
   /// Creates the student; a created one joins the list at the end.
+  ///
+  /// The avatar the coach chose (Tur 12 D, pano 14.8 kare 3) shows in the list
+  /// at once: when the server's answer carries no `photo`, the file name that
+  /// was sent stands in until the next refresh. The outcome returned is the
+  /// one that joined the list.
   Future<AppResult<AddStudentOutcome>> addStudent(NewStudent input) async {
     final result = await _repository.addStudent(input);
-    result.fold((_) {}, (outcome) {
-      if (outcome is StudentAdded) {
-        _students.value = [...students, outcome.student];
-      }
+    return result.map((outcome) {
+      if (outcome is! StudentAdded) return outcome;
+      final created = outcome.student;
+      final sent = input.photo?.trim().split('/').last;
+      final joined =
+          (created.photo?.trim().isNotEmpty ?? false) ||
+              sent == null ||
+              sent.isEmpty
+          ? created
+          : created.copyWith(photo: sent);
+      _students.value = [...students, joined];
+      return identical(joined, created) ? outcome : StudentAdded(joined);
     });
-    return result;
   }
 
   /// Forgets the list; the next [load] fetches.

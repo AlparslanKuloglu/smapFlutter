@@ -112,9 +112,38 @@
   "@addStudent_avatarLabel": {
     "description": "Label above the seven avatars of the form (Tur 12 D, brief 14.8 kare 1)."
   },
-  "addStudent_avatarPickerA11y": "Öğrencinin avatarı",
-  "@addStudent_avatarPickerA11y": {
-    "description": "Screen reader name of the avatar group (Tur 12 D)."
+  "addStudent_avatarGroupA11y": "Avatar, {total} seçenek",
+  "@addStudent_avatarGroupA11y": {
+    "description": "Screen reader name of the avatar radio group (pano 14.8: 'Avatar, 7 seçenek').",
+    "placeholders": {
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "addStudent_avatarOptionA11y": "Avatar {index} / {total}",
+  "@addStudent_avatarOptionA11y": {
+    "description": "Screen reader name of one avatar radio; the picker adds ', seçili' for the chosen one (pano 14.8: 'Avatar 4 / 7, seçili').",
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "addStudent_avatarCounter": "{index} / {total}",
+  "@addStudent_avatarCounter": {
+    "description": "Counter at the right of the 'Avatar' label: chosen position over the total (pano 14.8 kare 1: '4 / 7').",
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
   },
   "addStudent_firstName": "Ad",
   "@addStudent_firstName": {
@@ -225,9 +254,13 @@
   "@addStudent_issueTrack": {
     "description": "Track not chosen for a student of 11th grade or above."
   },
-  "addStudent_saveFailed": "Öğrenci eklenemedi. Bağlantını kontrol edip tekrar dene.",
+  "addStudent_saveFailed": "Öğrenci kaydedilemedi. Bağlantını kontrol edip tekrar dene.",
   "@addStudent_saveFailed": {
-    "description": "Notice above \"Öğrenciyi Kaydet\" when the save failed for a reason with no text of its own; the sheet stays open and keeps what was typed."
+    "description": "Error toast when the save failed for a reason with no text of its own (pano 14.8 kare 5); the sheet stays open and keeps what was typed, the avatar included."
+  },
+  "addStudent_saveOfflineReason": "Öğrenci eklemek için bağlantı gerekiyor. Kod kartı çevrimdışında da çalışır.",
+  "@addStudent_saveOfflineReason": {
+    "description": "Under the passive 'Öğrenciyi Kaydet' while the device is offline (pano 14.8 kare 4)."
   },
   "addStudent_addedTitle": "{name} eklendi",
   "@addStudent_addedTitle": {
