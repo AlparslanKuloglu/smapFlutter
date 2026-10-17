@@ -35,6 +35,9 @@ class SessionHarness {
   final List<SessionState> history = [];
   int pushes = 0;
   int pops = 0;
+
+  /// How many times the device preferences of the person were forgotten.
+  int forgets = 0;
   Object? pushError;
 
   SessionManager build() => SessionManager(
@@ -51,6 +54,7 @@ class SessionHarness {
       if (error != null) throw error;
     },
     popScope: () async => pops++,
+    forgetAccountData: () async => forgets++,
   );
 
   Future<void> goOffline() async {

@@ -37,6 +37,26 @@ void main() {
     expect(prefs.getInt(DevicePreferences.installIdKey), isNull);
   });
 
+  test('clearAccount forgets the person, keeps the device', () async {
+    final prefs = await DevicePreferences.load();
+    await prefs.setString(DevicePreferences.favoriteExamsKey, '["r1"]');
+    await prefs.setString(DevicePreferences.notificationPreferencesKey, '{}');
+    await prefs.setString(DevicePreferences.onboardingDraftKey, '{}');
+    await prefs.setBool(DevicePreferences.skipLearnedConfirmKey, true);
+    await prefs.setString(DevicePreferences.themeModeKey, 'dark');
+    await prefs.setBool(DevicePreferences.onboardingCompletedKey, true);
+    await prefs.setBool(DevicePreferences.cameraTutorialSeenKey, true);
+
+    await prefs.clearAccount();
+
+    for (final key in DevicePreferences.accountKeys) {
+      expect(prefs.getString(key) ?? prefs.getBool(key), isNull, reason: key);
+    }
+    expect(prefs.getString(DevicePreferences.themeModeKey), 'dark');
+    expect(prefs.getBool(DevicePreferences.onboardingCompletedKey), isTrue);
+    expect(prefs.getBool(DevicePreferences.cameraTutorialSeenKey), isTrue);
+  });
+
   test('remove forgets a key', () async {
     final prefs = await DevicePreferences.load();
     await prefs.setString(DevicePreferences.lessonsExamTypeKey, 'tyt');

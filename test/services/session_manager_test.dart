@@ -518,8 +518,15 @@ void main() {
       expect(await h.hasCookie(), isFalse);
       expect(h.secure.values, isEmpty);
       expect(h.pops, 1);
+      expect(h.forgets, 1);
       final prefs = await SharedPreferences.getInstance();
       expect(prefs.getKeys(), {'onboarding_completed'});
+    });
+
+    test('nobody signed in: the device preferences stay', () async {
+      await h.manager.signOut();
+
+      expect(h.forgets, 0, reason: 'a sign-up draft must survive');
     });
 
     test('the screens leave before the server is told', () async {

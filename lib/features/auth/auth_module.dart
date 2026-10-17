@@ -4,6 +4,7 @@ import 'package:smap/core/config/app_config.dart';
 import 'package:smap/core/network/network_service.dart';
 import 'package:smap/core/services/app_logger.dart';
 import 'package:smap/core/services/connectivity_service.dart';
+import 'package:smap/core/services/device_preferences.dart';
 import 'package:smap/features/auth/data/auth_repository.dart';
 import 'package:smap/features/auth/data/session/legacy_session_migration.dart';
 import 'package:smap/features/auth/data/session/secure_value_store.dart';
@@ -52,6 +53,7 @@ void registerAuthServices(GetIt l) {
       config: l<AppConfig>(),
       migration: l<LegacySessionMigration>(),
       logger: l<AppLogger>(),
+      forgetAccountData: l<DevicePreferences>().clearAccount,
     ),
     dispose: (manager) => manager.dispose(),
   );

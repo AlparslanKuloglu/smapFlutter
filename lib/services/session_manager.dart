@@ -37,7 +37,8 @@ typedef SessionScopePop = Future<void> Function();
 /// - [signIn] logs in, confirms with `checkUser`, caches the user and pushes
 ///   the scope. Any failure undoes what it did.
 /// - [signOut] and [completeAccountDeletion] end the session and clear every
-///   trace of it (cookie, cache, legacy keys, the scope).
+///   trace of it (cookie, cache, legacy keys, the person's device preferences
+///   through `forgetAccountData`, the scope).
 /// - A 401 on a call that needs the session (`NetworkService.onSessionExpired`)
 ///   turns the state into `signedOut(expired: true)` and keeps the scope: the
 ///   user stays on their screen, signs in again in the "oturum bitti" sheet,
@@ -57,6 +58,7 @@ class SessionManager extends ChangeNotifier
     AppLogger? logger,
     SessionScopePush? pushScope,
     SessionScopePop? popScope,
+    Future<void> Function()? forgetAccountData,
     Duration logoutTimeout = const Duration(seconds: 8),
   }) : _auth = auth,
        _store = store,
@@ -67,6 +69,7 @@ class SessionManager extends ChangeNotifier
        _logger = logger ?? AppLogger.silent(),
        _pushScope = pushScope ?? (() => pushSessionScope()),
        _popScope = popScope ?? popSessionScope,
+       _forgetAccountData = forgetAccountData,
        _logoutTimeout = logoutTimeout {
     _expirySubscription = _network.onSessionExpired.listen(_onSessionExpired);
   }
@@ -82,6 +85,10 @@ class SessionManager extends ChangeNotifier
   final AppLogger _logger;
   final SessionScopePush _pushScope;
   final SessionScopePop _popScope;
+
+  /// Forgets what the device keeps for the signed-in person
+  /// (`DevicePreferences.clearAccount`) when a session ends.
+  final Future<void> Function()? _forgetAccountData;
   final Duration _logoutTimeout;
 
   late final StreamSubscription<SessionExpiredEvent> _expirySubscription;
@@ -362,8 +369,17 @@ class SessionManager extends ChangeNotifier
     }
     await _clearCookies();
     await _store.clear();
+    if (hadSession) await _forgetDeviceData();
     await _closeScope();
     _logger.info('session ended', name: _tag);
+  }
+
+  Future<void> _forgetDeviceData() async {
+    try {
+      await _forgetAccountData?.call();
+    } on Object catch (error) {
+      _logger.warning('device data not cleared', name: _tag, error: error);
+    }
   }
 
   // ------------------------------------------------------------ user updates

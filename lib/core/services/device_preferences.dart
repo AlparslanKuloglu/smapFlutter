@@ -81,6 +81,17 @@ final class DevicePreferences {
     notificationPreferencesKey,
   };
 
+  /// The keys that belong to the signed-in person, not to the device: the
+  /// sign-up draft, "Bir daha sorma" on the learned-card confirmation, the
+  /// starred exams and the notification choices. [clearAccount] forgets them
+  /// when a session ends, so the next account on this device starts clean.
+  static const Set<String> accountKeys = {
+    onboardingDraftKey,
+    skipLearnedConfirmKey,
+    favoriteExamsKey,
+    notificationPreferencesKey,
+  };
+
   final SharedPreferencesWithCache _prefs;
   final AppLogger _logger;
 
@@ -110,6 +121,14 @@ final class DevicePreferences {
       _write(key, () => _prefs.setInt(key, value));
 
   Future<void> remove(String key) => _write(key, () => _prefs.remove(key));
+
+  /// Forgets [accountKeys] (the session ended). The device's own flags stay:
+  /// theme, intro seen, permission sheets answered, view choices, install id.
+  Future<void> clearAccount() async {
+    for (final key in accountKeys) {
+      await remove(key);
+    }
+  }
 
   /// Forgets every allow-listed key (sign-out of the device, not of the
   /// account: callers decide whether "seen" flags should survive).
