@@ -19,6 +19,7 @@ import 'package:smap/shared/ui/feedback/app_skeleton.dart';
 import 'package:smap/shared/ui/feedback/app_status_view.dart';
 import 'package:smap/shared/ui/feedback/section_state.dart';
 import 'package:smap/shared/ui/feedback/toast_host.dart';
+import 'package:smap/shared/ui/illustrations/app_clay.dart';
 import 'package:smap/shared/ui/surfaces/app_card.dart';
 
 void _noop() {}
@@ -223,14 +224,14 @@ class _FeedbackGalleryState extends State<FeedbackGallery> {
             ),
           ],
         ),
-        GallerySection(
+        const GallerySection(
           title: 'AppEmptyState · C77 · pano 1.22 kare 3, 4',
           note:
               'Ekran düzeyinde en çok bir kil görsel (128 pt, ekran okuyucu '
               'atlar); görsel yoksa yer tutucu çizilmez. Bölüm düzeyinde '
               'görsel yok.',
           children: [
-            const GalleryState(
+            GalleryState(
               label: 'Ekran · görselsiz',
               child: GalleryPanel(
                 tone: GalleryTone.canvas,
@@ -247,30 +248,22 @@ class _FeedbackGalleryState extends State<FeedbackGallery> {
               ),
             ),
             GalleryState(
-              label: 'Ekran · görselli (örnek kutu; kil görsel kitte yok)',
+              label: 'Ekran · kil görselli (Ampul, M 128) · pano 1.25',
               child: GalleryPanel(
                 tone: GalleryTone.canvas,
                 child: AppEmptyState.screen(
                   topPadding: AppSpacing.s16,
-                  title: 'Programın boş',
-                  message: 'Haftalık programını kurunca burada görünür.',
-                  illustration: DecoratedBox(
-                    decoration: BoxDecoration(
-                      color: colors.warningBg,
-                      borderRadius: AppRadius.borderXl,
-                    ),
-                    child: Center(
-                      child: PhosphorIcon(
-                        PhosphorIconsRegular.lightbulb,
-                        size: AppSpacing.s48,
-                        color: colors.warning,
-                      ),
-                    ),
-                  ),
+                  title: 'Henüz programın yok',
+                  message:
+                      'Haftalık programını kurduğunda günün konuları burada '
+                      've Anasayfa\'da görünür.',
+                  actionLabel: 'Haftalık Programını Kur',
+                  onAction: _noop,
+                  illustration: AppClay.medium(ClayPicture.ampul),
                 ),
               ),
             ),
-            const GalleryState(
+            GalleryState(
               label: 'Bölüm',
               child: AppEmptyState.section(
                 message: 'Bugün için programında konu yok.',
@@ -278,7 +271,7 @@ class _FeedbackGalleryState extends State<FeedbackGallery> {
                 onAction: _noop,
               ),
             ),
-            const GalleryState(
+            GalleryState(
               label: 'Bölüm · başlıklı, birincil eylem · pano 14.1 kare 4',
               child: AppEmptyState.section(
                 title: "Alparslan'ın programı yok",
@@ -291,6 +284,34 @@ class _FeedbackGalleryState extends State<FeedbackGallery> {
                 onAction: _noop,
               ),
             ),
+          ],
+        ),
+        GallerySection(
+          title: 'AppClay · C61 · pano 1.25 · 11.18',
+          note:
+              'Kil seti, 11 görsel, L 160 (onboarding) ve M 128 (ekran düzeyi '
+              'boş durum). Yalnız onboarding, ekran düzeyi boş durum ve '
+              'mağaza; ekranda en çok bir; süs (ekran okuyucu atlar); karo '
+              'koyu temada aynı, kenar ve gölge yok. Şimdilik yalnız 1x '
+              '(140 px); 2x/3x asıllar gelince aynı adla 2.0x/ ve 3.0x/ '
+              'klasörlerine konur.',
+          children: [
+            for (final size in ClaySize.values)
+              GalleryState(
+                label: size == ClaySize.large ? 'L 160' : 'M 128',
+                child: GalleryPanel(
+                  tone: GalleryTone.canvas,
+                  child: GalleryWrap(
+                    children: [
+                      for (final picture in ClayPicture.values)
+                        GalleryState(
+                          label: picture.name,
+                          child: AppClay(picture, size: size),
+                        ),
+                    ],
+                  ),
+                ),
+              ),
           ],
         ),
         GallerySection(

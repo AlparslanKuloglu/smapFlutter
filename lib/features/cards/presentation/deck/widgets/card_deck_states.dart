@@ -62,8 +62,9 @@ class _DeckError extends StatelessWidget {
 
 /// A deck with no card to show (pano 8.1 kare 4 and "Boş metinler"):
 ///
-/// - Eksiklerim with every card learned: the clay picture (the exam's deck
-///   only; the lesson pictures of the 1.25 set are not delivered), "Bu derste
+/// - Eksiklerim with every card learned: the clay picture, M 128 (the
+///   lesson's own picture in a lesson deck, Harita in an exam's deck; none
+///   for a lesson without one), "Bu derste
 ///   eksik kartın kalmadı.", "Bildiklerim'deki 64 kartı tekrar etmek istersen
 ///   oradan devam edebilirsin." and the text button "Bildiklerime Geç" (12
 ///   under the sentence);
@@ -133,15 +134,10 @@ class _MissingDone extends StatelessWidget {
                 ? l10n.cardDeck_missingDoneMessage(TrFormat.sira(known))
                 : l10n.cardDeck_noCardsMessage,
             topPadding: _DeckEmpty._top,
-            illustration: data.isExam
-                ? Assets.illustrations.clayMap.image(
-                    width: AppEmptyState.illustrationSize,
-                    height: AppEmptyState.illustrationSize,
-                    fit: BoxFit.contain,
-                    errorBuilder: (context, error, stack) =>
-                        const SizedBox.shrink(),
-                  )
-                : null,
+            illustration: switch (data.picture) {
+              final picture? => AppClay.medium(picture),
+              null => null,
+            },
           ),
           if (known > 0)
             Padding(
