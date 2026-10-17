@@ -59,9 +59,5 @@
   "startup_bootFailedTitle": "SMAP açılamadı",
   "@startup_bootFailedTitle": {
     "description": "Title of the screen shown when the app's start-up itself failed (service container, preferences); its sentence is errors_unknown and its button common_retry."
-  },
-  "startup_registerSignInFailed": "Hesabın açıldı ama giriş yapılamadı. Giriş ekranından giriş yaparak devam et.",
-  "@startup_registerSignInFailed": {
-    "description": "Legacy registration bridge only: the account was created but the follow-up sign-in failed. Goes away with the new sign-up screen (E4)."
   }
 }

@@ -7,8 +7,8 @@ part of '../login_view.dart';
 /// buttons 12 apart; the official logo assets are not in the project yet (spec
 /// §6.5 #3), so the buttons carry the text alone. They have no action yet:
 /// the flag must stay closed until the sign-in with Apple and Google is wired
-/// (`google_sign_in` is a dependency, the Apple package and the server
-/// endpoint are not there; spec §4.A "2.3" "Veri").
+/// (neither package nor the server endpoint is in the project; spec §4.A
+/// "2.3" "Veri").
 class _LoginSocial extends StatelessWidget {
   const _LoginSocial();
 

@@ -13,10 +13,9 @@ import 'package:smap/app/router/app_router.dart';
 /// ),
 /// ```
 ///
-/// [HomeRoute] is the tab's root (`initial: true`). The screens opened from it
-/// (Programım, Deneme Detay, Ders Detayı, Konu Detayı) are other tasks' routes
-/// and join this stack in their own lists; until they land the home screen
-/// opens the legacy ones (`LegacyLinksE6`).
+/// [HomeRoute] is the tab's root (`initial: true`). Programım joins this stack
+/// (`scheduleHomeTabRoutes`); Deneme Detay, Ders Detayı and Konu Detayı live in
+/// their own tabs and are opened there (`home_view.dart`, `_open…`).
 ///
 /// Anasayfa has no full-screen route of its own (the scan flow is the
 /// shell's), so there is no `homeRootRoutes`.

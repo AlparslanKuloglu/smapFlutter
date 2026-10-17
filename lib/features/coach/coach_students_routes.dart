@@ -4,8 +4,7 @@ import 'package:smap/app/router/app_router.dart';
 
 /// The routes of the coach's Öğrencilerim tab (pano 10.2; spec §3.6
 /// `/coach/students`), for `shell_routes.dart` to put under
-/// `CoachStudentsTabRoute` (`path: 'students'`) in place of
-/// `LegacyStudentsTabRoute`:
+/// `CoachStudentsTabRoute` (`path: 'students'`):
 ///
 /// | path (under `/coach/students`) | screen |
 /// |---|---|

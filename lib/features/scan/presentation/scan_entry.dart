@@ -25,16 +25,12 @@ import 'package:smap/features/scan/presentation/scan_error/omr_closed_sheet.dart
 /// the camera is allowed, pushes the scan (`ScanFlowRoute`) on the root stack.
 /// Completes with whether the scan was opened.
 abstract final class ScanEntry {
-  /// Runs the gate and opens the scan. [replaceCurrent] makes the scan take
-  /// the place of the route the call comes from (the legacy `/scan` shim).
-  static Future<bool> start(
-    StackRouter router, {
-    bool replaceCurrent = false,
-  }) => ScanLauncher(
+  /// Runs the gate and opens the scan.
+  static Future<bool> start(StackRouter router) => ScanLauncher(
     permission: locator<CameraPermission>(),
     preferences: locator<DevicePreferences>(),
     sheets: const SheetScanGateSheets(),
-    exits: RouterScanGateExits(router, replaceCurrent: replaceCurrent),
+    exits: RouterScanGateExits(router),
     readingEnabled: FeatureFlags.omrEnabled,
   ).start();
 }
@@ -56,19 +52,12 @@ class SheetScanGateSheets implements ScanGateSheets {
 
 /// [ScanGateExits] on auto_route and the app lifecycle.
 class RouterScanGateExits implements ScanGateExits {
-  const RouterScanGateExits(this._router, {this.replaceCurrent = false});
+  const RouterScanGateExits(this._router);
 
   final StackRouter _router;
-  final bool replaceCurrent;
 
   @override
-  Future<void> openScan() async {
-    if (replaceCurrent) {
-      await _router.replace(const ScanFlowRoute());
-    } else {
-      await _router.push(const ScanFlowRoute());
-    }
-  }
+  Future<void> openScan() => _router.push(const ScanFlowRoute());
 
   @override
   Future<void> waitForResume() =>

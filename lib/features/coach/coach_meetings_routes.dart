@@ -23,8 +23,7 @@ import 'package:smap/app/router/app_router.dart';
 /// `MeetingDetailRoute` also carries the `meeting` the list has
 /// (`MeetingEntry`, not in the path); a deep link without it finds the
 /// meeting in the list. "Yeni görüşme" and the note sheet are sheets, not
-/// routes. The tab's entry in `CoachShellView.tabs` becomes
-/// `ShellTabContent.screen`.
+/// routes.
 ///
 /// Nothing in this feature is a full-screen route, so there are no root
 /// routes.

@@ -6342,12 +6342,6 @@ abstract class AppLocalizations {
   /// **'SMAP şu an bakımda'**
   String get startup_maintenanceTitle;
 
-  /// Legacy registration bridge only: the account was created but the follow-up sign-in failed. Goes away with the new sign-up screen (E4).
-  ///
-  /// In tr, this message translates to:
-  /// **'Hesabın açıldı ama giriş yapılamadı. Giriş ekranından giriş yaparak devam et.'**
-  String get startup_registerSignInFailed;
-
   /// Session expired sheet primary button; opens the sign-in screen and returns to the same screen afterwards (pano 2.7 kare 2).
   ///
   /// In tr, this message translates to:

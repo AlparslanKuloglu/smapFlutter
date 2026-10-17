@@ -20,8 +20,8 @@ import 'package:smap/services/current_user_service.dart';
 ///   is read from [CurrentUserService] (session scope) when the job starts,
 ///   not when this module registers, so a new session never sends the old one's
 ///   user;
-/// - [CameraPermission] is the one the onboarding already registers; it is
-///   registered here only when nobody did, so the scan works on its own.
+/// - [CameraPermission] is registered here unless something registered it
+///   first (a test, a future onboarding step), so the scan works on its own.
 void registerScanData(GetIt l) {
   l
     ..registerLazySingleton<ScanRepository>(

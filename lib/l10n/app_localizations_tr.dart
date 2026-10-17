@@ -3707,10 +3707,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get startup_maintenanceTitle => 'SMAP şu an bakımda';
 
   @override
-  String get startup_registerSignInFailed =>
-      'Hesabın açıldı ama giriş yapılamadı. Giriş ekranından giriş yaparak devam et.';
-
-  @override
   String get startup_sessionExpiredAction => 'Giriş Yap';
 
   @override

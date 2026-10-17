@@ -14,21 +14,21 @@ import 'package:smap/features/home/home_routes.dart';
 import 'package:smap/features/lessons/lessons_routes.dart';
 import 'package:smap/features/schedule/schedule_routes.dart';
 
-/// The two shells with their tab stacks, and the full-screen scan page, merged
-/// into `AppRouter.routes`.
+/// The two shells with their tab stacks, merged into `AppRouter.routes`.
 ///
 /// Paths follow spec §3.6: the student's tabs are `/home`, `/analytics`,
 /// `/lessons` and `/account` (the shell is the empty prefix `/`, so it shares
 /// no page of its own), the coach's `/coach/home`, `/coach/students`,
 /// `/coach/meetings` and `/coach/account`. Each tab is an empty shell page
 /// that holds the tab's own stack; the screen the tab shows is its `initial`
-/// child. Today they are the legacy screens (`Legacy…TabRoute`); a screen
-/// task swaps the `page:` of its tab's child and adds the tab's detail screens
-/// as siblings of it.
+/// child, and the tab's detail screens are its siblings (each feature's
+/// `…TabRoutes` list). A fixed path comes before a `:param` sibling.
 ///
-/// `/scan` is on the root stack, a sibling of the shells, so it covers the
-/// shell and the bottom bar (spec §3.2). The shells are guarded by their
-/// route group (`AppRouter.groupOf`); the tab and scan routes are not.
+/// Full-screen flows (`/scan`, `/scan/result/:examId`, `/program/new`, the
+/// account deletion steps) are root routes listed in `AppRouter.routes`
+/// before the shells, so they cover the shell and the bottom bar (spec §3.2).
+/// The shells are guarded by their route group (`AppRouter.groupOf`); the tab
+/// and full-screen routes are not.
 List<AutoRoute> get shellRoutes => [
   AutoRoute(
     page: StudentShellRoute.page,

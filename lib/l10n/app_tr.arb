@@ -5499,10 +5499,6 @@
   "@startup_maintenanceTitle": {
     "description": "Maintenance screen title (pano 2.7 kare 3)."
   },
-  "startup_registerSignInFailed": "Hesabın açıldı ama giriş yapılamadı. Giriş ekranından giriş yaparak devam et.",
-  "@startup_registerSignInFailed": {
-    "description": "Legacy registration bridge only: the account was created but the follow-up sign-in failed. Goes away with the new sign-up screen (E4)."
-  },
   "startup_sessionExpiredAction": "Giriş Yap",
   "@startup_sessionExpiredAction": {
     "description": "Session expired sheet primary button; opens the sign-in screen and returns to the same screen afterwards (pano 2.7 kare 2)."

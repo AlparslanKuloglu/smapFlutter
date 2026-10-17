@@ -1,106 +1,68 @@
 {
-                // Use IntelliSense to learn about possible attributes.
-                // Hover to view descriptions of existing attributes.
-                // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-                "version": "0.2.0",
-                "configurations": [
-                  
-                                {
-                                                "name": "smapFlutter",
-                                                "request": "launch",
-                                                "type": "dart"
-                                },
-                                {
-                                                "name": "smapFlutter (profile mode)",
-                                                "request": "launch",
-                                                "type": "dart",
-                                                "flutterMode": "profile"
-                                },
-                                {
-                                                "name": "smapFlutter (release mode)",
-                                                "request": "launch",
-                                                "type": "dart",
-                                                "flutterMode": "release"
-                                },
-                                {
-                                                "name": "flutter_document_scanner",
-                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner",
-                                                "request": "launch",
-                                                "type": "dart"
-                                },
-                                {
-                                                "name": "flutter_document_scanner (profile mode)",
-                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner",
-                                                "request": "launch",
-                                                "type": "dart",
-                                                "flutterMode": "profile"
-                                },
-                                {
-                                                "name": "flutter_document_scanner (release mode)",
-                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner",
-                                                "request": "launch",
-                                                "type": "dart",
-                                                "flutterMode": "release"
-                                },
-                                {
-                                                "name": "flutter_document_scanner_android",
-                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_android",
-                                                "request": "launch",
-                                                "type": "dart"
-                                },
-                                {
-                                                "name": "flutter_document_scanner_android (profile mode)",
-                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_android",
-                                                "request": "launch",
-                                                "type": "dart",
-                                                "flutterMode": "profile"
-                                },
-                                {
-                                                "name": "flutter_document_scanner_android (release mode)",
-                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_android",
-                                                "request": "launch",
-                                                "type": "dart",
-                                                "flutterMode": "release"
-                                },
-                                {
-                                                "name": "flutter_document_scanner_ios",
-                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_ios",
-                                                "request": "launch",
-                                                "type": "dart"
-                                },
-                                {
-                                                "name": "flutter_document_scanner_ios (profile mode)",
-                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_ios",
-                                                "request": "launch",
-                                                "type": "dart",
-                                                "flutterMode": "profile"
-                                },
-                                {
-                                                "name": "flutter_document_scanner_ios (release mode)",
-                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_ios",
-                                                "request": "launch",
-                                                "type": "dart",
-                                                "flutterMode": "release"
-                                },
-                                {
-                                                "name": "flutter_document_scanner_platform_interface",
-                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_platform_interface",
-                                                "request": "launch",
-                                                "type": "dart"
-                                },
-                                {
-                                                "name": "flutter_document_scanner_platform_interface (profile mode)",
-                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_platform_interface",
-                                                "request": "launch",
-                                                "type": "dart",
-                                                "flutterMode": "profile"
-                                },
-                                {
-                                                "name": "flutter_document_scanner_platform_interface (release mode)",
-                                                "cwd": "lib/vendor/flutter_document_scanner/flutter_document_scanner_platform_interface",
-                                                "request": "launch",
-                                                "type": "dart",
-                                                "flutterMode": "release"
-                                }
-                ]
+  // SMAP run configurations. Debug-only defines (SHELL_PREVIEW, THEME_MODE,
+  // SCAN_GALLERY) do nothing in release builds. See docs/DEVELOPING.md.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "SMAP",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart"
+    },
+    {
+      "name": "SMAP (config/dev.json)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--dart-define-from-file=config/dev.json"]
+    },
+    {
+      "name": "SMAP · öğrenci önizlemesi (hesapsız)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--dart-define=SHELL_PREVIEW=student"]
+    },
+    {
+      "name": "SMAP · koç önizlemesi (hesapsız)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--dart-define=SHELL_PREVIEW=coach"]
+    },
+    {
+      "name": "SMAP · koyu tema",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--dart-define=THEME_MODE=dark"]
+    },
+    {
+      "name": "SMAP · okutma galeriden (simülatör)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--dart-define=SCAN_GALLERY=true"]
+    },
+    {
+      "name": "Bileşen galerisi",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_gallery.dart"
+    },
+    {
+      "name": "SMAP (profile)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "SMAP (release)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "flutterMode": "release"
+    }
+  ]
 }

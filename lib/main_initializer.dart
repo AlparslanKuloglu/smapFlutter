@@ -23,8 +23,7 @@ import 'package:smap/services/session_manager.dart';
 ///    `PlatformDispatcher.onError` are routed to the same logger.
 /// 2. The native splash (navy, S-route lockup; `flutter_native_splash`) is
 ///    kept with `preserve`, which also holds the first Flutter frame.
-/// 3. `configureDependencies()` (core, data, services), the legacy network
-///    client (it shares the cookie jar of the new one), the date formats and
+/// 3. `configureDependencies()` (core, data, services), the date formats and
 ///    the one-time move of the legacy "intro seen" flag.
 /// 4. `SessionManager.restore()` starts and `runApp` follows at once: the
 ///    launch screen (the same picture as the splash) waits for the answer and

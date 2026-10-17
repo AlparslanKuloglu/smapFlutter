@@ -23,8 +23,8 @@ import 'package:smap/core/theme/smap_text.dart';
 /// Screen code reads tokens from `context.appColors` / `context.appText`,
 /// not from this `ThemeData`. mihr buttons ignore the theme's tap target;
 /// pass `tapTargetSize: MaterialTapTargetSize.padded` per instance
-/// (Düzeltmeler #5). The theme is not wired into `MaterialApp` yet (the RTR
-/// task does that); `main.dart` still uses the legacy theme.
+/// (Düzeltmeler #5). `SmapApp` (`lib/app/app.dart`) uses [light] and [dark]
+/// with the system's mode (`AppThemeMode`).
 abstract final class SmapTheme {
   static final ThemeData _light = _build(Brightness.light);
   static final ThemeData _dark = _build(Brightness.dark);

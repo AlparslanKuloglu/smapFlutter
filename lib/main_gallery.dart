@@ -10,8 +10,8 @@ import 'package:smap/l10n/app_localizations.dart';
 ///
 /// Router-free on purpose (Düzeltmeler #22): a plain `MaterialApp` with
 /// [SmapTheme] light and dark, the app's localizations (tr) and the gallery
-/// view as home. It does not touch the app's dependency container, the legacy
-/// providers or the session, so it runs against any build of the kit.
+/// view as home. It does not touch the app's dependency container, the router
+/// or the session, so it runs against any build of the kit.
 /// Keyboard focus rings are always shown (traditional highlight mode) so the
 /// focus states can be seen with a hardware keyboard or the Tab key.
 void main() {

@@ -46,11 +46,12 @@ class InterviewRepository {
 
   /// `POST /coach/addNewInterview`: schedules an interview with [studentId].
   ///
-  /// [date] is sent as a UTC instant (`...Z`). The legacy dialog sent the
-  /// local wall-clock time without a zone, which the server reads in its own
-  /// time zone; the instant form is unambiguous, and it is what the
-  /// "1 hour before" reminder (spec §9.8) needs. Whether the server agrees is
-  /// an open question in the task report.
+  /// [date] is sent as the local wall-clock time without a zone
+  /// (`2026-10-14T16:00:00.000`), as the legacy dialog sent it: the stored
+  /// interviews are in that form, and a UTC instant would shift every new one
+  /// by the device's offset. The screens read it back the same way
+  /// (`MeetingMoment.wallClock`). How the server stores it is an open backend
+  /// question (`docs/Backend_Sorulari_Ek.md`, G1).
   ///
   /// Succeeds with the created interview (`newInterview`), or with `null`
   /// when the server accepted it without echoing it; reload the first page

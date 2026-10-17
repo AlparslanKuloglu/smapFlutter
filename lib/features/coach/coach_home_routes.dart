@@ -14,11 +14,9 @@ import 'package:smap/app/router/app_router.dart';
 /// ),
 /// ```
 ///
-/// [CoachHomeRoute] is the tab's root (`initial: true`), replacing
-/// `LegacyCoachHomeTabRoute`. The screens opened from it (a student's profile,
-/// a meeting's detail) are other tasks' routes and join the tabs they belong
-/// to (Öğrencilerim, Görüşmelerim); until they land the home screen opens the
-/// legacy ones (`LegacyLinksE15`).
+/// [CoachHomeRoute] is the tab's root (`initial: true`). The screens opened
+/// from it (a student's profile, a meeting's detail) live in the tabs they
+/// belong to (Öğrencilerim, Görüşmelerim) and are opened there.
 ///
 /// The coach home has no full-screen route of its own (the add-student sheet
 /// is a sheet, the scan flow is the shell's), so there is no
