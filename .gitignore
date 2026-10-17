@@ -46,3 +46,19 @@ app.*.map.json
 
 # Local run config (copy config/dev.json.example)
 config/dev.json
+
+# Credentials and signing material never go into git (the owner keeps them).
+google-services*.json
+GoogleService-Info.plist
+.env
+.env.*
+*.p8
+*.p12
+*.jks
+*.keystore
+key.properties
+*adminsdk*.json
+
+# Test coverage and local agent/editor state
+coverage/
+.claude/

@@ -10,10 +10,10 @@ Derleme: 11 Ekim 2026. Kaynak: SMAP-00…SMAP-12 panoları ve altı çıkarım r
 
 - **Pano kökü:** `docs/design/panolar/SMAP-NN/<sıra>-<pano-adı>/`. Her klasörde `board.html` (satır içi stiller, asıl ölçü kaynağı), `styles.css` (sınıf kütüphanesi), `text.txt` (metinler ve pano notları), `res/` (woff2 fontlar, js). Aynı adlı tek dosya sürümü: `unpacked/SMAP-NN/<sıra>-<pano-adı>.html`.
 - **PNG:** `docs/design/panolar/png/SMAP-NN_<sıra>-<pano-adı>.png` (108 adet, pano başına bir). Örnek: `png/SMAP-05_00-5-1-Sonuç-Anı-3-kare.png`.
-- **Grup tek dosyası:** `docs/design/SMAP-NN.html`.
+- **Grup tek dosyası:** `docs/design/kaynak/SMAP-NN.html`.
 - **Brif ve envanter (salt okunur):** `docs/design/tasarim-paketi/SMAP_Claude_Design_Brifi.md` (Ek D kararları satır 917–953), `.../tasarim-paketi/SMAP_Ekran_Envanteri.md`, `SMAP_Gorsel_Dil.md`, `SMAP_Ekran_Goruntuleri.md`, `ekranlar/`, `magaza/`.
-- **Kod:** `` (`lib/`, `pubspec.yaml`); mihr_ui `mihr_ui paketi (pub) — lib/` (`components/buttons/`, `core/widgets/frosted_container.dart`, `core/theme/shadows/mihr_backdrop_blurs.dart`).
-- **Geçici markup ağaçları (ikon adları işaretli):** `/private/tmp/claude-501/-Users-rasityilmaz-Desktop-WORK-smap/b90975f6-b800-481f-9352-bfe5ae28f159/scratchpad/out/t_SMAP-0*.txt`.
+- **Kod:** repo kökü (`lib/`, `pubspec.yaml`); mihr_ui pub paketi `lib/` (`components/buttons/`, `core/widgets/frosted_container.dart`, `core/theme/shadows/mihr_backdrop_blurs.dart`).
+- **Markup ağaçları:** derleme sırasında panoların `board.html`'inden çıkarılan, ikon adları işaretli geçici ağaçlar kullanıldı; repoda yoktur, gerekirse `docs/design/panolar/SMAP-NN/<pano>/board.html`'den yeniden çıkarılır.
 
 **Pano klasörleri (pano kodu → klasör adı; PNG adı `SMAP-NN_` + klasör adı):**
 

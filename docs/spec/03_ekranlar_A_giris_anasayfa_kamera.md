@@ -1420,5 +1420,4 @@ Kaynak klasörler:
 - docs/design/panolar/SMAP-11/13-11-14-Ekran-Bileşen-Eşlemesi
 - Flutter mevcut kod: lib/main.dart, lib/repository/, lib/features/auth/data/datasources/auth_remote_data_source.dart
 
-İkon adları ve sheet içerikleri işaretlenmiş, sadeleştirilmiş markup ağaçları (bu oturumun scratchpad klasöründe, geçici):
-/private/tmp/claude-501/-Users-rasityilmaz-Desktop-WORK-smap/b90975f6-b800-481f-9352-bfe5ae28f159/scratchpad/out/t_SMAP-0*.txt
+İkon adları ve sheet içerikleri işaretlenmiş, sadeleştirilmiş markup ağaçları derleme sırasında geçici olarak üretildi; repoda yoktur, gerekirse panoların `board.html`'inden yeniden çıkarılır.
