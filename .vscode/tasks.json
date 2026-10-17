@@ -27,7 +27,7 @@
     {
       "label": "Check: format + analyze + UI rules",
       "type": "shell",
-      "command": "dart format lib test tool && flutter analyze && tool/ui_rules.sh",
+      "command": "tool/format.sh && flutter analyze && tool/ui_rules.sh",
       "group": "test",
       "problemMatcher": []
     },

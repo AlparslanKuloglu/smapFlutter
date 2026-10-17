@@ -97,7 +97,7 @@ Your feature exposes: `<f>_routes.dart` (route lists), `<f>_module.dart` (DI reg
 
 ## Definition of done (every task)
 - Data + VM tests first, then the view. Delete the legacy files your task replaces (and only those).
-- `dart format .` clean, `flutter analyze` zero issues (infos are fatal in CI), `flutter test` green, `tool/ui_rules.sh`
+- `tool/format.sh` clean (formats everything but `lib/vendor`; CI checks it), `flutter analyze` zero issues (infos are fatal in CI), `flutter test` green, `tool/ui_rules.sh`
   clean, codegen up to date (`dart run build_runner build -d`; `dart run tool/merge_arb.dart && flutter gen-l10n`),
   `flutter build ios --simulator --debug` builds.
 - Tests: unit tests for VMs, services, repositories, pure logic; widget tests only for measured sizes or screen-reader

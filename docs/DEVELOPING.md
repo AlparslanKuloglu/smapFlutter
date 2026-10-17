@@ -110,7 +110,7 @@ Ayrıntı ve gerekçeler: `docs/dev/01_mimari.md`, `docs/dev/03_ekran.md`.
 Her değişiklikte, birleştirmeden önce:
 
 ```bash
-dart format .
+tool/format.sh
 ```
 
 ```bash
@@ -125,10 +125,11 @@ tool/ui_rules.sh
 flutter test
 ```
 
+- `tool/format.sh`: `lib/vendor` dışındaki bütün Dart dosyalarını biçimler (`dart format .` üçüncü taraf `lib/vendor`'u da yeniden biçimler, kullanmayın); CI aynı betikle denetler.
 - `flutter analyze`: **0 sorun** (bilgi düzeyi dahil; CI'da ölümcül).
 - `tool/ui_rules.sh`: ham renk, `TextStyle(`, `fontSize:`, Material ikon, diyalog/snack bar, `Navigator.push`, `print(`, `Widget _build…`, sunumda ham `Duration(` ve dosya boyları (ekran 250, part 300, ViewModel 500, diğer sunum/kit 400 satır).
 - `flutter test`: ViewModel, servis, repository ve saf mantık testleri (3.400'ü aşkın). Görsel doğrulama galeride ve simülatörde panoyla yan yana yapılır.
-- CI (`.github/workflows/ci.yml`): kilit dosyasıyla `pub get`, l10n ve codegen güncelliği, analiz, UI kuralları, testler.
+- CI (`.github/workflows/ci.yml`): kilit dosyasıyla `pub get`, l10n ve codegen güncelliği, biçim, analiz, UI kuralları, testler.
 
 ## 8. Tasarımla çalışmak
 

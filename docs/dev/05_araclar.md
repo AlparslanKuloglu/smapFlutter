@@ -195,15 +195,16 @@ dart run tool/unreachable_files.dart
 `.github/workflows/ci.yml`:
 
 - **Tetikleyiciler:** `pull_request`, `main` ve `redesign/main` push'ları, `workflow_dispatch`. `docs/**` ve `**/*.md` değişiklikleri CI'yı tetiklemez. PR'larda aynı PR'ın eski çalıştırması iptal edilir.
-- İzin yalnız `contents: read`; koşucu `ubuntu-24.04`; süre sınırı 20 dakika. Tek iş: "Flutter (l10n, codegen, analyze, test)". iOS/Android derlemesi CI'da **yoktur**.
+- İzin yalnız `contents: read`; koşucu `ubuntu-24.04`; süre sınırı 20 dakika. Tek iş: "Flutter (l10n, codegen, analyze, test)" (biçim denetimi de bu işte). iOS/Android derlemesi CI'da **yoktur**.
 - **Adımlar, sırayla:**
   1. `subosito/flutter-action@v2` ile Flutter `FLUTTER_VERSION`; pub önbelleği `pubspec.lock` hash'ine bağlı.
   2. `flutter pub get --enforce-lockfile`: lock dosyası pubspec ile uyumsuzsa kırılır.
   3. **l10n güncel mi:** `dart run tool/merge_arb.dart`, `flutter gen-l10n`; `git status --porcelain lib/l10n` boş değilse hata.
   4. **codegen güncel mi:** `dart run build_runner build --delete-conflicting-outputs`; `git status --porcelain` (**tüm çalışma ağacı**) boş değilse hata.
-  5. `flutter analyze --no-pub`
-  6. `tool/ui_rules.sh`
-  7. `flutter test --no-pub`
+  5. `tool/format.sh --output=none --set-exit-if-changed`: biçimlenmemiş dosya varsa hata (`lib/vendor` hariç).
+  6. `flutter analyze --no-pub`
+  7. `tool/ui_rules.sh`
+  8. `flutter test --no-pub`
 
 Yerelde **aynı sırayı** çalıştırın ([12](#12-komut-kopya-kâğıdı)'deki "CI ile aynı sıra" bloğu). Adım 4 yalnız üretilmiş dosyalara değil tüm ağaca baktığı için, commit edilmemiş ya da `.gitignore`'a girmemiş herhangi bir dosya da CI'yı kırar. Hedef Flutter sürümü değiştiğinde (bkz. 1.1) bu dosyadaki `FLUTTER_VERSION` ilk güncellenen yerdir.
 
@@ -462,7 +463,7 @@ dart run tool/merge_arb.dart && flutter gen-l10n
 
 ```bash
 # Biçimlendirme
-dart format .
+tool/format.sh
 ```
 
 ```bash
@@ -486,6 +487,7 @@ flutter pub get --enforce-lockfile \
   && dart run tool/merge_arb.dart && flutter gen-l10n \
   && dart run build_runner build --delete-conflicting-outputs \
   && git status --short \
+  && tool/format.sh --output=none --set-exit-if-changed \
   && flutter analyze --no-pub \
   && tool/ui_rules.sh \
   && flutter test --no-pub

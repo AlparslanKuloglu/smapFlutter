@@ -590,7 +590,7 @@ test/features/coach/application/…         # saf mantık testi
 - [ ] Her widget doc'unda pano/kare ve Türkçe metin alıntısı; l10n anahtarları `<feature>_<camelCase>`, her anahtarda `@key.description`; ARB birleştirildi ve `gen-l10n` çalıştırıldı.
 - [ ] Rota (`…_routes.dart` + `shell_routes.dart`/`AppRouter.routes`), DI (`*_module.dart` + `injection_container.dart` listeleri), galeri (`gallery_registry.dart`) bağlandı; `build_runner` çalıştırıldı.
 - [ ] Testler: ViewModel, navigator, saf mantık; `test/features/<f>/…` altında.
-- [ ] Komutlar temiz: `dart format .`, `dart run tool/merge_arb.dart && flutter gen-l10n`, `dart run build_runner build -d`, `flutter analyze --no-pub` (yeni dosyalarda sıfır), `tool/ui_rules.sh`, `flutter test --no-pub`. CI aynı sırayı koşar ve eskimiş l10n/üretilmiş kodu reddeder (`.github/workflows/ci.yml`).
+- [ ] Komutlar temiz: `tool/format.sh`, `dart run tool/merge_arb.dart && flutter gen-l10n`, `dart run build_runner build -d`, `flutter analyze --no-pub` (yeni dosyalarda sıfır), `tool/ui_rules.sh`, `flutter test --no-pub`. CI aynı sırayı koşar ve eskimiş l10n/üretilmiş kodu reddeder (`.github/workflows/ci.yml`).
 
 ## 17. Tuzaklar
 

@@ -51,6 +51,8 @@ jobs:
             git status --short
             exit 1
           fi
+      - name: Format (lib/vendor excluded)
+        run: tool/format.sh --output=none --set-exit-if-changed
       - name: Analyze (any issue fails; the legacy code is gone)
         run: flutter analyze --no-pub
       - name: UI rules (no raw colors, text styles, Material icons, dialogs)

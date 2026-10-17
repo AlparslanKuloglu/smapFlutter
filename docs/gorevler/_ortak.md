@@ -28,7 +28,7 @@ VERİ: [uçlar, alanlar, bilinen backend açıkları, bayraklar]
 
 TEST: VM ve saf mantık unit testleri (durumlar, metinler, hata ve çevrimdışı yolları); widget testi yalnız ölçü/okunuş için gerekirse. Mevcut testler yeşil kalsın.
 
-DOĞRULAMA: `dart format .` temiz, `flutter analyze` 0 sorun, `flutter test` yeşil, `tool/ui_rules.sh` temiz (dosya boyu sınırları dahil), `flutter build ios --simulator --debug`.
+DOĞRULAMA: `tool/format.sh` temiz, `flutter analyze` 0 sorun, `flutter test` yeşil, `tool/ui_rules.sh` temiz (dosya boyu sınırları dahil), `flutter build ios --simulator --debug`.
 
 SİMÜLATÖR: Gerçek oturumun bulunduğu simülatöre dokunma (kaldırma, kurma, kapatma yok). Kendi simülatörünü oluştur: `xcrun simctl create "SMAP-{ID}" "iPhone 17 Pro" com.apple.CoreSimulator.SimRuntime.iOS-26-2` (en yeni iOS; 18.x kullanma). Debug araçları: `--dart-define=SHELL_PREVIEW=student|coach`, `--dart-define=THEME_MODE=dark`, `SIMCTL_CHILD_SHELL_PREVIEW_TAB=0..3 xcrun simctl launch …`, galeri `-t lib/main_gallery.dart`. Veri dolu hâli görmek için GEÇİCİ sahte repository/ağ adaptörü kullanabilirsin; commit etme, işin sonunda sil. Canlı sunucuda hesapla giriş yapma, yazan istek atma. Her kareyi panoyla yan yana karşılaştırmadan bitirme (açık, koyu, büyük metin, durumlar). İş bitince: `xcrun simctl shutdown <udid> && xcrun simctl delete <udid>` ile YALNIZ kendi simülatörünü ve bu worktree'nin Xcode DerivedData klasörünü sil (`~/Library/Developer/Xcode/DerivedData/Runner-*` içinden `info.plist` WorkspacePath'i ../smapFlutter-wt/{id}'i gösteren).
 
