@@ -333,10 +333,22 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String addStudent_avatarCounter(int index, int total) {
+    return '$index / $total';
+  }
+
+  @override
+  String addStudent_avatarGroupA11y(int total) {
+    return 'Avatar, $total seçenek';
+  }
+
+  @override
   String get addStudent_avatarLabel => 'Avatar';
 
   @override
-  String get addStudent_avatarPickerA11y => 'Öğrencinin avatarı';
+  String addStudent_avatarOptionA11y(int index, int total) {
+    return 'Avatar $index / $total';
+  }
 
   @override
   String get addStudent_check => 'Kontrol Et';
@@ -398,7 +410,11 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get addStudent_saveFailed =>
-      'Öğrenci eklenemedi. Bağlantını kontrol edip tekrar dene.';
+      'Öğrenci kaydedilemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get addStudent_saveOfflineReason =>
+      'Öğrenci eklemek için bağlantı gerekiyor. Kod kartı çevrimdışında da çalışır.';
 
   @override
   String get addStudent_shareCredentials => 'Bilgileri Paylaş';

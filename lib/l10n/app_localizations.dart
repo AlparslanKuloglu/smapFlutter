@@ -658,17 +658,29 @@ abstract class AppLocalizations {
   /// **'{name} eklendi'**
   String addStudent_addedTitle(String name);
 
+  /// Counter at the right of the 'Avatar' label: chosen position over the total (pano 14.8 kare 1: '4 / 7').
+  ///
+  /// In tr, this message translates to:
+  /// **'{index} / {total}'**
+  String addStudent_avatarCounter(int index, int total);
+
+  /// Screen reader name of the avatar radio group (pano 14.8: 'Avatar, 7 seçenek').
+  ///
+  /// In tr, this message translates to:
+  /// **'Avatar, {total} seçenek'**
+  String addStudent_avatarGroupA11y(int total);
+
   /// Label above the seven avatars of the form (Tur 12 D, brief 14.8 kare 1).
   ///
   /// In tr, this message translates to:
   /// **'Avatar'**
   String get addStudent_avatarLabel;
 
-  /// Screen reader name of the avatar group (Tur 12 D).
+  /// Screen reader name of one avatar radio; the picker adds ', seçili' for the chosen one (pano 14.8: 'Avatar 4 / 7, seçili').
   ///
   /// In tr, this message translates to:
-  /// **'Öğrencinin avatarı'**
-  String get addStudent_avatarPickerA11y;
+  /// **'Avatar {index} / {total}'**
+  String addStudent_avatarOptionA11y(int index, int total);
 
   /// Action beside the user name: asks the server now (pano 10.3 kare 1).
   ///
@@ -778,11 +790,17 @@ abstract class AppLocalizations {
   /// **'Öğrenciyi Kaydet'**
   String get addStudent_save;
 
-  /// Notice above "Öğrenciyi Kaydet" when the save failed for a reason with no text of its own; the sheet stays open and keeps what was typed.
+  /// Error toast when the save failed for a reason with no text of its own (pano 14.8 kare 5); the sheet stays open and keeps what was typed, the avatar included.
   ///
   /// In tr, this message translates to:
-  /// **'Öğrenci eklenemedi. Bağlantını kontrol edip tekrar dene.'**
+  /// **'Öğrenci kaydedilemedi. Bağlantını kontrol edip tekrar dene.'**
   String get addStudent_saveFailed;
+
+  /// Under the passive 'Öğrenciyi Kaydet' while the device is offline (pano 14.8 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrenci eklemek için bağlantı gerekiyor. Kod kartı çevrimdışında da çalışır.'**
+  String get addStudent_saveOfflineReason;
 
   /// Primary button of the credentials sheet; opens the system share sheet (pano 10.3 kare 3).
   ///
