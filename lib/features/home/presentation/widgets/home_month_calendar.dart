@@ -21,8 +21,6 @@ class HomeMonthCalendar extends StatelessWidget {
   ];
 
   static const Color _gridLine = Color(0xFFEDEFF2);
-  static const Color _headerBg = Color(0xFFF5F6F8);
-
   List<DateTime> _cellsForMonth(DateTime monthStart) {
     final y = monthStart.year;
     final m = monthStart.month;
@@ -81,26 +79,24 @@ class HomeMonthCalendar extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 12, 8, 10),
+                  padding: const EdgeInsets.fromLTRB(12, 12, 8, 10),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      _ChevronIconButton(
-                        icon: Icons.chevron_left_rounded,
-                        onTap: homeProvider.prevMonth,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                      Expanded(
                         child: Text(
                           monthYearLabel,
-                          textAlign: TextAlign.center,
                           style: const TextStyle(
                             fontSize: 15,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w600,
                             color: AppColors.textPrimary,
                           ),
                         ),
                       ),
+                      _ChevronIconButton(
+                        icon: Icons.chevron_left_rounded,
+                        onTap: homeProvider.prevMonth,
+                      ),
+                      const SizedBox(width: 6),
                       _ChevronIconButton(
                         icon: Icons.chevron_right_rounded,
                         onTap: homeProvider.nextMonth,
@@ -121,7 +117,12 @@ class HomeMonthCalendar extends StatelessWidget {
                       child: Column(
                         children: [
                           Container(
-                            color: _headerBg,
+                            decoration: const BoxDecoration(
+                              color: AppColors.white,
+                              border: Border(
+                                bottom: BorderSide(color: _gridLine),
+                              ),
+                            ),
                             padding: const EdgeInsets.symmetric(vertical: 11),
                             child: Row(
                               children: _dayShort
@@ -184,12 +185,20 @@ class _ChevronIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(20),
-      child: Padding(
-        padding: const EdgeInsets.all(4),
-        child: Icon(icon, size: 22, color: AppColors.textPrimary),
+    return Material(
+      color: AppColors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+        side: const BorderSide(color: HomeMonthCalendar._gridLine),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: onTap,
+        child: SizedBox(
+          width: 30,
+          height: 30,
+          child: Icon(icon, size: 20, color: AppColors.textPrimary),
+        ),
       ),
     );
   }
