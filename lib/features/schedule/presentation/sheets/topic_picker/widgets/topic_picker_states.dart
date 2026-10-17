@@ -70,9 +70,12 @@ class _TopicListError extends StatelessWidget {
   }
 }
 
-/// An empty bag (not in the board; one sentence).
+/// An empty bag (not in the board; one sentence). A coach's sheet names the
+/// student ([name]).
 class _TopicListEmpty extends StatelessWidget {
-  const _TopicListEmpty();
+  const _TopicListEmpty({this.name});
+
+  final String? name;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +87,11 @@ class _TopicListEmpty extends StatelessWidget {
         0,
       ),
       child: Text(
-        AppLocalizations.of(context).schedule_bagEmpty,
+        name == null
+            ? AppLocalizations.of(context).schedule_bagEmpty
+            : AppLocalizations.of(
+                context,
+              ).coachStudentProfile_bagEmpty(TurkishSuffix.genitive(name!)),
         style: context.appText.body.copyWith(
           color: context.appColors.textSecondary,
         ),

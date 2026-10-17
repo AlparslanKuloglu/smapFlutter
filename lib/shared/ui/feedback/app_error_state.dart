@@ -23,7 +23,10 @@ import 'package:smap/shared/ui/surfaces/app_card.dart';
 /// **section** ("Dersler yüklenemedi."): a card of 16 padding with a 24 pt
 /// WarningCircle in `error`, the [message] 15/24 · 600 and a text button
 /// "Tekrar Dene" with an 18 pt ArrowClockwise under it. It refreshes only
-/// that section. No haptic at either level.
+/// that section. With a [title] ("Programlar yüklenemedi", board 14.3 kare 2)
+/// the title takes the 15/24 · 600 line and the [message] under it is the
+/// plain 15/24 `textSecondary` sentence ("Bağlantını kontrol edip tekrar
+/// dene."). No haptic at either level.
 ///
 /// "Tekrar Dene" returns the owner to the skeleton (`AsyncSection.loading`);
 /// a repeated failure keeps the same text.
@@ -42,15 +45,16 @@ class AppErrorState extends StatelessWidget {
   const AppErrorState.section({
     required this.message,
     required this.onRetry,
+    this.title,
     this.retryLabel,
     super.key,
   }) : level = AppStateLevel.section,
-       title = null,
        topPadding = 0;
 
   final AppStateLevel level;
 
-  /// "Analizin yüklenemedi" (screen level only).
+  /// "Analizin yüklenemedi" (screen level); the optional bold first line of
+  /// the section card ("Programlar yüklenemedi").
   final String? title;
 
   /// A short cause-and-next-step sentence, no inner code.
@@ -197,12 +201,17 @@ class _SectionError extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: AppSpacing.s4),
                       child: Text(
-                        state.message,
+                        state.title ?? state.message,
                         style: text.bodyStrong.copyWith(
                           color: colors.textPrimary,
                         ),
                       ),
                     ),
+                    if (state.title != null)
+                      Text(
+                        state.message,
+                        style: text.body.copyWith(color: colors.textSecondary),
+                      ),
                     const SizedBox(height: AppSpacing.s4),
                     AlignedTextAction(
                       child: AppButton(

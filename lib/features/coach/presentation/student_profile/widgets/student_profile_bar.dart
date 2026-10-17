@@ -6,7 +6,9 @@ typedef _BarData = ({SectionState state, String name});
 /// with a CalendarBlank, which opens the new meeting sheet with this student
 /// chosen. The student's name is the bar's small title once the header has
 /// scrolled away. The action waits for the student (a skeleton, an error and
-/// a missing student have none).
+/// a missing student have none). While the Program tab is being edited the bar
+/// is the edit bar of pano 14.1 kare 3: no back, the program's name as the
+/// small title and the one action "Bitti".
 class _ProfileBar
     extends SelectorViewModelWidget<StudentProfileViewModel, _BarData> {
   const _ProfileBar();
@@ -24,15 +26,28 @@ class _ProfileBar
       context,
       listen: false,
     );
-    return AppDetailBar(
-      title: data.name,
-      action: data.state == SectionState.ready
-          ? AppBarAction(
-              label: l10n.coachStudentProfile_planMeeting,
-              icon: PhosphorIconsRegular.calendarBlank,
-              onPressed: () => unawaited(viewModel.planMeeting()),
+    final edit = _PageAnchors.of(context).edit;
+    return ValueListenableBuilder<bool>(
+      valueListenable: edit.editing,
+      builder: (context, editing, _) => editing
+          ? AppDetailBar(
+              title: edit.title.isEmpty ? data.name : edit.title,
+              leading: AppDetailBarLeading.none,
+              action: AppBarAction(
+                label: l10n.schedule_done,
+                onPressed: edit.finish,
+              ),
             )
-          : null,
+          : AppDetailBar(
+              title: data.name,
+              action: data.state == SectionState.ready
+                  ? AppBarAction(
+                      label: l10n.coachStudentProfile_planMeeting,
+                      icon: PhosphorIconsRegular.calendarBlank,
+                      onPressed: () => unawaited(viewModel.planMeeting()),
+                    )
+                  : null,
+            ),
     );
   }
 }

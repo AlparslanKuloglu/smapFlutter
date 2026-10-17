@@ -48,8 +48,10 @@ part 'widgets/program_list_states.dart';
 ///
 /// A coach opens a student's programs with [student] (Tur 12 A, brief 14.1
 /// kare 2: "Programlar"): the context strip sits under the bar, every request
-/// carries the student's id, the coach may set up a new program for the
-/// student, and the empty state names the student.
+/// carries the student's id, the list is newest to oldest with "Bu hafta" on
+/// this week's program, the coach may set up a new program for the student,
+/// and the empty state names the student. While `FeatureFlags
+/// .coachProgramWriteEnabled` is off the list only reads (no "Yeni Program").
 @RoutePage()
 class ProgramListView extends StackedView<ProgramListViewModel> {
   const ProgramListView({this.student, super.key});
@@ -67,6 +69,9 @@ class ProgramListView extends StackedView<ProgramListViewModel> {
         navigator: RouterProgramNavigator(context.router, student: student),
         online: locator<ConnectivityService>().online,
         studentId: student?.id,
+        // Pushed over the Program tab: a saved program closes the list, which
+        // is the way back to the tab (brief T12.6).
+        leaveAfterCreate: student != null,
       );
 
   @override

@@ -5,13 +5,17 @@ typedef _DayHeadData = ({
   ProgramViewMode mode,
   DateTime day,
   int count,
+  bool editing,
 });
 
 /// "Cumartesi, 10 Ekim" (17/24 · 700) and "3 çalışma" (13/20) beside it (pano
-/// 3.4 kare 3). An empty day has no count (pano 3.6 kare 3).
+/// 3.4 kare 3). An empty day has no count (pano 3.6 kare 3). In the coach's
+/// Program tab ([embedded]) only edit mode draws it (pano 14.1 kare 1 and 3).
 class _DayHeading
     extends SelectorViewModelWidget<ProgramDetailViewModel, _DayHeadData> {
-  const _DayHeading();
+  const _DayHeading({this.embedded = false});
+
+  final bool embedded;
 
   @override
   _DayHeadData selector(ProgramDetailViewModel viewModel) => (
@@ -19,11 +23,14 @@ class _DayHeading
     mode: viewModel.mode,
     day: viewModel.selectedDay,
     count: viewModel.detail?.countOn(viewModel.selectedDay) ?? 0,
+    editing: viewModel.editing,
   );
 
   @override
   Widget build(BuildContext context, _DayHeadData data) {
-    if (data.state != SectionState.ready || data.mode != ProgramViewMode.day) {
+    if (data.state != SectionState.ready ||
+        data.mode != ProgramViewMode.day ||
+        (embedded && !data.editing)) {
       return const SliverToBoxAdapter(child: SizedBox.shrink());
     }
     final colors = context.appColors;
@@ -77,9 +84,14 @@ typedef _DayListData = ({
 /// with its time, glyph, lesson and name. In edit mode the times and the X
 /// are actions and "Konu Ekle" sits under the card; an empty day is one
 /// sentence and, in edit mode, "Konu Ekle" (pano 3.6 kare 3).
+///
+/// In the coach's Program tab ([embedded]) the day has no heading out of edit
+/// mode, so the card keeps 12 pt from the day strip (pano 14.1 kare 1).
 class _DayList
     extends SelectorViewModelWidget<ProgramDetailViewModel, _DayListData> {
-  const _DayList();
+  const _DayList({this.embedded = false});
+
+  final bool embedded;
 
   @override
   _DayListData selector(ProgramDetailViewModel viewModel) => (
@@ -104,7 +116,12 @@ class _DayList
     );
     final l10n = AppLocalizations.of(context);
     return SliverPadding(
-      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.gutter),
+      padding: EdgeInsets.fromLTRB(
+        AppSpacing.gutter,
+        embedded && !data.editing ? AppSpacing.s12 : 0,
+        AppSpacing.gutter,
+        0,
+      ),
       sliver: SliverToBoxAdapter(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

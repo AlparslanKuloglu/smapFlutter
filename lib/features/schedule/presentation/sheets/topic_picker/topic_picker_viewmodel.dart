@@ -9,9 +9,10 @@ import 'package:smap/shared/ui/feedback/section_state.dart';
 /// The two lists of the "Konu ekle" sheet (pano 3.5 kare 3 segment).
 enum TopicSource { bag, lessons }
 
-/// The logic of the "Konu ekle" sheet (pano 3.5 kare 3): "Çantam" (the topics
-/// the exams left missing, grouped by lesson) and "Dersler" (every topic of
-/// every lesson), one radio choice and "Ekle".
+/// The logic of the "Konu ekle" sheet (pano 3.5 kare 3, 14.2 kare 3 and 6):
+/// "Çantam" (the topics the exams left missing; the sheet draws them as one
+/// list with the lesson under each name) and "Dersler" (every topic of every
+/// lesson, under lesson headings), one radio choice and "Ekle".
 ///
 /// "Çantam" comes with the programs (`ScheduleService.load`); "Dersler" is
 /// loaded the first time its segment opens (`ScheduleService.mainSubjects`,
@@ -36,9 +37,9 @@ class TopicPickerViewModel extends BaseViewModel {
   /// The student whose bag and lessons these are; `null` for the user's own.
   final String? studentId;
 
-  /// The student's first name in a coach's view (the sheet names the student
-  /// and leaves out the "Eksik" tag: the bag has no such field, Tur 12 A);
-  /// `null` for the user's own.
+  /// The student's first name in a coach's view (the sheet names the student;
+  /// Tur 12 A); `null` for the user's own. Neither view has an "Eksik" tag:
+  /// the bag has no such field.
   final String? studentFirstName;
 
   /// A coach writes a student's program.

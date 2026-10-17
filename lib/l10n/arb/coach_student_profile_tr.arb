@@ -80,13 +80,26 @@
       }
     }
   },
+  "coachStudentProfile_programEmptyBodyReadOnly": "{name} programını kurduğunda burada görünür.",
+  "@coachStudentProfile_programEmptyBodyReadOnly": {
+    "description": "Sentence of the empty Program tab while `FeatureFlags.coachProgramWriteEnabled` is off (pano 10.4 kare 3 read-only behavior); {name} is the first name. Not in a board: the read-only tab has no empty state.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "coachStudentProfile_programSetUp": "Program Kur",
   "@coachStudentProfile_programSetUp": {
     "description": "Primary action of the empty Program tab / list (brief 14.1 kare 4)."
   },
-  "coachStudentProfile_programLoadError": "Programlar yüklenemedi. Bağlantını kontrol edip tekrar dene.",
-  "@coachStudentProfile_programLoadError": {
-    "description": "Section error of the Program tab (brief 14.3 kare 2)."
+  "coachStudentProfile_programLoadErrorTitle": "Programlar yüklenemedi",
+  "@coachStudentProfile_programLoadErrorTitle": {
+    "description": "Title of the section error of the Program tab and of the coach's program list (brief 14.3 kare 2)."
+  },
+  "coachStudentProfile_programLoadErrorBody": "Bağlantını kontrol edip tekrar dene.",
+  "@coachStudentProfile_programLoadErrorBody": {
+    "description": "Sentence under the section error title; no inner code (brief 14.3 kare 2)."
   },
   "coachStudentProfile_programOfflineNote": "Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı programı görebilirsin.",
   "@coachStudentProfile_programOfflineNote": {
@@ -132,6 +145,14 @@
       }
     }
   },
+  "coachStudentProfile_programSaveFailed": "Program kaydedilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@coachStudentProfile_programSaveFailed": {
+    "description": "Error toast when a coach's program could not be saved, new program or edit (brief 14.2 \"Akış\", 14.3 \"Durum metinleri\"); the form and the changes are kept."
+  },
+  "coachStudentProfile_summaryWho": "Kimin için",
+  "@coachStudentProfile_summaryWho": {
+    "description": "First row label of the new program summary card in a coach's flow; the value is the student's full name (brief 14.2 kare 4)."
+  },
   "coachStudentProfile_newDaysTitle": "Hangi günler çalışacak?",
   "@coachStudentProfile_newDaysTitle": {
     "description": "Step 1 title of a coach's new program flow (brief 14.2 kare 1)."
@@ -156,6 +177,15 @@
   "coachStudentProfile_bagHelp": "Çanta: {name} denemelerinden çıkan eksik konular.",
   "@coachStudentProfile_bagHelp": {
     "description": "Help under the topic sheet segment in a coach's view; {name} carries its genitive suffix: \"Çanta: Alparslan'ın denemelerinden çıkan eksik konular.\" (brief 14.2 kare 3).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coachStudentProfile_bagEmpty": "Çantada henüz konu yok. {name} denemelerinden çıkan eksik konular burada görünür.",
+  "@coachStudentProfile_bagEmpty": {
+    "description": "Empty bag sentence of the topic sheet in a coach's view; {name} carries its genitive suffix. Not in a board.",
     "placeholders": {
       "name": {
         "type": "String"

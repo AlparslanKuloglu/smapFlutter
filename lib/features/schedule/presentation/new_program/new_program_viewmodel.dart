@@ -245,7 +245,7 @@ class NewProgramViewModel extends BaseViewModel {
     if (_disposed) return;
     _saving = false;
     notifyListeners();
-    result.fold((_) => _toast.error((l) => l.schedule_saveFailed), (created) {
+    result.fold((_) => _toast.error(_saveFailed), (created) {
       _toast.success(savedText ?? (l) => l.schedule_toastProgramSaved);
       _navigator.close(created.id);
     });
@@ -262,6 +262,13 @@ class NewProgramViewModel extends BaseViewModel {
 
   /// `true` while the device has a link.
   bool get online => _online.value;
+
+  /// The toast of a save that failed; the form and the choices stay. A coach
+  /// reads "Program kaydedilemedi. Bağlantını kontrol edip tekrar dene."
+  /// (brief 14.2 "Akış").
+  ToastText get _saveFailed => studentId == null
+      ? (l) => l.schedule_saveFailed
+      : (l) => l.coachStudentProfile_programSaveFailed;
 
   String _suggestedName() {
     final first = _days.isEmpty ? today : _days.first;
