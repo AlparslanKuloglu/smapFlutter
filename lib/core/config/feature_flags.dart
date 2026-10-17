@@ -92,4 +92,22 @@ abstract final class FeatureFlags {
   /// reachable with a student. The two ViewModels take the value through a
   /// constructor argument (`coachWriteEnabled`), so both states are tested.
   static const bool coachProgramWriteEnabled = true;
+
+  /// A coach can sign up in the app (pano 2.2 kare 1 "SMAP'i nasıl
+  /// kullanacaksın?" and pano 2.5 kare 3 "Kayıt · koç").
+  ///
+  /// Closed because the owner took the "Öğrenci / Koç" choice out of the live
+  /// app's sign-up form (origin/main, commit e615595, 2026-10-17): an account
+  /// made there is always a student (`userType` 1), and coach accounts are
+  /// opened outside the sign-up screen; coaches only use "Giriş Yap". While
+  /// it is `false` the role step of the intro flow is not shown (the flow goes
+  /// from the intro to the grade step with the student role, and a draft that
+  /// holds a coach falls back to a student), and the sign-up screen draws no
+  /// role segment and always sends a student. The welcome screen, "Giriş Yap"
+  /// and the coach's sign-in stay as they are (the role is read from the
+  /// account). Open it (`true`) to bring the role step and the coach sign-up
+  /// of the boards back, as they were; the owner decides when. The
+  /// ViewModels and the draft store take the value through a constructor
+  /// argument (`coachSignUpEnabled`), so both states are tested.
+  static const bool coachSignUpEnabled = false;
 }

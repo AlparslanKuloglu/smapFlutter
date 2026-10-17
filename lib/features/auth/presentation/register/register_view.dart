@@ -57,11 +57,10 @@ part 'widgets/register_submit.dart';
 /// "Kayıt ol" as the large title, the role segment that stays under the bar
 /// once the title has scrolled away, the seven avatars, the fields, the grade
 /// and track (a student) or the coaching code note (a coach), the one consent
-/// line and "Kayıt Ol".
-///
-/// [role], [grade] and [track] are what the person picked on the welcome
-/// screens (E2 passes them; pano 2.2 "Seçtiklerin kayıt formuna gelir"); all
-/// optional.
+/// line and "Kayıt Ol". Closed `FeatureFlags.coachSignUpEnabled`: no role
+/// segment, always a student. [role], [grade] and [track] are what the person
+/// picked on the welcome screens (pano 2.2 "Seçtiklerin kayıt formuna
+/// gelir"); all optional.
 @RoutePage()
 class RegisterView extends StackedView<RegisterViewModel> {
   const RegisterView({this.role, this.grade, this.track, super.key});
@@ -155,7 +154,7 @@ class _RegisterPageState extends State<_RegisterPage> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _stuckAt = _registerStuckAt(context);
+    _stuckAt = _registerStuckAt(context, widget.viewModel.coachSignUpEnabled);
     _onScroll();
   }
 
@@ -228,10 +227,10 @@ class _RegisterPageState extends State<_RegisterPage> {
               title: l10n.register_title,
               gutter: _registerGutter,
             ),
-            const SliverToBoxAdapter(
-              child: SizedBox(height: _registerTitleGap),
-            ),
-            const PinnedHeaderSliver(child: _RoleBar()),
+            if (widget.viewModel.coachSignUpEnabled) ...const [
+              SliverToBoxAdapter(child: SizedBox(height: _registerTitleGap)),
+              PinnedHeaderSliver(child: _RoleBar()),
+            ],
             SliverPadding(
               padding: EdgeInsets.fromLTRB(
                 _registerGutter,

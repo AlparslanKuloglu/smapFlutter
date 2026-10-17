@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 
+import 'package:smap/core/config/feature_flags.dart';
 import 'package:smap/core/domain/user_role.dart';
 import 'package:smap/features/account/domain/school_grade.dart';
 import 'package:smap/features/account/domain/study_track.dart';
@@ -107,12 +108,19 @@ class OnboardingSelections {
 
 /// Where the flow stands: step, intro page and picks. Pure; the view model
 /// only holds one and asks it where Back and "Devam Et" lead.
+///
+/// [coachSignUpEnabled] is `FeatureFlags.coachSignUpEnabled`. While it is
+/// `false` the role step (pano 2.2 kare 1) is not part of the flow: the intro
+/// leads to the grade step and Back from it leads to the intro, and the role
+/// is a student for good ([normalized]). Open, the flow is the one of pano
+/// 2.2 kare 1-4.
 @immutable
 class OnboardingFlowState {
   const OnboardingFlowState({
     this.step = OnboardingStep.intro,
     this.introPage = 0,
     this.selections = const OnboardingSelections(),
+    this.coachSignUpEnabled = FeatureFlags.coachSignUpEnabled,
   }) : assert(introPage >= 0 && introPage < introPageCount);
 
   /// Number of intro pages (pano 2.1 kare 2-4).
@@ -121,6 +129,14 @@ class OnboardingFlowState {
   final OnboardingStep step;
   final int introPage;
   final OnboardingSelections selections;
+
+  /// The role step is part of the flow (`FeatureFlags.coachSignUpEnabled`).
+  final bool coachSignUpEnabled;
+
+  /// The step that follows the intro: the role question, or, with the role
+  /// step closed, the grade question.
+  OnboardingStep get _afterIntro =>
+      coachSignUpEnabled ? OnboardingStep.role : OnboardingStep.grade;
 
   bool get onLastIntroPage => introPage == introPageCount - 1;
 
@@ -131,7 +147,9 @@ class OnboardingFlowState {
     ),
     OnboardingStep.intro => null,
     OnboardingStep.role => copyWith(step: OnboardingStep.intro),
-    OnboardingStep.grade => copyWith(step: OnboardingStep.role),
+    OnboardingStep.grade => copyWith(
+      step: coachSignUpEnabled ? OnboardingStep.role : OnboardingStep.intro,
+    ),
     OnboardingStep.camera => copyWith(
       step: selections.asksGrade ? OnboardingStep.grade : OnboardingStep.role,
     ),
@@ -144,7 +162,7 @@ class OnboardingFlowState {
     OnboardingStep.intro when !onLastIntroPage => copyWith(
       introPage: introPage + 1,
     ),
-    OnboardingStep.intro => copyWith(step: OnboardingStep.role),
+    OnboardingStep.intro => copyWith(step: _afterIntro),
     OnboardingStep.role => copyWith(
       step: selections.asksGrade ? OnboardingStep.grade : OnboardingStep.camera,
     ),
@@ -155,14 +173,29 @@ class OnboardingFlowState {
     OnboardingStep.camera => null,
   };
 
-  /// "Geç" on the first two intro pages: straight to the role question.
-  OnboardingFlowState skipIntro() => copyWith(step: OnboardingStep.role);
+  /// "Geç" on the first two intro pages: straight to the role question (the
+  /// grade question while the role step is closed).
+  OnboardingFlowState skipIntro() => copyWith(step: _afterIntro);
 
-  /// A stored state made consistent: a coach cannot be on the grade step.
-  OnboardingFlowState normalized() =>
-      step == OnboardingStep.grade && !selections.asksGrade
-      ? copyWith(step: OnboardingStep.role)
-      : this;
+  /// A stored state made consistent. Open: a coach cannot be on the grade
+  /// step. Closed: the role is a student, the role step is skipped, and a
+  /// coach's draft that had gone past it (on the camera step) comes back to
+  /// the grade question it never answered.
+  OnboardingFlowState normalized() {
+    if (!coachSignUpEnabled) {
+      final wasCoach = selections.role != UserRole.student;
+      final fixed = wasCoach
+          ? copyWith(selections: selections.withRole(UserRole.student))
+          : this;
+      final leavesRole =
+          step == OnboardingStep.role ||
+          (wasCoach && step == OnboardingStep.camera);
+      return leavesRole ? fixed.copyWith(step: OnboardingStep.grade) : fixed;
+    }
+    return step == OnboardingStep.grade && !selections.asksGrade
+        ? copyWith(step: OnboardingStep.role)
+        : this;
+  }
 
   OnboardingFlowState copyWith({
     OnboardingStep? step,
@@ -172,6 +205,7 @@ class OnboardingFlowState {
     step: step ?? this.step,
     introPage: introPage ?? this.introPage,
     selections: selections ?? this.selections,
+    coachSignUpEnabled: coachSignUpEnabled,
   );
 
   @override
@@ -179,8 +213,10 @@ class OnboardingFlowState {
       other is OnboardingFlowState &&
       other.step == step &&
       other.introPage == introPage &&
-      other.selections == selections;
+      other.selections == selections &&
+      other.coachSignUpEnabled == coachSignUpEnabled;
 
   @override
-  int get hashCode => Object.hash(step, introPage, selections);
+  int get hashCode =>
+      Object.hash(step, introPage, selections, coachSignUpEnabled);
 }

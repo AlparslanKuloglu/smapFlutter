@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:smap/core/config/feature_flags.dart';
 import 'package:smap/core/domain/user_role.dart';
 import 'package:smap/core/services/device_preferences.dart';
 import 'package:smap/features/account/domain/school_grade.dart';
@@ -16,6 +17,11 @@ import 'package:smap/features/onboarding/application/onboarding_flow.dart';
 /// A value that cannot be read is the same as no draft (the flow starts
 /// over); nothing here throws. The sign-up screen calls [clear] once the
 /// account exists ("kayıtta silinir", spec §6.2).
+///
+/// `coachSignUpEnabled` (`FeatureFlags.coachSignUpEnabled`, given by the
+/// view model that reads) shapes what is read: closed, a draft left on the
+/// device with the role "coach" (or on the role step) reads as a student on
+/// the grade step.
 class OnboardingDraftStore {
   const OnboardingDraftStore(this._preferences);
 
@@ -29,10 +35,14 @@ class OnboardingDraftStore {
 
   /// The stored state, or the start of the flow when there is none (or it is
   /// unreadable).
-  OnboardingFlowState read() {
+  OnboardingFlowState read({
+    bool coachSignUpEnabled = FeatureFlags.coachSignUpEnabled,
+  }) {
     final raw = _preferences.getString(DevicePreferences.onboardingDraftKey);
-    if (raw == null || raw.isEmpty) return const OnboardingFlowState();
-    return decode(raw);
+    if (raw == null || raw.isEmpty) {
+      return OnboardingFlowState(coachSignUpEnabled: coachSignUpEnabled);
+    }
+    return decode(raw, coachSignUpEnabled: coachSignUpEnabled);
   }
 
   Future<void> write(OnboardingFlowState state) => _preferences.setString(
@@ -57,14 +67,18 @@ class OnboardingDraftStore {
   }
 
   /// Reads [raw]; anything wrong falls back to the default for that field.
-  static OnboardingFlowState decode(String raw) {
+  static OnboardingFlowState decode(
+    String raw, {
+    bool coachSignUpEnabled = FeatureFlags.coachSignUpEnabled,
+  }) {
+    final fresh = OnboardingFlowState(coachSignUpEnabled: coachSignUpEnabled);
     final Object? json;
     try {
       json = jsonDecode(raw);
     } on FormatException {
-      return const OnboardingFlowState();
+      return fresh;
     }
-    if (json is! Map<String, Object?>) return const OnboardingFlowState();
+    if (json is! Map<String, Object?>) return fresh;
 
     final role = UserRole.fromLegacy(json['role']);
     final grade = json['grade'] is int
@@ -89,6 +103,7 @@ class OnboardingDraftStore {
       selections: grade != null && !grade.requiresTrack
           ? selections.withGrade(grade)
           : selections,
+      coachSignUpEnabled: coachSignUpEnabled,
     ).normalized();
   }
 }

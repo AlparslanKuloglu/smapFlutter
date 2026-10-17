@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:smap/core/config/feature_flags.dart';
 import 'package:smap/core/domain/user_role.dart';
 import 'package:smap/core/errors/app_error_code.dart';
 import 'package:smap/core/errors/app_exception.dart';
@@ -84,10 +85,13 @@ class _World {
 
   Future<void> openLegal(LegalDocumentDto d) async => opened.add(d);
 
+  /// The tests outside "role segment closed" run with the coach sign-up open
+  /// (the boards of pano 2.5); [coachSignUpEnabled] false is the shipped flag.
   RegisterViewModel viewModel({
     UserRole? role,
     SchoolGrade? grade,
     StudyTrack? track,
+    bool coachSignUpEnabled = true,
   }) => RegisterViewModel(
     navigator: navigator,
     checkUsername: checkUsername,
@@ -99,6 +103,7 @@ class _World {
     role: role,
     grade: grade,
     track: track,
+    coachSignUpEnabled: coachSignUpEnabled,
     usernameDebounce: const Duration(milliseconds: 5),
   );
 }
@@ -165,6 +170,64 @@ void main() {
 
       expect(other.role, UserRole.student);
       expect(other.track, isNull);
+    });
+  });
+
+  group('role segment closed (FeatureFlags.coachSignUpEnabled false)', () {
+    RegisterViewModel closed({UserRole? role}) {
+      final other = world.viewModel(role: role, coachSignUpEnabled: false);
+      addTearDown(other.dispose);
+      return other;
+    }
+
+    test('the shipped flag is closed, so the default view model is too', () {
+      final other = RegisterViewModel(
+        navigator: world.navigator,
+        checkUsername: world.checkUsername,
+        loadLegalDocuments: world.loadLegal,
+        register: world.register,
+        signIn: world.signIn,
+        clearOnboardingDraft: world.clearDraft,
+        openLegalText: world.openLegal,
+      );
+      addTearDown(other.dispose);
+
+      expect(FeatureFlags.coachSignUpEnabled, isFalse);
+      expect(other.coachSignUpEnabled, isFalse);
+    });
+
+    test('a coach handed over by the welcome screen is a student', () {
+      expect(closed(role: UserRole.coach).role, UserRole.student);
+    });
+
+    test('setRole to a coach is ignored', () {
+      final other = closed()..setRole(UserRole.coach);
+
+      expect(other.role, UserRole.student);
+    });
+
+    test('a student form is sent with userType 1', () async {
+      final other = closed(role: UserRole.coach);
+      await other.loadLegal();
+      _fill(other);
+
+      await other.submit();
+
+      final sent = world.registrations.single;
+      expect(sent.role, UserRole.student);
+      expect(sent.grade, SchoolGrade.grade12);
+      expect(sent.toBody()['userType'], 1);
+    });
+
+    test('a grade is still asked for', () async {
+      final other = closed(role: UserRole.coach);
+      await other.loadLegal();
+      _fill(other);
+      other.setGrade(SchoolGrade.grade9);
+      await other.submit();
+
+      expect(world.registrations.single.grade, SchoolGrade.grade9);
+      expect(world.registrations.single.track, isNull);
     });
   });
 

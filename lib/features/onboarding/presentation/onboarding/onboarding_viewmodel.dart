@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:stacked/stacked.dart';
 
+import 'package:smap/core/config/feature_flags.dart';
 import 'package:smap/core/domain/user_role.dart';
 import 'package:smap/core/services/device_preferences.dart';
 import 'package:smap/features/account/domain/school_grade.dart';
@@ -30,11 +31,12 @@ class OnboardingViewModel extends BaseViewModel {
     required DevicePreferences preferences,
     required CameraPermission camera,
     required OnboardingNavigator navigator,
+    this.coachSignUpEnabled = FeatureFlags.coachSignUpEnabled,
   }) : _draft = draft,
        _preferences = preferences,
        _camera = camera,
        _navigator = navigator,
-       _flow = draft.read() {
+       _flow = draft.read(coachSignUpEnabled: coachSignUpEnabled) {
     _introPage = ValueNotifier<int>(_flow.introPage);
   }
 
@@ -42,6 +44,11 @@ class OnboardingViewModel extends BaseViewModel {
   final DevicePreferences _preferences;
   final CameraPermission _camera;
   final OnboardingNavigator _navigator;
+
+  /// The role step (pano 2.2 kare 1) is part of the flow and a coach can be
+  /// picked (`FeatureFlags.coachSignUpEnabled`). Closed, the flow goes from
+  /// the intro to the grade step and the role is a student.
+  final bool coachSignUpEnabled;
 
   OnboardingFlowState _flow;
   late final ValueNotifier<int> _introPage;
@@ -98,6 +105,7 @@ class OnboardingViewModel extends BaseViewModel {
 
   void selectRole(UserRole role) {
     if (role == _flow.selections.role) return;
+    if (!coachSignUpEnabled && role != UserRole.student) return;
     _flow = _flow.copyWith(selections: _flow.selections.withRole(role));
     _save();
     notifyListeners();

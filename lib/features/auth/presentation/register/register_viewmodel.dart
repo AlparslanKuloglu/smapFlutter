@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:stacked/stacked.dart';
 
+import 'package:smap/core/config/feature_flags.dart';
 import 'package:smap/core/domain/user_role.dart';
 import 'package:smap/core/errors/app_result.dart';
 import 'package:smap/core/extensions/either_extensions.dart';
@@ -73,6 +74,7 @@ class RegisterViewModel extends BaseViewModel {
     UserRole? role,
     SchoolGrade? grade,
     StudyTrack? track,
+    this.coachSignUpEnabled = FeatureFlags.coachSignUpEnabled,
     Duration usernameDebounce = kUsernameDebounce,
   }) : _navigator = navigator,
        _loadLegalDocuments = loadLegalDocuments,
@@ -80,7 +82,9 @@ class RegisterViewModel extends BaseViewModel {
        _signIn = signIn,
        _clearDraft = clearOnboardingDraft,
        _openLegalText = openLegalText,
-       _role = role == UserRole.coach ? UserRole.coach : UserRole.student,
+       _role = coachSignUpEnabled && role == UserRole.coach
+           ? UserRole.coach
+           : UserRole.student,
        _grade = grade,
        _track = RegisterRules.trackFor(grade, track) {
     _check = UsernameLiveCheck(
@@ -89,6 +93,11 @@ class RegisterViewModel extends BaseViewModel {
       debounce: usernameDebounce,
     );
   }
+
+  /// A coach can sign up and the role segment is drawn
+  /// (`FeatureFlags.coachSignUpEnabled`). Closed, the role is a student for
+  /// good: a coach passed in or set is ignored and `userType` is 1.
+  final bool coachSignUpEnabled;
 
   /// The seven avatars in the order the picker shows them (`assets/avatars`);
   /// the file name is what `photo` carries.
@@ -193,6 +202,7 @@ class RegisterViewModel extends BaseViewModel {
 
   void setRole(UserRole role) {
     if (role == _role || !role.isKnown) return;
+    if (!coachSignUpEnabled && role != UserRole.student) return;
     _role = role;
     _notice = null;
     _notify();

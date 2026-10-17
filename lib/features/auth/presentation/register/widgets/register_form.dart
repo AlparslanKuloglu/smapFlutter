@@ -71,8 +71,10 @@ class _RegisterForm extends StatelessWidget {
 }
 
 /// The scroll offset at which the role segment reaches the bar: the large
-/// title's height and top padding plus the gap under it.
-double _registerStuckAt(BuildContext context) {
+/// title's height and top padding plus the gap under it; never (infinity)
+/// while the role segment is not drawn (`FeatureFlags.coachSignUpEnabled`).
+double _registerStuckAt(BuildContext context, bool roleBarShown) {
+  if (!roleBarShown) return double.infinity;
   final height = LargeTitleMetrics.titleHeight(
     title: AppLocalizations.of(context).register_title,
     style: context.appText.titleLg,
