@@ -1041,6 +1041,11 @@ class AppLocalizationsTr extends AppLocalizations {
   String get coachMeetings_withLabel => 'Kiminle';
 
   @override
+  String coachStudentProfile_bagEmpty(String name) {
+    return 'Çantada henüz konu yok. $name denemelerinden çıkan eksik konular burada görünür.';
+  }
+
+  @override
   String coachStudentProfile_bagHelp(String name) {
     return 'Çanta: $name denemelerinden çıkan eksik konular.';
   }
@@ -1100,6 +1105,11 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String coachStudentProfile_programEmptyBodyReadOnly(String name) {
+    return '$name programını kurduğunda burada görünür.';
+  }
+
+  @override
   String coachStudentProfile_programEmptyTitle(String name) {
     return '$name programı yok';
   }
@@ -1110,12 +1120,20 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get coachStudentProfile_programLoadError =>
-      'Programlar yüklenemedi. Bağlantını kontrol edip tekrar dene.';
+  String get coachStudentProfile_programLoadErrorBody =>
+      'Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get coachStudentProfile_programLoadErrorTitle =>
+      'Programlar yüklenemedi';
 
   @override
   String get coachStudentProfile_programOfflineNote =>
       'Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı programı görebilirsin.';
+
+  @override
+  String get coachStudentProfile_programSaveFailed =>
+      'Program kaydedilemedi. Bağlantını kontrol edip tekrar dene.';
 
   @override
   String coachStudentProfile_programSaved(String name) {
@@ -1145,6 +1163,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String coachStudentProfile_stripDetailA11y(String grade, String track) {
     return '$grade, $track';
   }
+
+  @override
+  String get coachStudentProfile_summaryWho => 'Kimin için';
 
   @override
   String get coachStudentProfile_tabAnalysis => 'Analiz';
@@ -1922,8 +1943,18 @@ class AppLocalizationsTr extends AppLocalizations {
   String get exams_rank => 'Sıra';
 
   @override
-  String exams_scoreColumnA11y(String label, String value) {
-    return '$label, $value';
+  String exams_scoreRowA11y(String label, String value, String rank) {
+    return '$label $value, sıra $rank';
+  }
+
+  @override
+  String exams_scoreRowPointsA11y(String label, String value) {
+    return '$label $value';
+  }
+
+  @override
+  String exams_scoreRowRankA11y(String label, String rank) {
+    return '$label sırası $rank';
   }
 
   @override
@@ -2341,29 +2372,114 @@ class AppLocalizationsTr extends AppLocalizations {
   String get literature_about => 'Hakkında';
 
   @override
-  String literature_authorA11y(String name, String era) {
-    return '$name, $era';
+  String literature_authorRowA11y(String name, String works) {
+    return '$name, $works';
   }
 
   @override
-  String get literature_empty => 'Yazar listesi hazırlanıyor.';
+  String literature_authorRowMissingA11y(
+    String name,
+    String works,
+    String missing,
+  ) {
+    return '$name, $works, $missing eksik';
+  }
 
   @override
-  String get literature_errorTitle => 'Yazarlar yüklenemedi';
+  String get literature_authorsErrorBody =>
+      'Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get literature_authorsErrorTitle => 'Yazarlar yüklenemedi.';
+
+  @override
+  String get literature_eraListError => 'Dönemler yüklenemedi.';
+
+  @override
+  String literature_eraMissing(String count) {
+    return '$count eksik eser';
+  }
+
+  @override
+  String literature_eraRowA11y(int number, String name, String count) {
+    return '$number, $name, $count eksik eser';
+  }
+
+  @override
+  String get literature_known => 'Biliyorsun';
 
   @override
   String get literature_learned => 'Öğrendim';
 
   @override
+  String literature_learnedToast(String work) {
+    return '$work bildiklerine eklendi.';
+  }
+
+  @override
+  String get literature_noAuthors => 'Bu bölümde yazar yok.';
+
+  @override
+  String get literature_noWorks => 'Bu yazarın eser listesi henüz yok.';
+
+  @override
+  String get literature_offlineNote =>
+      'Öğrendim\'i kaydetmek için bağlantı gerekiyor.';
+
+  @override
   String get literature_otherType => 'Diğer';
 
   @override
-  String literature_workMissingA11y(String title) {
-    return '$title, eksik';
+  String get literature_saveFailed =>
+      'Kaydedilemedi. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String literature_sheetA11y(String name, String era) {
+    return '$name, $era';
+  }
+
+  @override
+  String literature_typeHeading(String type, String count) {
+    return '$type · $count';
+  }
+
+  @override
+  String literature_workCount(String count) {
+    return '$count eser';
+  }
+
+  @override
+  String literature_workKnownA11y(String title, String type) {
+    return '$title, $type, biliyorsun';
+  }
+
+  @override
+  String literature_workKnownNoTypeA11y(String title) {
+    return '$title, biliyorsun';
+  }
+
+  @override
+  String literature_workMissingA11y(String title, String type) {
+    return '$title, $type, eksik. Öğrendim olarak işaretle.';
+  }
+
+  @override
+  String literature_workMissingNoTypeA11y(String title) {
+    return '$title, eksik. Öğrendim olarak işaretle.';
+  }
+
+  @override
+  String literature_workUnknownA11y(String title, String type) {
+    return '$title, $type';
   }
 
   @override
   String get literature_works => 'Eserleri';
+
+  @override
+  String literature_worksCounter(String count, String missing) {
+    return '$count eser · $missing eksik';
+  }
 
   @override
   String get login_apple => 'Apple ile Devam Et';
@@ -3612,6 +3728,9 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get schedule_thisWeek => 'Bu hafta';
+
+  @override
+  String get schedule_thisWeekA11y => 'bu hafta';
 
   @override
   String get schedule_title => 'Programım';

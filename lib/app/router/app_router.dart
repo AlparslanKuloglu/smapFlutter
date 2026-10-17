@@ -36,6 +36,7 @@ import 'package:smap/features/analytics/presentation/analytics/analytics_view.da
 import 'package:smap/features/home/presentation/home/home_view.dart';
 import 'package:smap/features/lessons/presentation/lesson_detail/lesson_detail_view.dart';
 import 'package:smap/features/lessons/presentation/lessons/lessons_view.dart';
+import 'package:smap/features/lessons/presentation/literature/era_detail/era_detail_view.dart';
 import 'package:smap/features/lessons/presentation/topic_detail/topic_detail_view.dart';
 import 'package:smap/features/schedule/presentation/new_program/new_program_view.dart';
 import 'package:smap/features/schedule/presentation/program_detail/program_detail_view.dart';

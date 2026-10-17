@@ -691,6 +691,77 @@ class LessonsRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [LiteratureEraView]
+class LiteratureEraRoute extends PageRouteInfo<LiteratureEraRouteArgs> {
+  LiteratureEraRoute({
+    required String lessonId,
+    required String eraId,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+         LiteratureEraRoute.name,
+         args: LiteratureEraRouteArgs(
+           lessonId: lessonId,
+           eraId: eraId,
+           key: key,
+         ),
+         rawPathParams: {'lessonId': lessonId, 'eraId': eraId},
+         initialChildren: children,
+       );
+
+  static const String name = 'LiteratureEraRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final pathParams = data.inheritedPathParams;
+      final args = data.argsAs<LiteratureEraRouteArgs>(
+        orElse: () => LiteratureEraRouteArgs(
+          lessonId: pathParams.getString('lessonId'),
+          eraId: pathParams.getString('eraId'),
+        ),
+      );
+      return LiteratureEraView(
+        lessonId: args.lessonId,
+        eraId: args.eraId,
+        key: args.key,
+      );
+    },
+  );
+}
+
+class LiteratureEraRouteArgs {
+  const LiteratureEraRouteArgs({
+    required this.lessonId,
+    required this.eraId,
+    this.key,
+  });
+
+  final String lessonId;
+
+  final String eraId;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'LiteratureEraRouteArgs{lessonId: $lessonId, eraId: $eraId, key: $key}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! LiteratureEraRouteArgs) return false;
+    return lessonId == other.lessonId &&
+        eraId == other.eraId &&
+        key == other.key;
+  }
+
+  @override
+  int get hashCode => lessonId.hashCode ^ eraId.hashCode ^ key.hashCode;
+}
+
+/// generated route for
 /// [LoginView]
 class LoginRoute extends PageRouteInfo<void> {
   const LoginRoute({List<PageRouteInfo>? children})

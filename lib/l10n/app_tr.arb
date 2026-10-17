@@ -1486,6 +1486,15 @@
   "@coachMeetings_withLabel": {
     "description": "Accessible name of the \"Kiminle\" chips and the label of the kind segment in the new-meeting sheet (pano 10.5 kare 1 and 2)."
   },
+  "coachStudentProfile_bagEmpty": "Çantada henüz konu yok. {name} denemelerinden çıkan eksik konular burada görünür.",
+  "@coachStudentProfile_bagEmpty": {
+    "description": "Empty bag sentence of the topic sheet in a coach's view; {name} carries its genitive suffix. Not in a board.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "coachStudentProfile_bagHelp": "Çanta: {name} denemelerinden çıkan eksik konular.",
   "@coachStudentProfile_bagHelp": {
     "description": "Help under the topic sheet segment in a coach's view; {name} carries its genitive suffix: \"Çanta: Alparslan'ın denemelerinden çıkan eksik konular.\" (brief 14.2 kare 3).",
@@ -1576,6 +1585,15 @@
       }
     }
   },
+  "coachStudentProfile_programEmptyBodyReadOnly": "{name} programını kurduğunda burada görünür.",
+  "@coachStudentProfile_programEmptyBodyReadOnly": {
+    "description": "Sentence of the empty Program tab while `FeatureFlags.coachProgramWriteEnabled` is off (pano 10.4 kare 3 read-only behavior); {name} is the first name. Not in a board: the read-only tab has no empty state.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "coachStudentProfile_programEmptyTitle": "{name} programı yok",
   "@coachStudentProfile_programEmptyTitle": {
     "description": "Title of the empty Program tab / list (brief 14.1 kare 4); {name} carries its genitive suffix: \"Alparslan'ın programı yok\".",
@@ -1594,13 +1612,21 @@
       }
     }
   },
-  "coachStudentProfile_programLoadError": "Programlar yüklenemedi. Bağlantını kontrol edip tekrar dene.",
-  "@coachStudentProfile_programLoadError": {
-    "description": "Section error of the Program tab (brief 14.3 kare 2)."
+  "coachStudentProfile_programLoadErrorBody": "Bağlantını kontrol edip tekrar dene.",
+  "@coachStudentProfile_programLoadErrorBody": {
+    "description": "Sentence under the section error title; no inner code (brief 14.3 kare 2)."
+  },
+  "coachStudentProfile_programLoadErrorTitle": "Programlar yüklenemedi",
+  "@coachStudentProfile_programLoadErrorTitle": {
+    "description": "Title of the section error of the Program tab and of the coach's program list (brief 14.3 kare 2)."
   },
   "coachStudentProfile_programOfflineNote": "Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı programı görebilirsin.",
   "@coachStudentProfile_programOfflineNote": {
     "description": "Note while offline in a coach's program screens (brief 14.3 kare 3)."
+  },
+  "coachStudentProfile_programSaveFailed": "Program kaydedilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@coachStudentProfile_programSaveFailed": {
+    "description": "Error toast when a coach's program could not be saved, new program or edit (brief 14.2 \"Akış\", 14.3 \"Durum metinleri\"); the form and the changes are kept."
   },
   "coachStudentProfile_programSaved": "Program {name} hesabına kaydedildi.",
   "@coachStudentProfile_programSaved": {
@@ -1655,6 +1681,10 @@
         "type": "String"
       }
     }
+  },
+  "coachStudentProfile_summaryWho": "Kimin için",
+  "@coachStudentProfile_summaryWho": {
+    "description": "First row label of the new program summary card in a coach's flow; the value is the student's full name (brief 14.2 kare 4)."
   },
   "coachStudentProfile_tabAnalysis": "Analiz",
   "@coachStudentProfile_tabAnalysis": {
@@ -2883,14 +2913,41 @@
   "@exams_rank": {
     "description": "Exam header score card: label under the rank (C26)."
   },
-  "exams_scoreColumnA11y": "{label}, {value}",
-  "@exams_scoreColumnA11y": {
-    "description": "Screen reader sentence of one score card column (C26): \"Sıra, 48.215.\".",
+  "exams_scoreRowA11y": "{label} {value}, sıra {rank}",
+  "@exams_scoreRowA11y": {
+    "description": "Screen reader sentence of one score card row (Tur 12 B, 14.4): \"Yerleştirme puanı 412,63, sıra 48.215\". The rank has no ordinal dot.",
     "placeholders": {
       "label": {
         "type": "String"
       },
       "value": {
+        "type": "String"
+      },
+      "rank": {
+        "type": "String"
+      }
+    }
+  },
+  "exams_scoreRowPointsA11y": "{label} {value}",
+  "@exams_scoreRowPointsA11y": {
+    "description": "Score card row with points but no rank: \"Ham puan 398,12\".",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "exams_scoreRowRankA11y": "{label} sırası {rank}",
+  "@exams_scoreRowRankA11y": {
+    "description": "Score card row with a rank but no points: \"Ham puan sırası 52.904\".",
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "rank": {
         "type": "String"
       }
     }
@@ -3542,9 +3599,109 @@
   "@literature_about": {
     "description": "Heading of the biography in the author sheet (pano 7.4 kare 2)."
   },
-  "literature_authorA11y": "{name}, {era}",
-  "@literature_authorA11y": {
-    "description": "Screen reader sentence of an author row (C28): \"Namık Kemal, Tanzimat\".",
+  "literature_authorRowA11y": "{name}, {works}",
+  "@literature_authorRowA11y": {
+    "description": "Screen reader sentence of an author row without missing works (pano 14.5 kare 2): \"Şinasi, 3 eser\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "works": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_authorRowMissingA11y": "{name}, {works}, {missing} eksik",
+  "@literature_authorRowMissingA11y": {
+    "description": "Screen reader sentence of an author row with missing works (pano 14.5 kare 2): \"Namık Kemal, 8 eser, 2 eksik\".",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "works": {
+        "type": "String"
+      },
+      "missing": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_authorsErrorBody": "Bağlantını kontrol edip tekrar dene.",
+  "@literature_authorsErrorBody": {
+    "description": "Second line of the error inside an accordion (pano 14.7 kare 2)."
+  },
+  "literature_authorsErrorTitle": "Yazarlar yüklenemedi.",
+  "@literature_authorsErrorTitle": {
+    "description": "Title of the error inside an accordion whose authors did not load (pano 14.7 kare 2)."
+  },
+  "literature_eraListError": "Dönemler yüklenemedi.",
+  "@literature_eraListError": {
+    "description": "Section error under the segment when the era list did not load (pano 14.7, 14.3 kare 2 layout)."
+  },
+  "literature_eraMissing": "{count} eksik eser",
+  "@literature_eraMissing": {
+    "description": "EksikTag of an era row and of the era detail title (pano 14.5 kare 1 and 2): \"2 eksik eser\". The count is formatted with thousands dots.",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_eraRowA11y": "{number}, {name}, {count} eksik eser",
+  "@literature_eraRowA11y": {
+    "description": "Screen reader sentence of an era row with missing works (pano 14.5 kare 1): \"1, Tanzimat Dönemi, 2 eksik eser\".",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_known": "Biliyorsun",
+  "@literature_known": {
+    "description": "Check and word of a work the student knows (pano 14.6 kare 1)."
+  },
+  "literature_learned": "Öğrendim",
+  "@literature_learned": {
+    "description": "Text button of a missing work in the author sheet (pano 14.6 kare 1)."
+  },
+  "literature_learnedToast": "{work} bildiklerine eklendi.",
+  "@literature_learnedToast": {
+    "description": "Toast after \"Öğrendim\" with \"Geri Al\" (pano 14.6 kare 2).",
+    "placeholders": {
+      "work": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_noAuthors": "Bu bölümde yazar yok.",
+  "@literature_noAuthors": {
+    "description": "Empty text inside an accordion without authors (pano 14.7)."
+  },
+  "literature_noWorks": "Bu yazarın eser listesi henüz yok.",
+  "@literature_noWorks": {
+    "description": "Empty text of the author sheet when the author has no works (pano 14.6 kare 3)."
+  },
+  "literature_offlineNote": "Öğrendim'i kaydetmek için bağlantı gerekiyor.",
+  "@literature_offlineNote": {
+    "description": "Note under the first missing work while the device is offline (pano 14.7 kare 3)."
+  },
+  "literature_otherType": "Diğer",
+  "@literature_otherType": {
+    "description": "Heading of the works whose type the app does not know."
+  },
+  "literature_saveFailed": "Kaydedilemedi. Bağlantını kontrol edip tekrar dene.",
+  "@literature_saveFailed": {
+    "description": "Toast when the held \"Öğrendim\" request failed and the work is missing again (pano 14.7, \"kaydetme hatası\")."
+  },
+  "literature_sheetA11y": "{name}, {era}",
+  "@literature_sheetA11y": {
+    "description": "Accessible name of the author sheet.",
     "placeholders": {
       "name": {
         "type": "String"
@@ -3554,27 +3711,77 @@
       }
     }
   },
-  "literature_empty": "Yazar listesi hazırlanıyor.",
-  "@literature_empty": {
-    "description": "Empty state of the Yazar ve Eserler list."
+  "literature_typeHeading": "{type} · {count}",
+  "@literature_typeHeading": {
+    "description": "Heading of a work type in the author sheet (pano 14.6 kare 1): \"Roman · 2\".",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
   },
-  "literature_errorTitle": "Yazarlar yüklenemedi",
-  "@literature_errorTitle": {
-    "description": "Title of the error state of the Yazar ve Eserler list."
+  "literature_workCount": "{count} eser",
+  "@literature_workCount": {
+    "description": "Work count of an author row and of the sheet heading when nothing is missing (pano 14.5 kare 2): \"8 eser\".",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
   },
-  "literature_learned": "Öğrendim",
-  "@literature_learned": {
-    "description": "Primary button of the author sheet: marks the author's missing works learned (pano 7.4 kare 2)."
-  },
-  "literature_otherType": "Diğer",
-  "@literature_otherType": {
-    "description": "Heading of the works whose type the app does not know."
-  },
-  "literature_workMissingA11y": "{title}, eksik",
-  "@literature_workMissingA11y": {
-    "description": "Screen reader reading of a work that is still missing.",
+  "literature_workKnownA11y": "{title}, {type}, biliyorsun",
+  "@literature_workKnownA11y": {
+    "description": "Screen reader reading of a known work (pano 14.6): \"Cezmi, roman, biliyorsun\".",
     "placeholders": {
       "title": {
+        "type": "String"
+      },
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_workKnownNoTypeA11y": "{title}, biliyorsun",
+  "@literature_workKnownNoTypeA11y": {
+    "description": "Screen reader reading of a known work of an unknown type.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_workMissingA11y": "{title}, {type}, eksik. Öğrendim olarak işaretle.",
+  "@literature_workMissingA11y": {
+    "description": "Screen reader reading of a missing work whose type is known (pano 14.6): \"İntibah, roman, eksik. Öğrendim olarak işaretle.\"",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_workMissingNoTypeA11y": "{title}, eksik. Öğrendim olarak işaretle.",
+  "@literature_workMissingNoTypeA11y": {
+    "description": "Screen reader reading of a missing work of an unknown type.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "literature_workUnknownA11y": "{title}, {type}",
+  "@literature_workUnknownA11y": {
+    "description": "Screen reader reading of a work with no status (pano 14.6 kare 3).",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "type": {
         "type": "String"
       }
     }
@@ -3582,6 +3789,18 @@
   "literature_works": "Eserleri",
   "@literature_works": {
     "description": "Heading of the works in the author sheet (pano 7.4 kare 2)."
+  },
+  "literature_worksCounter": "{count} eser · {missing} eksik",
+  "@literature_worksCounter": {
+    "description": "Counter at the right of \"Eserleri\" in the author sheet (pano 14.6 kare 1): \"8 eser · 2 eksik\".",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      },
+      "missing": {
+        "type": "String"
+      }
+    }
   },
   "login_apple": "Apple ile Devam Et",
   "@login_apple": {
@@ -5355,6 +5574,10 @@
   "schedule_thisWeek": "Bu hafta",
   "@schedule_thisWeek": {
     "description": "Tag of the program of the current week (pano 3.4 kare 1)."
+  },
+  "schedule_thisWeekA11y": "bu hafta",
+  "@schedule_thisWeekA11y": {
+    "description": "Last word of a program row's reading: \"Ekim 2. Hafta, Her gün biraz daha, 5–11 Ekim 2026, bu hafta\" (brief 14.1 \"Erişilebilirlik\")."
   },
   "schedule_title": "Programım",
   "@schedule_title": {

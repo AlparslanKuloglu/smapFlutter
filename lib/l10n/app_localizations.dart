@@ -1901,6 +1901,12 @@ abstract class AppLocalizations {
   /// **'Kiminle'**
   String get coachMeetings_withLabel;
 
+  /// Empty bag sentence of the topic sheet in a coach's view; {name} carries its genitive suffix. Not in a board.
+  ///
+  /// In tr, this message translates to:
+  /// **'Çantada henüz konu yok. {name} denemelerinden çıkan eksik konular burada görünür.'**
+  String coachStudentProfile_bagEmpty(String name);
+
   /// Help under the topic sheet segment in a coach's view; {name} carries its genitive suffix: "Çanta: Alparslan'ın denemelerinden çıkan eksik konular." (brief 14.2 kare 3).
   ///
   /// In tr, this message translates to:
@@ -1991,6 +1997,12 @@ abstract class AppLocalizations {
   /// **'Onun için bir hafta kurabilirsin; {name} programı kendi Anasayfa\'sında görür.'**
   String coachStudentProfile_programEmptyBody(String name);
 
+  /// Sentence of the empty Program tab while `FeatureFlags.coachProgramWriteEnabled` is off (pano 10.4 kare 3 read-only behavior); {name} is the first name. Not in a board: the read-only tab has no empty state.
+  ///
+  /// In tr, this message translates to:
+  /// **'{name} programını kurduğunda burada görünür.'**
+  String coachStudentProfile_programEmptyBodyReadOnly(String name);
+
   /// Title of the empty Program tab / list (brief 14.1 kare 4); {name} carries its genitive suffix: "Alparslan'ın programı yok".
   ///
   /// In tr, this message translates to:
@@ -2003,17 +2015,29 @@ abstract class AppLocalizations {
   /// **'Bu programı {name} da görür ve düzenleyebilir. Yaptığın değişiklik onun programına hemen yansır.'**
   String coachStudentProfile_programInfo(String name);
 
-  /// Section error of the Program tab (brief 14.3 kare 2).
+  /// Sentence under the section error title; no inner code (brief 14.3 kare 2).
   ///
   /// In tr, this message translates to:
-  /// **'Programlar yüklenemedi. Bağlantını kontrol edip tekrar dene.'**
-  String get coachStudentProfile_programLoadError;
+  /// **'Bağlantını kontrol edip tekrar dene.'**
+  String get coachStudentProfile_programLoadErrorBody;
+
+  /// Title of the section error of the Program tab and of the coach's program list (brief 14.3 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Programlar yüklenemedi'**
+  String get coachStudentProfile_programLoadErrorTitle;
 
   /// Note while offline in a coach's program screens (brief 14.3 kare 3).
   ///
   /// In tr, this message translates to:
   /// **'Program kurmak ve düzenlemek için bağlantı gerekiyor. Kayıtlı programı görebilirsin.'**
   String get coachStudentProfile_programOfflineNote;
+
+  /// Error toast when a coach's program could not be saved, new program or edit (brief 14.2 "Akış", 14.3 "Durum metinleri"); the form and the changes are kept.
+  ///
+  /// In tr, this message translates to:
+  /// **'Program kaydedilemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get coachStudentProfile_programSaveFailed;
 
   /// Toast after a coach saved a new program; {name} carries its genitive suffix: "Program Alparslan'ın hesabına kaydedildi." (brief 14.2 kare 4).
   ///
@@ -2056,6 +2080,12 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'{grade}, {track}'**
   String coachStudentProfile_stripDetailA11y(String grade, String track);
+
+  /// First row label of the new program summary card in a coach's flow; the value is the student's full name (brief 14.2 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kimin için'**
+  String get coachStudentProfile_summaryWho;
 
   /// First in-screen tab of Öğrenci Profili (pano 10.4).
   ///
@@ -3289,11 +3319,23 @@ abstract class AppLocalizations {
   /// **'Sıra'**
   String get exams_rank;
 
-  /// Screen reader sentence of one score card column (C26): "Sıra, 48.215.".
+  /// Screen reader sentence of one score card row (Tur 12 B, 14.4): "Yerleştirme puanı 412,63, sıra 48.215". The rank has no ordinal dot.
   ///
   /// In tr, this message translates to:
-  /// **'{label}, {value}'**
-  String exams_scoreColumnA11y(String label, String value);
+  /// **'{label} {value}, sıra {rank}'**
+  String exams_scoreRowA11y(String label, String value, String rank);
+
+  /// Score card row with points but no rank: "Ham puan 398,12".
+  ///
+  /// In tr, this message translates to:
+  /// **'{label} {value}'**
+  String exams_scoreRowPointsA11y(String label, String value);
+
+  /// Score card row with a rank but no points: "Ham puan sırası 52.904".
+  ///
+  /// In tr, this message translates to:
+  /// **'{label} sırası {rank}'**
+  String exams_scoreRowRankA11y(String label, String rank);
 
   /// Screen reader sentence of a stacked D/Y/B bar (C42): "40 sorudan 23 doğru, 17 yanlış, 0 boş".
   ///
@@ -3980,29 +4022,87 @@ abstract class AppLocalizations {
   /// **'Hakkında'**
   String get literature_about;
 
-  /// Screen reader sentence of an author row (C28): "Namık Kemal, Tanzimat".
+  /// Screen reader sentence of an author row without missing works (pano 14.5 kare 2): "Şinasi, 3 eser".
   ///
   /// In tr, this message translates to:
-  /// **'{name}, {era}'**
-  String literature_authorA11y(String name, String era);
+  /// **'{name}, {works}'**
+  String literature_authorRowA11y(String name, String works);
 
-  /// Empty state of the Yazar ve Eserler list.
+  /// Screen reader sentence of an author row with missing works (pano 14.5 kare 2): "Namık Kemal, 8 eser, 2 eksik".
   ///
   /// In tr, this message translates to:
-  /// **'Yazar listesi hazırlanıyor.'**
-  String get literature_empty;
+  /// **'{name}, {works}, {missing} eksik'**
+  String literature_authorRowMissingA11y(
+    String name,
+    String works,
+    String missing,
+  );
 
-  /// Title of the error state of the Yazar ve Eserler list.
+  /// Second line of the error inside an accordion (pano 14.7 kare 2).
   ///
   /// In tr, this message translates to:
-  /// **'Yazarlar yüklenemedi'**
-  String get literature_errorTitle;
+  /// **'Bağlantını kontrol edip tekrar dene.'**
+  String get literature_authorsErrorBody;
 
-  /// Primary button of the author sheet: marks the author's missing works learned (pano 7.4 kare 2).
+  /// Title of the error inside an accordion whose authors did not load (pano 14.7 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yazarlar yüklenemedi.'**
+  String get literature_authorsErrorTitle;
+
+  /// Section error under the segment when the era list did not load (pano 14.7, 14.3 kare 2 layout).
+  ///
+  /// In tr, this message translates to:
+  /// **'Dönemler yüklenemedi.'**
+  String get literature_eraListError;
+
+  /// EksikTag of an era row and of the era detail title (pano 14.5 kare 1 and 2): "2 eksik eser". The count is formatted with thousands dots.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} eksik eser'**
+  String literature_eraMissing(String count);
+
+  /// Screen reader sentence of an era row with missing works (pano 14.5 kare 1): "1, Tanzimat Dönemi, 2 eksik eser".
+  ///
+  /// In tr, this message translates to:
+  /// **'{number}, {name}, {count} eksik eser'**
+  String literature_eraRowA11y(int number, String name, String count);
+
+  /// Check and word of a work the student knows (pano 14.6 kare 1).
+  ///
+  /// In tr, this message translates to:
+  /// **'Biliyorsun'**
+  String get literature_known;
+
+  /// Text button of a missing work in the author sheet (pano 14.6 kare 1).
   ///
   /// In tr, this message translates to:
   /// **'Öğrendim'**
   String get literature_learned;
+
+  /// Toast after "Öğrendim" with "Geri Al" (pano 14.6 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'{work} bildiklerine eklendi.'**
+  String literature_learnedToast(String work);
+
+  /// Empty text inside an accordion without authors (pano 14.7).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu bölümde yazar yok.'**
+  String get literature_noAuthors;
+
+  /// Empty text of the author sheet when the author has no works (pano 14.6 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu yazarın eser listesi henüz yok.'**
+  String get literature_noWorks;
+
+  /// Note under the first missing work while the device is offline (pano 14.7 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrendim\'i kaydetmek için bağlantı gerekiyor.'**
+  String get literature_offlineNote;
 
   /// Heading of the works whose type the app does not know.
   ///
@@ -4010,17 +4110,71 @@ abstract class AppLocalizations {
   /// **'Diğer'**
   String get literature_otherType;
 
-  /// Screen reader reading of a work that is still missing.
+  /// Toast when the held "Öğrendim" request failed and the work is missing again (pano 14.7, "kaydetme hatası").
   ///
   /// In tr, this message translates to:
-  /// **'{title}, eksik'**
-  String literature_workMissingA11y(String title);
+  /// **'Kaydedilemedi. Bağlantını kontrol edip tekrar dene.'**
+  String get literature_saveFailed;
+
+  /// Accessible name of the author sheet.
+  ///
+  /// In tr, this message translates to:
+  /// **'{name}, {era}'**
+  String literature_sheetA11y(String name, String era);
+
+  /// Heading of a work type in the author sheet (pano 14.6 kare 1): "Roman · 2".
+  ///
+  /// In tr, this message translates to:
+  /// **'{type} · {count}'**
+  String literature_typeHeading(String type, String count);
+
+  /// Work count of an author row and of the sheet heading when nothing is missing (pano 14.5 kare 2): "8 eser".
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} eser'**
+  String literature_workCount(String count);
+
+  /// Screen reader reading of a known work (pano 14.6): "Cezmi, roman, biliyorsun".
+  ///
+  /// In tr, this message translates to:
+  /// **'{title}, {type}, biliyorsun'**
+  String literature_workKnownA11y(String title, String type);
+
+  /// Screen reader reading of a known work of an unknown type.
+  ///
+  /// In tr, this message translates to:
+  /// **'{title}, biliyorsun'**
+  String literature_workKnownNoTypeA11y(String title);
+
+  /// Screen reader reading of a missing work whose type is known (pano 14.6): "İntibah, roman, eksik. Öğrendim olarak işaretle."
+  ///
+  /// In tr, this message translates to:
+  /// **'{title}, {type}, eksik. Öğrendim olarak işaretle.'**
+  String literature_workMissingA11y(String title, String type);
+
+  /// Screen reader reading of a missing work of an unknown type.
+  ///
+  /// In tr, this message translates to:
+  /// **'{title}, eksik. Öğrendim olarak işaretle.'**
+  String literature_workMissingNoTypeA11y(String title);
+
+  /// Screen reader reading of a work with no status (pano 14.6 kare 3).
+  ///
+  /// In tr, this message translates to:
+  /// **'{title}, {type}'**
+  String literature_workUnknownA11y(String title, String type);
 
   /// Heading of the works in the author sheet (pano 7.4 kare 2).
   ///
   /// In tr, this message translates to:
   /// **'Eserleri'**
   String get literature_works;
+
+  /// Counter at the right of "Eserleri" in the author sheet (pano 14.6 kare 1): "8 eser · 2 eksik".
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} eser · {missing} eksik'**
+  String literature_worksCounter(String count, String missing);
 
   /// Apple sign-in button, shown only while social sign-in is open (pano 2.3 kare 4).
   ///
@@ -6193,6 +6347,12 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Bu hafta'**
   String get schedule_thisWeek;
+
+  /// Last word of a program row's reading: "Ekim 2. Hafta, Her gün biraz daha, 5–11 Ekim 2026, bu hafta" (brief 14.1 "Erişilebilirlik").
+  ///
+  /// In tr, this message translates to:
+  /// **'bu hafta'**
+  String get schedule_thisWeekA11y;
 
   /// Screen title of the program list (pano 3.4 kare 1, 3.7).
   ///

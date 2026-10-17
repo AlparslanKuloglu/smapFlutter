@@ -48,6 +48,7 @@ import 'package:smap/shared/ui/surfaces/app_accordion.dart';
 import 'package:smap/shared/ui/surfaces/app_card.dart';
 
 part 'widgets/exam_detail_cards.dart';
+part 'widgets/exam_detail_filter_empty.dart';
 part 'widgets/exam_detail_general.dart';
 part 'widgets/exam_detail_header.dart';
 part 'widgets/exam_detail_questions.dart';
