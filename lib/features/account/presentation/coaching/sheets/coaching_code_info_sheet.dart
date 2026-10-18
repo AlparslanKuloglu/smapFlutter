@@ -5,36 +5,20 @@ import 'package:smap/core/theme/theme_context.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/shared/ui/sheets/app_sheet.dart';
 
-/// Whose words the sheet speaks: the student asks what the code is that the
-/// coach gave; the coach asks what the code does for their students.
-enum CodeInfoAudience {
-  /// "Koçluk kodu nedir?" (pano 9.5 kare 4), on the student's Koçluk screen.
-  student,
-
-  /// "Koçluk kodu ne işe yarar?" (Tur 12 G, 14.11 kare 2), on the coach's
-  /// Hesap. The coach's screen belongs to E14a; this variant only holds the
-  /// words.
-  coach,
-}
-
-/// The small explanation sheet of the coaching code (pano 9.5 kare 4
-/// "Koçluk Kodu Nedir?"; Tur 12 G).
+/// The small explanation sheet of the student's coaching code (pano 9.5 kare 4
+/// "Koçluk Kodu Nedir?"). The coach's code has its own sheet (pano 14.11,
+/// `CoachCodeSheet`).
 ///
 /// No close button and no icon; the title, two paragraphs (16/26) and the
 /// primary "Tamam" (the handle and the scrim also close it). Opens in the
 /// root navigator, so it covers the bottom bar.
 class CoachingCodeInfoSheet extends StatelessWidget {
-  const CoachingCodeInfoSheet({required this.audience, super.key});
-
-  final CodeInfoAudience audience;
+  const CoachingCodeInfoSheet({super.key});
 
   /// Opens the sheet; completes when it is closed.
-  static Future<void> show({
-    required CodeInfoAudience audience,
-    BuildContext? context,
-  }) => AppSheet.show<void>(
+  static Future<void> show({BuildContext? context}) => AppSheet.show<void>(
     context: context,
-    builder: (_) => CoachingCodeInfoSheet(audience: audience),
+    builder: (_) => const CoachingCodeInfoSheet(),
   );
 
   /// Body top padding (pano 9.5 kare 4: "dolgu 20 24 0").
@@ -48,13 +32,8 @@ class CoachingCodeInfoSheet extends StatelessWidget {
     final l10n = AppLocalizations.of(context);
     final colors = context.appColors;
     final text = context.appText;
-    final student = audience == CodeInfoAudience.student;
-    final title = student
-        ? l10n.coachingInfo_title
-        : l10n.coachingInfo_coachTitle;
-    final paragraphs = student
-        ? [l10n.coachingInfo_body1, l10n.coachingInfo_body2]
-        : [l10n.coachingInfo_coachBody1, l10n.coachingInfo_coachBody2];
+    final title = l10n.coachingInfo_title;
+    final paragraphs = [l10n.coachingInfo_body1, l10n.coachingInfo_body2];
     return AppSheetFrame(
       semanticLabel: title,
       showClose: false,

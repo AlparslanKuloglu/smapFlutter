@@ -101,6 +101,16 @@ class _InputsGalleryState extends State<InputsGallery> {
               readOnly: true,
               helperText: 'Metin tam kontrastta kalır; pasiften farkı bu.',
             ),
+            AppTextField(
+              label: 'Koçluk kodu',
+              controller: _user,
+              readOnly: true,
+              readOnlyLock: false,
+              semanticLabel: 'Koçluk kodu, 4 harf ve 4 rakam',
+              helperText:
+                  'Gönderilirken geçici salt okunur: kilit çizilmez '
+                  '(pano 14.10 kare 4).',
+            ),
             const AppTextField(
               label: 'Alan',
               hintText: 'Seçilmez',

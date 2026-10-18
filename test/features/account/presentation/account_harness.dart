@@ -67,6 +67,9 @@ class FakeUserService
 
   /// What `refresh` answers; a failure when `null`.
   UserDto? refreshAnswer;
+
+  /// When set, `refresh` waits for it.
+  Future<void>? refreshGate;
   int refreshCalls = 0;
   final List<UserDto> updates = [];
 
@@ -90,6 +93,7 @@ class FakeUserService
   @override
   Future<AppResult<UserDto>> refresh() async {
     refreshCalls++;
+    await refreshGate;
     final answer = refreshAnswer;
     if (answer == null) {
       return const Left(AppException(code: AppErrorCode.network));
@@ -184,6 +188,9 @@ class ScriptedDialogs implements AccountDialogs {
     calls.add('avatar:$selectedIndex');
     return avatar;
   }
+
+  @override
+  Future<void> showCoachCode() async => calls.add('coachCode');
 }
 
 class _Presenter implements ToastPresenter {

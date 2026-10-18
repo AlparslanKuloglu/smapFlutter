@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 
+import 'package:smap/core/services/app_haptics.dart';
 import 'package:smap/core/services/toast_service.dart';
 
 /// Puts text on the clipboard.
@@ -13,10 +14,11 @@ typedef CopyText = Future<void> Function(String text);
 typedef ShareText = Future<void> Function(String text, {Rect? origin});
 
 /// What the two buttons of the coaching code card do (C35 `CodeCard`; pano
-/// 10.1 kare 3, 10.3): "Kopyala" copies the code and says "Kod kopyalandı."
-/// in a toast; "Paylaş" opens the system share sheet with the code in a
-/// sentence. Shared by the coach home and the add-student sheet, so they
-/// behave the same.
+/// 10.1 kare 3, 10.3, 14.11 kare 3): "Kopyala" copies the code, plays the
+/// selection click and says "Kod kopyalandı." in a toast (a text only: no
+/// success haptic); "Paylaş" opens the system share sheet with the code in a
+/// sentence. Shared by the coach home, the add-student sheet and the code
+/// sheet of Hesap, so they behave the same.
 ///
 /// The ViewModels that own a code card hold one of these; tests inject the
 /// clipboard and the sharer, the app uses [CoachCodeActions.system].
@@ -45,10 +47,12 @@ class CoachCodeActions {
   final ShareText _shareText;
   final ToastService _toast;
 
-  /// "Kopyala": [code] on the clipboard and the toast "Kod kopyalandı.".
+  /// "Kopyala": [code] on the clipboard, `selectionClick`, and the toast "Kod
+  /// kopyalandı." (a live region; no success haptic).
   Future<void> copy(String code) async {
     await _copyText(code);
-    _toast.success((l) => l.coachWidgets_codeCopied);
+    AppHaptics.selection();
+    _toast.success((l) => l.coachWidgets_codeCopied, haptic: false);
   }
 
   /// "Paylaş": the share sheet with [message] (the sentence that carries the

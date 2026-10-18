@@ -1,8 +1,14 @@
 part of '../profile_view.dart';
 
-/// The open form (pano 9.2 kare 2 and 4): drawn only while editing. It holds
-/// the three text fields' controllers (the UI owns them, the ViewModel only
-/// hears the text) and starts from the account's values each time it opens.
+/// The open form (pano 9.2 kare 2 and 4; pano 14.9 kare 1 and 2): drawn only
+/// while editing. It holds the three text fields' controllers and focus
+/// nodes (the UI owns them, the ViewModel only hears the text) and starts from
+/// the account's values each time it opens.
+///
+/// The e-mail field carries the help line "Kaydedince hemen değişir; doğru
+/// yazdığından emin ol." (pano 14.9: there is no verification code). Leaving
+/// it trims and lower-cases the address in the box and asks the ViewModel to
+/// check it; when "Kaydet" finds an error the focus goes to that field.
 class _ProfileEditFields
     extends SelectorViewModelWidget<ProfileViewModel, ProfileEditData?> {
   const _ProfileEditFields();
@@ -45,12 +51,57 @@ class _EditFormState extends State<_EditForm> {
     text: widget.initial.phone,
   );
 
+  final FocusNode _nameFocus = FocusNode();
+  final FocusNode _emailFocus = FocusNode();
+  final FocusNode _phoneFocus = FocusNode();
+
+  ProfileViewModel get _viewModel =>
+      getParentViewModel<ProfileViewModel>(context, listen: false);
+
+  @override
+  void initState() {
+    super.initState();
+    _emailFocus.addListener(_onEmailFocus);
+    _viewModel.focusRequest.addListener(_onFocusRequest);
+  }
+
   @override
   void dispose() {
+    _viewModel.focusRequest.removeListener(_onFocusRequest);
+    _emailFocus.removeListener(_onEmailFocus);
     _name.dispose();
     _email.dispose();
     _phone.dispose();
+    _nameFocus.dispose();
+    _emailFocus.dispose();
+    _phoneFocus.dispose();
     super.dispose();
+  }
+
+  /// Leaving the e-mail field: the address is written the way it is sent
+  /// (trimmed, lower case) and checked (pano 14.9 kare 2).
+  void _onEmailFocus() {
+    if (_emailFocus.hasFocus) return;
+    final tidy = ProfileDraft.normalizeEmail(_email.text);
+    if (tidy != _email.text) {
+      _email.text = tidy;
+      _viewModel.setEmail(tidy);
+    }
+    _viewModel.validateEmail();
+  }
+
+  /// "Kaydet" found an error: the focus goes to the first field with one.
+  void _onFocusRequest() {
+    final request = _viewModel.focusRequest.value;
+    if (request == null) return;
+    switch (request.issue) {
+      case ProfileIssue.nameMissing:
+        _nameFocus.requestFocus();
+      case ProfileIssue.emailInvalid:
+        _emailFocus.requestFocus();
+      case ProfileIssue.phoneInvalid:
+        _phoneFocus.requestFocus();
+    }
   }
 
   @override
@@ -69,6 +120,7 @@ class _EditFormState extends State<_EditForm> {
       AppTextField(
         label: l10n.account_fieldName,
         controller: _name,
+        focusNode: _nameFocus,
         keyboardType: TextInputType.name,
         textCapitalization: TextCapitalization.words,
         textInputAction: TextInputAction.next,
@@ -86,6 +138,8 @@ class _EditFormState extends State<_EditForm> {
       AppTextField(
         label: l10n.account_fieldEmail,
         controller: _email,
+        focusNode: _emailFocus,
+        helperText: l10n.account_emailHelp,
         keyboardType: TextInputType.emailAddress,
         textInputAction: TextInputAction.next,
         autofillHints: const [AutofillHints.email],
@@ -95,6 +149,7 @@ class _EditFormState extends State<_EditForm> {
       AppTextField(
         label: l10n.account_fieldPhone,
         controller: _phone,
+        focusNode: _phoneFocus,
         prefixText: PhoneNumber.countryPrefix,
         hintText: l10n.account_phoneHint,
         keyboardType: TextInputType.phone,

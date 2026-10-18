@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-import 'package:smap/features/account/domain/coach_code.dart';
+import 'package:smap/features/account/application/coach_code_text.dart';
 import 'package:smap/features/account/domain/school_grade.dart';
 import 'package:smap/features/account/domain/study_track.dart';
 import 'package:smap/features/auth/data/dtos/user_dto.dart';
@@ -79,11 +79,7 @@ class AccountHeader {
 
   /// The code as the design writes it, `MOZK-4821`; text of another shape is
   /// shown as it is; `null` without a code.
-  String? get coachCode {
-    final raw = refCode?.trim();
-    if (raw == null || raw.isEmpty) return null;
-    return CoachCode.tryParse(raw)?.display ?? raw;
-  }
+  String? get coachCode => CoachCodeText.shown(refCode);
 
   /// How many lines the summary writes under the name: a student's grade and
   /// track line and "Koçun: …", a coach's role and "Koçluk kodun: …". Lines

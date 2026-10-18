@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:stacked/stacked.dart' hide StackedRouterExtensions;
 import 'package:url_launcher/url_launcher.dart';
 
@@ -29,11 +28,9 @@ import 'package:smap/features/home/application/avatar_asset.dart';
 import 'package:smap/l10n/app_localizations.dart';
 import 'package:smap/services/current_user_service.dart';
 import 'package:smap/services/session_manager.dart';
-import 'package:smap/shared/ui/buttons/app_icon_button.dart';
 import 'package:smap/shared/ui/navigation/app_system_overlay.dart';
 import 'package:smap/shared/ui/surfaces/app_row.dart';
 import 'package:smap/shared/ui/surfaces/app_row_group.dart';
-import 'package:smap/shared/ui/surfaces/app_row_shell.dart';
 import 'package:smap/shared/ui/navigation/app_bottom_bar.dart';
 
 part 'widgets/account_band.dart';
@@ -46,7 +43,8 @@ part 'widgets/account_groups.dart';
 ///
 /// The navy band with the title and the profile summary (it shrinks to one
 /// line as the page scrolls, kare 2), then the groups: "Hesap" (Profil,
-/// Şifre), "Koçluk" (a student's coach, or a coach's code to copy and share),
+/// Şifre), "Koçluk" (a student's coach, or a coach's code row that opens its
+/// sheet, pano 14.11),
 /// "Bildirimler", "Yasal" (Sözleşmeler), "Destek" ("Bize Yaz", only with a
 /// configured address), the red "Çıkış Yap" in a group of its own and the
 /// version line. Everything on it comes from the signed-in account on the
@@ -79,11 +77,6 @@ class AccountView extends StackedView<AccountViewModel> {
     ),
     openUrl: (uri) => launchUrl(uri, mode: LaunchMode.externalApplication),
     copyText: (text) => Clipboard.setData(ClipboardData(text: text)),
-    shareText: (text, {origin}) async {
-      await SharePlus.instance.share(
-        ShareParams(text: text, sharePositionOrigin: origin),
-      );
-    },
   );
 
   @override

@@ -41,7 +41,7 @@ class CodeCard extends StatelessWidget {
   final ValueChanged<Rect?> onShare;
 
   /// The letter spacing of the code (C35: 1).
-  static const double _codeSpacing = 1;
+  static const double codeSpacing = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +75,7 @@ class CodeCard extends StatelessWidget {
                 style: MetricSize.md
                     .styleOf(text)
                     .copyWith(
-                      letterSpacing: _codeSpacing,
+                      letterSpacing: codeSpacing,
                       color: colors.textPrimary,
                     ),
               ),
@@ -103,7 +103,7 @@ class CodeCard extends StatelessWidget {
                   child: Builder(
                     builder: (buttonContext) => AppButton(
                       label: l10n.coachWidgets_codeShare,
-                      onPressed: () => onShare(_originOf(buttonContext)),
+                      onPressed: () => onShare(originOf(buttonContext)),
                       variant: AppButtonVariant.outline,
                       size: AppButtonSize.md40,
                       icon: PhosphorIconsRegular.shareNetwork,
@@ -120,7 +120,7 @@ class CodeCard extends StatelessWidget {
   }
 
   /// The button's rectangle on screen, for the iPad share popover.
-  static Rect? _originOf(BuildContext context) {
+  static Rect? originOf(BuildContext context) {
     final box = context.findRenderObject();
     if (box is! RenderBox || !box.hasSize) return null;
     return box.localToGlobal(Offset.zero) & box.size;

@@ -1,4 +1,5 @@
 import 'package:smap/core/utils/tr_format.dart';
+import 'package:smap/features/account/presentation/account/sheets/coach_code_sheet.dart';
 import 'package:smap/features/account/presentation/account_dialogs.dart';
 import 'package:smap/features/account/presentation/profile/sheets/avatar_sheet.dart';
 import 'package:smap/l10n/app_localizations.dart';
@@ -42,4 +43,7 @@ class SheetAccountDialogs implements AccountDialogs {
   @override
   Future<int?> pickAvatar({int? selectedIndex}) =>
       AvatarSheet.show(selectedIndex: selectedIndex);
+
+  @override
+  Future<void> showCoachCode() => CoachCodeSheet.show();
 }

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:smap/core/services/app_haptics.dart';
 import 'package:smap/core/services/toast_service.dart';
 import 'package:smap/features/account/application/profile_draft.dart';
 import 'package:smap/features/account/domain/school_grade.dart';
@@ -12,6 +13,8 @@ import 'package:smap/features/auth/data/dtos/user_dto.dart';
 import 'account_harness.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   late AccountBackend backend;
   late FakeUserService user;
   late RecordingNavigator navigator;
@@ -367,6 +370,229 @@ void main() {
       expect(viewModel.draft.grade, SchoolGrade.grade10);
       expect(viewModel.draft.track, isNull);
     });
+  });
+
+  group('e-mail (pano 14.9, T12.19)', () {
+    late List<String> haptics;
+
+    setUp(() {
+      haptics = [];
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(AppHaptics.channel, (call) async {
+            haptics.add(call.method);
+            return null;
+          });
+    });
+
+    tearDown(() {
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(AppHaptics.channel, null);
+    });
+
+    Future<void> settle() => Future<void>.delayed(Duration.zero);
+
+    test('"Kaydet" is on when only the e-mail changed (kare 1)', () {
+      build()
+        ..edit()
+        ..setEmail('alparslan.kuloglu@ornek.com');
+
+      expect(viewModel.bar.canSave, isTrue);
+      expect(viewModel.editData.issues, isEmpty);
+    });
+
+    test('leaving the field with a broken address shows the error and '
+        'switches "Kaydet" off (kare 2)', () {
+      build()
+        ..edit()
+        ..setEmail('alparslan.kuloglu@ornek');
+      expect(viewModel.bar.canSave, isTrue);
+
+      viewModel.validateEmail();
+
+      expect(viewModel.editData.issues, {ProfileIssue.emailInvalid});
+      expect(viewModel.bar.canSave, isFalse);
+    });
+
+    test('an address needs "@", a domain and an extension', () {
+      for (final bad in ['ali', 'ali@', '@ornek.com', 'ali@ornek', 'a b@c.d']) {
+        build()
+          ..edit()
+          ..setEmail(bad)
+          ..validateEmail();
+        expect(viewModel.editData.issues, {
+          ProfileIssue.emailInvalid,
+        }, reason: bad);
+        viewModel.dispose();
+      }
+      build()
+        ..edit()
+        ..setEmail('ali@ornek.com.tr')
+        ..validateEmail();
+      expect(viewModel.editData.issues, isEmpty);
+    });
+
+    test('the error goes away when the address is fixed and "Kaydet" '
+        'comes back', () {
+      build()
+        ..edit()
+        ..setEmail('alparslan.kuloglu@ornek')
+        ..validateEmail();
+
+      viewModel.setEmail('alparslan.kuloglu@ornek.com');
+
+      expect(viewModel.editData.issues, isEmpty);
+      expect(viewModel.bar.canSave, isTrue);
+    });
+
+    test('an e-mail the person did not touch is never checked', () {
+      user = FakeUserService(alparslan(email: 'eski-adres'));
+      build()
+        ..edit()
+        ..validateEmail();
+
+      expect(viewModel.editData.issues, isEmpty);
+    });
+
+    test('typing a broken address shows no error before the field is left', () {
+      build()
+        ..edit()
+        ..setEmail('alparslan@');
+
+      expect(viewModel.editData.issues, isEmpty);
+    });
+
+    test('"Kaydet" with a broken address shows the error and asks the form to '
+        'focus that field', () async {
+      build()
+        ..edit()
+        ..setEmail('alparslan@');
+      expect(viewModel.focusRequest.value, isNull);
+
+      await viewModel.save();
+
+      expect(backend.count('/student/updateStudent'), 0);
+      expect(viewModel.editData.issues, {ProfileIssue.emailInvalid});
+      expect(viewModel.focusRequest.value?.issue, ProfileIssue.emailInvalid);
+      expect(viewModel.bar.canSave, isFalse);
+    });
+
+    test('the focus goes to the first field with an error', () async {
+      build()
+        ..edit()
+        ..setName(' ')
+        ..setEmail('alparslan@');
+
+      await viewModel.save();
+
+      expect(viewModel.editData.issues, {
+        ProfileIssue.nameMissing,
+        ProfileIssue.emailInvalid,
+      });
+      expect(viewModel.focusRequest.value?.issue, ProfileIssue.nameMissing);
+    });
+
+    test('the address is trimmed and lower cased when it is sent', () async {
+      final saved = alparslan(email: 'yeni@ornek.com');
+      backend.updateAnswer = studentJson(saved);
+      user.refreshAnswer = saved;
+      build()
+        ..edit()
+        ..setEmail('  Yeni@Ornek.COM ');
+
+      await viewModel.save();
+
+      expect(backend.lastUpdateBody, {'email': 'yeni@ornek.com'});
+    });
+
+    test('a case-only change is not a change', () {
+      user = FakeUserService(alparslan(email: 'alparslan@ornek.com'));
+      build()
+        ..edit()
+        ..setEmail(' Alparslan@Ornek.com');
+
+      expect(viewModel.hasChanges, isFalse);
+      expect(viewModel.bar.canSave, isFalse);
+    });
+
+    test('saved: back to reading with the new address, a toast with no '
+        'success haptic (kare 3)', () async {
+      final saved = alparslan(email: 'alparslan.kuloglu@ornek.com');
+      backend.updateAnswer = studentJson(saved);
+      user.refreshAnswer = saved;
+      build()
+        ..edit()
+        ..setEmail('alparslan.kuloglu@ornek.com');
+
+      await viewModel.save();
+      await settle();
+
+      expect(viewModel.mode, ProfileMode.view);
+      expect(viewModel.viewData.draft.email, 'alparslan.kuloglu@ornek.com');
+      expect(toastText(toast), 'Profilin güncellendi.');
+      expect(haptics, isNot(contains('success')));
+    });
+
+    test('offline: what was typed is kept, "Kaydet" is off, the note shows '
+        'and it comes back with the connection (kare 4)', () {
+      build()
+        ..edit()
+        ..setEmail('alparslan.kuloglu@ornek.com');
+      expect(viewModel.showOfflineNote, isFalse);
+
+      online.value = false;
+      expect(viewModel.showOfflineNote, isTrue);
+      expect(viewModel.bar.canSave, isFalse);
+      expect(viewModel.draft.email, 'alparslan.kuloglu@ornek.com');
+
+      online.value = true;
+      expect(viewModel.showOfflineNote, isFalse);
+      expect(viewModel.bar.canSave, isTrue);
+    });
+
+    test('the offline note is for the open form only', () {
+      build();
+      online.value = false;
+
+      expect(viewModel.showOfflineNote, isFalse);
+    });
+
+    test('a failed save keeps the form and toasts with the error haptic '
+        '(kare 5)', () async {
+      backend.updateOffline = true;
+      build()
+        ..edit()
+        ..setEmail('alparslan.kuloglu@ornek.com');
+
+      await viewModel.save();
+      await settle();
+
+      expect(viewModel.mode, ProfileMode.edit);
+      expect(viewModel.draft.email, 'alparslan.kuloglu@ornek.com');
+      expect(viewModel.bar.canSave, isTrue);
+      expect(
+        toastText(toast),
+        'Kaydedilemedi. Bağlantını kontrol edip tekrar dene.',
+      );
+      expect(haptics, contains('error'));
+    });
+
+    test(
+      'the server refusing the address says the same general thing',
+      () async {
+        backend.updateAnswer = {'success': false, 'message': 'email used'};
+        build()
+          ..edit()
+          ..setEmail('baska@ornek.com');
+
+        await viewModel.save();
+
+        expect(viewModel.mode, ProfileMode.edit);
+        expect(
+          toastText(toast),
+          'Kaydedilemedi. Bağlantını kontrol edip tekrar dene.',
+        );
+      },
+    );
   });
 
   group('leaving', () {

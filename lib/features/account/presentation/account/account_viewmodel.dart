@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ui' show Rect;
 
 import 'package:flutter/foundation.dart';
 import 'package:stacked/stacked.dart';
@@ -23,10 +22,6 @@ typedef UrlOpener = Future<bool> Function(Uri uri);
 
 /// Puts text on the clipboard.
 typedef ClipboardWriter = Future<void> Function(String text);
-
-/// Opens the system share sheet with [text]; [origin] is the rectangle of the
-/// button that asked (an iPad anchors its popover there).
-typedef TextSharer = Future<void> Function(String text, {Rect? origin});
 
 /// What the "Koçluk" row and the groups of Hesap draw, an immutable value the
 /// menu's selector compares (pano 9.1 kare 1, 2 and 4).
@@ -100,7 +95,8 @@ class AccountMenuData {
 ///   when the student comes back from "Koçluk".
 /// - "Çıkış Yap" asks first (a normal, navy confirmation) and then ends the
 ///   session; the router takes the person to the welcome screen by itself.
-/// - A coach's code is copied ("Kod kopyalandı.") or shared.
+/// - A coach's "Koçluk kodun" row opens the code sheet (pano 14.11); copying
+///   and sharing live in that sheet.
 /// - "Bize Yaz" opens a mail draft with the version and the system; without a
 ///   configured address the row is not drawn.
 ///
@@ -119,7 +115,6 @@ class AccountViewModel extends ReactiveViewModel {
     required String Function() systemLabel,
     required UrlOpener openUrl,
     required ClipboardWriter copyText,
-    required TextSharer shareText,
     int Function() pendingForms = _noPendingForms,
     Duration timeout = SmapDurations.skeletonTimeout,
   }) : _currentUser = currentUser,
@@ -133,7 +128,6 @@ class AccountViewModel extends ReactiveViewModel {
        _systemLabel = systemLabel,
        _openUrl = openUrl,
        _copyText = copyText,
-       _shareText = shareText,
        _pendingForms = pendingForms,
        _timeout = timeout;
 
@@ -152,7 +146,6 @@ class AccountViewModel extends ReactiveViewModel {
   final String Function() _systemLabel;
   final UrlOpener _openUrl;
   final ClipboardWriter _copyText;
-  final TextSharer _shareText;
   final int Function() _pendingForms;
   final Duration _timeout;
 
@@ -264,6 +257,9 @@ class AccountViewModel extends ReactiveViewModel {
 
   Future<void> openContracts() => _navigator.openContracts();
 
+  /// The coach's "Koçluk kodun" row: the code sheet (pano 14.11 kare 2).
+  Future<void> openCoachCode() => _dialogs.showCoachCode();
+
   // ── Actions ───────────────────────────────────────────────────────────
 
   /// "Çıkış Yap": the confirmation, then the end of the session. A second
@@ -280,22 +276,6 @@ class AccountViewModel extends ReactiveViewModel {
     } finally {
       _signingOut = false;
     }
-  }
-
-  /// The coach's code to the clipboard, with "Kod kopyalandı.".
-  Future<void> copyCode() async {
-    final code = header?.coachCode;
-    if (code == null) return;
-    await _copyText(code);
-    _toast.success((l) => l.account_coachCodeCopied);
-  }
-
-  /// The coach's code to the system share sheet; [origin] is the share
-  /// button's rectangle.
-  Future<void> shareCode(AppLocalizations l10n, {Rect? origin}) async {
-    final code = header?.coachCode;
-    if (code == null) return;
-    await _shareText(l10n.account_coachCodeShareText(code), origin: origin);
   }
 
   /// A long press on the version line copies it, for a support request.

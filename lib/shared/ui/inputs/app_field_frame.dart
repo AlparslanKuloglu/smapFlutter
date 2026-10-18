@@ -90,7 +90,9 @@ class AppFieldFrame extends StatefulWidget {
   /// Adds the "(isteğe bağlı)" tail to the label.
   final bool optional;
 
-  /// The accessible name when there is no visible label ("Öğrenci ara").
+  /// The accessible name when there is no visible label ("Öğrenci ara"); with
+  /// a label it replaces the label's reading ("Koçluk kodu, 4 harf ve 4
+  /// rakam").
   final String? semanticLabel;
 
   /// Help line under the box (13/20 · 500 `textSecondary`).
@@ -211,7 +213,7 @@ class _AppFieldFrameState extends State<AppFieldFrame> {
       inputStyle,
       colors.textAction,
     );
-    final name = widget.label ?? widget.semanticLabel;
+    final name = widget.semanticLabel ?? widget.label;
     final box = AnimatedContainer(
       duration: fast,
       curve: AppMotion.standard,

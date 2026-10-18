@@ -209,4 +209,52 @@ void main() {
     expect(original.copyWith(name: 'X'), isNot(original));
     expect(original.hashCode, ProfileDraft.fromUser(_alparslan).hashCode);
   });
+
+  group('e-mail (pano 14.9)', () {
+    test('is trimmed and lower cased', () {
+      expect(
+        ProfileDraft.normalizeEmail('  Alparslan.Kuloglu@Ornek.COM '),
+        'alparslan.kuloglu@ornek.com',
+      );
+    });
+
+    test('goes out normalized', () {
+      final update = original
+          .copyWith(email: ' Yeni@Ornek.com ')
+          .toUpdate(original);
+
+      expect(update?.email, 'yeni@ornek.com');
+    });
+
+    test('a change of case or spaces alone is no change', () {
+      final same = original.copyWith(email: '  ALPARSLAN@ornek.com ');
+
+      expect(same.toUpdate(original), isNull);
+      expect(same.hasChanges(original), isFalse);
+      expect(same.hasEmailIssue(original), isFalse);
+    });
+
+    test('needs "@", a domain and an extension', () {
+      for (final bad in ['alparslan.kuloglu@ornek', 'a@', '@b.com', 'ab.com']) {
+        final draft = original.copyWith(email: bad);
+        expect(draft.hasEmailIssue(original), isTrue, reason: bad);
+        expect(draft.issuesAgainst(original), {ProfileIssue.emailInvalid});
+      }
+      expect(
+        original
+            .copyWith(email: 'alparslan.kuloglu@ornek.com')
+            .issuesAgainst(original),
+        isEmpty,
+      );
+    });
+
+    test('an old address that fails the check is left alone until edited', () {
+      final old = ProfileDraft.fromUser(
+        const UserDto(email: 'eski-adres', seasonType: 12, aimType: 2),
+      );
+
+      expect(old.hasEmailIssue(old), isFalse);
+      expect(old.copyWith(photo: 'x.png').issuesAgainst(old), isEmpty);
+    });
+  });
 }

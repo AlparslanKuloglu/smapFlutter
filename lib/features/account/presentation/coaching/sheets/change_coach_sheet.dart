@@ -1,6 +1,6 @@
+import 'package:flutter/foundation.dart' show ValueListenable;
 import 'package:flutter/material.dart';
 
-import 'package:smap/core/services/app_haptics.dart';
 import 'package:smap/core/theme/app_spacing.dart';
 import 'package:smap/core/utils/turkish_text.dart';
 import 'package:smap/features/account/application/coaching_logic.dart';
@@ -11,17 +11,24 @@ import 'package:smap/shared/ui/inputs/input_masks.dart';
 import 'package:smap/shared/ui/sheets/app_sheet.dart';
 import 'package:smap/shared/ui/surfaces/app_notice_box.dart';
 
-/// "Koçunu değiştir" (Tur 12 F, 14.10 kare 2; no board yet, built from the
-/// kit): a medium sheet with a title and "Kapat", a warning box that says
-/// what changes, the masked field "Yeni koçunun kodu" and the primary "Koçu
-/// Değiştir".
+/// "Koçunu değiştir" (pano 14.10 kare 2 to 4; T12.21): a small sheet with the
+/// title "Koçunu değiştir" and "Kapat", the subtitle "Yeni koçunun verdiği
+/// kodu gir.", the masked field "Koçluk kodu" (`AAAA-0000`, help "4 harf ve 4
+/// rakam; tire kendiliğinden gelir."), the info box "Mehmet Özkan'la bağlantın
+/// kalkar; gelişimini artık göremez. Yeni koçun denemelerini, analizlerini ve
+/// programını görür." and the primary "Koçu Değiştir", which stays off until
+/// eight characters are typed.
 ///
-/// There is no second confirmation sheet: the warning is in this one. While
-/// the code is tried the sheet is busy (the close button hides, drag and scrim
-/// do not close it, the field is read only); on a failure it stays open with
-/// the typed code and the reason under the field (not found; the code of the
-/// current coach; anything else is "try again"). Success closes it with the
-/// new coach; the ViewModel that asked commits it and toasts.
+/// There is no second confirmation: the box says what happens and the button
+/// names the action. While the code is tried (kare 4) the sheet is busy: the
+/// button shows its spinner, the field is read only (no lock), and drag,
+/// scrim and "Kapat" do not close it. A failure (kare 3) keeps the sheet open
+/// with the typed code, puts the reason under the field (not found; the
+/// current coach's own code; anything else is "try again"), moves the focus
+/// back to the field, and the field plays the error haptic. Success closes
+/// the sheet with the new coach; the ViewModel that asked commits it, toasts
+/// and refreshes the card. The field reads "Koçluk kodu, 4 harf ve 4 rakam".
+/// While [online] is false the offline strip shows above the sheet.
 class ChangeCoachSheet extends StatefulWidget {
   const ChangeCoachSheet._({required this.current, required this.submit});
 
@@ -36,10 +43,13 @@ class ChangeCoachSheet extends StatefulWidget {
   static Future<CoachLink?> show({
     required CoachLink current,
     required Future<CoachLinkResult> Function(CoachCode code) submit,
+    ValueListenable<bool>? online,
     BuildContext? context,
   }) => AppSheet.show<CoachLink>(
     context: context,
-    size: AppSheetSize.medium,
+    online: online,
+    // A form: a `full` sheet rides above the keyboard with its button in view.
+    size: AppSheetSize.full,
     builder: (_) => ChangeCoachSheet._(current: current, submit: submit),
   );
 
@@ -49,13 +59,13 @@ class ChangeCoachSheet extends StatefulWidget {
 
 class _ChangeCoachSheetState extends State<ChangeCoachSheet> {
   final TextEditingController _code = TextEditingController();
+  final FocusNode _focus = FocusNode();
   bool _busy = false;
   bool _ready = false;
   CoachLinkFailure? _failure;
 
-  /// Space between the warning, the field and the button (kit sheet bodies
-  /// space their items 20 apart).
-  static const double _gap = 20;
+  /// Space between the field and the info box (pano 14.10 kare 2).
+  static const double _gap = AppSpacing.s16;
 
   @override
   void initState() {
@@ -68,6 +78,7 @@ class _ChangeCoachSheetState extends State<ChangeCoachSheet> {
     _code
       ..removeListener(_edited)
       ..dispose();
+    _focus.dispose();
     super.dispose();
   }
 
@@ -86,8 +97,8 @@ class _ChangeCoachSheetState extends State<ChangeCoachSheet> {
     if (code == null || _busy) return;
     if (CoachingRules.verdict(_code.text, current: widget.current) ==
         CoachCodeVerdict.currentCoach) {
-      AppHaptics.error();
       setState(() => _failure = CoachLinkFailure.sameCoach);
+      _focus.requestFocus();
       return;
     }
     setState(() {
@@ -101,11 +112,11 @@ class _ChangeCoachSheetState extends State<ChangeCoachSheet> {
       Navigator.of(context).pop(coach);
       return;
     }
-    AppHaptics.error();
     setState(() {
       _busy = false;
       _failure = result.failure ?? CoachLinkFailure.failed;
     });
+    _focus.requestFocus();
   }
 
   String? _errorText(AppLocalizations l10n) => switch (_failure) {
@@ -122,26 +133,32 @@ class _ChangeCoachSheetState extends State<ChangeCoachSheet> {
     final l10n = AppLocalizations.of(context);
     return AppSheetFrame(
       title: l10n.coachingChange_title,
+      subtitle: l10n.coachingChange_subtitle,
       busy: _busy,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          AppNoticeBox(
-            message: l10n.coachingChange_warning(widget.current.name),
-            tone: AppNoticeTone.warning,
-          ),
-          const SizedBox(height: _gap),
           AppTextField(
-            label: l10n.coachingChange_codeLabel,
+            label: l10n.coaching_codeLabel,
+            semanticLabel: l10n.coachingChange_codeA11y,
             controller: _code,
+            focusNode: _focus,
             hintText: l10n.coaching_codeHint,
             helperText: l10n.coaching_codeHelp,
             errorText: _errorText(l10n),
+            readOnly: _busy,
+            readOnlyLock: false,
             inputFormatters: [AppInputMasks.coachCode],
             textCapitalization: TextCapitalization.characters,
             textInputAction: TextInputAction.done,
             autofocus: true,
             onSubmitted: (_) => _submit(),
+          ),
+          const SizedBox(height: _gap),
+          AppNoticeBox(
+            message: l10n.coachingChange_notice(
+              CoachingRules.withSuffix(widget.current.name),
+            ),
           ),
           const SizedBox(height: AppSpacing.s8),
         ],

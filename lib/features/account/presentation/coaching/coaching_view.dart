@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/foundation.dart' show ValueListenable;
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:stacked/stacked.dart' hide StackedRouterExtensions;
@@ -57,7 +58,10 @@ class CoachingView extends StackedView<CoachingViewModel> {
   CoachingViewModel viewModelBuilder(BuildContext context) => CoachingViewModel(
     account: locator<AccountRepository>(),
     currentUser: locator<CurrentUserService>(),
-    dialogs: SheetCoachingDialogs(l10n: AppLocalizations.of(context)),
+    dialogs: SheetCoachingDialogs(
+      l10n: AppLocalizations.of(context),
+      online: locator<ConnectivityService>().online,
+    ),
     toast: locator<ToastService>(),
     online: locator<ConnectivityService>().online,
   );

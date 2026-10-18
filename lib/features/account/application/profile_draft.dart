@@ -121,24 +121,31 @@ class ProfileDraft {
     photo: photo,
   );
 
+  /// The e-mail as it is compared and sent (pano 14.9 Kural): spaces
+  /// trimmed, lower case ("Ali@Ornek.com " becomes "ali@ornek.com"). The
+  /// address is plain ASCII, so Dart's `toLowerCase` is right here (the
+  /// Turkish "I" rule is for names).
+  static String normalizeEmail(String raw) => raw.trim().toLowerCase();
+
   /// The fields that differ from [original], ready for
   /// `AccountRepository.updateProfile`; `null` when nothing would be sent.
   ///
-  /// - text is sent trimmed; a phone number goes out as `+90 532 123 45 67`
-  ///   (an emptied one as empty text);
+  /// - text is sent trimmed (the e-mail also in lower case); a phone number
+  ///   goes out as `+90 532 123 45 67` (an emptied one as empty text);
   /// - a track that went away with the grade is not sent: the backend has
   ///   no way to clear it (open question), so only a chosen track is sent;
   /// - the avatar is sent as its file name.
   ProfileUpdate? toUpdate(ProfileDraft original) {
     final nameChanged = name.trim() != original.name.trim();
-    final emailChanged = email.trim() != original.email.trim();
+    final emailChanged =
+        normalizeEmail(email) != normalizeEmail(original.email);
     final phoneChanged =
         PhoneNumber.nationalDigits(phone) !=
         PhoneNumber.nationalDigits(original.phone);
     final photoChanged = _file(photo) != _file(original.photo);
     final update = ProfileUpdate(
       name: nameChanged ? name.trim() : null,
-      email: emailChanged ? email.trim() : null,
+      email: emailChanged ? normalizeEmail(email) : null,
       phone: phoneChanged ? (PhoneNumber.display(phone) ?? '') : null,
       photo: photoChanged ? _file(photo) : null,
       grade: grade != original.grade ? grade : null,
@@ -150,16 +157,20 @@ class ProfileDraft {
   /// Whether sending this form would change anything.
   bool hasChanges(ProfileDraft original) => toUpdate(original) != null;
 
+  /// Whether the e-mail was changed since [original] and is not an address
+  /// (pano 14.9 kare 2: "@", a domain and an extension). An untouched
+  /// e-mail is never checked.
+  bool hasEmailIssue(ProfileDraft original) =>
+      normalizeEmail(email) != normalizeEmail(original.email) &&
+      !RegisterRules.isValidEmail(email);
+
   /// What is wrong with the fields that changed since [original].
   Set<ProfileIssue> issuesAgainst(ProfileDraft original) {
     final issues = <ProfileIssue>{};
     if (name.trim() != original.name.trim() && name.trim().isEmpty) {
       issues.add(ProfileIssue.nameMissing);
     }
-    if (email.trim() != original.email.trim() &&
-        !RegisterRules.isValidEmail(email)) {
-      issues.add(ProfileIssue.emailInvalid);
-    }
+    if (hasEmailIssue(original)) issues.add(ProfileIssue.emailInvalid);
     final phoneChanged =
         PhoneNumber.nationalDigits(phone) !=
         PhoneNumber.nationalDigits(original.phone);

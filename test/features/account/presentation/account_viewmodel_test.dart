@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ui' show Rect;
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:smap/core/config/app_config.dart';
@@ -22,8 +21,6 @@ void main() {
   late RecordingNavigator navigator;
   late ScriptedDialogs dialogs;
   late List<String> clipboard;
-  late List<String> shared;
-  late List<Rect?> origins;
   late List<Uri> opened;
   late bool openSucceeds;
   late int pending;
@@ -52,10 +49,6 @@ void main() {
         return openSucceeds;
       },
       copyText: (text) async => clipboard.add(text),
-      shareText: (text, {origin}) async {
-        shared.add(text);
-        origins.add(origin);
-      },
       pendingForms: () => pending,
       timeout: timeout,
     );
@@ -68,8 +61,6 @@ void main() {
     navigator = RecordingNavigator();
     dialogs = ScriptedDialogs();
     clipboard = [];
-    shared = [];
-    origins = [];
     opened = [];
     openSucceeds = true;
     pending = 0;
@@ -201,36 +192,19 @@ void main() {
       expect(backend.count('/student/getStudentsCoach'), 0);
     });
 
-    test('copies the code and says so', () async {
+    test('the code row opens the code sheet (pano 14.11)', () async {
       build();
 
-      await viewModel.copyCode();
+      await viewModel.openCoachCode();
 
-      expect(clipboard, ['MOZK-4821']);
-      expect(toastText(toast), 'Kod kopyalandı.');
-      expect(toastKind(toast), AppToastKind.success);
+      expect(dialogs.calls, ['coachCode']);
+      expect(clipboard, isEmpty);
     });
 
-    test('shares the code with the button\'s rectangle', () async {
-      build();
-      const origin = Rect.fromLTWH(300, 400, 48, 48);
-
-      await viewModel.shareCode(AppLocalizationsTr(), origin: origin);
-
-      expect(shared, ['SMAP\'te koçluk kodum: MOZK-4821']);
-      expect(origins, [origin]);
-    });
-
-    test('without a code there is nothing to copy or share', () async {
+    test('without a code the menu has no code to show', () {
       user = FakeUserService(const UserDto(name: 'Mehmet', role: 'coach'));
       build();
 
-      await viewModel.copyCode();
-      await viewModel.shareCode(AppLocalizationsTr());
-
-      expect(clipboard, isEmpty);
-      expect(shared, isEmpty);
-      expect(toastText(toast), isNull);
       expect(viewModel.menu.coachCode, isNull);
     });
   });
