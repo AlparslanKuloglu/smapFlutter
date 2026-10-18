@@ -33,7 +33,7 @@ Text(value, style: text.metricLg.copyWith(color: colors.textPrimary));
 
 ## 2. Renkler: `SmapColors` ve `SmapPalette`
 
-- **`SmapPalette`** (`smap_palette.dart`) ham skalalardır: `navy25…950`, `orange25…700` ve `neutral*`. Yalnız tema katmanı okur; ekran kodu palet adımı kullanmaz. Navy-25, orange-25 ve neutral-25 tasarımda tanımlı değildir, mihr_ui'nin `ColorScale` şekli için varsayılmıştır (`smap_palette.dart` sınıf doc'u); hiçbir rol bu adımları kullanmaz.
+- **`SmapPalette`** (`smap_palette.dart`) ham skalalardır: `navy25…950`, `orange25…950` ve `neutral0…950`. Yalnız tema katmanı okur; ekran kodu palet adımı kullanmaz. Navy-25, orange-25 ve neutral-25 tasarımda tanımlı değildir, mihr_ui'nin `ColorScale` şekli için varsayılmıştır: navy-25 ve orange-25 50 adımından bir tık açık bir tondur, nötr skalanın 25 yuvasına `neutral0` (`#FFFFFF`) verilir (`smap_palette.dart` sınıf doc'u); hiçbir rol bu adımları kullanmaz.
 - **`SmapColors`** `ThemeExtension<SmapColors>`'tır. `SmapColors.light` ve `SmapColors.dark` aynı alan kümesini sunar. Ekran kodu temaya göre dallanmaz.
 - Koyu set açığın tersi değildir: yüzeyler navy tonlu olup yükseldikçe açılır. Örnek: `bgCanvas` `0xFF0A1424`, `bgSurface` `0xFF121D31`, `bgRaised` `0xFF18263D`, `bgSunken` `0xFF213049`.
 - Her alanın doc yorumu, 11.12 "Flutter" sütunundaki karşılığını yazar (`ColorScheme.surface` gibi, ya da `ext.<ad>`).
@@ -56,7 +56,7 @@ Ek bilgiler:
 
 - `SmapColors.toColorScheme(brightness)` stok Material widget'ları için `ColorScheme` üretir, seed kullanmaz. `surfaceTint` şeffaftır. Ekran kodu `Theme.of(context).colorScheme` okumaz.
 - `SmapColors.of(brightness)` değerleri brightness'a göre seçer.
-- `colors` getter'ı her renk alanını sırayla listeler. Testler ve `lerp` kullanır. Yeni alan eklerken `copyWith`, `lerp` ve `colors` listesine de eklenmelidir. `test/core/theme/smap_colors_test.dart` içindeki `field set` grubu eksiği yakalar.
+- `colors` getter'ı her renk alanını sırayla listeler (`chartSeries` ve `subjects` hariç). Testler kullanır; `lerp` alanları tek tek yazar. Yeni alan eklerken `copyWith`, `lerp` ve `colors` listesine de eklenmelidir. `test/core/theme/smap_colors_test.dart` içindeki `field set` grubu eksiği yakalar.
 - Kontrast testi `test/core/theme/smap_contrast_test.dart` içindedir. Yalnız tasarımda izin verilen çiftleri sınar. Metin 4,5:1, büyük metin ve kontrol kenarı 3:1 eşiğine bakar. `textDisabled` ve `borderStrong` muaftır (`docs/SMAP_UI_Rehberi_Duzeltmeler.md` #17).
 
 Renk kullanım kuralları (`AGENTS.md` UI kuralları ve doc yorumları):
@@ -134,13 +134,15 @@ duration: context.motion(AppMotion.slow, reduced: Duration.zero),
 | `success()` | Sonuç hazır, istek alındı, cevaplar onaylandı, "Öğrendim" |
 | `error()` | Gönderme ya da okuma başarısız, doğrulama hatası, yanlış kod, kamera açılamadı, hata toast'u |
 
-`selection` ve `medium` Flutter'ın `HapticFeedback`'idir. `success` ve `error` `smap/haptics` method channel'ı üzerinden gider; karşılıkları `ios/Runner/AppDelegate.swift` (`UINotificationFeedbackGenerator`) ve `android/app/src/main/kotlin/com/smap/smap/MainActivity.kt` (`CONFIRM`/`REJECT`, API 30 altında yedek) dosyalarındadır. Çağrılar ateşle-unut ve en iyi çabadır. Kanal yoksa (test, masaüstü) hata fırlatmaz. `AppHaptics.enabled = false` hepsini susturur. "Hareketi azalt" haptiği susturmaz (`docs/spec/SMAP_Flutter_Spec.md` §1.13). Haptik yalnız bu dört çağrıyla verilir, doğrudan `HapticFeedback` çağrılmaz.
+`selection` ve `medium` Flutter'ın `HapticFeedback`'idir. `success` ve `error` `smap/haptics` method channel'ı üzerinden gider; karşılıkları `ios/Runner/AppDelegate.swift` (`UINotificationFeedbackGenerator`) ve `android/app/src/main/kotlin/com/studentmap/smap/MainActivity.kt` (`CONFIRM`/`REJECT`, API 30 altında yedek) dosyalarındadır. Çağrılar ateşle-unut ve en iyi çabadır. Kanal yoksa (test, masaüstü) hata fırlatmaz. `AppHaptics.enabled = false` hepsini susturur. "Hareketi azalt" haptiği susturmaz (`docs/spec/SMAP_Flutter_Spec.md` §1.13). Haptik yalnız bu dört çağrıyla verilir, doğrudan `HapticFeedback` çağrılmaz.
+
+Toast haptiği `ToastService` içindedir: `success` `AppHaptics.success()`, `error` `AppHaptics.error()` çalar (`haptic: true` varsayılan). Eylem kendi haptiğini zaten çaldıysa ya da pano başarı haptiği istemiyorsa `haptic: false` verilir. Örnekler: "Kopyala" `selection()` çalar ve "Kod kopyalandı." toast'unu haptiksiz gösterir (`lib/features/coach/application/coach_code_actions.dart`); profil kaydındaki "Profilin güncellendi." yalnız metindir (pano 14.9 kare 3, `profile_viewmodel.dart`). Alan hatası haptiği `AppFieldFrame` kendisi bir kez çalar.
 
 ## 6. Ders renkleri: `SubjectKey` ve `SubjectTone`
 
 `SubjectKey` dokuz değerlidir: `turkce`, `edebiyat`, `tarih`, `cografya`, `matematik`, `geometri`, `fizik`, `kimya`, `biyoloji`. Her ders için iki tema renk çifti `SubjectTone(bg, fg)` tutulur (`SubjectTone.light` ve `SubjectTone.dark`, pano 1.5). `bg` ikon karosu ve tonu, `fg` ikon, 10 pt nokta ve ilerleme dolgusudur. `fg` kendi `bg`'si üzerinde en az 4,49:1 kontrast verir (`subject_tone.dart` doc'u).
 
-Sunucudaki ders id'sini `SubjectKey`'e eşleme ve glif seçimi ders verisidir. `lib/features/lessons` altında yaşar (`SubjectGlyph`, `lib/features/lessons/presentation/widgets/subject_icons.dart`). Alan sabitleri `core/` içine girmez.
+Sunucudaki ders id'sini `SubjectKey`'e eşleme ve glif seçimi ders verisidir. `lib/features/lessons` altında yaşar: id eşlemesi `application/lesson_catalog.dart` (`LessonCatalog.byId`), ada göre yedeği `application/subject_resolver.dart` (`SubjectResolver.fromLessonName`), ikisini `domain/general_lesson.dart`'taki `subject` getter'ı birleştirir; glif tablosu (`subjectIcons`, `subjectFallbackIcon`) `presentation/widgets/subject_icons.dart`'ta, `SubjectGlyph` bileşeni `presentation/widgets/subject_glyph.dart`'tadır. Alan sabitleri `core/` içine girmez.
 
 ## 7. `SmapTheme` ve koyu tema
 
@@ -223,11 +225,11 @@ Kurallar kodda zorlanır:
 - Vazgeçme düğmesi "Vazgeç"tir, "İptal" yazılmaz. ARB'de `common_cancel` bunun için vardır ve açıklaması "Never use 'İptal'" der. "Tamam" onay içindir. "Kapat" yalnız erişilebilirlik etiketinde kullanılır (`common_close`). "Geri Al" yalnız toast eylemidir (`common_undo`). "Tekrar Dene" (`common_retry`) hata durumu eylemidir. Not: `lib/l10n/arb/schedule_tr.arb` içindeki `schedule_cancelProgram` "Programı İptal Et" bir program iptali eylemidir, vazgeçme düğmesi değildir. Kural vazgeçme düğmesi içindir.
 - "Sen" tonu kullanılır, emoji yoktur, hepsi büyük harf metin yoktur. Soru başlıkları cümle düzeninde ("Kartı Bildiklerim'e taşıyalım mı?"), ekran ve sheet başlıkları Türkçe başlık düzeninde yazılır ("Detaylı Analiz"). Düğme etiketi de başlık düzenindedir.
 - Sayı ve tarih yalnız `TrFormat` üzerinden yazılır (`67,5`, `412,63`, `48.215`, `%42`, `5 Eki.`).
-- l10n anahtarı `<feature>_<camelCase>` biçimindedir. Ortak olanlar `common_*`, yalnız ekran okuyucuya özgü olanlar `…A11y` ile biter (`kit_percentA11y`, `kit_pageDotsA11y`). Her feature kendi `lib/l10n/arb/<feature>_tr.arb` dosyasına yazar (kit için `kit_tr.arb`, `kit2_tr.arb`; ortak için `common_tr.arb`). Her anahtarın `@key.description` alanı panoyu ve kareyi anar. `lib/l10n/app_tr.arb` `dart run tool/merge_arb.dart` ile üretilen dosyadır, elle düzenlenmez; aynı anahtar iki parçada varsa script hata verir. Sonra `flutter gen-l10n` çalışır. CI bayat çıktıyı reddeder (`.github/workflows/ci.yml`).
+- l10n anahtarı `<feature>_<camelCase>` biçimindedir. Ortak olanlar `common_*`, yalnız ekran okuyucuya özgü olanlar `…A11y` ile biter (`kit_percentA11y`, `kit_pageDotsA11y`). Her feature kendi `lib/l10n/arb/<feature>_tr.arb` dosyasına yazar (kit için `kit_tr.arb`, `kit2_tr.arb`; ortak için `common_tr.arb`). Her anahtarın `@key.description` alanı, metnin nerede ve ne için kullanıldığını İngilizce anlatır. Ekran metinlerinde çoğunlukla panoyu ve kareyi de anar (`pano 10.4 kare 2`, `brief 14.1 kare 4`). Ortak (`common_*`) ve panoda karşılığı olmayan metinlerde pano atfı yoktur. `lib/l10n/app_tr.arb` `dart run tool/merge_arb.dart` ile üretilen dosyadır, elle düzenlenmez; aynı anahtar iki parçada varsa script hata verir. Sonra `flutter gen-l10n` çalışır. CI bayat çıktıyı reddeder (`.github/workflows/ci.yml`).
 - Türkçe metinde `toUpperCase()` kullanılmaz, `TurkishText` kullanılır. `toUpperCase` kodda yalnız Türkçe olmayan veride durur (`schedule_wire.dart` hex renk, `coach_code.dart` kod, `answer_grid.dart` seçenek harfi).
 - Çalışma zamanında üretilen cümlede ek uyumu `TurkishSuffix` ile yapılır.
-- ViewModel'ler `BuildContext`'siz olduğu için toast metnini `ToastText` lambda'sı ile verir: `_toast.success((l) => l.schedule_saved);`. Metin toast'un çizildiği yerde çözülür ([03_ekran.md](03_ekran.md) §4.3).
-- Doc yorumları ve tanımlayıcılar İngilizcedir, arayüz metni Türkçe alıntılanır. Doc yorumu panoyu ve kareyi ve Türkçe metni alıntılar (`AGENTS.md` son madde).
+- ViewModel'ler `BuildContext`'siz olduğu için toast metnini `ToastText` lambda'sı ile verir: `_toast.success((l) => l.schedule_toastProgramCancelled);` (`program_detail_viewmodel.dart`). Metin toast'un çizildiği yerde çözülür ([03_ekran.md](03_ekran.md) §4.3).
+- Doc yorumları ve tanımlayıcılar İngilizcedir, arayüz metni Türkçe alıntılanır. Doc yorumu panoyu ve kareyi ve Türkçe metni alıntılar (`AGENTS.md` "UI rules" son maddesi).
 
 ## 11. Pano atıfları ve `docs/design`
 
@@ -246,10 +248,10 @@ Yeni bir tur geldiğinde `kaynak/` altına dosya konur ve `python3 tool/design/h
 
 Doc yorumlarındaki "pano X.Y · kare N" şu anlama gelir:
 
-- Pano X.Y, `docs/design/panolar/SMAP-0X/` altındaki `NN-X-Y-<başlık>` klasörüdür. Örnek: **pano 1.9**, `docs/design/panolar/SMAP-01/08-1-9-Düğmeler-5-tür-2-boy/` (içinde `text.txt`, `board.html`, `styles.css`); görseli `docs/design/panolar/png/SMAP-01_08-1-9-Düğmeler-5-tür-2-boy.png`.
+- Pano X.Y, `docs/design/panolar/SMAP-<X, iki haneli>/` (ör. `SMAP-01`, `SMAP-11`) altındaki `NN-X-Y-<başlık>` klasörüdür (NN klasördeki sıra numarasıdır; istisna: Tur 12 akışları 13.13 ve 13.14 `SMAP-14` altındadır). Örnek: **pano 1.9**, `docs/design/panolar/SMAP-01/08-1-9-Düğmeler-5-tür-2-boy/` (içinde `text.txt`, `board.html`, `styles.css`); görseli `docs/design/panolar/png/SMAP-01_08-1-9-Düğmeler-5-tür-2-boy.png`.
 - "kare N" aynı panodaki N. çerçevedir (soldan sağa). Örnek: **pano 3.1 kare 2**, Anasayfa panosunda kaydırılmış bant. `lib/features/home/presentation/home/home_view.dart` doc'u "pano 3.1 kare 1 to 3, 3.2 kare 1 to 4, 3.3" der.
 - 11.x panoları teslim notlarıdır (`SMAP-11`). 11.12 Token Tablosu, 11.13 Bileşen Listesi, 11.14 Ekran-Bileşen Eşlemesi, 11.15 Hareket ve Haptik, 11.16 Varsayımlar ve Tur 12 ekleri (11.13 ek, 11.14 ek, 11.16 ek: T12.1–T12.30) önceki panoların önüne geçer (`AGENTS.md` "Sources of truth").
-- **Tur 12 panoları `SMAP-14`'tür** (14.1–14.12; sonunda akışlar 13.13 ve 13.14, `SMAP-13`). "Yerine geçtiği kare: 10.4·3" gibi etiketlerle eski kareleri geçersiz kılarlar. Çelişki sırası `docs/design/README.md` "Öncelik" bölümündedir: proje kararları (`docs/SMAP_Ana_Plan.md` K1–K16 ve `docs/SMAP_UI_Rehberi_Duzeltmeler.md`), Tur 12, teslim panoları 11.12–11.16, diğer panolar.
+- **Tur 12 panoları `SMAP-14`'tür** (14.1–14.12; sonunda akışlar 13.13 ve 13.14 de aynı `SMAP-14` sayfasındadır: `panolar/SMAP-14/12-13-13-…`, `13-13-14-…`; `SMAP-13/` yalnız 13.1–13.12'yi içerir). "Yerine geçtiği kare: 10.4·3" gibi etiketlerle eski kareleri geçersiz kılarlar. Çelişki sırası `docs/design/README.md` "Öncelik" bölümündedir: proje kararları (`docs/SMAP_Ana_Plan.md` K1–K16 ve `docs/SMAP_UI_Rehberi_Duzeltmeler.md`), Tur 12, teslim panoları 11.12–11.16, diğer panolar.
 - Spec C-numaraları (C01–C86), `docs/spec/02_bilesenler.md` ve `docs/spec/SMAP_Flutter_Spec.md` içindeki bileşen kimlikleridir. UI rehberi kısaltması "§5 #N" `docs/SMAP_UI_Uygulama_Rehberi.md`'ye gider. Düzeltmeler "Düzeltmeler #N" `docs/SMAP_UI_Rehberi_Duzeltmeler.md` içindedir ve rehberin önüne geçer.
 
 Doc yorumu örneği (`lib/shared/ui/buttons/app_button.dart`):
@@ -263,7 +265,7 @@ Spec adı `SmapX` ise kodda genel bileşen `AppX`, alan bileşeni `X` olur: `Sma
 
 ## 12. Bileşen galerisi
 
-Galeri, kit ve alan bileşenlerini iki temada, her durumuyla (normal, basılı, odak, pasif, yükleniyor, hata) gösteren debug aracıdır. UI cihazda galeride doğrulanır (`AGENTS.md`: widget ve golden testi yoktur).
+Galeri, kit ve alan bileşenlerini iki temada, her durumuyla (normal, basılı, odak, pasif, yükleniyor, hata) gösteren debug aracıdır. UI galeride ve simülatörde doğrulanır (`AGENTS.md`: golden testi yazılmaz; widget testi yalnız ölçülen boy ya da ekran okuyucu cümlesi içindir, ör. `test/features/exams/presentation/exam_score_card_height_test.dart`).
 
 **Çalıştırma** (`lib/main_gallery.dart`):
 
@@ -289,7 +291,7 @@ flutter run -t lib/main_gallery.dart --dart-define=GALLERY_DARK=true --dart-defi
 | `GALLERY_ACTION` | Sayfa açılışında bir sheet/toast/şerit gösterir | **yalnız** launch env |
 | `GALLERY_SEMANTICS` | `true` ise anlamsal ağaç hata ayıklayıcısı çizilir | **yalnız** launch env |
 
-Launch env, `lib/features/debug/launch_env.dart` içindeki `debugLaunchEnv(name)` ile okunur. Önce `Platform.environment[name]`, yoksa `<systemTemp>/launch_env/<name>` dosyası okunur. iOS simülatöründe `SIMCTL_CHILD_GALLERY_DARK=true xcrun simctl launch …` bunu yeniden derlemeden verir. Dosya yolu, ekran görüntüsü betiğinin uygulama veri klasörüne yazması içindir (doc yorumundan). Aynı değişken hem env'de hem `--dart-define`'da varsa env kazanır. `GALLERY_SCROLL`, `GALLERY_ACTION` ve `GALLERY_SEMANTICS` yalnız `debugLaunchEnv` okuduğu için `--dart-define` ile verilirse etkisizdir. `debugLaunchEnv` `dart:io` kullanır; galeri web için tasarlanmamıştır. Aynı mekanizmayı kabuk önizlemesi de kullanır: `SHELL_PREVIEW=student|coach` (`--dart-define`, yalnız `kDebugMode`) ve `SHELL_PREVIEW_TAB` (launch env), `lib/app/shell/shell_preview.dart`.
+Launch env, `lib/features/debug/launch_env.dart` içindeki `debugLaunchEnv(name)` ile okunur. Önce `Platform.environment[name]`, yoksa `<systemTemp>/launch_env/<name>` dosyası okunur. iOS 26 simülatörlerinde `SIMCTL_CHILD_GALLERY_DARK=true xcrun simctl launch …` uygulamaya ulaşmaz; değeri yeniden derlemeden vermenin yolu dosyadır: `tool/sim_env.sh booted GALLERY_PAGE=12 GALLERY_DARK=true` dosyaları uygulamanın veri klasörüne yazar, sonra uygulama başlatılır (`tool/sim_env.sh booted --clear` siler). Aynı değişken hem env'de hem `--dart-define`'da varsa env kazanır. `GALLERY_SCROLL`, `GALLERY_ACTION` ve `GALLERY_SEMANTICS` yalnız `debugLaunchEnv` okuduğu için `--dart-define` ile verilirse etkisizdir. `debugLaunchEnv` `dart:io` kullanır; galeri web için tasarlanmamıştır. Aynı mekanizmayı kabuk önizlemesi de kullanır: `SHELL_PREVIEW=student|coach` (`--dart-define`, yalnız `kDebugMode`) ve `SHELL_PREVIEW_TAB` (launch env), `lib/app/shell/shell_preview.dart`.
 
 `GALLERY_ACTION` değerleri:
 
@@ -338,7 +340,7 @@ Sonra `gallery_registry.dart`'a `import` ve `GalleryPage(title: '...', builder: 
 
 ## 13. `tool/ui_rules.sh`
 
-CI'da `flutter analyze --no-pub`'tan sonra çalışır (`.github/workflows/ci.yml`). `lib/features`, `lib/shared` ve `lib/app` altındaki `*.dart` dosyalarını `grep -E` ile tarar. `.gr.dart` dosyalarını ve satır `//` ile başlayan satırları (doc yorumları dahil) atlar. Çıkış kodu 0 değilse CI düşer. Bu belge yazılırken betik 0 ile çıkıyordu.
+CI'da biçim denetiminden (`tool/format.sh --output=none --set-exit-if-changed`; git'te izlenen bütün Dart dosyaları, `lib/vendor` hariç) ve `flutter analyze --no-pub`'tan sonra çalışır (`.github/workflows/ci.yml`). `lib/features`, `lib/shared` ve `lib/app` altındaki `*.dart` dosyalarını `grep -E` ile tarar. `.gr.dart` dosyalarını ve satır `//` ile başlayan satırları (doc yorumları dahil) atlar. Çıkış kodu 0 değilse CI düşer. Bu belge yazılırken betik 0 ile çıkıyordu.
 
 | Yasak kalıp | Sebep |
 |---|---|
@@ -354,7 +356,7 @@ CI'da `flutter analyze --no-pub`'tan sonra çalışır (`.github/workflows/ci.ym
 | `Duration(` | Sunumda (`lib/features/*/presentation`, `lib/shared/ui`) süre `AppMotion`/`SmapDurations`'tan. `Duration.zero` yakalanmaz. Data ve application katmanında ham `Duration` meşrudur (örnek `auth_requests.dart`). |
 | Dosya boyu | `part of` dosyası 300, `*_viewmodel.dart` 500, `presentation/*_view.dart` 250, `lib/features/*/presentation` ve `lib/shared/ui` altındaki diğer dosya 400 satır. Üretilen kod ve `/debug/` galerileri sayılmaz. |
 
-**Betiğin denetlemediği kurallar.** `AGENTS.md` bunları da yasaklar ama betikte kalıbı yoktur, inceleme ve analyze ile tutulur: mihr renk ve tipografi getter'ları, `Text`'te string literal, `SharedPreferences.getInstance` (tercihler `DevicePreferences` üzerinden), `toUpperCase`. Taranan dizinler `lib/core`'u içermez; ham renk literalleri yalnız orada, token dosyalarında bulunur (`smap_colors.dart`, `app_shadows.dart`). `analysis_options.yaml` `prefer_const_constructors`, `prefer_const_literals_to_create_immutables`, `prefer_const_declarations`, `use_decorated_box` ve `avoid_print` kurallarını açar. CI `flutter analyze`'ın sıfır sorun vermesini şart koşar.
+**Betiğin denetlemediği kurallar.** `AGENTS.md` bunları da yasaklar ama betikte kalıbı yoktur, inceleme ve analyze ile tutulur: mihr renk ve tipografi getter'ları, `Text`'te string literal, `SharedPreferences.getInstance` (tercihler `DevicePreferences` üzerinden), `toUpperCase`. Taranan dizinler `lib/core`'u içermez; ham renk literalleri yalnız orada, token dosyalarında bulunur (`smap_palette.dart`, `smap_colors.dart`, `subject_tone.dart`, `app_shadows.dart`; `lib/vendor`'daki üçüncü taraf tarayıcı paketi hariç). `analysis_options.yaml` `prefer_const_constructors`, `prefer_const_literals_to_create_immutables`, `prefer_const_declarations`, `use_decorated_box` ve `avoid_print` kurallarını açar. CI `flutter analyze`'ın sıfır sorun vermesini şart koşar.
 
 ## 14. `lib/shared/ui` kit kataloğu
 
@@ -368,7 +370,7 @@ Tablolar klasör klasördür. "Pano" sütunu doc yorumundaki atıftır; "Ne zama
 | `AppButtonStyles`, `AppButtonVariant`, `AppButtonSize` | `app_button_style.dart` | `ButtonStyle` çözümleyici. Ekran kodu doğrudan çağırmaz. | 1.9 |
 | `AppIconButton` (C02) | `app_icon_button.dart` | Yalnız ikon düğme, 48×48 hedef. `semanticLabel` zorunlu (tooltip de olur); `variant` (`onNavy` dahil), `selected`, `selectedIcon`. | 1.9 |
 | `AppBarAction` (C03) | `app_bar_action.dart` | Detay çubuğunun sağ eylemi ("Düzenle", "Yeni Program"), 40 yüksek; `field` ile girdi yanındaki 48'lik hali. | 1.18 |
-| `AppFocusRing` | `app_focus_ring.dart` | Klavye odak halkası. `focused`, `style` (`gapped`, `flush`), `gapColor`. | 1.9, spec §1.4 |
+| `AppFocusRing` | `app_focus_ring.dart` | Klavye odak halkası. `focused`, `style` (`gapped`, `flush`, `inset`), `gapColor`, `borderRadius`. | 1.9, spec §1.4 |
 | `AppPressable` | `app_pressable.dart` | Özel çizimli kontrollerin etkileşim kabuğu (basılı, odak, Enter/Space, 0,98 ölçek, haptik). `builder`, `onTap`, `onLongPress`, `scale`, `haptic`. | |
 | `PressScale` | `press_scale.dart` | Basılıyken çocuğu küçültür (0,98 düğme, 0,97 hücre, 0,92 deklanşör). | 1.8 |
 
@@ -392,12 +394,12 @@ Tablolar klasör klasördür. "Pano" sütunu doc yorumundaki atıftır; "Ne zama
 | Bileşen | Dosya | Ne zaman | Pano |
 |---|---|---|---|
 | `AppFieldFrame`, `AppFieldMessage` (C09) | `app_field_frame.dart` | Tüm girdilerin ortak kabuğu (etiket, kutu, yardım ve hata satırı). | 1.12 |
-| `AppTextField` (C09) | `app_text_field.dart` | Tek satır girdi. `label` zorunlu; `controller`, `hintText`, `helperText`, `errorText`, `successText`, `checking`, `password`, `optional`, `keyboardType`, `inputFormatters`, `autofillHints`, `maxLength`, `onChanged`. | 1.12 |
+| `AppTextField` (C09) | `app_text_field.dart` | Tek satır girdi. `label` zorunlu; `controller`, `hintText`, `helperText`, `errorText`, `successText`, `checking`, `password`, `optional`, `keyboardType`, `inputFormatters`, `autofillHints`, `maxLength`, `onChanged`. `readOnly` kilit ikonu ve salt okunur görünüm verir; `readOnlyLock` (varsayılan `true`) `false` ise kilit çizilmez (gönderirken kısa süre kilitlenen alan, pano 14.10 kare 4). `semanticLabel` ekran okuyucuda etiketin yerine okunur ("Koçluk kodu, 4 harf ve 4 rakam"). | 1.12 |
 | `AppSearchField` (C10) | `app_search_field.dart` | Arama alanı. `semanticLabel`, `hintText`, `onQueryChanged`, `debounce`. | 1.12 |
 | `AppCodeInput` (C11) | `app_code_input.dart` | 6 haneli kod, tek gizli alan, yapıştırma ve otomatik doldurma. `label`, `controller`, `errorText`, `errorShake`, `onCompleted`. | 1.12 |
 | `AppSelectField<T>` + `AppSelectOption` (C12) | `app_select_field.dart` | Değeri sheet'te seçtiren alan. `label`, `options`, `value`, `onChanged`, `sheetTitle`, `hintText`, `errorText`. | 1.12, 1.20 |
 | `AppTextArea` (C13) | `app_text_area.dart` | Çok satırlı girdi. `label`, `maxLength` (sayaç), `minHeight`. | 1.12 |
-| `AppInputMasks` (C09 "masked") | `input_masks.dart` | `phone` (`+90 5XX XXX XX XX`) ve `coachCode` (`MOZK-4821`) biçimleyicileri. | 1.12 |
+| `AppInputMasks` (C09 "masked") | `input_masks.dart` | `phone` (`+90 5XX XXX XX XX`) ve `coachCode` (`MOZK-4821`: 4 harf, ilk rakamla gelen tire, 4 rakam; `AAAA-0000` biçimi, Koçluk ekranı ve "Koçu Değiştir" sheet'i) biçimleyicileri. | 1.12 |
 | Yardımcılar | `code_input_logic.dart` | Kod girdisi mantığı. | |
 
 ### 14.4 `feedback/`
@@ -408,7 +410,7 @@ Tablolar klasör klasördür. "Pano" sütunu doc yorumundaki atıftır; "Ne zama
 | `AppOfflineStrip` (C75) | `app_offline_strip.dart` | Çevrimdışı şerit, yerleşimde yer kaplar. `online`; `AppOfflineStrip.service(...)`. Kabuk çizer (`lib/app/shell/widgets/shell_offline_strip.dart`); sheet üstünde `AppSheet.show(online:)` ile. Faz makinesi `OfflineStripController` (`offline_strip_logic.dart`) ayrıdır. | 1.22 kare 6 |
 | `AppSkeleton` + `SkeletonBox` (C76) | `app_skeleton.dart` | Tek shimmer ile iskelet. `SkeletonBox`: `width`, `height`, `radius`, `circle`, `SkeletonBox.chart`. | 1.22 kare 2 |
 | `AppEmptyState` (C77) | `app_empty_state.dart` | Boş durum. `.screen`: `title`, `message`, `actionLabel`, `onAction`, `actionIcon`, `illustration` (128 pt kil, en çok bir), `topPadding`. `.section`: kart; `message`, isteğe bağlı `title` (kalın ilk satır), `actionLabel`/`onAction`; `primaryAction: true` ile eylem metin düğmesi yerine tam genişlik birincil düğme olur. | 1.22 kare 3–4, 14.1 kare 4 |
-| `AppClay` (C61) | `illustrations/app_clay.dart` | Kil görseli (pano 1.25): `AppClay.medium(ClayPicture.ampul)` boş durumda (M 128), `AppClay.large(...)` tanıtımda (L 160); ders eşlemesi `ClayPicture.forSubject`. Salt süs, temaya bakmaz. | 1.25, 2.2 kare 5 |
+| `AppClay` (C61) | `illustrations/app_clay.dart` | Kil görseli (pano 1.25): `AppClay.medium(ClayPicture.ampul)` boş durumda (M 128), `AppClay.large(...)` tanıtımda (L 160); ders eşlemesi `ClayPicture.forSubject`. Salt süs, temaya bakmaz. | 1.25, 11.18, 2.2 kare 5 |
 | `AppErrorState` (C78) | `app_error_state.dart` | Hata durumu, "Tekrar Dene" ile. `.screen`: `title`, `message`, `onRetry`, `retryLabel`, `topPadding`. `.section`: kart; `message`, `onRetry`, isteğe bağlı `title` (başlık 15/24 · 600, ileti altında sade cümle). Hiçbir düzeyde haptik yok. | 1.22 kare 4–5, 14.3 kare 2 |
 | `AppStateLevel`, `AlignedTextAction` (C77 "dolgu 0") | `app_state_level.dart` | Durum düzeyi (`screen`, `section`); metin düğmesini yan dolgusuz çizer. | |
 | `AppStatusView` (C79) | `app_status_view.dart` | Tam ekran durum (açılış, bakım, hesap silme). Kendi `Material`'ını verir. `title`, `message`, `tone` (`AppStatusTone`), `icon`/`leading`, `size` (`AppStatusSize`), `primary`/`secondary` (`AppStatusAction`), `blocking`, `onClose`; `AppStatusView.busy` bekleme ekranı. | 2.7, 4.10, 9.4 |
@@ -420,7 +422,7 @@ Tablolar klasör klasördür. "Pano" sütunu doc yorumundaki atıftır; "Ne zama
 |---|---|---|---|
 | `AppAvatar` (C55) | `app_avatar.dart` | Kişi avatarı, görsel yoksa baş harfler. `name`, `image`, `size` (`AppAvatarSize`), `coach` ("Koç" rozeti), `decorative`. | 1.17 |
 | `AppAvatarStack` (C56) | `app_avatar_stack.dart` | Üst üste avatarlar ve "+N". `people`, `maxShown`, `AppAvatarStack.large`. | 1.17 |
-| `AppAvatarPicker` (C57) | `app_avatar_picker.dart` | Yedi avatarın hepsini gösteren seçici. `avatars`, `selectedIndex`, `onChanged`. | 1.17 |
+| `AppAvatarPicker` (C57) | `app_avatar_picker.dart` | Yedi avatarın hepsini gösteren seçici. `avatars`, `selectedIndex`, `onChanged`, `size`, `showCount`, `gapColor`. Radyo hâli: `groupLabel` ("Avatar, 7 seçenek") ve `optionLabelOf` ("Avatar 4 / 7") verilince radyo grubu olarak okunur; sayaç ("4 / 7") formun etiket satırına geçer, çağıran `showCount: false` verir (koçun öğrenci eklemesi). | 1.17, 14.8 kare 1 |
 | `AppLogoMark`, `AppLockup` (C59) | `app_logo.dart` | S-rota logosu ve SMAP kilit yapısı. `height`, `tone`, `layout`, `onNavy` (null ise koyu temada otomatik). | 1.26 |
 | Yardımcılar | `avatar_initials.dart` | `AvatarInitials` | |
 
@@ -463,8 +465,8 @@ Tablolar klasör klasördür. "Pano" sütunu doc yorumundaki atıftır; "Ne zama
 | Bileşen | Dosya | Ne zaman | Pano |
 |---|---|---|---|
 | `AppSheet` (C71) | `app_sheet.dart` | Sheet açıcı. `AppSheet.show<T>(builder:, context:, size:, dismissible:, online:)` ve `showForOutcome`. `context` verilmezse `AppSheet.navigatorKey` kullanılır. `online` verilirse sheet'in üstünde `AppOfflineStrip` gösterilir (sheet kabuğun şeridini örter). | 1.20, 14.7 kare 3 |
-| `AppSheetFrame` (C71) | `app_sheet_frame.dart` | Tek sheet çerçevesi. `body`, `title`, `subtitle`, `header`, `showClose`, `primary`, `secondary` (`AppSheetAction`), `busy`, `onCloseAttempt`, `bodyPadding`, `footerTopPadding`, `semanticLabel`. Başlık satırı ve alt düğme bandı `app_sheet_frame_parts.dart` part dosyasındadır (`_Header`, `_Footer`). | 1.20 |
-| `AppSheetRoute` | `app_sheet_route.dart` | `smooth_sheets`'in `ModalSheetRoute`'una dayanan route: 350 ms açılış, 250 ms kapanış, perde ve bulanıklık, reduce motion'da fade. | 1.20, 11.15 |
+| `AppSheetFrame` (C71) | `app_sheet_frame.dart` | Tek sheet çerçevesi. `body`, `title`, `subtitle`, `header`, `showClose`, `primary`, `secondary` (`AppSheetAction`), `busy`, `onCloseAttempt`, `bodyPadding`, `footerTopPadding`, `semanticLabel`. Başlık satırı ve alt düğme bandı `app_sheet_frame_parts.dart` part dosyasındadır (`_Header`, `_Footer`). Alt bant alt boşluğu (inset) yok sayar (`ignoreBottomInset`), çünkü görüş alanı klavyenin üstünde zaten biter; bant altta güvenli alan + 8, klavye açıkken 16 boşluk bırakır (`SheetLayoutMath.footerBottom`). | 1.20 |
+| `AppSheetRoute` | `app_sheet_route.dart` | `smooth_sheets`'in `ModalSheetRoute`'una dayanan route: 350 ms açılış, 250 ms kapanış, perde ve bulanıklık, reduce motion'da fade. Klavye açıkken `medium` ve `full` sheet klavyenin üstüne kalkar (`_SheetViewportFrame` görüş alanını klavye boyu kadar kısaltır); `small` kaldırılmaz, bu yüzden metin alanı olan sheet `medium` ya da `full` açılır ("Koçu Değiştir" `full`'dür). | 1.20, 11.15 |
 | `AppConfirmSheet` (C72) | `app_confirm_sheet.dart` | Onay sheet'i. `title`, `confirmLabel`, `message`, `cancelLabel`, `danger`, `dontAskAgainLabel`. Sonuç `ConfirmResult` (`confirmed`, `dontAskAgain`). | 1.21 |
 | `ComingSoonSheet` (C73) | `coming_soon_sheet.dart` | "Yakında". Yalnız kitte ve galeride yaşar, hiçbir ekran açmaz (Ek D-4). | 1.21 kare 3 |
 | `SheetOutcome<T>` | `sheet_outcome.dart` | `SheetSubmitted` ya da `SheetDismissed`. "Hiçbir şey seçmedi" ile "değer seçti" ayrımı için. | |
@@ -492,18 +494,18 @@ Tablolar klasör klasördür. "Pano" sütunu doc yorumundaki atıftır; "Ne zama
 
 ## 15. Alan bileşenleri özet kataloğu
 
-Alan bileşenleri `lib/features/<f>/presentation/widgets/` içinde yaşar. Genel kit değildir, o feature'ın alan bilgisini taşır ve başka feature'dan yeniden kullanılabilir (ör. `SubjectGlyph` dersler, program ve ana sayfada). Her birinin doc yorumu pano ve kareyi ve Türkçe metni verir; C-numaraları `docs/spec/02_bilesenler.md`'de. Galeride `Alan` (`DomainGallery`) ve `Koç` (`CoachGallery`) sayfalarında gösterilir.
+Alan bileşenleri `lib/features/<f>/presentation/widgets/` içinde yaşar. Genel kit değildir, o feature'ın alan bilgisini taşır ve başka feature'dan yeniden kullanılabilir (ör. `SubjectGlyph` dersler, program ve ana sayfada). Her birinin doc yorumu pano ve kareyi ve Türkçe metni verir; C-numaraları `docs/spec/02_bilesenler.md`'de. Galeride `Alan` (`DomainGallery`), `Program` (`PickersGallery`: `ProgramRow`, `WeekGrid`, `HourSlot`) ve `Koç` (`CoachGallery`) sayfalarında gösterilir.
 
 | Feature | Bileşenler |
 |---|---|
-| exams | `DybGlyph` (C40, D/Y/B çipi), `DybCounter` (C41, büyük ve küçük sayaç), `DybStackedBar` (C42), `TestBarRow` (C42), `QuestionCell` (C43, `.result` ve form kontrol yüzü), `ExamRow` (C24), `ExamSummaryCard` (C25, "Son denemen"), `ExamHeader` (C26, `.detail` ve `.moment`), `ExamScoreCard` (C26, puan kartı, pano 14.4), `ExamInfoRow` (C26), `ExamCover`, `ExamTestName`, `TopicResultRow` (C23) |
+| exams | `DybGlyph` (C40, D/Y/B çipi), `DybCounter` (C41, büyük ve küçük sayaç), `DybStackedBar` (C42), `TestBarRow` (C42), `QuestionCell` (C43, `.result` ve form kontrol yüzü), `ExamRow` (C24), `ExamSummaryCard` (C25, "Son denemen"), `ExamHeader` (C26, `.detail` ve `.moment`), `ExamScoreCard` (C26, puan kartı, pano 14.4), `ExamInfoRow` (C26), `ExamCover`, `examTestName` (`exam_test_name.dart`; test adını çözen fonksiyon, widget değil), `TopicResultRow` (C23) |
 | lessons | `SubjectGlyph` (C58, `SubjectTone` ile ders karosu), `SubjectRow` (C20), `SubjectTile` (C21), `TopicRow` (C22), `EksikTag` (C08), `AuthorRow` (C28), `WorkRow` (Edebiyat yazar sheet'inde eser satırı, pano 14.6), `ExampleBox` (C51) |
 | schedule | `ProgramRow` (C29), `ProgramItemRow` (C30), `WeekGrid` (C63, ölçüleri `week_grid_parts.dart`'ta), `HourSlot` (C64), `ProgramSectionSkeleton` (pano 14.3, sekme içi program iskeleti) |
-| coach | `StudentRow` (C31), `StudentTile` (C32), `AttentionRow` (C33), `MeetingRow` (C34), `CodeCard` (C35), `CoachAvatars` (avatar dosya adından asset kuralı) |
+| coach | `StudentRow` (C31), `StudentTile` (C32), `AttentionRow` (C33), `MeetingRow` (C34), `CodeCard` (C35), `CodeCardSheetBody` (C35 sheet hâli, `code_card_sheet.dart`, pano 14.11: hazır, yükleniyor ve hata hâlleri; Hesap'taki kod satırının açtığı `CoachCodeSheet` bunu çizer), `CoachAvatars` (avatar dosya adından asset kuralı) |
 | analytics | `NetChart` (C48, y ekseni deneme türüne sabit, TYT 0–120, AYT 0–160) |
 | cards | `CardDeck` + `CardDeckController`, `InfoCardFace` (C52) |
 | account | `ProfileSummary` (C37) |
-| onboarding | `RoleOption` (C38), tanıtım görselleri (`OnboardingScanVisual`, `OnboardingAnalysisVisual`, `OnboardingGapsVisual`, `OnboardingNetChart`) ve `OnboardingShadows`. Tanıtım görselleri panonun örnek verisini kullanan resimlerdir, gerçek bileşen değildir. |
+| onboarding | `RoleOption` (C38; rol adımı `FeatureFlags.coachSignUpEnabled` kapalıyken gösterilmez, bayrak şu an kapalıdır), tanıtım görselleri (`OnboardingScanVisual`, `OnboardingAnalysisVisual`, `OnboardingGapsVisual`, `OnboardingNetChart`) ve `OnboardingShadows`. Tanıtım görselleri panonun örnek verisini kullanan resimlerdir, gerçek bileşen değildir. |
 | scan | `CameraChromeButton` ve `CameraTopBar` (C67, yalnız koyu tema), `OmrFormArt` (basılı kâğıt gibi açık roller) |
 
 Kil görselleri (pano 1.25; dosyalar `assets/illustrations/clay/<ad>.png`, tasarımcının teslimi `docs/design/kil/1x/`) tek bileşenden çizilir: `AppClay` (`lib/shared/ui/illustrations/app_clay.dart`, C61). `ClayPicture` 11 görseli sayar (`kitap` Türkçe, `hokka` Edebiyat ve koçta "Henüz görüşme yok", `sutun` Tarih, `kure` Coğrafya, `atom` Fizik, `erlenmeyer` Kimya, `yaprak` Biyoloji, `ampul` Programım boş, `harita` Denemelerim boş, hoş geldin ve deneme destesi; `islemler` ve `piramit` yalnız mağaza). Ders eşlemesi `ClayPicture.forSubject(SubjectKey?)` (desteler için `DeckLessons.pictureOf`). Boylar `AppClay.large` (L 160, tanıtım) ve `AppClay.medium` (M 128, `AppEmptyState.screen(illustration:)`). Kurallar: yalnız tanıtım, ekran düzeyi boş durum ve mağaza; ekranda en çok bir; satır, çip, sekme, düğmede yok; bölüm düzeyi boş durum yalnız metin; salt süs (`ExcludeSemantics`); koyu temada karo değişmez; dosya yoksa hiçbir şey çizilmez. Şu an yalnız 1x (140 px) var; 480 px asıllar gelince aynı adlarla `clay/2.0x/` ve `clay/3.0x/` altına konur, kod değişmez.
@@ -553,6 +555,7 @@ Kısıtlar (kod yorumları ve `docs/SMAP_UI_Rehberi_Duzeltmeler.md`):
 17. **Sheet ve toast için bağlam yok.** ViewModel `BuildContext` taşımaz. `AppSheet.navigatorKey` ve `ToastService` kökte bir kez kurulur (`lib/app/app_module.dart`). `AppSheet.show` bağlamsız çağrıldığında router anahtarı yoksa sessizce `null` döner ve sheet açılmaz; galeri uygulamasında sheet'ler bağlamla açılır.
 18. **Sheet üstünde şerit.** Çevrimdışıyken sheet'in üstünde şerit görünmesi gerekiyorsa `AppSheet.show(online: ...)` vermeyi unutmayın; verilmezse sheet kabuğun şeridini örter ve kullanıcı bağlantı durumunu görmez.
 19. **Bölüm kartı mı, ekran mı.** Bir sekmenin tamamı boş/hatalıysa `AppEmptyState.screen`/`AppErrorState.screen`; sayfa çalışıyor ve yalnız bir bölüm düştüyse `.section`. `.section` kartında `title` verirseniz kalın ilk satır başlık olur ve ileti ikincil metne iner; vermezseniz hata kartında ileti kalın tek satırdır, boş kartta düz gövde metnidir.
+20. **Metin alanlı sheet ve klavye.** `AppSheetRoute` klavye açılınca yalnız `medium` ve `full` sheet'i klavyenin üstüne kaldırır; `small` (`AppSheet.show`'un varsayılanı) kalkmaz ve form klavyenin arkasında kalır. Girdi taşıyan sheet'i `medium` ya da `full` açın. Alt bant boşluğunu kendiniz eklemeyin, `AppSheetFrame` klavye ve güvenli alan payını kendisi verir.
 
 ## 18. İlgili dosyalar
 

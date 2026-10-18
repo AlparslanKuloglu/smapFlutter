@@ -2,7 +2,7 @@
 
 Bu bölüm uygulamanın backend ile nasıl konuştuğunu anlatır: tek HTTP istemcisi (`NetworkService`), hata modeli, yapılandırma ve bayraklar, gevşek JSON'u okuyan DTO'lar, yeni bir uç eklemenin adımları, oturumun ve cihaz verisinin nerede tutulduğu, çevrimdışı davranış ve önbellekli servisler. Projeyi ilk kez açan deneyimli bir Flutter geliştiricisi (ve AI ajanları) için yazıldı; bir repository, DTO, istek ya da oturum davranışına dokunmadan önce okunmalıdır.
 
-Yollar repo köküne göredir; satır numarası verilmez, adı `grep` ile bulun. Uygulamanın iskeleti (açılış, DI, router, guard'lar) [01_mimari.md](01_mimari.md)'de, ekranların bu veriyi nasıl kullandığı [03_ekran.md](03_ekran.md)'de, codegen ve test araçları [05_araclar.md](05_araclar.md)'dadır. "Spec §6.3 #N" atfı, `docs/spec/SMAP_Flutter_Spec.md` içindeki backend bağımlılıkları tablosunun N. maddesidir; sunucudan beklenenler ve ekran yazılırken çıkan ek sorular [../Backend_Sorulari_Ek.md](../Backend_Sorulari_Ek.md)'dedir. Kod yorumlarında geçen "S4", "S7", "S10" gibi kodlar eski backend soru numaralarıdır; karşılığı spec §6.3'tedir.
+Yollar repo köküne göredir; satır numarası verilmez, adı `grep` ile bulun. Uygulamanın iskeleti (açılış, DI, router, guard'lar) [01_mimari.md](01_mimari.md)'de, ekranların bu veriyi nasıl kullandığı [03_ekran.md](03_ekran.md)'de, codegen ve test araçları [05_araclar.md](05_araclar.md)'dadır. "Spec §6.3 #N" atfı, `docs/spec/SMAP_Flutter_Spec.md` içindeki backend bağımlılıkları tablosunun N. maddesidir; sunucudan beklenenler ve ekran yazılırken çıkan ek sorular [../Backend_Sorulari_Ek.md](../Backend_Sorulari_Ek.md)'dedir. Kod yorumlarında geçen "S4", "S7", "S10" gibi kodlar eski backend soru numaralarıdır; tanımları `docs/history/SMAP_Gelistirme_Plani.md` §7 "Açık sorular"dadır (S4 öğrenci `password` alanı, S7 hesap uçları, S10 `/public-config`, `/devices` ve IAP uçları). Spec §6.3 bu numaraları kullanmaz; konuların güncel karşılığı oradaki tabloda kendi numarasıyla geçer (ör. S7 → #7, #8; S10 → #4, #5, #16), S4'ün ise orada karşılığı yoktur.
 
 ---
 
@@ -58,7 +58,7 @@ View → ViewModel (context'siz)
 
 - `AuthRequests.login` ve `RegisterRequests.register`: 15/15 sn.
 - `AuthRequests.checkUser` ve `logout`: receive 8 sn.
-- OMR istekleri: `SmapDurations.submitTimeout` (60 sn) ve `readTimeout` (30 sn), `lib/core/theme/app_motion.dart`.
+- OMR okuma istekleri (`opticimage`, `answerArray`): `SmapDurations.submitTimeout` (60 sn) ve `readTimeout` (30 sn), `lib/core/theme/app_motion.dart`. `examrequest` zaman aşımı vermez; `NetworkTimeouts` varsayılanlarını (send 30 sn, receive 30 sn) kullanır.
 
 ### 2.3. Çoklu host
 
@@ -169,7 +169,7 @@ Cihazın bağlantı okuması (`deviceOnline`) yalnız **belirsiz bağlantı hata
 
 ### 4.2. FeatureFlags (`lib/core/config/feature_flags.dart`)
 
-Bayraklar derleme zamanı sabitidir. Kapalı özellik ya rota listesine eklenmez ya da giriş noktası çizilmez. Bayrak, ilgili endpoint'in indiği değişiklikte `true` yapılır.
+Bayraklar derleme zamanı sabitidir. Kapalı özellik ya rota listesine eklenmez ya da giriş noktası çizilmez. Uca bağlı bayrak, ilgili endpoint'in indiği değişiklikte `true` yapılır; `coachSignUpEnabled` ise bir uca değil ürün kararına bağlıdır.
 
 | Bayrak | Değer | Neden |
 |---|---|---|
@@ -182,6 +182,7 @@ Bayraklar derleme zamanı sabitidir. Kapalı özellik ya rota listesine eklenmez
 | `offlineQueueEnabled` | false | Çevrimdışı fotoğraf kuyruğu yok. v1'de hata ekranı gösterilir (pano 4.5 kare 4). |
 | `attentionListEnabled` | false | D-27 kurallarını hesaplayan uç yok (§6.3 #28, #29). Kapalıyken bölüm hiç çizilmez; "kimse dikkat gerektirmiyor" kartı kimsenin kontrol etmediği bir iddia olurdu. |
 | `coachProgramWriteEnabled` | **true** | Koç, öğrencisi adına program kurar ve düzenler (Tur 12 A). Sunucunun `?studentId=` ile yazılanı öğrencinin hesabına işlediği varsayılır (T12.8, backend'e açık soru, `Backend_Sorulari_Ek.md` Y4). İşlemiyorsa `false` yapılır; Program sekmesi salt okunur davranışa döner ve `NewProgramRoute` öğrenciyle açılamaz. |
+| `coachSignUpEnabled` | false | Sahip, canlıdaki kayıt formundan "Öğrenci / Koç" seçimini kaldırdı (origin/main e615595). Uygulamada açılan hesap her zaman öğrencidir (`userType` 1). Kapalıyken tanıtım akışında rol adımı gösterilmez (pano 2.2 kare 1), kayıt ekranı rol segmentini çizmez ve hep öğrenci gönderir (pano 2.5 kare 3). Hoş geldin ekranı, "Giriş Yap" ve koç girişi değişmez. ViewModel'ler ve tanıtım taslağı değeri kurucu argümanıyla (`coachSignUpEnabled`) alır. Ne zaman açılacağına sahip karar verir. |
 
 Bayrağı açmadan önce, bayrağın doc yorumundaki "Opening it also needs ..." satırını (repository kaydı, kuyruk vb.) okuyun. Bayrakların rota ve UI etkisi için [01_mimari.md](01_mimari.md) §10 tuzak 10.
 
@@ -349,6 +350,7 @@ expect(adapter.last.queryParameters, {'page': 2, 'perPage': 8});
 - `SharedPreferencesWithCache` üstündedir; `runApp`'ten önce yüklenir. Okuma senkron, yazma `await`'li ama fırlatmaz.
 - **Yalnız `allowedKeys`'teki anahtarlar** yüklenir ve okunur. Yeni anahtarı önce sabit olarak ekleyip kümeye koyun, doc yorumu yazın. Aksi halde okuma `null` döner, yazma yutulur; debug'da `assert(false)` patlar, release'te log'a uyarı düşer. Bu dosya ortak dosyadır ([../WORKFLOW.md](../WORKFLOW.md) §5).
 - Anahtarlar: `ui.themeMode`, `onboarding.completed`, `onboarding.draft`, `device.installId`, `scan.cameraPrimerAnswered`, `scan.tutorialSeen`, `scan.cornersHintHidden`, `cards.skipLearnedConfirm`, `notif.primerAnswered`, `lessons.examType`, `analytics.favoriteExams`, `lessons.literatureSection`, `schedule.programView`, `notif.preferences`.
+- `accountKeys` kümesi (`onboarding.draft`, `cards.skipLearnedConfirm`, `analytics.favoriteExams`, `notif.preferences`) kişiye aittir: oturum kapatılınca `clearAccount()` ile silinir (§9.4, §13 tuzak 11). Diğer anahtarlar cihaza aittir ve kalır. Hesaba özel yeni anahtarı bu kümeye de ekleyin.
 - Hesap verisi (kullanıcı JSON'u, çerez) buraya konmaz.
 - AGENTS.md, özelliklerde `SharedPreferences.getInstance`'ı yasaklar. Tek meşru kullanım yerleri legacy göç sınıfları ve `SessionStore`'daki legacy anahtar temizliğidir (§8.2). **`tool/ui_rules.sh` bu kuralı denetlemez**; inceleme yakalar.
 
@@ -389,13 +391,13 @@ expect(adapter.last.queryParameters, {'page': 2, 'perPage': 8});
 - `/student/login` yanıtına tek başına güvenilmez: ardından `checkUser` oturumu doğrulamalıdır. `AuthRepository.login`, gövdeyi okur (`LoginResponse.isAuthenticated`); gövdesi `success: false` olan ya da oturum kanıtı taşımayan yanıt `unauthorized` olur. 400/404 gibi istemci hataları da yanlış kimlik bilgisi sayılır (`unauthorized`); 403 `forbidden`, 5xx `server` kalır.
 - Her adım başarısız olursa geri alınır: `_rollbackLogin` önce `logout` çağırır (best-effort), sonra çerezi siler.
 - Login'in kabul edip `checkUser`'ın reddettiği durum `unauthorized` olur (bu bir "oturum süresi doldu" değil, başarısız girişlerdir).
-- Aynı kullanıcı yeniden girerse açık scope korunur, başka biri girerse scope baştan kurulur (`_enterScopeFor`).
+- Aynı kullanıcı yeniden girerse açık scope korunur, başka biri girerse scope baştan kurulur (`_enterScopeFor`). Bu yol hesaba ait cihaz tercihlerini silmez (§13 tuzak 11).
 
 ### 9.4. Çıkış (`signOut`, `completeAccountDeletion`)
 
 - UI önce çıkar: durum hemen `signedOut`, böylece ViewModel'ler servislerden önce yok olur.
 - Sonra, cihaz çevrimiçiyse sunucuya `logout` gider (8 sn zaman aşımı, hata temizliği durdurmaz).
-- Sonra çerezler, önbellek, legacy anahtarlar ve DI scope temizlenir.
+- Sonra çerezler, önbellek, legacy anahtarlar, hesaba ait cihaz tercihleri (`forgetAccountData` → `DevicePreferences.clearAccount`; yalnız oturum ya da session scope açıksa) ve DI scope temizlenir.
 - `completeAccountDeletion` aynı temizliği `logout` çağrısı **yapmadan** yapar: oturum sunucuda artık yok. Silme çağrısını hesap ekranı yapar (`AccountRepository.deleteAccount`); bu metot yalnız yerel yarısıdır ve silme "bitti" ekranının "Tamam"ında çağrılır.
 
 ### 9.5. Oturum düşmesi
@@ -419,7 +421,7 @@ Kapsamın ne zaman açılıp kapandığı [01_mimari.md](01_mimari.md) §3.2'de 
 ## 10. Çevrimdışı davranış
 
 - `ConnectivityService` (`lib/core/services/connectivity_service.dart`): `connectivity_plus` üstünde tek okuma. Bilinmeyen durum **çevrimiçi** sayılır (yanlış "çevrimdışı" indirmeleri durdurur). Captive Wi-Fi de çevrimiçi okunur; gerçek hatayı `NetworkService` bildirir.
-- `online` (`ValueListenable<bool>`) ViewModel ve şerit içindir. `onlineChanges` ayrı değerlerin akışıdır. `isNotCellular`, yalnız hücresel bağlantı yoksa true döner.
+- `online` (`ValueListenable<bool>`) ViewModel ve şerit içindir. `onlineChanges` ayrı değerlerin akışıdır. `isNotCellular`, tek bağlantı hücresel olmadıkça true döner (Wi-Fi/ethernet varsa ya da okuma yoksa da true).
 - `NetworkService` bunu yalnız belirsiz bağlantı hatalarında kullanır (§3.2).
 - `SessionManager`, çevrimdışıyken `revalidate` yapmaz ve sunucuyu aramaz. Başarısız bir kontrol (çevrimdışı, zaman aşımı, 5xx) durumu değiştirmez; kullanıcı önbellekle çalışmaya devam eder.
 - **UI tarafı:** `AsyncSection.failed` (`lib/shared/ui/feedback/section_state.dart`) `offline` hatasını `SectionState.offline`'a, diğerlerini `error`'a çevirir. Veri varken bölüm `ready` kalır ve çevrimdışı şeridi (`OfflineStripController`, `lib/shared/ui/feedback/offline_strip_logic.dart`) durumu anlatır. Her yükleme 15 sn'lik iskelet sınırı altındadır (`AsyncSection.load` → `withSkeletonTimeout`, `SmapDurations.skeletonTimeout`). Bölüm durumları [03_ekran.md](03_ekran.md)'de.
@@ -437,10 +439,12 @@ Ortak kalıp:
 - Başarısız yenileme önceki veriyi **korur** ve hatayı raporlar.
 - `dispose` scope ile birlikte çalışır.
 
+`LiteratureService` tazelik ve hata raporu bakımından bu kalıba uymaz; farkı tablodadır.
+
 | Servis | Tazelik | Not |
 |---|---|---|
 | `LessonsService` (`lib/features/lessons/application/lessons_service.dart`) | `freshFor` = 5 dk | Dersler ve eksik sayıları birlikte çekilir, biri düşse diğeri korunur. Koç farklı `studentId` verirse önce önceki öğrencinin verisi düşer. `markLearnedLocally` öğrenildi işaretinden sonra isteksiz sayaç düşürür. `_generation` sayacı eski çekimin sonucunu yok sayar. |
-| `LiteratureService` (`lib/features/lessons/application/literature_service.dart`) | oturum boyunca | Edebiyat ağacı (dönem → alt başlık → yazar → eser); her seviye kendi `AsyncSection`'ında. "Öğrendim" buradan geçer (`PendingLearns` ile), kaydedilince `LessonsService.refresh()` çağrılır. |
+| `LiteratureService` (`lib/features/lessons/application/literature_service.dart`) | tazelik penceresi yok: her `load*` çağrısı yeniden okur (süren okumaya katılır) | Veri oturum boyunca saklanır; eldeki seviye iskeletsiz gösterilmeye devam eder ve bu durumda başarısız okuma sessizce yok sayılır; `force: true` iskelete döner. Edebiyat ağacı (dönem → alt başlık → yazar → eser); her seviye kendi `AsyncSection`'ında. "Öğrendim" buradan geçer (`PendingLearns` ile), kaydedilince `LessonsService.refresh()` çağrılır. |
 | `CoachStudentsService` (`lib/features/coach/application/coach_students_service.dart`) | `staleAfter` = 5 dk | Yalnız koç kabuğunda dokunun. `addStudent` yeni öğrenciyi listeye ekler. `invalidate` / `clear` / `dispose`. |
 | `ScheduleService` (`lib/features/schedule/application/schedule_service.dart`) | `staleAfter` = 2 dk | `studentId` başına `ScheduleSnapshot`; konu listesi (`mainSubjects`) oturum boyunca saklanır. Yazmalar sıraya girer (`_writeTail`). Bilinen sınır: yazma bitmeden başlayan bir yenileme eski veriyle yazma sonucunu geçici ezebilir. |
 
@@ -463,7 +467,7 @@ Tam liste `docs/spec/SMAP_Flutter_Spec.md` §6.3'tedir (41 madde); ekran yazıl�
 | #11 | `updateStudent`: yeni alanları (avatar, sınıf, alan) kabul eder mi ve sunucu birleştirir mi. | `account_repository.dart`, `profile_update.dart` |
 | #12 | Kullanıcı adı çakışmasının sözleşmesi belirsiz (metne bakılıyor); kullanıcı adı önerisi yok. | `register_outcome.dart`, `username_check.dart` |
 | #13 | Yasal metinlerde tarih yok; sürümle onay kaydı yalnız tasarımda. `sendAcceptedVersions = true`; sunucu bilinmeyen alana itiraz ederse `false` yapılabilir. | `legal_document_dto.dart`, `register_requests.dart` |
-| #15 | Koçluk kodu biçimi (`AAAA-0000`, tire sorusu). Legacy `deleteCoach` parametresini hiç göndermiyordu. | `coach_code.dart`, `account_requests.dart` |
+| #15 | Koçluk kodu biçimi (`AAAA-0000`, tire sorusu). Legacy `deleteCoach` parametresini hiç göndermiyordu. Koç değiştirme, eski uygulamadaki gibi tek `addCoach` çağrısıdır (önce `deleteCoach` yok), ardından `getStudentsCoach` kartı yeniler; sunucunun eski bağı kendisi kaldırıp kaldırmadığı açık soru (T12.24). | `coach_code.dart`, `account_requests.dart`, `coaching_viewmodel.dart` |
 | #16, #35 | Push ve bildirim tercihi ucu yok; "koç atadı" kategorisi v1'de karşılıksız. | `feature_flags.dart`, `notification_preferences.dart` |
 | #17 | Sosyal giriş: Apple/Google uç ve asset'leri yok. | `feature_flags.dart` |
 | #18 | `aimType` (2 EA, 3 SAY, 4 SÖZ) ve Dil eşlemesi açık; eski koç diyaloğunun değerleri yanlış olabilir. | `ayt_field.dart`, `study_track.dart` |
@@ -496,7 +500,7 @@ Tam liste `docs/spec/SMAP_Flutter_Spec.md` §6.3'tedir (41 madde); ekran yazıl�
 8. **Hook'lar encode'da çalışmaz.** `toJson` çıktısı sunucudan gelen biçimi garanti etmez. `SessionStore` ve OMR gövdesi `UserDto.toJson()` kullanır; bu bilinçli bir ödünleşimdir.
 9. **`fromJson` bir `Map` alır.** `build.yaml` yeniden adlandırması yüzünden string ayrıştırma `fromJsonString`'dir. Yeni DTO yazarken karıştırmayın. Üretilen `.mapper.dart` dosyalarını git'e ekleyin ve DTO değişince `build_runner`'ı çalıştırın.
 10. **Feature'lar arası import.** `exams`, `lessons`, `cards`, `analytics`, `schedule` ve `coach` DTO'ları `auth/data/dtos/lenient_hooks.dart`'ı; exams/lessons/cards/analytics ayrıca `exams/data/api_support.dart`'ı import eder. Dosyalardaki yorumlar bunları ileride `lib/core`'a taşımayı önerir. Taşımadan önce tüm import'ları güncelleyin; yeni uç yazarken kopyalamak yerine yeniden kullanın.
-11. **Cihaz tercihleri çıkışta silinmez.** `DevicePreferences.clear()` hiçbir yerden çağrılmıyor. `analytics.favoriteExams`, `lessons.examType`, `notif.preferences`, `onboarding.draft` hesaba değil cihaza bağlıdır; aynı cihazda hesap değiştirince önceki kullanıcının favori sonuç kimlikleri ve bildirim tercihleri kalabilir. Hesaba özel yeni bir değer eklerseniz bunu hesaba katın ve çıkışta temizlemeyi düşünün.
+11. **Hesaba ait cihaz tercihleri yalnız oturum kapatılınca silinir.** `DevicePreferences.accountKeys` (`onboarding.draft`, `cards.skipLearnedConfirm`, `analytics.favoriteExams`, `notif.preferences`) `signOut` ve `completeAccountDeletion` sırasında `SessionManager._runEnd` → `forgetAccountData` → `DevicePreferences.clearAccount()` ile silinir. Diğer anahtarlar (`lessons.examType`, tema, tanıtım ve izin bayrakları, görünüm seçimleri, `device.installId`) cihaza bağlıdır ve kalır; `DevicePreferences.clear()` hiçbir yerden çağrılmaz. Oturum süresi dolarak biterse (401 ya da açılışta çerez yok) bu temizlik çalışmaz: ardından başka bir hesapla girişte (`_enterScopeFor`) yalnız scope yeniden kurulur, önceki kişinin bu değerleri kalır. Hesaba özel yeni bir anahtar eklerseniz `accountKeys`'e de koyun.
 12. **`DevicePreferences` izinli anahtar listesi.** Yeni anahtarı `allowedKeys`'e eklemeden kullanırsanız okuma `null` döner, yazma sessizce yutulur ve debug'da `assert` patlar.
 13. **`SharedPreferences.getInstance` yasak, ama otomatik denetlenmiyor.** AGENTS.md yasaklar; `tool/ui_rules.sh` bu örüntüyü aramaz (denetlediği örüntüler: ham renk, `TextStyle(`, `fontSize:`, `Icons.`, diyalog ve `SnackBar`, `Navigator.push`, `print(`, `Widget _build`, sunumda ham `Duration(`, dosya boyu). Meşru kullanım yalnız legacy göç sınıfları ve `SessionStore`'daki legacy anahtar temizliğidir; başka yerde inceleme yakalamalıdır.
 14. **Kod yorumundan değil istek dosyasından okuyun.** Görüşme tarihi `interview_requests.dart`'ta saat dilimsiz yerel zaman (`date.toLocal().toIso8601String()`) olarak gider; UTC'ye çevirmek her kayıtlı görüşmeyi cihaz farkı kadar kaydırır. Sunucunun UTC'yi kabul edip etmediği doğrulanmadı (`Backend_Sorulari_Ek.md` G1). Git geçmişi: `1fc4fec` ("görüşme tarihi legacy biçimine döndü").

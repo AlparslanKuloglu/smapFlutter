@@ -8,8 +8,8 @@ Bu belge projeye yeni katılan geliştiricinin (ya da yapay zekâ ajanının) il
 
 **SMAP (Student Map)**, YKS'ye (TYT/AYT) hazırlanan lise öğrencileri ve öğrenci koçları için bir Flutter uygulamasıdır.
 
-- **Öğrenci:** deneme optik formunu kamerayla okutur, sonucunu ve analizini görür (net, D/Y/B, konu bazında eksikler, puan ve sıra), derslerin konularını ve bilgi kartlarını çalışır, haftalık program kurar, bir koça bağlanır.
-- **Koç:** öğrencilerini ekler ya da kodla bağlar, her öğrencinin analizini, denemelerini ve programını görür ve düzenler, görüşme planlar, görüşme notu tutar.
+- **Öğrenci:** deneme optik formunu kamerayla okutur, sonucunu ve analizini görür (net, D/Y/B, konu bazında eksikler, puan ve sıra), derslerin konularını ve bilgi kartlarını çalışır, haftalık program kurar, koçun verdiği kodla bir koça bağlanır (koçunu sonradan değiştirebilir).
+- **Koç:** öğrencilerini ekler ya da koçluk kodunu paylaşarak bağlar, her öğrencinin analizini, denemelerini ve programını görür ve düzenler, görüşme planlar, görüşme notu tutar. Koç hesabı uygulamada açılmaz: kayıt yalnız öğrenci içindir, koç yalnız giriş yapar (`FeatureFlags.coachSignUpEnabled = false`, sahibin kararı).
 - **Backend:** mevcut SMAP sunucusu (`https://www.smaptr.com`, adres `config/dev.json` ya da `--dart-define` ile değişir). Bu depo yalnız mobil istemcidir. Sunucuda karşılığı olmayan ya da cevabı beklenen davranışlar `docs/Backend_Sorulari_Ek.md`'de, bayrakla kapalı tutulan özellikler `lib/core/config/feature_flags.dart`'tadır.
 - **Tarihçe:** Uygulama 2026 Ekim'inde Claude Design'da hazırlanan tasarıma göre eski kod tabanından ekran ekran yeniden yazıldı (Tur 1–12). Eski kod tamamen silindi; yalnız eski cihaz verisinin göçü kaldı. Plan ve kararlar `docs/SMAP_Ana_Plan.md`'de, görev görev ilerleme `docs/DURUM.md`'de.
 
@@ -31,7 +31,7 @@ Bu belge projeye yeni katılan geliştiricinin (ya da yapay zekâ ajanının) il
 | Durum, backend'e sorulanlar | `docs/DURUM.md`, `docs/Backend_Sorulari_Ek.md` |
 | Geçmiş görev tanımları ve planlar | `docs/history/` |
 
-Çelişki olursa öncelik: `docs/SMAP_Ana_Plan.md` → `docs/SMAP_UI_Rehberi_Duzeltmeler.md` → teslim panoları (SMAP-11) ve "Yerine geçtiği kare" etiketli panolar → spec → UI rehberi → diğer panolar.
+Çelişki olursa öncelik: `docs/SMAP_Ana_Plan.md` → `docs/SMAP_UI_Rehberi_Duzeltmeler.md` → Tur 12 panoları (`SMAP-14` ve `SMAP-11`'deki Tur 12 ekleri; "Yerine geçtiği kare" etiketleriyle) → teslim panoları 11.12–11.16 → spec → UI rehberi → diğer panolar (panolar arası sıra: `docs/design/README.md` "Öncelik").
 
 ## 3. İlk gün
 
@@ -57,10 +57,11 @@ cp config/dev.json.example config/dev.json
 flutter run --dart-define-from-file=config/dev.json
 ```
 
-- Üretilen dosyalar (`*.g.dart`, `*.gr.dart`, `*.mapper.dart`, `lib/gen/`, `lib/l10n/app_localizations*.dart`, `lib/l10n/app_tr.arb`) depoda durur; CI güncel olduklarını denetler. Elle düzenlenmez.
+- Üretilen dosyalar (`*.gr.dart`, `generated/*.mapper.dart`, `lib/gen/`, `lib/l10n/app_localizations*.dart`, `lib/l10n/app_tr.arb`) depoda durur; CI güncel olduklarını denetler. Elle düzenlenmez.
 - VS Code'da `.vscode/launch.json` hazır yapılandırmalar içerir: normal çalıştırma, `config/dev.json` ile, **öğrenci/koç önizlemesi (hesapsız)**, koyu tema, okutmayı galeriden deneme (simülatör), bileşen galerisi, profile ve release. `.vscode/tasks.json`: codegen, l10n, kontrol (format + analyze + UI kuralları), test, erişilemeyen dosyalar, pod install, ikon/splash.
 - **Hesapsız çalışma:** `--dart-define=SHELL_PREVIEW=student` (ya da `coach`) uygulamayı oturum açmadan kabukla açar; veri çağrıları oturumsuz olduğundan iskelet, hata ve boş durumları görürsünüz. Veri dolu ekranı görmek için galeriyi (`flutter run -t lib/main_gallery.dart`) ya da geçici bir sahte repository'yi kullanın; canlı sunucuda test hesabıyla yazan işlem yapmayın.
-- Diğer debug tanımları: `THEME_MODE=dark|light|system`, `SCAN_GALLERY=true` (kamera yerine galeriden form fotoğrafı; simülatörde okutma akışı için), `OMR_BASE_URL` (optik okuma sunucusu; verilmezse `API_BASE_URL`), `CDN_BASE_URL`. Ayrıntı `docs/dev/05_araclar.md`.
+- Diğer tanımlar: yalnız debug'da işleyenler `THEME_MODE=dark|light|system` ve `SCAN_GALLERY=true` (kamera yerine galeriden form fotoğrafı; simülatörde okutma akışı için); yapılandırma anahtarları (`config/dev.json`, release'te de geçerli) `OMR_BASE_URL` (optik okuma sunucusu; verilmezse `API_BASE_URL`) ve `CDN_BASE_URL`. Ayrıntı `docs/dev/05_araclar.md`.
+- Simülatörde yeniden derlemeden başlangıç değeri (açılacak sekme, galeri sayfası, koyu tema): `tool/sim_env.sh booted SHELL_PREVIEW_TAB=2` ya da `tool/sim_env.sh booted GALLERY_PAGE=12 GALLERY_DARK=true`, sonra uygulamayı başlatın. iOS 26 simülatörlerinde `SIMCTL_CHILD_…` ortam değişkenleri uygulamaya ulaşmaz.
 
 ## 4. Kodun düzeni
 
@@ -87,8 +88,8 @@ lib/
 - **View** `StackedView` ve `reactive => false`: kök yeniden çizilmez. Her veri bölümü `SelectorViewModelWidget` ile yalnız kendi değişmez değerini (record) dinler.
 - **ViewModel context'siz:** gezinme enjekte edilen navigator/`AppRouter` ile, sheet'ler `*Dialogs` arayüzüyle, toast'lar `ToastText` lambda'larıyla. ViewModel get_it'e kaydedilmez; servisler `viewModelBuilder` içinde `locator`'dan verilir. Bu sayede her ViewModel saf unit testle sınanır.
 - **Saf mantık** `application/` altında ve testli; **veri** `data/` (repository + DTO) ve `domain/` (model) altında. Repository'ler `Either<AppException, T>` döner, tek `NetworkService` (Dio) kullanılır.
-- **DI:** get_it, oturum açılınca `session` kapsamı kurulur, çıkışta atılır; kullanıcıya özel her servis bu kapsamdadır.
-- **Router:** auto_route 11.1.0 (sürüm sabit), guard zinciri (açılış, tanıtım, oturum, rol). Öğrenci ve koç ayrı kabuklarda.
+- **DI:** get_it, oturum açılınca `session` kapsamı kurulur, çıkışta atılır; kullanıcıya özel her servis bu kapsamdadır. Oturum bitince (çıkış, hesap silme) `SessionManager` cihazda kişiye ait tercihleri de siler (`DevicePreferences.clearAccount`: kayıt taslağı, yıldızlı denemeler, bildirim seçimleri, "Bir daha sorma"); aynı cihazdaki sonraki hesap temiz başlar.
+- **Router:** auto_route 11.1.0 (sürüm sabit), guard zinciri (tanıtım, oturum, rol: `OnboardingGuard` → `AuthGuard` → `RoleGuard`; açılış ekranının guard'ı yoktur, hedefi kendisi seçer). Öğrenci ve koç ayrı kabuklarda.
 - **Durumlar:** her bölümün iskelet (15 sn zaman aşımı), boş, hata ve çevrimdışı hâli vardır; veri yoksa alan çizilmez, sahte veri gösterilmez.
 
 Ayrıntı ve gerekçeler: `docs/dev/01_mimari.md`, `docs/dev/03_ekran.md`.
@@ -125,7 +126,7 @@ tool/ui_rules.sh
 flutter test
 ```
 
-- `tool/format.sh`: `lib/vendor` dışındaki bütün Dart dosyalarını biçimler (`dart format .` üçüncü taraf `lib/vendor`'u da yeniden biçimler, kullanmayın); CI aynı betikle denetler.
+- `tool/format.sh`: `lib/vendor` dışında git'te izlenen bütün Dart dosyalarını biçimler (`dart format .` üçüncü taraf `lib/vendor`'u da yeniden biçimler, kullanmayın); yeni dosyayı önce `git add` edin, yoksa biçimlenmez. CI aynı betikle denetler (`--output=none --set-exit-if-changed`).
 - `flutter analyze`: **0 sorun** (bilgi düzeyi dahil; CI'da ölümcül).
 - `tool/ui_rules.sh`: ham renk, `TextStyle(`, `fontSize:`, Material ikon, diyalog/snack bar, `Navigator.push`, `print(`, `Widget _build…`, sunumda ham `Duration(` ve dosya boyları (ekran 250, part 300, ViewModel 500, diğer sunum/kit 400 satır).
 - `flutter test`: ViewModel, servis, repository ve saf mantık testleri (3.400'ü aşkın). Görsel doğrulama galeride ve simülatörde panoyla yan yana yapılır.
@@ -138,7 +139,7 @@ Tek görsel hedef `docs/design/panolar/` altındaki panolardır. Kod panoya "pan
 - Ekrandaki Türkçe metinler panodakinin **birebir** aynısıdır.
 - Renk, yazı, boşluk, yarıçap ve süre **asla** ham değer olarak yazılmaz; panodaki hex/pt değerinin token karşılığı kullanılır (`context.appColors`, `context.appText`, `AppSpacing`, `AppRadius`, `SmapDurations`). Eksik rol varsa tasarım sistemine eklenir.
 - Panodaki örnek veriler (Alparslan Kuloğlu, 67,5 net, MOZK-4821…) tasarımın "Ek C" örnek setidir: testlerde kullanılır, uygulamada gösterilmez.
-- Kil görseller yalnız tanıtımda, ekran düzeyi boş durumlarda ve mağaza görsellerinde; satırda, çipte, düğmede yok.
+- Kil görseller (`AppClay`, `assets/illustrations/clay/`; pano 1.25) yalnız tanıtımda, ekran düzeyi boş durumlarda ve mağaza görsellerinde; ekranda en çok bir tane. Satırda, çipte, sekmede, düğmede, grafik yanında ve bölüm düzeyi boş durumda yok.
 
 ## 9. Tuzaklar (en çok can yakanlar)
 
@@ -151,15 +152,16 @@ Tek görsel hedef `docs/design/panolar/` altındaki panolardır. Kod panoya "pan
 7. **Sahte veri:** eksik alanı "0" ya da örnek değerle doldurmayın; alanı çizmeyin. Sunucu alanı gelmiyorsa `docs/Backend_Sorulari_Ek.md`'ye yazın.
 8. **Ortak dosyalara paralel commit:** `app_tr.arb`, `app_router.dart`, DI, `pubspec.yaml` çakışır; yalnız koordinatör yazar.
 9. **Canlı sunucuda deneme:** test hesabıyla bile yazan istek (kayıt, silme, koç bağlama, program kaydetme) gerçek veriyi değiştirir. Sahte repository ve galeri kullanın.
-10. **auto_route ve build_runner sürümleri sabittir** (11.1.0 ve 2.13.1): yükseltme Flutter 3.38 ile derlenmiyor; yükseltmeden önce deneyin.
+10. **auto_route ve build_runner sürümleri sabittir** (11.1.0 ve 2.13.1): auto_route 11.2+ Flutter 3.38.6'da derlenmiyor (`Viewport.scrollCacheExtent`, Flutter 3.41+); build_runner 2.15+ build betiğini AOT derlediğinden `objective_c` build hook'uyla kırılıyor (2.13.x JIT yolunu kullanır). Yükseltmeden önce deneyin.
 11. **Simülatör ve disk:** her çalışma ağacı ayrı bir Xcode DerivedData üretir (birkaç GB). Görev bitince simülatörü ve o DerivedData'yı silin (`docs/WORKFLOW.md` §8).
 12. **6 sn "Geri Al":** istek toast süresi dolunca gider (`PendingLearns`, `NoteDeleteHold`); ekran kapanırsa bekleyen işlem hemen uygulanır. Yeni bir geri alınabilir işlem aynı kalıpla yazılır.
+13. **Metin alanlı `small` sheet klavyenin altında kalır.** `AppSheetRoute` yalnız `medium` ve `full` sheet'leri klavyenin üstüne kaldırır; form içeren sheet'i bu boylardan biriyle açın (ör. `ChangeCoachSheet` `full`).
 
 ## 10. Sözlük
 
 | Terim | Anlamı |
 |---|---|
-| Pano, kare | Claude Design'daki tasarım sayfası (ör. 14.8) ve içindeki tek telefon görüntüsü (kare 2) |
+| Pano, kare | Claude Design'daki tek tasarım panosu (ör. 14.8, `SMAP-14` sayfasında) ve içindeki tek telefon görüntüsü (kare 2) |
 | Tur | Tasarım turu (Tur 1–12); SMAP-NN sayfaları turlara karşılık gelir |
 | Ek C, D-n | Tasarım brifindeki örnek veri seti ve karar maddeleri (`docs/design/tasarim-paketi/SMAP_Claude_Design_Brifi.md`) |
 | K1–K16 | Proje kararları (`docs/SMAP_Ana_Plan.md`) |
@@ -175,4 +177,4 @@ Tek görsel hedef `docs/design/panolar/` altındaki panolardır. Kod panoya "pan
 
 ## 11. Açık işler ve sahibine kalan kararlar
 
-Güncel liste `docs/DURUM.md` ve `docs/dev/06_ozellikler.md` "Açık işler" bölümündedir. Özetle: backend'den beklenen cevaplar (`docs/Backend_Sorulari_Ek.md`), bayrakla kapalı özellikler (şifremi unuttum, sosyal giriş, bildirimler, çevrimdışı kuyruk vb.), kil görsellerin 2x/3x asılları, yayın kararları (uygulama kimliği, imza, sürüm numarası, mağaza metinleri).
+Güncel liste `docs/DURUM.md` ve `docs/dev/06_ozellikler.md` "Açık işler" bölümündedir. Özetle: backend'den beklenen cevaplar (`docs/Backend_Sorulari_Ek.md`), bayrakla kapalı özellikler (şifremi unuttum, sosyal giriş, koç kaydı, bildirimler, çevrimdışı kuyruk vb.), kil görsellerin 2x/3x asılları, yayın hazırlığı. Kimlik (`com.studentmap.smap`), Android release imzası (`android/key.properties`; anahtar sahibinde, git'te yok) ve sürüm (`1.0.0+3`) eski uygulamadan taşındı; kalanlar (yayın derlemesi, iOS imzası, mağazadaki son build numarası, mağaza metin ve görselleri) `docs/dev/05_araclar.md` "Yayın öncesi kontrol listesi"ndedir.

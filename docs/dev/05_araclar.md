@@ -142,7 +142,7 @@ linter:
 
 - `dead_null_aware_expression: ignore`: Dart 3.10 dil sürümünden beri analyzer aynı ölü `??` işlenenini iki kez bildiriyor; `dead_code` açık kalır.
 - Analizden hariç: `*.g.dart`, `*.gr.dart`, `*.mapper.dart`, `*.init.dart`, `**/generated/**`, `lib/gen/**`, `lib/l10n/app_localizations*.dart`, `lib/vendor/**`.
-- Klasör başına `analysis_options.yaml` yoktur; strict profil köktedir.
+- Uygulama kodunda klasör başına `analysis_options.yaml` yoktur; eski klasör düzeyi strict profil kaldırıldı ve bütün kurallar kökteki dosyadadır. Tek istisna, analizden hariç tutulan `lib/vendor/flutter_document_scanner/*` paketlerinin kendi (very_good_analysis tabanlı) dosyalarıdır; bunlar olduğu gibi bırakılır.
 - `flutter analyze` CI'da **bilgi düzeyi dahil her sorunda** kırmızı olur. Hedef sıfır sorundur; şu an sıfırdır.
 - Kodda `// ignore:` kullanımı çok azdır: `depend_on_referenced_packages` (çoğunlukla testlerde, geçişli bağımlılık importları için), bir yerde `one_member_abstracts`.
 
@@ -201,18 +201,18 @@ dart run tool/unreachable_files.dart
   2. `flutter pub get --enforce-lockfile`: lock dosyası pubspec ile uyumsuzsa kırılır.
   3. **l10n güncel mi:** `dart run tool/merge_arb.dart`, `flutter gen-l10n`; `git status --porcelain lib/l10n` boş değilse hata.
   4. **codegen güncel mi:** `dart run build_runner build --delete-conflicting-outputs`; `git status --porcelain` (**tüm çalışma ağacı**) boş değilse hata.
-  5. `tool/format.sh --output=none --set-exit-if-changed`: biçimlenmemiş dosya varsa hata (`lib/vendor` hariç).
+  5. `tool/format.sh --output=none --set-exit-if-changed`: git'te izlenen `.dart` dosyalarından biçimlenmemiş olan varsa hata (`lib/vendor` hariç; o çatallanmış paket kendi eski dil sürümünü kullanır ve `dart format .` onu yeniden yazardı).
   6. `flutter analyze --no-pub`
   7. `tool/ui_rules.sh`
   8. `flutter test --no-pub`
 
-Yerelde **aynı sırayı** çalıştırın ([12](#12-komut-kopya-kâğıdı)'deki "CI ile aynı sıra" bloğu). Adım 4 yalnız üretilmiş dosyalara değil tüm ağaca baktığı için, commit edilmemiş ya da `.gitignore`'a girmemiş herhangi bir dosya da CI'yı kırar. Hedef Flutter sürümü değiştiğinde (bkz. 1.1) bu dosyadaki `FLUTTER_VERSION` ilk güncellenen yerdir.
+Yerelde **aynı sırayı** çalıştırın ([12](#12-komut-kopya-kâğıdı)'deki "CI ile aynı sıra" bloğu). Adım 4 yalnız üretilmiş dosyalara değil tüm ağaca baktığı için, CI adımlarının (`pub get`, `merge_arb.dart`, `gen-l10n`, `build_runner`) ürettiği ya da değiştirdiği ama commit'te olmayan ve `.gitignore`'a girmemiş her dosya CI'yı kırar. Yereldeki commit edilmemiş dosyalarınız CI'ya ulaşmaz, ama yerelde aynı sırayı çalıştırınca `git status` onları da gösterir; bu yüzden son kontrolü temiz bir ağaçta yapın. Hedef Flutter sürümü değiştiğinde (bkz. 1.1) bu dosyadaki `FLUTTER_VERSION` ilk güncellenen yerdir.
 
 ---
 
 ## 6. Testler
 
-- **Yapı:** `test/` ağacı `lib/` ile aynalıdır: `test/app`, `test/core`, `test/dependency_injection`, `test/features/<f>/{application,data,domain,presentation}`, `test/services`, `test/shared/ui`. Yaklaşık 227 `*_test.dart` dosyası, 3.400'den fazla test; tam koşu bu makinede yaklaşık 2 dakika sürdü ve geçti.
+- **Yapı:** `test/` ağacı `lib/` ile aynalıdır: `test/app`, `test/core`, `test/dependency_injection`, `test/features/<f>/{application,data,domain,presentation}`, `test/services`, `test/shared/ui`. Yaklaşık 231 `*_test.dart` dosyası, 3.400'den fazla test; tam koşu bu makinede yaklaşık 2 dakika sürdü ve geçti.
 - **Ne test edilir:** ViewModel, servis, repository, saf mantık, DTO eşlemesi, router. Sıra: önce veri + ViewModel testi, sonra görünüm (AGENTS "Definition of done").
 - **Golden testi yazılmaz; widget testi yalnız ölçü ya da ekran okuyucu cümlesi için** (AGENTS "Definition of done"). Görünüm galeride ([7.1](#71-bileşen-galerisi)) ve simülatörde panoyla yan yana kontrol edilir; saf mantığı `application/` altına alıp orada test edin. Örnek ölçü testi: `test/features/exams/presentation/exam_score_card_height_test.dart` (puan kartı iskeletle aynı boyda, 163 pt). Böyle bir test kartı bir kaydırma görünümünün içine koyar (ekrandaki gibi), `SmapTheme.light()` ve `AppLocalizations` delegelerini verir.
 - Testler `flutter test` ile Dart VM üstünde çalışır, cihaz gerekmez. Platform bağlantısı gereken testler `TestWidgetsFlutterBinding.ensureInitialized()` çağırır.
@@ -221,7 +221,7 @@ Yerelde **aynı sırayı** çalıştırın ([12](#12-komut-kopya-kâğıdı)'dek
   - `*_fakes.dart`, `fake_*.dart`: tek bir arayüzün sahtesi (`test/core/services/fake_connectivity.dart`, `test/features/scan/scan_fakes.dart`).
   - `Recording*`: çağrıları kaydeden navigator/eylem sahteleri (`RecordingNavigator`, `RecordingExamNavigator`).
 - **Ağ:** `test/core/network/fake_adapter.dart` Dio'nun `HttpClientAdapter`'ını betikli taklit eder: `FakeAdapter(handler)`, `FakeAdapter.json(body, status: …)`, `FakeAdapter.failing((options) => DioException(…))`; yapılan istekler `requests` / `last` ile okunur.
-- **Oturum:** `SessionHarness` (`test/services/session_harness.dart`) `SessionManager`'ı sahte backend, çerez kavanozu, sahte güvenli depo ve sahte bağlantıyla kurar; `dispose()` ile kapatılır.
+- **Oturum:** `SessionHarness` (`test/services/session_harness.dart`) `SessionManager`'ı sahte backend, çerez kavanozu, sahte güvenli depo ve sahte bağlantıyla kurar; `dispose()` ile kapatılır. Kapsam itme/kapatma (`pushes`, `pops`) ve oturum bitince cihaz tercihlerinin unutulması (`forgets`; uygulamada `forgetAccountData`, yani `DevicePreferences.clearAccount`) sayaçlarla okunur.
 - **Tipik ViewModel testi** (`test/features/auth/presentation/login/login_viewmodel_test.dart`): `setUp` içinde `SharedPreferencesAsyncPlatform.instance = InMemorySharedPreferencesAsync.empty()`, sonra `SessionHarness()`, `AppRouter(session: () => harness.manager.state, preferences: await DevicePreferences.load())`, ardından ViewModel; `tearDown` içinde `viewModel.dispose()` ve `harness.dispose()`. Beklentiler `harness.backend.calls('/student/login')` gibi kaydedilen çağrılar üzerindendir.
 - **`AppConfig`:** saf çözücü `AppConfig.resolve(...)` sayesinde `--dart-define` olmadan test edilir (`test/core/config/app_config_test.dart`).
 - **DI bütünlüğü:** `test/dependency_injection/injection_container_test.dart` kayıtları sınar. Yeni kök servis eklenirse bu test de güncellenir.
@@ -273,7 +273,7 @@ flutter run --dart-define-from-file=config/dev.json  # yerel yapılandırma dosy
 İki mekanizma vardır:
 
 - **Derleme zamanı:** `--dart-define=ADI=değer` ya da `--dart-define-from-file=…`.
-- **Çalışma zamanı:** `debugLaunchEnv(name)` (`lib/features/debug/launch_env.dart`) önce işlem ortamına (`SIMCTL_CHILD_<ADI>=… xcrun simctl launch …`), yoksa uygulamanın geçici dizinindeki `launch_env/<ADI>` dosyasına bakar. Yeniden derlemeden ekran görüntüsü almak içindir; yalnız debug araçlarında kullanılır.
+- **Çalışma zamanı:** `debugLaunchEnv(name)` (`lib/features/debug/launch_env.dart`) önce işlem ortamına, yoksa uygulamanın geçici dizinindeki `launch_env/<ADI>` dosyasına bakar. iOS 26 simülatörlerinde `SIMCTL_CHILD_<ADI>=… xcrun simctl launch` uygulamaya ulaşmaz; dosyayı `tool/sim_env.sh <cihaz|booted> ADI=değer …` yazar (`--clear` siler). Yeniden derlemeden ekran görüntüsü almak içindir; yalnız debug araçlarında kullanılır.
 
 | Anahtar | Okunduğu yer | Mekanizma | Ne yapar |
 |---|---|---|---|
@@ -286,7 +286,7 @@ flutter run --dart-define-from-file=config/dev.json  # yerel yapılandırma dosy
 | `PLAY_PACKAGE` | `AppConfig` | derleme | Varsayılan `com.studentmap.smap` |
 | `THEME_MODE` | `AppThemeMode` | derleme | `dark` / `light` / `system`. **Yalnız debug'da** işler |
 | `SHELL_PREVIEW` | `ShellPreview` | derleme | `student` ya da `coach`: hesapsız kabuğu açar. Yalnız `kDebugMode` |
-| `SHELL_PREVIEW_TAB` | `ShellPreview` | **yalnız çalışma zamanı** | 0–3 arası açılış sekmesi |
+| `SHELL_PREVIEW_TAB` | `ShellPreview` | **yalnız çalışma zamanı** | 0–3 arası açılış sekmesi. Yalnız `SHELL_PREVIEW` ile kurulmuş debug derlemede okunur; yoksa 0 |
 | `SCAN_GALLERY` | `ScanDebug` | derleme | `true`: simülatörde galeriden resim seçerek okut akışı. Yalnız debug |
 | `GALLERY_DARK`, `GALLERY_LARGE_TEXT`, `GALLERY_REDUCE_MOTION` | `GallerySettings` | derleme veya çalışma zamanı | Galeri başlangıç anahtarları (`true`) |
 | `GALLERY_PAGE` | `ComponentGalleryView` | derleme veya çalışma zamanı | Başlangıç sekmesi (0'dan) |
@@ -298,7 +298,7 @@ Ek özellik bayrakları `lib/core/config/feature_flags.dart` içindedir (derleme
 
 ### 7.5 VS Code yapılandırmaları (`.vscode/`)
 
-Her iki dosya CI ile aynı komutları kullanır ve güncel tutulur.
+`tasks.json` CI adımlarının yerel karşılıklarını içerir. Biçim görevi dosyaları yerinde biçimler; CI ise aynı betiği `--output=none --set-exit-if-changed` ile yalnızca denetim için çalıştırır. CI'daki l10n ve codegen eskime denetiminin (`git status`) görev karşılığı yoktur. `launch.json` yalnızca çalıştırma tanımlarını içerir. İki dosya da güncel tutulur.
 
 - `launch.json`: "SMAP", "SMAP (config/dev.json)", öğrenci ve koç önizlemesi (`SHELL_PREVIEW`), koyu tema (`THEME_MODE=dark`), okutma galeriden (`SCAN_GALLERY=true`), "Bileşen galerisi" (`lib/main_gallery.dart`), profile ve release modları.
 - `tasks.json`: "Codegen: build_runner", "Codegen: build_runner watch", "l10n: merge ARB + gen-l10n", "Check: format + analyze + UI rules", "Test", "Unreachable files", "iOS: pod install", "Brand: launcher icons + splash", "Flutter clean".
@@ -310,7 +310,7 @@ Her iki dosya CI ile aynı komutları kullanır ve güncel tutulur.
 ### 8.1 Uygulama kimliği ve imza
 
 - **Android:** `namespace` ve `applicationId` = `com.studentmap.smap` (`android/app/build.gradle.kts`), `minSdk = 24`. Kotlin paketi `com.studentmap.smap` (`android/app/src/main/kotlin/com/studentmap/smap/MainActivity.kt`; haptik kanalı `smap/haptics` burada).
-- **iOS:** `PRODUCT_BUNDLE_IDENTIFIER = com.studentmap.smap`, test hedefi `com.studentmap.smap.RunnerTests`; `CODE_SIGN_STYLE = Automatic`; `DEVELOPMENT_TEAM` Xcode projesinde (`ios/Runner.xcodeproj/project.pbxproj`) kayıtlıdır (değer bu belgeye yazılmadı). Kimlik, sahibin Ekim 2026'da eski uygulamayla mağazaya çıkardığı kimliktir; değiştirilmez.
+- **iOS:** `PRODUCT_BUNDLE_IDENTIFIER = com.studentmap.smap`, test hedefi `com.studentmap.smap.RunnerTests`; imza otomatiktir: `Runner` hedefinde `CODE_SIGN_STYLE` yazılı değildir, Xcode varsayılanı (Automatic) geçerlidir; `CODE_SIGN_STYLE = Automatic` yalnız `RunnerTests` yapılandırmalarında açıkça yazılıdır; `DEVELOPMENT_TEAM` Xcode projesinde (`ios/Runner.xcodeproj/project.pbxproj`) kayıtlıdır (değer bu belgeye yazılmadı). Kimlik, sahibin Ekim 2026'da eski uygulamayla mağazaya çıkardığı kimliktir; değiştirilmez.
 - **Android release imzası:** `android/key.properties` (`keyAlias`, `keyPassword`, `storeFile`, `storePassword`) ve yükleme anahtarı varsa release derlemesi onunla imzalanır; ikisi de git'te değildir (`android/.gitignore`), sahibinde durur. Dosya yoksa release derlemesi debug anahtarıyla imzalanır (`flutter run --release` çalışsın diye); böyle bir `.aab`/`.apk` mağazaya yüklenemez.
 - **Flavor yok:** `productFlavors` tanımlı değil; Xcode'da yalnız `Runner` şeması var. Ortam farkı `--dart-define` ile yönetilir.
 - Sürüm: `pubspec.yaml` → `version: 1.0.0+3`. `1.0.0` Android `versionName` / iOS `CFBundleShortVersionString`, `+3` Android `versionCode` / iOS `CFBundleVersion` olur (`--build-name`, `--build-number` ile geçersiz kılınabilir). Eski uygulama aynı kimlikle `+1` ve `+2` yükledi; her yükleme mağazadaki son numaradan büyük olmalı.
@@ -322,7 +322,7 @@ Her iki dosya CI ile aynı komutları kullanır ve güncel tutulur.
 
 - İzinler: `INTERNET`, `CAMERA` (açıkça). `RECORD_AUDIO` **`tools:node="remove"`** ile çıkarılır: `camera` eklentisi birleşik manifest'e mikrofon izni getirir, ama kod kamerayı sessiz açıyor (`lib/features/scan/data/scan_camera.dart`, `enableAudio: false`); çıkarılmazsa mağaza beyanında gereksiz mikrofon izni görünür. Bu satırı ve manifest köküne `xmlns:tools` bildirimini silmeyin.
 - `POST_NOTIFICATIONS` manifest'te **yok**. `FeatureFlags.notificationsEnabled = false` iken sorun yoktur; bildirimler açılırken eklenmesi gerekir (Android 13+). Cihazda doğrulanmadı.
-- `compileSdk` (36), `targetSdk` (36), `minSdk` (24) ve `ndkVersion` Flutter 3.38.6'nın varsayılanlarıdır (`flutter.*`); Flutter yükseltmesi bunları da değiştirir.
+- `compileSdk` (36), `targetSdk` (36) ve `ndkVersion` Flutter 3.38.6'nın varsayılanlarıdır (`flutter.*`); Flutter yükseltmesi bunları da değiştirir. `minSdk = 24` ise `build.gradle.kts`'te elle sabittir (Flutter'ın varsayılanı da 24 ama yükseltme onu değiştirmez); `pubspec.yaml`'daki `flutter_launcher_icons` bloğunda bulunan `min_sdk_android: 24` ile aynı tutulur.
 - Java/Kotlin hedefi 11. Araçlar: AGP 8.9.1, Kotlin 2.1.0 (`settings.gradle.kts`), Gradle 8.12 (`gradle-wrapper.properties`).
 - `MainActivity.kt` içinde `smap/haptics` kanalı vardır (iOS karşılığı `AppDelegate.swift`); `AppHaptics.success/error` buradan geçer (Flutter'ın `HapticFeedback`'inde başarı/hata yok).
 - Uygulama adı `SMAP` (`android:label`). Bildirim küçük simgesi (`ic_stat_smap`) `res/drawable-*` altında hazırdır; manifest'te varsayılan bildirim ikonu tanımı yoktur (bildirimler kapalı).
@@ -341,8 +341,8 @@ PERMISSION_MACROS = [
 ].freeze
 ```
 
-  Bir izin eklerken **üç yeri birden** güncelleyin: `Podfile` makrosu, `Info.plist` açıklaması, Dart kodu. Makro olmadan `permission_handler` iOS'ta sessizce `denied` döner.
-- Kodda `permission_handler` kamera (`lib/features/onboarding/data/camera_permission_gateway.dart`) ve bildirim (`lib/features/account/data/notification_permission_gateway.dart`, bildirim ön izin ekranı) için çağrılır. `PERMISSION_PHOTOS` ve foto kütüphanesi metni yalnız galeriden seçme (`image_picker`, debug amaçlı `SCAN_GALLERY`) içindir; ürün galeri sunmaz (spec D-15). Bu ikisinin yayında gerekip gerekmediği açık sorudur ([14](#14-yayın-öncesi-kontrol-listesi)).
+  Bir izin eklerken **üç yeri birden** güncelleyin: `Podfile` makrosu, `Info.plist` açıklaması, Dart kodu. Makro olmadan `permission_handler` iOS'ta sistem penceresini hiç açmaz: `status` `denied`, `request()` ise (izin hiç sorulmamış olsa bile) `permanentlyDenied` döner.
+- Kodda `permission_handler` kamera (`lib/features/onboarding/data/camera_permission_gateway.dart`) ve bildirim (`lib/features/account/data/notification_permission_gateway.dart`, bildirim ön izin ekranı) için çağrılır. `NSPhotoLibraryUsageDescription` yalnız galeriden seçme (`image_picker`, debug amaçlı `SCAN_GALLERY`) içindir; `PERMISSION_PHOTOS` makrosu ise yalnız `permission_handler`'ın `Permission.photos`'unu derler ve kodda `Permission.photos` çağrısı yoktur (`image_picker` bu makroyu kullanmaz); ürün galeri sunmaz (spec D-15). Bu ikisinin yayında gerekip gerekmediği açık sorudur ([14](#14-yayın-öncesi-kontrol-listesi)).
 - iOS dağıtım hedefi 13.0 (`IPHONEOS_DEPLOYMENT_TARGET`); Podfile'da `platform` satırı yorumlu. `Podfile.lock` takiptedir (CocoaPods 1.16.2), `Pods/` takip edilmez.
 - Uygulama adı `SMAP` (`CFBundleDisplayName`).
 - `Info.plist` iPhone'da yatay yönelişlere de izin verir. Kodda yön kilidi yalnız Okut akışındadır (`scan_flow_view.dart`: `portraitUp`, çıkışta `DeviceOrientation.values`); genel kilit yoktur.
@@ -358,10 +358,10 @@ PERMISSION_MACROS = [
 
 ## 9. Asset yapısı
 
-- `pubspec.yaml` içinde `assets:` altında klasörler **tek tek** sayılır: `assets/` (kök), `assets/icons/`, `assets/svgs/`, `assets/menuIcons/`, `assets/avatars/`, `assets/authors/` ve alt klasörleri, `assets/brand/`, `assets/illustrations/`. Flutter'da klasör girdisi **özyinelemeli değildir**: yalnız o klasörün doğrudan dosyalarını paketler; bu yüzden `assets/authors/` altındaki her alt klasör ayrı yazılıdır. Yeni bir alt klasör açtığınızda pubspec'e **o klasörü ayrıca** ekletin (koordinatör dosyası).
+- `pubspec.yaml` içinde `assets:` altında klasörler **tek tek** sayılır: `assets/` (kök), `assets/icons/`, `assets/svgs/`, `assets/menuIcons/`, `assets/avatars/`, `assets/authors/` ve alt klasörleri, `assets/brand/`, `assets/illustrations/`, `assets/illustrations/clay/`. Flutter'da klasör girdisi **özyinelemeli değildir**: yalnız o klasörün doğrudan dosyalarını paketler; bu yüzden `assets/authors/` altındaki her alt klasör ayrı yazılıdır. Yeni bir alt klasör açtığınızda pubspec'e **o klasörü ayrıca** ekletin (koordinatör dosyası).
 - `assets/tutorial/` ve `assets/splash/` listelenmediği için pakete girmez.
 - **Yazı tipi:** `PlusJakartaSans` (400, 500, 600, 700, 800), `assets/fonts/plus_jakarta_sans/`.
-- **İllüstrasyonlar:** `assets/illustrations/clay/*.png` (pano 1.25'in 11 kil görseli, 1x 140 px; 2x/3x asıllar gelince `clay/2.0x/` ve `clay/3.0x/` altına aynı adlarla; bkz. `AppClay`). Marka: `assets/brand/*.svg` (`AppLogo`/`AppLockup` bunları kullanır).
+- **İllüstrasyonlar:** `assets/illustrations/clay/*.png` (pano 1.25'in 11 kil görseli, 1x 140 px; 2x/3x asıllar gelince `clay/2.0x/` ve `clay/3.0x/` altına aynı adlarla; bkz. `AppClay` ve `ClayPicture`, `lib/shared/ui/illustrations/app_clay.dart`). Marka: `assets/brand/*.svg` (`AppLogoMark`/`AppLockup` bunları kullanır).
 - **Avatarlar:** `assets/avatars/` (dosya adları `avatar_catalog.dart`, `avatar_asset.dart`, `student_avatars.dart` içinde string yol olarak da geçer).
 - **Yazar fotoğrafları:** `assets/authors/<klasör>/…`; backend yazarın `/authors/a/namikkemal.png` gibi bir yolunu verir, uygulama bunu `assets` önekiyle yükler (`lib/features/lessons/presentation/widgets/author_row.dart`). Dosya pakette yoksa baş harfler çizilir. Not: diskte `assets/authors/cpm/` klasörü var ama pubspec'te **listelenmemiş**; o klasörün fotoğrafları pakete girmiyor (bilinçli mi, açık soru; bkz. [14](#14-yayın-öncesi-kontrol-listesi)).
 - `flutter_gen` çıktısı `lib/gen/assets.gen.dart` ve `lib/gen/fonts.gen.dart`'tır; `flutter_gen: integrations: flutter_svg: true` açıktır (`.svg(...)`). Dart tarafında `Assets.*` yalnız `avatars`, `brand` ve `illustrations` için kullanılır.
@@ -395,7 +395,7 @@ tool/design/pdf_to_boards.sh docs/design/kaynak/SMAP-15.pdf
 
 Görev akışı, roller ve inceleme protokolü [../WORKFLOW.md](../WORKFLOW.md)'dedir; burada yalnız araç ayrıntıları var.
 
-- **Dallar:** entegrasyon dalı `redesign/main`; `main` eski uygulamayı tutar ve geride kalmıştır. Commit'ler Conventional Commits biçiminde (Türkçe özet; `feat(scan): …`, `fix(a11y): …`). Ajan push etmez; birleştirmeyi koordinatör yapar.
+- **Dallar:** entegrasyon dalı `redesign/main`; `main` (`origin/main`) sahibin yayındaki eski uygulamasını tutar ve sahip oraya hâlâ commit atar; `redesign/main` ondan ilk commit'te (6250f68) ayrılmıştır. `main`, `redesign/main`'e birleştirilmez; gereken değişiklikler elle taşınır (ör. 640906f). Commit'ler Conventional Commits biçiminde (Türkçe özet; `feat(scan): …`, `fix(a11y): …`). Ajan push etmez; birleştirmeyi koordinatör yapar.
 - **Görev worktree'si:** `tool/wt.sh <görev-kimliği> [taban-dal]` repo yanında `../smapFlutter-wt/<görev-kimliği>` dizinini ve `task/<görev-kimliği>` dalını açar. Taban sırayla ikinci argüman, `WT_BASE` ortam değişkeni, `redesign/main`'dir. Dizin zaten varsa yeniden kullanır ve yolunu basar. Yeni worktree'de ilk iş `flutter pub get` ve codegen/l10n çalıştırmaktır ([13](#13-yeni-geliştirici-ilk-gün)); `build/`, `.dart_tool/` ve `ios/Pods/` worktree'ye özeldir ve repoda yoktur.
 - **Simülatör kuralı:** geçici test simülatörleri **iOS 26.x** ile (ör. iPhone 17 Pro · iOS 26.2) açılır. İş bitince **hem simülatör silinir hem o worktree'nin Xcode DerivedData klasörü** silinir; aksi hâlde disk dolar (DerivedData onlarca GB'a çıkabilir). Worktree'yi kaldırmadan önce `build/` klasörünü de temizleyin.
 
@@ -462,7 +462,7 @@ dart run tool/merge_arb.dart && flutter gen-l10n
 ```
 
 ```bash
-# Biçimlendirme
+# Biçimlendirme: git'te izlenen tüm .dart dosyaları, lib/vendor hariç (dart format . yerine bunu kullanın)
 tool/format.sh
 ```
 
@@ -540,8 +540,8 @@ flutter run --dart-define=SCAN_GALLERY=true
 ```
 
 ```bash
-# Yeniden derlemeden başka sekmede aç (simülatörde çalışma zamanı değişkeni)
-SIMCTL_CHILD_SHELL_PREVIEW_TAB=2 xcrun simctl launch booted com.studentmap.smap
+# Yeniden derlemeden başka sekmede aç (yalnız --dart-define=SHELL_PREVIEW=student|coach ile kurulmuş debug derlemede; sekme 0–3, Okut sayılmaz)
+tool/sim_env.sh booted SHELL_PREVIEW_TAB=2 && xcrun simctl launch booted com.studentmap.smap
 ```
 
 ```bash
@@ -578,12 +578,12 @@ Yayın komutlarındaki `--dart-define-from-file` biçimi `AppConfig` yorumların
 
 ## 13. Yeni geliştirici ilk gün
 
-1. **Klonla.** Depoyu klonlayın ve çalışma dalına geçin: `git clone <depo-adresi> && cd smapFlutter && git switch redesign/main`. Yeni bir iş için `tool/wt.sh <görev-kimliği>` ile ayrı worktree açın ve komutları o dizinde çalıştırın.
+1. **Klonla.** Depoyu klonlayın: `git clone <depo-adresi> && cd smapFlutter`. Entegrasyon dalı `redesign/main` şu an yalnız koordinatörün makinesinde (yerel; `origin`'de yok, bkz. `docs/DURUM.md` ve `docs/SMAP_Ana_Plan.md` K14). Dal uzak depoya itildikten sonra `git switch redesign/main` ile geçin. Yeni bir iş için `tool/wt.sh <görev-kimliği>` ile ayrı worktree açın ve komutları o dizinde çalıştırın.
 2. **Sürüm.** Flutter 3.38.6'yı kurun (puro, FVM ya da elle) ve `flutter --version` ile doğrulayın; `ci.yml` içindeki `FLUTTER_VERSION` ile aynı olmalı. Xcode (iOS için), Android Studio ya da komut satırı SDK'sı (Android için) ve CocoaPods gerekir. `flutter doctor` yeşil olsun.
 3. **`pub get`.** `flutter pub get --enforce-lockfile`. Lock uyumsuzluğu hatası alırsanız pubspec'e dokunmayın, koordinatöre sorun.
 4. **Codegen.** `dart run build_runner build -d`. Sonuçta `git status` boş kalmalıdır (üretilmiş dosyalar zaten commit'li).
 5. **l10n.** `dart run tool/merge_arb.dart && flutter gen-l10n`. `git status` yine boş kalmalıdır. Bu iki adım boş diff veriyorsa üretim hattınız CI ile aynı sonucu veriyor demektir.
-6. **Çalıştır.** `flutter run` (simülatör ya da cihaz). Hesabınız yoksa debug'da `--dart-define=SHELL_PREVIEW=student` ya da `coach` ile hesapsız kabuğu açın; içindeki ekranlar boş/hata durumlarını gösterir. Gerçek backend'e bakan bir giriş için bir öğrenci hesabına ihtiyaç vardır (sahibinden isteyin; kimlik bilgilerini repoya yazmayın). Okut akışı gerçek kamera ister; simülatörde `SCAN_GALLERY=true`.
+6. **Çalıştır.** `flutter run` (simülatör ya da cihaz). Debug'da `--dart-define=SHELL_PREVIEW=student` ya da `coach` ile hesapsız kabuğu açın; içindeki ekranlar boş/hata durumlarını gösterir. Gerçek backend varsayılan olarak canlı sunucudur (`https://www.smaptr.com`); test ederken orada gerçek hesapla giriş yapılmaz ve yazan istek atılmaz (`../../AGENTS.md` "Working here", [../WORKFLOW.md](../WORKFLOW.md) §8). Veri dolu hâli görmek için galeriyi ya da geçici, commit edilmeyen bir sahte repository/ağ adaptörünü kullanın. Okut akışı gerçek kamera ister; simülatörde `SCAN_GALLERY=true`.
 7. **Galeri.** `flutter run -t lib/main_gallery.dart`. Üstten koyu tema ve büyük metni açarak bileşenleri gezin; yeni bileşenler önce burada doğrulanır ([04_tasarim_sistemi.md](04_tasarim_sistemi.md)).
 8. **Testler ve denetimler.** `flutter analyze`, `tool/ui_rules.sh`, `flutter test`. Üçü de temiz olmalıdır; tek bir test dosyası için 12'deki komutu kullanın.
 9. **Oku.** `../../AGENTS.md` (kurallar), [../WORKFLOW.md](../WORKFLOW.md) (iş akışı), [01_mimari.md](01_mimari.md) (yapı), [03_ekran.md](03_ekran.md) (bir ekran nasıl yazılır). İlk değişikliği küçük tutun ve commit'ten önce 12'deki "CI ile aynı sıra" bloğunu çalıştırın.
@@ -602,11 +602,11 @@ Kararı sahibin vereceği maddeler **AÇIK SORU** olarak işaretlidir; karar gel
 - [ ] **AÇIK SORU: Backend adresleri.** `API_BASE_URL`, `OMR_BASE_URL`, `CDN_BASE_URL` doğru ortama bakıyor mu? OMR sunucusu hâlâ API ile aynı varsayılıyor (backend'de açık soru).
 - [ ] **AÇIK SORU: Destek ve mağaza bağlantıları.** `SUPPORT_EMAIL` ve `APP_STORE_ID` boş; boşken ilgili satırlar gizlenir. Gerçek değerleri sahibi verir. `PLAY_PACKAGE` kimlik kararına bağlı.
 - [ ] **AÇIK SORU: Sınav tarihi.** `YKS_DATE` varsayılanı örnek tarih (`2027-06-19`). Gerçek tarihi sahibi onaylar.
-- [ ] **İzinler.** Android birleşik manifest'te yalnız `INTERNET` ve `CAMERA` olmalı, `RECORD_AUDIO` bulunmamalı. **AÇIK SORU:** iOS `PERMISSION_PHOTOS` makrosu ve `NSPhotoLibraryUsageDescription`: ürün galeriyi göstermiyor; yayında kalsın mı kaldırılsın mı? **AÇIK SORU:** Bildirim izni (`POST_NOTIFICATIONS`, iOS `PERMISSION_NOTIFICATIONS`) bildirim özelliğiyle birlikte mi açılacak; kod şimdiden izin isteyen bir ön ekran içeriyor.
+- [ ] **İzinler.** Android birleşik manifest'te çalışma zamanı (tehlikeli) izni olarak yalnız `CAMERA` bulunmalı, `RECORD_AUDIO` bulunmamalı. Şu normal izinler de görünür ve beklenir, kaldırılmaz: `INTERNET`, `ACCESS_NETWORK_STATE` (`connectivity_plus` ekler) ve androidx.core'un eklediği `com.studentmap.smap.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION` imza izni. **AÇIK SORU:** iOS `PERMISSION_PHOTOS` makrosu ve `NSPhotoLibraryUsageDescription`: ürün galeriyi göstermiyor; yayında kalsın mı kaldırılsın mı? **AÇIK SORU:** Bildirim izni (`POST_NOTIFICATIONS`, iOS `PERMISSION_NOTIFICATIONS`) bildirim özelliğiyle birlikte mi açılacak; kod şimdiden izin isteyen bir ön ekran içeriyor.
 - [ ] **AÇIK SORU: Yazar fotoğrafı klasörü.** `assets/authors/cpm/` pubspec'te listeli değil; pakete alınacak mı?
 - [ ] **AÇIK SORU: Kök asset temizliği.** `assets/` kökündeki eski dosyalar (~14 MB) ve kullanılmayan klasörler yayından önce kaldırılacak mı (grep kanıtıyla, bkz. 9)?
 - [ ] **İkon / açılış.** `flutter_launcher_icons` ve `flutter_native_splash` çıktıları güncel mi? iOS ikonun alfa kanalı yok (`remove_alpha_ios: true`); koyu ve tonlu varyantlar `AppIcon.appiconset` içinde olmalı.
-- [ ] **Özellik bayrakları.** `lib/core/config/feature_flags.dart` değerleri yayın niyetine uygun mu (forgot password, sosyal giriş, program silme, şifre değiştirme, bildirim, çevrimdışı kuyruk, dikkat listesi kapalı; `omrEnabled` ve `coachProgramWriteEnabled` açık)? Debug tanımları (`SHELL_PREVIEW`, `SCAN_GALLERY`, `THEME_MODE`) release'te etkisizdir ama release komutuna verilmez.
+- [ ] **Özellik bayrakları.** `lib/core/config/feature_flags.dart` değerleri yayın niyetine uygun mu (forgot password, sosyal giriş, program silme, şifre değiştirme, bildirim, çevrimdışı kuyruk, dikkat listesi ve koç kaydı (`coachSignUpEnabled`) kapalı; `omrEnabled` ve `coachProgramWriteEnabled` açık)? Debug tanımları (`SHELL_PREVIEW`, `SCAN_GALLERY`, `THEME_MODE`) release'te etkisizdir ama release komutuna verilmez.
 - [ ] **AÇIK SORU: Mağaza materyalleri.** Görseller (`docs/design/brifler/SMAP_Store_Screenshots_Prompt.md`, pano 12.x), açıklama metinleri, gizlilik beyanı (kamera kullanımı, çerez/oturum), yaş derecelendirmesi, iOS gizlilik etiketleri ve Play Veri güvenliği formu. Plan maddesi FIN5 bunlar için açıktır (`docs/DURUM.md`).
 - [ ] **Son doğrulama.** CI yeşil (`pub get --enforce-lockfile`, l10n, codegen, analyze, `ui_rules.sh`, test). CI iOS/Android derlemesi yapmadığı için her iki platformda ayrıca bir `flutter build` release derlemesi (gerçek imzayla) ve gerçek cihazda duman testi yapılır.
 
@@ -617,7 +617,7 @@ Kararı sahibin vereceği maddeler **AÇIK SORU** olarak işaretlidir; karar gel
 1. **Flutter sürümü CI'dan kayabilir.** `.puro.json` "stable" der, sürümü sabitlemez; kanal yükselince yerel Flutter 3.38.6'dan ayrılır. Yükseltme kendi PR'ında `ci.yml` (`FLUTTER_VERSION`), `pubspec.yaml` ve bu belgeyle birlikte yapılır; `auto_route` sabitlemesi bu yüzden vardır.
 2. **`build_runner` ve `auto_route` sabit, `^` yapmayın.** `build_runner` 2.15 `objective_c` build hook'uyla patlar; `auto_route` 11.2.0 Flutter 3.41+ gerektirir. `flutter pub upgrade --major-versions` bu iki satırı bozar.
 3. **dart_mappable metot adları yer değiştirdi.** `build.yaml`'da `fromJson`/`toJson` **Map** ile, `fromJsonString`/`toJsonString` **metinle** çalışır; eski kod ve örnekler tersini varsayar.
-4. **Üretilmiş dosyaları commit etmeyi unutmayın.** CI `git status --porcelain` ile tüm ağacı denetler: takip edilmeyen herhangi bir dosya da kırar. `lib/l10n/app_tr.arb` elle düzenlenirse bir sonraki `merge_arb` ezer; yalnız `lib/l10n/arb/<ozellik>_tr.arb` düzenlenir.
+4. **Üretilmiş dosyaları commit etmeyi unutmayın.** CI `git status --porcelain` ile tüm ağacı denetler: CI adımlarının ürettiği ya da değiştirdiği, commit'te olmayan ve `.gitignore`'a girmemiş herhangi bir dosya da kırar. `lib/l10n/app_tr.arb` elle düzenlenirse bir sonraki `merge_arb` ezer; yalnız `lib/l10n/arb/<ozellik>_tr.arb` düzenlenir.
 5. **ARB'de aynı anahtarı iki parçada tanımlamayın**, `@anahtar`'ı anahtarsız bırakmayın: `merge_arb` çıkış kodu 1 ile durur. `common_*` anahtarları varken (örn. `common_cancel`) yenisini açmayın.
 6. **`ui_rules.sh` AGENTS'in tamamını kapsamaz.** `Text` içinde string literal ve `SharedPreferences.getInstance` taranmaz, `lib/core` taranmaz, sonda kalan `// …` yorumu atlanmaz. Yeşil çıktı, kuralın geçtiği anlamına gelmez; kod incelemesi sürer.
 7. **Dosya boyu sınırı aşılınca davranışı değiştirmeden bölün.** Ekran `_view` ≤ 250, `part` ≤ 300, ViewModel ≤ 500, diğer sunum/kit ≤ 400 satır; aşıldığında `part` ya da `*_parts.dart` dosyasına ayırın. `tool/ui_rules.sh` aşımları CI'da kırmızı yapar.
@@ -626,7 +626,7 @@ Kararı sahibin vereceği maddeler **AÇIK SORU** olarak işaretlidir; karar gel
 10. **Mock kütüphanesi eklemeyin.** Sahteleri `*_harness.dart` / `fake_*.dart` kalıbıyla elle yazın. Yeni kök servis eklediğinizde `injection_container_test.dart`'ı güncelleyin.
 11. **Ortak dosyalara dokunmayın.** `pubspec.yaml`, `pubspec.lock`, `build.yaml`, `analysis_options.yaml`, `l10n.yaml`, `app_router.dart`, `injection_container.dart`, `gallery_registry.dart` ve platform manifest'leri koordinatöre aittir; ihtiyacı raporda "Koordinatöre notlar" altında yazın.
 12. **`RECORD_AUDIO` kaldırma satırını silmeyin.** `camera` eklentisi izni birleşik manifest'e geri getirir; `tools:node="remove"` kalkarsa Play beyanı gerekir.
-13. **İzin eklerken üç yer.** `Podfile` makrosu + `Info.plist` metni + Dart kodu; makrosuz iOS'ta izin sessizce `denied` döner, kullanılmayan izin kodu da incelemede reddedilebilir.
+13. **İzin eklerken üç yer.** `Podfile` makrosu + `Info.plist` metni + Dart kodu; makrosuz iOS'ta izin penceresi hiç açılmaz (`status` `denied`, `request()` `permanentlyDenied` döner), kullanılmayan izin kodu da incelemede reddedilebilir.
 14. **Anahtarsız release debug anahtarıyla imzalanır.** `android/key.properties` yoksa `flutter build appbundle --release` çalışır ama çıktı mağazaya yüklenemez; yayın derlemesini anahtarın sahibi yapar.
 15. **`assets/` girdisi kökteki her dosyayı paketler.** Yeni asset'i kökte bırakmayın; kendi alt klasörüne koyup pubspec'e **o klasörü ayrıca** yazdırın (alt klasörler özyinelemeli değildir). `assets/brand/icon` ve `assets/splash` bilerek pakette değil.
 16. **Silme kuralı.** "Çalışan bir özelliği silme": yalnız ölü, erişilemeyen, mock ya da "yakında" kodu, grep kanıtıyla silinir. `tool/unreachable_files.dart` liste verir, karar vermez; silmeden önce `test/`'te aynı yolu da arayın.
@@ -649,6 +649,7 @@ Kararı sahibin vereceği maddeler **AÇIK SORU** olarak işaretlidir; karar gel
 | `l10n.yaml`, `lib/l10n/` | l10n yapılandırması, `arb/` parçaları, birleşik `app_tr.arb`, üretilen sınıflar |
 | `.github/workflows/ci.yml` | CI adımları ve Flutter sürümü |
 | `tool/merge_arb.dart` | ARB parçalarını birleştirir |
+| `tool/format.sh` | Biçimlendirme: git'te izlenen tüm `.dart` dosyaları, `lib/vendor` hariç (CI'da yalnız denetim) |
 | `tool/ui_rules.sh` | Yasak API ve dosya boyu denetimi |
 | `tool/unreachable_files.dart` | Erişilemeyen dosya adayları |
 | `tool/wt.sh` | Görev worktree'si |

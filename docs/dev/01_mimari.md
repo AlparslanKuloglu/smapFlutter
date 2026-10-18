@@ -76,7 +76,7 @@ Yollar, aksi belirtilmedikçe repo köküne göredir (`lib/...`). Sınıf ve met
 
 **Debug yardımcıları** (release'te kapalıdır):
 
-- `ShellPreview` (`lib/app/shell/shell_preview.dart`): `--dart-define=SHELL_PREVIEW=student|coach` hesapsız kabuğu açar. `StartupViewModel`, `restore()` yerine kullanıcısız bir oturum kapsamı (`pushSessionScope()`) açıp kabuğa `replaceAll` yapar. `AccessGuard` başında `if (ShellPreview.active) return resolver.next();` olduğu için bu modda **tüm guard'lar kapalıdır**. `SHELL_PREVIEW_TAB` ile açılış sekmesi seçilir. Değerler `lib/features/debug/launch_env.dart` (`debugLaunchEnv`) aracılığıyla ortam değişkeninden ya da geçici dizindeki dosyadan okunur. Hazır çalışma tanımları `.vscode/launch.json` içindedir ([05_araclar.md](05_araclar.md)).
+- `ShellPreview` (`lib/app/shell/shell_preview.dart`): `--dart-define=SHELL_PREVIEW=student|coach` hesapsız kabuğu açar. `StartupViewModel`, `restore()` yerine kullanıcısız bir oturum kapsamı (`pushSessionScope()`) açıp kabuğa `replaceAll` yapar. `AccessGuard` başında `if (ShellPreview.active) return resolver.next();` olduğu için bu modda **tüm guard'lar kapalıdır**. `SHELL_PREVIEW_TAB` ile açılış sekmesi seçilir. `SHELL_PREVIEW` yalnız `--dart-define` ile verilen bir derleme zamanı sabitidir; `SHELL_PREVIEW_TAB` ise `lib/features/debug/launch_env.dart` (`debugLaunchEnv`) aracılığıyla ortam değişkeninden ya da geçici dizindeki dosyadan okunur. Hazır çalışma tanımları `.vscode/launch.json` içindedir ([05_araclar.md](05_araclar.md)).
 - `lib/main_gallery.dart`: router'sız, DI'sız ayrı bir giriş noktasıdır (bileşen galerisi: `flutter run -t lib/main_gallery.dart`). Galeri sayfaları `lib/features/debug/pages/*_gallery.dart`, kayıt listesi `lib/features/debug/gallery_registry.dart` (ortak dosya). Kit için bkz. [04_tasarim_sistemi.md](04_tasarim_sistemi.md).
 
 ---
@@ -181,7 +181,8 @@ Future<void> popSessionScope() async {
 - **Kapsamın içine** kullanıcıya bağlı olanlar girer: `CurrentUserService` (`registerAuthSession`), `LessonsService` ve `LiteratureService` (`registerLessonsSession`), `ScheduleService`, `CoachStudentsService`. Kapsam düşünce `dispose`'ları çağrılır. Böylece çıkış ya da hesap silme, bir sonraki kullanıcıya önceki kullanıcının verisini sızdıramaz.
 - **Repository'ler durumsuzdur**, kök kapsamdadır. Koç, öğrenci id'sini her çağrıda kendisi verir.
 - **Kapsamı yalnız `SessionManager` açıp kapatır** (`lib/services/session_manager.dart`). İstisna: `ShellPreview` (§2).
-- `SessionManager` kapsamı açma/kapama işlevlerini constructor'dan alır (`pushScope`/`popScope`); testler bunları sayaçla değiştirir (`test/services/session_harness.dart`).
+- `SessionManager` kapsamı açma/kapama işlevlerini constructor'dan alır (`pushScope`/`popScope`); testler bunları sayaçla değiştirir (`test/services/session_harness.dart`). Aynı yolla `forgetAccountData` da alır; `registerAuthServices` ona `DevicePreferences.clearAccount`'u verir.
+- **Cihazda kalan kişisel tercihler** kapsamda değil, `DevicePreferences`'tadır. Kişiye ait olanlar (kayıt taslağı, öğrenilen kart onayındaki "Bir daha sorma", favori denemeler, bildirim seçimleri) `DevicePreferences.accountKeys` kümesindedir ve oturum bitince silinir; cihaza ait olanlar (tema, intro görüldü, kamera ön açıklaması vb.) kalır.
 
 Kapsam ne zaman açılır, ne zaman kapanır:
 
@@ -194,7 +195,7 @@ Kapsam ne zaman açılır, ne zaman kapanır:
 | Oturum süresi doldu (401/403/3xx) | Durum `signedOut(expired: true)`. **Kapsam açık kalır** | `_onSessionExpired`, `_expire` |
 | Aynı kullanıcı yeniden giriş | `_enterScopeFor` aynı id'de kapsamı korur | `_enterScopeFor` |
 | Başka kullanıcı girişi | Eski kapsam kapatılır, temiz kapsam açılır | `_enterScopeFor` |
-| `signOut()` / `completeAccountDeletion()` | Önce `signedOut` (ekranlar ve ViewModel'ler gider), sonra sunucuya logout (yalnız `signOut`, cihaz çevrimiçiyse), çerez ve önbellek temizliği, `_closeScope()` | `_runEnd` |
+| `signOut()` / `completeAccountDeletion()` | Önce `signedOut` (ekranlar ve ViewModel'ler gider), sonra sunucuya logout (yalnız `signOut`, cihaz çevrimiçiyse), çerez ve önbellek temizliği, oturum vardıysa kişiye ait cihaz tercihlerinin silinmesi (`forgetAccountData` → `DevicePreferences.clearAccount`), `_closeScope()` | `_runEnd` |
 
 `SessionState` geçişleri (`lib/features/auth/domain/session_state.dart`): `unknown → restoring → signedIn | signedOut`, `signedIn → signedOut(expired: true) → signedIn`. Oturum bakımı ayrıntıları (cookie jar, `SessionStore`, göçler, `checkUser`) [02_veri.md](02_veri.md) §9'dadır.
 
@@ -229,7 +230,7 @@ final class AppRouter extends RootStackRouter implements RouteCatalog {
 
 - **İsimlendirme:** `XxxView`, `XxxPage`, `XxxScreen` sınıfı `XxxRoute` olur (`replaceInRouteName`). Örnek: `HomeTabPage` → `HomeTabRoute`, `LiteratureEraView` → `LiteratureEraRoute`.
 - **Üretilen kod:** `app_router.gr.dart`, `part` dosyasıdır, git'te izlenir ve elle düzenlenmez. Bu yüzden `app_router.dart` **her View'i import etmek zorundadır**; yeni ekran eklerken buraya import da eklenir.
-- **Kök liste sırası önemlidir:** kök rotalar kabuklardan önce gelir. Kabukların prefix'i `/` olduğundan, sıra yanlışsa `/account/delete/progress` gibi bir yol `/account` kabuk çocuğu sanılır (yorum: `lib/features/account/account_settings_routes.dart`).
+- **Kök liste sırası önemlidir:** kök rotalar kabuklardan önce gelir. Öğrenci kabuğunun prefix'i `/` olduğundan, sıra yanlışsa `/account/delete/progress` gibi bir yol `/account` kabuk çocuğu sanılır (yorum: `lib/features/account/account_settings_routes.dart`).
 - **Sürüm kilidi:** `pubspec.yaml` içinde `auto_route: 11.1.0` pinlidir (11.2.0, `Viewport.scrollCacheExtent` kullandığından, sabitlenmiş Flutter 3.38.6 ile derlenmez). Flutter sürümünü yükseltmeden auto_route'u yükseltmeyin ([05_araclar.md](05_araclar.md)).
 
 ### 4.1. Yeni rota nasıl eklenir
@@ -335,7 +336,7 @@ auto_route 11.1.0 kaynağında `reevaluateListenable` → `AutoRouterDelegate` �
 ### 5.6. Rol ayrımı: üç katman
 
 1. **Kabuk:** guard'lar (yukarıda). `UserRole.fromLegacy` (`lib/core/domain/user_role.dart`): `student` öğrenci, `coach` ve `teacher` koç, gerisi `unknown` (büyük/küçük harf ve boşluk önemsizdir). `unknown`, sessizce öğrenci uygulamasını açmaz; `UnknownRoleRoute` ("Hesabın açılamadı") açar. Orada "Yeniden Giriş Yap" (`signOut()`) ve, yalnız `SUPPORT_EMAIL` yapılandırılmışsa, "Destek'e Yaz" (`StoreLauncher.writeSupport`) eylemleri vardır.
-2. **Rota ağacı:** koçun Hesap sekmesinin çocukları `accountTabRoutes` + yalnız `NotificationsRoute`'tur (`lib/app/router/routes/shell_routes.dart`). Koçta Koçluk, Şifre ve Hesabı Sil rotaları yoktur.
+2. **Rota ağacı:** koçun Hesap sekmesinin çocukları `accountTabRoutes` + yalnız `NotificationsRoute`'tur (`lib/app/router/routes/shell_routes.dart`). Koçta Koçluk, Şifre ve Hesabı Sil rotaları yoktur. Koçun Hesap'ındaki "Koçluk" grubu bir rota açmaz: tek satırı koçun kodunu gösterir ve `CoachCodeSheet`'i açar (`AccountViewModel.openCoachCode`, `lib/features/account/presentation/account/sheets/coach_code_sheet.dart`).
 3. **UI kapısı:** `StackAccountNavigator.canOpen` (`lib/features/account/presentation/stack_account_navigator.dart`), rotayı **ada göre** router koleksiyonunda arar. Rota o rolün ağacında yoksa Hesap satırı çizilmez ve dokunulmaz:
    ```dart
    bool canOpen(AccountDestination destination) {
@@ -350,7 +351,7 @@ auto_route 11.1.0 kaynağında `reevaluateListenable` → `AutoRouterDelegate` �
    ```
    Bu yüzden `FeatureFlags` (§10, tuzak 10) kapalıyken rota listeden çıkarsa satır da kaybolur.
 
-Kapanmamış küçük rol kapıları ViewModel düzeyindedir. Örnek: `ProfileViewModel.hasGradeFields => _currentUser.isStudent`. Rol sorgusu için `CurrentUserService` (`role`, `isStudent`, `isCoach`) kullanılır.
+Kapanmamış küçük rol kapıları ViewModel düzeyindedir. Örnekler: `ProfileViewModel.hasGradeFields => _currentUser.isStudent`; Hesap'ta `AccountMenuData.isCoach` koçta kod satırını, öğrencide Koçluk satırını çizdirir. Rol sorgusu için `CurrentUserService` (`role`, `isStudent`, `isCoach`) kullanılır.
 
 ---
 
@@ -392,10 +393,10 @@ Kapanmamış küçük rol kapıları ViewModel düzeyindedir. Örnek: `ProfileVi
 | `/blocking/force-update` | `ForceUpdateRoute` | blocking | fade |
 | `/blocking/maintenance` | `MaintenanceRoute` | blocking | fade; yeniden dene `StartupRoute`'a `replaceAll` |
 | `/blocking/unknown-role` | `UnknownRoleRoute` | unknownRole | fade |
-| `/onboarding/intro` | `OnboardingRoute` | onboarding | tek rota, içinde adımlar (3 tanıtım, rol, sınıf ve alan, kamera ön açıklaması); fade |
+| `/onboarding/intro` | `OnboardingRoute` | onboarding | tek rota, içinde adımlar (3 tanıtım, rol (yalnız `FeatureFlags.coachSignUpEnabled` açıkken; bugün kapalı, rol hep öğrenci), sınıf ve alan, kamera ön açıklaması); fade |
 | `/welcome` | `WelcomeRoute` | signedOutEntry | fade |
 | `/auth/login` | `LoginRoute` | signedOutEntry | |
-| `/auth/register` | `RegisterRoute` | signedOutEntry | `role`, `grade`, `track` isteğe bağlı argüman |
+| `/auth/register` | `RegisterRoute` | signedOutEntry | `role`, `grade`, `track` isteğe bağlı argüman; `coachSignUpEnabled` kapalıyken rol bandı çizilmez ve `role` yok sayılır (kayıt hep öğrenci) |
 | `/auth/forgot-password` | `ForgotPasswordRoute` | other | `FeatureFlags.forgotPasswordEnabled` kapalı olduğundan listede yok |
 | `/program/new` | `NewProgramRoute` | other | Tam ekran; `student` argümanı (koç). `/home/program/new` değil: `program/:programId` ile çakışırdı |
 | `/account/delete/progress` | `AccountDeletionProgressRoute` | other | Tam ekran, geri kapalı |
@@ -463,7 +464,7 @@ Bir feature birden çok rota dosyası ve getter yazabilir:
 - **Exams:** `exams_routes.dart` (`examsAnalyticsTabRoutes`), `result_moment_routes.dart` (`resultMomentRootRoutes`).
 - **Schedule:** `scheduleHomeTabRoutes` (sekme içi) ve `scheduleRootRoutes` (kök) aynı dosyadadır (`schedule_routes.dart`).
 
-Getter adı şu kalıbı izler: `...TabRoutes` sekme çocuklarıdır, `...RootRoutes` kök akışlardır.
+Çoğu getter şu kalıbı izler: `...TabRoutes` sekme çocuklarıdır, `...RootRoutes` kök akışlardır. İstisnalar: `coachStudentProfileRoutes` bir sekme çocuğudur (`shell_routes.dart` içinde `CoachStudentsTabRoute`'un `children`'ında, `coachStudentsTabRoutes`'un yanında). `startupRoutes`, `onboardingRoutes`, `authRoutes`, `registerRoutes` ve `shellRoutes` ise `AppRouter.routes` kök listesine girer.
 
 ### 8.1. ViewModel'den gezinme
 
@@ -528,14 +529,14 @@ ViewModel context'siz kalır. Gezinme, enjekte edilen bir "navigator" arayüzün
 - `current_user_service.dart`: oturum kapsamındaki reaktif kullanıcı.
 
 **`shared/ui/`** (`App*` bileşen kiti; alt klasörler)
-- `buttons/`, `controls/`, `feedback/` (boş/hata durumu, iskelet, toast, çevrimdışı şerit, `section_state.dart`), `identity/`, `indicators/`, `inputs/`, `navigation/` (alt çubuk, bantlar, `StudentRef` ile `student_scope.dart`), `pickers/`, `sheets/` (`AppSheet`), `surfaces/` (kart, satır, akordiyon, bildirim kutusu), `text/`. Ayrıntı: [04_tasarim_sistemi.md](04_tasarim_sistemi.md).
+- `buttons/`, `controls/`, `feedback/` (boş/hata durumu, iskelet, toast, çevrimdışı şerit, `section_state.dart`), `identity/`, `illustrations/` (`AppClay` kil görselleri), `indicators/`, `inputs/`, `navigation/` (alt çubuk, bantlar, `StudentRef` ile `student_scope.dart`), `pickers/`, `sheets/` (`AppSheet`), `surfaces/` (kart, satır, akordiyon, bildirim kutusu), `text/`. Ayrıntı: [04_tasarim_sistemi.md](04_tasarim_sistemi.md).
 
 **`features/`** (her biri çoğunlukla `application/` ve `presentation/` içerir; veri taşıyanlar `data/` ve `domain/` ekler; ekran kalıbı için [03_ekran.md](03_ekran.md), özellik haritası için [06_ozellikler.md](06_ozellikler.md))
-- `account/`: Hesap, Profil, Sözleşmeler, Şifre (bayraklı), Koçluk, Bildirimler, Hesabı Sil.
+- `account/`: Hesap (koçun kod sheet'i `account/sheets/` altında), Profil, Sözleşmeler, Şifre (bayraklı), Koçluk, Bildirimler, Hesabı Sil.
 - `analytics/`: Analizlerim (Genel ve Denemelerim).
 - `auth/`: giriş, kayıt, şifremi unuttum (bayraklı), oturum deposu ve eski göç.
 - `cards/`: bilgi kartı destesi.
-- `coach/`: koç anasayfası, öğrenciler, öğrenci profili, görüşmeler.
+- `coach/`: koç anasayfası, öğrenciler, öğrenci profili, görüşmeler; Hesap'taki kod sheet'inin gövdesi de buradadır (`CodeCardSheetBody`, `presentation/widgets/code_card_sheet.dart`).
 - `debug/`: bileşen galerisi (`pages/*_gallery.dart`), `launch_env`.
 - `exams/`: deneme detay, soru detay, sonuç anı, bildirim izni sheet'i.
 - `home/`: öğrenci Anasayfa.
@@ -549,7 +550,7 @@ ViewModel context'siz kalır. Gezinme, enjekte edilen bir "navigator" arayüzün
 **Diğer**
 - `gen/`: `flutter_gen` çıktısı (`assets.gen.dart`, `fonts.gen.dart`).
 - `l10n/`: `arb/*_tr.arb` feature dosyaları, birleşik `app_tr.arb` ve üretilmiş `app_localizations*.dart` ([05_araclar.md](05_araclar.md)).
-- `vendor/flutter_document_scanner/`: pubspec'te `path:` bağımlılığı olan kopya tarayıcı paketi. `build.yaml` ve `analysis_options.yaml` onu hariç tutar; elle düzenlenmez.
+- `vendor/flutter_document_scanner/`: pubspec'te `path:` bağımlılığı olan kopya tarayıcı paketi. `build.yaml`, `analysis_options.yaml` ve `tool/format.sh` onu hariç tutar; elle düzenlenmez.
 
 **Test düzeni:** `test/` klasörü `lib/` yapısını yansıtır (`test/app/**`, `test/core/**`, `test/dependency_injection/**`, `test/services/**`, `test/features/<f>/{application,data,presentation}/**`, `test/shared/ui/**`). Router ve DI değişikliklerinde `test/app/**` ve `test/dependency_injection/**` birlikte güncellenir.
 
@@ -583,19 +584,19 @@ ViewModel context'siz kalır. Gezinme, enjekte edilen bir "navigator" arayüzün
 14. **Alt boşluk (kabuk).** Sekme gövdesinde `MediaQuery` alt güvenli alanı `extendBody` ile sıfırlanır. `_ShellTabStack` cihazın değerini geri koyar (`deviceBottom`). Ekranlar alt çubuk yüksekliğini `AppBottomBar.heightOf` ile ekler. Geçmiş: `07c93b8` ("kabuk alt boşluğu"), `2dd31bc` (`account_bar_clearance` kaldırıldı, "kök neden kabukta"). Ekran bazlı elle boşluk sabiti ekleme.
 15. **Sekme köküne dönüşte scroll.** `scrollTabToTop`, her rotanın kendi birincil scroll controller'ı olduğundan element ağacını gezip dikey `Scrollable`'ları kaydırır. Kabuğa tek controller bağlamayı deneme.
 16. **Dört sekme birlikte kurulur** (§6). Bir sekmenin kök ekranına ağır iş koyarsan açılışta dört sekme aynı anda yük bindirir.
-17. **Hesap silme çıkışı uzaktan logout yapmaz.** `completeAccountDeletion()` (`remote: false`) çerezi, önbelleği ve kapsamı temizler ama `/ajax/logout` çağırmaz, çünkü oturum sunucuda yoktur. `signOut()` ise yapar.
-18. **Başlatma hatası ve tekrar deneme.** `MainInitializer._initialize` içinde fırlayan her şey `BootFailureApp`'a gider. `_retry`, `resetDependencies()` (`locator.reset()`) çağırır, ardından `_start()` yeniden çalışır. Modül kayıtlarında ve `DevicePreferences.load`'da fırlatan kod açılışı bloklar; bu yüzden kayıtlar lazy ve yan etkisiz olmalıdır. `DevicePreferences` yalnız `allowedKeys` içindeki anahtarları önbelleğe alır ve okutur; yeni anahtarı önce oraya ekle ([02_veri.md](02_veri.md) §8).
+17. **Hesap silme çıkışı uzaktan logout yapmaz.** `completeAccountDeletion()` (`remote: false`) çerezi, önbelleği, kişiye ait cihaz tercihlerini (`DevicePreferences.clearAccount`) ve kapsamı temizler ama `/ajax/logout` çağırmaz, çünkü oturum sunucuda yoktur. `signOut()` ise yapar.
+18. **Başlatma hatası ve tekrar deneme.** `MainInitializer._initialize` içinde fırlayan her şey `BootFailureApp`'a gider. `_retry`, `resetDependencies()` (`locator.reset()`) çağırır, ardından `_start()` yeniden çalışır. Modül kayıtlarında ve `DevicePreferences.load`'da fırlatan kod açılışı bloklar; bu yüzden kayıtlar lazy ve yan etkisiz olmalıdır. `DevicePreferences` yalnız `allowedKeys` içindeki anahtarları önbelleğe alır ve okutur; yeni anahtarı önce oraya ekle. Anahtar cihaza değil kişiye aitse `accountKeys`'e de ekle; yoksa çıkıştan sonra bir sonraki hesaba kalır ([02_veri.md](02_veri.md) §8).
 19. **Bakım ve zorunlu güncelleme ekranları canlıda kapalıdır** (`DisabledStartupGate`, §2). Bu ekranları açmak için backend'in public config ucu ve `registerStartupServices` içindeki kaydın değişmesi gerekir.
-20. **Bayat yorum tek yerde kaldı.** `lib/features/coach/coach_students_routes.dart` sonundaki "`content: ShellTabContent.screen`" cümlesi eski bir API'yi anar (`ShellTabSpec` bugün yalnız `route` taşır). Genel olarak: kod ile yorum çelişirse kodu okuyun; emin olmak için `grep`, `dart run tool/unreachable_files.dart` ve ilgili testi kullanın.
+20. **Kod ile yorum çelişirse kodu okuyun.** Bilinen bayat yorum kalmadı: `lib/features/coach/coach_students_routes.dart` sonundaki yorum bugün `ShellTabSpec.route`'u anar (eski `ShellTabContent` cümlesi düzeltildi; `ShellTabSpec` yalnız `route` taşır). Emin olmak için `grep`, `dart run tool/unreachable_files.dart` ve ilgili testi kullanın.
 21. **Ölü kod silmeden önce kanıt.** `AGENTS.md`: gerçek backend'e karşı çalışan özellik silinmez; yalnız ölü, erişilemez, mock ya da "yakında" kodu grep kanıtıyla silinir. `dart run tool/unreachable_files.dart` erişilemeyen dosyaları listeler (giriş noktaları `lib/main.dart` ve `lib/main_gallery.dart`; `test/`'i ayrıca grep'leyin; koşullu import'u çözmez).
-22. **CI'da yakalananlar** ([05_araclar.md](05_araclar.md)): `flutter pub get --enforce-lockfile`; l10n tazeliği (`dart run tool/merge_arb.dart` ve `flutter gen-l10n`, sonra `git status --porcelain lib/l10n` boş olmalı); `build_runner build -d` sonrası temiz `git status`; `flutter analyze --no-pub` (sıfır sorun); `tool/ui_rules.sh` (ham renk, `TextStyle(`, `fontSize:`, `Icons.`, diyalog/`SnackBar`, `Navigator.push`, `print(`, `Widget _build`, sunumda ham `Duration(` ve dosya boyu sınırları: ekranın `_view` dosyası 250, `part` 300, ViewModel 500, diğer sunum ve kit dosyaları 400 satır); `flutter test --no-pub`. CI, yalnız `docs/**` ve `*.md` değişikliklerinde çalışmaz.
+22. **CI'da yakalananlar** ([05_araclar.md](05_araclar.md)): `flutter pub get --enforce-lockfile`; l10n tazeliği (`dart run tool/merge_arb.dart` ve `flutter gen-l10n`, sonra `git status --porcelain lib/l10n` boş olmalı); `build_runner build -d` sonrası temiz `git status`; `tool/format.sh --output=none --set-exit-if-changed` (biçim denetimi, `lib/vendor` hariç); `flutter analyze --no-pub` (sıfır sorun); `tool/ui_rules.sh` (ham renk, `TextStyle(`, `fontSize:`, `Icons.`, diyalog/`SnackBar`, `Navigator.push`, `print(`, `Widget _build`, sunumda ham `Duration(` ve dosya boyu sınırları: ekranın `_view` dosyası 250, `part` 300, ViewModel 500, diğer sunum ve kit dosyaları 400 satır); `flutter test --no-pub`. CI, yalnız `docs/**` ve `*.md` değişikliklerinde çalışmaz.
 
 ---
 
 ## İlgili dosyalar
 
 - Açılış ve DI: `lib/main.dart`, `lib/main_initializer.dart`, `lib/app/app.dart`, `lib/app/app_module.dart`, `lib/app/boot_failure_app.dart`, `lib/dependency_injection/injection_container.dart`, `lib/features/*/*_module.dart`
-- Oturum: `lib/services/session_manager.dart`, `lib/services/current_user_service.dart`, `lib/features/auth/domain/session_state.dart`, `lib/features/startup/application/{startup_gate,launch_handover,startup_timing,session_expired_coordinator}.dart`, `lib/features/startup/presentation/startup/startup_viewmodel.dart`
+- Oturum: `lib/services/session_manager.dart`, `lib/services/current_user_service.dart`, `lib/core/services/device_preferences.dart` (`accountKeys`, `clearAccount`), `lib/features/auth/domain/session_state.dart`, `lib/features/startup/application/{startup_gate,launch_handover,startup_timing,session_expired_coordinator}.dart`, `lib/features/startup/presentation/startup/startup_viewmodel.dart`
 - Router: `lib/app/router/app_router.dart` (+ üretilen `app_router.gr.dart`), `lib/app/router/route_refresh.dart`, `lib/app/router/stack_router_x.dart`, `lib/app/router/routes/shell_routes.dart`, `lib/features/*/*_routes.dart`
 - Guard'lar: `lib/app/router/guards/{route_access,access_guard,route_catalog,onboarding_guard,auth_guard,role_guard}.dart`, `lib/core/domain/user_role.dart`, `lib/features/account/presentation/stack_account_navigator.dart`
 - Kabuk: `lib/app/shell/*`, `lib/features/shell/application/shell_bar_policy.dart`, `lib/features/shell/presentation/shell_viewmodel.dart`, `lib/features/scan/presentation/scan_entry.dart`, `lib/shared/ui/navigation/app_bottom_bar.dart`
