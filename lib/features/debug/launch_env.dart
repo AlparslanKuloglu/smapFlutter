@@ -1,9 +1,10 @@
 import 'dart:io';
 
 /// A start value for a debug run, read without a rebuild: the process
-/// environment (`SIMCTL_CHILD_<name>=… xcrun simctl launch …`), else a file
-/// named `<name>` in the app's temporary directory (`launch_env/`), which a
-/// screenshot script writes with `xcrun simctl get_app_container … data`.
+/// environment, else a file named `<name>` in the app's temporary directory
+/// (`launch_env/`). On iOS 26 simulators `SIMCTL_CHILD_<name>=… xcrun simctl
+/// launch` does not reach the app, so use the file: `tool/sim_env.sh booted
+/// <name>=<value>` writes it into the app's data container.
 ///
 /// Debug tooling only (the gallery, `ShellPreview`); never read in release
 /// code paths.

@@ -23,9 +23,9 @@ class GallerySettings extends ChangeNotifier {
     const bool.fromEnvironment('GALLERY_REDUCE_MOTION'),
   );
 
-  /// A start value: the `--dart-define` one, or the process environment
-  /// (`SIMCTL_CHILD_GALLERY_DARK=true xcrun simctl launch …` reaches the app
-  /// as `GALLERY_DARK`), so a screenshot run needs no rebuild.
+  /// A start value: the `--dart-define` one, or the launch value
+  /// (`debugLaunchEnv`; on a simulator `tool/sim_env.sh booted
+  /// GALLERY_DARK=true`), so a screenshot run needs no rebuild.
   static bool _flag(String name, bool defined) {
     final env = debugLaunchEnv(name);
     return env == null ? defined : env == 'true';

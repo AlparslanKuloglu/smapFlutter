@@ -16,10 +16,11 @@ abstract final class ShellPreview {
   /// The role to preview; `null` when the preview is off.
   static UserRole? get role => kDebugMode ? parse(_define) : null;
 
-  /// The tab the preview opens on (0 to 3, bar order): the process
-  /// environment `SHELL_PREVIEW_TAB` (`SIMCTL_CHILD_SHELL_PREVIEW_TAB=2
-  /// xcrun simctl launch …`), so a screenshot run can visit every tab
-  /// without taps. 0 when unset or when the preview is off.
+  /// The tab the preview opens on (0 to 3, bar order, the camera button not
+  /// counted): the launch value `SHELL_PREVIEW_TAB` (`debugLaunchEnv`; on a
+  /// simulator `tool/sim_env.sh booted SHELL_PREVIEW_TAB=2`), so a screenshot
+  /// run can visit every tab without taps. 0 when unset or when the preview is
+  /// off.
   static int get initialTab =>
       active ? int.tryParse(debugLaunchEnv('SHELL_PREVIEW_TAB') ?? '') ?? 0 : 0;
 
