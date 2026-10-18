@@ -181,10 +181,12 @@ class _AppSheetFrameState extends State<AppSheetFrame> {
         busy: widget.busy,
         onClose: _close,
       ),
-      // The viewport already stops above the keyboard (`AppSheetRoute`), so the
-      // band stays whole instead of being hidden by the inset.
-      bottomBarVisibility: const BottomBarVisibility.always(
-        ignoreBottomInset: true,
+      // A medium or full sheet's viewport already stops above the keyboard
+      // (`AppSheetRoute`), so its band stays whole instead of being hidden by
+      // the inset. A small sheet is not lifted: its band keeps the default and
+      // rides the keyboard.
+      bottomBarVisibility: BottomBarVisibility.always(
+        ignoreBottomInset: stretch,
       ),
       bottomBar: _Footer(
         primary: widget.primary,

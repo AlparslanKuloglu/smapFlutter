@@ -97,7 +97,7 @@ abstract final class FeatureFlags {
   /// kullanacaksın?" and pano 2.5 kare 3 "Kayıt · koç").
   ///
   /// Closed because the owner took the "Öğrenci / Koç" choice out of the live
-  /// app's sign-up form (origin/main, commit e615595, 2026-10-17): an account
+  /// app's sign-up form (origin/main, commit e615595, 2026-10-16): an account
   /// made there is always a student (`userType` 1), and coach accounts are
   /// opened outside the sign-up screen; coaches only use "Giriş Yap". While
   /// it is `false` the role step of the intro flow is not shown (the flow goes

@@ -11,7 +11,7 @@ import 'package:smap/shared/ui/inputs/input_masks.dart';
 import 'package:smap/shared/ui/sheets/app_sheet.dart';
 import 'package:smap/shared/ui/surfaces/app_notice_box.dart';
 
-/// "Koçunu değiştir" (pano 14.10 kare 2 to 4; T12.21): a small sheet with the
+/// "Koçunu değiştir" (pano 14.10 kare 2 to 4; T12.21): a full sheet with the
 /// title "Koçunu değiştir" and "Kapat", the subtitle "Yeni koçunun verdiği
 /// kodu gir.", the masked field "Koçluk kodu" (`AAAA-0000`, help "4 harf ve 4
 /// rakam; tire kendiliğinden gelir."), the info box "Mehmet Özkan'la bağlantın
