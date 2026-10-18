@@ -149,26 +149,55 @@
   "@account_coachCodeTitle": {
     "description": "Title of the coach's code row (pano 9.1 kare 4)."
   },
-  "account_coachCodeCopy": "Kodu kopyala",
-  "@account_coachCodeCopy": {
-    "description": "Accessible name and tooltip of the copy button (pano 9.1 kare 4)."
+  "account_coachCodeRowHint": "Aç",
+  "@account_coachCodeRowHint": {
+    "description": "Reading hint of the coach's \"Koçluk kodun\" row: \"Koçluk kodun, MOZK-4821, aç\" (pano 14.11 Erişilebilirlik)."
   },
-  "account_coachCodeShare": "Kodu paylaş",
-  "@account_coachCodeShare": {
-    "description": "Accessible name and tooltip of the share button (pano 9.1 kare 4)."
-  },
-  "account_coachCodeCopied": "Kod kopyalandı.",
-  "@account_coachCodeCopied": {
-    "description": "Toast after the code was copied (pano 9.1 Davranış)."
-  },
-  "account_coachCodeShareText": "SMAP'te koçluk kodum: {code}",
+  "account_coachCodeShareText": "SMAP koçluk kodum: {code}. Hesap › Koçluk'a girerek bana bağlanabilirsin.",
   "@account_coachCodeShareText": {
-    "description": "Text the system share sheet carries (a decision: the design gives none).",
+    "description": "Text the system share sheet carries (pano 14.11 Veri).",
     "placeholders": {
       "code": {
         "type": "String"
       }
     }
+  },
+  "account_codeSheetBody1": "Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır; denemelerini, analizlerini ve programını görürsün.",
+  "@account_codeSheetBody1": {
+    "description": "First paragraph of the coach's code sheet (pano 14.11 kare 2)."
+  },
+  "account_codeSheetBody2": "Bağlantıyı öğrencin istediği an kaldırabilir. Öğrenci hesabını sen açmak istersen: Öğrencilerim › +.",
+  "@account_codeSheetBody2": {
+    "description": "Second paragraph of the coach's code sheet (pano 14.11 kare 2)."
+  },
+  "account_codeSheetOfflineNote": "Kod cihazında saklı; çevrimdışında da kopyalayıp paylaşabilirsin.",
+  "@account_codeSheetOfflineNote": {
+    "description": "Note under the paragraphs of the code sheet while offline (pano 14.11 kare 6)."
+  },
+  "account_codeSheetErrorTitle": "Kodun yüklenemedi.",
+  "@account_codeSheetErrorTitle": {
+    "description": "Title of the section error inside the code card (pano 14.11 kare 5)."
+  },
+  "account_codeSheetErrorMessage": "Bağlantını kontrol edip tekrar dene.",
+  "@account_codeSheetErrorMessage": {
+    "description": "Message of the section error inside the code card (pano 14.11 kare 5)."
+  },
+  "account_codeSheetCodeA11y": "Koçluk kodun {spelled}",
+  "@account_codeSheetCodeA11y": {
+    "description": "Reading of the code, letter by letter: \"Koçluk kodun M O Z K tire 4 8 2 1\" (pano 14.11 Erişilebilirlik).",
+    "placeholders": {
+      "spelled": {
+        "type": "String"
+      }
+    }
+  },
+  "account_codeSheetDash": "tire",
+  "@account_codeSheetDash": {
+    "description": "The spoken word for the dash of the code in the letter-by-letter reading (pano 14.11)."
+  },
+  "account_codeSheetLoading": "Kod yükleniyor",
+  "@account_codeSheetLoading": {
+    "description": "Reading of the code skeleton (pano 14.11 kare 4)."
   },
   "account_version": "Sürüm {version} ({build})",
   "@account_version": {
@@ -290,6 +319,14 @@
   "@account_userNameLocked": {
     "description": "Help line under the user name in edit mode (pano 9.2 kare 2)."
   },
+  "account_emailHelp": "Kaydedince hemen değişir; doğru yazdığından emin ol.",
+  "@account_emailHelp": {
+    "description": "Help line under the e-mail field while editing; there is no verification code (pano 14.9 kare 1, T12.19)."
+  },
+  "account_profileOfflineNote": "Kaydetmek için bağlantı gerekiyor; girdiklerin korunuyor.",
+  "@account_profileOfflineNote": {
+    "description": "Line under the title of the open profile form while offline (pano 14.9 kare 4)."
+  },
   "account_phoneHint": "5XX XXX XX XX",
   "@account_phoneHint": {
     "description": "Example in the empty phone field after the +90 prefix (pano 9.2 kare 2)."
@@ -339,9 +376,9 @@
   "@account_issueNameMissing": {
     "description": "Field error of the name (a decision: pano 9.2 draws none)."
   },
-  "account_issueEmailInvalid": "E-posta adresi eksik görünüyor. Örn: ad@alan.com",
+  "account_issueEmailInvalid": "Geçerli bir e-posta adresi gir.",
   "@account_issueEmailInvalid": {
-    "description": "Field error of the e-mail (same wording as the sign-up form)."
+    "description": "Field error of the e-mail, under the field, on blur or \"Kaydet\" (pano 14.9 kare 2)."
   },
   "account_issuePhoneInvalid": "Telefon numaranı 5XX XXX XX XX biçiminde yaz.",
   "@account_issuePhoneInvalid": {

@@ -181,7 +181,11 @@ class _AppSheetFrameState extends State<AppSheetFrame> {
         busy: widget.busy,
         onClose: _close,
       ),
-      bottomBarVisibility: const BottomBarVisibility.always(),
+      // The viewport already stops above the keyboard (`AppSheetRoute`), so the
+      // band stays whole instead of being hidden by the inset.
+      bottomBarVisibility: const BottomBarVisibility.always(
+        ignoreBottomInset: true,
+      ),
       bottomBar: _Footer(
         primary: widget.primary,
         secondary: widget.secondary,

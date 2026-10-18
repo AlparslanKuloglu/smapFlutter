@@ -23,7 +23,9 @@ import 'package:smooth_sheets/smooth_sheets.dart';
 /// the drag off.
 ///
 /// The viewport leaves the safe area plus 8 pt above the sheet; `medium`
-/// leaves more ([SheetLayoutMath.topInset]). With [online] the kit's
+/// leaves more ([SheetLayoutMath.topInset]). With the keyboard open a `medium`
+/// or `full` sheet also leaves the keyboard's height below, so a form rides
+/// above it instead of sitting behind it. With [online] the kit's
 /// [AppOfflineStrip] sits there, on the scrim, and pushes the sheet down while
 /// the link is gone (pano 14.7 kare 3 "OfflineStrip sheet açıkken de
 /// görünür"). Use `AppSheet.show`.
@@ -64,32 +66,7 @@ class AppSheetRoute<T> extends ModalSheetRoute<T> {
     Widget child,
     AppSheetSize size,
     ValueListenable<bool>? online,
-  ) {
-    final media = MediaQuery.of(context);
-    final top = SheetLayoutMath.topInset(
-      size: size,
-      viewportHeight: media.size.height,
-      safeTop: media.viewPadding.top,
-    );
-    if (online != null) {
-      return Column(
-        children: [
-          SizedBox(height: top),
-          // The strip sits outside any Material: its text needs a default
-          // style or it draws the debug underline.
-          Material(
-            type: MaterialType.transparency,
-            child: AppOfflineStrip(online: online),
-          ),
-          Expanded(child: SheetViewport(child: child)),
-        ],
-      );
-    }
-    return SheetViewport(
-      padding: EdgeInsets.only(top: top),
-      child: child,
-    );
-  }
+  ) => _SheetViewportFrame(size: size, online: online, child: child);
 
   @override
   Widget buildTransitions(
@@ -167,6 +144,61 @@ class _SheetScrim extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// The viewport of a sheet: the top inset, the optional offline strip and, for
+/// a `medium` or `full` sheet, the on-screen keyboard's height below. It reads
+/// [MediaQuery] itself, so it follows the keyboard as it opens and closes.
+///
+/// The keyboard shrinks the viewport from below, so a form's body scrolls above
+/// the keyboard and its button band sits right over it instead of behind it. A
+/// `small` sheet is not lifted (it would lose its footing): give a form a
+/// taller size.
+class _SheetViewportFrame extends StatelessWidget {
+  const _SheetViewportFrame({
+    required this.size,
+    required this.online,
+    required this.child,
+  });
+
+  final AppSheetSize size;
+  final ValueListenable<bool>? online;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final media = MediaQuery.of(context);
+    final bottom = size == AppSheetSize.small ? 0.0 : media.viewInsets.bottom;
+    final top = SheetLayoutMath.topInset(
+      size: size,
+      viewportHeight: media.size.height,
+      safeTop: media.viewPadding.top,
+    );
+    final strip = online;
+    if (strip != null) {
+      return Column(
+        children: [
+          SizedBox(height: top),
+          // The strip sits outside any Material: its text needs a default
+          // style or it draws the debug underline.
+          Material(
+            type: MaterialType.transparency,
+            child: AppOfflineStrip(online: strip),
+          ),
+          Expanded(
+            child: SheetViewport(
+              padding: EdgeInsets.only(bottom: bottom),
+              child: child,
+            ),
+          ),
+        ],
+      );
+    }
+    return SheetViewport(
+      padding: EdgeInsets.only(top: top, bottom: bottom),
+      child: child,
     );
   }
 }

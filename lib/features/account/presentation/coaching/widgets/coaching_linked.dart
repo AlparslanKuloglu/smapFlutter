@@ -2,8 +2,15 @@ part of '../coaching_view.dart';
 
 typedef _LinkedData = ({CoachLink? coach, bool busy, bool online});
 
-/// "Koçun var" (pano 9.5 kare 1, Tur 12 F): the coach card, the info box and
-/// the two text buttons.
+/// "Koçun var" (pano 9.5 kare 1; pano 14.10 kare 1, 5 and 6): the coach card,
+/// the info box, the outlined full-width "Koçu Değiştir" with ArrowsLeftRight
+/// and the red text button "Bağlantıyı Kaldır" pulled to the left edge. The
+/// card's "Sıradaki görüşme" row is not drawn (T12.22: no meeting, and no
+/// endpoint tells the student's next one).
+///
+/// Offline (kare 6) both actions are off and one line under them says "Koçunu
+/// değiştirmek ya da bağlantıyı kaldırmak için bağlantı gerekiyor."; the card
+/// stays as last loaded. While an action runs both are off too.
 class _LinkedSection
     extends SelectorViewModelWidget<CoachingViewModel, _LinkedData> {
   const _LinkedSection();
@@ -25,6 +32,7 @@ class _LinkedSection
       context,
       listen: false,
     );
+    final enabled = !data.busy && data.online;
     return SliverPadding(
       padding: const EdgeInsets.fromLTRB(
         AppSpacing.gutter,
@@ -38,19 +46,23 @@ class _LinkedSection
           const SizedBox(height: AppSpacing.s16),
           AppNoticeBox(message: l10n.coaching_infoBox(coach.name)),
           const SizedBox(height: AppSpacing.s16),
+          AppButton(
+            label: l10n.coachingChange_open,
+            icon: PhosphorIconsRegular.arrowsLeftRight,
+            variant: AppButtonVariant.outline,
+            expand: true,
+            onPressed: enabled ? viewModel.changeCoach : null,
+          ),
           _PulledText(
             child: AppButton(
-              label: l10n.coachingChange_open,
-              icon: PhosphorIconsRegular.arrowsLeftRight,
-              variant: AppButtonVariant.text,
-              onPressed: data.busy || !data.online
-                  ? null
-                  : viewModel.changeCoach,
+              label: l10n.coaching_unlinkAction,
+              variant: AppButtonVariant.textDanger,
+              onPressed: enabled ? viewModel.unlink : null,
             ),
           ),
           if (!data.online)
-            Padding(
-              padding: const EdgeInsets.only(bottom: AppSpacing.s8),
+            Semantics(
+              liveRegion: true,
               child: Text(
                 l10n.coachingChange_offlineNote,
                 style: context.appText.caption.copyWith(
@@ -58,13 +70,6 @@ class _LinkedSection
                 ),
               ),
             ),
-          _PulledText(
-            child: AppButton(
-              label: l10n.coaching_unlinkAction,
-              variant: AppButtonVariant.textDanger,
-              onPressed: data.busy ? null : viewModel.unlink,
-            ),
-          ),
         ]),
       ),
     );
@@ -89,8 +94,9 @@ class _PulledText extends StatelessWidget {
 }
 
 /// The coach card (pano 9.5 kare 1; C-coach card): the 64 pt avatar, the
-/// name 17/700 and "Koçun" 13/20, on a card with 16 padding.
-class _CoachCard extends StatelessWidget {
+/// name 17/700 and "Koçun" 13/20, on a card with 16 padding. After a change
+/// the focus moves here (pano 14.10 kare 5: "odak koç kartına").
+class _CoachCard extends StatefulWidget {
   const _CoachCard({required this.coach});
 
   final CoachLink coach;
@@ -99,38 +105,78 @@ class _CoachCard extends StatelessWidget {
   static const double _avatarGap = 14;
 
   @override
+  State<_CoachCard> createState() => _CoachCardState();
+}
+
+class _CoachCardState extends State<_CoachCard> {
+  final FocusNode _focus = FocusNode(debugLabel: 'coach card');
+  ValueListenable<int>? _requests;
+
+  void _onRequest() => _focus.requestFocus();
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final requests = getParentViewModel<CoachingViewModel>(
+      context,
+      listen: false,
+    ).cardFocus;
+    if (requests == _requests) return;
+    _requests?.removeListener(_onRequest);
+    _requests = requests..addListener(_onRequest);
+  }
+
+  @override
+  void dispose() {
+    _requests?.removeListener(_onRequest);
+    _focus.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final colors = context.appColors;
     final text = context.appText;
+    final coach = widget.coach;
     final asset = AvatarAsset.pathOf(coach.photo);
-    return AppCard(
-      child: MergeSemantics(
-        child: Row(
-          children: [
-            AppAvatar(
-              name: coach.name,
-              image: asset == null ? null : AssetImage(asset),
-              size: AppAvatarSize.coachCard,
-              decorative: true,
-            ),
-            const SizedBox(width: _avatarGap),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    coach.name,
-                    style: text.headline.copyWith(color: colors.textPrimary),
+    return Focus(
+      focusNode: _focus,
+      child: AppCard(
+        child: MergeSemantics(
+          child: Semantics(
+            focusable: true,
+            child: Row(
+              children: [
+                AppAvatar(
+                  name: coach.name,
+                  image: asset == null ? null : AssetImage(asset),
+                  size: AppAvatarSize.coachCard,
+                  decorative: true,
+                ),
+                const SizedBox(width: _CoachCard._avatarGap),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        coach.name,
+                        style: text.headline.copyWith(
+                          color: colors.textPrimary,
+                        ),
+                      ),
+                      Text(
+                        l10n.coaching_coachLabel,
+                        style: text.caption.copyWith(
+                          color: colors.textSecondary,
+                        ),
+                      ),
+                    ],
                   ),
-                  Text(
-                    l10n.coaching_coachLabel,
-                    style: text.caption.copyWith(color: colors.textSecondary),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

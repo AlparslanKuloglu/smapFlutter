@@ -44,6 +44,8 @@ class AppTextField extends StatefulWidget {
     this.password = false,
     this.optional = false,
     this.readOnly = false,
+    this.readOnlyLock = true,
+    this.semanticLabel,
     this.enabled = true,
     this.autofocus = false,
     this.keyboardType,
@@ -80,6 +82,15 @@ class AppTextField extends StatefulWidget {
 
   /// Shows the Lock and the read-only look.
   final bool readOnly;
+
+  /// Whether a [readOnly] field draws the Lock. A field that is only locked
+  /// for a moment (a sheet that is busy sending, pano 14.10 kare 4) keeps the
+  /// look and leaves the Lock out.
+  final bool readOnlyLock;
+
+  /// What the screen reader says for the field instead of [label]: the label
+  /// plus a rule ("Koçluk kodu, 4 harf ve 4 rakam").
+  final String? semanticLabel;
   final bool enabled;
   final bool autofocus;
   final TextInputType? keyboardType;
@@ -118,6 +129,7 @@ class _AppTextFieldState extends State<AppTextField> {
     final colors = context.appColors;
     final l10n = AppLocalizations.of(context);
     if (widget.readOnly) {
+      if (!widget.readOnlyLock) return widget.suffix;
       return _Slot(
         child: PhosphorIcon(
           PhosphorIconsRegular.lock,
@@ -163,6 +175,7 @@ class _AppTextFieldState extends State<AppTextField> {
     final colors = context.appColors;
     return AppFieldFrame(
       label: widget.label,
+      semanticLabel: widget.semanticLabel,
       optional: widget.optional,
       helperText: widget.helperText,
       errorText: widget.errorText,

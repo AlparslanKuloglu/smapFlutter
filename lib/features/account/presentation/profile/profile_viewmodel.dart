@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:stacked/stacked.dart';
 
 import 'package:smap/core/extensions/either_extensions.dart';
-import 'package:smap/core/services/app_haptics.dart';
 import 'package:smap/core/services/toast_service.dart';
 import 'package:smap/features/account/application/avatar_catalog.dart';
 import 'package:smap/features/account/application/profile_draft.dart';
@@ -53,6 +52,26 @@ class ProfileBarData {
 
   @override
   int get hashCode => Object.hash(mode, canSave, canEdit);
+}
+
+/// Asks the form to move the focus to the field of [issue] (pano 14.9
+/// Erişilebilirlik: "odak hatalı alana gider"). [tick] makes two requests
+/// for the same field different values, so the listener hears both.
+@immutable
+class ProfileFocusRequest {
+  const ProfileFocusRequest(this.issue, this.tick);
+
+  final ProfileIssue issue;
+  final int tick;
+
+  @override
+  bool operator ==(Object other) =>
+      other is ProfileFocusRequest &&
+      other.issue == issue &&
+      other.tick == tick;
+
+  @override
+  int get hashCode => Object.hash(issue, tick);
 }
 
 /// What the open form draws besides the text the fields keep themselves:
@@ -133,10 +152,13 @@ class ProfileViewData {
 ///   the new values; if the reload fails the server's answer, or the sent
 ///   fields applied to the account, are used instead. A failure keeps the
 ///   form and says so in a toast; a success returns to the read-only view
-///   with "Profilin güncellendi.".
-/// - The e-mail is saved straight away: the backend has no verification
-///   endpoint yet (Tur 12 E, the design's "yedek davranış"), so the code step
-///   of pano 14.9 does not exist.
+///   with "Profilin güncellendi." (a text only: no success haptic, pano 14.9
+///   kare 3).
+/// - The e-mail is saved straight away, with the other fields (pano 14.9,
+///   T12.19: the backend has no verification endpoint, so there is no code
+///   step). It is checked on leaving the field and on "Kaydet" ("@", a domain
+///   and an extension); trimmed and lower cased when sent. While a field
+///   error shows, "Kaydet" is off and the focus goes to that field.
 /// - "Vazgeç" (and the back gesture) with changes asks "Değişiklikler
 ///   kaydedilmesin mi?".
 /// - The avatar is chosen in a sheet; like the other fields it is saved with
@@ -176,6 +198,11 @@ class ProfileViewModel extends ReactiveViewModel {
   Set<ProfileIssue> _issues = const {};
   bool _saving = false;
   bool _disposed = false;
+  int _focusTick = 0;
+
+  /// The field that should take the focus (the first one with an error).
+  final ValueNotifier<ProfileFocusRequest?> focusRequest =
+      ValueNotifier<ProfileFocusRequest?>(null);
 
   @override
   List<ListenableServiceMixin> get listenableServices => [_currentUser];
@@ -215,8 +242,15 @@ class ProfileViewModel extends ReactiveViewModel {
   /// Whether the open form differs from the account.
   bool get hasChanges => _mode == ProfileMode.edit && _draft.hasChanges(_start);
 
-  /// Whether "Kaydet" works.
-  bool get canSave => hasChanges && _online.value && !_saving;
+  /// Whether "Kaydet" works: something changed, no field error is showing
+  /// (pano 14.9 kare 2), the device is online and no save runs. Offline it
+  /// switches on by itself when the connection returns (kare 4).
+  bool get canSave =>
+      hasChanges && _issues.isEmpty && _online.value && !_saving;
+
+  /// The open form is offline: the line "Kaydetmek için bağlantı gerekiyor;
+  /// girdiklerin korunuyor." shows under the title (pano 14.9 kare 4).
+  bool get showOfflineNote => _mode == ProfileMode.edit && !_online.value;
 
   /// The bar's value.
   ProfileBarData get bar =>
@@ -302,7 +336,26 @@ class ProfileViewModel extends ReactiveViewModel {
   void _change(ProfileDraft next) {
     if (_mode != ProfileMode.edit || next == _draft) return;
     _draft = next;
-    if (_issues.isNotEmpty) _issues = next.issuesAgainst(_start);
+    if (_issues.isNotEmpty) {
+      // Only an error that is showing can go away while typing; a new one
+      // waits for the field to be left or for "Kaydet".
+      _issues = next.issuesAgainst(_start).intersection(_issues);
+    }
+    notifyListeners();
+  }
+
+  /// The e-mail field was left (pano 14.9 kare 2: "Denetim alandan çıkınca
+  /// ya da Kaydet'e basınca"): a changed address that is not one gets its
+  /// error under the field.
+  void validateEmail() {
+    if (_mode != ProfileMode.edit || _saving) return;
+    final bad = _draft.hasEmailIssue(_start);
+    if (bad == _issues.contains(ProfileIssue.emailInvalid)) return;
+    _issues = {
+      for (final issue in _issues)
+        if (issue != ProfileIssue.emailInvalid) issue,
+      if (bad) ProfileIssue.emailInvalid,
+    };
     notifyListeners();
   }
 
@@ -326,9 +379,13 @@ class ProfileViewModel extends ReactiveViewModel {
     if (update == null) return;
     final issues = _draft.issuesAgainst(_start);
     if (issues.isNotEmpty) {
+      // The field's error plays the error haptic itself (`AppFieldFrame`).
       _issues = issues;
-      AppHaptics.error();
       notifyListeners();
+      focusRequest.value = ProfileFocusRequest(
+        ProfileIssue.values.firstWhere(issues.contains),
+        ++_focusTick,
+      );
       return;
     }
     _saving = true;
@@ -347,7 +404,7 @@ class ProfileViewModel extends ReactiveViewModel {
     if (_disposed) return;
     _saving = false;
     _leaveEdit();
-    _toast.success((l) => l.account_profileSaved);
+    _toast.success((l) => l.account_profileSaved, haptic: false);
   }
 
   /// Brings the session's account up to date after a save: the server's
@@ -382,6 +439,7 @@ class ProfileViewModel extends ReactiveViewModel {
   void dispose() {
     _disposed = true;
     _online.removeListener(_onOnlineChanged);
+    focusRequest.dispose();
     super.dispose();
   }
 }

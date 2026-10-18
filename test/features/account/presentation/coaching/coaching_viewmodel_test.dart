@@ -5,6 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:fake_async/fake_async.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:smap/core/services/app_haptics.dart';
 import 'package:smap/core/errors/app_error_code.dart';
 import 'package:smap/core/errors/app_exception.dart';
 import 'package:smap/features/account/application/coaching_logic.dart';
@@ -23,6 +24,9 @@ class _FakeDialogs implements CoachingDialogs {
 
   /// What the change sheet does: types [changeCode] and presses the button.
   String? changeCode;
+
+  /// When set, the sheet stays open until it completes (the busy state).
+  Completer<void>? changeGate;
   final List<CoachLinkResult> changeResults = [];
   int changeOpened = 0;
 
@@ -43,6 +47,7 @@ class _FakeDialogs implements CoachingDialogs {
     changeOpened++;
     final code = changeCode;
     if (code == null) return null;
+    await changeGate?.future;
     final result = await submit(CoachCode.tryParse(code)!);
     changeResults.add(result);
     return result.coach;
@@ -295,6 +300,129 @@ void main() {
       expect(dialogs.changeOpened, 1);
       expect(account.added, isEmpty);
       expect(viewModel.isWorking, isFalse);
+    });
+
+    test('the card is refreshed with getStudentsCoach after the change '
+        '(pano 14.10 kare 5)', () async {
+      dialogs.changeCode = 'ADEM-1907';
+      account.addResult = const Right(
+        UserDto(id: 'coach-2', name: 'Ayşe Demir'),
+      );
+      account.myCoach = const Right(ayse);
+      final calls = account.myCoachCalls;
+
+      await viewModel.changeCoach();
+      await Future<void>.delayed(Duration.zero);
+
+      expect(account.myCoachCalls, calls + 1);
+      expect(viewModel.coach?.name, 'Ayşe Demir');
+      expect(viewModel.coach?.photo, 'avatars/4avatarN3.png');
+      expect(viewModel.coach?.code, 'ADEM-1907');
+      expect(viewModel.state, SectionState.ready);
+    });
+
+    test('a refresh that fails or names another coach leaves the card as the '
+        'change made it', () async {
+      dialogs.changeCode = 'ADEM-1907';
+      account.addResult = const Right(ayse);
+      account.myCoach = const Left(offline);
+
+      await viewModel.changeCoach();
+      await Future<void>.delayed(Duration.zero);
+
+      expect(viewModel.coach?.name, 'Ayşe Demir');
+
+      account.myCoach = const Right(mehmet);
+      dialogs.changeCode = 'ADEM-1907';
+      // The server still names the old coach: the card is not turned back.
+      await viewModel.changeCoach();
+      await Future<void>.delayed(Duration.zero);
+      expect(viewModel.coach?.id, 'coach-2');
+    });
+
+    test('the success toast plays the success haptic and the focus moves to '
+        'the card (kare 5)', () async {
+      final haptics = <String>[];
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+          .setMockMethodCallHandler(AppHaptics.channel, (call) async {
+            haptics.add(call.method);
+            return null;
+          });
+      addTearDown(
+        () => TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+            .setMockMethodCallHandler(AppHaptics.channel, null),
+      );
+      dialogs.changeCode = 'ADEM-1907';
+      account.addResult = const Right(ayse);
+      final focus = <int>[];
+      viewModel.cardFocus.addListener(
+        () => focus.add(viewModel.cardFocus.value),
+      );
+
+      await viewModel.changeCoach();
+      await Future<void>.delayed(Duration.zero);
+
+      expect(toast.text, "Ayşe Demir'e bağlandın.");
+      expect(haptics, ['success']);
+      expect(focus, [1]);
+    });
+
+    test('a failed change does not move the focus', () async {
+      dialogs.changeCode = 'ABCD-1234';
+      account.addResult = const Left(refused);
+
+      await viewModel.changeCoach();
+
+      expect(viewModel.cardFocus.value, 0);
+    });
+
+    test('the sheet is busy while the change runs and the buttons wait '
+        '(kare 4)', () async {
+      dialogs.changeCode = 'ADEM-1907';
+      dialogs.changeGate = Completer<void>();
+      account.addResult = const Right(ayse);
+
+      final running = viewModel.changeCoach();
+      expect(viewModel.isWorking, isTrue);
+      await viewModel.changeCoach();
+      expect(dialogs.changeOpened, 1);
+      await viewModel.unlink();
+      expect(dialogs.unlinkAsked, isEmpty);
+
+      dialogs.changeGate!.complete();
+      await running;
+      expect(viewModel.isWorking, isFalse);
+    });
+
+    test('an unknown code is mapped to "bulunamadı", other failures to '
+        '"try again"', () async {
+      final code = CoachCode.tryParse('ABCD-1234')!;
+
+      account.addResult = const Left(refused);
+      expect(
+        (await viewModel.requestLink(code)).failure,
+        CoachLinkFailure.notFound,
+      );
+      account.addResult = const Left(timeout);
+      expect(
+        (await viewModel.requestLink(code)).failure,
+        CoachLinkFailure.failed,
+      );
+      account.addResult = const Left(offline);
+      expect(
+        (await viewModel.requestLink(code)).failure,
+        CoachLinkFailure.failed,
+      );
+    });
+
+    test('offline "Bağlantıyı Kaldır" does not even ask (kare 6)', () async {
+      online.value = false;
+
+      await viewModel.unlink();
+
+      expect(dialogs.unlinkAsked, isEmpty);
+      expect(account.removed, isEmpty);
+      expect(viewModel.coach?.name, 'Mehmet Özkan');
     });
 
     test('offline it does not open', () async {

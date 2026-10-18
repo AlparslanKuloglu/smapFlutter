@@ -226,42 +226,34 @@
   "@coachingInfo_body2": {
     "description": "Second paragraph of the explanation sheet (pano 9.5 kare 4)."
   },
-  "coachingInfo_coachTitle": "Koçluk kodu ne işe yarar?",
-  "@coachingInfo_coachTitle": {
-    "description": "Title of the coach's explanation sheet on the coach's Hesap (Tur 12 G, 14.11 kare 2)."
-  },
-  "coachingInfo_coachBody1": "Öğrencin bu kodu kendi hesabında Hesap › Koçluk bölümüne girer; böylece hesabı seninkine bağlanır.",
-  "@coachingInfo_coachBody1": {
-    "description": "First paragraph of the coach's explanation sheet (Tur 12 G)."
-  },
-  "coachingInfo_coachBody2": "Bağlanan öğrenciler Öğrencilerim'de listelenir; denemelerini, analizlerini ve programını görürsün. Hesabını senin açtığın öğrenciler zaten bağlı gelir.",
-  "@coachingInfo_coachBody2": {
-    "description": "Second paragraph of the coach's explanation sheet (Tur 12 G)."
-  },
-  "coachingChange_open": "Koçunu Değiştir",
+  "coachingChange_open": "Koçu Değiştir",
   "@coachingChange_open": {
-    "description": "Text button above \"Bağlantıyı Kaldır\" that opens the change sheet (Tur 12 F, 14.10 kare 1)."
+    "description": "Outlined button under the coach card that opens the change sheet (pano 14.10 kare 1)."
   },
-  "coachingChange_offlineNote": "Koçunu değiştirmek için bağlantı gerekiyor.",
+  "coachingChange_offlineNote": "Koçunu değiştirmek ya da bağlantıyı kaldırmak için bağlantı gerekiyor.",
   "@coachingChange_offlineNote": {
-    "description": "Note under the disabled \"Koçunu Değiştir\" when the device is offline (Tur 12 F)."
+    "description": "One line under the two disabled actions while offline (pano 14.10 kare 6)."
   },
   "coachingChange_title": "Koçunu değiştir",
   "@coachingChange_title": {
     "description": "Title of the change sheet (Tur 12 F, 14.10 kare 2)."
   },
-  "coachingChange_warning": "{name} ile bağlantın kalkacak. Yeni koçun denemelerini, analizlerini ve programını görebilecek.",
-  "@coachingChange_warning": {
-    "description": "Warning box of the change sheet (Tur 12 F).",
+  "coachingChange_subtitle": "Yeni koçunun verdiği kodu gir.",
+  "@coachingChange_subtitle": {
+    "description": "Subtitle of the change sheet (pano 14.10 kare 2)."
+  },
+  "coachingChange_notice": "{oldWith} bağlantın kalkar; gelişimini artık göremez. Yeni koçun denemelerini, analizlerini ve programını görür.",
+  "@coachingChange_notice": {
+    "description": "Info box of the change sheet; the old coach's name arrives with its \"ile\" suffix: \"Mehmet Özkan'la\" (pano 14.10 kare 2, T12.21).",
     "placeholders": {
-      "name": {
+      "oldWith": {
         "type": "String"
       }
     }
   },
-  "coachingChange_codeLabel": "Yeni koçunun kodu",
-  "@coachingChange_codeLabel": {
-    "description": "Label of the code field of the change sheet (Tur 12 F)."
+  "coachingChange_codeA11y": "Koçluk kodu, 4 harf ve 4 rakam",
+  "@coachingChange_codeA11y": {
+    "description": "Reading of the code field of the change sheet (pano 14.10 Erişilebilirlik)."
   },
   "coachingChange_action": "Koçu Değiştir",
   "@coachingChange_action": {

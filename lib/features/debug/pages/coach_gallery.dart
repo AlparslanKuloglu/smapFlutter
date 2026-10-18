@@ -4,6 +4,7 @@ import 'package:smap/features/coach/domain/attention_item.dart';
 import 'package:smap/features/coach/domain/interview_type.dart';
 import 'package:smap/features/coach/presentation/widgets/attention_row.dart';
 import 'package:smap/features/coach/presentation/widgets/code_card.dart';
+import 'package:smap/features/coach/presentation/widgets/code_card_sheet.dart';
 import 'package:smap/features/coach/presentation/widgets/meeting_row.dart';
 import 'package:smap/features/coach/presentation/widgets/student_row.dart';
 import 'package:smap/features/coach/presentation/widgets/student_tile.dart';
@@ -198,7 +199,63 @@ class CoachGallery extends StatelessWidget {
             ),
           ],
         ),
+        const GallerySection(
+          title: 'CodeCard sheet hâli · C35 · pano 14.11 kare 2, 4, 5, 6',
+          note:
+              'Çerçeveli kod kutusu, koça göre açıklama, eşit çerçeveli '
+              'Kopyala ve Paylaş. Yükleniyor ve hata durumunda düğmeler pasif.',
+          children: [
+            GalleryState(
+              label: 'Hazır',
+              child: _CodeSheetDemo(phase: CodeCardPhase.ready),
+            ),
+            GalleryState(
+              label: 'Çevrimdışı notlu',
+              child: _CodeSheetDemo(
+                phase: CodeCardPhase.ready,
+                note:
+                    'Kod cihazında saklı; çevrimdışında da kopyalayıp '
+                    'paylaşabilirsin.',
+              ),
+            ),
+            GalleryState(
+              label: 'Yükleniyor',
+              child: _CodeSheetDemo(phase: CodeCardPhase.loading),
+            ),
+            GalleryState(
+              label: 'Hata',
+              child: _CodeSheetDemo(phase: CodeCardPhase.error),
+            ),
+          ],
+        ),
       ],
     );
   }
+}
+
+/// The sheet body of the coach's code in one phase (pano 14.11).
+class _CodeSheetDemo extends StatelessWidget {
+  const _CodeSheetDemo({required this.phase, this.note});
+
+  final CodeCardPhase phase;
+  final String? note;
+
+  @override
+  Widget build(BuildContext context) => CodeCardSheetBody(
+    phase: phase,
+    code: 'MOZK-4821',
+    spokenCode: 'Koçluk kodun M O Z K tire 4 8 2 1',
+    paragraphs: const [
+      "Öğrencin bu kodu Hesap › Koçluk'a girince sana bağlanır; "
+          'denemelerini, analizlerini ve programını görürsün.',
+      'Bağlantıyı öğrencin istediği an kaldırabilir. Öğrenci hesabını sen '
+          'açmak istersen: Öğrencilerim › +.',
+    ],
+    note: note,
+    errorTitle: 'Kodun yüklenemedi.',
+    errorMessage: 'Bağlantını kontrol edip tekrar dene.',
+    onRetry: _noop,
+    onCopy: _noop,
+    onShare: _noopRect,
+  );
 }

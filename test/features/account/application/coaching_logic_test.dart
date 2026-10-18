@@ -95,4 +95,17 @@ void main() {
     expect(bad.coach, isNull);
     expect(bad.failure, CoachLinkFailure.notFound);
   });
+
+  group('CoachingRules.withSuffix (pano 14.10 kare 2)', () {
+    test('"ile" after a consonant: \'la / \'le', () {
+      expect(CoachingRules.withSuffix('Mehmet Özkan'), "Mehmet Özkan'la");
+      expect(CoachingRules.withSuffix('Ayşe Demir'), "Ayşe Demir'le");
+      expect(CoachingRules.withSuffix('Elif Şahin'), "Elif Şahin'le");
+    });
+
+    test('"ile" after a vowel: \'yla / \'yle', () {
+      expect(CoachingRules.withSuffix('Ayşe'), "Ayşe'yle");
+      expect(CoachingRules.withSuffix('Hülya'), "Hülya'yla");
+    });
+  });
 }

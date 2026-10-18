@@ -5,7 +5,6 @@ import 'package:stacked/stacked.dart';
 
 import 'package:smap/core/errors/app_error_code.dart';
 import 'package:smap/core/extensions/either_extensions.dart';
-import 'package:smap/core/services/app_haptics.dart';
 import 'package:smap/core/services/toast_service.dart';
 import 'package:smap/core/theme/app_motion.dart';
 import 'package:smap/core/utils/turkish_text.dart';
@@ -32,11 +31,15 @@ enum CoachCodeProblem {
 ///   `addCoach` call. "Bu kodla bir koç bulunamadı..." sits under the field;
 ///   success is the toast "Mehmet Özkan'a bağlandın." and the screen turns to
 ///   "Koçun var". "Koça Bağlan" is open only for a complete code.
-/// - **Change** (Tur 12 F): with a coach, "Koçunu Değiştir" opens a sheet
-///   that takes the new code and makes the same single `addCoach` call, not a
-///   `deleteCoach` first (whether the server replaces the link is an open
-///   question; the screen is right whichever way it answers because it shows
-///   the coach the call returns). Offline it is closed.
+/// - **Change** (Tur 12 F, pano 14.10): with a coach, "Koçu Değiştir" opens a
+///   sheet that takes the new code and makes the same single `addCoach` call
+///   the old screen made, not a `deleteCoach` first (T12.24, open question:
+///   whether the server replaces the link by itself; the legacy app assumed
+///   it did and so does this one). No second confirmation (T12.21). When the
+///   sheet closes with the new coach the card shows it at once, the toast says
+///   "Ayşe Demir'e bağlandın." with the success haptic, the focus moves to the
+///   card ([cardFocus]) and `getStudentsCoach` refreshes the card in the
+///   background (picture, code). Offline both actions are closed.
 /// - **Unlink:** the dangerous confirmation, then `deleteCoach` with the
 ///   coach's id; the toast "Koç bağlantın kaldırıldı." and "Koçun yok".
 ///
@@ -67,6 +70,10 @@ class CoachingViewModel extends BaseViewModel {
   final Duration _timeout;
 
   final ValueNotifier<bool> _codeComplete = ValueNotifier<bool>(false);
+
+  /// Counts the moments the focus should move to the coach card: after a
+  /// change succeeded (pano 14.10 kare 5).
+  final ValueNotifier<int> cardFocus = ValueNotifier<int>(0);
 
   SectionState _state = SectionState.loading;
   CoachLink? _coach;
@@ -155,8 +162,8 @@ class CoachingViewModel extends BaseViewModel {
     }
     switch (result.failure) {
       case CoachLinkFailure.notFound:
+        // The field plays the error haptic when its error appears.
         _problem = CoachCodeProblem.notFound;
-        AppHaptics.error();
       case CoachLinkFailure.sameCoach:
       case CoachLinkFailure.failed:
       case null:
@@ -210,7 +217,20 @@ class CoachingViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  /// "Koçunu Değiştir" (Tur 12 F): the sheet takes the new code; a link it
+  /// Asks `getStudentsCoach` for the card after a change (pano 14.10 Veri):
+  /// the picture and code the server holds replace what `addCoach` echoed.
+  /// A failed call, no coach, or another coach than the one just linked
+  /// changes nothing: the card stays as the change left it.
+  Future<void> _refreshCard(CoachLink linked) async {
+    final result = await _account.getMyCoach();
+    if (_disposed) return;
+    final fresh = CoachLink.fromUser(result.rightOrNull);
+    if (fresh == null || fresh.id != linked.id || fresh == _coach) return;
+    _coach = fresh;
+    notifyListeners();
+  }
+
+  /// "Koçu Değiştir" (Tur 12 F): the sheet takes the new code; a link it
   /// returns is committed here, after the sheet has closed.
   Future<void> changeCoach() async {
     final current = _coach;
@@ -225,6 +245,8 @@ class CoachingViewModel extends BaseViewModel {
     _changing = false;
     if (linked != null) {
       _commit(linked);
+      cardFocus.value++;
+      unawaited(_refreshCard(linked));
     } else {
       notifyListeners();
     }
@@ -235,7 +257,7 @@ class CoachingViewModel extends BaseViewModel {
   /// "Bağlantıyı Kaldır": asks, then unlinks.
   Future<void> unlink() async {
     final current = _coach;
-    if (current == null || isWorking) return;
+    if (current == null || isWorking || !isOnline) return;
     final confirmed = await _dialogs.confirmUnlink(coachName: current.name);
     if (!confirmed || _disposed) return;
     _unlinking = true;
@@ -271,6 +293,7 @@ class CoachingViewModel extends BaseViewModel {
     _disposed = true;
     _online.removeListener(_onConnectivity);
     _codeComplete.dispose();
+    cardFocus.dispose();
     super.dispose();
   }
 }

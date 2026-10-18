@@ -39,6 +39,7 @@ part 'widgets/profile_bar.dart';
 part 'widgets/profile_delete.dart';
 part 'widgets/profile_edit_form.dart';
 part 'widgets/profile_identity.dart';
+part 'widgets/profile_offline_note.dart';
 part 'widgets/profile_view_fields.dart';
 
 /// Profil (pano 9.2 kare 1 to 4; spec §4.H 9.2; flow 13.10; route
@@ -129,6 +130,7 @@ class _ProfilePage extends SelectorViewModelWidget<ProfileViewModel, bool> {
         slivers: [
           const _ProfileBar(),
           LargeTitleSliver(title: l10n.account_profileTitle),
+          const _ProfileOfflineNote(),
           if (hasUser)
             SliverPadding(
               padding: EdgeInsets.fromLTRB(

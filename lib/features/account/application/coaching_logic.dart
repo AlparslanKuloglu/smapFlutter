@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 
+import 'package:smap/core/utils/turkish_text.dart';
 import 'package:smap/features/account/domain/coach_code.dart';
 import 'package:smap/features/auth/data/dtos/user_dto.dart';
 
@@ -78,6 +79,17 @@ enum CoachCodeVerdict {
 
 /// Pure rules of "Koçluk" (pano 9.5, Tur 12 F), unit-tested.
 abstract final class CoachingRules {
+  /// [name] with the "ile" suffix, for "Mehmet Özkan'la bağlantın kalkar"
+  /// (pano 14.10 kare 2): "'la" / "'le" after a consonant, "'yla" / "'yle"
+  /// after a vowel ("Ayşe'yle"). The vowel follows the same harmony as the
+  /// dative (`TurkishSuffix.dative`: "'a", "'e", "'ya", "'ye"), so the
+  /// suffix is that one with an "l" before its last vowel.
+  static String withSuffix(String name) {
+    final dative = TurkishSuffix.dative(name);
+    final cut = dative.length - 1;
+    return '${dative.substring(0, cut)}l${dative.substring(cut)}';
+  }
+
   /// Reads [typed] against [current] (`null` for a student with no coach).
   static CoachCodeVerdict verdict(String typed, {CoachLink? current}) {
     final code = CoachCode.tryParse(typed);
