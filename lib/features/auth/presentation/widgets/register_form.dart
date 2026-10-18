@@ -51,6 +51,45 @@ class _RegisterFormState extends State<RegisterForm> {
   bool _isConfirmPasswordObscured = true;
 
   static const _classOptions = ['9', '10', '11', '12', 'Mezun'];
+
+  static final _usernameCharsPattern = RegExp(r'^[a-zA-Z0-9._]+$');
+  static final _passwordCharsPattern = RegExp(r'^[a-zA-Z0-9çğıöşüÇĞİÖŞÜ]+$');
+  static final _letterPattern = RegExp(r'[a-zA-ZçğıöşüÇĞİÖŞÜ]');
+  static final _digitPattern = RegExp(r'[0-9]');
+  static final _whitespacePattern = RegExp(r'\s');
+
+  // Kullanıcı adı: 3-20 karakter; harf (Türkçe karakter hariç), rakam, nokta, alt çizgi.
+  static String? _validateUsername(String? v) {
+    final value = v ?? '';
+    if (value.trim().isEmpty) return 'Kullanıcı adı gerekli';
+    if (_whitespacePattern.hasMatch(value)) {
+      return 'Kullanıcı adı boşluk içeremez';
+    }
+    if (value.length < 3) return 'Kullanıcı adı en az 3 karakter olmalı';
+    if (value.length > 20) return 'Kullanıcı adı en fazla 20 karakter olabilir';
+    if (!_usernameCharsPattern.hasMatch(value)) {
+      return 'Sadece harf (Türkçe karakter hariç), rakam, nokta ve alt çizgi kullanılabilir';
+    }
+    if (value.startsWith('.') || value.endsWith('.')) {
+      return 'Kullanıcı adı nokta ile başlayamaz veya bitemez';
+    }
+    if (value.contains('..')) return 'Art arda iki nokta kullanılamaz';
+    return null;
+  }
+
+  // Şifre: 8-64 karakter, sadece harf ve rakam (özel karakter yok), en az bir harf ve bir rakam.
+  static String? _validatePassword(String? v) {
+    final value = v ?? '';
+    if (value.isEmpty) return 'Şifre gerekli';
+    if (value.length < 8) return 'Şifre en az 8 karakter olmalı';
+    if (value.length > 64) return 'Şifre en fazla 64 karakter olabilir';
+    if (!_passwordCharsPattern.hasMatch(value)) {
+      return 'Şifre sadece harf ve rakamdan oluşabilir (boşluk ve özel karakter kullanılamaz)';
+    }
+    if (!_letterPattern.hasMatch(value)) return 'Şifre en az bir harf içermeli';
+    if (!_digitPattern.hasMatch(value)) return 'Şifre en az bir rakam içermeli';
+    return null;
+  }
   static const _fieldOptions = ['Sayısal', 'Eşit Ağırlık', 'Sözel'];
 
   @override
@@ -71,6 +110,8 @@ class _RegisterFormState extends State<RegisterForm> {
         filled: true,
         fillColor: _inputFill,
         suffixIcon: suffixIcon,
+        // Uzun hata mesajları "..." ile kesilmesin, alt satıra geçsin
+        errorMaxLines: 3,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide.none,
@@ -370,15 +411,18 @@ class _RegisterFormState extends State<RegisterForm> {
           TextFormField(
             controller: _usernameController,
             textInputAction: TextInputAction.next,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             onChanged: (text) {
+              // Format geçersizse uygunluk kontrolüne hiç gitme
+              final bool isFormatValid = _validateUsername(text) == null;
               setState(() {
                 _isUsernameAvailable = null;
                 _usernameError = null;
-                _isUsernameChecking = text.trim().isNotEmpty;
+                _isUsernameChecking = isFormatValid;
               });
 
               _debounceTimer?.cancel();
-              if (text.trim().isNotEmpty) {
+              if (isFormatValid) {
                 _debounceTimer = Timer(const Duration(milliseconds: 500), () {
                   _checkUsername();
                 });
@@ -404,8 +448,7 @@ class _RegisterFormState extends State<RegisterForm> {
                   ? const Icon(Icons.check_circle_rounded, color: Colors.green)
                   : const Icon(Icons.error_rounded, color: Colors.red),
             ),
-            validator: (v) =>
-                v == null || v.trim().isEmpty ? 'Kullanıcı adı gerekli' : null,
+            validator: _validateUsername,
           ),
           if (_usernameError != null) ...[
             const SizedBox(height: 6),
@@ -457,7 +500,8 @@ class _RegisterFormState extends State<RegisterForm> {
                 },
               ),
             ),
-            validator: (v) => v == null || v.isEmpty ? 'Şifre gerekli' : null,
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            validator: _validatePassword,
           ),
           const SizedBox(height: 14),
 

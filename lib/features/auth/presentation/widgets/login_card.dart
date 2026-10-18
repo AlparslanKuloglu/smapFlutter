@@ -271,10 +271,14 @@ class _LoginFormContent extends StatelessWidget {
               TextFormField(
                 controller: usernameController,
                 textInputAction: TextInputAction.next,
+                validator: (v) => v == null || v.trim().isEmpty
+                    ? 'Kullanıcı adı gerekli'
+                    : null,
                 decoration: InputDecoration(
                   hintText: 'Kullanıcı adı',
                   filled: true,
                   fillColor: _inputFill,
+                  errorMaxLines: 3,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide.none,
@@ -291,10 +295,13 @@ class _LoginFormContent extends StatelessWidget {
                 obscureText: true,
                 textInputAction: TextInputAction.done,
                 onFieldSubmitted: (_) => onLoginPressed(),
+                validator: (v) =>
+                    v == null || v.isEmpty ? 'Şifre gerekli' : null,
                 decoration: InputDecoration(
                   hintText: '••••••••',
                   filled: true,
                   fillColor: _inputFill,
+                  errorMaxLines: 3,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide.none,
