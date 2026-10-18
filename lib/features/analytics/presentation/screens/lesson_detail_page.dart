@@ -239,47 +239,9 @@ class _LessonDetailPageState extends State<LessonDetailPage> {
               GestureDetector(
                 onTap: onMissingToggle,
                 behavior: HitTestBehavior.opaque,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 6,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(
-                      color: showOnlyMissing
-                          ? const Color(0xFFEF4444)
-                          : const Color(0xFFFCA5A5),
-                      width: showOnlyMissing ? 1.8 : 1.0,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.08),
-                        blurRadius: 6,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SvgPicture.asset(
-                        'assets/icons/information_card_with_border_red.svg',
-                        width: 18,
-                        height: 18,
-                      ),
-                      const SizedBox(width: 6),
-                      Text(
-                        '$missingCount',
-                        style: const TextStyle(
-                          color: Color(0xFFEF4444),
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
+                child: _MissingCountBadge(
+                  count: missingCount,
+                  active: showOnlyMissing,
                 ),
               ),
             ],
@@ -447,7 +409,8 @@ class _LessonDetailPageState extends State<LessonDetailPage> {
 
   Widget _buildMainContent() {
     return ListView.builder(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      // Kart rozetleri sağ üst köşeden taştığı için kenar boşlukları geniş tutuldu
+      padding: const EdgeInsets.fromLTRB(24, 4, 24, 16),
       itemCount: _topicsData!.length,
       itemBuilder: (context, index) {
         final Map<String, dynamic> topic =
@@ -502,6 +465,58 @@ class _LessonDetailPageState extends State<LessonDetailPage> {
 }
 
 // ===========================================================================
+// EKSİK BİLGİ KARTI ROZETİ (Header + Konu kartları)
+// ===========================================================================
+
+class _MissingCountBadge extends StatelessWidget {
+  final int count;
+  final bool active;
+  final bool compact;
+
+  const _MissingCountBadge({
+    required this.count,
+    this.active = false,
+    this.compact = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: compact
+          ? const EdgeInsets.symmetric(horizontal: 7, vertical: 4)
+          : const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(compact ? 7 : 8),
+        border: Border.all(
+          color: active ? const Color(0xFFEF4444) : const Color(0xFFFCA5A5),
+          width: active ? 1.8 : 1.0,
+        ),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SvgPicture.asset(
+            'assets/icons/information_card_with_border_red.svg',
+            width: compact ? 14 : 18,
+            height: compact ? 14 : 18,
+          ),
+          SizedBox(width: compact ? 4 : 6),
+          Text(
+            '$count',
+            style: TextStyle(
+              color: const Color(0xFFEF4444),
+              fontSize: compact ? 11 : 13,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ===========================================================================
 // KONU KARTI BİLEŞENİ
 // ===========================================================================
 
@@ -537,9 +552,36 @@ class _LessonsTopicCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Rozet kartın üstünden taştığı için üst boşluk daha geniş
+    return Padding(
+      padding: const EdgeInsets.only(top: 14, bottom: 4),
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          _buildCardBody(),
+          // Sağ üst köşeye merkezlenmiş, dışarı taşan eksik rozeti
+          if (itemDataCount > 0)
+            Positioned(
+              top: 10,
+              right: 20,
+              child: FractionalTranslation(
+                translation: const Offset(0.5, -0.5),
+                child: IgnorePointer(
+                  child: _MissingCountBadge(
+                    count: itemDataCount,
+                    compact: true,
+                  ),
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildCardBody() {
     return Container(
       height: 100,
-      margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 0),
       decoration: BoxDecoration(
         color: barColor,
         borderRadius: BorderRadius.circular(16),
