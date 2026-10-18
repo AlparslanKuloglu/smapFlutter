@@ -4,7 +4,7 @@ Durum: ⏳ bekliyor · 🔨 ajanda · 🔎 incelemede · 🔁 iade · ✅ merge 
 Plan: `docs/SMAP_Ana_Plan.md` · Backend ek soruları: `docs/Backend_Sorulari_Ek.md` · Entegrasyon dalı: `redesign/main` (yerel)
 
 Baseline (2026-10-11): `flutter analyze` 307 sorun (0 hata), test: kırık `widget_test.dart`.
-Şimdi (redesign/main d8da851): ThemeMode.system; **flutter analyze 0 sorun**, 3347 test yeşil, iOS + Android debug derleniyor. Eski kod tamamen silindi (FIN2); her ekran yeni. CI: analiz (bilgi düzeyi dahil) + tool/ui_rules.sh.
+Şimdi (2026-10-18, redesign/main cee59e8): Tur 1–12 tamam; **flutter analyze 0 sorun**, 3544 test yeşil, `tool/format.sh` ve `tool/ui_rules.sh` temiz, `lib/` dosyalarının hepsi erişilebilir; iOS simülatör, Android debug ve release (anahtarsız, debug imzalı) derleniyor. Eski kod tamamen silindi (FIN2); her ekran yeni. CI: kilit dosyası, l10n ve codegen güncelliği, biçim, analiz (bilgi düzeyi dahil), UI kuralları, testler. Uygulama kimliği `com.studentmap.smap`. Teslim belgeleri: `docs/DEVELOPING.md` ve `docs/dev/`.
 
 | ID | Görev | Dalga | Durum | Dal | Not |
 |---|---|---|---|---|---|
@@ -55,3 +55,11 @@ Baseline (2026-10-11): `flutter analyze` 307 sorun (0 hata), test: kırık `widg
 | T12P | Koç kaydı bayrağı | 4 | ✅ | bc05929 | `FeatureFlags.coachSignUpEnabled = false`: sahip canlıda koç kaydını kaldırdı (e615595); rol adımı ve kayıttaki rol bandı gizli. Tasarımdaki hâl bir satırla geri açılır; karar sahibin |
 | PORT | Sahibin eski koddaki değişiklikleri | 4 | ✅ | 640906f | origin/main'deki 13 commit (11–17 Ekim) incelendi: kimlik, imza, sürüm ve kayıt gövdesi (`name` tam ad, yeni `firstName`) taşındı; geri kalanı görsel ya da eski ekranlara ait (rapor: bu satır) |
 | DEV | Teslim belgeleri | 4 | ✅ | 6a2473d | `docs/DEVELOPING.md`, `docs/dev/01–06`, `AGENTS.md`, `docs/WORKFLOW.md`, `docs/gorevler/_ortak.md`, `docs/design/` (bütün tasarım kaynakları), `tool/format.sh`, CI biçim denetimi |
+
+## Açık işler (teslim)
+
+- **Sahibin kararları:** koç kaydı (`FeatureFlags.coachSignUpEnabled`, şu an kapalı), kullanılmayan 90 görselin silinmesi (FIN3), yayın derlemesi ve mağaza materyalleri (FIN5), `SUPPORT_EMAIL`, `APP_STORE_ID`, gerçek `YKS_DATE`.
+- **Backend:** `docs/Backend_Sorulari_Ek.md` (Y1–Y5 yayını engeller), T12.8 (koçun program yazması), T12.24 (`addCoach` eski bağı kaldırıyor mu), AYT ham puan türü, Edebiyat alt başlık veri yapısı.
+- **Tasarım:** kil görsellerin 2x/3x asılları (480 px).
+- **Boyut:** tüm ABI'leri içeren release APK 222 MB; mağazaya AAB ile yüklenince cihaz başına iner. En büyük kalemler OpenCV (belge tarayıcı, ABI başına 10–52 MB), `assets/authors` (38 MB) ve `assets/avatars` (10 MB, tek avatar 1,6 MB'a kadar): görseller WebP/küçültme adayı.
+- **Bilinen sınırlar:** `docs/dev/06_ozellikler.md` §7.4.
