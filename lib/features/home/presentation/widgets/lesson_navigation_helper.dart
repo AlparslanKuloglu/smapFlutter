@@ -8,15 +8,18 @@ import 'package:studentmap/features/home/presentation/widgets/app_dialog.dart';
 
 class LessonNavigationHelper {
   /// Map<String, dynamic> alarak çalışan ana tetikleyici metot
+  /// [selectedExamType]: 'TYT' veya 'AYT' verilirse (Derslerim sayfası)
+  /// TYT/AYT seçimi o sınav tipine göre yapılır; null ise dialog açılır.
   static void showTypeSelection(
     BuildContext context,
-    Map<String, dynamic> lesson,
-  ) {
+    Map<String, dynamic> lesson, {
+    String? selectedExamType,
+  }) {
     // Map içinden id ve name değerlerini güvenle alıyoruz
     final String lessonId =
         lesson['_id']?.toString() ?? lesson['id']?.toString() ?? '';
     final String lessonName = lesson['name']?.toString() ?? '';
-
+    print("showTypeSelection");
     final selectedLesson = AppLessons.generalLessons.firstWhere(
       (generalLesson) => generalLesson['_id']?.toString() == lessonId,
       orElse: () => {},
@@ -43,7 +46,20 @@ class LessonNavigationHelper {
     }
 
     if (itsTytAyt == 1) {
-      showMiddleDialog(context, lesson);
+      final String name = lesson['name']?.toString() ?? '';
+
+      if (selectedExamType == 'TYT') {
+        _pushLessonDetail(context, lesson, "TYT", 1, "TYT $name");
+      } else if (selectedExamType == 'AYT') {
+        // SOS-2'si olan derslerde AYT / SOS-2 seçimi, diğerlerinde direkt AYT
+        if (_lessonHasSos2(name)) {
+          showMiddleDialog(context, lesson, showTyt: false);
+        } else {
+          _pushLessonDetail(context, lesson, "AYT", 2, "AYT $name");
+        }
+      } else {
+        showMiddleDialog(context, lesson);
+      }
     } else if (lessonIsEdebiyat == 1) {
       // Eğer hedef sayfa nesne bekliyorsa Map'ten nesneye dönüştürebilirsiniz
       final lessonModel = GeneralLesson.fromJson(lesson);
@@ -75,8 +91,9 @@ class LessonNavigationHelper {
   /// Ortada Açılan Dialog
   static void showMiddleDialog(
     BuildContext context,
-    Map<String, dynamic> lesson,
-  ) {
+    Map<String, dynamic> lesson, {
+    bool showTyt = true,
+  }) {
     final String lessonName = lesson['name']?.toString() ?? '';
 
     showDialog(
@@ -98,7 +115,7 @@ class LessonNavigationHelper {
               style: TextStyle(color: Colors.grey),
             ),
             const SizedBox(height: 24),
-            _buildActionButtons(context, lesson),
+            _buildActionButtons(context, lesson, showTyt: showTyt),
           ],
         ),
       ),
@@ -108,8 +125,9 @@ class LessonNavigationHelper {
   /// Ortak Buton Yapısı
   static Widget _buildActionButtons(
     BuildContext context,
-    Map<String, dynamic> lesson,
-  ) {
+    Map<String, dynamic> lesson, {
+    bool showTyt = true,
+  }) {
     // Map içerisindeki 'stats' verisini güvenle çekiyoruz
     final Map<String, dynamic>? stats = lesson['stats'] is Map<String, dynamic>
         ? lesson['stats'] as Map<String, dynamic>
@@ -120,8 +138,7 @@ class LessonNavigationHelper {
     final int sos2Count = (stats?['3'] as num?)?.toInt() ?? 0;
 
     final String lessonName = lesson['name']?.toString() ?? '';
-    final bool lessonHasSos2 =
-        lessonName == "Tarih" || lessonName == "Coğrafya";
+    final bool lessonHasSos2 = _lessonHasSos2(lessonName);
     final int aytFilterValue = lessonHasSos2 ? 3 : 2;
 
     final String lessonFullNameTyt = "TYT $lessonName";
@@ -133,17 +150,24 @@ class LessonNavigationHelper {
 
     return Row(
       children: [
-        Expanded(
-          child: _buildSelectionButton(
-            context: context,
-            label: "TYT",
-            count: tytCount,
-            color: const Color(0xFF436C95),
-            onTap: () =>
-                _handleNavigation(context, lesson, "TYT", 1, lessonFullNameTyt),
+        if (showTyt) ...[
+          Expanded(
+            child: _buildSelectionButton(
+              context: context,
+              label: "TYT",
+              count: tytCount,
+              color: const Color(0xFF436C95),
+              onTap: () => _handleNavigation(
+                context,
+                lesson,
+                "TYT",
+                1,
+                lessonFullNameTyt,
+              ),
+            ),
           ),
-        ),
-        const SizedBox(width: 16),
+          const SizedBox(width: 16),
+        ],
         Expanded(
           child: _buildSelectionButton(
             context: context,
@@ -188,8 +212,27 @@ class LessonNavigationHelper {
     int defaultFilterValue,
     String lessonFullName,
   ) {
-    final lessonModel = GeneralLesson.fromJson(lesson);
     Navigator.pop(context);
+    _pushLessonDetail(
+      context,
+      lesson,
+      examType,
+      defaultFilterValue,
+      lessonFullName,
+    );
+  }
+
+  static bool _lessonHasSos2(String lessonName) =>
+      lessonName == "Tarih" || lessonName == "Coğrafya";
+
+  static void _pushLessonDetail(
+    BuildContext context,
+    Map<String, dynamic> lesson,
+    String examType,
+    int defaultFilterValue,
+    String lessonFullName,
+  ) {
+    final lessonModel = GeneralLesson.fromJson(lesson);
     Navigator.push(
       context,
       MaterialPageRoute(

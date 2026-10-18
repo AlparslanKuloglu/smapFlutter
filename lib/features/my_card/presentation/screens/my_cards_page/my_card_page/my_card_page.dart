@@ -251,6 +251,7 @@ class _MyCardPageState extends State<MyCardPage> {
                         onTap: () => LessonNavigationHelper.showTypeSelection(
                           context,
                           generalLesson,
+                          selectedExamType: _selectedTab,
                         ),
                       );
                     },
