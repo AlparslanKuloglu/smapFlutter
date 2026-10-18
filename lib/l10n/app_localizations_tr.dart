@@ -47,21 +47,45 @@ class AppLocalizationsTr extends AppLocalizations {
   String get account_avatarUse => 'Bu Avatarı Kullan';
 
   @override
-  String get account_coachCodeCopied => 'Kod kopyalandı.';
-
-  @override
-  String get account_coachCodeCopy => 'Kodu kopyala';
-
-  @override
-  String get account_coachCodeShare => 'Kodu paylaş';
+  String get account_coachCodeRowHint => 'Aç';
 
   @override
   String account_coachCodeShareText(String code) {
-    return 'SMAP\'te koçluk kodum: $code';
+    return 'SMAP koçluk kodum: $code. Hesap › Koçluk\'a girerek bana bağlanabilirsin.';
   }
 
   @override
   String get account_coachCodeTitle => 'Koçluk kodun';
+
+  @override
+  String get account_codeSheetBody1 =>
+      'Öğrencin bu kodu Hesap › Koçluk\'a girince sana bağlanır; denemelerini, analizlerini ve programını görürsün.';
+
+  @override
+  String get account_codeSheetBody2 =>
+      'Bağlantıyı öğrencin istediği an kaldırabilir. Öğrenci hesabını sen açmak istersen: Öğrencilerim › +.';
+
+  @override
+  String account_codeSheetCodeA11y(String spelled) {
+    return 'Koçluk kodun $spelled';
+  }
+
+  @override
+  String get account_codeSheetDash => 'tire';
+
+  @override
+  String get account_codeSheetErrorMessage =>
+      'Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get account_codeSheetErrorTitle => 'Kodun yüklenemedi.';
+
+  @override
+  String get account_codeSheetLoading => 'Kod yükleniyor';
+
+  @override
+  String get account_codeSheetOfflineNote =>
+      'Kod cihazında saklı; çevrimdışında da kopyalayıp paylaşabilirsin.';
 
   @override
   String get account_contractKvkk => 'KVKK Aydınlatma Metni';
@@ -102,6 +126,10 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get account_discardTitle => 'Değişiklikler kaydedilmesin mi?';
+
+  @override
+  String get account_emailHelp =>
+      'Kaydedince hemen değişir; doğru yazdığından emin ol.';
 
   @override
   String get account_fieldEmail => 'E-posta';
@@ -149,8 +177,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get account_groupSupport => 'Destek';
 
   @override
-  String get account_issueEmailInvalid =>
-      'E-posta adresi eksik görünüyor. Örn: ad@alan.com';
+  String get account_issueEmailInvalid => 'Geçerli bir e-posta adresi gir.';
 
   @override
   String get account_issueNameMissing => 'Ad soyadını yaz.';
@@ -191,6 +218,10 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get account_profileErrorTitle => 'Profil açılamadı';
+
+  @override
+  String get account_profileOfflineNote =>
+      'Kaydetmek için bağlantı gerekiyor; girdiklerin korunuyor.';
 
   @override
   String get account_profileSaveFailed =>
@@ -1346,7 +1377,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get coachingChange_action => 'Koçu Değiştir';
 
   @override
-  String get coachingChange_codeLabel => 'Yeni koçunun kodu';
+  String get coachingChange_codeA11y => 'Koçluk kodu, 4 harf ve 4 rakam';
 
   @override
   String coachingChange_errSameCoach(String name) {
@@ -1354,19 +1385,22 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get coachingChange_offlineNote =>
-      'Koçunu değiştirmek için bağlantı gerekiyor.';
+  String coachingChange_notice(String oldWith) {
+    return '$oldWith bağlantın kalkar; gelişimini artık göremez. Yeni koçun denemelerini, analizlerini ve programını görür.';
+  }
 
   @override
-  String get coachingChange_open => 'Koçunu Değiştir';
+  String get coachingChange_offlineNote =>
+      'Koçunu değiştirmek ya da bağlantıyı kaldırmak için bağlantı gerekiyor.';
+
+  @override
+  String get coachingChange_open => 'Koçu Değiştir';
+
+  @override
+  String get coachingChange_subtitle => 'Yeni koçunun verdiği kodu gir.';
 
   @override
   String get coachingChange_title => 'Koçunu değiştir';
-
-  @override
-  String coachingChange_warning(String name) {
-    return '$name ile bağlantın kalkacak. Yeni koçun denemelerini, analizlerini ve programını görebilecek.';
-  }
 
   @override
   String get coachingInfo_body1 =>
@@ -1375,17 +1409,6 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get coachingInfo_body2 =>
       'Kodu koçundan iste. Girdiğinde koçun denemelerini, analizlerini ve programını görebilir. Bağlantıyı istediğin an buradan kaldırabilirsin.';
-
-  @override
-  String get coachingInfo_coachBody1 =>
-      'Öğrencin bu kodu kendi hesabında Hesap › Koçluk bölümüne girer; böylece hesabı seninkine bağlanır.';
-
-  @override
-  String get coachingInfo_coachBody2 =>
-      'Bağlanan öğrenciler Öğrencilerim\'de listelenir; denemelerini, analizlerini ve programını görürsün. Hesabını senin açtığın öğrenciler zaten bağlı gelir.';
-
-  @override
-  String get coachingInfo_coachTitle => 'Koçluk kodu ne işe yarar?';
 
   @override
   String get coachingInfo_title => 'Koçluk kodu nedir?';

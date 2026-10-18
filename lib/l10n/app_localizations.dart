@@ -154,28 +154,16 @@ abstract class AppLocalizations {
   /// **'Bu Avatarı Kullan'**
   String get account_avatarUse;
 
-  /// Toast after the code was copied (pano 9.1 Davranış).
+  /// Reading hint of the coach's "Koçluk kodun" row: "Koçluk kodun, MOZK-4821, aç" (pano 14.11 Erişilebilirlik).
   ///
   /// In tr, this message translates to:
-  /// **'Kod kopyalandı.'**
-  String get account_coachCodeCopied;
+  /// **'Aç'**
+  String get account_coachCodeRowHint;
 
-  /// Accessible name and tooltip of the copy button (pano 9.1 kare 4).
+  /// Text the system share sheet carries (pano 14.11 Veri).
   ///
   /// In tr, this message translates to:
-  /// **'Kodu kopyala'**
-  String get account_coachCodeCopy;
-
-  /// Accessible name and tooltip of the share button (pano 9.1 kare 4).
-  ///
-  /// In tr, this message translates to:
-  /// **'Kodu paylaş'**
-  String get account_coachCodeShare;
-
-  /// Text the system share sheet carries (a decision: the design gives none).
-  ///
-  /// In tr, this message translates to:
-  /// **'SMAP\'te koçluk kodum: {code}'**
+  /// **'SMAP koçluk kodum: {code}. Hesap › Koçluk\'a girerek bana bağlanabilirsin.'**
   String account_coachCodeShareText(String code);
 
   /// Title of the coach's code row (pano 9.1 kare 4).
@@ -183,6 +171,54 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Koçluk kodun'**
   String get account_coachCodeTitle;
+
+  /// First paragraph of the coach's code sheet (pano 14.11 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Öğrencin bu kodu Hesap › Koçluk\'a girince sana bağlanır; denemelerini, analizlerini ve programını görürsün.'**
+  String get account_codeSheetBody1;
+
+  /// Second paragraph of the coach's code sheet (pano 14.11 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantıyı öğrencin istediği an kaldırabilir. Öğrenci hesabını sen açmak istersen: Öğrencilerim › +.'**
+  String get account_codeSheetBody2;
+
+  /// Reading of the code, letter by letter: "Koçluk kodun M O Z K tire 4 8 2 1" (pano 14.11 Erişilebilirlik).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçluk kodun {spelled}'**
+  String account_codeSheetCodeA11y(String spelled);
+
+  /// The spoken word for the dash of the code in the letter-by-letter reading (pano 14.11).
+  ///
+  /// In tr, this message translates to:
+  /// **'tire'**
+  String get account_codeSheetDash;
+
+  /// Message of the section error inside the code card (pano 14.11 kare 5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Bağlantını kontrol edip tekrar dene.'**
+  String get account_codeSheetErrorMessage;
+
+  /// Title of the section error inside the code card (pano 14.11 kare 5).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kodun yüklenemedi.'**
+  String get account_codeSheetErrorTitle;
+
+  /// Reading of the code skeleton (pano 14.11 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kod yükleniyor'**
+  String get account_codeSheetLoading;
+
+  /// Note under the paragraphs of the code sheet while offline (pano 14.11 kare 6).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kod cihazında saklı; çevrimdışında da kopyalayıp paylaşabilirsin.'**
+  String get account_codeSheetOfflineNote;
 
   /// Title of the KVKK notice when the server sent none.
   ///
@@ -255,6 +291,12 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Değişiklikler kaydedilmesin mi?'**
   String get account_discardTitle;
+
+  /// Help line under the e-mail field while editing; there is no verification code (pano 14.9 kare 1, T12.19).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kaydedince hemen değişir; doğru yazdığından emin ol.'**
+  String get account_emailHelp;
 
   /// Field label (pano 9.2).
   ///
@@ -340,10 +382,10 @@ abstract class AppLocalizations {
   /// **'Destek'**
   String get account_groupSupport;
 
-  /// Field error of the e-mail (same wording as the sign-up form).
+  /// Field error of the e-mail, under the field, on blur or "Kaydet" (pano 14.9 kare 2).
   ///
   /// In tr, this message translates to:
-  /// **'E-posta adresi eksik görünüyor. Örn: ad@alan.com'**
+  /// **'Geçerli bir e-posta adresi gir.'**
   String get account_issueEmailInvalid;
 
   /// Field error of the name (a decision: pano 9.2 draws none).
@@ -417,6 +459,12 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Profil açılamadı'**
   String get account_profileErrorTitle;
+
+  /// Line under the title of the open profile form while offline (pano 14.9 kare 4).
+  ///
+  /// In tr, this message translates to:
+  /// **'Kaydetmek için bağlantı gerekiyor; girdiklerin korunuyor.'**
+  String get account_profileOfflineNote;
 
   /// Error toast when saving failed (pano 9.2 Davranış).
   ///
@@ -2342,11 +2390,11 @@ abstract class AppLocalizations {
   /// **'Koçu Değiştir'**
   String get coachingChange_action;
 
-  /// Label of the code field of the change sheet (Tur 12 F).
+  /// Reading of the code field of the change sheet (pano 14.10 Erişilebilirlik).
   ///
   /// In tr, this message translates to:
-  /// **'Yeni koçunun kodu'**
-  String get coachingChange_codeLabel;
+  /// **'Koçluk kodu, 4 harf ve 4 rakam'**
+  String get coachingChange_codeA11y;
 
   /// Error under the code field when the code is the current coach's (Tur 12 F, 14.10 kare 3); the name arrives with its dative suffix: "Mehmet Özkan'a".
   ///
@@ -2354,29 +2402,35 @@ abstract class AppLocalizations {
   /// **'Bu kod zaten koçun {name} ait.'**
   String coachingChange_errSameCoach(String name);
 
-  /// Note under the disabled "Koçunu Değiştir" when the device is offline (Tur 12 F).
+  /// Info box of the change sheet; the old coach's name arrives with its "ile" suffix: "Mehmet Özkan'la" (pano 14.10 kare 2, T12.21).
   ///
   /// In tr, this message translates to:
-  /// **'Koçunu değiştirmek için bağlantı gerekiyor.'**
+  /// **'{oldWith} bağlantın kalkar; gelişimini artık göremez. Yeni koçun denemelerini, analizlerini ve programını görür.'**
+  String coachingChange_notice(String oldWith);
+
+  /// One line under the two disabled actions while offline (pano 14.10 kare 6).
+  ///
+  /// In tr, this message translates to:
+  /// **'Koçunu değiştirmek ya da bağlantıyı kaldırmak için bağlantı gerekiyor.'**
   String get coachingChange_offlineNote;
 
-  /// Text button above "Bağlantıyı Kaldır" that opens the change sheet (Tur 12 F, 14.10 kare 1).
+  /// Outlined button under the coach card that opens the change sheet (pano 14.10 kare 1).
   ///
   /// In tr, this message translates to:
-  /// **'Koçunu Değiştir'**
+  /// **'Koçu Değiştir'**
   String get coachingChange_open;
+
+  /// Subtitle of the change sheet (pano 14.10 kare 2).
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni koçunun verdiği kodu gir.'**
+  String get coachingChange_subtitle;
 
   /// Title of the change sheet (Tur 12 F, 14.10 kare 2).
   ///
   /// In tr, this message translates to:
   /// **'Koçunu değiştir'**
   String get coachingChange_title;
-
-  /// Warning box of the change sheet (Tur 12 F).
-  ///
-  /// In tr, this message translates to:
-  /// **'{name} ile bağlantın kalkacak. Yeni koçun denemelerini, analizlerini ve programını görebilecek.'**
-  String coachingChange_warning(String name);
 
   /// First paragraph of the explanation sheet (pano 9.5 kare 4).
   ///
@@ -2389,24 +2443,6 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Kodu koçundan iste. Girdiğinde koçun denemelerini, analizlerini ve programını görebilir. Bağlantıyı istediğin an buradan kaldırabilirsin.'**
   String get coachingInfo_body2;
-
-  /// First paragraph of the coach's explanation sheet (Tur 12 G).
-  ///
-  /// In tr, this message translates to:
-  /// **'Öğrencin bu kodu kendi hesabında Hesap › Koçluk bölümüne girer; böylece hesabı seninkine bağlanır.'**
-  String get coachingInfo_coachBody1;
-
-  /// Second paragraph of the coach's explanation sheet (Tur 12 G).
-  ///
-  /// In tr, this message translates to:
-  /// **'Bağlanan öğrenciler Öğrencilerim\'de listelenir; denemelerini, analizlerini ve programını görürsün. Hesabını senin açtığın öğrenciler zaten bağlı gelir.'**
-  String get coachingInfo_coachBody2;
-
-  /// Title of the coach's explanation sheet on the coach's Hesap (Tur 12 G, 14.11 kare 2).
-  ///
-  /// In tr, this message translates to:
-  /// **'Koçluk kodu ne işe yarar?'**
-  String get coachingInfo_coachTitle;
 
   /// Title of the explanation sheet (pano 9.5 kare 4).
   ///
